@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
+            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
+            --orange: #f97316; --light-blue: #bae6fd; --dark-blue: #1d4ed8;
+        }
+        [data-theme="dark"] {
+            --primary: #38bdf8; --accent: #0ea5e9; --success: #34d399; --danger: #f87171;
+            --warning: #fbbf24; --bg: #020617; --card: #0f172a; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #1e293b; --btn-ghost: #1e293b;
+            --light-blue: #0369a1; --dark-blue: #1e40af;
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: all 0.2s ease-in-out; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 30px; 
+            border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            position: relative; overflow: hidden;
+        }
+
+        /* Interactive Button Styles */
+        button { 
+            width: 100%; padding: 16px; margin: 10px 0; border: none; border-radius: 16px; 
+            font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); 
+            color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px;
+            position: relative;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            filter: brightness(1.05);
+        }
+
+        button:active { transform: scale(0.96); }
+
+        .btn-main { background: var(--accent); color: #fff !important; }
+        .btn-main:hover { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+
+        /* Footer Buttons Glow */
+        .btn-quit:hover { 
+            background: var(--danger) !important; 
+            color: white !important; 
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+        }
+        .btn-finish:hover { 
+            background: var(--success) !important; 
+            color: white !important; 
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        }
+
+        .exam-row:hover { background: var(--border); }
+        
+        /* The rest of your styles remain consistent */
+        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--btn-ghost); display: none; z-index: 20; }
+        #progressBar { height: 100%; background: var(--accent); width: 0%; transition: 0.4s ease; }
+        .controls { position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 10px; z-index: 10; }
+        .theme-switch { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .score-display { background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700; display: none; }
+        .brand { text-align: center; margin-bottom: 30px; margin-top: 15px; }
+        .logo-box { width: 70px; height: 70px; background: var(--accent); color: white; margin: 0 auto 15px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+        .screen { display: none; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .quiz-footer { display: flex; gap: 10px; margin-top: 5px; }
+        .btn-footer { background: transparent; border: 1.5px solid var(--border); color: var(--sub); height: 45px; flex: 1; font-size: 12px; }
+        .exam-row { display: flex; flex-direction: column; margin-bottom: 12px; background: var(--btn-ghost); border-radius: 18px; padding: 5px; }
+        .btn-eye { width: 50px; background: var(--warning); color: #fff !important; font-size: 20px; margin: 0; }
+        .correct { background: var(--success) !important; color: white !important; box-shadow: 0 0 10px var(--success); }
+        .wrong { background: var(--danger) !important; color: white !important; box-shadow: 0 0 10px var(--danger); }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-card" id="appBody">
+    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
+    
+    <div class="controls">
+        <div id="scoreBox" class="score-display">0/0</div>
+        <button class="theme-switch" onclick="toggleTheme()"><ion-icon id="themeIcon" name="moon-outline"></ion-icon></button>
+    </div>
+
+    <div class="brand">
+        <div class="logo-box"><ion-icon name="school-outline"></ion-icon></div>
+        <h1 style="font-size: 18px;">MASTER PLUMBER REVIEWER</h1>
+        <div style="font-size: 11px; color: var(--sub); font-weight: 600;">Engr. Jay Tristan Medallon, MP</div>
+    </div>
+
+    <div id="home" class="screen" style="display: block;">
+        <button class="btn-main" onclick="openExams('Plumbing Code')">Plumbing Code</button>
+        <button class="btn-main" onclick="openExams('Plumbing Arithmetic')">Plumbing Arithmetic</button>
+        <button class="btn-main" onclick="openExams('Sanitation Plumbing Design and Installation')">Sanitation & Design</button>
+        <button class="btn-main" onclick="openExams('Practical Problems and Experiences')">Practical Problems</button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
+        <div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div>
+        <button onclick="setScreen('home')">Back</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div id="qNum" style="font-size: 10px; font-weight: 800; color: var(--accent);"></div>
+        <div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; margin-top:10px;"></div>
+        <div id="choices"></div>
+        <div id="ansFeedback"></div>
+        
+        <div style="display:flex; gap:10px;">
+            <button id="bBtn" onclick="prevQ()" style="flex:1">Back</button>
+            <button id="nBtn" onclick="handleNextLogic()" style="flex:2" class="btn-main">Next</button>
+        </div>
+
+        <div class="quiz-footer">
+            <button class="btn-footer btn-quit" onclick="quitQuiz()">Quit Exam</button>
+            <button class="btn-footer btn-finish" onclick="finishExamEarly()">Finish Exam</button>
+        </div>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align: center;"></h2>
+        <div id="revScroll" style="max-height: 350px; overflow-y: auto;"></div>
+        <button class="btn-main" onclick="retakeCurrentExam()">Retake Exam</button>
+        <button onclick="backToExamList()">Back to Exams</button>
+    </div>
+</div>
+
+<script type="module">
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { designDB } from './design.js';
+    import { practicalDB } from './practical.js';
+
+    const DB = {
+        "Plumbing Arithmetic": arithmeticDB,
+        "Plumbing Code": codeDB,
+        "Sanitation Plumbing Design and Installation": designDB,
+        "Practical Problems and Experiences": practicalDB
+    };
+
+    let currentCat, currentExamIdx, currentQs, curIdx = 0, answers = [], score = 0, isRevealed = false;
+
+    // Standard logic functions
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    const getHighScore = (cat, idx) => localStorage.getItem(`HS_${cat}_${idx}`) || 0;
+    const saveHighScore = (cat, idx, val) => {
+        const currentHS = getHighScore(cat, idx);
+        if (parseInt(val) > parseInt(currentHS)) localStorage.setItem(`HS_${cat}_${idx}`, val);
+    };
+
+    window.toggleTheme = () => {
+        const b = document.body;
+        const isLight = b.getAttribute('data-theme') === 'light';
+        b.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        document.getElementById('themeIcon').setAttribute('name', isLight ? 'sunny-outline' : 'moon-outline');
+    };
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('scoreBox').style.display = (id === 'quiz') ? 'block' : 'none';
+        document.getElementById('pBarCont').style.display = (id === 'quiz') ? 'block' : 'none';
+    };
+
+    window.openExams = (cat) => {
+        currentCat = cat;
+        document.getElementById('catTitle').innerText = cat.toUpperCase();
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const examData = DB[cat][i];
+            const hasQuestions = examData && examData.length > 0;
+            const hs = getHighScore(cat, i);
+            const totalQs = hasQuestions ? examData.length : 0;
+            grid.innerHTML += `
+                <div class="exam-row" style="${!hasQuestions ? 'opacity: 0.6;' : ''}">
+                    <div style="display:flex; gap:8px;">
+                        <button style="background:transparent; text-align:left; justify-content:flex-start; margin:0; flex:1;" onclick="${hasQuestions ? `startQuiz(${i})` : `alert('Coming soon!')`}">EXAM #${i}</button>
+                        <button class="btn-eye" onclick="${hasQuestions ? `showReview(${i}, true)` : `alert('Empty!')`}"><ion-icon name="eye-outline"></ion-icon></button>
+                    </div>
+                    <div style="font-size: 10px; padding:0 16px 8px; color:var(--sub);">Best: ${hs}/${totalQs}</div>
+                </div>`;
+        }
+        window.setScreen('exams');
+    };
+
+    window.startQuiz = (idx) => {
+        currentExamIdx = idx;
+        currentQs = shuffle(JSON.parse(JSON.stringify(DB[currentCat][idx])));
+        curIdx = 0; answers = new Array(currentQs.length).fill(null);
+        window.setScreen('quiz'); window.loadQ();
+    };
+
+    window.loadQ = () => {
+        isRevealed = false;
+        const qData = currentQs[curIdx];
+        document.getElementById('progressBar').style.width = ((curIdx) / currentQs.length * 100) + "%";
+        document.getElementById('qNum').innerText = `EXAM #${currentExamIdx} • Q${curIdx+1}`;
+        document.getElementById('qTxt').innerText = qData.q;
+        const box = document.getElementById('choices'); box.innerHTML = "";
+        qData.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.innerText = c;
+            b.onclick = () => { answers[curIdx] = i; updateScore(); };
+            box.appendChild(b);
+        });
+    };
+
+    function updateScore() {
+        score = answers.filter((a, i) => a === currentQs[i].a).length;
+        document.getElementById('scoreBox').innerText = `${score} / ${currentQs.length}`;
+    }
+
+    window.handleNextLogic = () => {
+        if(curIdx < currentQs.length - 1) { curIdx++; window.loadQ(); } 
+        else { saveHighScore(currentCat, currentExamIdx, score); window.showReview(null, false); }
+    };
+
+    window.quitQuiz = () => window.openExams(currentCat);
+    window.finishExamEarly = () => { saveHighScore(currentCat, currentExamIdx, score); window.showReview(null, false); };
+    window.showReview = (idx, isStudy) => { window.setScreen('results'); /* Review logic here */ };
+</script>
+</body>
+</html>
