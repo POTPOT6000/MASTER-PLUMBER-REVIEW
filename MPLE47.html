@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PASS THE BOARDS | Master Plumber</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --sub-text: #64748b;
+            --border: #e2e8f0;
+            --premium: linear-gradient(135deg, #6366f1, #a855f7);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { margin: 0; background: #0f172a; display: flex; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; }
+
+        .app-container { 
+            width: 100%; max-width: 500px; height: 100vh; background: var(--bg);
+            position: relative; display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        .screen { flex: 1; overflow-y: auto; padding: 20px; display: none; }
+        .screen::-webkit-scrollbar { width: 4px; }
+        .screen::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        /* Branding & Hero */
+        .hero-box {
+            background: var(--premium); color: white; padding: 30px 20px;
+            border-radius: 0 0 40px 40px; text-align: center; margin-bottom: 25px;
+        }
+        .hero-title { font-size: 26px; font-weight: 800; margin: 0; }
+        .hero-desc { font-size: 13px; opacity: 0.9; margin-top: 8px; }
+
+        /* Category Cards & Unique Logos */
+        .card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; margin-bottom: 15px; border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; transition: 0.2s; }
+        .card:active { transform: scale(0.98); }
+        .cat-row { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+        
+        .cat-icon { width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+        .icon-arithmetic { background: #fff7ed; color: #ea580c; border: 1px solid #ffedd5; }
+        .icon-practical { background: #f0fdf4; color: #16a34a; border: 1px solid #dcfce7; }
+        .icon-design { background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+        .icon-code { background: #faf5ff; color: #9333ea; border: 1px solid #f3e8ff; }
+
+        /* Buttons */
+        .btn { width: 100%; padding: 16px; border: none; border-radius: 16px; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-premium { background: var(--premium); color: white; }
+        .btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border); }
+        
+        .choice-btn { width: 100%; padding: 16px; background: white; border: 2px solid var(--border); border-radius: 16px; margin-bottom: 12px; text-align: left; font-size: 14px; font-weight: 600; }
+        .choice-btn.correct { background: #dcfce7; border-color: var(--success); color: #166534; }
+        .choice-btn.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
+
+        /* Auth */
+        .auth-field { background: #f1f5f9; border: 1px solid var(--border); padding: 16px; border-radius: 14px; width: 100%; margin-bottom: 12px; font-size: 15px; }
+
+        /* Nav */
+        .nav-bar { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; background: #0f172a; height: 70px; border-radius: 35px; display: none; justify-content: space-around; align-items: center; }
+        .nav-item { color: #94a3b8; text-align: center; cursor: pointer; }
+        .nav-item.active { color: white; }
+
+        /* Purchase Modal */
+        #purchase-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:2000; align-items:center; justify-content:center; padding:20px; }
+        .modal-content { background:white; border-radius:30px; padding:30px; width:100%; max-width:400px; text-align:center; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    
+    <div id="auth-screen" class="screen" style="display:block; padding:0;">
+        <div class="hero-box">
+            <div class="hero-title">Pass the Boards</div>
+            <p class="hero-desc">Access 5,000+ practice questions and detailed analytics.</p>
+        </div>
+        <div style="padding: 20px;">
+            <input type="text" id="user-in" class="auth-field" placeholder="Username">
+            <input type="password" id="pass-in" class="auth-field" placeholder="Password">
+            <button class="btn btn-primary" onclick="guestMode()">SIGN IN / GUEST ACCESS</button>
+            <p style="text-align:center; color: var(--sub-text); font-size: 12px; margin-top:20px;">Registering allows you to save progress across devices.</p>
+        </div>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+            <div>
+                <h2 style="margin:0; font-size:22px;">Hello, <span id="user-name">Future MP</span></h2>
+                <div id="premium-status" style="font-size:11px; font-weight:800; color:var(--primary);">FREE ACCESS</div>
+            </div>
+            <div onclick="showPurchaseAll()" style="background:var(--premium); color:white; padding:8px 15px; border-radius:12px; font-size:12px; font-weight:800; cursor:pointer;">UPGRADE</div>
+        </div>
+
+        <div class="card" onclick="openExamList('Arithmetic')">
+            <div class="cat-row">
+                <div class="cat-icon icon-arithmetic"><ion-icon name="calculator-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Plumbing Arithmetic</div>
+                    <div style="font-size:11px; color:var(--sub-text);">15 Exams • 100+ Questions</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Practical')">
+            <div class="cat-row">
+                <div class="cat-icon icon-practical"><ion-icon name="build-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Practical Problems & Exp.</div>
+                    <div style="font-size:11px; color:var(--sub-text);">15 Exams • 100+ Questions</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Design')">
+            <div class="cat-row">
+                <div class="cat-icon icon-design"><ion-icon name="layers-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Sanitation & Design</div>
+                    <div style="font-size:11px; color:var(--sub-text);">15 Exams • 100+ Questions</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Code')">
+            <div class="cat-row">
+                <div class="cat-icon icon-code"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Plumbing Code</div>
+                    <div style="font-size:11px; color:var(--sub-text);">15 Exams • 100+ Questions</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div id="exam-list" class="screen">
+        <button class="btn btn-outline" style="margin-bottom:20px; padding:10px;" onclick="navTo('home')"><ion-icon name="arrow-back-outline"></ion-icon> Back</button>
+        <h3 id="list-title">Exams</h3>
+        <div id="exams-container"></div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+            <div id="q-meta" style="font-weight:800; font-size:12px; color:var(--primary);">EXAM #1</div>
+            <div id="q-progress" style="font-weight:800; color:var(--sub-text);">1/100</div>
+        </div>
+        <div class="card" id="q-text" style="font-size:16px; font-weight:600; line-height:1.5;">Question text...</div>
+        <div id="choices-area"></div>
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:20px;">
+            <button class="btn btn-outline" style="color:var(--danger); border-color:#fee2e2" onclick="navTo('home')">QUIT</button>
+            <button class="btn btn-outline" onclick="alert('Question Reported')">REPORT</button>
+        </div>
+        <button class="btn btn-primary" id="next-btn" style="margin-top:10px; display:none;" onclick="nextQ()">NEXT QUESTION</button>
+        <button class="btn btn-primary" id="finish-btn" style="margin-top:10px; display:none; background:var(--success)" onclick="navTo('home')">FINISH EXAM</button>
+    </div>
+
+    <div id="purchase-modal">
+        <div class="modal-content">
+            <div style="font-size:50px; color:var(--accent);"><ion-icon name="lock-closed"></ion-icon></div>
+            <h2 id="modal-title">Unlock Content</h2>
+            <p id="modal-desc" style="color:var(--sub-text); font-size:14px;">Guests only have access to Exam #1. Unlock more to keep practicing!</p>
+            <div style="display:grid; gap:10px; margin-top:20px;">
+                <button class="btn btn-primary" onclick="buy('single')">UNLOCK THIS EXAM (₱9)</button>
+                <button class="btn btn-premium" onclick="buy('all')">UNLOCK ALL EXAMS (₱299)</button>
+                <button class="btn btn-outline" onclick="closePurchase()">NOT NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-bar" id="app-nav">
+        <div class="nav-item active" onclick="navTo('home')"><ion-icon name="home-outline"></ion-icon></div>
+        <div class="nav-item" onclick="showPurchaseAll()"><ion-icon name="cart-outline"></ion-icon></div>
+        <div class="nav-item" onclick="location.reload()"><ion-icon name="person-outline"></ion-icon></div>
+    </div>
+
+</div>
+
+<script>
+    // Database from Integrated Files
+    const DB = {
+        Arithmetic: {
+            1: [
+                { q: "How do you call an increase in the value of a capital asset?", choices: ["Profit", "Capital expenditure", "Capital gain", "Capital stock"], a: 2 },
+                { q: "Another term for rhombus is said to be:", choices: ["Dichotomy", "Cyclic quadrilateral", "Diamond", "Bi-rectangular"], a: 2 },
+                { q: "Find the sum of 6x+5y and 3x-5y.", choices: ["9x+10y", "9x", "10y", "9x"], a: 3 },
+                { q: "The reservoir level is 115 feet above the pump discharge. What is the discharge pressure on the pump?", choices: ["49.8 psi", "30 psi", "42 psi", "33 psi"], a: 0 },
+                { q: "A polygon with twelve sides is known as:", choices: ["Dodecagon", "Decagon", "Decahedron", "Dodecahedron"], a: 0 }
+            ],
+            // Simulated exams 2-15 for structure
+            ...Array.from({length: 14}, (_, i) => ({ [i+2]: [] })).reduce((a, b) => Object.assign(a, b), {})
+        },
+        Practical: { 1: [ { q: "What is the weight of 1 cubic foot of water in pounds?", choices: ["32.2 lbs", "62.4 lbs", "8.33 lbs", "7.48 lbs"], a: 1 } ], ...Array.from({length: 14}, (_, i) => ({ [i+2]: [] })).reduce((a, b) => Object.assign(a, b), {}) },
+        Design: { 1: [ { q: "How many gallons are there in 1 cubic meter of water?", choices: ["231", "264", "462", "624"], a: 1 } ], ...Array.from({length: 14}, (_, i) => ({ [i+2]: [] })).reduce((a, b) => Object.assign(a, b), {}) },
+        Code: { 1: [ { q: "A pipe has an inside diameter of 14 inches. What is the area of the cross-section?", choices: ["153.94 sq in", "73.04 sq in", "220.42 sq in", "38.92 sq in"], a: 0 } ], ...Array.from({length: 14}, (_, i) => ({ [i+2]: [] })).reduce((a, b) => Object.assign(a, b), {}) }
+    };
+
+    let user = { isPremium: false, unlocked: [] };
+    let currentCtx = { cat: '', exam: 1, qIdx: 0 };
+
+    function navTo(id) {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('app-nav').style.display = (id === 'auth-screen' || id === 'quiz') ? 'none' : 'flex';
+    }
+
+    function guestMode() { navTo('home'); }
+
+    function openExamList(cat) {
+        currentCtx.cat = cat;
+        document.getElementById('list-title').innerText = cat;
+        const container = document.getElementById('exams-container');
+        container.innerHTML = '';
+        
+        for(let i=1; i<=15; i++) {
+            const isLocked = i > 1 && !user.isPremium && !user.unlocked.includes(`${cat}_${i}`);
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>Exam #${i}</span>
+                    <ion-icon name="${isLocked ? 'lock-closed' : 'play'}" style="color:${isLocked ? 'var(--danger)' : 'var(--success)'}"></ion-icon>
+                </div>
+            `;
+            div.onclick = () => isLocked ? showPurchase(cat, i) : startQuiz(cat, i);
+            container.appendChild(div);
+        }
+        navTo('exam-list');
+    }
+
+    function showPurchase(cat, num) {
+        currentCtx.cat = cat; currentCtx.exam = num;
+        document.getElementById('purchase-modal').style.display = 'flex';
+    }
+
+    function showPurchaseAll() {
+        document.getElementById('modal-title').innerText = "Premium Access";
+        document.getElementById('purchase-modal').style.display = 'flex';
+    }
+
+    function closePurchase() { document.getElementById('purchase-modal').style.display = 'none'; }
+
+    function buy(type) {
+        if(type === 'all') user.isPremium = true;
+        else user.unlocked.push(`${currentCtx.cat}_${currentCtx.exam}`);
+        alert("Purchase successful!");
+        closePurchase();
+        openExamList(currentCtx.cat);
+    }
+
+    function startQuiz(cat, num) {
+        const questions = DB[cat][num];
+        if(!questions || questions.length === 0) {
+            alert("This exam content is coming soon!");
+            return;
+        }
+        currentCtx.cat = cat; currentCtx.exam = num; currentCtx.qIdx = 0;
+        navTo('quiz');
+        renderQ();
+    }
+
+    function renderQ() {
+        const q = DB[currentCtx.cat][currentCtx.exam][currentCtx.qIdx];
+        document.getElementById('q-meta').innerText = `EXAM #${currentCtx.exam}`;
+        document.getElementById('q-progress').innerText = `${currentCtx.qIdx + 1}/${DB[currentCtx.cat][currentCtx.exam].length}`;
+        document.getElementById('q-text').innerText = q.q;
+        document.getElementById('next-btn').style.display = 'none';
+        
+        const area = document.getElementById('choices-area');
+        area.innerHTML = '';
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.className = 'choice-btn';
+            b.innerText = c;
+            b.onclick = () => {
+                document.querySelectorAll('.choice-btn').forEach(btn => btn.disabled = true);
+                if(i === q.a) b.classList.add('correct');
+                else {
+                    b.classList.add('wrong');
+                    document.querySelectorAll('.choice-btn')[q.a].classList.add('correct');
+                }
+                if(currentCtx.qIdx < DB[currentCtx.cat][currentCtx.exam].length - 1) document.getElementById('next-btn').style.display = 'block';
+                else document.getElementById('finish-btn').style.display = 'block';
+            };
+            area.appendChild(b);
+        });
+    }
+
+    function nextQ() { currentCtx.qIdx++; renderQ(); }
+</script>
+
+</body>
+</html>
