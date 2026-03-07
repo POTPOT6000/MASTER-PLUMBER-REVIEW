@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
+            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
+            --orange: #f97316; --light-blue: #bae6fd; --dark-blue: #1d4ed8;
+        }
+        [data-theme="dark"] {
+            --primary: #38bdf8; --accent: #0ea5e9; --success: #34d399; --danger: #f87171;
+            --warning: #fbbf24; --bg: #020617; --card: #0f172a; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #1e293b; --btn-ghost: #1e293b;
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.2s ease; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 25px; 
+            border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            position: relative; overflow: hidden;
+        }
+
+        .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; min-height: 45px; }
+
+        button { 
+            width: 100%; padding: 16px; margin: 8px 0; border: none; border-radius: 16px; 
+            font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); 
+            color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+
+        .btn-main { background: var(--accent); color: #fff !important; }
+        .screen { display: none; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--btn-ghost); display:none; }
+        #progressBar { height: 100%; background: var(--accent); width: 0%; transition: 0.4s ease; }
+        
+        .correct { background: var(--success) !important; color: white !important; }
+        .wrong { background: var(--danger) !important; color: white !important; }
+        input { width: 100%; padding: 14px; margin: 8px 0; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text); outline: none; }
+        
+        .exam-item { display: flex; align-items: center; gap: 10px; background: var(--btn-ghost); margin: 8px 0; padding: 5px 15px; border-radius: 15px; }
+        .locked { opacity: 0.5; }
+        
+        /* New specific styling for input placeholders */
+        input::placeholder { color: #cbd5e1; font-weight: 400; }
+        input[type="password"]::placeholder { font-size: 20px; vertical-align: middle; position: relative; top: 1px; }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-card" id="appBody">
+    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
+    
+    <div class="app-header">
+        <div id="scoreBox" style="background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700; visibility: hidden;">0/0</div>
+        <button onclick="toggleTheme()" style="width: 40px; height: 40px; border-radius: 12px; padding: 0; margin: 0;"><ion-icon id="themeIcon" name="moon-outline"></ion-icon></button>
+    </div>
+
+    <div id="authScreen" class="screen" style="display: block; text-align: center;">
+        <div style="font-size: 50px; color: #3b82f6; margin-bottom: 5px;"><ion-icon name="water"></ion-icon></div>
+        <div style="font-size: 11px; color: var(--sub); font-weight: 400; text-transform: uppercase;">The Ultimate Reviewer</div>
+        <h1 style="font-size: 26px; margin: 5px 0 30px; line-height: 1.1; font-weight: 800; color: #1e293b;">
+            MASTER PLUMBER <span style="color: #3b82f6;">REVIEWER</span>
+        </h1>
+
+        <div style="background-color: #334155; color: white; padding: 15px 20px; text-align: left; position: relative; border-radius: 12px; margin-bottom: 25px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+            <div style="background-color: #f97316; color: white; padding: 2px 25px; font-weight: 700; font-size: 10px; transform: rotate(45deg); position: absolute; top: 12px; right: -25px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">PRO</div>
+            <div style="font-weight: 800; font-size: 15px; margin-bottom: 3px;">Pass the Boards.</div>
+            <div style="font-weight: 300; font-size: 12px; line-height: 1.4; opacity: 0.9;">Access 5,000+ practice questions and detailed analytics.</div>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 5px; font-size: 10px; color: var(--sub); font-weight: 600;">USERNAME</div>
+        <input type="text" id="username" placeholder="future_engineer">
+        
+        <div style="text-align: left; margin-top: 10px; margin-bottom: 5px; font-size: 10px; color: var(--sub); font-weight: 600;">PASSWORD</div>
+        <input type="password" id="password" placeholder="••••••••">
+
+        <button class="btn-main" onclick="handleAuth()" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #fff; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); margin-top: 25px; text-transform: uppercase;">
+            SIGN IN TO YOUR ACCOUNT
+        </button>
+
+        <button onclick="alert('Please use the SIGN IN button; your account will be automatically created if it doesn't exist.')" style="background: white; color: #64748b; border: 1.5px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            CREATE NEW ACCOUNT
+        </button>
+
+        <div style="margin: 25px 0 10px; font-size: 11px; color: var(--sub); font-weight: 600; text-transform: uppercase;">OR</div>
+
+        <button onclick="enterAsGuest()" style="font-size: 11px; background: transparent; color: #64748b; border: none; padding: 5px; text-transform: uppercase; font-weight: 600; cursor: pointer;">
+            Continue as Guest
+        </button>
+    </div>
+
+    <div id="paymentScreen" class="screen" style="text-align: center;">
+        <h3>Unlock All Exams</h3>
+        <div style="width: 160px; height: 160px; background: white; margin: 15px auto; border: 3px solid #007dfe; border-radius: 15px; padding: 10px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GCASH_09123456789" style="width:100%">
+        </div>
+        <p style="font-size: 14px; font-weight: 700; color: #007dfe; margin:0;">GCash: 09XX XXX XXXX</p>
+        <input type="text" id="licenseKey" placeholder="Enter License Key">
+        <button class="btn-main" onclick="verifyKey()">Activate Full Access</button>
+        <button onclick="setScreen('home')" style="background:transparent; font-size:12px;">Maybe Later</button>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h2 style="margin:0; font-size: 18px;">BOARD CATEGORIES</h2>
+            <p id="userStatus" style="font-size: 11px; font-weight: 700; margin-top: 4px;"></p>
+        </div>
+        <button class="btn-main" onclick="openExams('Plumbing Code')">Plumbing Code</button>
+        <button class="btn-main" onclick="openExams('Plumbing Arithmetic')">Plumbing Arithmetic</button>
+        <button class="btn-main" onclick="openExams('Sanitation Plumbing Design and Installation')">Sanitation & Design</button>
+        <button class="btn-main" onclick="openExams('Practical Problems and Experiences')">Practical Problems</button>
+        
+        <button id="upgradeBtn" onclick="setScreen('paymentScreen')" style="background: var(--orange); color:white; margin-top: 20px;">UPGRADE TO PRO</button>
+        <button onclick="logout()" style="margin-top: 10px; border: 1px solid var(--border); color: var(--danger); font-size: 11px;">Logout / Exit</button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
+        <div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div>
+        <button onclick="setScreen('home')">Back to Dashboard</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div id="qNum" style="font-size: 11px; font-weight: 800; color: var(--accent); margin-bottom: 8px;"></div>
+        <div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; min-height: 80px;"></div>
+        <div id="choices"></div>
+        
+        <div style="display:flex; gap:10px; margin-top: 15px;">
+            <button onclick="prevQ()" style="flex:1">Back</button>
+            <button onclick="handleNextLogic()" style="flex:2" class="btn-main">Next</button>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top: 8px;">
+            <button onclick="quitQuiz()" style="font-size:11px; flex:1; color:var(--danger)">Quit Exam</button>
+            <button onclick="finishExamEarly()" style="font-size:11px; flex:1; color:var(--success)">Finish Exam</button>
+        </div>
+        <button onclick="alert('Question Reported.')" style="font-size:10px; background:transparent; color:var(--sub); margin-top: 5px;">Report Error</button>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align: center; color: var(--accent);"></h2>
+        <div id="revScroll" style="max-height: 380px; overflow-y: auto; background: var(--btn-ghost); border-radius: 20px; padding: 15px; margin-bottom: 15px;"></div>
+        <button class="btn-main" onclick="setScreen('home')">Back Home</button>
+    </div>
+</div>
+
+<script type="module">
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { designDB } from './design.js';
+    import { practicalDB } from './practical.js';
+
+    const DB = {
+        "Plumbing Arithmetic": arithmeticDB, "Plumbing Code": codeDB,
+        "Sanitation Plumbing Design and Installation": designDB, "Practical Problems and Experiences": practicalDB
+    };
+
+    let currentUser = null, isPaid = false, currentCat, currentExamIdx, currentQs, curIdx = 0, answers = [], score = 0;
+    const MASTER_KEY = "MP-MASTER-2024";
+
+    window.toggleTheme = () => {
+        const b = document.body;
+        const isL = b.getAttribute('data-theme') === 'light';
+        b.setAttribute('data-theme', isL ? 'dark' : 'light');
+        document.getElementById('themeIcon').setAttribute('name', isL ? 'sunny-outline' : 'moon-outline');
+    };
+
+    window.enterAsGuest = () => { currentUser = "Guest"; isPaid = false; updateHomeUI(); setScreen('home'); };
+
+    window.handleAuth = () => {
+        const u = document.getElementById('username').value.trim();
+        const p = document.getElementById('password').value.trim();
+        if(!u || !p) return alert("Please fill up all fields");
+        let users = JSON.parse(localStorage.getItem('mp_users') || '[]');
+        let user = users.find(x => x.u === u);
+        if(!user) { user = { u, p, paid: false }; users.push(user); localStorage.setItem('mp_users', JSON.stringify(users)); }
+        else if(user.p !== p) return alert("Wrong password");
+        currentUser = user.u; isPaid = user.paid; updateHomeUI(); setScreen('home');
+    };
+
+    function updateHomeUI() {
+        const s = document.getElementById('userStatus');
+        s.innerText = isPaid ? `PRO ACCOUNT: ${currentUser}` : "GUEST MODE (EXAM 1 ONLY)";
+        s.style.color = isPaid ? "var(--success)" : "var(--warning)";
+        document.getElementById('upgradeBtn').style.display = isPaid ? "none" : "block";
+    }
+
+    window.verifyKey = () => {
+        if(document.getElementById('licenseKey').value === MASTER_KEY) {
+            isPaid = true;
+            if(currentUser !== "Guest") {
+                let uArr = JSON.parse(localStorage.getItem('mp_users'));
+                uArr.find(x => x.u === currentUser).paid = true;
+                localStorage.setItem('mp_users', JSON.stringify(uArr));
+            }
+            alert("Success! Pro Features Unlocked."); updateHomeUI(); setScreen('home');
+        } else alert("Invalid Activation Key");
+    };
+
+    window.logout = () => location.reload();
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('scoreBox').style.visibility = (id === 'quiz') ? 'visible' : 'hidden';
+        document.getElementById('pBarCont').style.display = (id === 'quiz') ? 'block' : 'none';
+    };
+
+    window.openExams = (cat) => {
+        currentCat = cat; document.getElementById('catTitle').innerText = cat.toUpperCase();
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const isLocked = (!isPaid && i > 1);
+            grid.innerHTML += `
+                <div class="exam-item ${isLocked ? 'locked' : ''}">
+                    <div style="flex:1; font-weight:700; font-size:13px;">EXAM #${i} ${isLocked ? '🔒' : ''}</div>
+                    <button style="width:auto; padding:8px 15px; margin:0;" onclick="${isLocked ? `alert('Unlock Pro to access Exam #${i}')` : `startQuiz(${i})`}">TAKE</button>
+                    <button style="width:40px; padding:0; margin:0; background:var(--orange); color:white;" onclick="${isLocked ? `alert('Locked')` : `showReview(${i}, true)`}"><ion-icon name="eye-outline"></ion-icon></button>
+                </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.startQuiz = (idx) => {
+        currentExamIdx = idx; currentQs = [...DB[currentCat][idx]];
+        curIdx = 0; answers = new Array(currentQs.length).fill(null); score = 0;
+        document.getElementById('scoreBox').innerText = `0 / ${currentQs.length}`;
+        setScreen('quiz'); loadQ();
+    };
+
+    window.loadQ = () => {
+        const q = currentQs[curIdx];
+        document.getElementById('progressBar').style.width = ((curIdx) / currentQs.length * 100) + "%";
+        document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} OF ${currentQs.length}`;
+        document.getElementById('qTxt').innerText = q.q;
+        const box = document.getElementById('choices'); box.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.innerText = c;
+            if(answers[curIdx] !== null) {
+                if(i === q.a) b.classList.add('correct');
+                else if(i === answers[curIdx]) b.classList.add('wrong');
+                b.disabled = true;
+            } else {
+                b.onclick = () => {
+                    answers[curIdx] = i;
+                    score = answers.filter((a, idx) => a === currentQs[idx].a).length;
+                    document.getElementById('scoreBox').innerText = `${score} / ${currentQs.length}`;
+                    loadQ();
+                };
+            }
+            box.appendChild(b);
+        });
+    };
+
+    window.handleNextLogic = () => { if(curIdx < currentQs.length-1) { curIdx++; loadQ(); } else finishExamEarly(); };
+    window.finishExamEarly = () => { if(confirm("Submit Exam?")) showResults(); };
+    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } };
+    window.quitQuiz = () => { if(confirm("Exit to dashboard? Progress will be lost.")) setScreen('home'); };
+
+    function showResults() {
+        const scroll = document.getElementById('revScroll'); scroll.innerHTML = "";
+        document.getElementById('resScore').innerText = `FINAL SCORE: ${score} / ${currentQs.length}`;
+        currentQs.forEach((q, i) => {
+            let ch = ""; q.choices.forEach((c, ci) => {
+                let cls = (ci === q.a) ? "correct" : (ci === answers[i] ? "wrong" : "");
+                ch += `<div style="font-size:12px; padding:8px; margin:4px 0; border-radius:10px; background:var(--bg); ${cls==='correct'?'background:var(--success); color:white;':''} ${cls==='wrong'?'background:var(--danger); color:white;':''}">${c}</div>`;
+            });
+            scroll.innerHTML += `<div style="padding:15px 0; border-bottom:1.5px solid var(--border);"><b>${i+1}. ${q.q}</b>${ch}</div>`;
+        });
+        setScreen('results');
+    }
+
+    window.showReview = (idx, isStudy) => {
+        const qs = DB[currentCat][idx];
+        document.getElementById('resScore').innerText = `EXAM #${idx} REVIEW`;
+        const scroll = document.getElementById('revScroll'); scroll.innerHTML = "";
+        qs.forEach((q, i) => {
+            let ch = ""; q.choices.forEach((c, ci) => {
+                let cls = (ci === q.a) ? "correct" : "";
+                ch += `<div style="font-size:12px; padding:8px; margin:4px 0; border-radius:10px; background:var(--bg); ${cls==='correct'?'background:var(--success); color:white;':''}">${c}</div>`;
+            });
+            scroll.innerHTML += `<div style="padding:15px 0; border-bottom:1.5px solid var(--border);"><b>${i+1}. ${q.q}</b>${ch}</div>`;
+        });
+        setScreen('results');
+    };
+</script>
+</body>
+</html>
