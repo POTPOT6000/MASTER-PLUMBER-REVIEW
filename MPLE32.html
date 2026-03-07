@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER PRO</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #334155; --glow: rgba(59, 130, 246, 0.5);
+        }
+        [data-theme="light"] {
+            --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --border: #e2e8f0; --glow: rgba(59, 130, 246, 0.2);
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: all 0.25s ease; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 30px; 
+            border-radius: 32px; border: 1px solid var(--border);
+            position: relative; display: flex; flex-direction: column; min-height: 600px;
+        }
+
+        button { 
+            width: 100%; padding: 16px; margin: 10px 0; border: 1px solid var(--border); border-radius: 18px; 
+            font-size: 14px; font-weight: 600; cursor: pointer; background: var(--card); 
+            color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-main { background: var(--accent); color: #fff; border: none; }
+
+        /* Middle Alignment for Categories */
+        .category-wrapper { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+        
+        .cat-card { 
+            padding: 15px; border-radius: 20px; text-align: center; font-size: 11px; font-weight: 600;
+            background: var(--card); border: 1px solid var(--border); cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+            aspect-ratio: 1/1;
+        }
+        .cat-card ion-icon { font-size: 30px; color: var(--accent); }
+
+        /* Lock Modal */
+        .modal-overlay { 
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9); z-index: 100; border-radius: 32px; 
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-content { background: var(--card); padding: 25px; border-radius: 24px; text-align: center; border: 1px solid var(--border); width: 100%; }
+        .btn-unlock-single { background: var(--success); color: white; border: none; }
+        .btn-unlock-pro { background: linear-gradient(45deg, #f97316, #f59e0b); color: white; border: none; }
+        .savings-badge { color: var(--success); font-size: 11px; font-weight: 700; margin: 5px 0; }
+
+        #userStatus { 
+            display: inline-block; padding: 6px 15px; border-radius: 20px; font-size: 11px; font-weight: 700;
+            background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); color: var(--success);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .screen { display: none; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Quiz UI */
+        #feedbackTxt { text-align: center; font-weight: 800; font-size: 16px; margin: 10px 0; height: 24px; }
+        .choice-correct { background: var(--success) !important; color: white !important; border: none; }
+        .choice-wrong { background: var(--danger) !important; color: white !important; border: none; }
+        
+        .exam-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; background: rgba(255,255,255,0.03); border-radius: 18px; padding: 5px; }
+        .btn-eye { width: 50px; height: 50px; background: var(--warning); color: white; border: none; border-radius: 15px; flex-shrink: 0; }
+        .locked { opacity: 0.4; filter: grayscale(1); }
+
+        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--border); border-radius: 32px 32px 0 0; overflow: hidden; }
+        #progressBar { height: 100%; background: var(--accent); width: 0%; transition: 0.3s; }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="app-card">
+    <div id="lockModal" class="modal-overlay">
+        <div class="modal-content">
+            <ion-icon name="lock-closed" style="font-size: 40px; color: var(--warning);"></ion-icon>
+            <h3>Exam Locked</h3>
+            <p style="font-size: 12px; color: var(--sub);">Choose an option to continue</p>
+            <button class="btn-unlock-single" id="btnSingle">Unlock this Exam (₱9)</button>
+            <button class="btn-unlock-pro" id="btnPro">Unlock All & Go Pro (₱299)</button>
+            <div class="savings-badge">You save ₱241 by going Pro!</div>
+            <button style="border:none; color: var(--sub);" onclick="closeLockModal()">Cancel</button>
+        </div>
+    </div>
+
+    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
+
+    <div id="authScreen" class="screen" style="display: block; text-align: center; padding-top: 50px;">
+        <ion-icon name="construct" style="font-size: 60px; color: var(--accent);"></ion-icon>
+        <h1 style="margin: 10px 0;">MASTER PLUMBER</h1>
+        <p style="color: var(--sub); margin-bottom: 30px;">Professional Reviewer Pro</p>
+        <button class="btn-main" onclick="enterAsGuest()">ENTER AS GUEST</button>
+        <div style="margin: 15px; font-size: 12px; color: var(--sub);">OR LOGIN</div>
+        <input type="text" id="username" placeholder="Username" style="width:100%; padding:14px; margin-bottom:10px; border-radius:12px; border:1px solid var(--border); background:var(--bg); color:white;">
+        <input type="password" id="password" placeholder="Password" style="width:100%; padding:14px; margin-bottom:10px; border-radius:12px; border:1px solid var(--border); background:var(--bg); color:white;">
+        <button onclick="handleAuth()">Login / Register</button>
+    </div>
+
+    <div id="home" class="screen" style="height: 100%; flex-direction: column;">
+        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span id="userStatus"></span>
+            <button onclick="toggleTheme()" style="width:40px; height:40px; margin:0; padding:0; border-radius:12px;"><ion-icon name="sunny-outline"></ion-icon></button>
+        </div>
+
+        <div class="category-wrapper">
+            <h2 style="margin-bottom: 20px;">Categories</h2>
+            <div class="category-grid">
+                <div class="cat-card" onclick="openExams('Plumbing Code')">
+                    <ion-icon name="book-outline"></ion-icon>Plumbing Code
+                </div>
+                <div class="cat-card" onclick="openExams('Plumbing Arithmetic')">
+                    <ion-icon name="calculator-outline"></ion-icon>Plumbing Arithmetic
+                </div>
+                <div class="cat-card" onclick="openExams('Practical Problems & Experiences')">
+                    <ion-icon name="hammer-outline"></ion-icon>Practical Problems & Experiences
+                </div>
+                <div class="cat-card" onclick="openExams('Sanitation, Plumbing Design, and Installation')">
+                    <ion-icon name="brush-outline"></ion-icon>Sanitation, Plumbing Design, and Installation
+                </div>
+            </div>
+        </div>
+
+        <button id="upgradeBtn" onclick="showPayment('PRO ACCESS', '₱299')" style="background: linear-gradient(45deg, #f97316, #f59e0b); color:white; border:none;">GO PRO (₱299)</button>
+        <button onclick="logout()" style="border:none; color:var(--danger); font-size:12px; background:none;">Logout</button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="font-size: 16px; color: var(--accent);"></h2>
+        <div id="examGrid" style="max-height: 400px; overflow-y: auto;"></div>
+        <button onclick="setScreen('home')" style="margin-top:20px;">Back</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display:flex; justify-content: space-between; align-items: center;">
+            <div id="qNum" style="font-size: 12px; font-weight: 700; color: var(--accent);"></div>
+            <button onclick="reportQuestion()" style="width:auto; padding:5px 10px; margin:0; font-size:11px; color:var(--danger); border:none;"><ion-icon name="flag"></ion-icon> Report</button>
+        </div>
+        
+        <div id="qTxt" style="font-size: 18px; font-weight: 600; margin: 20px 0;"></div>
+        <div id="feedbackTxt"></div> 
+        <div id="choices"></div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:20px;">
+            <button onclick="quitQuiz()" style="color:var(--danger)">Quit</button>
+            <button onclick="finishExamEarly()" style="color:var(--warning)">Finish</button>
+        </div>
+        <button onclick="handleNextLogic()" class="btn-main" style="margin-top:10px;">Next Question</button>
+    </div>
+
+    </div>
+
+<script type="module">
+    // Mock Data and Logic
+    let currentUser = null, isPaid = false, currentCat = "", curIdx = 0, currentQs = [], answers = [], score = 0;
+
+    window.enterAsGuest = () => { currentUser = "Guest"; isPaid = false; updateHomeUI(); setScreen('home'); };
+    
+    function updateHomeUI() {
+        const s = document.getElementById('userStatus');
+        s.innerHTML = currentUser === "Guest" ? `<ion-icon name="flash"></ion-icon> GUEST MODE` : `USER: ${currentUser}`;
+        document.getElementById('upgradeBtn').style.display = isPaid ? "none" : "block";
+    }
+
+    window.openExams = (cat) => {
+        currentCat = cat;
+        document.getElementById('catTitle').innerText = cat;
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const locked = (!isPaid && i > 1);
+            grid.innerHTML += `
+                <div class="exam-row ${locked ? 'locked' : ''}">
+                    <button style="flex:1; border:none; text-align:left;" onclick="handleExamClick(${i}, ${locked})">Exam #${i} ${locked ? '🔒' : ''}</button>
+                    <button class="btn-eye" onclick="alert('Review mode')"><ion-icon name="eye"></ion-icon></button>
+                </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.handleExamClick = (idx, locked) => {
+        if(locked) {
+            document.getElementById('lockModal').style.display = 'flex';
+            document.getElementById('btnSingle').onclick = () => alert("Redirecting to ₱9 payment...");
+            document.getElementById('btnPro').onclick = () => alert("Redirecting to ₱299 payment...");
+        } else {
+            startQuiz(idx);
+        }
+    };
+
+    window.closeLockModal = () => document.getElementById('lockModal').style.display = 'none';
+
+    window.startQuiz = (idx) => {
+        // Mocking questions for demonstration
+        currentQs = [
+            {q: "What is the standard size of a water meter?", choices: ["1/2", "3/4", "1", "2"], a: 0},
+            {q: "What pipe is used for underground?", choices: ["PVC", "GI", "Copper", "Cast Iron"], a: 3}
+        ];
+        curIdx = 0; answers = new Array(currentQs.length).fill(null); score = 0;
+        setScreen('quiz'); loadQ();
+    };
+
+    window.loadQ = () => {
+        const q = currentQs[curIdx];
+        const feedback = document.getElementById('feedbackTxt');
+        document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} / ${currentQs.length}`;
+        document.getElementById('qTxt').innerText = q.q;
+        document.getElementById('progressBar').style.width = ((curIdx + 1) / currentQs.length * 100) + "%";
+        
+        const box = document.getElementById('choices'); box.innerHTML = "";
+        
+        // Show Right/Wrong/Skipped text
+        if(answers[curIdx] === null) feedback.innerText = "";
+        else if(answers[curIdx] === "skipped") { feedback.innerText = "SKIPPED"; feedback.style.color = "var(--warning)"; }
+        else if(answers[curIdx] === q.a) { feedback.innerText = "RIGHT!"; feedback.style.color = "var(--success)"; }
+        else { feedback.innerText = "WRONG!"; feedback.style.color = "var(--danger)"; }
+
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.innerText = c;
+            if(answers[curIdx] !== null) {
+                if(i === q.a) b.classList.add('choice-correct');
+                else if(i === answers[curIdx]) b.classList.add('choice-wrong');
+                b.disabled = true;
+            } else {
+                b.onclick = () => {
+                    answers[curIdx] = i;
+                    loadQ(); // Refresh to show colors and text
+                };
+            }
+            box.appendChild(b);
+        });
+    };
+
+    window.handleNextLogic = () => {
+        if(answers[curIdx] === null) answers[curIdx] = "skipped";
+        if(curIdx < currentQs.length - 1) {
+            curIdx++; loadQ();
+        } else {
+            alert("Exam Finished! Score: " + answers.filter((a,i)=>a===currentQs[i].a).length);
+            setScreen('home');
+        }
+    };
+
+    window.quitQuiz = () => { if(confirm("Quit exam? Progress will be lost.")) setScreen('home'); };
+    window.finishExamEarly = () => { if(confirm("Finish and submit now?")) { /* Logic to jump to end */ } };
+    window.reportQuestion = () => alert("Question reported.");
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = (id === 'home') ? 'flex' : 'block';
+    };
+
+    window.logout = () => location.reload();
+</script>
+</body>
+</html>
