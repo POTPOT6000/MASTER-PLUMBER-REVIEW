@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #334155; --glow: rgba(59, 130, 246, 0.5);
+        }
+        [data-theme="light"] {
+            --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --border: #e2e8f0; --glow: rgba(59, 130, 246, 0.2);
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; overflow: hidden; }
+
+        .app-container { width: 100%; max-width: 480px; background: var(--bg); height: 100vh; position: relative; display: flex; flex-direction: column; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+
+        /* SCREENS */
+        .screen { display: none; padding: 20px; flex: 1; overflow-y: auto; padding-bottom: 100px; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+        .active-screen { display: flex; flex-direction: column; animation: fadeIn 0.4s ease; }
+        
+        /* CUSTOM SCROLLBAR (Left Side as requested) */
+        .screen::-webkit-scrollbar { width: 6px; }
+        .screen::-webkit-scrollbar-track { background: transparent; }
+        .screen::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+        .screen { direction: rtl; text-align: left; }
+        .screen > * { direction: ltr; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* CIRCULAR PROGRESS */
+        .circle-box { position: relative; width: 45px; height: 45px; }
+        .circle-box svg { transform: rotate(-90deg); width: 45px; height: 45px; }
+        .circle-bg { fill: none; stroke: var(--border); stroke-width: 4; }
+        .circle-val { fill: none; stroke: var(--success); stroke-width: 4; stroke-linecap: round; transition: stroke-dasharray 1s ease; }
+
+        /* BUTTONS & CARDS */
+        .btn-premium { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 18px; border-radius: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 10px 20px var(--glow); }
+        .btn-premium:hover { transform: scale(1.02); filter: brightness(1.1); }
+        
+        .nav-card { background: var(--card); border: 1px solid var(--border); padding: 15px; border-radius: 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 15px; cursor: pointer; position: relative; }
+        .nav-card:hover { border-color: var(--accent); background: rgba(59, 130, 246, 0.05); }
+
+        /* BOTTOM NAV - APK STYLE */
+        .bottom-nav { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; background: var(--card); border: 1px solid var(--border); border-radius: 25px; display: flex; justify-content: space-around; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; }
+        .nav-item { color: var(--sub); display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 600; cursor: pointer; }
+        .nav-item.active { color: var(--accent); }
+        .nav-item ion-icon { font-size: 24px; }
+
+        /* QUIZ UI */
+        .choice-btn { width: 100%; text-align: left; padding: 16px; margin-bottom: 10px; border-radius: 14px; border: 2px solid var(--border); background: var(--card); color: var(--text); font-weight: 500; cursor: pointer; }
+        .choice-btn:hover { border-color: var(--accent); background: var(--glow); }
+        .choice-active { border-color: var(--accent) !important; background: var(--accent) !important; color: white !important; }
+        
+        .status-tag { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-left: 10px; text-transform: uppercase; }
+        .tag-correct { background: var(--success); color: white; }
+        .tag-wrong { background: var(--danger); color: white; }
+        .tag-skip { background: var(--warning); color: white; }
+
+        #progressBar { position: absolute; top: 0; left: 0; height: 4px; background: var(--accent); transition: width 0.3s; z-index: 1001; }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="app-container">
+    <div id="progressBar" style="width: 0%; display: none;"></div>
+
+    <div id="authScreen" class="screen active-screen">
+        <div style="text-align: center; margin-top: 60px;">
+            <div style="font-size: 50px; color: var(--accent);"><ion-icon name="medal-outline"></ion-icon></div>
+            <h1 style="margin: 0; font-size: 32px; letter-spacing: -1px; font-weight: 800;">MASTER PLUMBER</h1>
+            <h2 style="margin: 0; color: var(--accent); font-size: 24px; font-weight: 400;">REVIEWER</h2>
+            <p style="color: var(--sub); margin-bottom: 50px;">The Professional Choice for Topnotchers</p>
+            
+            <input type="text" id="username" placeholder="Full Name / Licensee Name" style="width: 100%; padding: 18px; border-radius: 15px; border: 1px solid var(--border); background: var(--card); color: var(--text); margin-bottom: 15px; outline: none;">
+            <button class="btn-premium" style="width: 100%;" onclick="login()">SECURE LOGIN</button>
+            <p style="font-size: 12px; color: var(--sub); margin-top: 20px;">Don't have an account? <span style="color: var(--accent); font-weight: 700;">Purchase Full Access</span></p>
+        </div>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+            <div>
+                <h3 id="welcomeTxt" style="margin: 0; font-size: 20px;">Future Engineer</h3>
+                <span style="font-size: 11px; background: var(--warning); color: #000; padding: 2px 8px; border-radius: 10px; font-weight: 700;">PREMIUM MEMBER</span>
+            </div>
+            <div onclick="toggleTheme()" style="font-size: 24px; cursor: pointer;"><ion-icon name="contrast-outline"></ion-icon></div>
+        </div>
+        <div id="catList"></div>
+    </div>
+
+    <div id="stats" class="screen">
+        <h2 style="margin-bottom: 5px;">My Stats</h2>
+        <p style="color: var(--sub); font-size: 13px; margin-bottom: 25px;">Live performance tracking based on exams.</p>
+        
+        <div id="statsContainer"></div>
+    </div>
+
+    <div id="exams" class="screen">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <ion-icon name="arrow-back-outline" onclick="setScreen('home')" style="font-size: 24px; cursor: pointer;"></ion-icon>
+            <h3 id="catTitle" style="margin: 0;">Category</h3>
+        </div>
+        <div id="examGrid"></div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span id="qIdx" style="font-size: 12px; font-weight: 800; color: var(--accent);">QUESTION 1/15</span>
+            <div>
+                <button onclick="reportQ()" style="background: none; border: 1px solid var(--border); color: var(--sub); border-radius: 5px; font-size: 10px; cursor: pointer;">REPORT</button>
+            </div>
+        </div>
+
+        <div id="qText" style="font-size: 18px; font-weight: 600; line-height: 1.4; margin-bottom: 25px; min-height: 80px;">Question loading...</div>
+        <div id="choicesBox"></div>
+
+        <div style="display: flex; gap: 10px; margin-top: 30px;">
+            <button class="choice-btn" style="flex: 1; margin: 0; font-size: 12px;" onclick="prevQ()">BACK</button>
+            <button class="btn-premium" id="nextBtn" style="flex: 2; padding: 12px;" onclick="nextQ()">NEXT</button>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button onclick="finishEarly()" style="color: var(--success); background: none; border: none; font-weight: 700; cursor: pointer;">FINISH EXAM</button>
+            <button onclick="quitQuiz()" style="color: var(--danger); background: none; border: none; font-weight: 700; cursor: pointer;">QUIT</button>
+        </div>
+    </div>
+
+    <div class="bottom-nav" id="mainNav" style="display: none;">
+        <div class="nav-item active" onclick="navTo('home', this)"><ion-icon name="grid-outline"></ion-icon>Home</div>
+        <div class="nav-item" onclick="navTo('stats', this)"><ion-icon name="analytics-outline"></ion-icon>My Stats</div>
+        <div class="nav-item" onclick="location.reload()"><ion-icon name="person-outline"></ion-icon>Profile</div>
+    </div>
+</div>
+
+<script type="module">
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { designDB } from './design.js';
+    import { practicalDB } from './practical.js';
+
+    const DB = {
+        "Plumbing Code": codeDB,
+        "Plumbing Arithmetic": arithmeticDB,
+        "Practical Problems & Experiences": practicalDB,
+        "Sanitation, Plumbing Design, and Installation": designDB
+    };
+
+    const LOGOS = {
+        "Plumbing Code": "book-outline",
+        "Plumbing Arithmetic": "calculator-outline",
+        "Practical Problems & Experiences": "hammer-outline",
+        "Sanitation, Plumbing Design, and Installation": "construct-outline"
+    };
+
+    let currentUser = "";
+    let currentCat = "", currentExamIdx = 0, currentQs = [], curIdx = 0, answers = [];
+
+    window.toggleTheme = () => {
+        const b = document.body;
+        b.setAttribute('data-theme', b.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    };
+
+    window.login = () => {
+        currentUser = document.getElementById('username').value || "Guest User";
+        document.getElementById('welcomeTxt').innerText = currentUser;
+        renderHome();
+        setScreen('home');
+        document.getElementById('mainNav').style.display = 'flex';
+    };
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById(id).classList.add('active-screen');
+        document.getElementById('progressBar').style.display = (id === 'quiz') ? 'block' : 'none';
+        if(id === 'stats') renderStats();
+    };
+
+    window.navTo = (id, el) => {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        el.classList.add('active');
+        setScreen(id);
+    };
+
+    function renderHome() {
+        const list = document.getElementById('catList');
+        list.innerHTML = Object.keys(DB).map(cat => `
+            <div class="nav-card" onclick="openExams('${cat}')">
+                <div style="background: var(--glow); padding: 12px; border-radius: 12px; color: var(--accent);">
+                    <ion-icon name="${LOGOS[cat]}"></ion-icon>
+                </div>
+                <div style="flex:1">
+                    <h4 style="margin:0; font-size:14px;">${cat}</h4>
+                    <p style="margin:0; font-size:11px; color:var(--sub)">15 Mastery Modules</p>
+                </div>
+                <ion-icon name="chevron-forward-outline" style="color:var(--border)"></ion-icon>
+            </div>
+        `).join('');
+    }
+
+    window.openExams = (cat) => {
+        currentCat = cat;
+        document.getElementById('catTitle').innerText = cat;
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const best = localStorage.getItem(`best_${currentUser}_${cat}_${i}`) || 0;
+            const offset = 125 - (125 * (best / 100));
+            grid.innerHTML += `
+                <div class="nav-card" onclick="startQuiz('${cat}', ${i})">
+                    <div style="flex:1">
+                        <h4 style="margin:0">Exam #${i}</h4>
+                        <p style="margin:0; font-size:11px; color:var(--sub)">Best Score: ${best}%</p>
+                    </div>
+                    <div class="circle-box">
+                        <svg><circle class="circle-bg" cx="22" cy="22" r="20"/><circle class="circle-val" cx="22" cy="22" r="20" style="stroke-dasharray: 125; stroke-dashoffset: ${offset};"/></svg>
+                        <span style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:9px; font-weight:800;">${best}%</span>
+                    </div>
+                </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.startQuiz = (cat, idx) => {
+        currentQs = DB[cat][idx];
+        curIdx = 0; answers = new Array(currentQs.length).fill(null);
+        setScreen('quiz');
+        loadQ();
+    };
+
+    function loadQ() {
+        const q = currentQs[curIdx];
+        document.getElementById('qIdx').innerText = `QUESTION ${curIdx + 1} / ${currentQs.length}`;
+        document.getElementById('qText').innerText = q.q;
+        document.getElementById('progressBar').style.width = ((curIdx+1)/currentQs.length)*100 + "%";
+
+        const box = document.getElementById('choicesBox'); box.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const btn = document.createElement('button');
+            btn.className = `choice-btn ${answers[curIdx] === i ? 'choice-active' : ''}`;
+            btn.innerText = c;
+            
+            // Add right/wrong/skip label in real-time review if already answered
+            if(answers[curIdx] !== null) {
+                if(i === q.a) btn.innerHTML += `<span class="status-tag tag-correct">CORRECT</span>`;
+                else if(i === answers[curIdx]) btn.innerHTML += `<span class="status-tag tag-wrong">WRONG</span>`;
+            }
+
+            btn.onclick = () => { answers[curIdx] = i; loadQ(); };
+            box.appendChild(btn);
+        });
+        document.getElementById('nextBtn').innerText = (curIdx === currentQs.length-1) ? "SUBMIT" : "NEXT";
+    }
+
+    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } };
+    window.nextQ = () => { if(curIdx < currentQs.length-1) { curIdx++; loadQ(); } else { finishQuiz(); } };
+    
+    function finishQuiz() {
+        let score = 0;
+        answers.forEach((ans, i) => { if(ans === currentQs[i].a) score++; });
+        const p = Math.round((score/currentQs.length)*100);
+        const key = `best_${currentUser}_${currentCat}_${currentExamIdx}`;
+        if(p > (localStorage.getItem(key)||0)) localStorage.setItem(key, p);
+        alert(`Exam Completed!\nScore: ${score}/${currentQs.length} (${p}%)`);
+        openExams(currentCat);
+    }
+
+    function renderStats() {
+        const cont = document.getElementById('statsContainer'); cont.innerHTML = "";
+        Object.keys(DB).forEach(cat => {
+            let total = 0;
+            for(let i=1; i<=15; i++) total += parseInt(localStorage.getItem(`best_${currentUser}_${cat}_${i}`) || 0);
+            const avg = Math.round(total / 15);
+            cont.innerHTML += `
+                <div class="nav-card">
+                    <div style="flex:1">
+                        <h4 style="margin:0">${cat}</h4>
+                        <div style="width:100%; height:6px; background:var(--border); border-radius:10px; margin-top:8px;">
+                            <div style="width:${avg}%; height:100%; background:var(--accent); border-radius:10px;"></div>
+                        </div>
+                    </div>
+                    <div style="font-weight:800; color:var(--accent)">${avg}%</div>
+                </div>`;
+        });
+    }
+
+    window.finishEarly = () => { if(confirm("Submit your answers now?")) finishQuiz(); };
+    window.quitQuiz = () => { if(confirm("Quit to dashboard? progress will be lost.")) setScreen('home'); };
+    window.reportQ = () => alert("Question flagged for review.");
+
+</script>
+</body>
+</html>
