@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1; --accent: #818cf8; --success: #22c55e; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #334155; --glow: rgba(99, 102, 241, 0.3);
+        }
+        [data-theme="light"] {
+            --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --border: #e2e8f0; --glow: rgba(99, 102, 241, 0.1);
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: all 0.2s ease; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; height: 100vh; overflow: hidden; }
+
+        .app-container { width: 100%; max-width: 480px; background: var(--bg); height: 100vh; position: relative; display: flex; flex-direction: column; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+
+        /* LEFT SIDE SCROLLBAR */
+        .screen { 
+            display: none; padding: 20px; flex: 1; overflow-y: auto; 
+            direction: rtl; text-align: left; padding-bottom: 120px;
+        }
+        .screen::-webkit-scrollbar { width: 6px; }
+        .screen::-webkit-scrollbar-track { background: transparent; }
+        .screen::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+        .screen > * { direction: ltr; }
+        .active-screen { display: flex; flex-direction: column; animation: slideIn 0.3s ease-out; }
+
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* CARDS & LOGOS */
+        .category-card { 
+            background: var(--card); border: 1px solid var(--border); padding: 20px; 
+            border-radius: 24px; margin-bottom: 15px; display: flex; align-items: center; 
+            gap: 15px; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .category-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 15px -3px var(--glow); }
+        
+        .logo-circle { 
+            width: 55px; height: 55px; border-radius: 18px; display: flex; 
+            align-items: center; justify-content: center; font-size: 24px; 
+            background: var(--glow); color: var(--primary);
+        }
+
+        /* PROGRESS RING */
+        .progress-ring { position: relative; width: 50px; height: 50px; }
+        .progress-ring svg { transform: rotate(-90deg); width: 50px; height: 50px; }
+        .progress-ring circle { fill: none; stroke-width: 4; stroke-linecap: round; }
+        .ring-bg { stroke: var(--border); }
+        .ring-fill { stroke: var(--success); stroke-dasharray: 126; stroke-dashoffset: 126; transition: stroke-dashoffset 1s ease; }
+
+        /* STUDENT-FRIENDLY BUTTONS */
+        .btn-main { background: var(--primary); color: white; border: none; padding: 18px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 15px; }
+        .btn-main:active { transform: scale(0.95); }
+        
+        .choice-pill { 
+            width: 100%; text-align: left; padding: 16px; margin-bottom: 12px; 
+            border-radius: 18px; border: 2px solid var(--border); background: var(--card); 
+            color: var(--text); font-weight: 500; cursor: pointer; position: relative;
+        }
+        .choice-pill.selected { border-color: var(--primary); background: var(--glow); }
+
+        .status-badge { font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 6px; margin-left: auto; }
+        .bg-correct { background: var(--success); color: white; }
+        .bg-wrong { background: var(--danger); color: white; }
+        .bg-skip { background: var(--warning); color: white; }
+
+        /* APK STYLE BOTTOM NAV */
+        .apk-nav { 
+            position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); 
+            width: 85%; background: var(--card); border: 1px solid var(--border); 
+            border-radius: 30px; display: flex; justify-content: space-around; 
+            padding: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); z-index: 1000;
+        }
+        .apk-item { color: var(--sub); display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 600; cursor: pointer; }
+        .apk-item.active { color: var(--primary); }
+        .apk-item ion-icon { font-size: 22px; margin-bottom: 2px; }
+
+        #studyProgress { position: absolute; top: 0; left: 0; height: 5px; background: var(--primary); z-index: 1001; }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="app-container">
+    <div id="studyProgress" style="width: 0%; display: none;"></div>
+
+    <div id="authScreen" class="screen active-screen">
+        <div style="text-align: center; margin-top: 80px;">
+            <div style="background: var(--glow); width: 100px; height: 100px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <ion-icon name="school" style="font-size: 50px; color: var(--primary);"></ion-icon>
+            </div>
+            <h1 style="margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -1px;">MASTER PLUMBER</h1>
+            <h2 style="margin: 0; color: var(--primary); font-size: 20px; font-weight: 500;">REVIEWER</h2>
+            
+            <div style="margin-top: 50px;">
+                <input type="text" id="username" placeholder="Student Name" style="width: 100%; padding: 18px; border-radius: 20px; border: 2px solid var(--border); background: var(--card); color: var(--text); margin-bottom: 15px; outline: none; text-align: center;">
+                <button class="btn-main" style="width: 100%;" onclick="startApp()">START STUDYING</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h2 style="margin:0">Study Desk</h2>
+            <div onclick="toggleTheme()" style="background: var(--card); padding: 8px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border);">
+                <ion-icon name="moon-outline" id="tIcon"></ion-icon>
+            </div>
+        </div>
+        <div id="catGrid"></div>
+    </div>
+
+    <div id="stats" class="screen">
+        <h2 style="margin-bottom: 10px;">My Progress</h2>
+        <div id="overallStats"></div>
+    </div>
+
+    <div id="exams" class="screen">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+            <ion-icon name="chevron-back" onclick="setScreen('home')" style="font-size: 24px; cursor: pointer;"></ion-icon>
+            <h3 id="catTitle" style="margin: 0; font-size: 18px;"></h3>
+        </div>
+        <div id="examList"></div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span id="qLabel" style="font-size: 12px; font-weight: 700; color: var(--primary);">MODULE 01</span>
+            <button onclick="reportQ()" style="background: transparent; border: 1px solid var(--border); color: var(--sub); padding: 4px 10px; border-radius: 8px; font-size: 10px;">REPORT</button>
+        </div>
+        <div id="qText" style="font-size: 17px; font-weight: 600; margin-bottom: 25px;">...</div>
+        <div id="choiceContainer"></div>
+
+        <div style="display: flex; gap: 12px; margin-top: 30px;">
+            <button class="btn-main" style="background: var(--card); border: 1px solid var(--border); color: var(--text); flex: 1;" onclick="prevQ()">BACK</button>
+            <button class="btn-main" id="nextBtn" style="flex: 2;" onclick="nextQ()">NEXT</button>
+        </div>
+        
+        <div style="display: flex; justify-content: space-around; margin-top: 25px;">
+            <button onclick="finishQuizEarly()" style="color: var(--success); font-weight: 700; background: none; border: none; cursor: pointer;">FINISH</button>
+            <button onclick="quitToHome()" style="color: var(--danger); font-weight: 700; background: none; border: none; cursor: pointer;">QUIT</button>
+        </div>
+    </div>
+
+    <div class="apk-nav" id="bottomNav" style="display: none;">
+        <div class="apk-item active" onclick="navTo('home', this)"><ion-icon name="book"></ion-icon>Home</div>
+        <div class="apk-item" onclick="navTo('stats', this)"><ion-icon name="stats-chart"></ion-icon>My Stats</div>
+        <div class="apk-item" onclick="location.reload()"><ion-icon name="log-out"></ion-icon>Exit</div>
+    </div>
+</div>
+
+<script type="module">
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { practicalDB } from './practical.js';
+    import { designDB } from './design.js';
+
+    const DB = {
+        "Plumbing Code": codeDB,
+        "Plumbing Arithmetic": arithmeticDB,
+        "Practical Problems & Experiences": practicalDB,
+        "Sanitation, Plumbing Design, and Installation": designDB
+    };
+
+    const ICONS = {
+        "Plumbing Code": "journal-outline",
+        "Plumbing Arithmetic": "calculator-outline",
+        "Practical Problems & Experiences": "build-outline",
+        "Sanitation, Plumbing Design, and Installation": "flask-outline"
+    };
+
+    let user = "Student";
+    let curCat = "", curExIdx = 0, curQs = [], curIdx = 0, userAns = [];
+
+    window.toggleTheme = () => {
+        const body = document.body;
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.getElementById('tIcon').setAttribute('name', isDark ? 'sunny-outline' : 'moon-outline');
+    };
+
+    window.startApp = () => {
+        user = document.getElementById('username').value || "Student";
+        renderHome();
+        setScreen('home');
+        document.getElementById('bottomNav').style.display = 'flex';
+    };
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById(id).classList.add('active-screen');
+        document.getElementById('studyProgress').style.display = (id === 'quiz') ? 'block' : 'none';
+        if(id === 'stats') renderStats();
+    };
+
+    window.navTo = (id, el) => {
+        document.querySelectorAll('.apk-item').forEach(i => i.classList.remove('active'));
+        el.classList.add('active');
+        setScreen(id);
+    };
+
+    function renderHome() {
+        const grid = document.getElementById('catGrid');
+        grid.innerHTML = Object.keys(DB).map(cat => `
+            <div class="category-card" onclick="openModules('${cat}')">
+                <div class="logo-circle"><ion-icon name="${ICONS[cat]}"></ion-icon></div>
+                <div style="flex:1">
+                    <h4 style="margin:0; font-size:14px; line-height:1.2;">${cat}</h4>
+                    <span style="font-size:11px; color:var(--sub);">15 Study Modules</span>
+                </div>
+                <ion-icon name="chevron-forward" style="color:var(--border)"></ion-icon>
+            </div>
+        `).join('');
+    }
+
+    window.openModules = (cat) => {
+        curCat = cat;
+        document.getElementById('catTitle').innerText = cat;
+        const list = document.getElementById('examList'); list.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const high = localStorage.getItem(`high_${user}_${cat}_${i}`) || 0;
+            const offset = 126 - (126 * (high / 100));
+            list.innerHTML += `
+                <div class="category-card" onclick="startQuiz('${cat}', ${i})">
+                    <div style="flex:1">
+                        <h4 style="margin:0">Module #${i}</h4>
+                        <p style="margin:0; font-size:11px; color:var(--sub)">Mastery: ${high}%</p>
+                    </div>
+                    <div class="progress-ring">
+                        <svg><circle class="ring-bg" cx="25" cy="25" r="20"/><circle class="ring-fill" cx="25" cy="25" r="20" style="stroke-dashoffset: ${offset};"/></svg>
+                        <span style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:9px; font-weight:800;">${high}%</span>
+                    </div>
+                </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.startQuiz = (cat, idx) => {
+        curExIdx = idx;
+        curQs = DB[cat][idx];
+        curIdx = 0; userAns = new Array(curQs.length).fill(null);
+        setScreen('quiz');
+        loadQ();
+    };
+
+    function loadQ() {
+        const q = curQs[curIdx];
+        document.getElementById('qLabel').innerText = `QUESTION ${curIdx + 1} / ${curQs.length}`;
+        document.getElementById('qText').innerText = q.q;
+        document.getElementById('studyProgress').style.width = ((curIdx+1)/curQs.length)*100 + "%";
+
+        const container = document.getElementById('choiceContainer'); container.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const btn = document.createElement('button');
+            btn.className = `choice-pill ${userAns[curIdx] === i ? 'selected' : ''}`;
+            btn.innerText = c;
+            
+            if(userAns[curIdx] !== null) {
+                if(i === q.a) btn.innerHTML += `<span class="status-badge bg-correct">CORRECT</span>`;
+                else if(i === userAns[curIdx]) btn.innerHTML += `<span class="status-badge bg-wrong">WRONG</span>`;
+            }
+
+            btn.onclick = () => { userAns[curIdx] = i; loadQ(); };
+            container.appendChild(btn);
+        });
+        document.getElementById('nextBtn').innerText = (curIdx === curQs.length-1) ? "FINISH STUDY" : "NEXT";
+    }
+
+    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } };
+    window.nextQ = () => { if(curIdx < curQs.length-1) { curIdx++; loadQ(); } else { endQuiz(); } };
+
+    function endQuiz() {
+        let score = 0;
+        userAns.forEach((a, i) => { if(a === curQs[i].a) score++; });
+        const p = Math.round((score/curQs.length)*100);
+        const key = `high_${user}_${curCat}_${curExIdx}`;
+        if(p > (localStorage.getItem(key)||0)) localStorage.setItem(key, p);
+        alert(`Study Complete!\nAccuracy: ${p}%`);
+        openModules(curCat);
+    }
+
+    function renderStats() {
+        const cont = document.getElementById('overallStats'); cont.innerHTML = "";
+        Object.keys(DB).forEach(cat => {
+            let sum = 0;
+            for(let i=1; i<=15; i++) sum += parseInt(localStorage.getItem(`high_${user}_${cat}_${i}`) || 0);
+            const avg = Math.round(sum / 15);
+            cont.innerHTML += `
+                <div class="category-card" style="cursor:default">
+                    <div style="flex:1">
+                        <h4 style="margin:0">${cat}</h4>
+                        <div style="width:100%; height:8px; background:var(--border); border-radius:10px; margin-top:10px; overflow:hidden;">
+                            <div style="width:${avg}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div style="font-weight:800; color:var(--primary)">${avg}%</div>
+                </div>`;
+        });
+    }
+
+    window.finishQuizEarly = () => { if(confirm("Submit answers and finish now?")) endQuiz(); };
+    window.quitToHome = () => { if(confirm("Quit study session? progress won't be saved.")) setScreen('home'); };
+    window.reportQ = () => alert("Question flagged for review by the team.");
+</script>
+</body>
+</html>
