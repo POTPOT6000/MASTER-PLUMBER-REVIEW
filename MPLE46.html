@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PASS THE BOARDS | Master Plumber</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --sub-text: #64748b;
+            --border: #e2e8f0;
+            --premium: linear-gradient(135deg, #6366f1, #a855f7);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { margin: 0; background: #0f172a; display: flex; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; }
+
+        .app-container { 
+            width: 100%; max-width: 500px; height: 100vh; background: var(--bg);
+            position: relative; display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        .screen { flex: 1; overflow-y: auto; padding: 20px; display: none; }
+
+        /* Hero Header */
+        .hero-box {
+            background: var(--premium); color: white; padding: 30px 20px;
+            border-radius: 0 0 40px 40px; text-align: center; margin-bottom: 25px;
+        }
+        .hero-title { font-size: 26px; font-weight: 800; margin: 0; }
+        .hero-desc { font-size: 13px; opacity: 0.9; margin-top: 8px; }
+
+        /* Category Cards */
+        .card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; margin-bottom: 15px; border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; transition: 0.2s; }
+        .card:active { transform: scale(0.98); }
+        .cat-row { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+        
+        .cat-icon { width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+        .icon-arithmetic { background: #fff7ed; color: #ea580c; border: 1px solid #ffedd5; }
+        .icon-practical { background: #f0fdf4; color: #16a34a; border: 1px solid #dcfce7; }
+        .icon-design { background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+        .icon-code { background: #faf5ff; color: #9333ea; border: 1px solid #f3e8ff; }
+
+        /* Buttons */
+        .btn { width: 100%; padding: 16px; border: none; border-radius: 16px; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-premium { background: var(--premium); color: white; }
+        .btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border); }
+        
+        .choice-btn { width: 100%; padding: 16px; background: white; border: 2px solid var(--border); border-radius: 16px; margin-bottom: 12px; text-align: left; font-size: 14px; font-weight: 600; }
+        .choice-btn.correct { background: #dcfce7; border-color: var(--success); color: #166534; }
+        .choice-btn.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
+
+        /* Empty State Styling */
+        .coming-soon-badge { font-size: 10px; background: #f1f5f9; color: var(--sub-text); padding: 4px 8px; border-radius: 6px; font-weight: 800; }
+
+        /* Purchase Modal */
+        #purchase-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:2000; align-items:center; justify-content:center; padding:20px; }
+        .modal-content { background:white; border-radius:30px; padding:30px; width:100%; max-width:400px; text-align:center; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    
+    <div id="auth-screen" class="screen" style="display:block; padding:0;">
+        <div class="hero-box">
+            <div class="hero-title">Pass the Boards</div>
+            <p class="hero-desc">Integrated Master Plumber Reviewer</p>
+        </div>
+        <div style="padding: 20px;">
+            <button class="btn btn-primary" onclick="navTo('home')">GUEST ACCESS</button>
+        </div>
+    </div>
+
+    <div id="home" class="screen">
+        <h2 style="margin-bottom:25px;">Categories</h2>
+
+        <div class="card" onclick="openExamList('Arithmetic')">
+            <div class="cat-row">
+                <div class="cat-icon icon-arithmetic"><ion-icon name="calculator-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Plumbing Arithmetic</div>
+                    <div id="count-Arithmetic" class="coming-soon-badge">Checking...</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Practical')">
+            <div class="cat-row">
+                <div class="cat-icon icon-practical"><ion-icon name="build-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Practical Problems</div>
+                    <div id="count-Practical" class="coming-soon-badge">Checking...</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Design')">
+            <div class="cat-row">
+                <div class="cat-icon icon-design"><ion-icon name="layers-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Sanitation & Design</div>
+                    <div id="count-Design" class="coming-soon-badge">Checking...</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card" onclick="openExamList('Code')">
+            <div class="cat-row">
+                <div class="cat-icon icon-code"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+                <div style="flex:1">
+                    <div style="font-weight:800; font-size:15px;">Plumbing Code</div>
+                    <div id="count-Code" class="coming-soon-badge">Checking...</div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div id="exam-list" class="screen">
+        <button class="btn btn-outline" style="margin-bottom:20px; width:fit-content;" onclick="navTo('home')"><ion-icon name="arrow-back-outline"></ion-icon></button>
+        <h3 id="list-title">Exams</h3>
+        <div id="exams-container"></div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+            <div id="q-meta" style="font-weight:800; font-size:12px; color:var(--primary);">EXAM</div>
+            <div id="q-progress" style="font-weight:800; color:var(--sub-text);">0/0</div>
+        </div>
+        <div class="card" id="q-text" style="font-size:16px; font-weight:600;">Question text...</div>
+        <div id="choices-area"></div>
+        <button class="btn btn-primary" id="next-btn" style="display:none;" onclick="nextQ()">NEXT</button>
+        <button class="btn btn-primary" id="finish-btn" style="display:none; background:var(--success)" onclick="navTo('home')">FINISH</button>
+    </div>
+
+    <div id="purchase-modal">
+        <div class="modal-content">
+            <ion-icon name="lock-closed" style="font-size:40px; color:var(--accent);"></ion-icon>
+            <h2>Unlock Exam</h2>
+            <p>Guests only have access to Exam #1.</p>
+            <button class="btn btn-primary" onclick="alert('Demo Purchase (₱9)')">UNLOCK (₱9)</button>
+            <button class="btn btn-outline" onclick="closePurchase()" style="margin-top:10px;">CANCEL</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Integrated Databases from Files
+    const DB = {
+        Arithmetic: {
+            1: [
+                { q: "How do you call an increase in the value of a capital asset?", choices: ["A. Profit", "B. Capital expenditure", "C. Capital gain", "D. Capital stock"], a: 2 },
+                { q: "Another term for rhombus is said to be:", choices: ["A. Dichotomy", "B. Cyclic quadrilateral", "C. Diamond", "D. Bi-rectangular"], a: 2 },
+                { q: "Find the sum of 6x+5y and 3x-5y.", choices: ["A. 9x+10y", "B. 9x - 10y", "C. 10y", "D. 9x"], a: 3 },
+                { q: "The reservoir level is 115 feet above the pump discharge. What is the discharge pressure on the pump?", choices: ["A. 49.8 psi", "B. 30 psi", "C. 42 psi", "D. 33 psi"], a: 0 },
+                { q: "A polygon with twelve sides is known as:", choices: ["A. Dodecagon", "B. Decagon", "C. Decahedron", "D. Dodecahedron"], a: 0 }
+            ],
+            // Content continues to 15...
+            15: [] 
+        },
+        Practical: {
+            1: [
+                { q: "What is the weight of 1 cubic foot of water in pounds?", choices: ["32.2 lbs", "62.4 lbs", "8.33 lbs", "7.48 lbs"], a: 1 },
+                { q: "How many gallons are there in 1 cubic meter of water?", choices: ["231", "264", "462", "624"], a: 1 }
+            ]
+            // Note: practical.js currently has content for exams 1, 2, 5
+        },
+        Design: {
+            1: [
+                { q: "What is the weight of 1 cubic foot of water in pounds?", choices: ["32.2 lbs", "62.4 lbs", "8.33 lbs", "7.48 lbs"], a: 1 }
+            ]
+            // Note: design.js currently has content for exams 1, 2, 5
+        },
+        Code: {
+            1: [
+                { q: "What is the weight of 1 cubic foot of water in pounds?", choices: ["32.2 lbs", "62.4 lbs", "8.33 lbs", "7.48 lbs"], a: 1 }
+            ]
+            // Note: code.js currently has content for exams 1, 2, 5
+        }
+    };
+
+    let user = { unlocked: [] };
+    let currentCtx = { cat: '', exam: 1, qIdx: 0 };
+
+    // Initialize Home UI Status
+    function initStatus() {
+        ['Arithmetic', 'Practical', 'Design', 'Code'].forEach(cat => {
+            const count = Object.keys(DB[cat] || {}).length;
+            const badge = document.getElementById(`count-${cat}`);
+            if (count < 15) {
+                badge.innerText = "EXAMS COMING SOON";
+                badge.style.color = "var(--danger)";
+            } else {
+                badge.innerText = `${count} EXAMS AVAILABLE`;
+                badge.style.color = "var(--success)";
+            }
+        });
+    }
+
+    function navTo(id) {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if(id === 'home') initStatus();
+    }
+
+    function openExamList(cat) {
+        currentCtx.cat = cat;
+        document.getElementById('list-title').innerText = cat;
+        const container = document.getElementById('exams-container');
+        container.innerHTML = '';
+        
+        // Show up to 15 slots regardless of content
+        for(let i=1; i<=15; i++) {
+            const hasContent = DB[cat] && DB[cat][i] && DB[cat][i].length > 0;
+            const isLocked = i > 1 && !user.unlocked.includes(`${cat}_${i}`);
+            
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.style.opacity = hasContent ? "1" : "0.5";
+            div.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>Exam #${i} ${!hasContent ? '<small>(Coming Soon)</small>' : ''}</span>
+                    <ion-icon name="${!hasContent ? 'construct-outline' : (isLocked ? 'lock-closed' : 'play')}"></ion-icon>
+                </div>
+            `;
+            
+            div.onclick = () => {
+                if(!hasContent) alert("This exam content is currently under development.");
+                else if(isLocked) showPurchase(cat, i);
+                else startQuiz(cat, i);
+            };
+            container.appendChild(div);
+        }
+        navTo('exam-list');
+    }
+
+    function showPurchase(cat, num) {
+        currentCtx.cat = cat; currentCtx.exam = num;
+        document.getElementById('purchase-modal').style.display = 'flex';
+    }
+
+    function closePurchase() { document.getElementById('purchase-modal').style.display = 'none'; }
+
+    function startQuiz(cat, num) {
+        currentCtx.cat = cat; currentCtx.exam = num; currentCtx.qIdx = 0;
+        navTo('quiz');
+        renderQ();
+    }
+
+    function renderQ() {
+        const q = DB[currentCtx.cat][currentCtx.exam][currentCtx.qIdx];
+        document.getElementById('q-meta').innerText = `EXAM #${currentCtx.exam}`;
+        document.getElementById('q-progress').innerText = `${currentCtx.qIdx + 1}/${DB[currentCtx.cat][currentCtx.exam].length}`;
+        document.getElementById('q-text').innerText = q.q;
+        document.getElementById('next-btn').style.display = 'none';
+        
+        const area = document.getElementById('choices-area');
+        area.innerHTML = '';
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.className = 'choice-btn';
+            b.innerText = c;
+            b.onclick = () => {
+                document.querySelectorAll('.choice-btn').forEach(btn => btn.disabled = true);
+                if(i === q.a) b.classList.add('correct');
+                else {
+                    b.classList.add('wrong');
+                    document.querySelectorAll('.choice-btn')[q.a].classList.add('correct');
+                }
+                if(currentCtx.qIdx < DB[currentCtx.cat][currentCtx.exam].length - 1) document.getElementById('next-btn').style.display = 'block';
+                else document.getElementById('finish-btn').style.display = 'block';
+            };
+            area.appendChild(b);
+        });
+    }
+
+    function nextQ() { currentCtx.qIdx++; renderQ(); }
+    
+    initStatus();
+</script>
+
+</body>
+</html>
