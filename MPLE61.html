@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
+            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
+            --orange: #f97316;
+            --pro-gradient: linear-gradient(135deg, #FF6B00 0%, #FF2E00 100%);
+        }
+        [data-theme="dark"] {
+            --primary: #38bdf8; --bg: #020617; --card: #0f172a; --text: #f1f5f9; --border: #1e293b; --btn-ghost: #1e293b;
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.2s ease; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; padding-bottom: 90px; }
+
+        .app-card { width: 100%; max-width: 500px; background: var(--card); padding: 25px; border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; overflow: hidden;}
+
+        /* Exact Image Style: Pass the Boards Card */
+        .pass-boards-card {
+            background-color: #334155; color: white; padding: 22px 20px; text-align: left; 
+            position: relative; border-radius: 20px; margin-bottom: 25px; overflow: hidden; 
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .pro-ribbon {
+            background-color: #f97316; color: white; padding: 2px 35px; font-weight: 800; 
+            font-size: 11px; transform: rotate(45deg); position: absolute; top: 18px; right: -30px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Centered Bottom Nav */
+        .bottom-nav { 
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
+            background: var(--card); border-top: 1px solid var(--border); 
+            display: flex; justify-content: center; align-items: center; 
+            gap: 15px; border-radius: 25px 25px 0 0; z-index: 1000;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+        .nav-item { 
+            display: flex; flex-direction: column; align-items: center; gap: 4px; 
+            color: var(--sub); background: transparent; border: none; font-size: 10px; 
+            font-weight: 700; width: 75px; cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .nav-item.active { color: var(--accent); transform: translateY(-3px); }
+        .nav-icon { font-size: 22px; }
+
+        /* Animations */
+        .screen { display: none; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        button:active { transform: scale(0.96); }
+        button { width: 100%; padding: 16px; margin: 8px 0; border: none; border-radius: 16px; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-main { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); }
+        .btn-outline { background: white; color: #64748b; border: 1.5px solid var(--border); }
+        
+        input { width: 100%; padding: 16px; margin: 8px 0; border: 1.5px solid var(--border); border-radius: 12px; background: #fff; color: var(--text); outline: none; font-size: 15px;}
+        .category-item { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; margin-bottom: 12px; }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-card">
+    <div id="authScreen" class="screen" style="display: block; text-align: center;">
+        <div style="font-size: 60px; color: #3b82f6; margin-bottom: 10px;"><ion-icon name="water"></ion-icon></div>
+        <div style="font-size: 12px; color: #3b82f6; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">The Ultimate Reviewer</div>
+        <h1 style="font-size: 28px; margin: 0 0 30px; line-height: 1.1; font-weight: 800; color: #1e293b;">
+            MASTER PLUMBER <br><span style="color: #3b82f6;">REVIEWER</span>
+        </h1>
+
+        <div class="pass-boards-card">
+            <div class="pro-ribbon">PRO</div>
+            <div style="font-weight: 800; font-size: 17px; margin-bottom: 3px;">Pass the Boards.</div>
+            <div style="font-weight: 400; font-size: 12px; opacity: 0.9;">Access 5,000+ practice questions and detailed analytics.</div>
+        </div>
+
+        <div style="text-align: left; font-size: 11px; color: #64748b; font-weight: 700; margin-left: 5px;">USERNAME</div>
+        <input type="text" id="username" placeholder="future_engineer">
+        
+        <div style="text-align: left; font-size: 11px; color: #64748b; font-weight: 700; margin: 10px 0 0 5px;">PASSWORD</div>
+        <input type="password" id="password" placeholder="••••••••">
+
+        <button class="btn-main" onclick="handleAuth()" style="margin-top: 25px;">SIGN IN TO YOUR ACCOUNT</button>
+        <button class="btn-outline" onclick="handleRegister()">CREATE NEW ACCOUNT</button>
+
+        <div style="margin: 20px 0; font-size: 12px; color: #94a3b8; font-weight: 700;">OR</div>
+        <button onclick="enterAsGuest()" style="background: transparent; color: #3b82f6; text-decoration: underline; font-size: 13px;">Continue as Guest</button>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 id="welcomeMsg" style="margin:0; font-weight: 800;">Hello! 👋</h2>
+            <button onclick="toggleTheme()" style="width:40px; height:40px; padding:0; border-radius:12px; background: var(--btn-ghost);"><ion-icon id="themeIcon" name="moon-outline"></ion-icon></button>
+        </div>
+
+        <div class="pass-boards-card" id="homeProCard">
+            <div class="pro-ribbon">PRO</div>
+            <div style="font-weight: 800; font-size: 17px;">Lifetime Access</div>
+            <p style="font-size: 11px; margin: 5px 0 15px;">Unlock all specialized exam materials.</p>
+            <button onclick="setScreen('payment')" style="background:white; color:#f97316; padding: 10px; font-size: 12px;">UPGRADE NOW</button>
+        </div>
+
+        <div class="category-list">
+            <div class="category-item" onclick="openExams('Plumbing Code')">
+                <ion-icon name="book-outline" style="color:var(--accent); font-size:24px;"></ion-icon>
+                <div style="flex:1"><b>Plumbing Code</b></div>
+                <ion-icon name="chevron-forward-outline" style="color:#cbd5e1"></ion-icon>
+            </div>
+            <div class="category-item" onclick="openExams('Plumbing Arithmetic')">
+                <ion-icon name="calculator-outline" style="color:var(--danger); font-size:24px;"></ion-icon>
+                <div style="flex:1"><b>Plumbing Arithmetic</b></div>
+                <ion-icon name="chevron-forward-outline" style="color:#cbd5e1"></ion-icon>
+            </div>
+            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')">
+                <ion-icon name="construct-outline" style="color:var(--success); font-size:24px;"></ion-icon>
+                <div style="flex:1"><b>Sanitation & Design</b></div>
+                <ion-icon name="chevron-forward-outline" style="color:#cbd5e1"></ion-icon>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-item active" onclick="setScreen('home')">
+                <ion-icon name="home-outline" class="nav-icon"></ion-icon>Home
+            </button>
+            <button class="nav-item" onclick="alert('Stats tracking starting soon!')">
+                <ion-icon name="bar-chart-outline" class="nav-icon"></ion-icon>Stats
+            </button>
+            <button class="nav-item" onclick="openAccount()">
+                <ion-icon name="person-outline" class="nav-icon"></ion-icon>Account
+            </button>
+        </div>
+    </div>
+
+    <div id="aboutYou" class="screen">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="width: 80px; height: 80px; background: var(--btn-ghost); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 40px; color: var(--accent);">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <h2 style="margin:0; font-weight: 800;">About You</h2>
+        </div>
+        <div id="profileBox" style="background: var(--btn-ghost); padding: 25px; border-radius: 20px; margin-bottom: 20px; border: 1px solid var(--border);"></div>
+        <button class="btn-main" onclick="setScreen('home')">BACK TO HOME</button>
+        <button id="authBtn" style="color: var(--danger); background: transparent; font-size: 13px; text-decoration: underline;"></button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="text-align:center; color: var(--accent);"></h2>
+        <div id="examGrid" style="max-height: 400px; overflow-y: auto;"></div>
+        <button onclick="setScreen('home')" style="margin-top: 20px;">Back</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display:flex; justify-content: space-between; font-weight: 800; font-size: 12px; color: var(--accent);">
+            <div id="qNum"></div>
+            <div id="scoreBox">Score: 0</div>
+        </div>
+        <p id="qTxt" style="font-size:18px; font-weight: 600; margin:25px 0;"></p>
+        <div id="choices"></div>
+    </div>
+
+    <div id="payment" class="screen" style="text-align:center;">
+        <h3>Upgrade to Pro</h3>
+        <input type="text" id="key" placeholder="Enter License Key">
+        <button class="btn-main" onclick="unlockPro()">Activate</button>
+        <button onclick="setScreen('home')" style="background:transparent;">Cancel</button>
+    </div>
+</div>
+
+<script type="module">
+    // Direct link to your original databases to ensure functionality
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { designDB } from './design.js';
+    const DB = { "Plumbing Arithmetic": arithmeticDB, "Plumbing Code": codeDB, "Sanitation Plumbing Design and Installation": designDB };
+
+    let currentUser = null, isPaid = false, curIdx = 0, currentQs = [], score = 0, currentCat = "";
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        const target = document.getElementById(id) || document.getElementById('aboutYou');
+        target.style.display = 'block';
+        
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        if(id === 'home') document.querySelectorAll('.nav-item')[0].classList.add('active');
+        if(id === 'aboutYou') document.querySelectorAll('.nav-item')[2].classList.add('active');
+    };
+
+    window.handleAuth = () => {
+        const u = document.getElementById('username').value;
+        if(u) { currentUser = u; updateUI(); setScreen('home'); }
+    };
+
+    window.enterAsGuest = () => { currentUser = "Guest"; updateUI(); setScreen('home'); };
+
+    window.openAccount = () => {
+        const box = document.getElementById('profileBox');
+        const btn = document.getElementById('authBtn');
+        if(!currentUser || currentUser === "Guest") {
+            box.innerHTML = `<p style="text-align:center; margin:0;">You are logged in as a <b>Guest</b>. <br>Sign in to save progress.</p>`;
+            btn.innerText = "PLEASE LOG IN TO YOUR ACCOUNT";
+            btn.onclick = () => location.reload();
+        } else {
+            box.innerHTML = `<p style="margin: 5px 0;"><b>User:</b> ${currentUser}</p><p style="margin: 5px 0;"><b>Status:</b> ${isPaid ? 'PRO MEMBER' : 'FREE MEMBER'}</p>`;
+            btn.innerText = "LOG OUT OF ACCOUNT";
+            btn.onclick = () => location.reload();
+        }
+        setScreen('aboutYou');
+    };
+
+    function updateUI() {
+        document.getElementById('welcomeMsg').innerText = `Hello, ${currentUser}! 👋`;
+        if(isPaid && document.getElementById('homeProCard')) document.getElementById('homeProCard').style.display = 'none';
+    }
+
+    window.openExams = (cat) => {
+        currentCat = cat; document.getElementById('catTitle').innerText = cat;
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const locked = !isPaid && i > 1;
+            grid.innerHTML += `<div class="category-item ${locked?'locked':''}" style="opacity: ${locked?0.5:1}">
+                <div style="flex:1"><b>Exam #${i} ${locked?'🔒':''}</b></div>
+                <button onclick="${locked?'alert(\'Upgrade to Pro to unlock!\')':'startQuiz('+i+')'}" style="width:auto; padding:8px 15px; margin:0; font-size:12px;">TAKE</button>
+            </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.startQuiz = (idx) => {
+        currentQs = DB[currentCat][idx]; curIdx = 0; score = 0;
+        setScreen('quiz'); loadQ();
+    };
+
+    function loadQ() {
+        const q = currentQs[curIdx];
+        document.getElementById('qNum').innerText = `QUESTION ${curIdx+1}/${currentQs.length}`;
+        document.getElementById('qTxt').innerText = q.q;
+        const container = document.getElementById('choices'); container.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button'); b.innerText = c;
+            b.onclick = () => {
+                if(i === q.a) score++;
+                document.getElementById('scoreBox').innerText = `Score: ${score}`;
+                curIdx++;
+                if(curIdx < currentQs.length) loadQ(); 
+                else { alert(`Finished! Score: ${score}/${currentQs.length}`); setScreen('home'); }
+            };
+            container.appendChild(b);
+        });
+    }
+
+    window.unlockPro = () => {
+        if(document.getElementById('key').value === "MP-MASTER-2024") {
+            isPaid = true; updateUI(); setScreen('home'); alert("Pro Activated!");
+        } else alert("Invalid Key");
+    };
+
+    window.toggleTheme = () => {
+        const b = document.body;
+        const t = b.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        b.setAttribute('data-theme', t);
+    };
+</script>
+</body>
+</html>
