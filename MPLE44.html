@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #dbeafe;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f1f5f9;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --sub-text: #64748b;
+            --border: #e2e8f0;
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            margin: 0; 
+            background: #0f172a; 
+            display: flex; 
+            justify-content: center; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow: hidden; 
+        }
+
+        .app-container { 
+            width: 100%; max-width: 500px; height: 100vh; background: var(--bg);
+            position: relative; display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        /* FIXED: Left-side Scrollbar */
+        .screen { 
+            flex: 1; 
+            overflow-y: auto; 
+            padding: 25px; 
+            display: none; 
+            direction: rtl; /* Moves scrollbar to left */
+            padding-bottom: 120px;
+        }
+        .screen > * { direction: ltr; } /* Keeps content reading left-to-right */
+
+        .screen::-webkit-scrollbar { width: 6px; }
+        .screen::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        .screen::-webkit-scrollbar-track { background: transparent; }
+
+        /* Auth/Landing */
+        #auth-screen { display: block; background: var(--surface); text-align: center; }
+        .hero-icon { font-size: 64px; color: var(--primary); margin-top: 40px; }
+        .app-title { font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin: 5px 0; }
+        .app-subtitle { color: var(--primary); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white; padding: 20px; border-radius: var(--radius-md);
+            margin: 20px 0; text-align: left; position: relative; overflow: hidden;
+        }
+
+        /* Inputs & Buttons */
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { font-size: 11px; font-weight: 800; color: var(--sub-text); margin-left: 5px; }
+        .auth-input { width: 100%; padding: 16px; margin-top: 5px; border-radius: 14px; border: 2px solid var(--border); font-size: 16px; }
+        
+        .btn { width: 100%; padding: 16px; border: none; border-radius: 16px; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-ghost { background: transparent; color: var(--sub-text); border: 2px solid var(--border); }
+
+        /* Exam Cards */
+        .cat-card { 
+            background: var(--surface); border-radius: var(--radius-md); padding: 18px; 
+            margin-bottom: 12px; display: flex; align-items: center; gap: 12px; 
+            border: 1px solid var(--border); cursor: pointer; box-shadow: var(--shadow);
+        }
+        .cat-logo { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+        
+        .progress-circle { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+        .progress-circle svg { transform: rotate(-90deg); width: 44px; height: 44px; }
+        .progress-circle circle { fill: none; stroke-width: 4; stroke: #f1f5f9; }
+        .progress-circle circle.val { stroke: var(--success); stroke-dasharray: 100; stroke-dashoffset: 100; stroke-linecap: round; transition: 0.5s; }
+        .pct-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; }
+
+        /* Navigation */
+        .bottom-nav {
+            position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
+            width: 90%; background: #0f172a; height: 70px; border-radius: 35px; 
+            display: none; justify-content: space-around; align-items: center; z-index: 1000;
+        }
+        .nav-item { color: #64748b; font-size: 22px; cursor: pointer; display: flex; flex-direction: column; align-items: center; }
+        .nav-item.active { color: white; }
+        .nav-item span { font-size: 9px; font-weight: 700; margin-top: 2px; }
+
+        /* Quiz UI */
+        .choice-btn { 
+            width: 100%; padding: 16px; background: white; border: 2px solid var(--border); 
+            border-radius: 14px; margin-bottom: 10px; text-align: left; font-size: 14px; 
+            font-weight: 600; cursor: pointer;
+        }
+        .choice-btn.correct { background: #dcfce7 !important; border-color: var(--success) !important; color: #065f46; }
+        .choice-btn.wrong { background: #fee2e2 !important; border-color: var(--danger) !important; color: #991b1b; }
+        
+        .feedback-toast { font-size: 13px; font-weight: 800; padding: 12px; border-radius: 12px; text-align: center; margin: 10px 0; display: none; background: white; border: 1px solid var(--border); }
+
+        /* Icons */
+        .icon-1 { background: #e0e7ff; color: #4338ca; }
+        .icon-2 { background: #fef3c7; color: #b45309; }
+        .icon-3 { background: #dcfce7; color: #15803d; }
+        .icon-4 { background: #fae8ff; color: #a21caf; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    
+    <div id="auth-screen" class="screen">
+        <div class="hero-icon"><ion-icon name="water"></ion-icon></div>
+        <div class="app-subtitle">Official Reviewer</div>
+        <div class="app-title">MASTER PLUMBER</div>
+        
+        <div class="promo-banner">
+            <div style="font-weight: 800; font-size: 16px;">Pass the 2026 Boards</div>
+            <div style="font-size: 12px; opacity: 0.9;">15 Professional Exams per category.</div>
+        </div>
+
+        <div class="input-group">
+            <label>USERNAME</label>
+            <input type="text" id="auth-user" class="auth-input" placeholder="e.g. JuanPlumber">
+        </div>
+        <div class="input-group">
+            <label>PASSWORD</label>
+            <input type="password" id="auth-pass" class="auth-input" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary" onclick="handleAuth('login')">LOGIN</button>
+        <button class="btn btn-ghost" style="margin-top: 10px;" onclick="handleAuth('register')">REGISTER</button>
+        
+        <div style="margin: 20px 0; color: var(--sub-text); font-size: 11px; font-weight: 800;">QUICK START</div>
+        <button class="btn btn-ghost" onclick="continueAsGuest()">CONTINUE AS GUEST</button>
+    </div>
+
+    <div id="home" class="screen">
+        <h2 style="margin:0; font-size: 22px;">Hi, <span id="display-name" style="color: var(--primary);">Engineer</span></h2>
+        <p style="margin: 5px 0 25px; font-size: 12px; color: var(--sub-text);">Select a category to begin.</p>
+
+        <div class="cat-card" onclick="startExam('Plumbing Code')">
+            <div class="cat-logo icon-1"><ion-icon name="book"></ion-icon></div>
+            <div style="flex:1">
+                <div style="font-weight:800; font-size: 14px;">Plumbing Code</div>
+                <div style="font-size: 10px; color: var(--success); font-weight:700">15 EXAMS READY</div>
+            </div>
+            <div class="progress-circle" id="prog-Plumbing-Code">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><circle class="val" cx="18" cy="18" r="16"/></svg>
+                <div class="pct-text">0%</div>
+            </div>
+        </div>
+
+        <div class="cat-card" onclick="startExam('Plumbing Arithmetic')">
+            <div class="cat-logo icon-2"><ion-icon name="calculator"></ion-icon></div>
+            <div style="flex:1">
+                <div style="font-weight:800; font-size: 14px;">Plumbing Arithmetic</div>
+                <div style="font-size: 10px; color: var(--sub-text); font-weight:700">15 EXAMS READY</div>
+            </div>
+            <div class="progress-circle" id="prog-Plumbing-Arithmetic">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><circle class="val" cx="18" cy="18" r="16"/></svg>
+                <div class="pct-text">0%</div>
+            </div>
+        </div>
+
+        <div class="cat-card" onclick="startExam('Practical Problems & Experiences')">
+            <div class="cat-logo icon-3"><ion-icon name="hammer"></ion-icon></div>
+            <div style="flex:1">
+                <div style="font-weight:800; font-size: 14px;">Practical Problems & Experiences</div>
+                <div style="font-size: 10px; color: var(--sub-text); font-weight:700">15 EXAMS READY</div>
+            </div>
+            <div class="progress-circle" id="prog-Practical-Problems">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><circle class="val" cx="18" cy="18" r="16"/></svg>
+                <div class="pct-text">0%</div>
+            </div>
+        </div>
+
+        <div class="cat-card" onclick="startExam('Sanitation, Plumbing Design, and Installation')">
+            <div class="cat-logo icon-4"><ion-icon name="pencil"></ion-icon></div>
+            <div style="flex:1">
+                <div style="font-weight:800; font-size: 14px;">Sanitation & Design</div>
+                <div style="font-size: 10px; color: var(--sub-text); font-weight:700">15 EXAMS READY</div>
+            </div>
+            <div class="progress-circle" id="prog-Sanitation">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><circle class="val" cx="18" cy="18" r="16"/></svg>
+                <div class="pct-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div id="q-cat" style="font-weight: 800; font-size: 11px; color: var(--primary); text-transform: uppercase;">CATEGORY</div>
+            <div id="q-idx" style="font-weight: 800; color: var(--sub-text); font-size: 13px;">1/15</div>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 20px; font-weight: 600; line-height: 1.5;" id="q-text">
+            Loading...
+        </div>
+        
+        <div id="choices"></div>
+        <div id="feedback" class="feedback-toast"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+            <button class="btn btn-ghost" style="color:var(--danger); border-color: #fee2e2;" onclick="quitExam()">QUIT</button>
+            <button class="btn btn-ghost" onclick="reportQuestion()">REPORT</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+            <button class="btn btn-ghost" id="skip-btn" onclick="skipQuestion()" style="flex:1">SKIP</button>
+            <button class="btn btn-primary" id="next-btn" style="display:none; flex:2" onclick="nextQuestion()">NEXT</button>
+            <button class="btn btn-primary" id="finish-btn" style="display:none; flex:2; background: var(--success);" onclick="finishQuiz()">FINISH</button>
+        </div>
+    </div>
+
+    <div id="stats" class="screen">
+        <h2 class="app-title">MY STATS</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0;">
+            <div style="background: white; padding: 15px; border-radius: 15px; text-align: center;">
+                <div id="stat-count" style="font-size: 24px; font-weight: 800; color: var(--primary);">0</div>
+                <div style="font-size: 10px; color: var(--sub-text); font-weight: 800;">TOTAL EXAMS</div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 15px; text-align: center;">
+                <div id="stat-avg" style="font-size: 24px; font-weight: 800; color: var(--success);">0%</div>
+                <div style="font-size: 10px; color: var(--sub-text); font-weight: 800;">AVG SCORE</div>
+            </div>
+        </div>
+        <div id="stats-list"></div>
+    </div>
+
+    <div class="bottom-nav" id="main-nav">
+        <div onclick="navTo('home', this)" class="nav-item active"><ion-icon name="home"></ion-icon><span>HOME</span></div>
+        <div onclick="navTo('stats', this)" class="nav-item"><ion-icon name="stats-chart"></ion-icon><span>MY STATS</span></div>
+        <div onclick="logout()" class="nav-item"><ion-icon name="log-out"></ion-icon><span>EXIT</span></div>
+    </div>
+</div>
+
+<script>
+    // Database placeholder for logic
+    const DB = {
+        "Plumbing Code": Array(15).fill({ q: "What is the minimum diameter of a wet vent?", c: ["1-1/2\"", "2\"", "3\"", "4\""], a: 1 }),
+        "Plumbing Arithmetic": Array(15).fill({ q: "What is 10% of 100?", c: ["10", "20", "5", "1"], a: 0 }),
+        "Practical Problems & Experiences": Array(15).fill({ q: "Which tool is for pipe cutting?", c: ["Hammer", "Cutter", "Saw", "Wrench"], a: 1 }),
+        "Sanitation, Plumbing Design, and Installation": Array(15).fill({ q: "What is a P-Trap used for?", c: ["Sewer Gas", "Water Flow", "Heat", "Noise"], a: 0 })
+    };
+
+    let currentUser = null;
+    let isGuest = false;
+    let quizState = { cat: "", idx: 0, score: 0 };
+
+    function navTo(id, el) {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        
+        if(el) {
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            el.classList.add('active');
+        }
+        
+        const nav = document.getElementById('main-nav');
+        nav.style.display = (id === 'quiz' || id === 'auth-screen') ? 'none' : 'flex';
+        
+        if(id === 'home') updateHomeUI();
+        if(id === 'stats') updateStatsUI();
+    }
+
+    function handleAuth(type) {
+        const u = document.getElementById('auth-user').value.trim();
+        const p = document.getElementById('auth-pass').value.trim();
+        if(!u || !p) return alert("Fill in all fields");
+
+        let users = JSON.parse(localStorage.getItem('mp_users_v3') || "{}");
+
+        if(type === 'register') {
+            if(users[u]) return alert("User exists");
+            users[u] = { pass: p, stats: { exams: 0, totals: 0, scores: {} } };
+            localStorage.setItem('mp_users_v3', JSON.stringify(users));
+            alert("Registered! Now Login.");
+        } else {
+            if(users[u] && users[u].pass === p) {
+                currentUser = u;
+                isGuest = false;
+                document.getElementById('display-name').innerText = u;
+                navTo('home');
+            } else alert("Wrong credentials");
+        }
+    }
+
+    function continueAsGuest() {
+        currentUser = "Guest";
+        isGuest = true;
+        document.getElementById('display-name').innerText = "Guest User";
+        navTo('home');
+    }
+
+    function startExam(cat) {
+        quizState = { cat: cat, idx: 0, score: 0 };
+        document.getElementById('q-cat').innerText = cat;
+        navTo('quiz');
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        const q = DB[quizState.cat][quizState.idx];
+        document.getElementById('q-idx').innerText = `${quizState.idx + 1}/15`;
+        document.getElementById('q-text').innerText = q.q;
+        document.getElementById('feedback').style.display = "none";
+        document.getElementById('next-btn').style.display = "none";
+        document.getElementById('finish-btn').style.display = "none";
+        document.getElementById('skip-btn').style.display = "block";
+
+        const container = document.getElementById('choices');
+        container.innerHTML = "";
+        q.c.forEach((choice, i) => {
+            const b = document.createElement('button');
+            b.className = 'choice-btn';
+            b.innerText = choice;
+            b.onclick = () => selectAnswer(i, q.a, b);
+            container.appendChild(b);
+        });
+    }
+
+    function selectAnswer(i, correct, btn) {
+        document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
+        const fb = document.getElementById('feedback');
+        fb.style.display = "block";
+        
+        if(i === correct) {
+            btn.classList.add('correct');
+            quizState.score++;
+            fb.innerText = "✓ CORRECT";
+            fb.style.color = "var(--success)";
+        } else {
+            btn.classList.add('wrong');
+            document.querySelectorAll('.choice-btn')[correct].classList.add('correct');
+            fb.innerText = "✗ INCORRECT";
+            fb.style.color = "var(--danger)";
+        }
+        
+        document.getElementById('skip-btn').style.display = "none";
+        if(quizState.idx < 14) document.getElementById('next-btn').style.display = "block";
+        else document.getElementById('finish-btn').style.display = "block";
+    }
+
+    function skipQuestion() {
+        const fb = document.getElementById('feedback');
+        fb.style.display = "block";
+        fb.innerText = "SKIPPED";
+        fb.style.color = "var(--sub-text)";
+        document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
+        document.getElementById('skip-btn').style.display = "none";
+        if(quizState.idx < 14) document.getElementById('next-btn').style.display = "block";
+        else document.getElementById('finish-btn').style.display = "block";
+    }
+
+    function nextQuestion() {
+        quizState.idx++;
+        loadQuestion();
+    }
+
+    function quitExam() {
+        if(confirm("Quit exam?")) navTo('home');
+    }
+
+    function reportQuestion() {
+        alert("Reported. Thank you!");
+    }
+
+    function finishQuiz() {
+        const pct = Math.round((quizState.score / 15) * 100);
+        if(!isGuest) {
+            let users = JSON.parse(localStorage.getItem('mp_users_v3'));
+            users[currentUser].stats.exams++;
+            users[currentUser].stats.totals += pct;
+            if(!users[currentUser].stats.scores[quizState.cat] || pct > users[currentUser].stats.scores[quizState.cat]) {
+                users[currentUser].stats.scores[quizState.cat] = pct;
+            }
+            localStorage.setItem('mp_users_v3', JSON.stringify(users));
+        }
+        alert(`Finished! Score: ${quizState.score}/15 (${pct}%)`);
+        navTo('home');
+    }
+
+    function updateHomeUI() {
+        if(isGuest) return;
+        let users = JSON.parse(localStorage.getItem('mp_users_v3'));
+        const scores = users[currentUser].stats.scores;
+        const mapping = {
+            "Plumbing Code": "prog-Plumbing-Code",
+            "Plumbing Arithmetic": "prog-Plumbing-Arithmetic",
+            "Practical Problems & Experiences": "prog-Practical-Problems",
+            "Sanitation, Plumbing Design, and Installation": "prog-Sanitation"
+        };
+        for(const [name, id] of Object.entries(mapping)) {
+            const val = scores[name] || 0;
+            const circle = document.querySelector(`#${id} circle.val`);
+            const text = document.querySelector(`#${id} .pct-text`);
+            if(circle) circle.style.strokeDashoffset = 100 - val;
+            if(text) text.innerText = val + "%";
+        }
+    }
+
+    function updateStatsUI() {
+        const list = document.getElementById('stats-list');
+        if(isGuest) {
+            list.innerHTML = "<div style='text-align:center; padding:20px; color:var(--sub-text)'>Register to save stats.</div>";
+            return;
+        }
+        let users = JSON.parse(localStorage.getItem('mp_users_v3'));
+        const s = users[currentUser].stats;
+        document.getElementById('stat-count').innerText = s.exams;
+        document.getElementById('stat-avg').innerText = s.exams > 0 ? Math.round(s.totals / s.exams) + "%" : "0%";
+        
+        list.innerHTML = "";
+        for(let cat in DB) {
+            let best = s.scores[cat] || 0;
+            list.innerHTML += `
+                <div style="background:white; padding:15px; border-radius:12px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; border:1px solid var(--border)">
+                    <span style="font-weight:700; font-size:12px;">${cat}</span>
+                    <span style="color:var(--primary); font-weight:800">${best}%</span>
+                </div>
+            `;
+        }
+    }
+
+    function logout() { location.reload(); }
+</script>
+
+</body>
+</html>
