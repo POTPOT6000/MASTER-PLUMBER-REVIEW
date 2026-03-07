@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER PRO</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #334155; --glow: rgba(59, 130, 246, 0.5);
+        }
+        [data-theme="light"] {
+            --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --border: #e2e8f0; --glow: rgba(59, 130, 246, 0.2);
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; overflow-x: hidden; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 30px; 
+            border-radius: 32px; border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); 
+            position: relative; display: flex; flex-direction: column;
+        }
+
+        .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; min-height: 45px; }
+
+        button { 
+            width: 100%; padding: 16px; margin: 10px 0; border: 1px solid var(--border); border-radius: 18px; 
+            font-size: 14px; font-weight: 600; cursor: pointer; background: var(--card); 
+            color: var(--text); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+
+        button:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 0 15px var(--glow); }
+        .btn-main { background: var(--accent); color: #fff; border: none; }
+
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .cat-card { 
+            padding: 20px; border-radius: 20px; text-align: center; font-size: 12px; 
+            background: var(--card); border: 1px solid var(--border); cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+        .cat-card ion-icon { font-size: 32px; color: var(--accent); }
+        .cat-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        .screen { display: none; animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--border); display:none; }
+        #progressBar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--success)); width: 0%; transition: 0.4s ease; }
+        
+        .exam-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; background: rgba(0,0,0,0.03); border-radius: 18px; padding: 5px; border: 1px solid transparent; }
+        .full-press-btn { flex: 1; text-align: left; justify-content: space-between; padding: 15px 20px; margin: 0; background: transparent; border: none; }
+        .btn-eye { width: 60px; height: 50px; background: var(--warning); color: white !important; margin: 0; border-radius: 16px; font-size: 20px; border: none; flex-shrink: 0; }
+        .locked { opacity: 0.5; filter: grayscale(1); }
+
+        /* CIRCULAR PROGRESS CSS */
+        .progress-circle { width: 36px; height: 36px; position: relative; display: flex; align-items: center; justify-content: center; margin-left: 8px; flex-shrink: 0; }
+        .progress-circle svg { transform: rotate(-90deg); width: 36px; height: 36px; }
+        .circle-bg { fill: none; stroke: var(--border); stroke-width: 3; }
+        .circle-val { fill: none; stroke: var(--success); stroke-width: 3; stroke-dasharray: 100; stroke-dashoffset: 100; stroke-linecap: round; transition: 0.5s; }
+        .percentage-text { position: absolute; font-size: 8px; font-weight: 800; color: var(--text); }
+
+        input { width: 100%; padding: 14px; margin: 8px 0; border: 1px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text); outline: none; }
+        #scoreBox { backdrop-filter: blur(10px); background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); color: var(--accent); visibility: hidden; padding: 8px 16px; border-radius: 14px; font-size: 14px; font-weight: 700; }
+        
+        .correct { background: var(--success) !important; color: white !important; border: none; }
+        .wrong { background: var(--danger) !important; color: white !important; border: none; }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="app-card" id="appBody">
+    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
+    
+    <div class="app-header">
+        <div id="scoreBox">0/0</div>
+        <button onclick="toggleTheme()" style="width: 45px; height: 45px; border-radius: 14px; padding: 0; margin: 0;"><ion-icon id="themeIcon" name="sunny-outline"></ion-icon></button>
+    </div>
+
+    <div id="authScreen" class="screen" style="display: block; text-align: center;">
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+            <div style="font-size: 60px; color: var(--accent);"><ion-icon name="construct-outline"></ion-icon></div>
+            <h1 style="font-size: 24px; margin: 0; letter-spacing: -0.5px;">MASTER PLUMBER</h1>
+            <p style="color: var(--sub); font-size: 14px;">Board Exam Reviewer</p>
+        </div>
+        <button class="btn-main" onclick="enterAsGuest()">ENTER AS GUEST</button>
+        <div style="margin: 25px 0 10px; font-size: 11px; color: var(--sub); text-transform: uppercase;">MEMBER LOGIN / SIGNUP</div>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="handleAuth()">Login / Register</button>
+    </div>
+
+    <div id="paymentScreen" class="screen" style="text-align: center;">
+        <h3 id="payTitle" style="font-size: 20px;">Unlock Pro Access</h3>
+        <p id="payPrice" style="color: var(--accent); font-weight: 700; margin-top: -10px;"></p>
+        <div style="width: 160px; height: 160px; background: white; margin: 20px auto; border: 4px solid var(--accent); border-radius: 24px; padding: 10px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GCASH_09123456789" style="width:100%">
+        </div>
+        <p style="font-size: 14px; color: var(--sub);">Send GCash: <b>09XX XXX XXXX</b></p>
+        <input type="text" id="licenseKey" placeholder="Enter License Key">
+        <button class="btn-main" onclick="verifyKey()">Activate Now</button>
+        <button onclick="setScreen('home')" style="background:transparent; border:none; color:var(--sub); font-size:12px;">Cancel</button>
+    </div>
+
+    <div id="home" class="screen">
+        <div style="margin-bottom: 25px;">
+            <h2 style="margin:0; font-size: 22px;">Categories</h2>
+            <p id="userStatus" style="font-size: 12px; font-weight: 700; margin-top: 5px;"></p>
+        </div>
+        <div class="category-grid">
+            <div class="cat-card" onclick="openExams('Plumbing Code')"><ion-icon name="book-outline"></ion-icon>Plumbing Code</div>
+            <div class="cat-card" onclick="openExams('Plumbing Arithmetic')"><ion-icon name="calculator-outline"></ion-icon>Arithmetic</div>
+            <div class="cat-card" onclick="openExams('Sanitation, Plumbing Design, and Installation')"><ion-icon name="brush-outline"></ion-icon>Sanitation</div>
+            <div class="cat-card" onclick="openExams('Practical Problems & Experiences')"><ion-icon name="hammer-outline"></ion-icon>Practical</div>
+        </div>
+        <button id="upgradeBtn" onclick="handleUpgradeFlow()" style="background: linear-gradient(45deg, #f97316, #f59e0b); color:white; border:none; margin-top: 20px;">UPGRADE TO PRO (₱299)</button>
+        <button onclick="logout()" style="margin-top: 20px; border:none; background:transparent; color:var(--danger); font-size:12px;">LOGOUT</button>
+    </div>
+
+    <div id="exams" class="screen">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+            <button onclick="setScreen('home')" style="width:40px; height:40px; margin:0; border-radius:12px;"><ion-icon name="arrow-back"></ion-icon></button>
+            <h2 id="catTitle" style="font-size: 16px; margin:0; color: var(--accent);"></h2>
+        </div>
+        <div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div>
+        
+        <button onclick="setScreen('home')" style="margin-top: 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--border);">
+            <ion-icon name="chevron-back-outline"></ion-icon> BACK TO CATEGORIES
+        </button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div id="qNum" style="font-size: 11px; font-weight: 800; color: var(--accent); margin-bottom: 8px;"></div>
+        <div id="qTxt" style="font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; min-height: 80px;"></div>
+        <div id="choices"></div>
+        <div style="display:flex; gap:10px; margin-top: 20px;">
+            <button onclick="prevQ()" style="flex:1">Back</button>
+            <button onclick="handleNextLogic()" style="flex:2" class="btn-main">Next</button>
+        </div>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align: center; color: var(--accent); font-size: 24px;"></h2>
+        <div id="revScroll" style="max-height: 380px; overflow-y: auto; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 15px;"></div>
+        <button class="btn-main" onclick="setScreen('home')" style="margin-top:20px;">Back Home</button>
+    </div>
+</div>
+
+<script type="module">
+    import { arithmeticDB } from './arithmetic.js';
+    import { codeDB } from './code.js';
+    import { designDB } from './design.js';
+    import { practicalDB } from './practical.js';
+
+    const DB = {
+        "Plumbing Arithmetic": arithmeticDB, 
+        "Plumbing Code": codeDB,
+        "Sanitation, Plumbing Design, and Installation": designDB, 
+        "Practical Problems & Experiences": practicalDB
+    };
+
+    let currentUser = null, isPaid = false, currentCat, currentExamIdx, currentQs, curIdx = 0, answers = [], score = 0;
+    let unlockedExams = []; // For ₱9 individual unlocks
+    const MASTER_KEY = "MP-PRO-2024";
+
+    window.toggleTheme = () => {
+        const b = document.body;
+        const isL = b.getAttribute('data-theme') === 'light';
+        b.setAttribute('data-theme', isL ? 'dark' : 'light');
+    };
+
+    window.enterAsGuest = () => { currentUser = "Guest"; isPaid = false; updateHomeUI(); setScreen('home'); };
+
+    window.handleAuth = () => {
+        const u = document.getElementById('username').value.trim();
+        const p = document.getElementById('password').value.trim();
+        if(!u || !p) return alert("Fill all fields");
+        let users = JSON.parse(localStorage.getItem('mp_users') || '[]');
+        let user = users.find(x => x.u === u);
+        if(!user) { 
+            user = { u, p, paid: false, unlocked: [] }; 
+            users.push(user); 
+            localStorage.setItem('mp_users', JSON.stringify(users)); 
+        } else if(user.p !== p) return alert("Wrong password");
+        
+        currentUser = user.u; 
+        isPaid = user.paid; 
+        unlockedExams = user.unlocked || [];
+        updateHomeUI(); 
+        setScreen('home');
+    };
+
+    function updateHomeUI() {
+        const s = document.getElementById('userStatus');
+        s.innerText = isPaid ? `PRO ACCOUNT: ${currentUser}` : `${currentUser} (Standard)`;
+        document.getElementById('upgradeBtn').style.display = isPaid ? "none" : "block";
+    }
+
+    window.handleUpgradeFlow = () => {
+        if(currentUser === "Guest") {
+            alert("Please login or signup first to upgrade to Pro.");
+            setScreen('authScreen');
+        } else {
+            showPayment("PRO ACCESS", "₱299");
+        }
+    };
+
+    function showPayment(type, price) {
+        document.getElementById('payTitle').innerText = `Unlock ${type}`;
+        document.getElementById('payPrice').innerText = price;
+        setScreen('paymentScreen');
+    }
+
+    window.verifyKey = () => {
+        const k = document.getElementById('licenseKey').value;
+        if(k === MASTER_KEY) {
+            isPaid = true;
+            savePurchase(true);
+            alert("Pro Unlocked!"); setScreen('home'); updateHomeUI();
+        } else if(k === "UNL9") {
+            unlockedExams.push(`${currentCat}-${currentExamIdx}`);
+            savePurchase(false);
+            alert("Exam Unlocked!"); openExams(currentCat);
+        } else alert("Invalid Key");
+    };
+
+    function savePurchase(isPro) {
+        if(currentUser === "Guest") return;
+        let users = JSON.parse(localStorage.getItem('mp_users'));
+        let u = users.find(x => x.u === currentUser);
+        if(isPro) u.paid = true;
+        u.unlocked = unlockedExams;
+        localStorage.setItem('mp_users', JSON.stringify(users));
+    }
+
+    window.logout = () => location.reload();
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('scoreBox').style.visibility = (id === 'quiz') ? 'visible' : 'hidden';
+    };
+
+    window.openExams = (cat) => {
+        currentCat = cat; document.getElementById('catTitle').innerText = cat;
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const isUnl = unlockedExams.includes(`${cat}-${i}`);
+            const isLocked = (!isPaid && i > 1 && !isUnl);
+            const progress = localStorage.getItem(`prog_${currentUser}_${cat}_${i}`) || 0;
+            const dash = 100 - progress;
+
+            grid.innerHTML += `
+                <div class="exam-row ${isLocked ? 'locked' : ''}">
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 36 36">
+                            <circle class="circle-bg" cx="18" cy="18" r="16"></circle>
+                            <circle class="circle-val" cx="18" cy="18" r="16" style="stroke-dashoffset: ${dash}"></circle>
+                        </svg>
+                        <span class="percentage-text">${progress}%</span>
+                    </div>
+                    <button class="full-press-btn" onclick="handleExamClick(${i}, ${isLocked})">
+                        <span>EXAM #${i} ${isLocked ? '🔒' : ''}</span>
+                    </button>
+                    <button class="btn-eye" onclick="showReview(${i})"><ion-icon name="eye-outline"></ion-icon></button>
+                </div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.handleExamClick = (idx, isLocked) => {
+        currentExamIdx = idx;
+        if(isLocked) {
+            if(currentUser === "Guest") { alert("Login to purchase."); return setScreen('authScreen'); }
+            const buyOne = confirm(`Unlock Exam #${idx} for ₱9?\n\n(Click Cancel for Pro Access ₱299)`);
+            if(buyOne) showPayment(`EXAM #${idx}`, "₱9");
+            else handleUpgradeFlow();
+        } else startQuiz(idx);
+    };
+
+    window.startQuiz = (idx) => {
+        currentExamIdx = idx; currentQs = [...DB[currentCat][idx]];
+        curIdx = 0; answers = new Array(currentQs.length).fill(null); score = 0;
+        setScreen('quiz'); loadQ();
+    };
+
+    window.loadQ = () => {
+        const q = currentQs[curIdx];
+        document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} / ${currentQs.length}`;
+        document.getElementById('qTxt').innerText = q.q;
+        const box = document.getElementById('choices'); box.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.innerText = c;
+            b.onclick = () => {
+                answers[curIdx] = i;
+                score = answers.filter((a, idx) => a === currentQs[idx].a).length;
+                document.getElementById('scoreBox').innerText = `${score} / ${currentQs.length}`;
+                handleNextLogic();
+            };
+            box.appendChild(b);
+        });
+    };
+
+    window.handleNextLogic = () => { if(curIdx < currentQs.length-1) { curIdx++; loadQ(); } else finishQuiz(); };
+    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } };
+
+    function finishQuiz() {
+        const p = Math.round((score/currentQs.length)*100);
+        const best = localStorage.getItem(`prog_${currentUser}_${currentCat}_${currentExamIdx}`) || 0;
+        if(p > best) localStorage.setItem(`prog_${currentUser}_${currentCat}_${currentExamIdx}`, p);
+        showReview(currentExamIdx, true);
+    }
+
+    window.showReview = (idx, isResult) => {
+        const qs = DB[currentCat][idx];
+        document.getElementById('resScore').innerText = isResult ? `SCORE: ${score}/${qs.length}` : `EXAM #${idx} SUMMARY`;
+        const scroll = document.getElementById('revScroll'); scroll.innerHTML = "";
+        qs.forEach((q, i) => {
+            let ch = ""; q.choices.forEach((c, ci) => {
+                let col = (ci === q.a) ? "color:var(--success); font-weight:700;" : (isResult && ci === answers[i] ? "color:var(--danger);" : "");
+                ch += `<div style="font-size:12px; margin:5px 0; ${col}">${c}</div>`;
+            });
+            scroll.innerHTML += `<div style="margin-bottom:15px; border-bottom:1px solid var(--border); padding-bottom:10px;"><b>${i+1}. ${q.q}</b>${ch}</div>`;
+        });
+        setScreen('results');
+    };
+</script>
+</body>
+</html>
