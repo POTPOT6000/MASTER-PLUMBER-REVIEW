@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
+            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
+            --orange: #f97316; --light-blue: #bae6fd; --dark-blue: #1d4ed8;
+            --pro-gradient: linear-gradient(135deg, #FF6B00 0%, #FF2E00 100%);
+            --pro-text: #FFEBCC;
+            --status-free: #64748b;
+            --cat-icon-code: #E0F2FE; --cat-icon-arith: #FEE2E2; --cat-icon-design: #DCFCE7; --cat-icon-prac: #FFEDD5;
+        }
+        [data-theme="dark"] {
+            --primary: #38bdf8; --accent: #0ea5e9; --success: #34d399; --danger: #f87171;
+            --warning: #fbbf24; --bg: #020617; --card: #0f172a; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #1e293b; --btn-ghost: #1e293b;
+            --pro-gradient: linear-gradient(135deg, #cc5500 0%, #cc2400 100%);
+            --pro-text: #fef0db;
+            --status-free: #94a3b8;
+            --cat-icon-code: #0c4a6e; --cat-icon-arith: #7f1d1d; --cat-icon-design: #14532d; --cat-icon-prac: #7c2d12;
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; padding-bottom: 90px; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 25px; 
+            border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            position: relative; overflow: hidden;
+        }
+
+        /* Centered Bottom Nav */
+        .bottom-nav { 
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
+            background: var(--card); border-top: 1px solid var(--border); 
+            display: flex; justify-content: center; align-items: center; 
+            gap: 25px; padding: 0 10px; border-radius: 25px 25px 0 0; 
+            box-shadow: 0 -10px 20px rgba(0,0,0,0.05); z-index: 1000;
+        }
+        .nav-item { 
+            display: flex; flex-direction: column; align-items: center; 
+            gap: 4px; color: var(--sub); background: transparent; 
+            border: none; font-size: 10px; font-weight: 700; width: 65px;
+            cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .nav-item:active { transform: scale(0.9); }
+        .nav-item.active { color: var(--accent); }
+        .nav-icon { font-size: 22px; }
+
+        /* Screen Animations */
+        .screen { 
+            display: none; 
+            animation: fadeIn 0.4s ease-out; 
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Existing UI Components */
+        button { width: 100%; padding: 16px; margin: 8px 0; border: none; border-radius: 16px; font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-main { background: var(--accent); color: #fff !important; }
+        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--btn-ghost); display:none; }
+        #progressBar { height: 100%; background: var(--accent); width: 0%; transition: 0.4s ease; }
+        .correct { background: var(--success) !important; color: white !important; }
+        .wrong { background: var(--danger) !important; color: white !important; }
+        input { width: 100%; padding: 14px; margin: 8px 0; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text); outline: none; }
+        .exam-item { display: flex; align-items: center; gap: 10px; background: var(--btn-ghost); margin: 8px 0; padding: 5px 15px; border-radius: 15px; }
+        .locked { opacity: 0.5; }
+        
+        .new-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .pro-card { background: var(--pro-gradient); border-radius: 20px; padding: 20px; color: white; margin-bottom: 25px; }
+        .category-item { background: var(--btn-ghost); border-radius: 18px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; margin-bottom: 10px; }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-card" id="appBody">
+    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
+    
+    <div id="authScreen" class="screen" style="display: block; text-align: center;">
+        <div style="font-size: 50px; color: #3b82f6;"><ion-icon name="water"></ion-icon></div>
+        <h1>MASTER PLUMBER <span style="color: #3b82f6;">REVIEWER</span></h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn-main" onclick="handleAuth()">SIGN IN</button>
+        <button onclick="handleRegister()">CREATE ACCOUNT</button>
+        <button onclick="enterAsGuest()" style="background:transparent; color: var(--accent);">Continue as Guest</button>
+    </div>
+
+    <div id="home" class="screen">
+        <div class="new-header">
+            <div>
+                <h2 id="welcomeMsg" style="margin:0;">Welcome! 👋</h2>
+                <span id="newStatus" style="font-size:11px; font-weight:700; color:var(--sub);">FREE MEMBER</span>
+            </div>
+            <button onclick="toggleTheme()" style="width:40px; height:40px; border-radius:12px; padding:0;">
+                <ion-icon id="themeIcon" name="moon-outline"></ion-icon>
+            </button>
+        </div>
+
+        <div class="pro-card" id="proCardCont">
+            <h3 style="margin:0;">Unlock Lifetime Pro</h3>
+            <p style="font-size:11px;">Access all 60+ exams forever.</p>
+            <button onclick="setScreen('paymentScreen')" style="background:white; color:var(--orange);">UPGRADE — ₱299</button>
+        </div>
+
+        <div class="category-list">
+            <div class="category-item" onclick="openExams('Plumbing Code')">
+                <ion-icon name="book-outline" style="color:var(--accent); font-size:24px;"></ion-icon>
+                <span>Plumbing Code</span>
+            </div>
+            <div class="category-item" onclick="openExams('Plumbing Arithmetic')">
+                <ion-icon name="calculator-outline" style="color:var(--danger); font-size:24px;"></ion-icon>
+                <span>Plumbing Arithmetic</span>
+            </div>
+            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')">
+                <ion-icon name="construct-outline" style="color:var(--success); font-size:24px;"></ion-icon>
+                <span>Sanitation & Design</span>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-item active" onclick="setScreen('home')">
+                <ion-icon name="home-outline" class="nav-icon"></ion-icon>Home
+            </button>
+            <button class="nav-item" onclick="alert('Stats Feature coming soon!')">
+                <ion-icon name="stats-chart-outline" class="nav-icon"></ion-icon>Stats
+            </button>
+            <button class="nav-item" onclick="openProfile()">
+                <ion-icon name="person-outline" class="nav-icon"></ion-icon>Account
+            </button>
+        </div>
+    </div>
+
+    <div id="aboutYou" class="screen">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <ion-icon name="person-circle-outline" style="font-size: 80px; color: var(--accent);"></ion-icon>
+            <h2>About You</h2>
+        </div>
+        <div id="profileDetails" style="background: var(--btn-ghost); padding: 20px; border-radius: 20px; margin-bottom: 20px;">
+            </div>
+        <button class="btn-main" onclick="setScreen('home')">Back</button>
+        <button id="authActionBtn" style="color: var(--danger); background: transparent;"></button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="text-align:center;"></h2>
+        <div id="examGrid"></div>
+        <button onclick="setScreen('home')">Back</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div id="qNum" style="font-weight:bold; color:var(--accent);"></div>
+        <div id="scoreBox" style="float:right;">Score: 0</div>
+        <p id="qTxt" style="margin: 20px 0; font-size: 18px;"></p>
+        <div id="choices"></div>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align:center;"></h2>
+        <div id="revScroll" style="max-height: 300px; overflow-y: auto; border: 1px solid var(--border); padding: 10px; border-radius: 15px;"></div>
+        <button class="btn-main" onclick="setScreen('home')">Home</button>
+    </div>
+
+    <div id="paymentScreen" class="screen" style="text-align:center;">
+        <h3>Upgrade to Pro</h3>
+        <p>Send ₱299 via GCash and enter your key.</p>
+        <input type="text" id="licenseKey" placeholder="Enter License Key">
+        <button class="btn-main" onclick="verifyKey()">Activate</button>
+        <button onclick="setScreen('home')">Cancel</button>
+    </div>
+</div>
+
+<script type="module">
+    // Simplified logic to keep your existing functionality working
+    import { arithmeticDB, codeDB, designDB } from 'https://mple57.github.io/mple-database/db-loader.js';
+    const DB = { "Plumbing Arithmetic": arithmeticDB, "Plumbing Code": codeDB, "Sanitation Plumbing Design and Installation": designDB };
+
+    let currentUser = null, isPaid = false, curIdx = 0, currentQs = [], answers = [], score = 0, currentCat = "";
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        // Active Nav State
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        if(id === 'home') document.querySelectorAll('.nav-item')[0].classList.add('active');
+        if(id === 'aboutYou') document.querySelectorAll('.nav-item')[2].classList.add('active');
+    };
+
+    window.openProfile = () => {
+        const details = document.getElementById('profileDetails');
+        const actionBtn = document.getElementById('authActionBtn');
+        
+        if (!currentUser || currentUser === "Guest") {
+            details.innerHTML = `<p style="text-align:center;">You are not logged in.</p>`;
+            actionBtn.innerText = "PLEASE LOG IN";
+            actionBtn.onclick = () => location.reload();
+        } else {
+            details.innerHTML = `
+                <p><b>Username:</b> ${currentUser}</p>
+                <p><b>Account Type:</b> ${isPaid ? 'Pro (Lifetime)' : 'Free'}</p>
+            `;
+            actionBtn.innerText = "LOGOUT";
+            actionBtn.onclick = () => location.reload();
+        }
+        setScreen('aboutYou');
+    };
+
+    window.handleAuth = () => {
+        const u = document.getElementById('username').value;
+        if(u) { currentUser = u; updateUI(); setScreen('home'); }
+    };
+
+    window.enterAsGuest = () => { currentUser = "Guest"; updateUI(); setScreen('home'); };
+
+    function updateUI() {
+        document.getElementById('welcomeMsg').innerText = `Hello, ${currentUser}!`;
+        document.getElementById('newStatus').innerText = isPaid ? "PRO MEMBER" : "FREE MEMBER";
+        if(isPaid) document.getElementById('proCardCont').style.display = 'none';
+    }
+
+    window.openExams = (cat) => {
+        currentCat = cat;
+        document.getElementById('catTitle').innerText = cat;
+        const grid = document.getElementById('examGrid');
+        grid.innerHTML = "";
+        for(let i=1; i<=15; i++) {
+            const locked = !isPaid && i > 1;
+            grid.innerHTML += `<div class="exam-item ${locked?'locked':''}">Exam ${i} ${locked?'🔒':''} 
+                <button onclick="${locked?'alert(\'Pro Required\')':'startQuiz('+i+')'}" style="width:80px; margin-left:auto;">Start</button></div>`;
+        }
+        setScreen('exams');
+    };
+
+    window.startQuiz = (idx) => {
+        currentQs = DB[currentCat][idx];
+        curIdx = 0; score = 0; answers = [];
+        setScreen('quiz');
+        loadQ();
+    };
+
+    function loadQ() {
+        const q = currentQs[curIdx];
+        document.getElementById('qNum').innerText = `Q${curIdx+1}/${currentQs.length}`;
+        document.getElementById('qTxt').innerText = q.q;
+        const container = document.getElementById('choices');
+        container.innerHTML = "";
+        q.choices.forEach((c, i) => {
+            const btn = document.createElement('button');
+            btn.innerText = c;
+            btn.onclick = () => handleAnswer(i);
+            container.appendChild(btn);
+        });
+    }
+
+    function handleAnswer(i) {
+        answers.push(i);
+        if(i === currentQs[curIdx].a) score++;
+        document.getElementById('scoreBox').innerText = `Score: ${score}`;
+        curIdx++;
+        if(curIdx < currentQs.length) loadQ(); else finish();
+    }
+
+    function finish() {
+        document.getElementById('resScore').innerText = `Final Score: ${score}/${currentQs.length}`;
+        setScreen('results');
+    }
+
+    window.toggleTheme = () => {
+        const body = document.body;
+        const theme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', theme);
+        document.getElementById('themeIcon').setAttribute('name', theme === 'light' ? 'moon-outline' : 'sunny-outline');
+    };
+
+    window.verifyKey = () => {
+        if(document.getElementById('licenseKey').value === "MP-MASTER-2024") {
+            isPaid = true; updateUI(); setScreen('home'); alert("Pro Activated!");
+        } else alert("Invalid Key");
+    };
+</script>
+</body>
+</html>
