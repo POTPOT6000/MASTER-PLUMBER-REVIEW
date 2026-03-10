@@ -340,7 +340,6 @@
         document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} OF ${currentQs.length}`;
         document.getElementById('qTxt').innerText = q.q;
 
-        // Image Handling Logic
         const existingImg = document.getElementById('qImg');
         if (existingImg) existingImg.remove();
         if (q.img) {
@@ -369,7 +368,16 @@
     };
 
     window.handleNextLogic = () => { if(curIdx < currentQs.length-1) { curIdx++; loadQ(); } else showResults(); };
-    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } };
+    
+    // Updated Back button logic: returns to Exams if at start
+    window.prevQ = () => { 
+        if(curIdx > 0) { 
+            curIdx--; loadQ(); 
+        } else { 
+            setScreen('exams'); 
+        } 
+    };
+    
     window.quitQuiz = () => { if(confirm("Exit?")) setScreen('home'); };
     window.finishExamEarly = () => showResults();
 
