@@ -1,8 +1,8 @@
 export const toolsDB = {
      1: [
-        { q: "What is a Cordless Drill primarily used for?", choices: ["A. Drilling and driving screws", "B. Measuring pipe", "C. Cutting metal", "D. Bending copper"], a: 0, img: "images/Cordless Drill .png" },
-        { q: "What is a Drill Hammer used for?", choices: ["A. Removing nails", "B. Masonry drilling", "C. Cleaning pipes", "D. Threading pipe"], a: 1, img: "images/Drill Hammer.png" },
-        { q: "An Angle Grinder is typically used for?", choices: ["A. Grinding and cutting metal", "B. Painting pipes", "C. Measuring angles", "D. Tightening nuts"], a: 0, img: "images/Angle Grinder.png" },
+        { q: "What is a Cordless Drill primarily used for?", choices: ["A. Drilling and driving screws", "B. Measuring pipe", "C. Cutting metal", "D. Bending copper"], a: 0, img: "/images/Cordless Drill .png" },
+        { q: "What is a Drill Hammer used for?", choices: ["A. Removing nails", "B. Masonry drilling", "C. Cleaning pipes", "D. Threading pipe"], a: 1, img: "/images/Drill Hammer.png" },
+        { q: "An Angle Grinder is typically used for?", choices: ["A. Grinding and cutting metal", "B. Painting pipes", "C. Measuring angles", "D. Tightening nuts"], a: 0, img: "/images/Angle Grinder.png" },
         { q: "What is a Sink Auger designed to clear?", choices: ["A. Main sewer lines", "B. Kitchen sink clogs", "C. Tree roots", "D. Vent pipes"], a: 1, img: "images/Sink Auger.png" },
         { q: "A Drain Machine is used for?", choices: ["A. Heavy-duty pipe clearing", "B. Soldering joints", "C. Measuring water flow", "D. Testing pressure"], a: 0, img: "images/Drain Machine.png" },
         { q: "What is a Toilet Auger used for?", choices: ["A. Clearing toilet blockages", "B. Drilling concrete", "C. Bending pipe", "D. Cutting tiles"], a: 0, img: "images/Toiler Auger.png" },
@@ -159,4 +159,5 @@ export const toolsDB = {
     ]
 
 };
+
 
