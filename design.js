@@ -499,12 +499,110 @@ export const designDB = {
     { q: "In Figure 6, identify label F.", choices: ["A. Building sewer", "B. Soil branch", "C. Building drain", "D. House sewer"], a: 2 }
     ],
 6: [
-        { q: "Shannel’s birthday is 7 weeks and 5 days away. How many days away is her birthday?", choices: ["24 days", "54 days", "65 days", "75 days"], a: 1 },
-        { q: "What is the next term of the given sequence of numbers: 1, 2, 6, 24, 120, ...?", choices: ["360", "480", "560", "720"], a: 3 }
+        { q: "The Clean Water Act primarily aims to protect:", choices: ["A. Landowners", "B. Wealthy businessmen", "C. Water bodies and public health", "D. Political leaders"], a: 2 }, // [cite: 6-10]
+    { q: "What is the purpose of a vent in a plumbing system?", choices: ["A. Supply water to fixtures", "B. Prevent pipe freezing", "C. Equalize pressure and prevent trap siphonage", "D. Prevent water hammer"], a: 2 }, // [cite: 11-15]
+    { q: "A citizen may report a polluter to:", choices: ["A. Barangay Tanod only", "B. Local business", "C. DENR or LGU", "D. Anyone with a loudspeaker"], a: 2 }, // [cite: 16-20]
+    { q: "The fixture unit value of a water closet with a flush tank is:", choices: ["A. 2", "B. 3", "C. 4", "D. 6"], a: 1 }, // [cite: 21-25]
+    { q: "The Water Quality Management Fund may not be used for:", choices: ["A. Equipment purchase", "B. Research", "C. Political campaigns", "D. Cleanup drives"], a: 2 }, // [cite: 26-30]
+    { q: "What is the main goal of RA 9275?", choices: ["A. To conserve forests", "B. To manage hazardous waste", "C. To protect the country's water bodies from pollution.", "D. To promote urban housing"], a: 2 }, // [cite: 31-36]
+    { q: "What law complements RA 9275 in terms of environmental impact?", choices: ["A. RA 8749 (Clean Air Act)", "B. RA 9003 (Ecological Solid Waste Management)", "C. Both A and B", "D. RA 9165 (Dangerous Drugs Act)"], a: 2 }, // [cite: 37-40]
+    { q: "Which type of pipe is typically used for underground drainage systems?", choices: ["A. CPVC", "B. Cast Iron", "C. PPR", "D. Galvanized Iron"], a: 1 }, // [cite: 41-46]
+    { q: "What is the minimum size of a building sewer for a residential house?", choices: ["A. 2 inches", "B. 3 inches", "C. 4 inches", "D. 6 inches"], a: 2 }, // [cite: 47-51]
+    { q: "What does \"gray water\" refer to?", choices: ["A. Water with sand", "B. Treated water", "C. Lightly used water from sinks/showers", "D. Rainwater"], a: 2 }, // [cite: 52-56]
+    { q: "What type of fitting is recommended to connect a vertical drain to a horizontal drain?", choices: ["A. Tee", "B. Wye", "C. Sanitary Tee", "D. Elbow"], a: 1 }, // [cite: 57-62]
+    { q: "Public education under RA 9275 includes:", choices: ["A. Silent campaigns", "B. Social media regulation", "C. Clean water awareness and training", "D. Business investment tips"], a: 2 }, // [cite: 63-67]
+    { q: "What is the first step in forming a WQMA?", choices: ["A. Planting mangroves", "B. Constructing dikes", "C. Identifying polluted water bodies", "D. Passing national legislation"], a: 2 }, // [cite: 71-75]
+    { q: "RA 9275 empowers the LGUs to:", choices: ["A. Build airports", "B. Classify rivers", "C. Manage sewerage and septage systems", "D. Operate national highways"], a: 2 }, // [cite: 76-80]
+    { q: "What does \"point source\" refer to in water pollution?", choices: ["A. General area pollution", "B. Specific source like a pipe or outlet", "C. Pollution from mountains", "D. Runoff from farmlands"], a: 1 }, // [cite: 81-85]
+    { q: "The maximum length of a trap arm for a lavatory (1.25 inch diameter) is:", choices: ["A. 1.0 meters", "B. 1.5 meters", "C. 2.0 meters", "D. 2.5 meters"], a: 1 }, // [cite: 86-91]
+    { q: "What does the law say about open defecation?", choices: ["A. Encouraged in forests", "B. Not addressed", "C. Prohibited", "D. Recommended in emergencies"], a: 2 }, // [cite: 92-96]
+    { q: "Monitoring stations are installed to:", choices: ["A. Filter wastewater", "B. Prevent earthquakes", "C. Observe water quality regularly", "D. Generate electricity"], a: 2 }, // [cite: 97-101]
+    { q: "Who approves the funding for WQMA action plans?", choices: ["A. Private citizens", "B. Barangay treasurers", "C. National or local government", "D. Real estate developers"], a: 2 }, // [cite: 102-106]
+    { q: "What is the duration of a Discharge Permit's validity?", choices: ["A. 1 year", "B. 5 years", "C. 10 years", "D. Lifetime"], a: 0 }, // [cite: 109-113]
+    { q: "Which is a primary indicator of water pollution?", choices: ["A. Oxygen level", "B. Speed of water", "C. Size of river", "D. Noise from surroundings"], a: 0 }, // [cite: 114-118]
+    { q: "Environmental users' fees are paid by:", choices: ["A. Citizens", "B. Barangays", "C. Industries discharging waste", "D. Students"], a: 2 }, // [cite: 119-123]
+    { q: "What is the function of a backflow preventer?", choices: ["A. Prevents air from entering the supply pipe", "B. Prevents water from flowing backwards into the potable water supply", "C. Filters particles in wastewater", "D. Prevents noise in water pipes"], a: 1 }, // [cite: 124-128]
+    { q: "What is considered sludge?", choices: ["A. Clean rainwater", "B. Solid waste from treatment", "C. Broken pipes", "D. Rocks and gravel"], a: 1 }, // [cite: 129-133]
+    { q: "Septage collection is done by:", choices: ["A. LGU-accredited providers", "B. BFP", "C. DOH personnel", "D. Street vendors"], a: 0 }, // [cite: 134-138]
+    { q: "Which type of pollution control is best for large factories?", choices: ["A. Fines only", "B. Discharge monitoring, permits, and treatment", "C. Public warning", "D. Banning labor"], a: 1 }, // [cite: 139-143]
+    { q: "Communities must be:", choices: ["A. Discouraged from action", "B. Passive in programs", "C. Informed and involved", "D. Restricted"], a: 2 }, // [cite: 147-151]
+    { q: "Which law promotes sustainable environment together with RA 9275?", choices: ["A. Clean Air Act (RA 8749)", "B. Climate Change Act", "C. Solid Waste Act (RA 9003)", "D. All of the above"], a: 3 }, // [cite: 152-156]
+    { q: "Treated wastewater can be used for:", choices: ["A. Drinking only", "B. Street cleaning, irrigation", "C. Showering", "D. Bottling"], a: 1 }, // [cite: 157-161]
+    { q: "The key goal of water classification is:", choices: ["A. Assign real estate value", "B. Guide wastewater standards", "C. Create tourist zones", "D. Define property lines"], a: 1 }, // [cite: 162-166]
+    { q: "What is the term for substances added to water that change its quality?", choices: ["A. Purifiers", "B. Effluents", "C. Pollutants", "D. Additives"], a: 2 }, // [cite: 167-172]
+    { q: "Which of the following contributes to biological water pollution?", choices: ["A. Heavy metals", "B. Bacteria and viruses", "C. Plastic bottles", "D. Oil spills"], a: 1 }, // [cite: 173-177]
+    { q: "Industries are required to install what to treat their wastewater?", choices: ["A. Backup generators", "B. Chemical storage", "C. Wastewater treatment facilities", "D. Parking spaces"], a: 2 }, // [cite: 178-182]
+    { q: "What role do LGUs play in septage management?", choices: ["A. Monitor schools", "B. Provide trucks and treatment facilities", "C. Build shopping malls", "D. Issue marriage licenses"], a: 1 }, // [cite: 185-188]
+    { q: "The \"polluter pays\" principle means:", choices: ["A. The government pays polluters", "B. Polluters are rewarded", "C. Polluters bear the cost of cleanup", "D. Public pays for cleanup"], a: 2 }, // [cite: 189-193]
+    { q: "Wastewater treatment removes:", choices: ["A. Only solids", "B. Chemicals, pathogens, and solids", "C. Oxygen", "D. None of the above"], a: 1 }, // [cite: 194-198]
+    { q: "A Pollution Control Officer must be:", choices: ["A. Licensed doctor", "B. Certified by DENR", "C. Barangay secretary", "D. Lawyer"], a: 1 }, // [cite: 199-203]
+    { q: "A treatment facility that fails to meet standards will:", choices: ["A. Get more funding", "B. Be recognized", "C. Be penalized", "D. Be privatized"], a: 2 }, // [cite: 204-208]
+    { q: "RA 9275 helps preserve:", choices: ["A. Water rights for businesses", "B. Access to clean water for all", "C. Real estate", "D. Mining permits"], a: 1 }, // [cite: 209-213]
+    { q: "Under the Act, WQMA plans must be:", choices: ["A. Verbal only", "B. Confidential", "C. Documented and updated", "D. Skipped"], a: 2 }, // [cite: 214-218]
+    { q: "Grease traps are most commonly installed in:", choices: ["A. Laboratories", "B. Comfort rooms", "C. Kitchens", "D. Roof decks"], a: 2 }, // [cite: 221-225]
+    { q: "One of the key enforcement tools is:", choices: ["A. Self-reporting only", "B. Public opinion", "C. Regular monitoring and testing", "D. National debates"], a: 2 }, // [cite: 226-230]
+    { q: "All discharging facilities must submit reports:", choices: ["A. Monthly", "B. Annually", "C. Irregularly", "D. Never"], a: 1 }, // [cite: 231-235]
+    { q: "Which test is used to check the tightness of drainage piping after installation?", choices: ["A. Hydrostatic pressure test", "B. Smoke test", "C. Water column test", "D. Soap test"], a: 2 }, // [cite: 236-241]
+    { q: "Which parameter measures the amount of oxygen used by microorganisms in water?", choices: ["A. BOD (Biochemical Oxygen Demand)", "B. COD (Chemical Oxygen Demand)", "C. DO (Dissolved Oxygen)", "D. TSS (Total Suspended Solids)"], a: 0 }, // [cite: 242-247]
+    { q: "Which of the following has the highest risk of contaminating water?", choices: ["A. Tree planting", "B. Household detergent runoff", "C. Properly managed septic tank", "D. Organic fertilizers"], a: 1 }, // [cite: 248-252]
+    { q: "The law applies to what kind of water?", choices: ["A. Surface water only", "B. Groundwater only", "C. All water bodies", "D. Drinking water only"], a: 2 }, // [cite: 253-257]
+    { q: "What does DO stand for in water quality monitoring?", choices: ["A. Daily Output", "B. Discharge Operation", "C. Dissolved Oxygen", "D. Drain Overflow"], a: 2 }, // [cite: 260-264]
+    { q: "Who is legally accountable for violating wastewater discharge limits?", choices: ["A. The barangay", "B. The mayor", "C. The polluter", "D. The general public"], a: 2 }, // [cite: 265-269]
+    { q: "Untreated wastewater causes what major health problem?", choices: ["A. Diabetes", "B. Skin cancer", "C. Waterborne diseases", "D. Asthma"], a: 2 }, // [cite: 270-274]
+    { q: "Industrial facilities must:", choices: ["A. Donate to river cleanup", "B. Submit wastewater test results", "C. Import bottled water", "D. Pay land tax"], a: 1 }, // [cite: 275-279]
+    { q: "The Clean Water Act is designed to protect:", choices: ["A. Only cities", "B. Tourist resorts", "C. All water users and ecosystems", "D. Fish vendors only"], a: 2 }, // [cite: 280-284]
+    { q: "RA 9275 was signed into law by:", choices: ["A. Fidel V. Ramos", "B. Gloria Macapagal-Arroyo", "C. Benigno Aquino III", "D. Rodrigo Duterte"], a: 1 }, // [cite: 285-289]
+    { q: "What is the minimum action for LGUs under the Act?", choices: ["A. Construct water refilling stations", "B. Pass ordinances and implement septage management", "C. Hire more traffic enforcers", "D. Fund commercial resorts"], a: 1 }, // [cite: 290-294]
+    { q: "The Clean Water Act mandates the prioritization of:", choices: ["A. Land use for mining", "B. Wastewater treatment facilities", "C. Highway development", "D. Air freshener distribution"], a: 1 }, // [cite: 297-301]
+    { q: "Which of the following is a non-point source of pollution?", choices: ["A. Sewage outfall", "B. Industrial pipe discharge", "C. Runoff from farms", "D. Factory drain"], a: 2 }, // [cite: 302-306]
+    { q: "Who is responsible for preparing the National Water Quality Status Report?", choices: ["A. DSWD", "B. DA", "C. DENR", "D. DOLE"], a: 2 }, // [cite: 307-312]
+    { q: "What is the purpose of the Water Quality Management Fund?", choices: ["A. For building roads", "B. For elections", "C. To finance enforcement and cleanup", "D. For LGU salaries"], a: 2 }, // [cite: 313-317]
+    { q: "What is \"effluent\"?", choices: ["A. Clean drinking water", "B. Industrial equipment", "C. Wastewater discharge", "D. Riverbank"], a: 2 }, // [cite: 318-322]
+    { q: "Industries found polluting without permits will face:", choices: ["A. Awards", "B. Rebates", "C. Penalties and/or imprisonment", "D. New business licenses"], a: 2 }, // [cite: 323-327]
+    { q: "What kind of pollution does RA 9275 regulate?", choices: ["A. Land erosion", "B. Light pollution", "C. Water pollution", "D. Vibration"], a: 2 }, // [cite: 328-332]
+    { q: "The Clean Water Act promotes which principle?", choices: ["A. Pollute and pay later", "B. Private ownership of rivers", "C. Polluter pays", "D. Free dumping zones"], a: 2 }, // [cite: 335-339]
+    { q: "Wastewater treatment is required for:", choices: ["A. All discharges into water bodies", "B. Domestic use only", "C. Only for factories", "D. Drinking water"], a: 0 }, // [cite: 340-344]
+    { q: "A Pollution Control Officer (PCO) is required to:", choices: ["A. Promote tourism", "B. Perform cleanup drives", "C. Monitor wastewater discharge", "D. Approve LGU ordinances"], a: 2 }, // [cite: 345-349]
+    { q: "What law is known as the Fire Code of the Philippines?", choices: ["A. RA 9485", "B. PD 1185", "C. RA 9514", "D. RA 9003"], a: 2 }, // [cite: 350-354]
+    { q: "The IRR of RA 9514 was issued by:", choices: ["A. Congress", "B. President", "C. DILG and BFP", "D. DPWH"], a: 2 }, // [cite: 355-359]
+    { q: "A Fire Safety Inspection Certificate is required before:", choices: ["A. Applying for a driver's license", "B. Getting an ECC", "C. Occupancy or business permit issuance", "D. Buying a property"], a: 2 }, // [cite: 360-364]
+    { q: "What is the minimum size of a building sewer for a residential house?", choices: ["A. 2 inches", "B. 3 inches", "C. 4 inches", "D. 6 inches"], a: 2 }, // [cite: 365-369]
+    { q: "How often must fire safety inspections be conducted in most establishments?", choices: ["A. Every 5 years", "B. Every 2 years", "C. Every year", "D. Only upon request"], a: 2 }, // [cite: 371-372]
+    { q: "The Fire Code requires exits to be:", choices: ["A. Hidden", "B. Locked at night", "C. Accessible and unobstructed", "D. Decorated"], a: 2 },
+    { q: "Which type of pipe is typically used for underground drainage systems?", choices: ["A. CPVC", "B. Cast Iron", "C. PPR", "D. Galvanized Iron"], a: 1 }, // [cite: 373]
+    { q: "What is the penalty for obstructing fire lanes?", choices: ["A. Tax rebate", "B. Imprisonment and/or fines", "C. Certificate of appreciation", "D. Warning only"], a: 1 }, // [cite: 374]
+    { q: "Fire extinguishers must be:", choices: ["A. Locked inside a cabinet", "B. Accessible, visible, and regularly maintained", "C. Hidden under desks", "D. Stored in offices only"], a: 1 },
+    { q: "What is the minimum slope required for horizontal drainage pipe that is 3 inches in diameter?", choices: ["A. 1/8 inch per foot", "B. 1/4 inch per foot", "C. 1/2 inch per foot", "D. 1 inch per foot"], a: 1 }, // [cite: 375]
+    { q: "The maximum vertical distance between a fixture outlet and the trap weir is:", choices: ["A. 300 mm", "B. 450 mm", "C. 600 mm", "D. 750 mm"], a: 2 }, // [cite: 375-376]
+    { q: "What is the minimum water pressure required at the highest fixture in a building?", choices: ["A. 7 psi", "B. 10 psi", "C. 15 psi", "D. 20 psi"], a: 2 }, // [cite: 376-377]
+    { q: "Which plumbing component prevents foul gases from entering the building?", choices: ["A. Cleanout", "B. Trap", "C. Vent", "D. Interceptor"], a: 1 }, // [cite: 377-378]
+    { q: "The minimum size of vent pipe for a water closet is:", choices: ["A. 1 inch", "B. 1-1/4 inch", "C. 1-1/2 inch", "D. 2 inches"], a: 3 },
+    { q: "A house drain must be tested before back-filling by:", choices: ["A. Pressure gauge", "B. Water test", "C. Air pressure", "D. All of the above"], a: 3 },
+    { q: "Which of the following fixtures requires an indirect waste pipe?", choices: ["A. Water closet", "B. Kitchen sink", "C. Lavatory", "D. Floor drain receiving refrigerator discharge"], a: 3 }, // [cite: 378-379]
+    { q: "The minimum number of plumbing fixtures required for an office building with 50 male employees is:", choices: ["A. 1 water closet", "B. 2 water closets", "C. 3 lavatories", "D. 1 urinal"], a: 1 },
+    { q: "What is the typical invert slope for a 4-inch house sewer?", choices: ["A. 1/8 inch per foot", "B. 1/4 inch per foot", "C. 1/2 inch per foot", "D. 1 inch per foot"], a: 1 }, // [cite: 380-381]
+    { q: "What type of fitting is used to change direction in a vertical drain stack?", choices: ["A. Long sweep elbow", "B. Sanitary tee", "C. Wye", "D. Short sweep elbow"], a: 1 }, // [cite: 381-382]
+    { q: "A wet vent allows:", choices: ["A. Only one fixture", "B. Waste and venting of multiple fixtures", "C. Venting of vertical stacks", "D. Water supply pressure balancing"], a: 1 },
+    { q: "The most commonly developed water source in rural areas is:", choices: ["A. Deep well", "B. Surface reservoir", "C. Piped spring", "D. Rainwater tank"], a: 2 },
+    { q: "Which method is used to determine the sustainable yield of a well?", choices: ["A. Dye testing", "B. Water table monitoring", "C. Pump test", "D. Jar test"], a: 2 }, // [cite: 382-383]
+    { q: "The minimum safe distance between a well and a septic tank (in meters) is:", choices: ["A. 10", "B. 15", "C. 25", "D. 50"], a: 2 },
+    { q: "A shallow well is most at risk of contamination from:", choices: ["A. Rainwater", "B. Arsenic", "C. Surface runoff", "D. Iron bacteria"], a: 2 },
+    { q: "The standard test for determining the presence of pathogens in drinking water is:", choices: ["A. pH test", "B. BOD test", "C. Total coliform count", "D. Salinity test"], a: 2 }, // [cite: 384-385]
+    { q: "What is the ideal pH range for potable water?", choices: ["A. 5.0–6.0", "B. 6.5–8.5", "C. 7.0–9.0", "D. 6.0–9.5"], a: 1 }, // [cite: 385-386]
+    { q: "Which water source is most susceptible to seasonal variability?", choices: ["A. Deep well", "B. Spring", "C. Lake", "D. Rain catchment"], a: 3 }, // [cite: 386-387]
+    { q: "Which of the following is not a common waterborne disease?", choices: ["A. Typhoid fever", "B. Schistosomiasis", "C. Hepatitis A", "D. Tuberculosis"], a: 3 }, // [cite: 387-388]
+    { q: "Which of the following is a primary physical parameter in water quality testing?", choices: ["A. pH", "B. Turbidity", "C. E. coli", "D. Nitrate"], a: 1 }, // [cite: 388-389]
+    { q: "The first step in developing a water source is to:", choices: ["A. Build the pump house", "B. Submit to DOH for permit", "C. Conduct site and water source survey", "D. Drill the borehole"], a: 2 },
+    { q: "What is the main cause of nitrate contamination in groundwater?", choices: ["A. Human waste", "B. Fertilizer runoff", "C. Industrial chemicals", "D. Rusty pipes"], a: 1 }, // [cite: 390-391]
+    { q: "What is the purpose of a sanitary seal in a well?", choices: ["A. Prevent theft", "B. Prevent air from entering", "C. Prevent surface water from entering", "D. Prevent overpumping"], a: 2 }, // [cite: 391-392]
+    { q: "The allowable coliform count in potable water is:", choices: ["A. 5 CFU/100 mL", "B. 2 CFU/100 mL", "C. 0 CFU/100 mL", "D. 1 CFU/100 mL"], a: 2 },
+    { q: "A good water source must meet both quantity and:", choices: ["A. Cost", "B. Temperature", "C. Quality", "D. Ownership"], a: 2 },
+    { q: "Which of the following is considered a safe groundwater source?", choices: ["A. Artesian well", "B. Dug well", "C. Irrigation canal", "D. Surface spring"], a: 0 }, // [cite: 392-393]
+    { q: "A properly constructed well casing should extend how far above ground level?", choices: ["A. 15 cm", "B. 25 cm", "C. 30 cm", "D. 45 cm"], a: 2 } // [cite: 394-395]
+
     ],
     7: [
-        { q: "A sedimentation basin is 60 feet in diameter. What is the surface area?", choices: ["2830 sq. ft", "1200 sq. ft", "1542 sq. ft", "2480 sq. ft"], a: 0 },
-        { q: "Which of the following numbers can be divided evenly by 19?", choices: ["54", "63", "76", "82"], a: 2 }
+        
     ],
     8: [
         { q: "Jenny has finished reading 30% of a 340-page novel. How many pages has she read?", choices: ["102", "106", "110", "120"], a: 0 },
@@ -540,5 +638,6 @@ export const designDB = {
     ]
 
 };
+
 
 
