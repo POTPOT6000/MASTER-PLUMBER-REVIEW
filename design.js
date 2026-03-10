@@ -1374,28 +1374,617 @@ export const designDB = {
     { q: "Water pressure over 80 psi requires a pressure reducing valve.", choices: ["a. true", "b. false"], a: 0 }
     ],
     16: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "What is the process of water supply purification which consists of applying certain chemicals in particles too small to be removed by plain sedimentation?", choices: ["A. Coagulation", "B. Sedimentation", "C. Flocculation", "D. Filtration"], a: 0 }, // [cite: 16, 17]
+    { q: "What is the type of water closet prescribed for public toilet?", choices: ["A. Elongated bowl type", "B. Oval bowl type", "C. Circular bowl type", "D. Egg shape bowl type"], a: 0 }, // [cite: 16, 17]
+    { q: "What is the process of exposing water in their films to the oxygen of the atmosphere in order to remove neutralize the taste, odor and dissolved oxygen?", choices: ["A. Filtration", "B. Screening", "C. Aeration", "D. Sedimentation"], a: 2 }, // [cite: 16, 17]
+    { q: "What is the pipe fitting without side thread and projecting square head used for closing the edge of another fitting?", choices: ["A. Plug", "B. Cap", "C. Knot", "D. Bushing"], a: 0 }, // [cite: 16, 17]
+    { q: "The artificial application of water to land for the purpose of agricultural production.", choices: ["A. Irrigation", "B. Farming", "C. Cultivation", "D. Sprinkling"], a: 0 }, // [cite: 16, 17]
+    { q: "Water that is free from impurities which could cause disease or harmful physiological effects.", choices: ["A. Potable water", "B. Pure water", "C. Soft water", "D. Fresh water"], a: 2 }, // [cite: 17]
+    { q: "The quality of water could be determined by ____.", choices: ["A. Physical", "B. Chemical", "C. Biological", "D. All of these"], a: 3 }, // [cite: 17]
+    { q: "Which of the following is not a physical characteristic of water?", choices: ["A. Color", "B. Turbidity", "C. Odor", "D. Hardness"], a: 1 }, // [cite: 17]
+    { q: "It is the amount of suspended material in water as measured by light ray.", choices: ["A. Color", "B. Turbidity", "C. Odor", "D. Hardness"], a: 1 }, // [cite: 17]
+    { q: "Water color is caused by ____.", choices: ["A. Silt", "B. Clay", "C. Organic matter", "D. All of these"], a: 1 }, // [cite: 17]
+    { q: "How is water hardness measured?", choices: ["A. Ounce of hardness", "B. Grains per gallon", "C. Parts per million", "D. Soap suds"], a: 2 }, // [cite: 16, 17]
+    { q: "What is the pipe connection in which a ball is held in a cup-like that allows movement in every direction?", choices: ["A. Universal joint", "B. Uniform patent", "C. Ball joint", "D. Caulk joint"], a: 2 }, // [cite: 16, 17]
+    { q: "Leaching field is categorized as one of the types of disposal systems.", choices: ["A. Surface disposal", "B. Public sewer", "C. Subsurface disposal", "D. Water body"], a: 2 }, // [cite: 16, 17]
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 0 }, // [cite: 17]
+    { q: "The recommended distance of a septic tank from a well is ____.", choices: ["A. 10 meters", "B. 15 meters", "C. 25 meters", "D. 50 meters"], a: 1 }, // [cite: 17]
+    { q: "A tank which receives sewage and from which it is pumped to the sewer.", choices: ["A. Septic tank", "B. Sump", "C. Cesspool", "D. Catch basin"], a: 2 }, // [cite: 17]
+    { q: "A toilet that consists of a hole in the ground.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 2 }, // [cite: 17]
+    { q: "What is the required size of a water service pipe for a 2-story house?", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/4\""], a: 1 }, // [cite: 17]
+    { q: "A pipe connecting the water main to the building.", choices: ["A. Service pipe", "B. Distribution pipe", "C. Riser", "D. Fixture branch"], a: 0 }, // [cite: 17]
+    { q: "What type of pump is used to lift water from a deep well?", choices: ["A. Centrifugal pump", "B. Reciprocating pump", "C. Jet pump", "D. Submersible pump"], a: 3 }, // [cite: 17]
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 60 cm", "B. 70 cm", "C. 80 cm", "D. 90 cm"], a: 2 }, // [cite: 17]
+    { q: "What is the standard height of a shower head from the floor?", choices: ["A. 150 cm", "B. 180 cm", "C. 200 cm", "D. 220 cm"], a: 1 }, // [cite: 17]
+    { q: "What is the purpose of a trap in a plumbing fixture?", choices: ["A. Prevent backflow", "B. Prevent sewer gas", "C. Increase pressure", "D. Filter water"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum diameter of a soil pipe?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 }, // [cite: 17]
+    { q: "What is the minimum slope of a horizontal drainage pipe?", choices: ["A. 1%", "B. 2%", "C. 3%", "D. 4%"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum diameter of a vent stack?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 2 }, // [cite: 17]
+    { q: "What is the purpose of a cleanout?", choices: ["A. Venting", "B. Drainage", "C. Maintenance", "D. Inspection"], a: 0 }, // [cite: 17]
+    { q: "What type of joint is used for galvanized iron pipes?", choices: ["A. Threaded", "B. Welded", "C. Flanged", "D. Soldered"], a: 0 }, // [cite: 17]
+    { q: "What type of valve is used to prevent the backflow of water?", choices: ["A. Gate valve", "B. Globe valve", "C. Check valve", "D. Ball valve"], a: 1 }, // [cite: 17]
+    { q: "What is the standard length of a PVC pipe?", choices: ["A. 3 meters", "B. 4 meters", "C. 6 meters", "D. 10 meters"], a: 2 }, // [cite: 17]
+    { q: "The unit of flow in a plumbing system.", choices: ["A. gpm", "B. lps", "C. dfu", "D. All of these"], a: 2 }, // [cite: 17]
+    { q: "The pressure of water at a fixture.", choices: ["A. Static pressure", "B. Dynamic pressure", "C. Residual pressure", "D. Flow pressure"], a: 1 }, // [cite: 17]
+    { q: "What is the primary source of water in a city?", choices: ["A. Well", "B. River", "C. Dam", "D. Water main"], a: 1 }, // [cite: 17]
+    { q: "The process of removing suspended solids from water.", choices: ["A. Filtration", "B. Sedimentation", "C. Aeration", "D. Coagulation"], a: 2 }, // [cite: 17]
+    { q: "What is the standard color for a potable water pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Orange"], a: 1 }, // [cite: 17]
+    { q: "What is the standard color for a drainage pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Orange"], a: 1 }, // [cite: 17]
+    { q: "What is the standard height of a water closet handle?", choices: ["A. 80 cm", "B. 100 cm", "C. 120 cm", "D. 150 cm"], a: 2 }, // [cite: 17]
+    { q: "The distance between the trap and the vent.", choices: ["A. Trap seal", "B. Trap arm", "C. Vent stack", "D. Soil stack"], a: 2 }, // [cite: 17]
+    { q: "What is the maximum distance of a cleanout from a wall?", choices: ["A. 30 cm", "B. 45 cm", "C. 60 cm", "D. 90 cm"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum size of a vent for a water closet?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 }, // [cite: 17]
+    { q: "A pipe that carries only liquid waste free of fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 1 }, // [cite: 17]
+    { q: "A pipe that carries fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 }, // [cite: 17]
+    { q: "What is the minimum size of a house drain?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 }, // [cite: 17]
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap seal", "B. Trap arm", "C. Water seal", "D. Trap depth"], a: 0 }, // [cite: 17]
+    { q: "What is the standard height of a kitchen sink from the floor?", choices: ["A. 70 cm", "B. 80 cm", "C. 90 cm", "D. 100 cm"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum size of a water supply for a lavatory?", choices: ["A. 3/8\"", "B. 1/2\"", "C. 3/4\"", "D. 1\""], a: 2 }, // [cite: 17]
+    { q: "What is the minimum size of a water supply for a bathtub?", choices: ["A. 3/8\"", "B. 1/2\"", "C. 3/4\"", "D. 1\""], a: 0 }, // [cite: 17]
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PVC", "B. CPVC", "C. PE", "D. PPR"], a: 3 }, // [cite: 17]
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. GI", "B. PVC", "C. PE", "D. Copper"], a: 1 }, // [cite: 17]
+    { q: "What is the standard spacing for horizontal pipe supports?", choices: ["A. 1 meter", "B. 1.5 meters", "C. 2 meters", "D. 3 meters"], a: 2 }, // [cite: 17]
+    { q: "What is the standard spacing for vertical pipe supports?", choices: ["A. 1 floor", "B. 2 floors", "C. 3 meters", "D. 4 meters"], a: 1 }, // [cite: 17]
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. Coupling", "B. Union", "C. Bushing", "D. Nipple"], a: 3 }, // [cite: 17]
+    { q: "What is the purpose of a P-trap?", choices: ["A. Prevent backflow", "B. Prevent sewer gas", "C. Increase pressure", "D. Filter water"], a: 3 }, // [cite: 17]
+    { q: "What is the minimum diameter of a storm drain?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 }, // [cite: 17]
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. Riser", "B. Stack", "C. Branch", "D. Main"], a: 1 }, // [cite: 17]
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. Branch", "B. Main", "C. Lateral", "D. Stack"], a: 1 }, // [cite: 17]
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 50 cm", "B. 60 cm", "C. 70 cm", "D. 80 cm"], a: 1 }, // [cite: 17]
+    { q: "What is the minimum size of a drain for a shower?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 2 }, // [cite: 17]
+    { q: "What is the purpose of an air chamber?", choices: ["A. Prevent backflow", "B. Prevent water hammer", "C. Increase pressure", "D. Filter water"], a: 2 }, // [cite: 17]
+    { q: "The device used to measure water consumption.", choices: ["A. Water meter", "B. Pressure gauge", "C. Flow meter", "D. Thermometer"], a: 3 }, // [cite: 17]
+    { q: "What type of valve is used in a water closet tank?", choices: ["A. Float valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 0 }, // [cite: 17]
+    { q: "What is the standard diameter of a garden hose?", choices: ["A. 1/2\"", "B. 5/8\"", "C. 3/4\"", "D. 1\""], a: 2 }, // [cite: 17]
+    { q: "What is the purpose of a grease trap?", choices: ["A. Prevent sewer gas", "B. Separate grease from water", "C. Increase pressure", "D. Filter water"], a: 2 }, // [cite: 17]
+    { q: "Where is a grease trap usually installed?", choices: ["A. Bathroom", "B. Kitchen", "C. Laundry", "D. Garage"], a: 3 }, // [cite: 17]
+    { q: "What is the minimum size of a vent for a septic tank?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 3 }, // [cite: 17]
+    { q: "The pipe that carries wastewater from the house to the septic tank.", choices: ["A. House drain", "B. House sewer", "C. Branch line", "D. Lateral"], a: 1 }, // [cite: 17]
+    { q: "What type of joint is used for PVC pipes?", choices: ["A. Solvent weld", "B. Threaded", "C. Welded", "D. Soldered"], a: 0 }, // [cite: 17]
+    { q: "What is the purpose of a roof drain?", choices: ["A. Venting", "B. Drainage of rainwater", "C. Maintenance", "D. Inspection"], a: 3 }, // [cite: 17]
+    { q: "The material used to seal pipe threads.", choices: ["A. Teflon tape", "B. Glue", "C. Solder", "D. Paint"], a: 2 }, // [cite: 17]
+    { q: "What is the standard height of a bidet from the floor?", choices: ["A. 30 cm", "B. 40 cm", "C. 50 cm", "D. 60 cm"], a: 3 }, // [cite: 17]
+    { q: "The process of testing a plumbing system for leaks.", choices: ["A. Pressure test", "B. Flow test", "C. Smoke test", "D. All of these"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum pressure for a water system?", choices: ["A. 20 psi", "B. 30 psi", "C. 40 psi", "D. 50 psi"], a: 1 }, // [cite: 17]
+    { q: "What is the maximum pressure for a residential water system?", choices: ["A. 60 psi", "B. 80 psi", "C. 100 psi", "D. 120 psi"], a: 0 }, // [cite: 17]
+    { q: "The device used to reduce water pressure.", choices: ["A. Pressure regulator", "B. Pressure gauge", "C. Check valve", "D. Relief valve"], a: 1 }, // [cite: 17]
+    { q: "The valve that opens when pressure exceeds a certain limit.", choices: ["A. Gate valve", "B. Globe valve", "C. Relief valve", "D. Check valve"], a: 0 }, // [cite: 17]
+    { q: "What is the standard size of a shower stall?", choices: ["A. 70x70 cm", "B. 80x80 cm", "C. 90x90 cm", "D. 100x100 cm"], a: 3 }, // [cite: 17]
+    { q: "What is the minimum distance between a water pipe and a sewer pipe?", choices: ["A. 30 cm", "B. 60 cm", "C. 1 meter", "D. 2 meters"], a: 3 }, // [cite: 17]
+    { q: "The process of disinfecting a water system.", choices: ["A. Chlorination", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 2 }, // [cite: 17]
+    { q: "What is the standard diameter of a soil stack?", choices: ["A. 3\"", "B. 4\"", "C. 6\"", "D. 8\""], a: 3 }, // [cite: 17]
+    { q: "The pipe that carries waste to the public sewer.", choices: ["A. House drain", "B. House sewer", "C. Lateral", "D. Main"], a: 0 }, // [cite: 17]
+    { q: "What is the purpose of a foot valve?", choices: ["A. Prevent backflow in a pump", "B. Control water flow", "C. Increase pressure", "D. Filter water"], a: 1 }, // [cite: 17]
+    { q: "What type of pipe is used for swimming pool plumbing?", choices: ["A. PVC", "B. GI", "C. PE", "D. Copper"], a: 1 }, // [cite: 17]
+    { q: "What is the standard height of a laundry tub from the floor?", choices: ["A. 70 cm", "B. 80 cm", "C. 90 cm", "D. 100 cm"], a: 0 }, // [cite: 17]
+    { q: "The process of removing iron from water.", choices: ["A. Aeration", "B. Filtration", "C. Chlorination", "D. Softening"], a: 3 }, // [cite: 17]
+    { q: "What is the standard size of a kitchen sink drain?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 0 }, // [cite: 17]
+    { q: "The pipe that carries wastewater from a laundry machine.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Storm pipe"], a: 2 }, // [cite: 17]
+    { q: "What is the minimum size of a vent for a lavatory?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 3 }, // [cite: 17]
+    { q: "The valve used to shut off water to a single fixture.", choices: ["A. Stop valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 1 }, // [cite: 17]
+    { q: "What is the standard color for a hot water pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Red"], a: 0 }, // [cite: 17]
+    { q: "What is the purpose of a cleanout at the end of a line?", choices: ["A. Venting", "B. Maintenance", "C. Inspection", "D. Drainage"], a: 1 }, // [cite: 17]
+    { q: "The device used to heat water.", choices: ["A. Water heater", "B. Boiler", "C. Heat exchanger", "D. All of these"], a: 2 }, // [cite: 17]
+    { q: "What is the standard size of a bathtub?", choices: ["A. 150x70 cm", "B. 160x75 cm", "C. 170x80 cm", "D. 180x90 cm"], a: 3 }, // [cite: 17]
+    { q: "Fixture takeoff requirements are determined after a study of the ____ and specifications.", choices: ["A. floor plan", "B. terrain layout", "C. city sewer system", "D. drawings"], a: 3 }, // [cite: 16, 17]
+    { q: "Soil pipe is commonly listed by standard length requirements, size, the material, and the strength or ____.", choices: ["A. weakness", "B. weight", "C. diameter", "D. composition"], a: 1 }, // [cite: 16, 17]
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 1 }, // [cite: 16, 17]
+    { q: "What do you use the strap wrench for?", choices: ["A. To remove the flushometer couplings", "B. To install the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 1 }, // [cite: 16, 17]
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 0 }, // [cite: 16, 17]
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.6 gallons", "B. 1.0 gallon", "C. 1.2 gallons", "D. 5.0 gallons"], a: 1 }, // [cite: 16, 17]
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 3 }, // [cite: 16, 17]
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/2\""], a: 2 } // [cite: 17]
     ],
     17: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "What is the process of water supply purification which consists of applying certain chemicals in particles too small to be removed by plain sedimentation?", choices: ["A. Coagulation", "B. Sedimentation", "C. Flocculation", "D. Filtration"], a: 0 },
+    { q: "What is the type of water closet prescribed for public toilet?", choices: ["A. Elongated bowl type", "B. Oval bowl type", "C. Circular bowl type", "D. Egg shape bowl type"], a: 0 },
+    { q: "What is the process of exposing water in their films to the oxygen of the atmosphere in order to remove neutralize the taste, odor and dissolved oxygen?", choices: ["A. Filtration", "B. Screening", "C. Aeration", "D. Sedimentation"], a: 2 },
+    { q: "What is the pipe fitting without side thread and projecting square head used for closing the edge of another fitting?", choices: ["A. Plug", "B. Cap", "C. Knot", "D. Bushing"], a: 0 },
+    { q: "The artificial application of water to land for the purpose of agricultural production.", choices: ["A. Irrigation", "B. Farming", "C. Cultivation", "D. Sprinkling"], a: 0 },
+    { q: "What is the process of water supply purification which consists of applying certain chemicals in particles too small to be removed by plain sedimentation?", choices: ["A. Coagulation", "B. Sedimentation", "C. Flocculation", "D. Filtration"], a: 2 },
+    { q: "The quality of water could be determined by ____.", choices: ["A. Physical", "B. Chemical", "C. Biological", "D. All of these"], a: 3 },
+    { q: "Which of the following is not a physical characteristic of water?", choices: ["A. Color", "B. Turbidity", "C. Odor", "D. Hardness"], a: 1 },
+    { q: "It is the amount of suspended material in water as measured by light ray.", choices: ["A. Color", "B. Turbidity", "C. Odor", "D. Hardness"], a: 1 },
+    { q: "Water color is caused by ____.", choices: ["A. Silt", "B. Clay", "C. Organic matter", "D. All of these"], a: 1 },
+    { q: "How is water hardness measured?", choices: ["A. Ounce of hardness", "B. Grains per gallon", "C. Parts per million", "D. Soap suds"], a: 2 },
+    { q: "What is the pipe connection in which a ball is held in a cup-like that allows movement in every direction?", choices: ["A. Universal joint", "B. Uniform patent", "C. Ball joint", "D. Caulk joint"], a: 2 },
+    { q: "Leaching field is categorized as one of the types of disposal systems.", choices: ["A. Surface disposal", "B. Public sewer", "C. Subsurface disposal", "D. Water body"], a: 2 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 0 },
+    { q: "The recommended distance of a septic tank from a well is ____.", choices: ["A. 10 meters", "B. 15 meters", "C. 25 meters", "D. 50 meters"], a: 2 },
+    { q: "A tank which receives sewage and from which it is pumped to the sewer.", choices: ["A. Septic tank", "B. Sump", "C. Cesspool", "D. Catch basin"], a: 1 },
+    { q: "A toilet that consists of a hole in the ground.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 2 },
+    { q: "What is the required size of a water service pipe for a 2-story house?", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/4\""], a: 1 },
+    { q: "A pipe connecting the water main to the building.", choices: ["A. Service pipe", "B. Distribution pipe", "C. Riser", "D. Fixture branch"], a: 2 },
+    { q: "What type of pump is used to lift water from a deep well?", choices: ["A. Centrifugal pump", "B. Reciprocating pump", "C. Jet pump", "D. Submersible pump"], a: 3 },
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 60 cm", "B. 70 cm", "C. 80 cm", "D. 90 cm"], a: 2 },
+    { q: "What is the standard height of a shower head from the floor?", choices: ["A. 150 cm", "B. 180 cm", "C. 200 cm", "D. 220 cm"], a: 1 },
+    { q: "What is the purpose of a trap in a plumbing fixture?", choices: ["A. Prevent backflow", "B. Prevent sewer gas", "C. Increase pressure", "D. Filter water"], a: 1 },
+    { q: "What is the minimum diameter of a soil pipe?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 },
+    { q: "What is the minimum slope of a horizontal drainage pipe?", choices: ["A. 1%", "B. 2%", "C. 3%", "D. 4%"], a: 2 },
+    { q: "What is the minimum diameter of a vent stack?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 2 },
+    { q: "What is the purpose of a cleanout?", choices: ["A. Venting", "B. Drainage", "C. Maintenance", "D. Inspection"], a: 0 },
+    { q: "What type of joint is used for galvanized iron pipes?", choices: ["A. Threaded", "B. Welded", "C. Flanged", "D. Soldered"], a: 0 },
+    { q: "What type of valve is used to prevent the backflow of water?", choices: ["A. Gate valve", "B. Globe valve", "C. Check valve", "D. Ball valve"], a: 1 },
+    { q: "What is the standard length of a PVC pipe?", choices: ["A. 3 meters", "B. 4 meters", "C. 6 meters", "D. 10 meters"], a: 2 },
+    { q: "The unit of flow in a plumbing system.", choices: ["A. gpm", "B. lps", "C. dfu", "D. All of these"], a: 2 },
+    { q: "The pressure of water at a fixture.", choices: ["A. Static pressure", "B. Dynamic pressure", "C. Residual pressure", "D. Flow pressure"], a: 1 },
+    { q: "What is the primary source of water in a city?", choices: ["A. Well", "B. River", "C. Dam", "D. Water main"], a: 1 },
+    { q: "The process of removing suspended solids from water.", choices: ["A. Filtration", "B. Sedimentation", "C. Aeration", "D. Coagulation"], a: 1 },
+    { q: "What is the standard color for a potable water pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Orange"], a: 1 },
+    { q: "What is the standard color for a drainage pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Orange"], a: 1 },
+    { q: "What is the standard height of a water closet handle?", choices: ["A. 80 cm", "B. 100 cm", "C. 120 cm", "D. 150 cm"], a: 2 },
+    { q: "The distance between the trap and the vent.", choices: ["A. Trap seal", "B. Trap arm", "C. Vent stack", "D. Soil stack"], a: 2 },
+    { q: "What is the maximum distance of a cleanout from a wall?", choices: ["A. 30 cm", "B. 45 cm", "C. 60 cm", "D. 90 cm"], a: 2 },
+    { q: "What is the minimum size of a vent for a water closet?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 2 },
+    { q: "A pipe that carries only liquid waste free of fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 2 },
+    { q: "A pipe that carries fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 1 },
+    { q: "What is the minimum size of a house drain?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap seal", "B. Trap arm", "C. Water seal", "D. Trap depth"], a: 0 },
+    { q: "What is the standard height of a kitchen sink from the floor?", choices: ["A. 70 cm", "B. 80 cm", "C. 90 cm", "D. 100 cm"], a: 2 },
+    { q: "What is the minimum size of a water supply for a lavatory?", choices: ["A. 3/8\"", "B. 1/2\"", "C. 3/4\"", "D. 1\""], a: 2 },
+    { q: "What is the minimum size of a water supply for a bathtub?", choices: ["A. 3/8\"", "B. 1/2\"", "C. 3/4\"", "D. 1\""], a: 0 },
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PVC", "B. CPVC", "C. PE", "D. PPR"], a: 3 },
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. GI", "B. PVC", "C. PE", "D. Copper"], a: 1 },
+    { q: "What is the standard spacing for horizontal pipe supports?", choices: ["A. 1 meter", "B. 1.5 meters", "C. 2 meters", "D. 3 meters"], a: 2 },
+    { q: "What is the standard spacing for vertical pipe supports?", choices: ["A. 1 floor", "B. 2 floors", "C. 3 meters", "D. 4 meters"], a: 1 },
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. Coupling", "B. Union", "C. Bushing", "D. Nipple"], a: 3 },
+    { q: "What is the purpose of a P-trap?", choices: ["A. Prevent backflow", "B. Prevent sewer gas", "C. Increase pressure", "D. Filter water"], a: 3 },
+    { q: "What is the minimum diameter of a storm drain?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. Riser", "B. Stack", "C. Branch", "D. Main"], a: 1 },
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. Branch", "B. Main", "C. Lateral", "D. Stack"], a: 1 },
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 50 cm", "B. 60 cm", "C. 70 cm", "D. 80 cm"], a: 1 },
+    { q: "What is the minimum size of a drain for a shower?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 2 },
+    { q: "What is the purpose of an air chamber?", choices: ["A. Prevent backflow", "B. Prevent water hammer", "C. Increase pressure", "D. Filter water"], a: 2 },
+    { q: "The device used to measure water consumption.", choices: ["A. Water meter", "B. Pressure gauge", "C. Flow meter", "D. Thermometer"], a: 3 },
+    { q: "What type of valve is used in a water closet tank?", choices: ["A. Float valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 0 },
+    { q: "What is the standard diameter of a garden hose?", choices: ["A. 1/2\"", "B. 5/8\"", "C. 3/4\"", "D. 1\""], a: 2 },
+    { q: "What is the purpose of a grease trap?", choices: ["A. Prevent sewer gas", "B. Separate grease from water", "C. Increase pressure", "D. Filter water"], a: 2 },
+    { q: "Where is a grease trap usually installed?", choices: ["A. Bathroom", "B. Kitchen", "C. Laundry", "D. Garage"], a: 3 },
+    { q: "What is the minimum size of a vent for a septic tank?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 3 },
+    { q: "The pipe that carries wastewater from the house to the septic tank.", choices: ["A. House drain", "B. House sewer", "C. Branch line", "D. Lateral"], a: 1 },
+    { q: "What type of joint is used for PVC pipes?", choices: ["A. Solvent weld", "B. Threaded", "C. Welded", "D. Soldered"], a: 0 },
+    { q: "What is the purpose of a roof drain?", choices: ["A. Venting", "B. Drainage of rainwater", "C. Maintenance", "D. Inspection"], a: 3 },
+    { q: "The material used to seal pipe threads.", choices: ["A. Teflon tape", "B. Glue", "C. Solder", "D. Paint"], a: 2 },
+    { q: "What is the standard height of a bidet from the floor?", choices: ["A. 30 cm", "B. 40 cm", "C. 50 cm", "D. 60 cm"], a: 3 },
+    { q: "The process of testing a plumbing system for leaks.", choices: ["A. Pressure test", "B. Flow test", "C. Smoke test", "D. All of these"], a: 2 },
+    { q: "What is the minimum pressure for a water system?", choices: ["A. 20 psi", "B. 30 psi", "C. 40 psi", "D. 50 psi"], a: 1 },
+    { q: "What is the maximum pressure for a residential water system?", choices: ["A. 60 psi", "B. 80 psi", "C. 100 psi", "D. 120 psi"], a: 3 },
+    { q: "The device used to reduce water pressure.", choices: ["A. Pressure regulator", "B. Pressure gauge", "C. Check valve", "D. Relief valve"], a: 3 },
+    { q: "The valve that opens when pressure exceeds a certain limit.", choices: ["A. Gate valve", "B. Globe valve", "C. Relief valve", "D. Check valve"], a: 0 },
+    { q: "What is the standard size of a shower stall?", choices: ["A. 70x70 cm", "B. 80x80 cm", "C. 90x90 cm", "D. 100x100 cm"], a: 3 },
+    { q: "What is the minimum distance between a water pipe and a sewer pipe?", choices: ["A. 30 cm", "B. 60 cm", "C. 1 meter", "D. 2 meters"], a: 3 },
+    { q: "The process of disinfecting a water system.", choices: ["A. Chlorination", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 3 },
+    { q: "What is the standard diameter of a soil stack?", choices: ["A. 3\"", "B. 4\"", "C. 6\"", "D. 8\""], a: 2 },
+    { q: "The pipe that carries waste to the public sewer.", choices: ["A. House drain", "B. House sewer", "C. Lateral", "D. Main"], a: 3 },
+    { q: "What is the purpose of a foot valve?", choices: ["A. Prevent backflow in a pump", "B. Control water flow", "C. Increase pressure", "D. Filter water"], a: 1 },
+    { q: "What type of pipe is used for swimming pool plumbing?", choices: ["A. PVC", "B. GI", "C. PE", "D. Copper"], a: 3 },
+    { q: "What is the standard height of a laundry tub from the floor?", choices: ["A. 70 cm", "B. 80 cm", "C. 90 cm", "D. 100 cm"], a: 2 },
+    { q: "The process of removing iron from water.", choices: ["A. Aeration", "B. Filtration", "C. Chlorination", "D. Softening"], a: 3 },
+    { q: "What is the standard size of a kitchen sink drain?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "The pipe that carries wastewater from a laundry machine.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 },
+    { q: "What is the minimum size of a vent for a lavatory?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 2 },
+    { q: "The valve used to shut off water to a single fixture.", choices: ["A. Stop valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 1 },
+    { q: "What is the standard color for a hot water pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Red"], a: 3 },
+    { q: "What is the purpose of a cleanout at the end of a line?", choices: ["A. Venting", "B. Maintenance", "C. Inspection", "D. Drainage"], a: 3 },
+    { q: "The device used to heat water.", choices: ["A. Water heater", "B. Boiler", "C. Heat exchanger", "D. All of these"], a: 3 },
+    { q: "What is the standard size of a bathtub?", choices: ["A. 150x70 cm", "B. 160x75 cm", "C. 170x80 cm", "D. 180x90 cm"], a: 0 },
+    { q: "Fixture takeoff requirements are determined after a study of the ____ and specifications.", choices: ["A. floor plan", "B. terrain layout", "C. city sewer system", "D. drawings"], a: 3 },
+    { q: "Soil pipe is commonly listed by standard length requirements, size, the material, and the strength or ____.", choices: ["A. weakness", "B. weight", "C. diameter", "D. composition"], a: 1 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To remove the flushometer couplings", "B. To install the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 1 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 0 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.6 gallons", "B. 1.0 gallon", "C. 1.2 gallons", "D. 5.0 gallons"], a: 1 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/2\""], a: 1 }
     ],
     18: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "These are objectionable elements that aeration treatment is applied.", choices: ["A. Iron and Manganese", "B. Carbon dioxide", "C. Hydrogen sulfide", "D. All of these"], a: 3 },
+    { q: "The retention period or the time for which suspended matters in septic tank would settle and stabilize.", choices: ["A. 12 hrs", "B. 1 day", "C. 2 days", "D. 3 days"], a: 1 },
+    { q: "The cold-water supply is delivered into the hot water tank by means of a boiler tube; this tube has a hole within 6 inches from the top of the tank, the purpose of which is to serve as:", choices: ["A. Vacuum breaker", "B. Ventilation", "C. Inspection hole", "D. Blow-off"], a: 0 },
+    { q: "What vent pipe installation in the building which has no connection whatsoever with the plumbing fixture?", choices: ["A. Bleeder pipe", "B. Ventilating pipe", "C. Side vent", "D. Exhaust pipe"], a: 1 },
+    { q: "Water closets shall be computed as ______ fixture units when determining septic tank size.", choices: ["A. 4", "B. 5", "C. 6", "D. 8"], a: 2 },
+    { q: "What is the minimum horizontal distance required from a septic tank to a water supply well?", choices: ["A. 10.5 m", "B. 15.2 m", "C. 1.5 m", "D. 45 m"], a: 1 },
+    { q: "What is the minimum size of a water service pipe from the street main to the building?", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/4\""], a: 1 },
+    { q: "What is the type of pump used in high-rise buildings to provide water pressure to upper floors?", choices: ["A. Centrifugal pump", "B. Reciprocating pump", "C. Jet pump", "D. Booster pump"], a: 3 },
+    { q: "The pipe that carries liquid waste free of fecal matter is a ______.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 1 },
+    { q: "A vertical pipe which provides circulation of air to and from any part of the drainage system.", choices: ["A. Soil stack", "B. Waste stack", "C. Vent stack", "D. Riser"], a: 2 },
+    { q: "What is the required minimum size of a vent for a water closet?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
+    { q: "The portion of a drainage system that does not drain by gravity into the building sewer.", choices: ["A. Sump", "B. Ejector", "C. Sub-drain", "D. Stack"], a: 2 },
+    { q: "What is the minimum size of a cleanout for a 4-inch pipe?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 2 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap seal", "B. Water seal", "C. Trap depth", "D. Dip height"], a: 0 },
+    { q: "What is the standard height for a kitchen sink installation from the floor?", choices: ["A. 30\"", "B. 34\"", "C. 36\"", "D. 32\""], a: 2 },
+    { q: "A type of vent that serves two fixtures and is installed between them.", choices: ["A. Loop vent", "B. Circuit vent", "C. Common vent", "D. Yoke vent"], a: 2 },
+    { q: "What installation standard is followed in joining plastic pipe and fittings by solvent cement?", choices: ["A. IAPMO", "B. ISO", "C. ANSI", "D. ASHRAE"], a: 0 },
+    { q: "What is the minimum height of raised letters on an iron or bronze sign that reads 'CONNECTION TO DRY STANDPIPE'?", choices: ["A. 20 mm", "B. 25 mm", "C. 50 mm", "D. 30 mm"], a: 1 },
+    { q: "A plumbing permit shall expire if the plumbing work is not started for how many days?", choices: ["A. 100 days", "B. 365 days", "C. 30 days", "D. 45 days"], a: 1 },
+    { q: "What is the maximum water pressure (kg/cm2) standpipe fittings must withstand when ready for service?", choices: ["A. 21", "B. 30", "C. 15", "D. 10"], a: 0 },
+    { q: "It has a caution when using close to water heaters because it softens and deforms in excess of 65 deg. C.", choices: ["A. PVC", "B. CISP", "C. G.I. pipe", "D. Asbestos cement pipe"], a: 0 },
+    { q: "Which is NOT a standard commercial size of G.I. pipe for water supply?", choices: ["A. 5\" diameter", "B. 4\" diameter", "C. 3\" diameter", "D. 2 1/2\" diameter"], a: 0 },
+    { q: "The part of the drainage system that conveys waste containing organic waste is ______.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Acid pipe"], a: 0 },
+    { q: "What is the treatment for the deposit of calcium in water?", choices: ["A. Chlorine", "B. Coagulants", "C. Zeolite", "D. Active carbon"], a: 2 },
+    { q: "What is the nominal diameter of a water closet drain according to RNPCP?", choices: ["A. 2\"", "B. 2.5\"", "C. 3\"", "D. 4\""], a: 2 },
+    { q: "A device used to measure the amount of water used.", choices: ["A. Water meter", "B. Pressure gauge", "C. Flow meter", "D. Thermometer"], a: 0 },
+    { q: "A pipe fitting used to join two pipes of the same size.", choices: ["A. Coupling", "B. Union", "C. Nipple", "D. Bushing"], a: 0 },
+    { q: "A pipe fitting used to join two pipes of different sizes.", choices: ["A. Reducer", "B. Coupling", "C. Union", "D. Nipple"], a: 0 },
+    { q: "The pipe that carries wastewater from the house to the septic tank.", choices: ["A. House drain", "B. House sewer", "C. Lateral", "D. Branch line"], a: 1 },
+    { q: "What is the minimum size of a water service pipe for a residential house?", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/4\""], a: 1 },
+    { q: "What type of joint is used for connecting PVC pipes?", choices: ["A. Solvent weld", "B. Threaded", "C. Welded", "D. Soldered"], a: 0 },
+    { q: "What type of joint is used for connecting G.I. pipes?", choices: ["A. Threaded", "B. Welded", "C. Soldered", "D. Solvent weld"], a: 0 },
+    { q: "What is the purpose of an air chamber in a water system?", choices: ["A. Prevent water hammer", "B. Increase pressure", "C. Filter water", "D. Prevent backflow"], a: 0 },
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 80 cm", "B. 70 cm", "C. 90 cm", "D. 60 cm"], a: 0 },
+    { q: "What is the minimum size of a vent for a septic tank?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 6\""], a: 1 },
+    { q: "The process of removing iron from water.", choices: ["A. Aeration", "B. Filtration", "C. Chlorination", "D. Softening"], a: 0 },
+    { q: "A valve used to shut off water to a single fixture.", choices: ["A. Stop valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 0 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. Riser", "B. Stack", "C. Branch", "D. Main"], a: 0 },
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. Branch", "B. Main", "C. Lateral", "D. Stack"], a: 0 },
+    { q: "What is the purpose of a grease trap?", choices: ["A. Separate grease from water", "B. Prevent sewer gas", "C. Increase pressure", "D. Filter water"], a: 0 },
+    { q: "Where is a grease trap usually installed?", choices: ["A. Kitchen", "B. Bathroom", "C. Laundry", "D. Garage"], a: 0 },
+    { q: "What is the maximum pressure for a residential water system?", choices: ["A. 80 psi", "B. 60 psi", "C. 100 psi", "D. 120 psi"], a: 0 },
+    { q: "The device used to reduce water pressure.", choices: ["A. Pressure regulator", "B. Pressure gauge", "C. Check valve", "D. Relief valve"], a: 0 },
+    { q: "What is the minimum distance between a water pipe and a sewer pipe?", choices: ["A. 2 meters", "B. 1 meter", "C. 60 cm", "D. 30 cm"], a: 0 },
+    { q: "The process of disinfecting a water system.", choices: ["A. Chlorination", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 0 },
+    { q: "What is the standard diameter of a soil stack?", choices: ["A. 4\"", "B. 3\"", "C. 6\"", "D. 2\""], a: 0 },
+    { q: "The pipe that carries waste to the public sewer.", choices: ["A. House sewer", "B. House drain", "C. Lateral", "D. Main"], a: 0 },
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PPR", "B. PVC", "C. PE", "D. GI"], a: 0 },
+    { q: "The unit of flow in a plumbing system.", choices: ["A. dfu", "B. gpm", "C. lps", "D. All of these"], a: 0 },
+    { q: "What is the purpose of a P-trap?", choices: ["A. Prevent sewer gas", "B. Prevent backflow", "C. Increase pressure", "D. Filter water"], a: 0 },
+    { q: "What is the minimum diameter of a storm drain?", choices: ["A. 4\"", "B. 3\"", "C. 6\"", "D. 2\""], a: 0 },
+    { q: "The process of removing suspended solids from water.", choices: ["A. Sedimentation", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 0 },
+    { q: "What is the standard color for a potable water pipe?", choices: ["A. Blue", "B. Green", "C. White", "D. Orange"], a: 0 },
+    { q: "What is the standard height of a water closet handle?", choices: ["A. 100 cm", "B. 80 cm", "C. 120 cm", "D. 150 cm"], a: 0 },
+    { q: "The distance between the trap and the vent.", choices: ["A. Trap arm", "B. Trap seal", "C. Vent stack", "D. Soil stack"], a: 0 },
+    { q: "What is the minimum size of a house drain?", choices: ["A. 4\"", "B. 3\"", "C. 2\"", "D. 6\""], a: 0 },
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. PE", "B. GI", "C. PVC", "D. Copper"], a: 0 },
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. Nipple", "B. Coupling", "C. Union", "D. Bushing"], a: 0 },
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 60 cm", "B. 50 cm", "C. 70 cm", "D. 80 cm"], a: 0 },
+    { q: "What is the minimum size of a drain for a shower?", choices: ["A. 2\"", "B. 1 1/2\"", "C. 3\"", "D. 4\""], a: 0 },
+    { q: "What type of valve is used in a water closet tank?", choices: ["A. Float valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 0 },
+    { q: "What is the standard diameter of a garden hose?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 5/8\"", "D. 1\""], a: 0 },
+    { q: "The material used to seal pipe threads.", choices: ["A. Teflon tape", "B. Glue", "C. Solder", "D. Paint"], a: 0 },
+    { q: "What is the standard height of a bidet from the floor?", choices: ["A. 40 cm", "B. 30 cm", "C. 50 cm", "D. 60 cm"], a: 0 },
+    { q: "The process of testing a plumbing system for leaks.", choices: ["A. Pressure test", "B. Flow test", "C. Smoke test", "D. All of these"], a: 0 },
+    { q: "What is the minimum pressure for a water system?", choices: ["A. 30 psi", "B. 20 psi", "C. 40 psi", "D. 50 psi"], a: 0 },
+    { q: "The valve that opens when pressure exceeds a certain limit.", choices: ["A. Relief valve", "B. Gate valve", "C. Globe valve", "D. Check valve"], a: 0 },
+    { q: "What is the standard size of a shower stall?", choices: ["A. 90x90 cm", "B. 70x70 cm", "C. 80x80 cm", "D. 100x100 cm"], a: 0 },
+    { q: "What type of pipe is used for swimming pool plumbing?", choices: ["A. PVC", "B. GI", "C. PE", "D. Copper"], a: 0 },
+    { q: "What is the standard height of a laundry tub from the floor?", choices: ["A. 80 cm", "B. 70 cm", "C. 90 cm", "D. 100 cm"], a: 0 },
+    { q: "What is the standard size of a kitchen sink drain?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "What is the minimum size of a vent for a lavatory?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "What is the standard color for a hot water pipe?", choices: ["A. Red", "B. Blue", "C. Green", "D. White"], a: 0 },
+    { q: "The device used to heat water.", choices: ["A. Water heater", "B. Boiler", "C. Heat exchanger", "D. All of these"], a: 0 },
+    { q: "What is the standard size of a bathtub?", choices: ["A. 170x80 cm", "B. 150x70 cm", "C. 160x75 cm", "D. 180x90 cm"], a: 0 },
+    { q: "Water closets shall be computed as ______ fixture units when determining septic tank size.", choices: ["A. 4", "B. 5", "C. 6", "D. 8"], a: 2 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 0 },
+    { q: "The recommended distance of a septic tank from a well is ____.", choices: ["A. 15 meters", "B. 10 meters", "C. 25 meters", "D. 50 meters"], a: 0 },
+    { q: "What type of materials is used for the base of a septic tank in a digestive chamber?", choices: ["A. reinforced concrete", "B. steel base", "C. earth base", "D. mass concrete"], a: 0 },
+    { q: "Level 3 types of water service refers to?", choices: ["A. individual house pipes in connection with meter", "B. artesian well", "C. public faucet", "D. individual shallow well hand up installation"], a: 0 },
+    { q: "Gray water is a type of waste water that comes from?", choices: ["A. sinks, showers and bathtubs", "B. toilets", "C. toilets and garbage disposals", "D. industrial waste"], a: 0 },
+    { q: "Water heaters, hose bibs, sill cocks are normally protected from backflow with:", choices: ["A. a vacuum breaker", "B. air gap", "C. air break", "D. air test"], a: 0 },
+    { q: "DWV in the drainage installation of plumbing system stands for:", choices: ["A. drainage, waste, vent", "B. dry, wet, vent", "C. depth, width, volume", "D. downspout, water, ventilation"], a: 0 },
+    { q: "An underground soil formation that contains sufficient saturated permeable material that yields significant quantities of water.", choices: ["A. aquifer", "B. run-off water", "C. surface water", "D. mid-ground water"], a: 0 },
+    { q: "An elbow with male thread on one end and female thread on the other end.", choices: ["A. street elbow", "B. straight elbow", "C. socket elbow", "D. long elbow"], a: 0 },
+    { q: "Which of the following factors is not considered in sizing the water supply piping using RNPCP chapter 6?", choices: ["A. pipe friction", "B. length of the pipe in the building", "C. pressure of the water supply at the source", "D. number and kind of fixtures installed"], a: 0 },
+    { q: "What is the name of the washer that seals the bottom of a lavatory bowl?", choices: ["A. mack", "B. cushion", "C. compression", "D. escutcheon plate"], a: 0 },
+    { q: "How do you connect pumps in series?", choices: ["A. same gpm", "B. different gpm", "C. same horsepower", "D. different horsepower"], a: 0 },
+    { q: "According to the UPC, above what temperature can you consider as hot water?", choices: ["A. 120°F", "B. 212°F", "C. 202°F", "D. 100°C"], a: 0 },
+    { q: "What type of faucet is now most often used on plumbing fixtures?", choices: ["A. compression", "B. swivel type", "C. swing type", "D. wheel type"], a: 0 },
+    { q: "Aside from lavatory, what is the other common fixture that is provided with overflow?", choices: ["A. bathtub", "B. slop sink", "C. urinal", "D. kitchen sink"], a: 0 },
+    { q: "Standard of quality of drinking water from meteoric, surface or underground sources.", choices: ["A. NSDW", "B. DENR", "C. DOH", "D. Water Code"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/2\""], a: 0 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To install the flushometer couplings", "B. To remove the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 0 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 0 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.0 gallon", "B. 1.6 gallons", "C. 1.2 gallons", "D. 5.0 gallons"], a: 0 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "What is the nominal diameter of a water closet drain according to RNPCP?", choices: ["A. 3\"", "B. 2\"", "C. 2.5\"", "D. 4\""], a: 0 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. Septic tank", "B. Cesspool", "C. Privy", "D. Sump"], a: 0 }
     ],
     19: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "It is a ceremonial act of washing parts of the body or sacred containers.", choices: ["A. sacrarium", "B. ablution", "C. sanitizer", "D. half bath"], a: 1 },
+    { q: "It is the vertical distance from a waste outlet to the finished floor line of a typical lavatory.", choices: ["A. 556 mm", "B. 501 mm", "C. 444 mm", "D. 570 mm"], a: 0 },
+    { q: "It should be installed so that they provide access to the cover and a means for servicing and maintaining the trap.", choices: ["A. trap primer", "B. grease trap", "C. grease interceptor", "D. p-trap"], a: 2 },
+    { q: "Standard length of a fire hose.", choices: ["A. 30 m", "B. 23 m", "C. 35 m", "D. 20 m"], a: 1 },
+    { q: "The pipe or shaft to convey foul air from a plumbing fixture or a room to the outer air.", choices: ["A. shaft vent", "B. local vent", "C. individual vent", "D. mini vent"], a: 1 },
+    { q: "Kind of sprinkler heads that basically used with ceiling that has temperature of 155°F.", choices: ["A. pendent", "B. upright", "C. sidewall", "D. luminaire"], a: 0 },
+    { q: "The maximum vertical depth of liquid that a trap will retain, measured between the crown weir and the top of the dip of the trap is?", choices: ["A. trap seal", "B. trap arm", "C. water seal", "D. trap depth"], a: 0 },
+    { q: "Is a combination of hydrogen and carbon, a principal component of natural gas?", choices: ["A. carbon monoxide", "B. methane gas", "C. hydrogen sulfide", "D. sulfur dioxide"], a: 1 },
+    { q: "How do you connect pump in series?", choices: ["A. different gpm", "B. same gpm", "C. same horsepower", "D. different horsepower"], a: 1 },
+    { q: "The classification of water when it contains dissolved salts of calcium and magnesium?", choices: ["A. soft", "B. hard", "C. neutral", "D. balanced"], a: 1 },
+    { q: "According to the IPC, above what temperature can you consider as hot water?", choices: ["A. 120°F", "B. 212°F", "C. 202°F", "D. 100°C"], a: 0 },
+    { q: "What fitting will be used in a water supply line if it is used to join two pipes of different materials that would eventually generate corrosion?", choices: ["A. sovent union", "B. dielectric union", "C. ionizer", "D. adapter"], a: 1 },
+    { q: "What is the minimum size of cast iron soil pipe being manufactured for use in a DWV system?", choices: ["A. 76 mm", "B. 51 mm", "C. 102 mm", "D. 152 mm"], a: 1 },
+    { q: "Which wall is best suited if soil pipe will run through it?", choices: ["A. drywall", "B. shear wall", "C. 6\" CHB", "D. retaining wall"], a: 2 },
+    { q: "The minimum size of a swimming pool drain?", choices: ["A. 3 inches", "B. 4 inches", "C. 2 inches", "D. 6 inches"], a: 2 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. septic tank", "B. cesspool", "C. privy", "D. sump"], a: 0 },
+    { q: "The recommended distance of a septic tank from a well is ____.", choices: ["A. 15 meters", "B. 10 meters", "C. 25 meters", "D. 50 meters"], a: 0 },
+    { q: "What type of materials is used for the base of a septic tank in a digestive chamber?", choices: ["A. reinforced concrete", "B. steel base", "C. earth base", "D. mass concrete"], a: 0 },
+    { q: "Level 3 types of water service refers to?", choices: ["A. individual house pipes in connection with meter", "B. artesian well", "C. public faucet", "D. individual shallow well hand up installation"], a: 0 },
+    { q: "Gray water is a type of waste water that comes from?", choices: ["A. sinks, showers and bathtubs", "B. toilets", "C. toilets and garbage disposals", "D. industrial waste"], a: 0 },
+    { q: "Water heaters, hose bibs, sill cocks are normally protected from backflow with:", choices: ["A. a vacuum breaker", "B. air gap", "C. air break", "D. air test"], a: 0 },
+    { q: "DWV in the drainage installation of plumbing system stands for:", choices: ["A. drainage, waste, vent", "B. dry, wet, vent", "C. depth, width, volume", "D. downspout, water, ventilation"], a: 0 },
+    { q: "An underground soil formation that contains sufficient saturated permeable material that yields significant quantities of water.", choices: ["A. aquifer", "B. run-off water", "C. surface water", "D. mid-ground water"], a: 0 },
+    { q: "An elbow with male thread on one end and female thread on the other end.", choices: ["A. street elbow", "B. straight elbow", "C. socket elbow", "D. long elbow"], a: 0 },
+    { q: "Which of the following factors is not considered in sizing the water supply piping using RNPCP chapter 6?", choices: ["A. pipe friction", "B. length of the pipe in the building", "C. pressure of the water supply at the source", "D. number and kind of fixtures installed"], a: 0 },
+    { q: "What is the name of the washer that seals the bottom of a lavatory bowl?", choices: ["A. mack", "B. cushion", "C. compression", "D. escutcheon plate"], a: 0 },
+    { q: "Standard of quality of drinking water from meteoric, surface or underground sources.", choices: ["A. NSDW", "B. DENR", "C. DOH", "D. Water Code"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/2\""], a: 0 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To install the flushometer couplings", "B. To remove the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 0 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 0 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.0 gallon", "B. 1.6 gallons", "C. 1.2 gallons", "D. 5.0 gallons"], a: 0 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. riser", "B. stack", "C. branch", "D. main"], a: 0 },
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. branch", "B. main", "C. lateral", "D. stack"], a: 0 },
+    { q: "What is the purpose of a grease trap?", choices: ["A. separate grease from water", "B. prevent sewer gas", "C. increase pressure", "D. filter water"], a: 0 },
+    { q: "Where is a grease trap usually installed?", choices: ["A. kitchen", "B. bathroom", "C. laundry", "D. garage"], a: 0 },
+    { q: "The device used to reduce water pressure.", choices: ["A. pressure regulator", "B. pressure gauge", "C. check valve", "D. relief valve"], a: 0 },
+    { q: "The process of disinfecting a water system.", choices: ["A. chlorination", "B. filtration", "C. aeration", "D. coagulation"], a: 0 },
+    { q: "What is the standard diameter of a soil stack?", choices: ["A. 4\"", "B. 3\"", "C. 6\"", "D. 2\""], a: 0 },
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PPR", "B. PVC", "C. PE", "D. GI"], a: 0 },
+    { q: "The unit of flow in a plumbing system.", choices: ["A. dfu", "B. gpm", "C. lps", "D. All of these"], a: 0 },
+    { q: "What is the purpose of a P-trap?", choices: ["A. prevent sewer gas", "B. prevent backflow", "C. increase pressure", "D. filter water"], a: 0 },
+    { q: "What is the standard height of a water closet handle?", choices: ["A. 100 cm", "B. 80 cm", "C. 120 cm", "D. 150 cm"], a: 0 },
+    { q: "The distance between the trap and the vent.", choices: ["A. trap arm", "B. trap seal", "C. vent stack", "D. soil stack"], a: 0 },
+    { q: "What is the minimum size of a house drain?", choices: ["A. 4\"", "B. 3\"", "C. 2\"", "D. 6\""], a: 0 },
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. PE", "B. GI", "C. PVC", "D. Copper"], a: 0 },
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. coupling", "B. nipple", "C. union", "D. bushing"], a: 0 },
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 60 cm", "B. 50 cm", "C. 70 cm", "D. 80 cm"], a: 0 },
+    { q: "What type of valve is used in a water closet tank?", choices: ["A. float valve", "B. gate valve", "C. globe valve", "D. check valve"], a: 0 },
+    { q: "What is the standard diameter of a garden hose?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 5/8\"", "D. 1\""], a: 0 },
+    { q: "The material used to seal pipe threads.", choices: ["A. Teflon tape", "B. glue", "C. solder", "D. paint"], a: 0 },
+    { q: "What is the standard height of a bidet from the floor?", choices: ["A. 40 cm", "B. 30 cm", "C. 50 cm", "D. 60 cm"], a: 0 },
+    { q: "The process of testing a plumbing system for leaks.", choices: ["A. pressure test", "B. flow test", "C. smoke test", "D. All of these"], a: 0 },
+    { q: "What is the minimum pressure for a water system?", choices: ["A. 30 psi", "B. 20 psi", "C. 40 psi", "D. 50 psi"], a: 0 },
+    { q: "The valve that opens when pressure exceeds a certain limit.", choices: ["A. relief valve", "B. gate valve", "C. globe valve", "D. check valve"], a: 0 },
+    { q: "What is the standard size of a shower stall?", choices: ["A. 90x90 cm", "B. 70x70 cm", "C. 80x80 cm", "D. 100x100 cm"], a: 0 },
+    { q: "What type of pipe is used for swimming pool plumbing?", choices: ["A. PVC", "B. GI", "C. PE", "D. Copper"], a: 0 },
+    { q: "What is the standard size of a kitchen sink drain?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "What is the minimum size of a vent for a lavatory?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "What is the standard color for a hot water pipe?", choices: ["A. red", "B. blue", "C. green", "D. white"], a: 0 },
+    { q: "The device used to heat water.", choices: ["A. water heater", "B. boiler", "C. heat exchanger", "D. All of these"], a: 0 },
+    { q: "What is the standard size of a bathtub?", choices: ["A. 170x80 cm", "B. 150x70 cm", "C. 160x75 cm", "D. 180x90 cm"], a: 0 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. septic tank", "B. cesspool", "C. privy", "D. sump"], a: 0 },
+    { q: "What type of materials is used for the base of a septic tank in a digestive chamber?", choices: ["A. reinforced concrete", "B. steel base", "C. earth base", "D. mass concrete"], a: 0 },
+    { q: "Level 3 types of water service refers to?", choices: ["A. individual house pipes in connection with meter", "B. artesian well", "C. public faucet", "D. individual shallow well hand up installation"], a: 0 },
+    { q: "Gray water is a type of waste water that comes from?", choices: ["A. sinks, showers and bathtubs", "B. toilets", "C. toilets and garbage disposals", "D. industrial waste"], a: 0 },
+    { q: "Water heaters, hose bibs, sill cocks are normally protected from backflow with:", choices: ["A. a vacuum breaker", "B. air gap", "C. air break", "D. air test"], a: 0 },
+    { q: "DWV in the drainage installation of plumbing system stands for:", choices: ["A. drainage, waste, vent", "B. dry, wet, vent", "C. depth, width, volume", "D. downspout, water, ventilation"], a: 0 },
+    { q: "An underground soil formation that contains sufficient saturated permeable material that yields significant quantities of water.", choices: ["A. aquifer", "B. run-off water", "C. surface water", "D. mid-ground water"], a: 0 },
+    { q: "An elbow with male thread on one end and female thread on the other end.", choices: ["A. street elbow", "B. straight elbow", "C. socket elbow", "D. long elbow"], a: 0 },
+    { q: "What is the name of the washer that seals the bottom of a lavatory bowl?", choices: ["A. mack", "B. cushion", "C. compression", "D. escutcheon plate"], a: 0 },
+    { q: "How do you connect pumps in series?", choices: ["A. same gpm", "B. different gpm", "C. same horsepower", "D. different horsepower"], a: 0 },
+    { q: "According to the UPC, above what temperature can you consider as hot water?", choices: ["A. 120°F", "B. 212°F", "C. 202°F", "D. 100°C"], a: 0 },
+    { q: "What type of faucet is now most often used on plumbing fixtures?", choices: ["A. compression", "B. swivel type", "C. swing type", "D. wheel type"], a: 0 },
+    { q: "Aside from lavatory, what is the other common fixture that is provided with overflow?", choices: ["A. bathtub", "B. slop sink", "C. urinal", "D. kitchen sink"], a: 0 },
+    { q: "Standard of quality of drinking water from meteoric, surface or underground sources.", choices: ["A. NSDW", "B. DENR", "C. DOH", "D. Water Code"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/2\""], a: 0 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To install the flushometer couplings", "B. To remove the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 0 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 0 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.0 gallon", "B. 1.6 gallons", "C. 1.2 gallons", "D. 5.0 gallons"], a: 0 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/2\""], a: 1 },
+    { q: "A pipe fitting used to join two pipes of the same size.", choices: ["A. coupling", "B. union", "C. nipple", "D. bushing"], a: 0 },
+    { q: "A pipe fitting used to join two pipes of different sizes.", choices: ["A. reducer", "B. coupling", "C. union", "D. nipple"], a: 0 },
+    { q: "The pipe that carries wastewater from the house to the septic tank.", choices: ["A. house sewer", "B. house drain", "C. lateral", "D. branch line"], a: 0 },
+    { q: "What is the minimum size of a water service pipe for a residential house?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/4\""], a: 0 },
+    { q: "What type of joint is used for connecting PVC pipes?", choices: ["A. solvent weld", "B. threaded", "C. welded", "D. soldered"], a: 0 },
+    { q: "What type of joint is used for connecting G.I. pipes?", choices: ["A. threaded", "B. welded", "C. soldered", "D. solvent weld"], a: 0 },
+    { q: "What is the purpose of an air chamber in a water system?", choices: ["A. prevent water hammer", "B. increase pressure", "C. filter water", "D. prevent backflow"], a: 0 },
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 80 cm", "B. 70 cm", "C. 90 cm", "D. 60 cm"], a: 0 },
+    { q: "What is the minimum size of a vent for a septic tank?", choices: ["A. 3\"", "B. 2\"", "C. 4\"", "D. 6\""], a: 0 },
+    { q: "The process of removing iron from water.", choices: ["A. aeration", "B. filtration", "C. chlorination", "D. softening"], a: 0 },
+    { q: "A valve used to shut off water to a single fixture.", choices: ["A. stop valve", "B. gate valve", "C. globe valve", "D. check valve"], a: 0 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. riser", "B. stack", "C. branch", "D. main"], a: 0 },
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. branch", "B. main", "C. lateral", "D. stack"], a: 0 },
+    { q: "Where is a grease trap usually installed?", choices: ["A. kitchen", "B. bathroom", "C. laundry", "D. garage"], a: 0 },
+    { q: "What is the maximum pressure for a residential water system?", choices: ["A. 80 psi", "B. 60 psi", "C. 100 psi", "D. 120 psi"], a: 0 },
+    { q: "The device used to reduce water pressure.", choices: ["A. pressure regulator", "B. pressure gauge", "C. check valve", "D. relief valve"], a: 0 },
+    { q: "What is the minimum distance between a water pipe and a sewer pipe?", choices: ["A. 2 meters", "B. 1 meter", "C. 60 cm", "D. 30 cm"], a: 0 }
     ],
     20: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "In a university with 2000 male students, how many water closets are required?", choices: ["A. 30", "B. 50", "C. 67", "D. 80"], a: 1 },
+    { q: "In a university with 2000 male students, how many urinals are required?", choices: ["A. 27", "B. 58", "C. 80", "D. 40"], a: 3 },
+    { q: "In a university with 2000 male students, how many lavatories are required?", choices: ["A. 27", "B. 58", "C. 80", "D. 40"], a: 3 },
+    { q: "What is a pipe or opening used for ensuring the circulation of air in plumbing system and for reducing the pressure exerted in trap seals?", choices: ["A. Stack", "B. Riser", "C. Waste", "D. Vent"], a: 3 },
+    { q: "In a certain plumbing installation, what is the size of the stack if the total DFU is 120?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 5\""], a: 2 },
+    { q: "What is the name of the current Chairman of the Board of Master Plumber?", choices: ["A. Valentino M. Magneo", "B. Valentino M. Malihan", "C. Valentino M. Mangila", "D. Valentino M. Maghanoy"], a: 2 },
+    { q: "Identify the name of the fitting that connects copper to galvanized steel via flared or compression methods.", choices: ["A. Spigot Joint", "B. Flared or Compression Adapter", "C. Flared Fitting", "D. Dielectric Union"], a: 1 },
+    { q: "Based on RNPCP, what is the minimum area of a bath and toilet room?", choices: ["A. 1.2 m²", "B. 1.5 m²", "C. 2.0 m²", "D. 3.2 m²"], a: 0 },
+    { q: "What is the minimum dimension for a bath and toilet room?", choices: ["A. 0.70 m", "B. 0.80 m", "C. 0.90 m", "D. 1.00 m"], a: 2 },
+    { q: "What is a kind of impurity in water that includes microscopic plants and animal life other than bacteria?", choices: ["A. Biological", "B. Chemical", "C. Physical", "D. Radiological"], a: 0 },
+    { q: "It is a ceremonial act of washing parts of the body or sacred containers.", choices: ["A. sacrarium", "B. ablution", "C. sanitizer", "D. half bath"], a: 1 },
+    { q: "Standard length of a fire hose.", choices: ["A. 30 m", "B. 23 m", "C. 35 m", "D. 20 m"], a: 1 },
+    { q: "Kind of sprinkler heads that basically used with ceiling that has temperature of 155°F.", choices: ["A. pendent", "B. upright", "C. sidewall", "D. luminaire"], a: 0 },
+    { q: "The maximum vertical depth of liquid that a trap will retain, measured between the crown weir and the top of the dip of the trap is?", choices: ["A. trap seal", "B. trap arm", "C. water seal", "D. trap depth"], a: 0 },
+    { q: "How do you connect pump in series?", choices: ["A. different gpm", "B. same gpm", "C. same horsepower", "D. different horsepower"], a: 1 },
+    { q: "Which wall is best suited if soil pipe will run through it?", choices: ["A. drywall", "B. shear wall", "C. 6\" CHB", "D. retaining wall"], a: 2 },
+    { q: "The minimum size of a swimming pool drain?", choices: ["A. 3 inches", "B. 4 inches", "C. 2 inches", "D. 6 inches"], a: 2 },
+    { q: "Level 3 types of water service refers to?", choices: ["A. individual house pipes in connection with meter", "B. artesian well", "C. public faucet", "D. individual shallow well hand up installation"], a: 0 },
+    { q: "Gray water is a type of waste water that comes from?", choices: ["A. sinks, showers and bathtubs", "B. toilets", "C. toilets and garbage disposals", "D. industrial waste"], a: 0 },
+    { q: "What is the name of the washer that seals the bottom of a lavatory bowl?", choices: ["A. mack", "B. cushion", "C. compression", "D. escutcheon plate"], a: 0 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To install the flushometer couplings", "B. To remove the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 0 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 2 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. riser", "B. stack", "C. branch", "D. main"], a: 0 },
+    { q: "What is the standard diameter of a garden hose?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 5/8\"", "D. 1\""], a: 2 },
+    { q: "What is the treatment for deposit of calcium in water?", choices: ["A. Chlorine", "B. Coagulants", "C. Zeolite", "D. Active carbon"], a: 2 },
+    { q: "What is the minimum horizontal distance required from a septic tank to a water supply well?", choices: ["A. 15.2 m", "B. 10.5 m", "C. 1.5 m", "D. 45 m"], a: 0 },
+    { q: "A concrete/masonry underground chamber for the reception and partial treatment of sewage.", choices: ["A. septic tank", "B. cesspool", "C. privy", "D. sump"], a: 0 },
+    { q: "The recommended distance of a septic tank from a well is ____.", choices: ["A. 15 meters", "B. 10 meters", "C. 25 meters", "D. 50 meters"], a: 0 },
+    { q: "The cold-water supply is delivered into the hot water tank by means of a boiler tube; this tube has a hole within 6 inches from the top of the tank, the purpose of which is to serve as:", choices: ["A. Vacuum breaker", "B. Ventilation", "C. Inspection hole", "D. Blow-off"], a: 0 },
+    { q: "What vent pipe installation in the building which has no connection whatsoever with the plumbing fixture?", choices: ["A. Bleeder pipe", "B. Ventilating pipe", "C. Side vent", "D. Exhaust pipe"], a: 1 },
+    { q: "Water closets shall be computed as ______ fixture units when determining septic tank size.", choices: ["A. 6", "B. 5", "C. 4", "D. 8"], a: 0 },
+    { q: "What is the minimum size of a water service pipe from the street main to the building?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/4\""], a: 0 },
+    { q: "The portion of a drainage system that does not drain by gravity into the building sewer.", choices: ["A. Sub-drain", "B. Sump", "C. Ejector", "D. Stack"], a: 0 },
+    { q: "What is the minimum size of a cleanout for a 4-inch pipe?", choices: ["A. 4\"", "B. 3\"", "C. 2\"", "D. 6\""], a: 0 },
+    { q: "What is the standard height for a kitchen sink installation from the floor?", choices: ["A. 36\"", "B. 34\"", "30\"", "D. 32\""], a: 0 },
+    { q: "A type of vent that serves two fixtures and is installed between them.", choices: ["A. Common vent", "B. Loop vent", "C. Circuit vent", "D. Yoke vent"], a: 0 },
+    { q: "What installation standard is followed in joining plastic pipe and fittings by solvent cement?", choices: ["A. IAPMO", "B. ISO", "C. ANSI", "D. ASHRAE"], a: 0 },
+    { q: "A plumbing permit shall expire if the plumbing work is not started for how many days?", choices: ["A. 365 days", "B. 100 days", "C. 30 days", "D. 45 days"], a: 0 },
+    { q: "What is the maximum water pressure (kg/cm2) standpipe fittings must withstand when ready for service?", choices: ["A. 21", "B. 30", "C. 15", "D. 10"], a: 0 },
+    { q: "It has a caution when using close to water heaters because it softens and deforms in excess of 65 deg. C.", choices: ["A. PVC", "B. CISP", "C. G.I. pipe", "D. Asbestos cement pipe"], a: 0 },
+    { q: "Which is NOT a standard commercial size of G.I. pipe for water supply?", choices: ["A. 5\" diameter", "B. 4\" diameter", "C. 3\" diameter", "D. 2 1/2\" diameter"], a: 0 },
+    { q: "The part of the drainage system that conveys waste containing organic waste is ______.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Acid pipe"], a: 0 },
+    { q: "What is the nominal diameter of a water closet drain according to RNPCP?", choices: ["A. 3\"", "B. 2\"", "C. 2.5\"", "D. 4\""], a: 0 },
+    { q: "Water heaters, hose bibs, sill cocks are normally protected from backflow with:", choices: ["A. a vacuum breaker", "B. air gap", "C. air break", "D. air test"], a: 0 },
+    { q: "DWV in the drainage installation of plumbing system stands for:", choices: ["A. drainage, waste, vent", "B. dry, wet, vent", "C. depth, width, volume", "D. downspout, water, ventilation"], a: 0 },
+    { q: "An underground soil formation that contains sufficient saturated permeable material that yields significant quantities of water.", choices: ["A. aquifer", "B. run-off water", "C. surface water", "D. mid-ground water"], a: 0 },
+    { q: "An elbow with male thread on one end and female thread on the other end.", choices: ["A. street elbow", "B. straight elbow", "C. socket elbow", "D. long elbow"], a: 0 },
+    { q: "Which of the following factors is not considered in sizing the water supply piping using RNPCP chapter 6?", choices: ["A. pipe friction", "B. length of the pipe in the building", "C. pressure of the water supply at the source", "D. number and kind of fixtures installed"], a: 0 },
+    { q: "How do you connect pumps in series?", choices: ["A. same gpm", "B. different gpm", "C. same horsepower", "D. different horsepower"], a: 0 },
+    { q: "According to the UPC, above what temperature can you consider as hot water?", choices: ["A. 120°F", "B. 212°F", "C. 202°F", "D. 100°C"], a: 0 },
+    { q: "What type of faucet is now most often used on plumbing fixtures?", choices: ["A. compression", "B. swivel type", "C. swing type", "D. wheel type"], a: 0 },
+    { q: "Aside from lavatory, what is the other common fixture that is provided with overflow?", choices: ["A. bathtub", "B. slop sink", "C. urinal", "D. kitchen sink"], a: 0 },
+    { q: "Standard of quality of drinking water from meteoric, surface or underground sources.", choices: ["A. NSDW", "B. DENR", "C. DOH", "D. Water Code"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/2\""], a: 0 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.0 gallon", "B. 1.6 gallons", "C. 1.2 gallons", "D. 5.0 gallons"], a: 0 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "What do you call the drains which serve one or more fixtures that discharge into another drain or into a stack?", choices: ["A. horizontal branches", "B. fixture drains", "C. wet vents", "D. fixture branches"], a: 0 },
+    { q: "A pipe fitting to join two straight lengths of pipes?", choices: ["A. coupling", "B. nipple", "C. plug", "D. cap"], a: 0 },
+    { q: "What pipe should not be buried underground?", choices: ["A. GI pipe", "B. BI pipe", "C. PE pipe", "D. HDPE"], a: 0 },
+    { q: "Gray water that enters a collection reservoir must be:", choices: ["A. filtered", "B. measured", "C. tasted", "D. monitored"], a: 0 },
+    { q: "A vent that does not carry liquid or waste borne wastes.", choices: ["A. dry vent", "B. wet vent", "C. stack vent", "D. vent stack"], a: 0 },
+    { q: "Which of the following is acceptable procedure when installing piping in a load-bearing wooden partition?", choices: ["A. drill a hole through the center of the studs", "B. do not drill or notch the studs", "C. drill a hole at the sides of the studs", "D. make a notch not more than one-half the thickness"], a: 0 },
+    { q: "What is this symbol representing (parallel lines with a diagonal connecting them)?", choices: ["A. Welded 90° Elbow", "B. Street Elbow", "C. Flanged 90° Elbow", "D. Soldered 90° Elbow"], a: 0 },
+    { q: "The artificial application of water to land for the purpose of agricultural production.", choices: ["A. Irrigation", "B. Farming", "C. Cultivation", "D. Sprinkling"], a: 0 },
+    { q: "It is the amount of suspended material in water as measured by light ray.", choices: ["A. Turbidity", "B. Color", "C. Odor", "D. Hardness"], a: 0 },
+    { q: "How is water hardness measured?", choices: ["A. Parts per million", "B. Ounce of hardness", "C. Grains per gallon", "D. Soap suds"], a: 0 },
+    { q: "What is the pipe connection in which a ball is held in a cup-like that allows movement in every direction?", choices: ["A. Ball joint", "B. Universal joint", "C. Uniform patent", "D. Caulk joint"], a: 0 },
+    { q: "Leaching field is categorized as one of the types of disposal systems.", choices: ["A. Subsurface disposal", "B. Surface disposal", "C. Public sewer", "D. Water body"], a: 0 },
+    { q: "A tank which receives sewage and from which it is pumped to the sewer.", choices: ["A. Sump", "B. Septic tank", "C. Cesspool", "D. Catch basin"], a: 0 },
+    { q: "A toilet that consists of a hole in the ground.", choices: ["A. Privy", "B. Septic tank", "C. Cesspool", "D. Sump"], a: 0 },
+    { q: "What is the required size of a water service pipe for a 2-story house?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/4\""], a: 0 },
+    { q: "A pipe connecting the water main to the building.", choices: ["A. Service pipe", "B. Distribution pipe", "C. Riser", "D. Fixture branch"], a: 0 },
+    { q: "What type of pump is used to lift water from a deep well?", choices: ["A. Submersible pump", "B. Centrifugal pump", "C. Reciprocating pump", "D. Jet pump"], a: 0 },
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 80 cm", "B. 60 cm", "C. 70 cm", "D. 90 cm"], a: 0 },
+    { q: "What is the standard height of a shower head from the floor?", choices: ["A. 180 cm", "B. 150 cm", "C. 200 cm", "D. 220 cm"], a: 0 },
+    { q: "What is the minimum diameter of a soil pipe?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "What is the minimum slope of a horizontal drainage pipe?", choices: ["A. 2%", "B. 1%", "C. 3%", "D. 4%"], a: 0 },
+    { q: "What type of joint is used for galvanized iron pipes?", choices: ["A. Threaded", "B. Welded", "C. Flanged", "D. Soldered"], a: 0 },
+    { q: "What type of valve is used to prevent the backflow of water?", choices: ["A. Check valve", "B. Gate valve", "C. Globe valve", "D. Ball valve"], a: 0 },
+    { q: "What is the standard length of a PVC pipe?", choices: ["A. 6 meters", "B. 3 meters", "C. 4 meters", "D. 10 meters"], a: 0 },
+    { q: "The unit of flow in a plumbing system.", choices: ["A. dfu", "B. gpm", "C. lps", "D. All of these"], a: 0 },
+    { q: "The pressure of water at a fixture.", choices: ["A. Dynamic pressure", "B. Static pressure", "C. Residual pressure", "D. Flow pressure"], a: 0 },
+    { q: "The process of removing suspended solids from water.", choices: ["A. Sedimentation", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 0 },
+    { q: "What is the standard color for a potable water pipe?", choices: ["A. Green", "B. Blue", "C. White", "D. Orange"], a: 0 },
+    { q: "What is the standard color for a drainage pipe?", choices: ["A. Orange", "B. Blue", "C. Green", "D. White"], a: 0 },
+    { q: "What is the maximum distance of a cleanout from a wall?", choices: ["A. 45 cm", "B. 30 cm", "C. 60 cm", "D. 90 cm"], a: 0 },
+    { q: "A pipe that carries only liquid waste free of fecal matter.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 },
+    { q: "A pipe that carries fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 },
+    { q: "What is the minimum size of a house drain?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap seal", "B. Trap arm", "C. Water seal", "D. Trap depth"], a: 0 },
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PPR", "B. PVC", "C. CPVC", "D. PE"], a: 0 },
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. PE", "B. GI", "C. PVC", "D. Copper"], a: 0 },
+    { q: "What is the standard spacing for horizontal pipe supports?", choices: ["A. 1.5 meters", "B. 1 meter", "C. 2 meters", "D. 3 meters"], a: 0 },
+    { q: "What is the standard spacing for vertical pipe supports?", choices: ["A. 1 floor", "B. 2 floors", "C. 3 meters", "D. 4 meters"], a: 0 },
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. Coupling", "B. Union", "C. Bushing", "D. Nipple"], a: 0 },
+    { q: "What is the minimum diameter of a storm drain?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 60 cm", "B. 50 cm", "C. 70 cm", "D. 80 cm"], a: 0 },
+    { q: "What is the purpose of an air chamber?", choices: ["A. Prevent water hammer", "B. Prevent backflow", "C. Increase pressure", "D. Filter water"], a: 0 },
+    { q: "The device used to measure water consumption.", choices: ["A. Water meter", "B. Pressure gauge", "C. Flow meter", "D. Thermometer"], a: 0 }
     ],
     21: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        { q: "What is the process of water supply purification which consists of applying certain chemicals in particles too small to be removed by plain sedimentation?", choices: ["A. Coagulation", "B. Sedimentation", "C. Flocculation", "D. Filtration"], a: 0 },
+    { q: "What is the type of water closet prescribed for public toilet?", choices: ["A. Elongated bowl type", "B. Oval bowl type", "C. Circular bowl type", "D. Egg shape bowl type"], a: 0 },
+    { q: "What is the process of exposing water in their films to the oxygen of the atmosphere in order to remove/neutralize the taste, odor and dissolved oxygen?", choices: ["A. Filtration", "B. Screening", "C. Aeration", "D. Sedimentation"], a: 2 },
+    { q: "What is the pipe fitting without side thread and projecting square head used for closing the edge of another fitting?", choices: ["A. Plug", "B. Cap", "C. Knot", "D. Bushing"], a: 0 },
+    { q: "How is water hardness measured?", choices: ["A. Ounce of hardness", "B. Grains per gallon", "C. Parts per million", "D. Soap suds"], a: 2 },
+    { q: "What is the pipe connection in which a ball is held in a cup-like that allows movement in every direction?", choices: ["A. Universal joint", "B. Uniform patent", "C. Ball joint", "D. Caulk joint"], a: 2 },
+    { q: "Leaching field is categorized as one of the types of disposal systems.", choices: ["A. Subsurface disposal", "B. Surface disposal", "C. Public sewer", "D. Water body"], a: 0 },
+    { q: "A tank which receives sewage and from which it is pumped to the sewer.", choices: ["A. Sump", "B. Septic tank", "C. Cesspool", "D. Catch basin"], a: 0 },
+    { q: "A toilet that consists of a hole in the ground.", choices: ["A. Privy", "B. Septic tank", "C. Cesspool", "D. Sump"], a: 0 },
+    { q: "What is the required size of a water service pipe for a 2-story house?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/4\""], a: 0 },
+    { q: "A pipe connecting the water main to the building.", choices: ["A. Service pipe", "B. Distribution pipe", "C. Riser", "D. Fixture branch"], a: 0 },
+    { q: "What type of pump is used to lift water from a deep well?", choices: ["A. Submersible pump", "B. Centrifugal pump", "C. Reciprocating pump", "D. Jet pump"], a: 0 },
+    { q: "What is the standard height of a lavatory from the floor?", choices: ["A. 80 cm", "B. 60 cm", "C. 70 cm", "D. 90 cm"], a: 0 },
+    { q: "What is the standard height of a shower head from the floor?", choices: ["A. 180 cm", "B. 150 cm", "C. 200 cm", "D. 220 cm"], a: 0 },
+    { q: "What is the minimum diameter of a soil pipe?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "What is the minimum slope of a horizontal drainage pipe?", choices: ["A. 2%", "B. 1%", "C. 3%", "D. 4%"], a: 0 },
+    { q: "What type of joint is used for galvanized iron pipes?", choices: ["A. Threaded", "B. Welded", "C. Flanged", "D. Soldered"], a: 0 },
+    { q: "What type of valve is used to prevent the backflow of water?", choices: ["A. Check valve", "B. Gate valve", "C. Globe valve", "D. Ball valve"], a: 0 },
+    { q: "What is the standard length of a PVC pipe?", choices: ["A. 6 meters", "B. 3 meters", "C. 4 meters", "D. 10 meters"], a: 0 },
+    { q: "The unit of flow in a plumbing system.", choices: ["A. dfu", "B. gpm", "C. lps", "D. All of these"], a: 0 },
+    { q: "The pressure of water at a fixture.", choices: ["A. Dynamic pressure", "B. Static pressure", "C. Residual pressure", "D. Flow pressure"], a: 0 },
+    { q: "The process of removing suspended solids from water.", choices: ["A. Sedimentation", "B. Filtration", "C. Aeration", "D. Coagulation"], a: 0 },
+    { q: "What is the standard color for a potable water pipe?", choices: ["A. Green", "B. Blue", "C. White", "D. Orange"], a: 1 },
+    { q: "What is the standard color for a drainage pipe?", choices: ["A. Orange", "B. Blue", "C. Green", "D. White"], a: 0 },
+    { q: "What is the maximum distance of a cleanout from a wall?", choices: ["A. 45 cm", "B. 30 cm", "C. 60 cm", "D. 90 cm"], a: 0 },
+    { q: "A pipe that carries only liquid waste free of fecal matter.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 },
+    { q: "A pipe that carries fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Vent pipe", "D. Storm pipe"], a: 0 },
+    { q: "What is the minimum size of a house drain?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap seal", "B. Trap arm", "C. Water seal", "D. Trap depth"], a: 0 },
+    { q: "What type of pipe is best for hot water lines?", choices: ["A. PPR", "B. PVC", "C. CPVC", "D. PE"], a: 0 },
+    { q: "What type of pipe is used for underground gas lines?", choices: ["A. PE", "B. GI", "C. PVC", "D. Copper"], a: 0 },
+    { q: "What is the standard spacing for horizontal pipe supports?", choices: ["A. 1.5 meters", "B. 1 meter", "C. 2 meters", "D. 3 meters"], a: 0 },
+    { q: "What is the standard spacing for vertical pipe supports?", choices: ["A. 1 floor", "B. 2 floors", "C. 3 meters", "D. 4 meters"], a: 0 },
+    { q: "The process of joining two pipes using a sleeve.", choices: ["A. Coupling", "B. Union", "C. Bushing", "D. Nipple"], a: 0 },
+    { q: "What is the minimum diameter of a storm drain?", choices: ["A. 4\"", "B. 2\"", "C. 3\"", "D. 6\""], a: 0 },
+    { q: "What is the standard height of a urinal from the floor?", choices: ["A. 60 cm", "B. 50 cm", "C. 70 cm", "D. 80 cm"], a: 0 },
+    { q: "What is the purpose of an air chamber?", choices: ["A. Prevent water hammer", "B. Prevent backflow", "C. Increase pressure", "D. Filter water"], a: 0 },
+    { q: "The device used to measure water consumption.", choices: ["A. Water meter", "B. Pressure gauge", "C. Flow meter", "D. Thermometer"], a: 0 },
+    { q: "What is the name of the washer that seals the bottom of a lavatory bowl?", choices: ["A. mack", "B. cushion", "C. compression", "D. escutcheon plate"], a: 0 },
+    { q: "How do you connect pumps in series?", choices: ["A. same gpm", "B. different gpm", "C. same horsepower", "D. different horsepower"], a: 0 },
+    { q: "According to the UPC, above what temperature can you consider as hot water?", choices: ["A. 120°F", "B. 212°F", "C. 202°F", "D. 100°C"], a: 0 },
+    { q: "What type of faucet is now most often used on plumbing fixtures?", choices: ["A. compression", "B. swivel type", "C. swing type", "D. wheel type"], a: 0 },
+    { q: "Aside from lavatory, what is the other common fixture that is provided with overflow?", choices: ["A. bathtub", "B. slop sink", "C. urinal", "D. kitchen sink"], a: 0 },
+    { q: "Standard of quality of drinking water from meteoric, surface or underground sources.", choices: ["A. NSDW", "B. DENR", "C. DOH", "D. Water Code"], a: 0 },
+    { q: "The standard size of a water meter for a residential house.", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/2\""], a: 0 },
+    { q: "How many gallons per flush do most low-consumption toilets need?", choices: ["A. 1.6", "B. 3.5", "C. 2.0", "D. 5.0"], a: 0 },
+    { q: "What do you use the strap wrench for?", choices: ["A. To install the flushometer couplings", "B. To remove the flushometer couplings", "C. To install the Optima Plus locking ring", "D. To remove and reinstall the batteries"], a: 1 },
+    { q: "In which finish is the flushometer not available?", choices: ["A. Chrome", "B. Brushed nickel", "C. Silver", "D. Gold"], a: 2 },
+    { q: "How many gallons per flush are needed for modern urinals?", choices: ["A. 1.0 gallon", "B. 1.6 gallons", "C. 1.2 gallons", "D. 5.0 gallons"], a: 1 },
+    { q: "It is used primarily on the fixture side of a trap made tight with a rubber plastic-type washer and a slip nut.", choices: ["A. slip joint", "B. valve", "C. O-ring", "D. escutcheon"], a: 0 },
+    { q: "What is the vertical distance from a waste outlet to the finished floor line of a typical lavatory.", choices: ["A. 556 mm", "B. 501 mm", "C. 444 mm", "D. 570 mm"], a: 0 },
+    { q: "It should be installed so that they provide access to the cover and a means for servicing and maintaining the trap.", choices: ["A. trap primer", "B. grease trap", "C. grease interceptor", "D. p-trap"], a: 2 },
+    { q: "The pipe or shaft to convey foul air from a plumbing fixture or a room to the outer air.", choices: ["A. shaft vent", "B. local vent", "C. individual vent", "D. mini vent"], a: 1 },
+    { q: "Is a combination of hydrogen and carbon, a principal component of natural gas?", choices: ["A. carbon monoxide", "B. methane gas", "C. hydrogen sulfide", "D. sulfur dioxide"], a: 1 },
+    { q: "The classification of water when it contains dissolved salts of calcium and magnesium?", choices: ["A. soft", "B. hard", "C. neutral", "D. balanced"], a: 1 },
+    { q: "What fitting will be used in a water supply line if it is used to join two pipes of different materials that would eventually generate corrosion?", choices: ["A. sovent union", "B. dielectric union", "C. ionizer", "D. adapter"], a: 1 },
+    { q: "What is the minimum size of cast iron soil pipe being manufactured for use in a DWV system?", choices: ["A. 76 mm", "B. 51 mm", "C. 102 mm", "D. 152 mm"], a: 1 },
+    { q: "Which wall is best suited if soil pipe will run through it?", choices: ["A. drywall", "B. shear wall", "C. 6\" CHB", "D. retaining wall"], a: 2 },
+    { q: "The minimum size of a swimming pool drain?", choices: ["A. 3 inches", "B. 4 inches", "C. 2 inches", "D. 6 inches"], a: 2 },
+    { q: "What type of materials is used for the base of a septic tank in a digestive chamber?", choices: ["A. reinforced concrete", "B. steel base", "C. earth base", "D. mass concrete"], a: 0 },
+    { q: "An elbow with male thread on one end and female thread on the other end.", choices: ["A. street elbow", "B. straight elbow", "C. socket elbow", "D. long elbow"], a: 0 },
+    { q: "Which of the following factors is not considered in sizing the water supply piping using RNPCP chapter 6?", choices: ["A. pipe friction", "B. length of the pipe in the building", "C. pressure of the water supply at the source", "D. number and kind of fixtures installed"], a: 0 },
+    { q: "What do you call the drains which serve one or more fixtures that discharge into another drain or into a stack?", choices: ["A. horizontal branches", "B. fixture drains", "C. wet vents", "D. fixture branches"], a: 0 },
+    { q: "What pipe should not be buried underground?", choices: ["A. GI pipe", "B. BI pipe", "C. PE pipe", "D. HDPE"], a: 0 },
+    { q: "A vent that does not carry liquid or waste borne wastes.", choices: ["A. dry vent", "B. wet vent", "C. stack vent", "D. vent stack"], a: 0 },
+    { q: "Which of the following is acceptable procedure when installing piping in a load-bearing wooden partition?", choices: ["A. drill a hole through the center of the studs", "B. do not drill or notch the studs", "C. drill a hole at the sides of the studs", "D. make a notch not more than one-half the thickness"], a: 0 },
+    { q: "It is the amount of suspended material in water as measured by light ray.", choices: ["A. Turbidity", "B. Color", "C. Odor", "D. Hardness"], a: 0 },
+    { q: "What is the extension (to the open air) of a soil or waste stack above the highest horizontal branch drain or fixture branch connected to the stack?", choices: ["A. Stack Vent", "B. Vent Stack", "C. Unit vent", "D. Revent"], a: 0 },
+    { q: "A vent installed in a pipe to vent a fixture trap connected to the vent system above the fixture it serves.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Unit vent", "D. Revent"], a: 3 },
+    { q: "What really seals a caulked joint?", choices: ["A. Epoxy", "B. Cement", "C. Oakum", "D. Pig Lead"], a: 3 },
+    { q: "What is a hemp or old hemp rope soaked into oil to make joint of cast iron piping's waterproof?", choices: ["A. pig lead", "B. oakum", "C. putty", "D. mortar"], a: 1 },
+    { q: "It is a vent installed at intervals on the soil pipe where change in circulation is needed especially in tall buildings.", choices: ["A. individual vent", "B. branch vent", "C. dual vent", "D. relief vent"], a: 3 },
+    { q: "Which among the list is NOT a trap-seal primer required installation?", choices: ["A. Kitchen sink", "B. Toilets", "C. Garbage disposals", "D. Drinking fountains"], a: 0 },
+    { q: "Which sewer is NOT directly controlled by public authority?", choices: ["A. building Sewer", "B. public Sewer", "C. private Sewer", "D. common Sewer"], a: 0 },
+    { q: "What is a common pipe material used for services connection?", choices: ["A. Polyethelene", "B. Poly enzyme", "C. Plastic extrusion", "D. PVC"], a: 0 },
+    { q: "PE plastic tubing is materials used for water service connection. What does PE stand for?", choices: ["A. Poly-Ethylene", "B. Poly-Ethane", "C. Plastic-Ethelyne", "D. Pure-Ethelyne"], a: 0 },
+    { q: "Which of the following is used to improve the quality of water by removing dissolved minerals?", choices: ["A. Water softener", "B. Chlorinator", "C. Filter", "D. Aerator"], a: 0 },
+    { q: "The process of adding a coagulant to water to clump small particles together.", choices: ["A. Flocculation", "B. Sedimentation", "C. Filtration", "D. Disinfection"], a: 0 },
+    { q: "The minimum size of a vent for a basement ejector.", choices: ["A. 2\"", "B. 3\"", "C. 1 1/2\"", "D. 4\""], a: 0 },
+    { q: "What is the standard color for a fire protection pipe?", choices: ["A. Red", "B. Blue", "C. Yellow", "D. White"], a: 0 },
+    { q: "A device used to prevent the collapse of a tank due to internal vacuum.", choices: ["A. Vacuum relief valve", "B. Air gap", "C. Backwater valve", "D. Pressure relief valve"], a: 0 },
+    { q: "What type of valve is used to regulate the flow of water?", choices: ["A. Globe valve", "B. Gate valve", "C. Check valve", "D. Angle valve"], a: 0 },
+    { q: "The horizontal distance from the trap weir to the vent pipe connection.", choices: ["A. Trap arm", "B. Fixture drain", "C. Vent branch", "D. Soil branch"], a: 0 },
+    { q: "What is the minimum diameter of a leader pipe for a 500 sqm roof area?", choices: ["A. 4\"", "B. 3\"", "C. 5\"", "D. 6\""], a: 0 },
+    { q: "A plumbing fixture used for washing the external genitals and anal region.", choices: ["A. Bidet", "B. Urinal", "C. Lavatory", "D. Slop sink"], a: 0 },
+    { q: "What is the standard height of a shower valve from the floor?", choices: ["A. 120 cm", "B. 100 cm", "C. 110 cm", "D. 130 cm"], a: 0 },
+    { q: "The vertical pipe in a water distribution system.", choices: ["A. riser", "B. stack", "C. branch", "D. main"], a: 0 },
+    { q: "The horizontal pipe in a drainage system.", choices: ["A. branch", "B. main", "C. lateral", "D. stack"], a: 0 },
+    { q: "Where is a grease trap usually installed?", choices: ["A. kitchen", "B. bathroom", "C. laundry", "D. garage"], a: 0 },
+    { q: "What is the maximum pressure for a residential water system?", choices: ["A. 80 psi", "B. 60 psi", "C. 100 psi", "D. 120 psi"], a: 0 },
+    { q: "The device used to reduce water pressure.", choices: ["A. pressure regulator", "B. pressure gauge", "C. check valve", "D. relief valve"], a: 0 },
+    { q: "What is the minimum distance between a water pipe and a sewer pipe?", choices: ["A. 2 meters", "B. 1 meter", "C. 60 cm", "D. 30 cm"], a: 0 },
+    { q: "The process of disinfecting a water system.", choices: ["A. chlorination", "B. filtration", "C. aeration", "D. coagulation"], a: 0 },
+    { q: "What is the standard diameter of a soil stack?", choices: ["A. 4\"", "B. 3\"", "C. 6\"", "D. 2\""], a: 0 },
+    { q: "What is the standard height of a water closet handle?", choices: ["A. 100 cm", "B. 80 cm", "C. 120 cm", "D. 150 cm"], a: 0 },
+    { q: "The distance between the trap and the vent.", choices: ["A. trap arm", "B. trap seal", "C. vent stack", "D. soil stack"], a: 0 },
+    { q: "What type of pipe is used for swimming pool plumbing?", choices: ["A. PVC", "B. GI", "C. PE", "D. Copper"], a: 0 },
+    { q: "What is the standard size of a kitchen sink drain?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "What is the minimum size of a vent for a lavatory?", choices: ["A. 1 1/2\"", "B. 1 1/4\"", "C. 2\"", "D. 3\""], a: 0 },
+    { q: "The device used to heat water.", choices: ["A. water heater", "B. boiler", "C. heat exchanger", "D. All of these"], a: 0 }
     ],
     22: [
         { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
@@ -1434,6 +2023,7 @@ export const designDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
+
 
 
 
