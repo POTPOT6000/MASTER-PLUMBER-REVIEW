@@ -42,7 +42,6 @@
             font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); 
             color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        /* All Buttons Interactive Effect */
         button:hover { border-color: var(--accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
         button:active { background: var(--accent) !important; color: white !important; transform: scale(0.98); }
 
@@ -74,7 +73,6 @@
         .category-list { display: flex; flex-direction: column; gap: 12px; }
         .category-item { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; }
         [data-theme="dark"] .category-item { background: #0f172a; border-color: #1e293b; }
-        /* Category-Specific Interaction */
         .category-item:hover { border-color: var(--accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.2); }
         .category-item:active { background: #dbeafe !important; transform: scale(0.98); }
         
@@ -105,41 +103,29 @@
         <h1 style="font-size: 26px; margin: 5px 0 30px; line-height: 1.1; font-weight: 800; color: #1e293b;">
             MASTER PLUMBER <span style="color: #3b82f6;">REVIEWER</span>
         </h1>
-
         <div style="background-color: #334155; color: white; padding: 18px 20px; text-align: left; position: relative; border-radius: 16px; margin-bottom: 25px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
             <div style="background-color: #f97316; color: white; padding: 2px 25px; font-weight: 700; font-size: 10px; transform: rotate(45deg); position: absolute; top: 12px; right: -25px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">PRO</div>
             <div style="font-weight: 800; font-size: 15px; margin-bottom: 3px;">Pass the Boards.</div>
             <div style="font-weight: 300; font-size: 12px; line-height: 1.4; opacity: 0.9;">Access 5,000+ practice questions and detailed analytics.</div>
         </div>
-
-        <div style="text-align: left; margin-bottom: 5px; font-size: 10px; color: var(--sub); font-weight: 600;">USERNAME</div>
-        <input type="text" id="username" placeholder="future_engineer">
-        
-        <div style="text-align: left; margin-top: 10px; margin-bottom: 5px; font-size: 10px; color: var(--sub); font-weight: 600;">PASSWORD</div>
-        <input type="password" id="password" placeholder="••••••••">
-
-        <button class="btn-main" onclick="handleAuth()" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #fff; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); margin-top: 25px;">SIGN IN TO YOUR ACCOUNT</button>
-        <button onclick="handleRegister()" style="background: white; color: #64748b; border: 1.5px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">CREATE NEW ACCOUNT</button>
-
-        <div style="margin: 25px 0 10px; font-size: 11px; color: var(--sub); font-weight: 600;">OR</div>
-        <button onclick="enterAsGuest()" style="font-size: 12px; background: transparent; color: #3b82f6; border: none; padding: 5px; text-decoration: underline;">Continue as Guest</button>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn-main" onclick="handleAuth()">SIGN IN</button>
+        <button onclick="handleRegister()">CREATE ACCOUNT</button>
+        <button onclick="enterAsGuest()" style="background:transparent; border:none; color:#3b82f6;">Continue as Guest</button>
     </div>
 
     <div id="paymentScreen" class="screen" style="text-align: center;">
         <h3>Unlock All Exams</h3>
-        <div style="width: 160px; height: 160px; background: white; margin: 15px auto; border: 3px solid #007dfe; border-radius: 15px; padding: 10px;">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GCASH_09123456789" style="width:100%">
-        </div>
-        <p style="font-size: 14px; font-weight: 700; color: #007dfe; margin:0;">GCash: 09XX XXX XXXX</p>
         <input type="text" id="licenseKey" placeholder="Enter License Key">
-        <button class="btn-main" onclick="verifyKey()">Activate Full Access</button>
-        <button onclick="setScreen('home')" style="background:transparent; font-size:12px;">Maybe Later</button>
+        <button class="btn-main" onclick="verifyKey()">Activate</button>
+        <button onclick="setScreen('home')">Maybe Later</button>
     </div>
 
     <div id="home" class="screen">
         <div class="new-header">
             <div class="greeting-container">
-                <span class="user-greeting">Welcome, Guest! <span class="wave">👋</span></span>
+                <span class="user-greeting">Welcome, Guest!</span>
                 <span id="newStatus" class="membership-status">FREE MEMBER</span>
             </div>
             <button onclick="toggleTheme()" style="width: 35px; height: 35px; border-radius: 10px; padding: 0; margin: 0; background:var(--btn-ghost);">
@@ -149,79 +135,44 @@
 
         <div id="proCardCont" class="pro-card">
             <h3>Unlock Lifetime Pro</h3>
-            <p>Access all 60+ exams, detailed explanations, and offline mode.</p>
-            <button id="newUpgradeBtn" class="upgrade-btn" onclick="setScreen('paymentScreen')">UPGRADE NOW — ₱299</button>
+            <button class="upgrade-btn" onclick="setScreen('paymentScreen')">UPGRADE — ₱299</button>
         </div>
 
         <h3 style="margin: 0 0 15px; font-size: 15px;">Exam Categories</h3>
 
         <div class="category-list">
-            <div class="category-item" onclick="openExams('Plumbing Code')">
-                <div class="category-icon" style="background: var(--cat-icon-code);"><ion-icon name="book-outline" style="color: #0284c7;"></ion-icon></div>
-                <div class="category-info"><span class="category-title">Plumbing Code</span><span class="category-sub">50 Practice Exams</span></div>
-                <ion-icon name="chevron-forward-outline" style="color: #cbd5e1;"></ion-icon>
-            </div>
-            <div class="category-item" onclick="openExams('Plumbing Arithmetic')">
-                <div class="category-icon" style="background: var(--cat-icon-arith);"><ion-icon name="calculator-outline" style="color: #ef4444;"></ion-icon></div>
-                <div class="category-info"><span class="category-title">Plumbing Arithmetic</span><span class="category-sub">Master the calculations</span></div>
-                <ion-icon name="chevron-forward-outline" style="color: #cbd5e1;"></ion-icon>
-            </div>
-            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')">
-                <div class="category-icon" style="background: var(--cat-icon-design);"><ion-icon name="construct-outline" style="color: #16a34a;"></ion-icon></div>
-                <div class="category-info"><span class="category-title">Sanitation & Design</span><span class="category-sub">Installation Standards</span></div>
-                <ion-icon name="chevron-forward-outline" style="color: #cbd5e1;"></ion-icon>
-            </div>
-            <div class="category-item" onclick="openExams('Practical Problems and Experiences')">
-                <div class="category-icon" style="background: var(--cat-icon-prac);"><ion-icon name="hammer-outline" style="color: #f97316;"></ion-icon></div>
-                <div class="category-info"><span class="category-title">Practical Problems</span><span class="category-sub">Field Experience Scenarios</span></div>
-                <ion-icon name="chevron-forward-outline" style="color: #cbd5e1;"></ion-icon>
+            <div class="category-item" onclick="openExams('Plumbing Code')"><div class="category-icon" style="background:var(--cat-icon-code)"><ion-icon name="book-outline"></ion-icon></div><div class="category-info"><span class="category-title">Plumbing Code</span></div></div>
+            <div class="category-item" onclick="openExams('Plumbing Arithmetic')"><div class="category-icon" style="background:var(--cat-icon-arith)"><ion-icon name="calculator-outline"></ion-icon></div><div class="category-info"><span class="category-title">Plumbing Arithmetic</span></div></div>
+            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')"><div class="category-icon" style="background:var(--cat-icon-design)"><ion-icon name="construct-outline"></ion-icon></div><div class="category-info"><span class="category-title">Sanitation & Design</span></div></div>
+            <div class="category-item" onclick="openExams('Practical Problems and Experiences')"><div class="category-icon" style="background:var(--cat-icon-prac)"><ion-icon name="hammer-outline"></ion-icon></div><div class="category-info"><span class="category-title">Practical Problems</span></div></div>
+            
+            <div class="category-item" onclick="setScreen('subCategories')">
+                <div class="category-icon" style="background: #E0E7FF;"><ion-icon name="folder-outline" style="color: #4f46e5;"></ion-icon></div>
+                <div class="category-info"><span class="category-title">Tools, Symbols & Diagrams</span></div>
             </div>
         </div>
 
         <div class="bottom-nav">
-            <button class="nav-item active" onclick="setScreen('home')">
-                <ion-icon name="home" class="nav-icon"></ion-icon>
-                Home
-            </button>
-            <button class="nav-item" onclick="alert('Stats Coming Soon!')">
-                <ion-icon name="bar-chart-outline" class="nav-icon"></ion-icon>
-                My Stats
-            </button>
-            <button class="nav-item" onclick="logout()">
-                <ion-icon name="person-outline" class="nav-icon"></ion-icon>
-                Profile / Logout
-            </button>
+            <button class="nav-item active" onclick="setScreen('home')"><ion-icon name="home" class="nav-icon"></ion-icon>Home</button>
+            <button class="nav-item" onclick="alert('Stats Coming Soon!')"><ion-icon name="bar-chart-outline" class="nav-icon"></ion-icon>My Stats</button>
+            <button class="nav-item" onclick="logout()"><ion-icon name="person-outline" class="nav-icon"></ion-icon>Profile</button>
         </div>
     </div>
 
-    <div id="exams" class="screen">
-        <h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
-        <div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div>
-        <button onclick="setScreen('home')">Back to Dashboard</button>
+    <div id="subCategories" class="screen">
+        <h3 style="margin: 0 0 15px; font-size: 15px; text-align: center;">Tools, Symbols & Diagrams</h3>
+        <div class="category-list">
+            <div class="category-item" onclick="openExams('Tools')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="build-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Tools</span></div></div>
+            <div class="category-item" onclick="openExams('Symbols')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="git-branch-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Symbols</span></div></div>
+            <div class="category-item" onclick="openExams('Diagrams')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="map-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Diagrams</span></div></div>
+            <div class="category-item" onclick="openExams('Random')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="shuffle-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Random</span></div></div>
+        </div>
+        <button onclick="setScreen('home')" style="margin-top:20px;">Back to Home</button>
     </div>
 
-    <div id="quiz" class="screen">
-        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <div id="qNum" style="font-size: 11px; font-weight: 800; color: var(--accent);"></div>
-            <div id="scoreBox" style="background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700;">0/0</div>
-        </div>
-        <div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; min-height: 80px;"></div>
-        <div id="choices"></div>
-        <div style="display:flex; gap:10px; margin-top: 15px;">
-            <button onclick="prevQ()" style="flex:1; padding:12px;">Back</button>
-            <button onclick="handleNextLogic()" style="flex:2; padding:12px;" class="btn-main">Next</button>
-        </div>
-        <div style="display:flex; gap:10px; margin-top: 8px;">
-            <button onclick="quitQuiz()" style="font-size:11px; flex:1; color:var(--danger); background: var(--btn-ghost); padding:8px;">Quit Exam</button>
-            <button onclick="finishExamEarly()" style="font-size:11px; flex:1; color:var(--success); background: var(--btn-ghost); padding:8px;">Finish Early</button>
-        </div>
-    </div>
-
-    <div id="results" class="screen">
-        <h2 id="resScore" style="text-align: center; color: var(--accent);"></h2>
-        <div id="revScroll" style="max-height: 380px; overflow-y: auto; background: var(--btn-ghost); border-radius: 20px; padding: 15px; margin-bottom: 15px;"></div>
-        <button class="btn-main" onclick="setScreen('home')">Back Home</button>
-    </div>
+    <div id="exams" class="screen"><h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2><div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div><button onclick="setScreen('home')">Back to Dashboard</button></div>
+    <div id="quiz" class="screen"><div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><div id="qNum" style="font-size: 11px; font-weight: 800; color: var(--accent);"></div><div id="scoreBox" style="background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700;">0/0</div></div><div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; min-height: 80px;"></div><div id="choices"></div><div style="display:flex; gap:10px; margin-top: 15px;"><button onclick="prevQ()" style="flex:1; padding:12px;">Back</button><button onclick="handleNextLogic()" style="flex:2; padding:12px;" class="btn-main">Next</button></div><div style="display:flex; gap:10px; margin-top: 8px;"><button onclick="quitQuiz()" style="font-size:11px; flex:1; color:var(--danger); background: var(--btn-ghost); padding:8px;">Quit Exam</button><button onclick="finishExamEarly()" style="font-size:11px; flex:1; color:var(--success); background: var(--btn-ghost); padding:8px;">Finish Early</button></div></div>
+    <div id="results" class="screen"><h2 id="resScore" style="text-align: center; color: var(--accent);"></h2><div id="revScroll" style="max-height: 380px; overflow-y: auto; background: var(--btn-ghost); border-radius: 20px; padding: 15px; margin-bottom: 15px;"></div><button class="btn-main" onclick="setScreen('home')">Back Home</button></div>
 </div>
 
 <script type="module">
@@ -229,10 +180,21 @@
     import { codeDB } from './code.js';
     import { designDB } from './design.js';
     import { practicalDB } from './practical.js';
+    // Import new databases
+    import { toolsDB } from './tools.js';
+    import { symbolsDB } from './symbols.js';
+    import { diagramsDB } from './diagrams.js';
+    import { randomDB } from './random.js';
 
     const DB = {
-        "Plumbing Arithmetic": arithmeticDB, "Plumbing Code": codeDB,
-        "Sanitation Plumbing Design and Installation": designDB, "Practical Problems and Experiences": practicalDB
+        "Plumbing Arithmetic": arithmeticDB, 
+        "Plumbing Code": codeDB,
+        "Sanitation Plumbing Design and Installation": designDB, 
+        "Practical Problems and Experiences": practicalDB,
+        "Tools": toolsDB,
+        "Symbols": symbolsDB,
+        "Diagrams": diagramsDB,
+        "Random": randomDB
     };
 
     let currentUser = null, isPaid = false, currentCat, curIdx = 0, currentQs = [], answers = [], score = 0;
@@ -299,7 +261,6 @@
     window.setScreen = (id) => {
         document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
         document.getElementById(id).style.display = 'block';
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
         if(id === 'home') document.querySelectorAll('.nav-item')[0].classList.add('active');
         document.getElementById('pBarCont').style.display = (id === 'quiz') ? 'block' : 'none';
     };
