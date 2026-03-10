@@ -180,7 +180,6 @@
     import { codeDB } from './code.js';
     import { designDB } from './design.js';
     import { practicalDB } from './practical.js';
-    // Import new databases
     import { toolsDB } from './tools.js';
     import { symbolsDB } from './symbols.js';
     import { diagramsDB } from './diagrams.js';
@@ -289,11 +288,26 @@
         setScreen('quiz'); loadQ();
     };
 
+    // --- UPDATED LOGIC TO SHOW IMAGES ---
     window.loadQ = () => {
         const q = currentQs[curIdx];
         document.getElementById('progressBar').style.width = (curIdx / currentQs.length * 100) + "%";
         document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} OF ${currentQs.length}`;
-        document.getElementById('qTxt').innerText = q.q;
+        
+        // Render text
+        const qTxtContainer = document.getElementById('qTxt');
+        qTxtContainer.innerHTML = `<div>${q.q}</div>`;
+
+        // Check for and render image
+        if(q.img) {
+            const img = document.createElement('img');
+            img.src = q.img;
+            img.style.maxWidth = "100%";
+            img.style.marginTop = "15px";
+            img.style.borderRadius = "12px";
+            qTxtContainer.appendChild(img);
+        }
+
         const box = document.getElementById('choices'); box.innerHTML = "";
         q.choices.forEach((c, i) => {
             const b = document.createElement('button');
@@ -329,4 +343,3 @@
 </script>
 </body>
 </html>
-
