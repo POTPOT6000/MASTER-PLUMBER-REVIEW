@@ -1,6 +1,185 @@
 export const randomDB = {
     1: [
+        { q: "What is the SI unit of power?", choices: ["A. Joule", "B. Kilowatt-hour", "C. Horsepower", "D. Watt"], a: 3 },
+  { q: "Living or active only in the presence of free dissolved oxygen.", choices: ["A) Anaerobic", "B) Aerobic", "C) Fresh", "D) Oxidized"], a: 1 },
+  { q: "Living or active only in the absence of free dissolved oxygen.", choices: ["A) Aerobic", "B) Anaerobic", "C) Septic", "D) Stale"], a: 1 },
+  { q: "This term applies to immersion in a fluid for a definite period of time. It is usually expressed as a percent of the weight of the dry pipe.", choices: ["A) Adsorption", "B) Saturation", "C) Absorption", "D) Porosity"], a: 2 },
+  { q: "Is usually pieces of metal used to fasten or secure pipes to the building or structure.", choices: ["A) Hanger", "B) Anchor", "C) Coupling", "D) Joint"], a: 1 },
+  { q: "That portion of the trench excavation which is replaced after the sewer line has been laid. The material above the pipe up to the original earth line.", choices: ["A) Bedding", "B) Back Fill", "C) Grading", "D) Shoring"], a: 1 },
+  { q: "The flow of water or other liquids, mixture or substances into the distribution pipe of a potable supply of water from any source other than that intended.", choices: ["A) Back-Siphonage", "B) Cross Connection", "C) Backflow", "D) Indirect Waste"], a: 2 },
+  { q: "A device or assembly designed to prevent backflow into the potable water system.", choices: ["A) Check Valve", "B) Air Break", "C) Backflow Preventer", "D) Vacuum Breaker"], a: 2 },
+  { q: "A term applied to the flow of used water, wastes and/or contamination into the potable water supply piping, due to vacuums being established in the distribution system, building service, water main or parts thereof.", choices: ["A) Backflow", "B) Back-Siphonage", "C) Reverse Flow", "D) Pressure Drop"], a: 1 },
+  { q: "The lowest portion or lowest point of a stack of vertical pipe.", choices: ["A) Footing", "B) Invert", "C) Base", "D) Foundation"], a: 2 },
+  { q: "Any part of the piping system other than a main riser, or stack.", choices: ["A) Offset", "B) Lateral", "C) Branch", "D) Fixture Drain"], a: 2 },
+  { q: "The preferred material for drain, waste, vent, and sewer systems.", choices: ["A) PVC Pipe", "B) Galvanized Pipe", "C) Cast Iron Soil Pipe", "D) Vitrified Clay Pipe"], a: 2 },
+  { q: "A method of sealing against water or gas by means of pliable substances such as lead and oakum, etc.", choices: ["A) Soldering", "B) Welding", "C) Caulking", "D) Threading"], a: 2 },
+  { q: "A term used for sewage from which suspended matter has been removed.", choices: ["A) Fresh Sewage", "B) Oxidized Sewage", "C) Clarified Sewage", "D) Effluent"], a: 2 },
+  { q: "An ordinance, rule or regulation which a city or governing body may adopt to control the plumbing work within its jurisdiction.", choices: ["A) Law", "B) Specification", "C) Code", "D) Standard"], a: 2 },
+  { q: "Organisms considered in the coili aerogenes group as set forth in the American Water Works Association and the American Public Health Association literature.", choices: ["A) Pathogens", "B) Coliform Group of Bacteria", "C) Aerobic Bacteria", "D) Anaerobic Bacteria"], a: 1 },
+  { q: "Stress which resists the tendency of two forces acting toward each other.", choices: ["A) Tension", "B) Shear", "C) Compression", "D) Torque"], a: 2 },
+  { q: "That part of the vertical piping which carries the water from the roof to the storm drain, which starts either 6\" above grade if outside the building, or at the roof sump or gutter if inside the building.", choices: ["A) Leader", "B) Riser", "C) Conductor", "D) Downspout"], a: 2 },
+  { q: "(or inter-connection) Any physical connection between a city water supply and any waste pipe, soil pipe, sewer, drain, or any private or uncertified water supply.", choices: ["A) Backflow", "B) Cross Connection", "C) Indirect Waste", "D) Air Gap"], a: 1 },
+  { q: "Untreated sewage.", choices: ["A) Stale Sewage", "B) Septic Sewage", "C) Crude or Raw Sewage", "D) Domestic Sewage"], a: 2 },
+  { q: "A branch leading from any soil, waste or vent pipe, building drain, or building sewer, which is terminated at a distance of two (2) feet or more by means of a cap, plug or other fitting not used for admitting water or air to the pipe.", choices: ["A) Offset", "B) Dead End", "C) Bypass", "D) Relief"], a: 1 },
+  { q: "Length measured along the center line of the pipe and fittings.", choices: ["A) Actual Length", "B) Developed Lengths", "C) Nominal Length", "D) Linear Length"], a: 1 },
+  { q: "That portion of the sewage treatment process where biochemical decomposition of organic matter takes place, resulting in the formation of simple organic and mineral substances.", choices: ["A) Putrefaction", "B) Oxidation", "C) Digester and Digestion", "D) Sedimentation"], a: 2 },
+  { q: "Sewage originating principally from dwellings, business buildings, institutions and usually not containing storm water.", choices: ["A) Industrial Sewage", "B) Domestic Sewage", "C) Sanitary Sewage", "D) Combined Sewage"], a: 1 },
+  { q: "Any pipe which carries waste water or water-borne wastes in a building drainage system.", choices: ["A) Vent", "B) Drain", "C) Stack", "D) Main"], a: 1 },
+  { q: "That part of the lowest horizontal piping of a building drainage system which receives and conveys the discharge from soil, waste and drainage pipes, other than storm drains, from within the walls or footings of any building to the building sewer.", choices: ["A) Building Sewer", "B) Drain, Building or House", "C) Main Stack", "D) Horizontal Branch"], a: 1 },
+  { q: "That portion of the drainage system within a building which carries storm water and sanitary sewage.", choices: ["A) Sanitary Drains", "B) Drains, Combined", "C) Storm Drains", "D) Industrial Drains"], a: 1 },
+  { q: "Piping and its branches which convey sub-soil and/or surface water from areas, courts, roofs or yards to the building or storm sewer.", choices: ["A) Sanitary Drains", "B) Drains, Storm", "C) Subsoil Drains", "D) Area Drains"], a: 1 },
+  { q: "That part of the drainage system which conveys the subsoil, ground or seepage water from the footings of walls, or from under buildings, to the building drain, storm water drain or building sewer.", choices: ["A) Area Drains", "B) Drains, Subsoil", "C) Foundation Drains", "D) Storm Drains"], a: 1 },
+  { q: "Sewage collected during the dry weather which contains little or no ground water and no storm water.", choices: ["A) Peak Flow", "B) Dry Weather Flow", "C) Minimum Flow", "D) Average Flow"], a: 1 },
+  { q: "The property of elongation, above the elastic limit, but short of the tensile strength.", choices: ["A) Malleability", "B) Ductility", "C) Elasticity", "D) Brittleness"], a: 1 },
+  { q: "Sewage, treated or partially treated, flowing from sewage treatment equipment.", choices: ["A) Influent", "B) Effluent", "C) Sludge", "D) Scum"], a: 1 },
+  { q: "The greatest stress which a material can withstand without permanent deformation after release of stress.", choices: ["A) Breaking Point", "B) Elastic Limit", "C) Yield Point", "D) Ultimate Strength"], a: 1 },
+  { q: "The gradual destruction of metal or other material by the abrasive action of liquids, gases, solids or mixtures of these materials.", choices: ["A) Corrosion", "B) Erosion", "C) Cavitation", "D) Oxidation"], a: 1 },
+  { q: "That portion of a plumbing system which has been installed prior to current or contemplated addition, alteration or correction.", choices: ["A) New Work", "B) Existing Work", "C) Roughing In", "D) Finish Work"], a: 1 },
+  { q: "Any group of two or more similar adjacent fixtures which discharge into a common horizontal waste or soil branch.", choices: ["A) Fixture Group", "B) Fixtures, Battery of", "C) Combination Fixture", "D) Multi-Fixture"], a: 1 },
+  { q: "Any integral unit such as a kitchen sink and a laundry unit.", choices: ["A) Battery of Fixtures", "B) Fixtures, Combination", "C) Fixture Unit", "D) Unitary Fixture"], a: 1 },
+  { q: "Installed receptacles, devices or appliances which are supplied with water, or which receive liquids and/or discharge liquids, or liquid-borne wastes, either directly or indirectly into drainage system.", choices: ["A) Plumbing Fittings", "B) Fixtures, Plumbing", "C) Sanitary Units", "D) Drain Receptacles"], a: 1 },
+  { q: "Amount of fixture discharge equivalent to seven and one-half (7½) gallons or more; one cubic foot of water per minute.", choices: ["A) Flow Rate", "B) Fixture Unit", "C) Discharge Unit", "D) Load Factor"], a: 1 },
+  { q: "The top edge of the receptacle from which water overflows.", choices: ["A) Invert", "B) Flood Level Rim", "C) Crown Weir", "D) Overflow Point"], a: 1 },
+  { q: "A device located at the bottom of the tank for flushing water closets and similar fixtures.", choices: ["A) Flushometer Valve", "B) Flush Valve", "C) Ball Valve", "D) Gate Valve"], a: 1 },
+  { q: "A device which discharges a predetermined quantity of water to a fixture for flushing purposes; powered by direct water pressure.", choices: ["A) Flush Valve", "B) Flushometer Valve", "C) Relief Valve", "D) Pressure Valve"], a: 1 },
+  { q: "The part of a foundation wall resting on the bearing soil, rock or piling which transmits the superimposed load to the bearing material.", choices: ["A) Base", "B) Footing", "C) Sill", "D) Foundation"], a: 1 },
+  { q: "Sewage of recent origin still containing free dissolved oxygen.", choices: ["A) Stale Sewage", "B) Fresh Sewage", "C) Septic Sewage", "D) Crude Sewage"], a: 1 },
+  { q: "A line that runs lengthwise along the base of the channel at the lowest point on its wetted perimeter, its slope established when the sewer or drain is installed.", choices: ["A) Crown", "B) Invert", "C) Springline", "D) Flowline"], a: 1 },
+  { q: "A sewer which does not receive sewage from any other common sewer except house connections.", choices: ["A) Main Sewer", "B) Lateral Sewer", "C) Branch Sewer", "D) Trunk Sewer"], a: 1 },
+  { q: "Any pit or receptacle having porous walls which permit the contents to seep into the ground.", choices: ["A) Septic Tank", "B) Leaching Well or Cesspool", "C) Sump", "D) Catch Basin"], a: 1 },
+  { q: "The piping from the roof which carries rainwater.", choices: ["A) Conductor", "B) Leader", "C) Riser", "D) Drain"], a: 1 },
+  { q: "(Also call the TRUNK SEWER) The main stem or principal artery of the sewage system to which branches may be connected.", choices: ["A) Lateral Sewer", "B) Main Sewer", "C) Sub-main Sewer", "D) Public Sewer"], a: 1 },
+  { q: "A plumber licensed to install and to assume responsibility for contractual agreements pertaining to plumbing and to secure any required permits.", choices: ["A) Journeyman Plumber", "B) Master Plumber", "C) Plumbing Engineer", "D) Registered Plumber"], a: 1 },
+  { q: "In a line of piping, a combination of pipe, pipes and/or fittings which join two approximately parallel sections of a line of pipe.", choices: ["A) Loop", "B) Offset", "C) Bypass", "D) Deviation"], a: 1 },
+  { q: "Sewers which receive sewage from the collection system and carry it to the point of final discharge or treatment; usually the largest sewer of a system.", choices: ["A) Main Sewers", "B) Outfall Sewers", "C) Trunk Sewers", "D) Interceptor Sewers"], a: 1 },
+  { q: "Sewage in which the organic matter has been combined with oxygen and has become stable.", choices: ["A) Fresh Sewage", "B) Oxidized Sewage", "C) Clarified Sewage", "D) Septic Sewage"], a: 1 },
+  { q: "Any pipe installed in a horizontal position or which makes an angle of less than 45° from the horizontal.", choices: ["A) Vertical Pipe", "B) Pipe, Horizontal", "C) Sloped Pipe", "D) Gradient Pipe"], a: 1 },
+  { q: "Pipe that does not connect directly with the drainage system but conveys liquid wastes into a plumbing fixture or receptacle which is directly connected to the drainage system.", choices: ["A) Special Waste Pipe", "B) Pipe, Indirect Waste", "C) Secondary Waste Pipe", "D) Local Waste Pipe"], a: 1 },
+  { q: "A pipe on the fixture side of the trap through which pipe vapors or foul air can be removed from a room fixture.", choices: ["A) Vent Stack", "B) Pipe, Local Ventilating", "C) Stack Vent", "D) Relief Vent"], a: 1 },
+  { q: "Any pipe which conveys to the building drain or building sewer the discharge of one or more water closets and/or the discharge of any other fixture receiving fecal matter.", choices: ["A) Waste Pipe", "B) Pipe, Soil", "C) Drain Pipe", "D) Sewer Pipe"], a: 1 },
+  { q: "Drain pipe which receives one or more wastes which require treatment before entry into the normal plumbing system; the special waste pipe terminates at the treatment device on the premises.", choices: ["A) Indirect Waste Pipe", "B) Pipe, Special Waste", "C) Industrial Waste Pipe", "D) Acid Waste Pipe"], a: 1 },
+  { q: "Any pipe installed in a vertical position or which makes an angle of not more than 45° from the vertical.", choices: ["A) Horizontal Pipe", "B) Pipe, Vertical", "C) Plumb Pipe", "D) Stack"], a: 1 },
+  { q: "A pipe which conveys only liquid or liquid-borne waste, free of fecal matter.", choices: ["A) Soil Pipe", "B) Pipe, Waste", "C) Drain Pipe", "D) Vent Pipe"], a: 1 },
+  { q: "A water supply pipe which extends vertically one full story or more to convey water to branches or fixtures.", choices: ["A) Main Pipe", "B) Pipe, Water Riser", "C) Stack", "D) Supply Main"], a: 1 },
+  { q: "Pipes which convey water from the service pipe to its points of usage.", choices: ["A) Water Main", "B) Pipe, Water Distribution", "C) Water Service Pipe", "D) Branch Line"], a: 1 },
+  { q: "That portion of the water piping which supplies one or more structures or premises and which extends from the main to the meter or first stop cock or valve inside the premises.", choices: ["A) Distribution Pipes", "B) Pipes, Water Service", "C) Supply Pipes", "D) Feeder Pipes"], a: 1 },
+  { q: "The amount of slope given to horizontal piping, expressed in inches or vertically projected drop per foot of horizontal pipe.", choices: ["A) Grade", "B) Pitch", "C) Fall", "D) Angle"], a: 1 },
+  { q: "The practice, materials and fixtures used in the installation, maintenance, extension and alteration of all piping, fixtures, appliances and appurtenances in connection with sanitary drainage, storm drainage, venting, and water-supply systems.", choices: ["A) Engineering", "B) Plumbing", "C) Pipefitting", "D) Sanitation"], a: 1 },
+  { q: "Any person who, under the supervision of the authority having jurisdiction, is authorized to inspect plumbing and drainage as defined in the code for the municipality.", choices: ["A) Master Plumber", "B) Plumbing Inspector", "C) Building Official", "D) Code Administrator"], a: 1 },
+  { q: "The total measurable supply of water received directly from the clouds, as snow, rain, hail and sleet.", choices: ["A) Runoff", "B) Precipitation", "C) Humidity", "D) Condensation"], a: 1 },
+  { q: "A term which applies to a toilet room or bathroom intended specifically for the use of an individual or family and such visitors as they may permit.", choices: ["A) Residential Use", "B) Private Use", "C) Domestic Use", "D) Personal Use"], a: 1 },
+  { q: "A term which applies to toilet rooms and bathrooms used by employees, occupants, visitors or patrons, in or about any premises.", choices: ["A) Commercial Use", "B) Public Use", "C) Institutional Use", "D) General Use"], a: 1 },
+  { q: "Biological decomposition of organic matter with the production of ill-smelling products. It usually takes place where there is a deficiency of oxygen.", choices: ["A) Digestion", "B) Putrefaction", "C) Oxidation", "D) Fermentation"], a: 1 },
+  { q: "That part of a vent pipe line which connects directly with any individual waste pipe or group of wastes, underneath or behind the fixture, and extends to the main or branch vent pipe.", choices: ["A) Circuit Vent", "B) Revent (individual vent)", "C) Common Vent", "D) Loop Vent"], a: 1 },
+  { q: "A term concerning the installation of all parts of the plumbing system which should be completed before the installing of the plumbing fixtures.", choices: ["A) Finishing", "B) Roughing In", "C) Pre-plumbing", "D) Anchoring"], a: 1 },
+  { q: "The conduit of pipe carrying sanitary sewage, storm water, and infiltration of ground water.", choices: ["A) Combined Sewer", "B) Sanitary Sewer", "C) Storm Sewer", "D) Building Sewer"], a: 1 },
+  { q: "Sanitary sewage undergoing putrefaction.", choices: ["A) Fresh Sewage", "B) Septic Sewage", "C) Stale Sewage", "D) Crude Sewage"], a: 1 },
+  { q: "A receptacle which receives the discharge of a drainage system or part thereof, and is designed and so constructed to separate solids from liquids to discharge into the soil through a system of open-joint or perforated piping.", choices: ["A) Sump", "B) Septic Tank", "C) Cesspool", "D) Catch Basin"], a: 1 },
+  { q: "Any liquid waste containing animal, vegetable or chemical wastes in suspension or solution.", choices: ["A) Effluent", "B) Sewage", "C) Sludge", "D) Waste"], a: 1 },
+  { q: "Also called house sewer. That part of the horizontal piping of a drainage system extending from the building drain, storm drain and/or sub-soil drain to its connection into the point of disposal.", choices: ["A) Main Sewer", "B) Sewer, Building", "C) Trunk Sewer", "D) Lateral Sewer"], a: 1 },
+  { q: "(or house storm sewer) The extension from the building storm drain to the point of disposal.", choices: ["A) Building Drain", "B) Sewer, Building Storm", "C) Combined Sewer", "D) Subsoil Drain"], a: 1 },
+  { q: "A sewer located on private property which conveys the drainage of one or more buildings to a public sewer or to a privately owned sewage disposal system.", choices: ["A) Individual Sewer", "B) Sewer, Private", "C) Lateral Sewer", "D) Branch Sewer"], a: 1 },
+  { q: "A sewer used to convey rainwater, surface water, condensate, cooling water or similar water wastes, exclusive of sewage and industrial wastes.", choices: ["A) Sanitary Sewer", "B) Sewer, Storm", "C) Combined Sewer", "D) Surface Sewer"], a: 1 },
+  { q: "The thin oily film which gives the characteristic appearance to the surface of water into which sewage or oily water is discharged.", choices: ["A) Scum", "B) Slick", "C) Sludge", "D) Film"], a: 1 },
+  { q: "The accumulated suspended solids of sewage deposited in tanks, beds or basins, mixed with sufficient water to form a semiliquid mass.", choices: ["A) Scum", "B) Sludge", "C) Sediment", "D) Grit"], a: 1 },
+  { q: "The vertical main of a system of soil, waste or vent piping.", choices: ["A) Riser", "B) Stack", "C) Main", "D) Column"], a: 1 },
+  { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A) Vent Stack", "B) Stack Vent", "C) Relief Vent", "D) Air Vent"], a: 1 },
+  { q: "Sewage which contains little or no oxygen, but is free from putrefaction.", choices: ["A) Fresh Sewage", "B) Stale Sewage", "C) Septic Sewage", "D) Oxidized Sewage"], a: 1 },
+  { q: "Change of shape or size produced by stress.", choices: ["A) Compression", "B) Strain", "C) Tension", "D) Shear"], a: 1 },
+  { q: "External forces resisted by reactions within.", choices: ["A) Strain", "B) Stress", "C) Pressure", "D) Torque"], a: 1 },
+  { q: "Also called BRANCH SEWER. A sewer into which the sewage from two or more lateral sewers is discharged.", choices: ["A) Main Sewer", "B) Sub-main Sewer", "C) Trunk Sewer", "D) Outfall Sewer"], a: 1 },
+  { q: "A drain which receives the discharge from drains or other wastes, located below the normal grade of the gravity system, which must be emptied by mechanical means.", choices: ["A) Area Drain", "B) Subsoil Drain", "C) Sump Drain", "D) Foundation Drain"], a: 1 },
+  { q: "A tank or pit which receives the discharge from drains or other wastes, located below the normal grade of the gravity system, which must be emptied by mechanical means.", choices: ["A) Catch Basin", "B) Sump", "C) Septic Tank", "D) Disposal Well"], a: 1 },
+  { q: "That stress which resists the tendency of two forces acting opposite from each other to pull apart two adjoining planes of a body.", choices: ["A) Compression", "B) Tension", "C) Shear", "D) Torsion"], a: 1 },
+  { q: "A fitting or device so designed and constructed as to provide, when properly vented, a liquid seal which will prevent the back passage of air or sewer gas without materially affecting the flow of sewage or waste water through it.", choices: ["A) Check Valve", "B) Trap", "C) Vent", "D) Seal"], a: 1 },
+  { q: "The vertical distance between the crown weir and the top of the dip of the trap.", choices: ["A) Flood Level", "B) Trap Seal", "C) Dip Depth", "D) Water Barrier"], a: 1 },
+  { q: "Any deviation from parallel flow.", choices: ["A) Velocity", "B) Turbulence", "C) Friction", "D) Resistance"], a: 1 },
+  { q: "Piping in contact with the earth below grade.", choices: ["A) Exposed Piping", "B) Underground Piping", "C) Buried Piping", "D) Foundation Piping"], a: 1 },
+  { q: "Any pressure less than that exerted by the atmosphere (may be termed a negative pressure).", choices: ["A) Back Pressure", "B) Vacuum", "C) Head", "D) Static Pressure"], a: 1 },
+  { q: "Time rate of motion in a given direction.", choices: ["A) Flow Rate", "B) Velocity", "C) Acceleration", "D) Displacement"], a: 1 },
+  { q: "A branch vent that serves two or more traps and extends from in front of the last fixture connection of a horizontal branch to the vent stack.", choices: ["A) Common Vent", "B) Vent, Circuit", "C) Loop Vent", "D) Wet Vent"], a: 1 },
+  { q: "Also called dual vent, vent connecting at the junction of two fixture drains and serving as a vent for both fixtures.", choices: ["A) Individual Vent", "B) Vent, Common", "C) Unit Vent", "D) Circuit Vent"], a: 1 },
+  { q: "A vent that is a continuation of the drain to which it connects.", choices: ["A) Yoke Vent", "B) Vent, Continuous", "C) Stack Vent", "D) Relief Vent"], a: 1 },
+  { q: "A vent which is connected into the same stack into which the fixtures discharge.", choices: ["A) Circuit Vent", "B) Vent, Loop", "C) Wet Vent", "D) Stack Vent"], a: 1 },
+{ q: "A sewer located on private property which conveys the drainage of one or more buildings to a public sewer or to a privately owned sewage disposal system.", choices: ["A) Individual Sewer", "B) Sewer, Private", "C) Lateral Sewer", "D) Branch Sewer"], a: 1 },
+  { q: "A sewer used to convey rainwater, surface water, condensate, cooling water or similar water wastes, exclusive of sewage and industrial wastes.", choices: ["A) Sanitary Sewer", "B) Sewer, Storm", "C) Combined Sewer", "D) Surface Sewer"], a: 1 },
+  { q: "The thin oily film which gives the characteristic appearance to the surface of water into which sewage or oily water is discharged.", choices: ["A) Scum", "B) Slick", "C) Sludge", "D) Film"], a: 1 },
+  { q: "The accumulated suspended solids of sewage deposited in tanks, beds or basins, mixed with sufficient water to form a semiliquid mass.", choices: ["A) Scum", "B) Sludge", "C) Sediment", "D) Grit"], a: 1 },
+  { q: "The vertical main of a system of soil, waste or vent piping.", choices: ["A) Riser", "B) Stack", "C) Main", "D) Column"], a: 1 },
+  
+  { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A) Vent Stack", "B) Stack Vent", "C) Relief Vent", "D) Air Vent"], a: 1 },
+  { q: "Sewage which contains little or no oxygen, but is free from putrefaction.", choices: ["A) Fresh Sewage", "B) Stale Sewage", "C) Septic Sewage", "D) Oxidized Sewage"], a: 1 },
+  { q: "Change of shape or size produced by stress.", choices: ["A) Compression", "B) Strain", "C) Tension", "D) Shear"], a: 1 },
+  { q: "External forces resisted by reactions within.", choices: ["A) Strain", "B) Stress", "C) Pressure", "D) Torque"], a: 1 },
+  { q: "Also called BRANCH SEWER. A sewer into which the sewage from two or more lateral sewers is discharged.", choices: ["A) Main Sewer", "B) Sub-main Sewer", "C) Trunk Sewer", "D) Outfall Sewer"], a: 1 },
+  { q: "A drain which receives the discharge from drains or other wastes, located below the normal grade of the gravity system, which must be emptied by mechanical means.", choices: ["A) Area Drain", "B) Subsoil Drain", "C) Sump Drain", "D) Foundation Drain"], a: 1 },
+  { q: "A tank or pit which receives the discharge from drains or other wastes, located below the normal grade of the gravity system, which must be emptied by mechanical means.", choices: ["A) Catch Basin", "B) Sump", "C) Septic Tank", "D) Disposal Well"], a: 1 },
+  
+  { q: "That stress which resists the tendency of two forces acting opposite from each other to pull apart two adjoining planes of a body.", choices: ["A) Compression", "B) Tension", "C) Shear", "D) Torsion"], a: 1 },
+  { q: "A fitting or device so designed and constructed as to provide, when properly vented, a liquid seal which will prevent the back passage of air or sewer gas without materially affecting the flow of sewage or waste water through it.", choices: ["A) Check Valve", "B) Trap", "C) Vent", "D) Seal"], a: 1 },
+  
+  { q: "The vertical distance between the crown weir and the top of the dip of the trap.", choices: ["A) Flood Level", "B) Trap Seal", "C) Dip Depth", "D) Water Barrier"], a: 1 },
+  { q: "Any deviation from parallel flow.", choices: ["A) Velocity", "B) Turbulence", "C) Friction", "D) Resistance"], a: 1 },
+  { q: "Piping in contact with the earth below grade.", choices: ["A) Exposed Piping", "B) Underground Piping", "C) Buried Piping", "D) Foundation Piping"], a: 1 },
+  { q: "Any pressure less than that exerted by the atmosphere (may be termed a negative pressure).", choices: ["A) Back Pressure", "B) Vacuum", "C) Head", "D) Static Pressure"], a: 1 },
+  { q: "Time rate of motion in a given direction.", choices: ["A) Flow Rate", "B) Velocity", "C) Acceleration", "D) Displacement"], a: 1 },
+  { q: "A branch vent that serves two or more traps and extends from in front of the last fixture connection of a horizontal branch to the vent stack.", choices: ["A) Common Vent", "B) Vent, Circuit", "C) Loop Vent", "D) Wet Vent"], a: 1 },
+  { q: "Also called dual vent, vent connecting at the junction of two fixture drains and serving as a vent for both fixtures.", choices: ["A) Individual Vent", "B) Vent, Common", "C) Unit Vent", "D) Circuit Vent"], a: 1 },
+  { q: "A vent that is a continuation of the drain to which it connects.", choices: ["A) Yoke Vent", "B) Vent, Continuous", "C) Stack Vent", "D) Relief Vent"], a: 1 },
+  { q: "A vent which is connected into the same stack into which the fixtures discharge.", choices: ["A) Circuit Vent", "B) Vent, Loop", "C) Wet Vent", "D) Stack Vent"], a: 1 }
+    ],
+    2: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    3: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    4: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    5: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    6: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    7: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    8: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    9: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    10: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    11: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+
+    12: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    13: [
+        { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
+        { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
+    ],
+    14: [
         { q: "What is the standard length of a GI pipe?", choices: ["3 meters", "6 meters", "10 meters", "2 meters"], a: 1 },
         { q: "What is the chemical symbol for Lead, commonly used in old plumbing joints?", choices: ["Fe", "Pb", "Cu", "Zn"], a: 1 }
     ]
+
 };
