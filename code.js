@@ -419,21 +419,56 @@ export const codeDB = {
     { q: "The ultimate goal of the National Plumbing Code is to protect:", choices: ["A. The Master Plumbers", "B. The Government", "C. Public Health and Safety", "D. The environment only"], a: 2 }
     ],
     5: [
-        { 
-            q: "A tank measures 4m long, 2m wide, and 3m high. What is the maximum volume in liters?", 
-            choices: ["240 liters", "2,400 liters", "24,000 liters", "240,000 liters"], 
-            a: 2 
-        },
-        { 
-            q: "If a sewer line has a total fall of 24 inches over 120 feet, what is the slope per foot?", 
-            choices: ["0.01", "0.02", "0.03", "0.04"], 
-            a: 1 
-        },
-        { 
-            q: "How many 2-inch pipes are needed to equal the volume capacity of one 6-inch pipe?", 
-            choices: ["3", "6", "9", "12"], 
-            a: 2 // Calculation: (6/2)^2 = 9
-        }
+        { q: "A document issued by the Administrative Authority for the installation, alteration, repair, or replacement of any plumbing system is a:", choices: ["A. Certificate of Occupancy", "B. Plumbing Permit", "C. Business License", "D. Building Inspection Report"], a: 1 },
+    { q: "The person, his agents or assigns, in possession of the property where plumbing work is to be done refers to the:", choices: ["A. Registered Master Plumber", "B. Administrative Authority", "C. Owner", "D. Contractor"], a: 2 },
+    { q: "The pipe or pipes which provide the supply of water from the water main or other source of supply to the building-served is the:", choices: ["A. Building Drain", "B. Water Service Pipe", "C. Vent Stack", "D. Soil Pipe"], a: 1 },
+    { q: "A plumbing system which has been found to be a nuisance or is hazardous to life, health, or property is classified as:", choices: ["A. Experimental Plumbing", "B. Dangerous Plumbing", "C. Non-conforming Plumbing", "D. Standard Plumbing"], a: 1 },
+    { q: "All plumbing systems, both existing and new, and all parts thereof shall be maintained in a sanitary and safe operating condition. This rule covers:", choices: ["A. New construction only", "B. Existing construction only", "C. All plumbing systems", "D. Government buildings only"], a: 2 },
+    { q: "The Administrative Authority may require the ______ of any work which has been covered before inspection.", choices: ["A. Painting", "B. Removal or Uncovering", "C. Double-sealing", "D. Photographing"], a: 1 },
+    { q: "No person shall make any connection to any water supply line, commercial or industrial, without first obtaining ______ from the Administrative Authority.", choices: ["A. A verbal agreement", "B. A written permit/approval", "C. A set of blue prints", "D. A business license"], a: 1 },
+    { q: "Principle No. 8 emphasizes that piping must be of ______ material.", choices: ["A. Imported", "B. Durable", "C. Lightweight", "D. Recyclable"], a: 1 },
+    { q: "Principle No. 13 states that no substance that will ______ shall be allowed to enter the drainage system.", choices: ["A. Be transparent", "B. Produce explosive mixtures", "C. Be cold", "D. Be recycled"], a: 1 },
+    { q: "Principle No. 17 specifically addresses the prevention of ______ in a building when the drainage system is subject to backflow.", choices: ["A. Bad smells", "B. Overflow", "C. High pressure", "D. Noisy pipes"], a: 1 },
+    { q: "Who was the NAMPAP leader that pushed for the inclusion of the 'As-Built Plan' as a requirement for the 1999 Code?", choices: ["A. John F. Hass", "B. Jaime M. Cabase", "C. Francisco Geronimo", "D. Tomas Geronimo"], a: 1 },
+    { q: "Any person who shall violate any of the provisions of this Code shall be guilty of a ______.", choices: ["A. Felony", "B. Misdemeanor", "C. Civil Tort", "D. Administrative Error"], a: 1 },
+    { q: "If work is not commenced within ______ days from the date of issuance, the permit shall expire.", choices: ["A. 120 days", "B. 180 days", "C. 365 days", "D. 30 days"], a: 2 },
+    { q: "A permit may be ______ by the Administrative Authority if it was issued on the basis of incorrect or fraudulent information.", choices: ["A. Doubled", "B. Revoked", "C. Extended", "D. Copied"], a: 1 },
+    { q: "When a plumbing system is being tested with water, the pipes shall be filled until the water overflows from the ______.", choices: ["A. Lowest point", "B. Highest point", "C. Middle section", "D. Kitchen sink"], a: 1 },
+    { q: "Principle No. 2 states that the water supply must be sufficient in ______ to enable fixtures to function.", choices: ["A. Temperature and Color", "B. Volume and Pressure", "C. Speed and Velocity", "D. Weight and Density"], a: 1 },
+    { q: "Principle No. 14 requires that fixtures be connected ______ to the drainage system when necessary to prevent contamination of sterile goods.", choices: ["A. Directly", "B. Indirectly", "C. Through the roof", "D. To the water main"], a: 1 },
+    { q: "Section 102.2 states that plans must be submitted in how many sets?", choices: ["A. 3", "B. 5", "C. 6", "D. 10"], a: 2 },
+    { q: "Principle No. 21 prohibits the discharge of deleterious waste into the ground unless it is first ______.", choices: ["A. Filtered through sand", "B. Rendered innocuous by treatment", "C. Heated to 100 degrees", "D. Stored for 30 days"], a: 1 },
+    { q: "The 'Code of Ethics' states that a Master Plumber should consider their profession an opportunity to ______.", choices: ["A. Become wealthy", "B. Serve the public", "C. Outperform rivals", "D. Ignore regulations"], a: 1 },
+    { q: "The Administrative Authority shall have the power to stop the ______ of any plumbing work being done in violation of this Code.", choices: ["A. Payment", "B. Construction/Execution", "C. Planning", "D. Delivery"], a: 1 },
+    { q: "Which Principle refers to 'Structural Integrity' during installation?", choices: ["A. Principle No. 20", "B. Principle No. 10", "C. Principle No. 5", "D. Principle No. 1"], a: 0 },
+    { q: "Under Section 101.1, the Code is officially known as the:", choices: ["A. Master Plumber Law", "B. Revised National Plumbing Code of the Philippines", "C. Manila Plumbing Ordinance", "D. NAMPAP Handbook"], a: 1 },
+    { q: "A fee paid for an additional inspection when the work was not ready at the first requested time is a:", choices: ["A. Permit Fee", "B. Re-inspection Fee", "C. Processing Fee", "D. Surcharge"], a: 1 },
+    { q: "In the 1950s, which group worked to have the Plumbing Law (RA 1378) passed?", choices: ["A. The Board of Architects", "B. NAMPAP", "C. The Department of Health", "D. The Bureau of Public Works"], a: 1 },
+    { q: "No ______ shall be used to cover any plumbing work until it has been inspected and approved.", choices: ["A. Paint or Wallboard", "B. Plastic wrap", "C. Water", "D. Tape"], a: 0 },
+    { q: "Principle No. 11: Vent terminals shall be installed to preclude the possibility of ______ and the return of foul air.", choices: ["A. Corrosion", "B. Clogging", "C. Evaporation", "D. Condensation"], a: 1 },
+    { q: "Principle No. 15: No water closet shall be located in a room that is not properly ______.", choices: ["A. Painted white", "B. Lighted and Ventilated", "C. Carpeted", "D. Soundproofed"], a: 1 },
+    { q: "Principle No. 18: Plumbing systems shall be maintained in a sanitary condition by ______.", choices: ["A. The owner only", "B. Any handy person", "C. Registered Master Plumbers", "D. The local government"], a: 2 },
+    { q: "Section 102.2: The plans must show the ______ of the proposed plumbing system.", choices: ["A. Cost", "B. Layout and General Dimensions", "C. Brand names of all tools", "D. Names of all laborers"], a: 1 },
+    { q: "A connection between a potable water supply and a non-potable source is a:", choices: ["A. Dual supply", "B. Cross-connection", "C. Hybrid link", "D. Bypass"], a: 1 },
+    { q: "Principle No. 9: Each fixture directly connected to the drainage system shall be equipped with a ______.", choices: ["A. Shut-off valve", "B. Water-sealed trap", "C. Pressure gauge", "D. Check valve"], a: 1 },
+    { q: "The 'Thomasites' teachers arrived in the Philippines in the early 20th century from which country?", choices: ["A. Spain", "B. USA", "C. UK", "D. Japan"], a: 1 },
+    { q: "Principle No. 3: Water heating devices must be installed to prevent dangers from ______.", choices: ["A. Freezing", "B. Explosion through overheating", "C. Rust", "D. Low pressure"], a: 1 },
+    { q: "Principle No. 10: The drainage system shall be designed to provide an adequate circulation of ______ in all pipes.", choices: ["A. Water", "B. Air", "C. Waste", "D. Chemicals"], a: 1 },
+    { q: "The Administrative Authority may ______ the approval of a plan if it is found to be in violation of the Code.", choices: ["A. Speed up", "B. Withhold", "C. Ignore", "D. Sell"], a: 1 },
+    { q: "Principle No. 6: Plumbing fixtures shall be made of ______ material.", choices: ["A. Porous", "B. Smooth non-absorbent", "C. Flexible", "D. Transparent"], a: 1 },
+    { q: "A set of rules for the professional conduct of Registered Master Plumbers is the:", choices: ["A. General Provisions", "B. Code of Ethics", "C. Technical Specifications", "D. Permit Requirements"], a: 1 },
+    { q: "Section 103.1.1: Every permit shall be valid for ______ year(s).", choices: ["A. One (1)", "B. Two (2)", "C. Three (3)", "D. Five (5)"], a: 0 },
+    { q: "Principle No. 19: Fixtures must be installed with regard to ______ to be accessible for use.", choices: ["A. Height", "B. Spacing", "C. Color", "D. Price"], a: 1 },
+    { q: "The first Chief of the Division of Plumbing Construction in 1902 was:", choices: ["A. Ramon Magsaysay", "B. John F. Hass", "C. Jaime Cabase", "D. Fortunato Amosco"], a: 1 },
+    { q: "Principle No. 1: Premises must be provided with a supply of ______ water.", choices: ["A. Salt", "B. Pure and Wholesome", "C. Recycled", "D. Distilled"], a: 1 },
+    { q: "If a permit is expired due to suspension of work for 120 days, a renewal fee of ______ the original fee is required.", choices: ["A. 1/4", "B. 1/2", "C. Double", "D. Triple"], a: 1 },
+    { q: "Principle No. 4: A building must connect to a public sewer if the lot ______ a street with a sewer.", choices: ["A. Is near", "B. Abuts", "C. Is within 1km of", "D. Faces"], a: 1 },
+    { q: "Principle No. 7: The drainage system must guard against fouling, deposit of solids, and ______.", choices: ["A. Freezing", "B. Clogging", "C. Sweating", "D. Noise"], a: 1 },
+    { q: "Section 106.3: It is the duty of the ______ to cause the plumbing work to remain exposed until inspected.", choices: ["A. Inspector", "B. Permit Holder", "C. Neighbor", "D. Mayor"], a: 1 },
+    { q: "Principle No. 12: The plumbing system shall be subjected to ______ to disclose defects.", choices: ["A. Interviews", "B. Tests", "C. X-rays", "D. Estimates"], a: 1 },
+    { q: "Principle No. 22: Fixtures must prevent ______ of polluted water into the water supply.", choices: ["A. Evaporation", "B. Backflow", "C. Cooling", "D. Heating"], a: 1 },
+    { q: "NAMPAP was first organized in what year?", choices: ["A. 1935", "B. 1955", "C. 1902", "D. 1999"], a: 0 },
+    { q: "The ultimate goal of the 1999 National Plumbing Code is the protection of ______.", choices: ["A. Plumbing fees", "B. Master Plumbers", "C. Public Health and Safety", "D. Pipe manufacturers"], a: 2 }
     ],
 6: [
         { q: "Shannel’s birthday is 7 weeks and 5 days away. How many days away is her birthday?", choices: ["24 days", "54 days", "65 days", "75 days"], a: 1 },
@@ -476,6 +511,7 @@ export const codeDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
+
 
 
 
