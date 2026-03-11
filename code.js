@@ -523,8 +523,56 @@ export const codeDB = {
     { q: "The first Walled City 'Intramuros' used what kind of standards?", choices: ["A. American", "B. European plumbing", "C. Asian", "D. No standards"], a: 1 }
     ],
     7: [
-        { q: "A sedimentation basin is 60 feet in diameter. What is the surface area?", choices: ["2830 sq. ft", "1200 sq. ft", "1542 sq. ft", "2480 sq. ft"], a: 0 },
-        { q: "Which of the following numbers can be divided evenly by 19?", choices: ["54", "63", "76", "82"], a: 2 }
+        { q: "The person or entity to whom a plumbing permit is issued is the:", choices: ["A. Administrative Authority", "B. Registered Master Plumber", "C. Permittee", "D. Building Official"], a: 2 },
+    { q: "Which section specifies that plumbing plans must be signed and sealed by a Registered and Licensed Master Plumber?", choices: ["A. Section 101", "B. Section 102.2", "C. Section 105", "D. Section 108"], a: 1 },
+    { q: "A person violating Code provisions shall be guilty of a misdemeanor and fined not more than:", choices: ["A. 500 pesos", "B. 1,000 pesos", "C. 5,000 pesos", "D. 2,000 pesos"], a: 1 },
+    { q: "When a permit is issued, approved plans shall be marked as:", choices: ["A. CERTIFIED", "B. APPROVED", "C. LICENSED", "D. FINAL"], a: 1 },
+    { q: "Plumbing systems found to be a nuisance or hazardous to life, health, or property define:", choices: ["A. Illegal Plumbing", "B. Dangerous Plumbing", "C. Experimental Plumbing", "D. Standard Plumbing"], a: 1 },
+    { q: "If a permit expires due to work suspension, the renewal fee is ______ the original permit fee amount.", choices: ["A. 1/4", "B. 1/2", "C. Double", "D. Triple"], a: 1 },
+    { q: "The Administrative Authority must be notified at least ______ hours before any work is to be inspected.", choices: ["A. 12", "B. 24", "C. 48", "D. 72"], a: 1 },
+    { q: "A horizontal pipe is any pipe or fitting which makes an angle in a horizontal plane of less than ______ degrees.", choices: ["A. 22.5", "B. 45", "C. 60", "D. 90"], a: 1 },
+    { q: "A vertical pipe is any pipe or fitting which makes an angle of ______ degrees or less with the vertical.", choices: ["A. 30", "B. 45", "C. 60", "D. 15"], a: 1 },
+    { q: "Which section states that existing plumbing systems can remain if they are not a nuisance or hazardous?", choices: ["A. Section 101.1", "B. Section 101.2.2", "C. Section 107", "D. Section 108"], a: 1 },
+    { q: "A pipe that carries liquid waste but NO fecal matter is the:", choices: ["A. Soil pipe", "B. Vent pipe", "C. Waste pipe", "D. Storm drain"], a: 2 },
+    { q: "Who is responsible for scheduling all inspections and providing access to the site?", choices: ["A. The Inspector", "B. The Master Plumber or Permittee", "C. The Architect", "D. The Neighbor"], a: 1 },
+    { q: "The 'Water Test' for drainage systems requires that no section be tested with less than a ______ meter head of water.", choices: ["A. 3 meter", "B. 5 meter", "C. 10 meter", "D. 1 meter"], a: 0 },
+    { q: "An air test is performed by attaching an air compressor to the system and reaching a pressure of ______ kPa.", choices: ["A. 17.2 kPa", "B. 34.5 kPa", "C. 68.9 kPa", "D. 103.4 kPa"], a: 1 },
+    { q: "During an air test, the pressure must be maintained for at least ______ minutes without leaking.", choices: ["A. 5", "B. 10", "C. 15", "D. 30"], a: 2 },
+    { q: "Which part of the building is protected from sewer gas by a trap seal?", choices: ["A. The roof", "B. The interior/living space", "C. The basement only", "D. The garden"], a: 1 },
+    { q: "Section 102.2: A plumbing permit is NOT required for which of the following?", choices: ["A. Installing a new sink", "B. Stopping a leak in a water pipe", "C. Moving a floor drain", "D. Adding a new bathroom"], a: 1 },
+    { q: "Who provides the necessary test plugs and gauges for a plumbing inspection?", choices: ["A. The Administrative Authority", "B. The Registered Master Plumber or Permittee", "C. The Plumbing Inspector", "D. The Hardware Store"], a: 1 },
+    { q: "What is the penalty for continuing to work after a 'Stop Work Order' has been issued?", choices: ["A. Verbal warning", "B. Additional fines and penalties", "C. Loss of the house", "D. No penalty"], a: 1 },
+    { q: "A 'Certificate of Approval' is issued only after ______.", choices: ["A. The permit is paid", "B. All tests and inspections are passed", "C. The plans are signed", "D. The house is painted"], a: 1 },
+    { q: "Who was the Filipino Master Plumber known for organizing the first NAMPAP meeting?", choices: ["A. Francisco Geronimo", "B. Mariano de Jesus", "C. John F. Hass", "D. Tomas Geronimo"], a: 0 },
+    { q: "The National Plumbing Code of 1999 was based on which previous version?", choices: ["A. 1959 Code", "B. 1970 Code", "C. 1935 Code", "D. 1980 Code"], a: 0 },
+    { q: "Section 103.1.2: A permit is null and void if work is abandoned for more than ______ days.", choices: ["A. 30", "B. 60", "C. 90", "D. 120"], a: 3 },
+    { q: "The Administrative Authority may require a 'Re-inspection' if work is found to be ______.", choices: ["A. Too expensive", "B. Defective or incomplete", "C. Completed early", "D. Using green pipes"], a: 1 },
+    { q: "A Master Plumber must not 'use any ______' to get an advantage over a competitor.", choices: ["A. New tools", "B. Unfair or illegal means", "C. Better materials", "D. Faster labor"], a: 1 },
+    { q: "A plumbing system that is 'unsafe' is considered a ______.", choices: ["A. Public Nuisance", "B. Minor issue", "C. Tax deduction", "D. Modern design"], a: 0 },
+    { q: "Section 104.1: If an inspector is denied entry, they may seek a ______.", choices: ["A. New job", "B. Search warrant or legal remedy", "C. Refund", "D. Handshake"], a: 1 },
+    { q: "Which term describes a water supply that is safe for drinking?", choices: ["A. Non-potable", "B. Potable", "C. Gray water", "D. Brackish"], a: 1 },
+    { q: "The 'Crown' of a trap refers to the ______.", choices: ["A. Bottom", "B. Highest point of the trap", "C. The side", "D. The drain plug"], a: 1 },
+    { q: "NAMPAP President Jaime Cabase promoted which modern practice in the 1999 Code?", choices: ["A. Plastic pipes only", "B. As-Built Plans", "C. No inspections", "D. Wood pipes"], a: 1 },
+    { q: "A pipe conveying discharge of water closets or urinals is a ______.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Supply pipe"], a: 1 },
+    { q: "What is the minimum head for a water test in a drainage system?", choices: ["A. 5 feet", "B. 10 feet", "C. 20 feet", "D. 30 feet"], a: 1 },
+    { q: "What is the metric equivalent of a 10-foot head of water?", choices: ["A. 1.5 meters", "B. 3.0 meters", "C. 4.5 meters", "D. 6.0 meters"], a: 1 },
+    { q: "Principle No. 10: The goal of air circulation is to prevent the loss of ______.", choices: ["A. Water pressure", "B. Trap seals", "C. Heat", "D. Pipe color"], a: 1 },
+    { q: "Section 103.1.2: A permit expires after ______ year from date of issuance.", choices: ["A. 1", "B. 2", "C. 3", "D. 5"], a: 0 },
+    { q: "A Master Plumber should consider their profession an opportunity to ______.", choices: ["A. Serve the public", "B. Charge high fees", "C. Ignore laws", "D. Beat competitors"], a: 0 },
+    { q: "What should a plumber do if they see an unsafe plumbing condition?", choices: ["A. Ignore it", "B. Report it to the Administrative Authority", "C. Take a photo and leave", "D. Charge more"], a: 1 },
+    { q: "Which section allows the Building Official to authorize un-inspected work to be uncovered?", choices: ["A. Section 106.1", "B. Section 106.2", "C. Section 106.3", "D. Section 106.4"], a: 2 },
+    { q: "The Board of Master Plumbers consists of a Chairman and ______ members.", choices: ["A. 1", "B. 2", "C. 3", "D. 4"], a: 1 },
+    { q: "What happens if you work without a plumbing permit?", choices: ["A. Reward", "B. Violation/Penalty", "C. Automatic approval", "D. Tax break"], a: 1 },
+    { q: "A vent pipe's main purpose is to ______.", choices: ["A. Carry waste", "B. Provide air circulation and protect trap seals", "C. Carry potable water", "D. Cool the building"], a: 1 },
+    { q: "The first city in the Philippines to have a regulated plumbing trade (1902) was:", choices: ["A. Cebu", "B. Manila", "C. Davao", "D. Vigan"], a: 1 },
+    { q: "Any plumbing system which is found to be a nuisance is classified as ______.", choices: ["A. Dangerous Plumbing", "B. Illegal Plumbing", "C. Standard Plumbing", "D. High-end Plumbing"], a: 0 },
+    { q: "Siphonage is prevented by proper ______.", choices: ["A. Painting", "B. Venting", "C. Cleaning", "D. Lighting"], a: 1 },
+    { q: "The depth of water that must be maintained in a trap to prevent sewer gas entry is the:", choices: ["A. Trap depth", "B. Trap seal", "C. Water column", "D. Barrier height"], a: 1 },
+    { q: "Any person making a false statement in a permit application shall have their permit:", choices: ["A. Upgraded", "B. Revoked", "C. Expedited", "D. Copied"], a: 1 },
+    { q: "In the history of plumbing, the 'Ilustrados' were known as the:", choices: ["A. Laborers", "B. Elite group/class", "C. Government officials", "D. Spanish priests"], a: 1 },
+    { q: "All plumbing fixtures shall be installed with regard to spacing as to be ______ for use.", choices: ["A. Decorative", "B. Accessible", "C. Hidden", "D. Expensive"], a: 1 },
+    { q: "A pipe that carries groundwater or rainwater to a point of disposal is a:", choices: ["A. Soil pipe", "B. Storm drain", "C. Waste pipe", "D. Vent pipe"], a: 1 },
+    { q: "The Code of Ethics emphasizes that a plumber should 'encourage the ______' of the trade.", choices: ["A. Monopolization", "B. Improvement and Progress", "C. Secrecy", "D. Elimination"], a: 1 }
     ],
     8: [
         { q: "Jenny has finished reading 30% of a 340-page novel. How many pages has she read?", choices: ["102", "106", "110", "120"], a: 0 },
@@ -559,6 +607,7 @@ export const codeDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
+
 
 
 
