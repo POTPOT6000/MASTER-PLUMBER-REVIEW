@@ -471,8 +471,56 @@ export const codeDB = {
     { q: "The ultimate goal of the 1999 National Plumbing Code is the protection of ______.", choices: ["A. Plumbing fees", "B. Master Plumbers", "C. Public Health and Safety", "D. Pipe manufacturers"], a: 2 }
     ],
 6: [
-        { q: "Shannel’s birthday is 7 weeks and 5 days away. How many days away is her birthday?", choices: ["24 days", "54 days", "65 days", "75 days"], a: 1 },
-        { q: "What is the next term of the given sequence of numbers: 1, 2, 6, 24, 120, ...?", choices: ["360", "480", "560", "720"], a: 3 }
+        { q: "A pipe which conveys potable water from the building supply pipe to the plumbing fixtures and other water outlets is the definition of:", choices: ["A. Water Service Pipe", "B. Water Distribution Pipe", "C. Main Pipe", "D. Supply Branch"], a: 1 },
+    { q: "The technical term for any person, firm, or corporation who has been issued a plumbing permit refers to the:", choices: ["A. Master Plumber", "B. Contractor", "C. Permittee", "D. Authorized Representative"], a: 2 },
+    { q: "The pipe which conveys the discharge of water closets, urinals, or fixtures having similar functions, with or without the discharge from other fixtures is the:", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Drain Pipe"], a: 1 },
+    { q: "A pipe which conveys only wastewater or liquid waste, free of fecal matter is the:", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
+    { q: "The lowest portion of the inside of a pipe is the:", choices: ["A. Crown", "B. Invert", "C. Rim", "D. Base"], a: 1 },
+    { q: "Section 102.1: A permit is required for any plumbing work except for the ______ of stoppages.", choices: ["A. Permanent repair", "B. Temporary clearance", "C. Complete replacement", "D. Rerouting"], a: 1 },
+    { q: "Section 103.2.2: When the Administrative Authority finds that the plans conform to the requirements, they shall ______ the plans.", choices: ["A. Discard", "B. Approve", "C. Photocopy", "D. Archive"], a: 1 },
+    { q: "Principle No. 11: Each vent terminal shall extend to the ______.", choices: ["A. Basement", "B. Outer air", "C. Water tank", "D. Public sewer"], a: 1 },
+    { q: "Principle No. 16: If no public sewer is available, a ______ shall be provided.", choices: ["A. Direct street discharge", "B. Private sewage disposal system", "C. Storage barrel", "D. Deep well"], a: 1 },
+    { q: "Section 102.2: Plans and specifications shall be drawn to a scale of not less than ______.", choices: ["A. 1:50", "B. 1:100", "C. 1:200", "D. 1:500"], a: 1 },
+    { q: "A Registered Master Plumber should not ______ the work of another plumber to gain an advantage.", choices: ["A. Study", "B. Criticize or interfere with", "C. Recommend", "D. Document"], a: 1 },
+    { q: "Principle No. 5: Each family dwelling unit on a lot abutting a public sewer shall have at least ______.", choices: ["A. Two kitchens", "B. One water closet and one kitchen sink", "C. Three floor drains", "D. One bathtub"], a: 1 },
+    { q: "Section 108.1: Any person who violates the provisions of this Code shall be punished by a fine not exceeding ______.", choices: ["A. 1,000 Pesos", "B. 2,000 Pesos", "C. 5,000 Pesos", "D. 10,000 Pesos"], a: 1 },
+    { q: "Section 108.1: Violation of the Code can also lead to imprisonment for a period not exceeding ______.", choices: ["A. 6 months", "B. 1 year", "C. 2 years", "D. 5 years"], a: 1 },
+    { q: "Principle No. 10: The drainage system shall be designed to prevent ______ of trap seals.", choices: ["A. Cleaning", "B. Siphonage and aspiration", "C. Painting", "D. Inspection"], a: 1 },
+    { q: "Section 104.1: The Administrative Authority may ______ a permit if work is done in violation of the Code.", choices: ["A. Renew", "B. Suspend or Revoke", "C. Photocopy", "D. Laminate"], a: 1 },
+    { q: "Which group drafted the first National Plumbing Code in the 1950s?", choices: ["A. The Bureau of Health", "B. NAMPAP", "C. The Board of Civil Engineers", "D. The City Council of Manila"], a: 1 },
+    { q: "Principle No. 13: The drainage system must prevent the entry of ______ into the system.", choices: ["A. Rainwater", "B. Explosive mixtures", "C. Cold water", "D. Filtered air"], a: 1 },
+    { q: "The Board of Master Plumbers is under the administrative supervision of the ______.", choices: ["A. DOH", "B. PRC", "C. DPWH", "D. DENR"], a: 1 },
+    { q: "Principle No. 19: Fixtures shall be installed with regard to spacing as to be ______ for their intended use.", choices: ["A. Hidden", "B. Accessible", "C. Isolated", "D. Expensive"], a: 1 },
+    { q: "Section 106.3: Who is responsible for providing the necessary equipment for testing?", choices: ["A. The Inspector", "B. The City Government", "C. The Registered Master Plumber or Permittee", "D. The Utility Company"], a: 2 },
+    { q: "Principle No. 3: Water heating devices must be designed to prevent dangers from explosion due to ______.", choices: ["A. Low pressure", "B. Overheating", "C. Cold water", "D. Air pockets"], a: 1 },
+    { q: "Section 107.1: All plumbing systems shall be maintained in a ______ condition.", choices: ["A. New", "B. Sanitary", "C. Dry", "D. Hidden"], a: 1 },
+    { q: "A Registered Master Plumber should not ______ the reputation of a fellow plumber.", choices: ["A. Support", "B. Falsely or maliciously injure", "C. Collaborate with", "D. Learn from"], a: 1 },
+    { q: "Principle No. 10: Siphonage, aspiration, or forcing of trap seals must be prevented under conditions of ______ use.", choices: ["A. Heavy", "B. Ordinary", "C. Industrial", "D. Emergency"], a: 1 },
+    { q: "The lowest portion of the inside of a horizontal pipe is often referred to as the ______.", choices: ["A. Crown", "B. Invert", "C. Rim", "D. Bottom"], a: 1 },
+    { q: "Which document defines the professional conduct and responsibilities of a Master Plumber?", choices: ["A. The Building Code", "B. The Code of Ethics", "C. The Labor Code", "D. The Civil Code"], a: 1 },
+    { q: "Principle No. 12: The purpose of testing a plumbing system is to effectively disclose ______.", choices: ["A. The cost of materials", "B. All defects and leaks", "C. The age of the building", "D. The name of the owner"], a: 1 },
+    { q: "Section 102.2: The plans must show the ______ of the plumbing system in relation to the building.", choices: ["A. Price", "B. Layout and general dimensions", "C. Furniture placement", "D. Wall color"], a: 1 },
+    { q: "What year was the Revised National Plumbing Code of the Philippines approved by President Estrada?", choices: ["A. 1955", "B. 1999", "C. 2005", "D. 2010"], a: 1 },
+    { q: "Principle No. 18: Maintenance of plumbing systems in a sanitary condition is the responsibility of ______.", choices: ["A. Any tenant", "B. Registered Master Plumbers", "C. The local mayor", "D. Unlicensed helpers"], a: 1 },
+    { q: "Section 101.2.1: This code applies to the ______ of any plumbing system.", choices: ["A. Design only", "B. Installation, alteration, repair, and maintenance", "C. Marketing only", "D. Demolition only"], a: 1 },
+    { q: "A 'Cross-connection' is a connection between a ______ and a non-potable source.", choices: ["A. Gas line", "B. Potable water supply", "C. Electrical line", "D. Vent pipe"], a: 1 },
+    { q: "Principle No. 7: The drainage system shall be designed to guard against ______.", choices: ["A. High velocity", "B. Fouling and deposit of solids", "C. Low temperature", "D. Clear water"], a: 1 },
+    { q: "Who was the NAMPAP President who helped update the code in 1999?", choices: ["A. John F. Hass", "B. Jaime M. Cabase", "C. Francisco Geronimo", "D. Mariano de Jesus"], a: 1 },
+    { q: "Section 106.1: All plumbing systems shall be ______ by the Administrative Authority.", choices: ["A. Ignored", "B. Inspected", "C. Painted", "D. Photographed"], a: 1 },
+    { q: "Principle No. 14: This principle mandates protection of what specific types of goods from contamination?", choices: ["A. Electronic goods", "B. Food and sterile goods", "C. Construction materials", "D. Clothing"], a: 1 },
+    { q: "Principle No. 20: Plumbing shall be installed with due regard to the preservation of ______.", choices: ["A. Structural members' strength", "B. Paint colors", "C. Garden landscaping", "D. Tile patterns"], a: 0 },
+    { q: "The 'Thomasites' helped introduce ______ standards to the Philippines.", choices: ["A. Spanish", "B. American plumbing", "C. Japanese", "D. German"], a: 1 },
+    { q: "A 'Notice of Correction' must be ______ before further work can proceed.", choices: ["A. Ignored", "B. Complied with and re-inspected", "C. Thrown away", "D. Framed"], a: 1 },
+    { q: "Principle No. 1: Pure and wholesome water must be provided for ______.", choices: ["A. Irrigation only", "B. Human habitation", "C. Car washing", "D. Construction"], a: 1 },
+    { q: "Section 102.2: A plumbing permit application requires ______ sets of plans.", choices: ["A. Three", "B. Six", "C. Ten", "D. Two"], a: 1 },
+    { q: "What happens if a permit expires?", choices: ["A. It is still valid", "B. It must be renewed and a fee paid", "C. The building must be demolished", "D. The plumber is arrested"], a: 1 },
+    { q: "Principle No. 21: Sewage shall not be discharged into the ground unless ______.", choices: ["A. It is diluted", "B. It is rendered innocuous by treatment", "C. It is buried deep", "D. It is stored for a year"], a: 1 },
+    { q: "Section 103.1.2: A permit becomes null and void if work is suspended for ______ days.", choices: ["A. 30", "B. 120", "C. 60", "D. 90"], a: 1 },
+    { q: "Principle No. 9: Water-sealed traps are used to prevent ______ from entering the building.", choices: ["A. Fresh air", "B. Sewer gas", "C. Rainwater", "D. Insects"], a: 1 },
+    { q: "The Master Plumber's Code of Ethics promotes ______ with fellow plumbers.", choices: ["A. Competition", "B. Cooperation and loyalty", "C. Secrecy", "D. Hostility"], a: 1 },
+    { q: "Principle No. 22: Polluted water must not ______ into the water supply system.", choices: ["A. Evaporate", "B. Backflow", "C. Filter", "D. Freeze"], a: 1 },
+    { q: "Section 104.1: An Administrative Authority can enter a building at ______ times for inspection.", choices: ["A. Any", "B. Reasonable", "C. Only at night", "D. Only on weekends"], a: 1 },
+    { q: "The first Walled City 'Intramuros' used what kind of standards?", choices: ["A. American", "B. European plumbing", "C. Asian", "D. No standards"], a: 1 }
     ],
     7: [
         { q: "A sedimentation basin is 60 feet in diameter. What is the surface area?", choices: ["2830 sq. ft", "1200 sq. ft", "1542 sq. ft", "2480 sq. ft"], a: 0 },
@@ -511,6 +559,7 @@ export const codeDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
+
 
 
 
