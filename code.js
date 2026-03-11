@@ -906,13 +906,3 @@ export const codeDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
-
-
-
-
-
-
-
-
-
-
