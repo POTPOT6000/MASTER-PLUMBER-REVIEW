@@ -387,7 +387,7 @@ export const randomDB = {
   { q: "Sewage collected during the dry weather which contains little or no ground water and no storm water.", choices: ["A) Peak Flow", "B) Dry Weather Flow", "C) Minimum Flow", "D) Average Flow"], a: 1 },
   
 
-[Image of stress-strain curve showing elastic limit]
+
 
   { q: "The greatest stress which a material can withstand without permanent deformation after release of stress.", choices: ["A) Breaking Point", "B) Elastic Limit", "C) Yield Point", "D) Ultimate Strength"], a: 1 },
   { q: "The gradual destruction of metal or other material by the abrasive action of liquids, gases, solids or mixtures of these materials.", choices: ["A) Corrosion", "B) Erosion", "C) Cavitation", "D) Oxidation"], a: 1 },
@@ -723,7 +723,7 @@ export const randomDB = {
   { q: "An ordinance, rule or regulation which a city or governing body may adopt to control the plumbing work within its jurisdiction.", choices: ["A) Law", "B) Specification", "C) Code", "D) Standard"], a: 2 },
   
 
-[Image of compression vs tension forces]
+
 
   { q: "Stress which resists the tendency of two forces acting toward each other.", choices: ["A) Tension", "B) Shear", "C) Compression", "D) Torque"], a: 2 },
   { q: "That part of the vertical piping which carries the water from the roof to the storm drain, which starts either 6\" above grade if outside the building, or at the roof sump or gutter if inside the building.", choices: ["A) Leader", "B) Riser", "C) Conductor", "D) Downspout"], a: 2 },
@@ -897,7 +897,6 @@ export const randomDB = {
   { q: "An ordinance, rule or regulation which a city or governing body may adopt to control the plumbing work within its jurisdiction.", choices: ["A) Law", "B) Specification", "C) Code", "D) Standard"], a: 2 },
   
 
-[Image of compression stress diagram]
 
   { q: "Stress which resists the tendency of two forces acting toward each other.", choices: ["A) Tension", "B) Shear", "C) Compression", "D) Torque"], a: 2 },
   { q: "That part of the vertical piping which carries the water from the roof to the storm drain, which starts either 6\" above grade if outside the building, or at the roof sump or gutter if inside the building.", choices: ["A) Leader", "B) Riser", "C) Conductor", "D) Downspout"], a: 2 },
@@ -969,15 +968,10 @@ export const randomDB = {
   
   { q: "That part of a vent pipe line which connects directly with any individual waste pipe or group of wastes, underneath or behind the fixture, and extends to the main or branch vent pipe.", choices: ["A) Circuit Vent", "B) Revent (individual vent)", "C) Common Vent", "D) Loop Vent"], a: 1 },
   { q: "A term concerning the installation of all parts of the plumbing system which should be completed before the installing of the plumbing fixtures.", choices: ["A) Finishing", "B) Roughing In", "C) Pre-plumbing", "D) Anchoring"], a: 1 },
-  
-
-[Image of combined sewer system diagram]
 
   { q: "The conduit of pipe carrying sanitary sewage, storm water, and infiltration of ground water.", choices: ["A) Combined Sewer", "B) Sanitary Sewer", "C) Storm Sewer", "D) Building Sewer"], a: 0 },
   { q: "Sanitary sewage undergoing putrefaction.", choices: ["A) Fresh Sewage", "B) Septic Sewage", "C) Stale Sewage", "D) Crude Sewage"], a: 1 },
   
-
-[Image of septic tank cross section]
 
   { q: "A receptacle which receives the discharge of a drainage system or part thereof, and is designed and so constructed to separate solids from liquids to discharge into the soil through a system of open-joint or perforated piping.", choices: ["A) Sump", "B) Septic Tank", "C) Cesspool", "D) Catch Basin"], a: 1 },
   { q: "Any liquid waste containing animal, vegetable or chemical wastes in suspension or solution.", choices: ["A) Effluent", "B) Sewage", "C) Sludge", "D) Waste"], a: 1 },
@@ -1093,5 +1087,3 @@ export const randomDB = {
     ]
 
 };
-
-
