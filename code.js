@@ -205,26 +205,116 @@ export const codeDB = {
     { q: "Type of joint used for cast iron soil pipe with bell and spigot ends.", choices: ["A. Caulked joint", "B. Threaded joint", "C. Soldered joint", "D. Solvent joint"], a: 0 }
     ],
     3: [
-        { 
-            q: "What is the weight of 1 cubic foot of water in pounds?", 
-            choices: ["32.2 lbs", "62.4 lbs", "8.33 lbs", "7.48 lbs"], 
-            a: 1 
-        },
-        { 
-            q: "How many gallons are there in 1 cubic meter of water?", 
-            choices: ["231", "264", "462", "624"], 
-            a: 1 
-        },
-        { 
-            q: "A pipe has an inside diameter of 14 inches. What is the area of the cross-section?", 
-            choices: ["153.94 sq in", "73.04 sq in", "220.42 sq in", "38.92 sq in"], 
-            a: 0 
-        },
-        { 
-            q: "Convert 120 feet of static head into PSI (pounds per square inch).", 
-            choices: ["42.5 psi", "52.0 psi", "60.2 psi", "277 psi"], 
-            a: 1 // Calculation: 120 * 0.433
-        }
+        {
+    q: "All premises intended for human habitation, occupancy or use shall be provided with a supply of pure and wholesome water, neither connected with unsafe water supplies nor subject to hazards of backflow or back-siphonage.",
+    choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 4", "D. Principle No. 22"],
+    a: 0
+  },
+  {
+    q: "The individual water supply shall be adequate to provide and maintain at all times a supply of water sufficient in volume and pressure to enable the fixtures to function satisfactorily.",
+    choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 3", "D. Principle No. 8"],
+    a: 1
+  },
+  {
+    q: "Devices for heating and storing water shall be so designed and installed as to prevent dangers from explosion through overheating.",
+    choices: ["A. Principle No. 2", "B. Principle No. 3", "C. Principle No. 6", "D. Principle No. 13"],
+    a: 1
+  },
+  {
+    q: "Every building having plumbing fixtures and installed on a lot abutting a street, alley, or easement in which there is a public sewer shall be connected to the public sewer system.",
+    choices: ["A. Principle No. 4", "B. Principle No. 5", "C. Principle No. 16", "D. Principle No. 21"],
+    a: 0
+  },
+  {
+    q: "Each family dwelling unit on premises abutting on a sewer or with a private sewage-disposal system shall have at least one water closet and one kitchen-type sink.",
+    choices: ["A. Principle No. 4", "B. Principle No. 5", "C. Principle No. 6", "D. Principle No. 19"],
+    a: 1
+  },
+  {
+    q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces and shall be located in ventilated enclosures.",
+    choices: ["A. Principle No. 5", "B. Principle No. 6", "C. Principle No. 15", "D. Principle No. 19"],
+    a: 1
+  },
+  {
+    q: "The drainage system shall be designed, constructed and maintained to guard against fouling, deposit of solids and clogging, and with adequate cleanouts so arranged that the pipes may be readily cleaned.",
+    choices: ["A. Principle No. 7", "B. Principle No. 8", "C. Principle No. 10", "D. Principle No. 13"],
+    a: 0
+  },
+  {
+    q: "The piping of the plumbing system shall be of durable material, free from defective workmanship and so designed and constructed as to give satisfactory service for its reasonable expected life.",
+    choices: ["A. Principle No. 7", "B. Principle No. 8", "C. Principle No. 20", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.",
+    choices: ["A. Principle No. 9", "B. Principle No. 10", "C. Principle No. 11", "D. Principle No. 17"],
+    a: 0
+  },
+  {
+    q: "The drainage system shall be designed to provide an adequate circulation of air in all pipes with no danger of siphonage, aspiration, or forcing of trap seals under conditions of ordinary use.",
+    choices: ["A. Principle No. 9", "B. Principle No. 10", "C. Principle No. 11", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "Each vent terminal shall extend to the outer air and be so installed as to preclude the possibility of clogging and the return of foul air to the building.",
+    choices: ["A. Principle No. 10", "B. Principle No. 11", "C. Principle No. 12", "D. Principle No. 15"],
+    a: 1
+  },
+  {
+    q: "The plumbing system shall be subjected to such tests as will effectively disclose all defects and leaks in the work.",
+    choices: ["A. Principle No. 8", "B. Principle No. 12", "C. Principle No. 18", "D. Principle No. 20"],
+    a: 1
+  },
+  {
+    q: "No substance which will clog or damage the pipes, produce explosive mixtures, or clog the pipes shall be allowed to enter the building drainage system.",
+    choices: ["A. Principle No. 7", "B. Principle No. 13", "C. Principle No. 21", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "Proper protection shall be provided to prevent contamination of food, water, sterile goods and similar materials by backflow of sewage. When necessary, the fixture, device or appliance shall be connected indirectly with the building drainage system.",
+    choices: ["A. Principle No. 1", "B. Principle No. 14", "C. Principle No. 17", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "No water closet or urinal shall be located in a room or compartment which is not properly lighted and ventilated.",
+    choices: ["A. Principle No. 6", "B. Principle No. 15", "C. Principle No. 18", "D. Principle No. 19"],
+    a: 1
+  },
+  {
+    q: "If water closets or other plumbing fixtures are installed in buildings where there is no sewer within a reasonable distance, suitable provision shall be made for disposing of the building sewage by some accepted method of septic treatment.",
+    choices: ["A. Principle No. 4", "B. Principle No. 16", "C. Principle No. 17", "D. Principle No. 21"],
+    a: 1
+  },
+  {
+    q: "Where a plumbing drainage system may be subject to backflow of sewage, suitable provision shall be made to prevent its overflow in the building.",
+    choices: ["A. Principle No. 14", "B. Principle No. 17", "C. Principle No. 21", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "All plumbing systems shall be maintained in a sanitary condition by Registered Master Plumbers.",
+    choices: ["A. Principle No. 18", "B. Principle No. 19", "C. Principle No. 20", "D. Principle No. 22"],
+    a: 0
+  },
+  {
+    q: "All plumbing fixtures shall be installed with regard to spacing as to be accessible for their intended use.",
+    choices: ["A. Principle No. 15", "B. Principle No. 19", "C. Principle No. 20", "D. Principle No. 22"],
+    a: 1
+  },
+  {
+    q: "Plumbing shall be installed by Registered Master Plumbers with due regard to the preservation of the strength of structural members and prevention of damage to walls and other surfaces through fixture usage.",
+    choices: ["A. Principle No. 8", "B. Principle No. 18", "C. Principle No. 19", "D. Principle No. 20"],
+    a: 3
+  },
+  {
+    q: "Sewage or other waste from a plumbing system which may be deleterious to surface or subsurface waters shall not be discharged into the ground or into any waterway unless it has first been rendered innocuous through subjection to some acceptable form of treatment.",
+    choices: ["A. Principle No. 4", "B. Principle No. 13", "C. Principle No. 16", "D. Principle No. 21"],
+    a: 3
+  },
+  {
+    q: "All plumbing fixtures shall be designed and installed to prevent the backflow of polluted water into the water supply system.",
+    choices: ["A. Principle No. 1", "B. Principle No. 14", "C. Principle No. 17", "D. Principle No. 22"],
+    a: 3
+  }
     ],
     4: [
         { 
@@ -306,5 +396,6 @@ export const codeDB = {
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
 };
+
 
 
