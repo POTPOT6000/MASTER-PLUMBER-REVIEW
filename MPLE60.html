@@ -1,1673 +1,940 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional.html -->
+<!-- saved from url=(0061)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_2.html -->
 <html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>MASTER PLUMBER — BOARD REVIEWER</title>
-    <script type="module" src="./MASTER PLUMBER — BOARD REVIEWER_files/ionicons.esm.js.download"></script>
-    <link href="./MASTER PLUMBER — BOARD REVIEWER_files/css2" rel="stylesheet">
-    <style>
-        /* ─── DESIGN SYSTEM ─── */
-        :root {
-            --bg: #05080f;
-            --surface: #0b1120;
-            --surface-2: #111929;
-            --border: rgba(99,180,255,0.08);
-            --border-glow: rgba(99,180,255,0.2);
-            --accent: #3b82f6;
-            --accent-warm: #f59e0b;
-            --accent-glow: rgba(59,130,246,0.15);
-            --success: #10b981;
-            --danger: #f43f5e;
-            --text: #e8edf5;
-            --text-2: #8ba3c7;
-            --text-3: #4d6380;
-            --gold: #f59e0b;
-            --gold-glow: rgba(245,158,11,0.12);
-            --pro: linear-gradient(135deg, #f59e0b, #ef4444);
-        }
-        [data-theme="light"] {
-            --bg: #f0f4fa;
-            --surface: #ffffff;
-            --surface-2: #f7f9fc;
-            --border: rgba(59,130,246,0.12);
-            --border-glow: rgba(59,130,246,0.25);
-            --accent-glow: rgba(59,130,246,0.08);
-            --text: #0f1929;
-            --text-2: #445270;
-            --text-3: #8ba3c7;
-        }
+<style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Plumber — Board Reviewer</title>
+<script type="module" src="./Master Plumber — Board Reviewer 2_files/ionicons.esm.js.download"></script>
+<link href="./Master Plumber — Board Reviewer 2_files/css2" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   DESIGN TOKENS — Emotional Design System
+   ════════════════════════════════════════ */
+:root{
+  --bg:#05080f;
+  --surface:#0c1322;
+  --surface-2:#111d30;
+  --border:rgba(100,180,255,0.07);
+  --border-hi:rgba(100,180,255,0.22);
+  --accent:#3b82f6;
+  --accent-2:#818cf8;
+  --accent-glow:rgba(59,130,246,0.14);
+  --success:#10b981;
+  --danger:#f43f5e;
+  --warn:#f59e0b;
+  --warn-glow:rgba(245,158,11,0.12);
+  --text:#e8edf5;
+  --text-2:#7d9bbf;
+  --text-3:#3d5472;
+  --gold:#f59e0b;
+  --radius:16px;
+  --shadow:0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg:0 24px 64px rgba(0,0,0,0.55);
+}
+[data-theme="light"]{
+  --bg:#eef2f8; --surface:#fff; --surface-2:#f5f8fc;
+  --border:rgba(59,130,246,0.1); --border-hi:rgba(59,130,246,0.28);
+  --accent-glow:rgba(59,130,246,0.08);
+  --text:#0f1929; --text-2:#4a637f; --text-3:#9ab0c8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 900px 550px at 15% -5%,rgba(59,130,246,0.07),transparent),
+    radial-gradient(ellipse 700px 400px at 85% 105%,rgba(245,158,11,0.04),transparent);
+}
+.app-wrap{position:relative;z-index:1;width:100%;max-width:760px;margin:0 auto;padding:20px 16px 48px;}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
-            height: 100%;
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 24px 16px;
-            min-height: 100vh;
-        }
+/* ── SCREENS ── */
+.screen{display:none;}
+.screen.active{display:block;animation:fadeUp .32s cubic-bezier(.22,1,.36,1) both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 
-        /* ─── VISCERAL: Ambient background ─── */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 800px 500px at 20% -10%, rgba(59,130,246,0.06), transparent),
-                radial-gradient(ellipse 600px 400px at 80% 100%, rgba(245,158,11,0.04), transparent);
-            pointer-events: none;
-            z-index: 0;
-        }
+/* ════ HUD ════ */
+#hud{
+  display:none;align-items:center;gap:12px;
+  padding:12px 18px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);
+  margin-bottom:16px;box-shadow:var(--shadow);
+}
+#hud.visible{display:flex;}
+.hud-av{
+  width:46px;height:46px;border-radius:13px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:#fff;
+  box-shadow:0 6px 20px rgba(59,130,246,0.3);transition:transform .2s;
+}
+.hud-av:hover{transform:scale(1.07);}
+.hud-inf{flex:1;min-width:0;}
+.hud-nm{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hud-mt{display:flex;align-items:center;gap:8px;margin-top:5px;}
+.lv-chip{font-family:'Space Mono',monospace;font-size:9px;background:var(--accent-glow);border:1px solid var(--border-hi);color:var(--accent);padding:2px 8px;border-radius:99px;white-space:nowrap;}
+.xp-rail{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:99px;overflow:hidden;}
+.xp-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .8s cubic-bezier(.22,1,.36,1);box-shadow:0 0 8px var(--accent);}
+.xp-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-3);white-space:nowrap;}
+.hud-act{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 
-        .app-shell {
-            width: 100%;
-            max-width: 740px;
-            position: relative;
-            z-index: 1;
-        }
+/* quiz top bar */
+#qpw{display:none;height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:16px;}
+#qpf{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .5s cubic-bezier(.22,1,.36,1);width:0%;}
 
-        /* ─── SCREEN SYSTEM ─── */
-        .screen { display: none; animation: screenIn .35s cubic-bezier(.22,1,.36,1); }
-        .screen.active { display: block; }
-        @keyframes screenIn {
-            from { opacity: 0; transform: translateY(14px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* ════ BUTTONS ════ */
+button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;outline:none;transition:all .18s cubic-bezier(.22,1,.36,1);}
+button:active{transform:scale(0.96)!important;}
+.btn-primary{display:block;width:100%;padding:14px;border-radius:13px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;letter-spacing:.3px;box-shadow:0 8px 24px rgba(59,130,246,0.32);}
+.btn-primary:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,0.42);}
+.btn-ghost{padding:9px 16px;border-radius:11px;background:transparent;border:1px solid var(--border);color:var(--text-2);font-size:13px;font-weight:600;}
+.btn-ghost:hover{border-color:var(--border-hi);color:var(--text);background:var(--accent-glow);}
+.btn-gold{padding:10px 18px;border-radius:12px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:13px;font-weight:800;box-shadow:0 8px 22px rgba(245,158,11,0.3);white-space:nowrap;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,158,11,0.45);}
+.btn-outline{display:block;width:100%;padding:13px;border-radius:13px;background:transparent;border:1.5px solid var(--border-hi);color:var(--text);font-size:15px;font-weight:600;}
+.btn-outline:hover{background:var(--accent-glow);}
+.btn-text{background:transparent;color:var(--accent);font-size:13px;font-weight:600;padding:6px 0;}
+.btn-text:hover{color:#93c5fd;}
+.btn-back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-size:13px;font-weight:600;}
+.btn-back:hover{color:var(--text);border-color:var(--border-hi);}
+.btn-icon{width:34px;height:34px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--text-2);}
 
-        /* ─── HUD ─── */
-        .hud {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 18px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-        }
-        .avatar {
-            width: 48px; height: 48px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent), #6366f1);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Space Mono', monospace;
-            font-weight: 700; font-size: 15px; color: white;
-            flex-shrink: 0;
-            box-shadow: 0 8px 24px rgba(59,130,246,0.25);
-            transition: transform .2s;
-        }
-        .avatar:hover { transform: scale(1.07); }
-        .player-info { flex: 1; }
-        .player-name { font-weight: 700; font-size: 14px; }
-        .player-meta { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
-        .level-badge {
-            font-family: 'Space Mono', monospace;
-            font-size: 10px; color: var(--accent);
-            background: var(--accent-glow);
-            border: 1px solid var(--border-glow);
-            padding: 2px 8px; border-radius: 20px;
-        }
-        .xp-track {
-            flex: 1; height: 5px;
-            background: rgba(255,255,255,0.06);
-            border-radius: 99px; overflow: hidden;
-        }
-        .xp-fill {
-            height: 100%; width: 0%;
-            background: linear-gradient(90deg, var(--accent), #818cf8);
-            border-radius: 99px;
-            transition: width .8s cubic-bezier(.22,1,.36,1);
-            box-shadow: 0 0 8px var(--accent);
-        }
-        .xp-label { font-size: 10px; color: var(--text-3); font-family: 'Space Mono', monospace; }
-        .hud-right { display: flex; gap: 8px; align-items: center; }
+/* ════ CARD ════ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
 
-        /* ─── BUTTONS ─── */
-        button {
-            font-family: 'DM Sans', sans-serif;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            transition: all .18s cubic-bezier(.22,1,.36,1);
-            font-weight: 600;
-        }
-        button:active { transform: scale(0.97) !important; }
+/* ── FIELD ── */
+.field{margin-bottom:14px;text-align:left;}
+.field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3);margin-bottom:6px;}
+.field input{width:100%;background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:13px 16px;border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;transition:border-color .2s,box-shadow .2s;}
+.field input::placeholder{color:var(--text-3);}
+.field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
 
-        .btn-ghost {
-            background: transparent;
-            border: 1px solid var(--border);
-            padding: 8px 14px;
-            border-radius: 10px;
-            color: var(--text-2);
-            font-size: 13px;
-        }
-        .btn-ghost:hover { border-color: var(--border-glow); color: var(--text); background: var(--accent-glow); }
+.divider{display:flex;align-items:center;gap:14px;color:var(--text-3);font-size:12px;margin:18px 0;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.back-row{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.scr-title{font-family:'DM Serif Display',serif;font-size:20px;}
 
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            padding: 13px 24px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            width: 100%;
-            box-shadow: 0 8px 24px rgba(59,130,246,0.3);
-            letter-spacing: 0.3px;
-        }
-        .btn-primary:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(59,130,246,0.4); }
+/* ════════════════════════════════════════
+   SCREEN: SPLASH
+   ════════════════════════════════════════ */
+#splashScreen{
+  min-height:85vh;display:none;
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px 20px;
+}
+#splashScreen.active{display:flex;}
+.sp-logo{
+  width:84px;height:84px;border-radius:26px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;
+  box-shadow:0 20px 60px rgba(59,130,246,0.4);
+  animation:spFloat 3.5s ease-in-out infinite;margin-bottom:28px;
+}
+@keyframes spFloat{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-10px) rotate(3deg);}}
+.sp-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--text-3);text-transform:uppercase;margin-bottom:12px;}
+.sp-title{
+  font-family:'DM Serif Display',serif;font-size:44px;line-height:1.1;
+  background:linear-gradient(135deg,var(--text) 30%,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:16px;
+}
+.sp-sub{font-size:16px;color:var(--text-2);line-height:1.6;max-width:400px;margin:0 auto 36px;}
+.sp-stats{
+  display:flex;gap:0;margin-bottom:40px;
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+}
+.sp-stat{flex:1;padding:14px 12px;text-align:center;border-right:1px solid var(--border);}
+.sp-stat:last-child{border-right:none;}
+.sp-stat-n{font-family:'Space Mono',monospace;font-size:18px;font-weight:700;}
+.sp-stat-l{font-size:11px;color:var(--text-3);margin-top:2px;}
+.sp-actions{display:flex;flex-direction:column;gap:12px;width:100%;max-width:360px;}
 
-        .btn-gold {
-            background: linear-gradient(135deg, #f59e0b, #ef4444);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 800;
-            box-shadow: 0 8px 24px rgba(245,158,11,0.3);
-            white-space: nowrap;
-        }
-        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,158,11,0.45); }
+/* ════════════════════════════════════════
+   SCREEN: SIGN IN
+   ════════════════════════════════════════ */
+#signInScreen,.auth-wrap{max-width:420px;margin:0 auto;}
+.auth-card{padding:32px 28px;text-align:center;}
+.auth-icon{
+  width:52px;height:52px;border-radius:15px;
+  background:var(--accent-glow);border:1px solid var(--border-hi);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  margin:0 auto 16px;
+}
+.auth-title{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:6px;}
+.auth-sub{font-size:13px;color:var(--text-2);margin-bottom:24px;}
+.auth-foot{margin-top:16px;font-size:13px;color:var(--text-2);display:flex;align-items:center;justify-content:center;gap:6px;}
 
-        .btn-text {
-            background: transparent;
-            color: var(--accent);
-            font-size: 13px;
-            padding: 8px 0;
-        }
-        .btn-text:hover { color: #93c5fd; }
+/* ════════════════════════════════════════
+   SCREEN: HOME
+   ════════════════════════════════════════ */
+.home-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.home-greet{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.2;}
+.home-greet small{display:block;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--text-3);font-weight:400;margin-bottom:2px;}
+.home-ctrls{display:flex;gap:8px;}
 
-        /* ─── CARD ─── */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-        }
-        .card + .card { margin-top: 12px; }
+/* pro card */
+.pro-card{
+  background:linear-gradient(130deg,#141e33,#0d1626);
+  border:1px solid rgba(245,158,11,0.18);border-radius:var(--radius);
+  padding:20px;margin-bottom:20px;position:relative;overflow:hidden;
+}
+.pro-card::after{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent 70%);pointer-events:none;}
+.pc-ey{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.pc-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:4px;}
+.pc-body{font-size:13px;color:var(--text-2);margin-bottom:16px;}
+.pc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.pc-price{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;}
+.pc-price span{font-size:12px;color:var(--text-2);font-weight:400;}
 
-        /* ─── VISCERAL: SPLASH / AUTH ─── */
-        #authScreen {
-            text-align: center;
-        }
-        .splash-icon {
-            width: 72px; height: 72px;
-            margin: 0 auto 16px;
-            background: linear-gradient(135deg, var(--accent), #6366f1);
-            border-radius: 22px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 16px 48px rgba(59,130,246,0.35);
-            animation: floatIcon 4s ease-in-out infinite;
-        }
-        @keyframes floatIcon {
-            0%, 100% { transform: translateY(0) rotate(-3deg); }
-            50% { transform: translateY(-8px) rotate(3deg); }
-        }
-        .splash-eyebrow {
-            font-family: 'Space Mono', monospace;
-            font-size: 10px;
-            color: var(--text-3);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .splash-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 36px;
-            line-height: 1.15;
-            margin-bottom: 6px;
-            background: linear-gradient(135deg, var(--text), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .splash-sub {
-            font-size: 14px;
-            color: var(--text-2);
-            margin-bottom: 28px;
-        }
+.pro-active{
+  display:flex;align-items:center;gap:14px;
+  background:linear-gradient(130deg,rgba(16,185,129,0.08),rgba(6,182,212,0.06));
+  border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius);
+  padding:16px 18px;margin-bottom:20px;
+}
+.pa-icon{width:40px;height:40px;border-radius:11px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.pa-title{font-weight:700;font-size:14px;color:var(--success);}
+.pa-sub{font-size:12px;color:var(--text-3);margin-top:2px;}
 
-        /* ─── EMOTIONAL: Trust signals ─── */
-        .trust-strip {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
-        }
-        .trust-pill {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 99px;
-            font-size: 12px;
-            color: var(--text-2);
-        }
-        .trust-pill ion-icon { color: var(--accent); font-size: 14px; }
+.sec-head{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:14px;}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px;}
+.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 14px;cursor:pointer;display:flex;flex-direction:column;gap:10px;transition:all .22s cubic-bezier(.22,1,.36,1);}
+.cat-card:hover{border-color:var(--border-hi);transform:translateY(-4px);box-shadow:0 14px 36px rgba(59,130,246,0.1);}
+.cat-ico{width:42px;height:42px;border-radius:12px;background:var(--accent-glow);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.cat-nm{font-weight:700;font-size:13px;line-height:1.3;}
+.cat-sb{font-size:11px;color:var(--text-3);margin-top:2px;}
 
-        /* ─── INPUT ─── */
-        .input-group { margin-bottom: 14px; position: relative; }
-        .input-group label { display: block; font-size: 12px; color: var(--text-3); margin-bottom: 6px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
-        .input-group input {
-            width: 100%;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 13px 16px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-family: 'DM Sans', sans-serif;
-            transition: border-color .2s, box-shadow .2s;
-        }
-        .input-group input::placeholder { color: var(--text-3); }
-        .input-group input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
+.ch-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none;}
+.ch-strip::-webkit-scrollbar{display:none;}
+.ch-chip{min-width:185px;padding:14px;border-radius:14px;border:1px solid var(--border);background:var(--surface);flex-shrink:0;}
+.ch-chip.hot{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;}
+.ch-chip.hot *{color:#fff!important;}
+.ch-lbl{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;}
+.ch-title{font-weight:800;font-size:14px;margin-bottom:3px;}
+.ch-sub{font-size:12px;color:var(--text-2);}
 
-        /* ─── DIVIDER ─── */
-        .divider {
-            display: flex; align-items: center; gap: 14px;
-            color: var(--text-3); font-size: 12px;
-            margin: 18px 0;
-        }
-        .divider::before, .divider::after {
-            content: ''; flex: 1; height: 1px;
-            background: var(--border);
-        }
+/* ════════════════════════════════════════
+   SCREEN: PAYMENT
+   ════════════════════════════════════════ */
+.pay-head{text-align:center;margin-bottom:24px;}
+.pay-ico{width:64px;height:64px;border-radius:20px;background:var(--warn-glow);border:1.5px solid rgba(245,158,11,0.28);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;}
+.pay-title{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:6px;}
+.pay-sub{font-size:14px;color:var(--text-2);}
+.plans-row{display:flex;gap:12px;margin-bottom:20px;}
+.plan-card{flex:1;padding:18px 14px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface-2);cursor:pointer;transition:all .2s;position:relative;}
+.plan-card.selected{border-color:var(--accent);background:var(--accent-glow);box-shadow:0 0 0 3px var(--accent-glow);}
+.plan-card.gold-plan{border-color:rgba(245,158,11,0.3);background:linear-gradient(140deg,rgba(245,158,11,0.06),rgba(239,68,68,0.04));}
+.plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:9px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:1px;white-space:nowrap;}
+.plan-nm{font-weight:800;font-size:14px;margin-bottom:3px;}
+.plan-desc{font-size:11px;color:var(--text-3);margin-bottom:8px;}
+.plan-price{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;margin:8px 0;}
+.plan-price sub{font-size:11px;vertical-align:baseline;color:var(--text-2);}
+.plan-feats{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
+.plan-feat{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-2);}
+.plan-feat ion-icon{color:var(--success);font-size:14px;flex-shrink:0;}
+.key-sec{margin-top:16px;padding:16px;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;}
+.key-lbl{font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:10px;}
+.key-row{display:flex;gap:10px;}
+.key-row input{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:11px 14px;border-radius:10px;font-size:14px;font-family:'Space Mono',monospace;}
+.key-row input:focus{outline:none;border-color:var(--accent);}
+.btn-act{padding:11px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;flex-shrink:0;}
+.pay-trust{font-size:11px;color:var(--text-3);text-align:center;margin-top:14px;}
 
-        /* ─── HOME ─── */
-        .home-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 20px;
-        }
-        .greeting-small {
-            font-size: 12px; color: var(--text-3);
-            font-family: 'Space Mono', monospace;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 22px;
-            margin-bottom: 14px;
-        }
+/* ════ EXAMS ════ */
+.exam-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;margin-bottom:8px;transition:border-color .18s;}
+.exam-row:hover{border-color:var(--border-hi);}
+.exam-row.locked{opacity:.45;filter:grayscale(.3);}
+.exam-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);}
+.exam-last{font-size:11px;color:var(--text-3);margin-top:3px;}
+.btn-start{padding:8px 16px;border-radius:10px;background:var(--accent-glow);border:1px solid var(--border-hi);color:var(--accent);font-size:12px;font-weight:700;}
+.btn-start:hover{background:var(--accent);color:#fff;}
 
-        /* ─── REFLECTIVE: Pro upgrade card ─── */
-        .pro-card {
-            background: linear-gradient(135deg, #1e293b, #0f1a2e);
-            border: 1px solid rgba(245,158,11,0.2);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 18px;
-            position: relative;
-            overflow: hidden;
-        }
-        .pro-card::before {
-            content: '';
-            position: absolute;
-            top: -40px; right: -40px;
-            width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(245,158,11,0.12), transparent 70%);
-            pointer-events: none;
-        }
-        .pro-card-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        .pro-card-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-        .pro-card-sub { font-size: 13px; color: var(--text-2); margin-bottom: 14px; }
-        .pro-card-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-        .pro-price { font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; }
-        .pro-price span { font-size: 13px; color: var(--text-2); font-weight: 400; }
+/* ════ QUIZ ════ */
+.q-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.q-lbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--text-3);}
+.score-chip{background:var(--surface-2);border:1px solid var(--border-hi);padding:6px 14px;border-radius:99px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;}
+.prog-rail{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:24px;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .5s cubic-bezier(.22,1,.36,1);}
+.q-text{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.55;margin-bottom:24px;min-height:80px;}
+.choices{display:flex;flex-direction:column;gap:10px;}
+.choice{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:13px;text-align:left;font-size:14px;color:var(--text);font-weight:500;transition:all .18s cubic-bezier(.22,1,.36,1);}
+.ch-lt{width:28px;height:28px;border-radius:8px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;transition:all .18s;}
+.choice:hover:not(:disabled){border-color:var(--border-hi);background:var(--accent-glow);transform:translateX(4px);}
+.choice:hover:not(:disabled) .ch-lt{background:var(--accent);border-color:var(--accent);color:#fff;}
+.choice.correct{border-color:var(--success);background:rgba(16,185,129,0.08);}
+.choice.correct .ch-lt{background:var(--success);border-color:var(--success);color:#fff;}
+.choice.wrong{border-color:var(--danger);background:rgba(244,63,94,0.08);}
+.choice.wrong .ch-lt{background:var(--danger);border-color:var(--danger);color:#fff;}
+.q-nav{display:flex;gap:10px;margin-top:20px;}
+.q-sub{display:flex;gap:10px;margin-top:10px;}
+.btn-quit{flex:1;padding:10px;border-radius:11px;background:transparent;border:1px solid rgba(244,63,94,.22);color:var(--danger);font-size:12px;}
+.btn-quit:hover{background:rgba(244,63,94,.08);}
+.btn-fin{flex:1;padding:10px;border-radius:11px;background:transparent;border:1px solid rgba(16,185,129,.22);color:var(--success);font-size:12px;}
+.btn-fin:hover{background:rgba(16,185,129,.08);}
 
-        /* ─── CATEGORIES ─── */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        .category-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px 14px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            transition: all .22s cubic-bezier(.22,1,.36,1);
-        }
-        .category-card:hover {
-            border-color: var(--border-glow);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(59,130,246,0.1);
-        }
-        .cat-icon {
-            width: 42px; height: 42px;
-            border-radius: 12px;
-            background: var(--accent-glow);
-            border: 1px solid var(--border-glow);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
-        }
-        .cat-name { font-weight: 700; font-size: 13px; line-height: 1.3; }
-        .cat-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+/* ════ RESULTS ════ */
+.res-hero{text-align:center;padding:32px 20px 24px;}
+.ring-wrap{width:128px;height:128px;position:relative;margin:0 auto 20px;}
+.ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ring-num{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;}
+.ring-lbl{font-size:10px;color:var(--text-3);}
+.res-hl{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:8px;}
+.res-bd{font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.5;}
+.xp-pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid var(--border-hi);padding:8px 18px;border-radius:99px;font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:24px;}
+.rev-item{padding:14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);margin-bottom:10px;}
+.rev-q{font-weight:600;font-size:14px;margin-bottom:10px;}
+.rev-c{padding:7px 11px;border-radius:8px;font-size:12px;margin:4px 0;color:var(--text-2);}
+.rev-c.correct{background:rgba(16,185,129,.1);color:var(--success);}
+.rev-c.wrong{background:rgba(244,63,94,.1);color:var(--danger);}
+.res-acts{display:flex;gap:10px;margin-top:20px;}
 
-        /* ─── WEEKLY CHALLENGE ─── */
-        .challenge-strip {
-            display: flex; gap: 12px;
-            overflow-x: auto; padding-bottom: 4px;
-            margin-bottom: 20px;
-            scrollbar-width: none;
-        }
-        .challenge-strip::-webkit-scrollbar { display: none; }
-        .challenge-card {
-            min-width: 200px;
-            padding: 14px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            flex-shrink: 0;
-        }
-        .challenge-card.featured {
-            background: linear-gradient(135deg, var(--accent), #6366f1);
-            border-color: transparent;
-        }
-        .challenge-card.featured * { color: white !important; }
+/* ════ STATS ════ */
+.stat-rec{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;}
+.stat-cat{font-weight:700;font-size:13px;}
+.stat-meta{font-size:11px;color:var(--text-3);margin-top:2px;}
+.stat-sc{font-family:'Space Mono',monospace;font-weight:700;color:var(--accent);text-align:right;}
+.stat-pct{font-size:11px;color:var(--text-3);margin-top:1px;}
 
-        /* ─── PAYMENT / PURCHASE ─── */
-        #paymentScreen { max-width: 640px; margin: 0 auto; }
-        .payment-header { text-align: center; margin-bottom: 24px; }
-        .payment-header .icon-ring {
-            width: 64px; height: 64px;
-            border-radius: 20px;
-            background: var(--gold-glow);
-            border: 2px solid rgba(245,158,11,0.3);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 28px; margin: 0 auto 14px;
-        }
-        .plans-grid { display: flex; gap: 12px; margin-bottom: 20px; }
-        .plan-card {
-            flex: 1;
-            background: var(--surface-2);
-            border: 1.5px solid var(--border);
-            border-radius: 16px;
-            padding: 18px;
-            cursor: pointer;
-            transition: all .2s;
-            position: relative;
-        }
-        .plan-card.selected {
-            border-color: var(--accent);
-            background: var(--accent-glow);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
-        .plan-card.featured-plan {
-            border-color: rgba(245,158,11,0.4);
-            background: linear-gradient(135deg, rgba(245,158,11,0.05), rgba(239,68,68,0.05));
-        }
-        .plan-badge {
-            position: absolute;
-            top: -10px; left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #f59e0b, #ef4444);
-            color: white;
-            font-size: 9px;
-            font-weight: 800;
-            padding: 3px 10px;
-            border-radius: 99px;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-        .plan-name { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
-        .plan-price { font-family: 'Space Mono', monospace; font-size: 24px; font-weight: 700; margin: 8px 0; }
-        .plan-price sub { font-size: 13px; vertical-align: baseline; color: var(--text-2); }
-        .plan-desc { font-size: 12px; color: var(--text-2); }
-        .plan-features { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
-        .plan-feature {
-            display: flex; align-items: center; gap: 8px;
-            font-size: 12px; color: var(--text-2);
-        }
-        .plan-feature ion-icon { color: var(--success); font-size: 15px; flex-shrink: 0; }
+/* ════ MODAL ════ */
+.mo{position:fixed;inset:0;z-index:9999;background:rgba(5,8,15,.78);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .22s;}
+.mo.open{opacity:1;pointer-events:auto;}
+.mo-box{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--border-hi);border-radius:20px;padding:24px;box-shadow:var(--shadow-lg);transform:scale(.94);transition:transform .25s cubic-bezier(.22,1,.36,1);}
+.mo.open .mo-box{transform:scale(1);}
+.mo-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
+.mo-title{font-family:'DM Serif Display',serif;font-size:22px;}
+.mo-sub{font-size:13px;color:var(--text-2);margin-top:4px;}
 
-        /* ─── BEHAVIORAL: QUIZ ─── */
-        .quiz-topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-        .q-counter {
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            color: var(--text-3);
-        }
-        .score-pill {
-            background: var(--surface);
-            border: 1px solid var(--border-glow);
-            padding: 6px 14px;
-            border-radius: 99px;
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            font-weight: 700;
-        }
+/* ════ TOASTS ════ */
+#toasts{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.toast{background:var(--surface);border:1px solid var(--border-hi);color:var(--text);padding:11px 20px;border-radius:99px;font-size:13px;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.45);animation:tIn .3s cubic-bezier(.22,1,.36,1) both;white-space:nowrap;}
+@keyframes tIn{from{opacity:0;transform:translateY(10px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+.toast.out{opacity:0;transition:opacity .3s;}
 
-        .progress-track {
-            height: 4px;
-            background: var(--border);
-            border-radius: 99px;
-            overflow: hidden;
-            margin-bottom: 24px;
-        }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), #818cf8);
-            border-radius: 99px;
-            transition: width .5s cubic-bezier(.22,1,.36,1);
-        }
+/* ── referral / badges ── */
+.ref-box{background:var(--surface-2);border:1px solid var(--border-hi);padding:13px 18px;border-radius:12px;font-family:'Space Mono',monospace;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:2px;text-align:center;margin:12px 0;}
+.badge-row{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1px solid var(--border);padding:10px 14px;border-radius:12px;margin-bottom:8px;}
+.badge-ico{width:34px;height:34px;border-radius:9px;background:var(--warn-glow);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.badge-nm{font-weight:700;font-size:13px;}
+.badge-dt{font-size:11px;color:var(--text-3);}
 
-        .question-text {
-            font-family: 'DM Serif Display', serif;
-            font-size: 19px;
-            line-height: 1.5;
-            margin-bottom: 24px;
-            min-height: 80px;
-        }
-
-        .choices-list { display: flex; flex-direction: column; gap: 10px; }
-        .choice-btn {
-            width: 100%;
-            background: var(--surface);
-            border: 1.5px solid var(--border);
-            padding: 14px 18px;
-            border-radius: 14px;
-            text-align: left;
-            font-size: 14px;
-            color: var(--text);
-            font-weight: 500;
-            transition: all .18s cubic-bezier(.22,1,.36,1);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .choice-btn .choice-letter {
-            width: 28px; height: 28px;
-            border-radius: 8px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            flex-shrink: 0;
-            transition: all .18s;
-        }
-        .choice-btn:hover:not(:disabled) {
-            border-color: var(--border-glow);
-            background: var(--accent-glow);
-            transform: translateX(4px);
-        }
-        .choice-btn:hover:not(:disabled) .choice-letter {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-        .choice-btn.correct {
-            border-color: var(--success);
-            background: rgba(16,185,129,0.08);
-        }
-        .choice-btn.correct .choice-letter {
-            background: var(--success);
-            border-color: var(--success);
-            color: white;
-        }
-        .choice-btn.wrong {
-            border-color: var(--danger);
-            background: rgba(244,63,94,0.08);
-        }
-        .choice-btn.wrong .choice-letter {
-            background: var(--danger);
-            border-color: var(--danger);
-            color: white;
-        }
-
-        .quiz-actions {
-            display: flex; gap: 10px; margin-top: 20px;
-        }
-        .quiz-sub-actions {
-            display: flex; gap: 10px; margin-top: 10px;
-        }
-        .btn-danger-ghost {
-            flex: 1; background: transparent;
-            border: 1px solid rgba(244,63,94,0.2);
-            color: var(--danger); padding: 10px;
-            border-radius: 12px; font-size: 12px;
-        }
-        .btn-danger-ghost:hover { background: rgba(244,63,94,0.08); }
-        .btn-success-ghost {
-            flex: 1; background: transparent;
-            border: 1px solid rgba(16,185,129,0.2);
-            color: var(--success); padding: 10px;
-            border-radius: 12px; font-size: 12px;
-        }
-        .btn-success-ghost:hover { background: rgba(16,185,129,0.08); }
-
-        /* ─── REFLECTIVE: RESULTS SCREEN ─── */
-        .results-hero {
-            text-align: center;
-            padding: 32px 20px 24px;
-        }
-        .score-ring {
-            width: 120px; height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-        }
-        .score-ring svg {
-            position: absolute;
-            inset: 0;
-            transform: rotate(-90deg);
-        }
-        .score-ring-inner {
-            position: relative; z-index: 1;
-            text-align: center;
-        }
-        .score-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 28px;
-            font-weight: 700;
-        }
-        .score-label { font-size: 11px; color: var(--text-3); }
-        .results-message {
-            font-family: 'DM Serif Display', serif;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-        .results-sub { color: var(--text-2); font-size: 14px; margin-bottom: 24px; }
-        .xp-earned-banner {
-            display: inline-flex;
-            align-items: center; gap: 8px;
-            background: var(--accent-glow);
-            border: 1px solid var(--border-glow);
-            padding: 8px 18px;
-            border-radius: 99px;
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            color: var(--accent);
-            margin-bottom: 24px;
-        }
-
-        .review-item {
-            padding: 14px 16px;
-            border-radius: 12px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            margin-bottom: 10px;
-        }
-        .review-q { font-weight: 600; font-size: 14px; margin-bottom: 10px; }
-        .review-choice {
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            margin: 4px 0;
-            color: var(--text-2);
-        }
-        .review-choice.correct { background: rgba(16,185,129,0.1); color: var(--success); }
-        .review-choice.wrong { background: rgba(244,63,94,0.1); color: var(--danger); }
-
-        /* ─── MODAL ─── */
-        .modal-overlay {
-            position: fixed; inset: 0;
-            background: rgba(5,8,15,0.75);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
-            display: flex; align-items: center; justify-content: center;
-            padding: 20px;
-            opacity: 0; pointer-events: none;
-            transition: opacity .22s ease;
-        }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-box {
-            width: 100%; max-width: 520px;
-            background: var(--surface);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-            transform: scale(0.95);
-            transition: transform .25s cubic-bezier(.22,1,.36,1);
-        }
-        .modal-overlay.active .modal-box { transform: scale(1); }
-        .modal-top {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        .modal-title { font-family: 'DM Serif Display', serif; font-size: 22px; }
-        .modal-sub { font-size: 13px; color: var(--text-2); margin-top: 4px; }
-        .btn-icon {
-            width: 34px; height: 34px;
-            border-radius: 9px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px; color: var(--text-2);
-        }
-
-        /* ─── EXAM LIST ─── */
-        .exam-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 8px;
-            transition: all .18s;
-        }
-        .exam-item:hover { border-color: var(--border-glow); }
-        .exam-item.locked { opacity: 0.5; filter: grayscale(0.3); }
-        .exam-num { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: var(--accent); }
-        .exam-last { font-size: 11px; color: var(--text-3); margin-top: 3px; }
-        .btn-take {
-            padding: 8px 16px;
-            border-radius: 10px;
-            background: var(--accent-glow);
-            border: 1px solid var(--border-glow);
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: 700;
-        }
-        .btn-take:hover { background: var(--accent); color: white; }
-
-        /* ─── STATS ─── */
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 16px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 8px;
-        }
-        .stat-score { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--accent); }
-
-        /* ─── TOASTS ─── */
-        #toastZone {
-            position: fixed;
-            bottom: 24px; left: 50%;
-            transform: translateX(-50%);
-            z-index: 99999;
-            display: flex; flex-direction: column;
-            align-items: center; gap: 8px;
-        }
-        .toast {
-            background: var(--surface);
-            border: 1px solid var(--border-glow);
-            color: var(--text);
-            padding: 11px 20px;
-            border-radius: 99px;
-            font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            animation: toastIn .3s cubic-bezier(.22,1,.36,1);
-            display: flex; align-items: center; gap: 8px;
-            white-space: nowrap;
-        }
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateY(12px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .toast-fade { opacity: 0; transition: opacity .3s; }
-
-        /* ─── CONFETTI ─── */
-        .confetti-root {
-            position: fixed; inset: 0;
-            pointer-events: none; z-index: 9998;
-        }
-        .confetti-piece {
-            position: absolute;
-            border-radius: 4px;
-            opacity: 0.9;
-        }
-
-        /* ─── NAV ─── */
-        .back-row {
-            display: flex; align-items: center; gap: 10px;
-            margin-bottom: 18px;
-        }
-        .btn-back {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 8px 14px;
-            border-radius: 10px;
-            color: var(--text-2);
-            font-size: 13px;
-            display: flex; align-items: center; gap: 6px;
-        }
-        .btn-back:hover { color: var(--text); border-color: var(--border-glow); }
-
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 600px) {
-            .category-grid { grid-template-columns: repeat(2, 1fr); }
-            .plans-grid { flex-direction: column; }
-            .hud { flex-wrap: wrap; }
-            .hud-right { flex-wrap: wrap; }
-            .splash-title { font-size: 28px; }
-        }
-        @media (max-width: 380px) {
-            .category-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        /* PROGRESS BAR for quiz (top) */
-        #pBarWrap {
-            display: none;
-            height: 4px;
-            background: var(--border);
-            border-radius: 99px;
-            margin-bottom: 18px;
-            overflow: hidden;
-        }
-        #pBarFill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), #818cf8);
-            border-radius: 99px;
-            transition: width .5s cubic-bezier(.22,1,.36,1);
-            width: 0%;
-        }
-
-        .license-section {
-            margin-top: 16px;
-            padding: 16px;
-            background: var(--surface-2);
-            border-radius: 14px;
-            border: 1px solid var(--border);
-        }
-        .license-row { display: flex; gap: 10px; }
-        .license-row input {
-            flex: 1;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 11px 14px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-family: 'Space Mono', monospace;
-        }
-        .license-row input:focus { outline: none; border-color: var(--accent); }
-        .btn-activate {
-            padding: 11px 18px;
-            border-radius: 10px;
-            background: var(--accent);
-            color: white;
-            font-weight: 700;
-            font-size: 13px;
-            flex-shrink: 0;
-        }
-
-        /* PRO ACTIVE BADGE */
-        .pro-active-banner {
-            background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.08));
-            border: 1px solid rgba(16,185,129,0.25);
-            border-radius: 14px;
-            padding: 14px 18px;
-            display: flex; align-items: center; gap: 12px;
-            margin-bottom: 18px;
-        }
-        .pro-active-icon {
-            width: 38px; height: 38px;
-            border-radius: 10px;
-            background: rgba(16,185,129,0.15);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px; color: var(--success);
-        }
-        .pro-active-text { font-weight: 700; font-size: 14px; color: var(--success); }
-        .pro-active-sub { font-size: 12px; color: var(--text-3); }
-
-        /* Referral code box */
-        .ref-code-box {
-            background: var(--surface-2);
-            border: 1px solid var(--border-glow);
-            padding: 12px 18px;
-            border-radius: 12px;
-            font-family: 'Space Mono', monospace;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 2px;
-            text-align: center;
-        }
-
-        /* Badges */
-        .badge-pill {
-            display: flex; align-items: center; gap: 10px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            padding: 10px 14px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-        }
-        .badge-icon {
-            width: 34px; height: 34px;
-            border-radius: 9px;
-            background: var(--gold-glow);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 16px;
-        }
-        .badge-name { font-weight: 700; font-size: 13px; }
-        .badge-date { font-size: 11px; color: var(--text-3); }
-    </style>
+/* ── RESPONSIVE ── */
+@media(max-width:620px){
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .plans-row{flex-direction:column;}
+  .sp-title{font-size:32px;}
+  .hud-act{flex-wrap:wrap;}
+}
+@media(max-width:380px){
+  .sp-stats{flex-wrap:wrap;}
+  .sp-stat{flex:none;width:50%;}
+}
+</style>
 </head>
 <body data-theme="dark">
+<div class="app-wrap">
 
-<div class="app-shell">
-
-    <!-- HUD (always visible) -->
-    <div class="hud" id="hudEl" role="banner">
-        <div class="avatar" id="playerAvatar">MP</div>
-        <div class="player-info">
-            <div class="player-name user-greeting">Welcome, Guest</div>
-            <div class="player-meta">
-                <div class="level-badge" id="playerLevel">LV 1</div>
-                <div class="xp-track"><div class="xp-fill" id="xpFill"></div></div>
-                <div class="xp-label" id="playerXP">0 XP</div>
-            </div>
-        </div>
-        <div class="hud-right">
-            <button class="btn-ghost" id="refBtn" title="Referral">Refer</button>
-            <button class="btn-ghost" id="achBtn" title="Badges">🏅</button>
-            <button class="btn-gold" id="subscribeBtn">Pro · ₱299</button>
-        </div>
+<!-- ════ HUD ════ -->
+<div id="hud">
+  <div class="hud-av" id="hudAv">MP</div>
+  <div class="hud-inf">
+    <div class="hud-nm" id="hudNm">Guest</div>
+    <div class="hud-mt">
+      <div class="lv-chip" id="hudLv">LV 1</div>
+      <div class="xp-rail"><div class="xp-bar" id="hudXP"></div></div>
+      <div class="xp-num" id="hudXPN">0 XP</div>
     </div>
+  </div>
+  <div class="hud-act">
+    <button class="btn-ghost" id="btnRef">Refer</button>
+    <button class="btn-ghost" id="btnBadges">🏅</button>
+    <button class="btn-gold" id="btnSub">Pro · ₱299</button>
+  </div>
+</div>
+<div id="qpw"><div id="qpf"></div></div>
 
-    <!-- Progress Bar (quiz only) -->
-    <div id="pBarWrap"><div id="pBarFill"></div></div>
-
-    <!-- ━━━ SCREEN: AUTH ━━━ -->
-    <div id="authScreen" class="screen">
-        <div class="card" style="padding: 32px 28px; text-align: center;">
-            <div class="splash-icon"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
-            <div class="splash-eyebrow">The Ultimate Board Reviewer</div>
-            <h1 class="splash-title">Master Plumber<br>Reviewer</h1>
-            <p class="splash-sub">Pass the boards with confidence — adaptive practice, real exams, premium analytics.</p>
-
-            <!-- VISCERAL: trust signals trigger positive affect immediately -->
-            <div class="trust-strip">
-                <div class="trust-pill"><ion-icon name="people-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M402 168c-2.93 40.67-33.1 72-66 72s-63.12-31.32-66-72c-3-42.31 26.37-72 66-72s69 30.46 66 72z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M336 304c-65.17 0-127.84 32.37-143.54 95.41-2.08 8.34 3.15 16.59 11.72 16.59h263.65c8.57 0 13.77-8.25 11.72-16.59C463.85 335.36 401.18 304 336 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M200 185.94c-2.34 32.48-26.72 58.06-53 58.06s-50.7-25.57-53-58.06C91.61 152.15 115.34 128 147 128s55.39 24.77 53 57.94z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M206 306c-18.05-8.27-37.93-11.45-59-11.45-52 0-102.1 25.85-114.65 76.2-1.65 6.66 2.53 13.25 9.37 13.25H154" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> 4,200+ students</div>
-                <div class="trust-pill"><ion-icon name="star-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> 94% pass rate</div>
-                <div class="trust-pill"><ion-icon name="book-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> 60+ real exams</div>
-            </div>
-
-            <!-- Inputs -->
-            <div class="input-group" style="text-align:left;">
-                <label>Username</label>
-                <input type="text" id="username" placeholder="Enter your username" autocomplete="username">
-            </div>
-            <div class="input-group" style="text-align:left;">
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
-            </div>
-
-            <button class="btn-primary" onclick="handleAuth()">Sign In</button>
-
-            <div class="divider">or</div>
-
-            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-                <button class="btn-ghost" onclick="handleRegister()">Create Account</button>
-                <button class="btn-text" onclick="enterAsGuest()">Continue as Guest →</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: PAYMENT ━━━ -->
-    <div id="paymentScreen" class="screen">
-        <div class="back-row">
-            <button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
-        </div>
-
-        <div class="card">
-            <div class="payment-header">
-                <div class="icon-ring">🏆</div>
-                <h2 style="font-family:&#39;DM Serif Display&#39;,serif; font-size:24px; margin-bottom:6px;">Unlock Your Full Potential</h2>
-                <p style="font-size:14px; color:var(--text-2);">Everything you need to pass the board exam, in one place.</p>
-            </div>
-
-            <!-- BEHAVIORAL + REFLECTIVE: plan selection feels meaningful -->
-            <div class="plans-grid">
-                <div class="plan-card featured-plan" id="planLifetime" onclick="selectPlan(&#39;lifetime&#39;)">
-                    <div class="plan-badge">BEST VALUE</div>
-                    <div class="plan-name">Lifetime</div>
-                    <div class="plan-desc">One-time, forever</div>
-                    <div class="plan-price">₱299 <sub>one-time</sub></div>
-                    <div class="plan-features">
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All 60+ exams</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Offline access</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics &amp; stats</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> PDF downloads</div>
-                    </div>
-                </div>
-                <div class="plan-card" id="planMonthly" onclick="selectPlan(&#39;monthly&#39;)">
-                    <div class="plan-name">Monthly</div>
-                    <div class="plan-desc">Auto-renewing</div>
-                    <div class="plan-price">₱59 <sub>/mo</sub></div>
-                    <div class="plan-features">
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All exams</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Cancel anytime</div>
-                    </div>
-                </div>
-                <div class="plan-card" id="planProfessor" onclick="selectPlan(&#39;professor&#39;)">
-                    <div class="plan-name">Professor</div>
-                    <div class="plan-desc">Referral earnings</div>
-                    <div class="plan-price" style="font-size:18px;">30% <sub>per referral</sub></div>
-                    <div class="plan-features">
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Share your code</div>
-                        <div class="plan-feature"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Track earnings</div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-primary" id="buyBtn" onclick="doPurchase()">Unlock Lifetime for ₱299</button>
-
-            <div class="license-section">
-                <div style="font-size:13px; font-weight:700; margin-bottom:10px; color:var(--text-2);">Have a license key or referral code?</div>
-                <div class="license-row">
-                    <input type="text" id="licenseKey" placeholder="MP-XXXX-XXXX">
-                    <button class="btn-activate" onclick="verifyKey()">Activate</button>
-                </div>
-            </div>
-
-            <p style="font-size:12px; color:var(--text-3); text-align:center; margin-top:16px;">
-                🔒 Secure payment · 30-day satisfaction guarantee · Instant access
-            </p>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: HOME ━━━ -->
-    <div id="home" class="screen">
-        <div class="home-header">
-            <div>
-                <div class="greeting-small">Dashboard</div>
-                <div id="newStatus" style="font-size:13px; color:var(--text-3); margin-top:2px;">Free Member</div>
-            </div>
-            <div style="display:flex; gap:8px;">
-                <button class="btn-ghost" onclick="setScreen(&#39;stats&#39;)">Stats</button>
-                <button class="btn-ghost" onclick="toggleTheme()" title="Toggle theme"><ion-icon id="themeIcon" name="moon-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></button>
-                <button class="btn-ghost" onclick="logout()" style="color:var(--text-3); font-size:12px;">Sign Out</button>
-            </div>
-        </div>
-
-        <!-- REFLECTIVE: pro upgrade or active state -->
-        <div id="proCardCont"></div>
-
-        <div class="section-title">Exam Categories</div>
-        <div class="category-grid" role="list">
-            <div class="category-card" onclick="openExams(&#39;Plumbing Code&#39;)">
-                <div class="cat-icon"><ion-icon name="book-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Plumbing Code</div>
-                    <div class="cat-sub">Regulations &amp; theory</div>
-                </div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Plumbing Arithmetic&#39;)">
-                <div class="cat-icon"><ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Arithmetic</div>
-                    <div class="cat-sub">Speed rounds</div>
-                </div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Sanitation Plumbing Design and Installation&#39;)">
-                <div class="cat-icon"><ion-icon name="construct-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Sanitation &amp; Design</div>
-                    <div class="cat-sub">Design challenges</div>
-                </div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Practical Problems and Experiences&#39;)">
-                <div class="cat-icon"><ion-icon name="hammer-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M277.42 247a24.68 24.68 0 00-4.08-5.47L255 223.44a21.63 21.63 0 00-6.56-4.57 20.93 20.93 0 00-23.28 4.27c-6.36 6.26-18 17.68-39 38.43C146 301.3 71.43 367.89 37.71 396.29a16 16 0 00-1.09 23.54l39 39.43a16.13 16.13 0 0023.67-.89c29.24-34.37 96.3-109 136-148.23 20.39-20.06 31.82-31.58 38.29-37.94a21.76 21.76 0 003.84-25.2zM478.43 201l-34.31-34a5.44 5.44 0 00-4-1.59 5.59 5.59 0 00-4 1.59h0a11.41 11.41 0 01-9.55 3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86 1.09-20.36-5.07-29a242.88 242.88 0 00-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79 123.79 0 00-47-9.24c-26.35 0-46.61 11.76-54 18.51-5.88 5.32-12 13.77-12 13.77a91.29 91.29 0 0110.81-3.2 79.53 79.53 0 0123.28-1.49C241.19 76.8 259.94 84.1 270 92c16.21 13 23.18 30.39 24.27 52.83.8 16.69-15.23 37.76-30.44 54.94a7.85 7.85 0 00.4 10.83l21.24 21.23a8 8 0 0011.14.1c13.93-13.51 31.09-28.47 40.82-34.46s17.58-7.68 21.35-8.09a35.71 35.71 0 0121.3 4.62 13.65 13.65 0 013.08 2.38c6.46 6.56 6.07 17.28-.5 23.74l-2 1.89a5.5 5.5 0 000 7.84l34.31 34a5.5 5.5 0 004 1.58 5.65 5.65 0 004-1.58L478.43 209a5.82 5.82 0 000-8z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Practical Problems</div>
-                    <div class="cat-sub">Real case scenarios</div>
-                </div>
-            </div>
-            <div class="category-card" onclick="setScreen(&#39;subCategories&#39;)">
-                <div class="cat-icon"><ion-icon name="folder-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M440 432H72a40 40 0 01-40-40V120a40 40 0 0140-40h75.89a40 40 0 0122.19 6.72l27.84 18.56a40 40 0 0022.19 6.72H440a40 40 0 0140 40v240a40 40 0 01-40 40zM32 192h448" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Tools &amp; Diagrams</div>
-                    <div class="cat-sub">Mini quizzes</div>
-                </div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Random&#39;)">
-                <div class="cat-icon"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div>
-                    <div class="cat-name">Random Mix</div>
-                    <div class="cat-sub">All topics</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BEHAVIORAL: weekly challenges give dopamine targets -->
-        <div class="section-title" style="margin-top:8px; font-size:18px;">Weekly Challenges</div>
-        <div class="challenge-strip">
-            <div class="challenge-card featured">
-                <div style="font-size:11px; font-weight:700; letter-spacing:1px; opacity:0.8; text-transform:uppercase; margin-bottom:8px;">🔥 This Week</div>
-                <div style="font-weight:800; font-size:14px; margin-bottom:4px;">Sanitation Sprint</div>
-                <div style="font-size:12px; opacity:0.75;">Win badges &amp; bonus XP</div>
-            </div>
-            <div class="challenge-card">
-                <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--text-3); text-transform:uppercase; margin-bottom:8px;">Daily</div>
-                <div style="font-weight:800; font-size:14px; margin-bottom:4px;">10-Question Sprint</div>
-                <div style="font-size:12px; color:var(--text-2);">Build exam stamina</div>
-            </div>
-            <div class="challenge-card">
-                <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--text-3); text-transform:uppercase; margin-bottom:8px;">Goal</div>
-                <div style="font-weight:800; font-size:14px; margin-bottom:4px;">Perfect Score</div>
-                <div style="font-size:12px; color:var(--text-2);">Unlock elite badge</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: SUBCATEGORIES ━━━ -->
-    <div id="subCategories" class="screen">
-        <div class="back-row">
-            <button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
-            <span style="font-family:&#39;DM Serif Display&#39;,serif; font-size:18px;">Tools, Symbols &amp; Diagrams</span>
-        </div>
-        <div class="category-grid">
-            <div class="category-card" onclick="openExams(&#39;Tools&#39;)">
-                <div class="cat-icon"><ion-icon name="build-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M393.87 190a32.1 32.1 0 01-45.25 0l-26.57-26.57a32.09 32.09 0 010-45.26L382.19 58a1 1 0 00-.3-1.64c-38.82-16.64-89.15-8.16-121.11 23.57-30.58 30.35-32.32 76-21.12 115.84a31.93 31.93 0 01-9.06 32.08L64 380a48.17 48.17 0 1068 68l153.86-167a31.93 31.93 0 0131.6-9.13c39.54 10.59 84.54 8.6 114.72-21.19 32.49-32 39.5-88.56 23.75-120.93a1 1 0 00-1.6-.26z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="96" cy="416" r="16"></circle></svg></div></template></ion-icon></div>
-                <div><div class="cat-name">Tools</div></div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Symbols&#39;)">
-                <div class="cat-icon"><ion-icon name="git-branch-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><circle cx="160" cy="96" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><circle cx="160" cy="416" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M160 368V144" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="352" cy="160" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path d="M352 208c0 128-192 48-192 160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div><div class="cat-name">Symbols</div></div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Diagrams&#39;)">
-                <div class="cat-icon"><ion-icon name="map-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M313.27 124.64L198.73 51.36a32 32 0 00-29.28.35L56.51 127.49A16 16 0 0048 141.63v295.8a16 16 0 0023.49 14.14l97.82-63.79a32 32 0 0129.5-.24l111.86 73a32 32 0 0029.27-.11l115.43-75.94a16 16 0 008.63-14.2V74.57a16 16 0 00-23.49-14.14l-98 63.86a32 32 0 01-29.24.35zM328 128v336M184 48v336" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div><div class="cat-name">Diagrams</div></div>
-            </div>
-            <div class="category-card" onclick="openExams(&#39;Random&#39;)">
-                <div class="cat-icon"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-                <div><div class="cat-name">Random</div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: EXAMS LIST ━━━ -->
-    <div id="exams" class="screen">
-        <div class="back-row">
-            <button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button>
-            <span id="catTitle" style="font-family:&#39;DM Serif Display&#39;,serif; font-size:18px;"></span>
-        </div>
-        <div id="examGrid" style="max-height:480px; overflow-y:auto; padding-right:4px;"></div>
-    </div>
-
-    <!-- ━━━ SCREEN: QUIZ ━━━ -->
-    <div id="quiz" class="screen">
-        <div class="card">
-            <div class="quiz-topbar">
-                <div class="q-counter" id="qNum">QUESTION 1 OF 50</div>
-                <div class="score-pill" id="scoreBox">0 / 0</div>
-            </div>
-            <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
-            <div class="question-text" id="qTxt"></div>
-            <div class="choices-list" id="choices"></div>
-            <div class="quiz-actions">
-                <button class="btn-ghost" onclick="prevQ()" style="flex:1; padding:13px;">← Back</button>
-                <button class="btn-primary" onclick="handleNextLogic()" style="flex:2;">Next →</button>
-            </div>
-            <div class="quiz-sub-actions">
-                <button class="btn-danger-ghost" onclick="quitQuiz()">Quit Exam</button>
-                <button class="btn-success-ghost" onclick="finishExamEarly()">Finish Early</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: RESULTS ━━━ -->
-    <div id="results" class="screen">
-        <div class="card">
-            <div class="results-hero">
-                <!-- REFLECTIVE: score ring gives sense of achievement / identity -->
-                <div class="score-ring" id="scoreRing">
-                    <svg viewBox="0 0 120 120" fill="none">
-                        <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,0.05)" stroke-width="8"></circle>
-                        <circle cx="60" cy="60" r="52" id="scoreArc" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" style="transition: stroke-dashoffset 1.2s cubic-bezier(.22,1,.36,1);"></circle>
-                    </svg>
-                    <div class="score-ring-inner">
-                        <div class="score-number" id="scoreNumber">0/0</div>
-                        <div class="score-label">SCORE</div>
-                    </div>
-                </div>
-                <div class="results-message" id="resultsMessage">Good effort!</div>
-                <div class="results-sub" id="resultsSub">Keep practicing to improve your board exam readiness.</div>
-                <div class="xp-earned-banner" id="xpEarnedBanner">⚡ +0 XP earned</div>
-            </div>
-
-            <div style="max-height:360px; overflow-y:auto; padding-right:4px;" id="revScroll"></div>
-
-            <div style="display:flex; gap:10px; margin-top:20px;">
-                <button class="btn-ghost" onclick="setScreen(&#39;exams&#39;)" style="flex:1; padding:13px;">Try Again</button>
-                <button class="btn-primary" onclick="setScreen(&#39;home&#39;)" style="flex:2;">Back Home</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ━━━ SCREEN: STATS ━━━ -->
-    <div id="stats" class="screen">
-        <div class="back-row">
-            <button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button>
-            <span style="font-family:&#39;DM Serif Display&#39;,serif; font-size:18px;">My Exam Records</span>
-        </div>
-        <div id="statsContent"></div>
-    </div>
-
-</div><!-- .app-shell -->
-
-<!-- MODAL -->
-<div id="modalRoot" class="modal-overlay" aria-hidden="true">
-    <div class="modal-box">
-        <div class="modal-top">
-            <div>
-                <div class="modal-title" id="modalTitle">Premium</div>
-                <div class="modal-sub" id="modalSubtitle"></div>
-            </div>
-            <button class="btn-icon" id="closeModal">✕</button>
-        </div>
-        <div id="modalContent"></div>
-    </div>
+<!-- ════════════════════════════════════════
+     SCREEN 1: SPLASH
+     ════════════════════════════════════════ -->
+<div id="splashScreen" class="screen">
+  <div class="sp-logo"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
+  <div class="sp-eyebrow">The Ultimate Board Reviewer</div>
+  <h1 class="sp-title">Master Plumber<br>Reviewer</h1>
+  <p class="sp-sub">Adaptive practice, 60+ real board exams, and premium analytics — everything you need to pass with confidence.</p>
+  <div class="sp-stats">
+    <div class="sp-stat"><div class="sp-stat-n">4,200+</div><div class="sp-stat-l">Students</div></div>
+    <div class="sp-stat"><div class="sp-stat-n">94%</div><div class="sp-stat-l">Pass Rate</div></div>
+    <div class="sp-stat"><div class="sp-stat-n">60+</div><div class="sp-stat-l">Real Exams</div></div>
+  </div>
+  <div class="sp-actions">
+    <button class="btn-primary" onclick="setScreen(&#39;signInScreen&#39;)">Sign In to Your Account</button>
+    <button class="btn-outline" onclick="setScreen(&#39;signUpScreen&#39;)">Create a Free Account</button>
+    <button class="btn-text" onclick="enterAsGuest()">Continue as Guest →</button>
+  </div>
 </div>
 
-<!-- TOASTS -->
-<div id="toastZone"></div>
+<!-- ════════════════════════════════════════
+     SCREEN 2: SIGN IN
+     ════════════════════════════════════════ -->
+<div id="signInScreen" class="screen">
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <div class="auth-icon"><ion-icon name="log-in-outline" style="color:var(--accent);font-size:22px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M288 336l80-80-80-80M80 256h272" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+      <div class="auth-title">Welcome back</div>
+      <div class="auth-sub">Sign in to continue your review journey.</div>
+      <div class="field"><label>Username</label><input type="text" id="siUser" placeholder="Your username" autocomplete="username"></div>
+      <div class="field"><label>Password</label><input type="password" id="siPass" placeholder="Your password" autocomplete="current-password"></div>
+      <button class="btn-primary" onclick="handleSignIn()" style="margin-top:4px;">Sign In</button>
+      <div class="divider">or</div>
+      <button class="btn-outline" onclick="enterAsGuest()">Continue as Guest</button>
+      <div class="auth-foot">
+        Don't have an account?
+        <button class="btn-text" onclick="setScreen(&#39;signUpScreen&#39;)">Create one →</button>
+      </div>
+      <div style="margin-top:10px;text-align:center;">
+        <button class="btn-text" onclick="setScreen(&#39;splashScreen&#39;)" style="color:var(--text-3);font-size:12px;">← Back to home</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 3: SIGN UP
+     ════════════════════════════════════════ -->
+<div id="signUpScreen" class="screen">
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <div class="auth-icon"><ion-icon name="person-add-outline" style="color:var(--accent);font-size:22px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M376 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M288 304c-87 0-175.3 48-191.64 138.6-2 10.92 4.21 21.4 15.65 21.4H464c11.44 0 17.62-10.48 15.65-21.4C463.3 352 375 304 288 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M88 176v112M144 232H32" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+      <div class="auth-title">Create your account</div>
+      <div class="auth-sub">Join 4,200+ students already studying with us.</div>
+      <div class="field"><label>Username</label><input type="text" id="suUser" placeholder="Choose a username" autocomplete="username"></div>
+      <div class="field"><label>Password</label><input type="password" id="suPass" placeholder="Create a password" autocomplete="new-password"></div>
+      <div class="field"><label>Confirm Password</label><input type="password" id="suConf" placeholder="Repeat your password" autocomplete="new-password"></div>
+      <button class="btn-primary" onclick="handleSignUp()" style="margin-top:4px;">Create Account</button>
+      <div class="auth-foot">
+        Already have an account?
+        <button class="btn-text" onclick="setScreen(&#39;signInScreen&#39;)">Sign in →</button>
+      </div>
+      <div style="margin-top:10px;text-align:center;">
+        <button class="btn-text" onclick="setScreen(&#39;splashScreen&#39;)" style="color:var(--text-3);font-size:12px;">← Back to home</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 4: HOME DASHBOARD
+     ════════════════════════════════════════ -->
+<div id="home" class="screen">
+  <div class="home-bar">
+    <div class="home-greet">
+      <small id="greetLbl">Good morning,</small>
+      <span id="greetNm">Friend</span>
+    </div>
+    <div class="home-ctrls">
+      <button class="btn-ghost" onclick="setScreen(&#39;stats&#39;)">Stats</button>
+      <button class="btn-ghost" onclick="toggleTheme()"><ion-icon id="themeIcon" name="moon-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></button>
+      <button class="btn-ghost" onclick="doLogout()" style="color:var(--text-3);">Sign Out</button>
+    </div>
+  </div>
+
+  <div id="proArea"></div>
+
+  <div class="sec-head">Exam Categories</div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="openExams(&#39;Plumbing Code&#39;)"><div class="cat-ico"><ion-icon name="book-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Plumbing Code</div><div class="cat-sb">Regulations &amp; theory</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Plumbing Arithmetic&#39;)"><div class="cat-ico"><ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon></div><div><div class="cat-nm">Arithmetic</div><div class="cat-sb">Speed rounds</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Sanitation Plumbing Design and Installation&#39;)"><div class="cat-ico"><ion-icon name="construct-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Sanitation &amp; Design</div><div class="cat-sb">Design challenges</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Practical Problems and Experiences&#39;)"><div class="cat-ico"><ion-icon name="hammer-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M277.42 247a24.68 24.68 0 00-4.08-5.47L255 223.44a21.63 21.63 0 00-6.56-4.57 20.93 20.93 0 00-23.28 4.27c-6.36 6.26-18 17.68-39 38.43C146 301.3 71.43 367.89 37.71 396.29a16 16 0 00-1.09 23.54l39 39.43a16.13 16.13 0 0023.67-.89c29.24-34.37 96.3-109 136-148.23 20.39-20.06 31.82-31.58 38.29-37.94a21.76 21.76 0 003.84-25.2zM478.43 201l-34.31-34a5.44 5.44 0 00-4-1.59 5.59 5.59 0 00-4 1.59h0a11.41 11.41 0 01-9.55 3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86 1.09-20.36-5.07-29a242.88 242.88 0 00-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79 123.79 0 00-47-9.24c-26.35 0-46.61 11.76-54 18.51-5.88 5.32-12 13.77-12 13.77a91.29 91.29 0 0110.81-3.2 79.53 79.53 0 0123.28-1.49C241.19 76.8 259.94 84.1 270 92c16.21 13 23.18 30.39 24.27 52.83.8 16.69-15.23 37.76-30.44 54.94a7.85 7.85 0 00.4 10.83l21.24 21.23a8 8 0 0011.14.1c13.93-13.51 31.09-28.47 40.82-34.46s17.58-7.68 21.35-8.09a35.71 35.71 0 0121.3 4.62 13.65 13.65 0 013.08 2.38c6.46 6.56 6.07 17.28-.5 23.74l-2 1.89a5.5 5.5 0 000 7.84l34.31 34a5.5 5.5 0 004 1.58 5.65 5.65 0 004-1.58L478.43 209a5.82 5.82 0 000-8z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Practical Problems</div><div class="cat-sb">Real case scenarios</div></div></div>
+    <div class="cat-card" onclick="setScreen(&#39;subCats&#39;)"><div class="cat-ico"><ion-icon name="folder-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M440 432H72a40 40 0 01-40-40V120a40 40 0 0140-40h75.89a40 40 0 0122.19 6.72l27.84 18.56a40 40 0 0022.19 6.72H440a40 40 0 0140 40v240a40 40 0 01-40 40zM32 192h448" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Tools &amp; Diagrams</div><div class="cat-sb">Mini quizzes</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Random&#39;)"><div class="cat-ico"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Random Mix</div><div class="cat-sb">All topics</div></div></div>
+  </div>
+
+  <div class="sec-head" style="font-size:18px;">Weekly Challenges</div>
+  <div class="ch-strip">
+    <div class="ch-chip hot"><div class="ch-lbl">🔥 This Week</div><div class="ch-title">Sanitation Sprint</div><div class="ch-sub" style="color:rgba(255,255,255,.75);">Win badges &amp; bonus XP</div></div>
+    <div class="ch-chip"><div class="ch-lbl">Daily</div><div class="ch-title">10-Question Sprint</div><div class="ch-sub">Build exam stamina</div></div>
+    <div class="ch-chip"><div class="ch-lbl">Goal</div><div class="ch-title">Perfect Score</div><div class="ch-sub">Unlock elite badge</div></div>
+    <div class="ch-chip"><div class="ch-lbl">Streak</div><div class="ch-title">7-Day Study</div><div class="ch-sub">Consistency badge</div></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 5: SUBCATEGORIES
+     ════════════════════════════════════════ -->
+<div id="subCats" class="screen">
+  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button><span class="scr-title">Tools, Symbols &amp; Diagrams</span></div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="openExams(&#39;Tools&#39;)"><div class="cat-ico"><ion-icon name="build-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M393.87 190a32.1 32.1 0 01-45.25 0l-26.57-26.57a32.09 32.09 0 010-45.26L382.19 58a1 1 0 00-.3-1.64c-38.82-16.64-89.15-8.16-121.11 23.57-30.58 30.35-32.32 76-21.12 115.84a31.93 31.93 0 01-9.06 32.08L64 380a48.17 48.17 0 1068 68l153.86-167a31.93 31.93 0 0131.6-9.13c39.54 10.59 84.54 8.6 114.72-21.19 32.49-32 39.5-88.56 23.75-120.93a1 1 0 00-1.6-.26z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="96" cy="416" r="16"></circle></svg></div></template></ion-icon></div><div><div class="cat-nm">Tools</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Symbols&#39;)"><div class="cat-ico"><ion-icon name="git-branch-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><circle cx="160" cy="96" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><circle cx="160" cy="416" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M160 368V144" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="352" cy="160" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path d="M352 208c0 128-192 48-192 160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Symbols</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Diagrams&#39;)"><div class="cat-ico"><ion-icon name="map-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M313.27 124.64L198.73 51.36a32 32 0 00-29.28.35L56.51 127.49A16 16 0 0048 141.63v295.8a16 16 0 0023.49 14.14l97.82-63.79a32 32 0 0129.5-.24l111.86 73a32 32 0 0029.27-.11l115.43-75.94a16 16 0 008.63-14.2V74.57a16 16 0 00-23.49-14.14l-98 63.86a32 32 0 01-29.24.35zM328 128v336M184 48v336" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Diagrams</div></div></div>
+    <div class="cat-card" onclick="openExams(&#39;Random&#39;)"><div class="cat-ico"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Random</div></div></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 6: PAYMENT
+     ════════════════════════════════════════ -->
+<div id="paymentScreen" class="screen">
+  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button></div>
+  <div class="card">
+    <div class="pay-head">
+      <div class="pay-ico">🏆</div>
+      <div class="pay-title">Unlock Your Full Potential</div>
+      <div class="pay-sub">Everything you need to pass the board — pay once, study forever.</div>
+    </div>
+    <div class="plans-row">
+      <div class="plan-card gold-plan" id="planLifetime" onclick="selectPlan(&#39;lifetime&#39;)">
+        <div class="plan-badge">BEST VALUE</div>
+        <div class="plan-nm">Lifetime</div><div class="plan-desc">One-time · Forever</div>
+        <div class="plan-price">₱299 <sub>one-time</sub></div>
+        <div class="plan-feats">
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All 60+ exams</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> PDF downloads</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics &amp; stats</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Offline access</div>
+        </div>
+      </div>
+      <div class="plan-card" id="planMonthly" onclick="selectPlan(&#39;monthly&#39;)">
+        <div class="plan-nm">Monthly</div><div class="plan-desc">Auto-renewing</div>
+        <div class="plan-price">₱59 <sub>/mo</sub></div>
+        <div class="plan-feats">
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All exams</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Cancel anytime</div>
+        </div>
+      </div>
+      <div class="plan-card" id="planProfessor" onclick="selectPlan(&#39;professor&#39;)">
+        <div class="plan-nm">Professor</div><div class="plan-desc">Referral earnings</div>
+        <div class="plan-price" style="font-size:17px;">30% <sub>per referral</sub></div>
+        <div class="plan-feats">
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Your own code</div>
+          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Track earnings</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-primary" id="buyBtn" onclick="doPurchase()">Unlock Lifetime for ₱299</button>
+    <div class="key-sec">
+      <div class="key-lbl">Have a license key or referral code?</div>
+      <div class="key-row"><input type="text" id="licenseKey" placeholder="MP-XXXX-XXXX"><button class="btn-act" onclick="verifyKey()">Activate</button></div>
+    </div>
+    <div class="pay-trust">🔒 Secure payment · 30-day guarantee · Instant access</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 7: EXAM LIST
+     ════════════════════════════════════════ -->
+<div id="exams" class="screen">
+  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button><span class="scr-title" id="catTitle"></span></div>
+  <div id="examGrid" style="max-height:520px;overflow-y:auto;padding-right:4px;"></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 8: QUIZ
+     ════════════════════════════════════════ -->
+<div id="quiz" class="screen">
+  <div class="card">
+    <div class="q-topbar"><div class="q-lbl" id="qNum">QUESTION 1 OF 50</div><div class="score-chip" id="scoreBox">0 / 0</div></div>
+    <div class="prog-rail"><div class="prog-fill" id="progressBar"></div></div>
+    <div class="q-text" id="qTxt"></div>
+    <div class="choices" id="choices"></div>
+    <div class="q-nav">
+      <button class="btn-ghost" onclick="prevQ()" style="flex:1;padding:13px;">← Back</button>
+      <button class="btn-primary" onclick="handleNextLogic()" style="flex:2;">Next →</button>
+    </div>
+    <div class="q-sub">
+      <button class="btn-quit" onclick="quitQuiz()">Quit Exam</button>
+      <button class="btn-fin" onclick="finishExamEarly()">Finish Early</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 9: RESULTS
+     ════════════════════════════════════════ -->
+<div id="results" class="screen">
+  <div class="card">
+    <div class="res-hero">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 128 128" fill="none">
+          <circle cx="64" cy="64" r="56" stroke="rgba(255,255,255,0.05)" stroke-width="9"></circle>
+          <circle cx="64" cy="64" r="56" id="scoreArc" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9" style="transition:stroke-dashoffset 1.3s cubic-bezier(.22,1,.36,1);"></circle>
+        </svg>
+        <div class="ring-inner"><div class="ring-num" id="scoreNum">0/0</div><div class="ring-lbl">SCORE</div></div>
+      </div>
+      <div class="res-hl" id="resHl">Good effort!</div>
+      <div class="res-bd" id="resBd">Keep reviewing — you're getting closer.</div>
+      <div class="xp-pill" id="xpPill">⚡ +0 XP earned</div>
+    </div>
+    <div style="max-height:360px;overflow-y:auto;padding-right:4px;" id="revScroll"></div>
+    <div class="res-acts">
+      <button class="btn-ghost" onclick="setScreen(&#39;exams&#39;)" style="flex:1;padding:13px;">Try Again</button>
+      <button class="btn-primary" onclick="setScreen(&#39;home&#39;)" style="flex:2;">Back Home</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 10: STATS
+     ════════════════════════════════════════ -->
+<div id="stats" class="screen">
+  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button><span class="scr-title">My Exam Records</span></div>
+  <div id="statsContent"></div>
+</div>
+
+</div><!-- .app-wrap -->
+
+<!-- ════ MODAL ════ -->
+<div id="mo" class="mo" aria-hidden="true">
+  <div class="mo-box">
+    <div class="mo-head">
+      <div><div class="mo-title" id="moTitle">—</div><div class="mo-sub" id="moSub"></div></div>
+      <button class="btn-icon" id="btnCloseMo">✕</button>
+    </div>
+    <div id="moBody"></div>
+  </div>
+</div>
+
+<!-- ════ TOASTS ════ -->
+<div id="toasts"></div>
 
 <script type="module">
-    import { arithmeticDB } from './arithmetic.js';
-    import { codeDB } from './code.js';
-    import { designDB } from './design.js';
-    import { practicalDB } from './practical.js';
-    import { toolsDB } from './tools.js';
-    import { symbolsDB } from './symbols.js';
-    import { diagramsDB } from './diagrams.js';
-    import { randomDB } from './random.js';
+import { arithmeticDB } from './arithmetic.js';
+import { codeDB }       from './code.js';
+import { designDB }     from './design.js';
+import { practicalDB }  from './practical.js';
+import { toolsDB }      from './tools.js';
+import { symbolsDB }    from './symbols.js';
+import { diagramsDB }   from './diagrams.js';
+import { randomDB }     from './random.js';
 
-    const DB = {
-        "Plumbing Arithmetic": arithmeticDB,
-        "Plumbing Code": codeDB,
-        "Sanitation Plumbing Design and Installation": designDB,
-        "Practical Problems and Experiences": practicalDB,
-        "Tools": toolsDB,
-        "Symbols": symbolsDB,
-        "Diagrams": diagramsDB,
-        "Random": randomDB
-    };
+const DB = {
+  'Plumbing Arithmetic': arithmeticDB,
+  'Plumbing Code': codeDB,
+  'Sanitation Plumbing Design and Installation': designDB,
+  'Practical Problems and Experiences': practicalDB,
+  Tools: toolsDB, Symbols: symbolsDB, Diagrams: diagramsDB, Random: randomDB,
+};
 
-    let currentUser = null, isPaid = false, currentCat, curIdx = 0, currentQs = [], answers = [], score = 0;
-    let currentExamIdx = null;
-    let selectedPlan = 'lifetime';
-    const MASTER_KEY = "MP-MASTER-2024";
-    const STATS_KEY = 'mp_stats';
-    const PLAYER_KEY = 'mp_player_v2';
+/* ── STATE ── */
+let user=null, paid=false;
+let cat, examIdx, idx=0, qs=[], ans=[], score=0, selPlan='lifetime';
+const MK='MP-MASTER-2024', SK='mp_stats_v2', PK='mp_player_v2', UK='mp_users';
 
-    // ── PERSISTENCE ──
-    function getAllStats(){ return JSON.parse(localStorage.getItem(STATS_KEY) || '{}'); }
-    function saveAllStats(obj){ localStorage.setItem(STATS_KEY, JSON.stringify(obj)); }
-    function getUserKey(){ return currentUser || 'Guest'; }
-    function getLatestExamRecord(user, cat, exam){ const all=getAllStats(); const arr=(all[user]||[]).filter(r=>r.cat===cat&&r.exam===exam); return arr.length?arr[arr.length-1]:null; }
-    function saveExamResult(){ if(!currentCat||!currentExamIdx||!currentQs||currentQs.length===0)return; const user=getUserKey(); const rec={cat:currentCat,exam:currentExamIdx,score,total:currentQs.length,date:new Date().toISOString()}; const all=getAllStats(); const arr=all[user]||[]; const filtered=arr.filter(r=>!(r.cat===rec.cat&&r.exam===rec.exam)); filtered.push(rec); all[user]=filtered; saveAllStats(all); }
+/* ── STORAGE ── */
+const getU=()=>JSON.parse(localStorage.getItem(UK)||'[]');
+const saveU=a=>localStorage.setItem(UK,JSON.stringify(a));
+const getStats=()=>JSON.parse(localStorage.getItem(SK)||'{}');
+const saveStats=o=>localStorage.setItem(SK,JSON.stringify(o));
+const ukey=()=>user||'Guest';
 
-    function loadPlayerStore(){ const store=JSON.parse(localStorage.getItem(PLAYER_KEY)||'{}'); const u=getUserKey(); if(!store[u]){store[u]={xp:0,level:1,coins:0,badges:[],referrals:{code:null,earnings:0,referred:[]},lastActive:null};localStorage.setItem(PLAYER_KEY,JSON.stringify(store));} return store; }
-    function savePlayerStore(store){ localStorage.setItem(PLAYER_KEY, JSON.stringify(store)); }
+function loadPS(){
+  const s=JSON.parse(localStorage.getItem(PK)||'{}'),u=ukey();
+  if(!s[u])s[u]={xp:0,level:1,coins:0,badges:[],referrals:{code:null,earnings:0,referred:[]},lastActive:null};
+  localStorage.setItem(PK,JSON.stringify(s));return s;
+}
+function savePS(s){localStorage.setItem(PK,JSON.stringify(s));}
 
-    // ── PLAN SELECTION ──
-    window.selectPlan = (plan) => {
-        selectedPlan = plan;
-        document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
-        document.getElementById('plan' + plan.charAt(0).toUpperCase() + plan.slice(1))?.classList.add('selected');
-        const labels = { lifetime: 'Unlock Lifetime for ₱299', monthly: 'Start Monthly Plan — ₱59/mo', professor: 'Open Referral Program' };
-        document.getElementById('buyBtn').textContent = labels[plan] || 'Continue';
-    };
-    // default selection
-    setTimeout(() => window.selectPlan('lifetime'), 100);
+function saveRes(){
+  if(!cat||!examIdx||!qs.length)return;
+  const k=ukey(),all=getStats(),arr=all[k]||[];
+  const rec={cat,exam:examIdx,score,total:qs.length,date:new Date().toISOString()};
+  const f=arr.filter(r=>!(r.cat===rec.cat&&r.exam===rec.exam));
+  f.push(rec);all[k]=f;saveStats(all);
+}
+function getLast(u,c,e){
+  const arr=(getStats()[u]||[]).filter(r=>r.cat===c&&r.exam===e);
+  return arr.length?arr[arr.length-1]:null;
+}
 
-    window.doPurchase = () => {
-        if(selectedPlan === 'professor') { openReferralPanel(); return; }
-        subscribe(selectedPlan);
-        setScreen('home');
-    };
+/* ── SCREEN MANAGER ── */
+const AUTH=['splashScreen','signInScreen','signUpScreen'];
+window.setScreen=id=>{
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id)?.classList.add('active');
+  const isAuth=AUTH.includes(id);
+  document.getElementById('hud').classList.toggle('visible',!isAuth);
+  document.getElementById('qpw').style.display=(id==='quiz')?'block':'none';
+  if(id==='stats')renderStats();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
 
-    // ── THEME ──
-    window.toggleTheme = () => {
-        const b = document.body;
-        const isL = b.getAttribute('data-theme') === 'light';
-        b.setAttribute('data-theme', isL ? 'dark' : 'light');
-        document.getElementById('themeIcon').setAttribute('name', isL ? 'moon-outline' : 'sunny-outline');
-    };
+/* ── GREETING ── */
+function greet(){const h=new Date().getHours();return h<12?'Good morning,':h<17?'Good afternoon,':'Good evening,';}
 
-    // ── AUTH ──
-    window.enterAsGuest = () => { currentUser = "Guest"; isPaid = false; updateHomeUI(); setScreen('home'); };
-    window.handleAuth = () => {
-        const u = document.getElementById('username').value.trim();
-        const p = document.getElementById('password').value.trim();
-        if(!u || !p) { showToast('⚠️ Please fill in all fields'); return; }
-        let users = JSON.parse(localStorage.getItem('mp_users') || '[]');
-        let user = users.find(x => x.u === u);
-        if(!user) { showToast('❌ Account not found'); return; }
-        if(user.p !== p) { showToast('❌ Wrong password'); return; }
-        currentUser = user.u; isPaid = user.paid;
-        updateHomeUI(); setScreen('home');
-        showToast(`👋 Welcome back, ${currentUser}!`);
-    };
-    window.handleRegister = () => {
-        const u = document.getElementById('username').value.trim();
-        const p = document.getElementById('password').value.trim();
-        if(!u || !p) { showToast('⚠️ Please enter your credentials'); return; }
-        let users = JSON.parse(localStorage.getItem('mp_users') || '[]');
-        if(users.find(x => x.u === u)) { showToast('❌ Username already taken'); return; }
-        users.push({ u, p, paid: false });
-        localStorage.setItem('mp_users', JSON.stringify(users));
-        currentUser = u; isPaid = false;
-        updateHomeUI(); setScreen('home');
-        smallConfetti();
-        showToast(`🎉 Account created! Welcome, ${u}!`);
-    };
-    window.logout = () => location.reload();
+/* ── AUTH ── */
+window.enterAsGuest=()=>{user='Guest';paid=false;afterLogin();};
+window.handleSignIn=()=>{
+  const u=document.getElementById('siUser').value.trim();
+  const p=document.getElementById('siPass').value.trim();
+  if(!u||!p){toast('⚠️ Please fill in all fields');return;}
+  const users=getU(),found=users.find(x=>x.u===u);
+  if(!found){toast('❌ Account not found');return;}
+  if(found.p!==p){toast('❌ Incorrect password');return;}
+  user=found.u;paid=!!found.paid;afterLogin();
+  toast(`👋 Welcome back, ${user}!`);
+};
+window.handleSignUp=()=>{
+  const u=document.getElementById('suUser').value.trim();
+  const p=document.getElementById('suPass').value.trim();
+  const c=document.getElementById('suConf').value.trim();
+  if(!u||!p){toast('⚠️ Please fill in all fields');return;}
+  if(p!==c){toast('❌ Passwords do not match');return;}
+  if(u.length<3){toast('⚠️ Username must be 3+ characters');return;}
+  const users=getU();
+  if(users.find(x=>x.u===u)){toast('❌ Username already taken');return;}
+  users.push({u,p,paid:false});saveU(users);
+  user=u;paid=false;afterLogin();
+  smallConfetti();toast(`🎉 Account created! Welcome, ${user}!`);
+};
+window.doLogout=()=>{user=null;paid=false;setScreen('splashScreen');};
 
-    // ── HOME UI ──
-    function updateHomeUI() {
-        document.querySelector('.user-greeting').textContent = currentUser || 'Guest';
-        const status = document.getElementById('newStatus');
-        const card = document.getElementById('proCardCont');
-        if(isPaid) {
-            status.textContent = '⭐ Pro Member';
-            status.style.color = 'var(--success)';
-            card.innerHTML = `
-                <div class="pro-active-banner">
-                    <div class="pro-active-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
-                    <div>
-                        <div class="pro-active-text">Full Access Active</div>
-                        <div class="pro-active-sub">All 60+ exams & analytics unlocked</div>
-                    </div>
-                </div>`;
-        } else {
-            status.textContent = 'Free Member';
-            status.style.color = 'var(--text-3)';
-            card.innerHTML = `
-                <div class="pro-card" style="margin-bottom:18px;">
-                    <div class="pro-card-label">🔓 Limited Time Offer</div>
-                    <div class="pro-card-title">Unlock Lifetime Pro</div>
-                    <div class="pro-card-sub">Access all 60+ exams, analytics, and downloadable PDFs — pay once, study forever.</div>
-                    <div class="pro-card-row">
-                        <div class="pro-price">₱299 <span>one-time</span></div>
-                        <button class="btn-gold" onclick="setScreen('paymentScreen')">Upgrade Now →</button>
-                    </div>
-                </div>`;
-        }
-        updatePlayerHUD();
+function afterLogin(){updateHUD();updateHome();setScreen('home');}
+
+/* ── HOME ── */
+function updateHome(){
+  const nm=user==='Guest'?'Guest':user;
+  document.getElementById('greetLbl').textContent=greet();
+  document.getElementById('greetNm').textContent=nm;
+  const area=document.getElementById('proArea');
+  if(paid){
+    area.innerHTML=`<div class="pro-active"><div class="pa-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div><div><div class="pa-title">Full Access Active</div><div class="pa-sub">All 60+ exams &amp; analytics unlocked — lifetime access</div></div></div>`;
+  }else{
+    area.innerHTML=`<div class="pro-card"><div class="pc-ey">🔓 Limited Offer</div><div class="pc-title">Unlock Lifetime Pro</div><div class="pc-body">Access all 60+ exams, analytics &amp; PDF downloads — pay once, review forever.</div><div class="pc-row"><div class="pc-price">₱299 <span>one-time</span></div><button class="btn-gold" onclick="setScreen('paymentScreen')">Upgrade Now →</button></div></div>`;
+  }
+}
+
+/* ── HUD ── */
+function updateHUD(){
+  const u=ukey(),s=loadPS()[u]||{xp:0,level:1};
+  document.getElementById('hudAv').textContent=u==='Guest'?'G':u.charAt(0).toUpperCase();
+  document.getElementById('hudNm').textContent=u==='Guest'?'Guest':u;
+  document.getElementById('hudLv').textContent=`LV ${s.level||1}`;
+  document.getElementById('hudXPN').textContent=`${s.xp||0} XP`;
+  document.getElementById('hudXP').style.width=Math.min(100,(s.xp||0)%100)+'%';
+}
+
+/* ── PLAN ── */
+window.selectPlan=plan=>{
+  selPlan=plan;
+  document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
+  const ids={lifetime:'planLifetime',monthly:'planMonthly',professor:'planProfessor'};
+  document.getElementById(ids[plan])?.classList.add('selected');
+  const lbls={lifetime:'Unlock Lifetime for ₱299',monthly:'Start Monthly — ₱59/mo',professor:'Open Referral Program'};
+  document.getElementById('buyBtn').textContent=lbls[plan];
+};
+window.doPurchase=()=>{if(selPlan==='professor'){openRef();return;}doSub(selPlan);setScreen('home');};
+
+/* ── LICENSE ── */
+window.verifyKey=()=>{
+  const v=document.getElementById('licenseKey').value.trim();
+  if(v===MK){
+    paid=true;
+    if(user&&user!=='Guest'){const us=getU(),f=us.find(x=>x.u===user);if(f){f.paid=true;saveU(us);}}
+    updateHome();setScreen('home');smallConfetti();toast('✅ PRO Activated — full access unlocked!');
+  }else toast('❌ Invalid license key');
+};
+
+/* ── THEME ── */
+window.toggleTheme=()=>{
+  const l=document.body.getAttribute('data-theme')==='light';
+  document.body.setAttribute('data-theme',l?'dark':'light');
+  document.getElementById('themeIcon').setAttribute('name',l?'moon-outline':'sunny-outline');
+};
+
+/* ── EXAMS ── */
+window.openExams=c=>{
+  cat=c;document.getElementById('catTitle').textContent=c;
+  const g=document.getElementById('examGrid');g.innerHTML='';
+  const u=ukey();
+  for(let i=1;i<=50;i++){
+    const lk=(!paid&&i>1),last=getLast(u,c,i);
+    const pct=last?Math.round(last.score/last.total*100):null;
+    const row=document.createElement('div');
+    row.className=`exam-row${lk?' locked':''}`;
+    row.innerHTML=`<div><div class="exam-num">EXAM #${i} ${lk?'🔒':''}</div><div class="exam-last">${last?`Last: ${last.score}/${last.total} (${pct}%) · ${new Date(last.date).toLocaleDateString()}`:'Not attempted yet'}</div></div><button class="btn-start" onclick="${lk?`toast('🔒 Upgrade to Pro to unlock all exams')`:`startQuiz(${i})`}">${lk?'Locked':'Start →'}</button>`;
+    g.appendChild(row);
+  }
+  setScreen('exams');
+};
+
+window.startQuiz=i=>{
+  if(!DB[cat]||!DB[cat][i]){toast('⚠️ Exam content not loaded yet');return;}
+  qs=[...DB[cat][i]];idx=0;ans=new Array(qs.length).fill(null);score=0;examIdx=i;
+  document.getElementById('scoreBox').textContent=`0 / ${qs.length}`;
+  setScreen('quiz');loadQ();
+};
+
+window.loadQ=()=>{
+  const q=qs[idx],pct=idx/qs.length*100;
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('qpf').style.width=pct+'%';
+  document.getElementById('qNum').textContent=`QUESTION ${idx+1} OF ${qs.length}`;
+  const el=document.getElementById('qTxt');
+  el.innerHTML=`<div>${q.q}</div>`;
+  if(q.img){const img=document.createElement('img');img.src=q.img;img.style.cssText='max-width:100%;margin-top:16px;border-radius:12px;';el.appendChild(img);}
+  const L=['A','B','C','D','E','F'];
+  const box=document.getElementById('choices');box.innerHTML='';
+  q.choices.forEach((c,i)=>{
+    const b=document.createElement('button');b.className='choice';
+    b.innerHTML=`<span class="ch-lt">${L[i]||i+1}</span><span>${c}</span>`;
+    if(ans[idx]!==null){
+      if(i===q.a)b.classList.add('correct');
+      else if(i===ans[idx])b.classList.add('wrong');
+      b.disabled=true;
+    }else{
+      b.onclick=()=>{ans[idx]=i;score=ans.filter((a,x)=>a===qs[x].a).length;document.getElementById('scoreBox').textContent=`${score} / ${qs.length}`;loadQ();};
     }
+    box.appendChild(b);
+  });
+};
 
-    // ── SCREEN SYSTEM ──
-    window.setScreen = (id) => {
-        document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); });
-        const el = document.getElementById(id);
-        if(el) { el.classList.add('active'); }
-        document.getElementById('pBarWrap').style.display = (id === 'quiz') ? 'block' : 'none';
-        if(id === 'stats') renderStats();
-        // scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+window.handleNextLogic=()=>{if(idx<qs.length-1){idx++;loadQ();}else showResults();};
+window.prevQ=()=>{if(idx>0){idx--;loadQ();}else setScreen('exams');};
+window.quitQuiz=()=>{if(confirm('Exit this exam?')){saveRes();setScreen('home');}};
+window.finishExamEarly=()=>showResults();
 
-    // ── LICENSE KEY ──
-    window.verifyKey = () => {
-        const val = document.getElementById('licenseKey').value.trim();
-        if(val === MASTER_KEY) {
-            isPaid = true;
-            if(currentUser && currentUser !== 'Guest') {
-                let uArr = JSON.parse(localStorage.getItem('mp_users') || '[]');
-                let found = uArr.find(x => x.u === currentUser);
-                if(found) found.paid = true;
-                localStorage.setItem('mp_users', JSON.stringify(uArr));
-            }
-            updateHomeUI(); setScreen('home');
-            smallConfetti();
-            showToast('✅ PRO Activated — Welcome to the club!');
-        } else {
-            showToast('❌ Invalid license key');
-        }
-    };
+/* ── RESULTS ── */
+function showResults(){
+  score=ans.filter((a,x)=>a===qs[x].a).length;
+  const total=qs.length,pct=Math.round(score/total*100);
+  document.getElementById('scoreNum').textContent=`${score}/${total}`;
+  setTimeout(()=>{
+    const c=351.9,off=c-(pct/100)*c,arc=document.getElementById('scoreArc');
+    arc.style.strokeDashoffset=off;
+    arc.style.stroke=pct>=75?'var(--success)':pct>=50?'var(--accent)':'var(--danger)';
+  },80);
+  const msgs={
+    hi:{h:'Outstanding! 🏆',b:`${pct}% — Board-exam ready. Keep this momentum and you'll pass with confidence.`},
+    md:{h:'Good progress! 💪',b:`${pct}% — You're on track. A bit more focused practice will push you above the passing mark.`},
+    lo:{h:'Keep pushing! 🔥',b:`${pct}% — Every attempt is a lesson. Review the answers below and try again — you're improving!`},
+  };
+  const m=pct>=75?msgs.hi:pct>=50?msgs.md:msgs.lo;
+  document.getElementById('resHl').textContent=m.h;
+  document.getElementById('resBd').textContent=m.b;
+  const xp=Math.max(5,score*8);
+  document.getElementById('xpPill').textContent=`⚡ +${xp} XP earned`;
+  awardXP(xp);
+  const scroll=document.getElementById('revScroll');scroll.innerHTML='';
+  qs.forEach((q,i)=>{
+    const ua=ans[i];
+    const div=document.createElement('div');div.className='rev-item';
+    const ch=q.choices.map((c,ci)=>{
+      const cl=ci===q.a?'correct':ci===ua?'wrong':'';
+      return `<div class="rev-c ${cl}">${cl==='correct'?'✓ ':cl==='wrong'?'✗ ':''}${c}</div>`;
+    }).join('');
+    div.innerHTML=`<div class="rev-q">${i+1}. ${q.q}</div>${ch}`;
+    scroll.appendChild(div);
+  });
+  saveRes();
+  if(pct===100)smallConfetti();
+  setScreen('results');
+}
 
-    // ── EXAMS ──
-    window.openExams = (cat) => {
-        currentCat = cat;
-        document.getElementById('catTitle').textContent = cat;
-        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
-        const user = getUserKey();
-        for(let i = 1; i <= 50; i++) {
-            const locked = (!isPaid && i > 1);
-            const last = getLatestExamRecord(user, cat, i);
-            const pct = last ? Math.round(last.score / last.total * 100) : null;
-            const el = document.createElement('div');
-            el.className = `exam-item ${locked ? 'locked' : ''}`;
-            el.innerHTML = `
-                <div>
-                    <div class="exam-num">EXAM #${i} ${locked ? '🔒' : ''}</div>
-                    ${last ? `<div class="exam-last">Last: ${last.score}/${last.total} (${pct}%) · ${new Date(last.date).toLocaleDateString()}</div>` : '<div class="exam-last" style="color:var(--text-3);">Not attempted</div>'}
-                </div>
-                <button class="btn-take" onclick="${locked ? `showToast('🔒 Upgrade to Pro to unlock all exams')` : `startQuiz(${i})`}">
-                    ${locked ? 'Locked' : 'Start →'}
-                </button>`;
-            grid.appendChild(el);
-        }
-        setScreen('exams');
-    };
+/* ── STATS ── */
+function renderStats(){
+  const cont=document.getElementById('statsContent');
+  const arr=(getStats()[ukey()]||[]).slice().sort((a,b)=>new Date(b.date)-new Date(a.date));
+  if(!arr.length){cont.innerHTML=`<div class="card" style="text-align:center;color:var(--text-2);padding:36px;">No exam records yet.<br>Start taking exams to track your progress!</div>`;return;}
+  cont.innerHTML=arr.map(r=>{
+    const pct=Math.round(r.score/r.total*100);
+    return `<div class="stat-rec"><div><div class="stat-cat">${r.cat}</div><div class="stat-meta">Exam #${r.exam} · ${new Date(r.date).toLocaleString()}</div></div><div><div class="stat-sc">${r.score}/${r.total}</div><div class="stat-pct">${pct}%</div></div></div>`;
+  }).join('');
+}
 
-    window.startQuiz = (idx) => {
-        if(!DB[currentCat] || !DB[currentCat][idx]) {
-            showToast('⚠️ Exam content not loaded yet');
-            return;
-        }
-        currentQs = [...DB[currentCat][idx]]; curIdx = 0; answers = new Array(currentQs.length).fill(null); score = 0;
-        currentExamIdx = idx;
-        document.getElementById('scoreBox').textContent = `0 / ${currentQs.length}`;
-        setScreen('quiz'); loadQ();
-    };
+/* ── XP ── */
+function awardXP(pts){
+  const u=ukey(),s=loadPS(),p=s[u];
+  p.xp=(p.xp||0)+pts;const prev=p.level||1;p.level=Math.floor(p.xp/100)+1;
+  if(p.level>prev){p.coins=(p.coins||0)+(p.level*5);p.badges.push({id:`lvl${p.level}`,title:`Reached Level ${p.level}`,date:new Date().toISOString()});toast(`🎉 Level Up! Now Level ${p.level} · +${p.level*5} coins`);smallConfetti();}
+  p.lastActive=new Date().toISOString();s[u]=p;savePS(s);updateHUD();
+}
 
-    window.loadQ = () => {
-        const q = currentQs[curIdx];
-        const pct = (curIdx / currentQs.length) * 100;
-        document.getElementById('progressBar').style.width = pct + '%';
-        document.getElementById('pBarFill').style.width = pct + '%';
-        document.getElementById('qNum').textContent = `QUESTION ${curIdx + 1} OF ${currentQs.length}`;
-        const qTxtEl = document.getElementById('qTxt');
-        qTxtEl.innerHTML = `<div>${q.q}</div>`;
-        if(q.img) {
-            const img = document.createElement('img');
-            img.src = q.img; img.style.maxWidth = '100%'; img.style.marginTop = '16px'; img.style.borderRadius = '12px';
-            qTxtEl.appendChild(img);
-        }
-        const letters = ['A','B','C','D','E','F'];
-        const box = document.getElementById('choices'); box.innerHTML = '';
-        q.choices.forEach((c, i) => {
-            const b = document.createElement('button');
-            b.className = 'choice-btn';
-            b.innerHTML = `<span class="choice-letter">${letters[i] || i+1}</span><span>${c}</span>`;
-            if(answers[curIdx] !== null) {
-                if(i === q.a) b.classList.add('correct');
-                else if(i === answers[curIdx]) b.classList.add('wrong');
-                b.disabled = true;
-            } else {
-                b.onclick = () => {
-                    answers[curIdx] = i;
-                    score = answers.filter((a, idx) => a === currentQs[idx].a).length;
-                    document.getElementById('scoreBox').textContent = `${score} / ${currentQs.length}`;
-                    loadQ();
-                };
-            }
-            box.appendChild(b);
-        });
-    };
+/* ── SUBSCRIBE ── */
+function doSub(plan){
+  paid=true;
+  if(user&&user!=='Guest'){const us=getU(),f=us.find(x=>x.u===user);if(f){f.paid=true;saveU(us);}}
+  updateHome();smallConfetti();toast(`🎉 Subscribed (${plan}) — Full access unlocked!`);
+}
+window.doSub=doSub;
 
-    window.handleNextLogic = () => { if(curIdx < currentQs.length - 1) { curIdx++; loadQ(); } else showResults(); };
-    window.prevQ = () => { if(curIdx > 0) { curIdx--; loadQ(); } else { setScreen('exams'); } };
-    window.quitQuiz = () => { if(confirm("Exit this exam?")) { saveExamResult(); setScreen('home'); } };
-    window.finishExamEarly = () => showResults();
+/* ── REFERRAL ── */
+function openRef(){
+  const s=loadPS(),u=ukey(),p=s[u];
+  if(!p.referrals.code){p.referrals.code=`${(u||'GUEST').toUpperCase()}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;savePS(s);}
+  const code=p.referrals.code;
+  openMo('Referral Program','Share your code — earn 30% per student subscription');
+  document.getElementById('moBody').innerHTML=`<div><div class="ref-box">${code}</div><div style="display:flex;gap:10px;margin-top:12px;"><button class="btn-ghost" id="cpRef" style="flex:1;">Copy Code</button><button class="btn-primary" id="simRef" style="flex:2;padding:12px;">Simulate Referral</button></div><div style="font-size:12px;color:var(--text-3);text-align:center;margin-top:12px;">You earn ₱90 (30%) for every ₱299 student subscription via your code.</div></div>`;
+  document.getElementById('cpRef').onclick=()=>{navigator.clipboard?.writeText(code);toast('📋 Code copied!');};
+  document.getElementById('simRef').onclick=()=>{
+    const parts=code.split('-'),ref=parts[0],s2=loadPS();
+    const r=s2[ref]||{referrals:{code,earnings:0,referred:[]}};
+    r.referrals.earnings=(r.referrals.earnings||0)+90;
+    r.referrals.referred=r.referrals.referred||[];
+    r.referrals.referred.push({who:'SimStudent',date:new Date().toISOString(),amount:299});
+    s2[ref]=r;savePS(s2);toast('✅ Referral simulated — ₱90 credited!');updateHUD();
+  };
+}
+window.openRef=openRef;
 
-    // ── RESULTS (REFLECTIVE DESIGN) ──
-    function showResults() {
-        score = answers.filter((a, idx) => a === currentQs[idx].a).length;
-        const total = currentQs.length;
-        const pct = Math.round(score / total * 100);
+function openBadges(){
+  const s=loadPS(),p=s[ukey()],b=p.badges||[];
+  openMo('My Badges','Earned through consistent practice');
+  document.getElementById('moBody').innerHTML=b.length?b.map(x=>`<div class="badge-row"><div class="badge-ico">🏅</div><div><div class="badge-nm">${x.title}</div><div class="badge-dt">${new Date(x.date).toLocaleDateString()}</div></div></div>`).join(''):`<div style="text-align:center;color:var(--text-2);padding:28px;">No badges yet.<br>Take exams and level up to earn them!</div>`;
+}
 
-        // Score ring
-        document.getElementById('scoreNumber').textContent = `${score}/${total}`;
-        setTimeout(() => {
-            const circumference = 326.7;
-            const offset = circumference - (pct / 100) * circumference;
-            document.getElementById('scoreArc').style.strokeDashoffset = offset;
-            const color = pct >= 75 ? 'var(--success)' : pct >= 50 ? 'var(--accent)' : 'var(--danger)';
-            document.getElementById('scoreArc').style.stroke = color;
-        }, 100);
+function openSubMo(){
+  openMo('Premium Access','Unlock everything you need to pass the boards');
+  document.getElementById('moBody').innerHTML=`<div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;"><button class="btn-gold" style="width:100%;padding:14px;" onclick="doSub('lifetime');closeMo();updateHome();">Buy Lifetime — ₱299 one-time</button><button class="btn-outline" style="width:100%;padding:12px;" onclick="doSub('monthly');closeMo();updateHome();">Monthly — ₱59/mo</button><button class="btn-text" style="width:100%;" onclick="closeMo();openRef();">Professor Referral Program →</button></div>`;
+}
 
-        // REFLECTIVE: message that matches emotional state
-        const messages = {
-            high:   { title: 'Excellent work! 🏆', sub: 'You\'re board-exam ready. Keep this momentum!' },
-            mid:    { title: 'Good progress! 💪', sub: 'You\'re on the right track. A bit more practice will push you over the line.' },
-            low:    { title: 'Keep going! 🔥', sub: 'Every attempt teaches you something. Review the answers and try again.' }
-        };
-        const msg = pct >= 75 ? messages.high : pct >= 50 ? messages.mid : messages.low;
-        document.getElementById('resultsMessage').textContent = msg.title;
-        document.getElementById('resultsSub').textContent = msg.sub;
+/* ── MODAL ── */
+function openMo(title,sub=''){
+  document.getElementById('moTitle').textContent=title;
+  document.getElementById('moSub').textContent=sub;
+  document.getElementById('moBody').innerHTML='';
+  const m=document.getElementById('mo');m.classList.add('open');m.setAttribute('aria-hidden','false');
+}
+window.closeMo=()=>{const m=document.getElementById('mo');m.classList.remove('open');m.setAttribute('aria-hidden','true');};
+window.updateHome=updateHome;
 
-        // XP
-        const xpGained = Math.max(4, score * 8);
-        document.getElementById('xpEarnedBanner').textContent = `⚡ +${xpGained} XP earned`;
-        awardXP(xpGained);
+/* ── TOAST ── */
+window.toast=function(msg,ms=2600){
+  const t=document.createElement('div');t.className='toast';t.textContent=msg;
+  document.getElementById('toasts').appendChild(t);
+  setTimeout(()=>t.classList.add('out'),ms-300);
+  setTimeout(()=>t.remove(),ms);
+};
 
-        // Review items
-        const scroll = document.getElementById('revScroll'); scroll.innerHTML = '';
-        currentQs.forEach((q, i) => {
-            const userAns = answers[i];
-            const isCorrect = userAns === q.a;
-            const div = document.createElement('div');
-            div.className = 'review-item';
-            let choicesHtml = q.choices.map((c, ci) => {
-                let cls = ci === q.a ? 'correct' : (ci === userAns ? 'wrong' : '');
-                return `<div class="review-choice ${cls}">${cls === 'correct' ? '✓ ' : cls === 'wrong' ? '✗ ' : ''}${c}</div>`;
-            }).join('');
-            div.innerHTML = `<div class="review-q">${i+1}. ${q.q}</div>${choicesHtml}`;
-            scroll.appendChild(div);
-        });
+/* ── CONFETTI ── */
+function smallConfetti(){
+  const root=document.createElement('div');root.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:9998;';
+  document.body.appendChild(root);
+  const c=['#3b82f6','#818cf8','#f59e0b','#10b981','#f43f5e','#a78bfa','#34d399'];
+  for(let i=0;i<32;i++){
+    const p=document.createElement('div'),sz=Math.random()*10+6;
+    p.style.cssText=`position:absolute;left:${30+Math.random()*40}%;top:-10%;width:${sz}px;height:${sz}px;background:${c[Math.floor(Math.random()*c.length)]};border-radius:4px;opacity:.9;transition:top 1.8s cubic-bezier(.18,.9,.3,1),transform 1.8s linear;`;
+    root.appendChild(p);
+    setTimeout(()=>{p.style.top=(55+Math.random()*40)+'%';p.style.transform=`rotate(${Math.random()*720}deg)`;},30+i*18);
+  }
+  setTimeout(()=>root.remove(),2400);
+}
 
-        saveExamResult();
-        if(pct === 100) smallConfetti();
-        setScreen('results');
-    }
+/* ── MICRO-INTERACTIONS ── */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');
+  if(b&&!b.classList.contains('choice')){b.style.transform='scale(0.96)';setTimeout(()=>b.style.transform='',150);}
+});
 
-    // ── STATS ──
-    function renderStats() {
-        const cont = document.getElementById('statsContent');
-        const user = getUserKey();
-        const arr = (getAllStats()[user] || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
-        if(!arr.length) {
-            cont.innerHTML = `<div class="card" style="text-align:center; color:var(--text-2); padding:32px;">No exam records yet.<br>Take some exams to see your history here.</div>`;
-            return;
-        }
-        cont.innerHTML = arr.map(r => {
-            const pct = Math.round(r.score / r.total * 100);
-            return `<div class="stat-row">
-                <div>
-                    <div style="font-weight:700; font-size:14px;">${r.cat}</div>
-                    <div style="font-size:12px; color:var(--text-3);">Exam #${r.exam} · ${new Date(r.date).toLocaleString()}</div>
-                </div>
-                <div class="stat-score">${r.score}/${r.total} <span style="font-size:11px; color:var(--text-3);">(${pct}%)</span></div>
-            </div>`;
-        }).join('');
-    }
+/* ── BINDINGS ── */
+document.getElementById('btnSub').addEventListener('click',openSubMo);
+document.getElementById('btnRef').addEventListener('click',openRef);
+document.getElementById('btnBadges').addEventListener('click',openBadges);
+document.getElementById('btnCloseMo').addEventListener('click',()=>window.closeMo());
 
-    // ── XP & LEVELS ──
-    function awardXP(points) {
-        const u = getUserKey();
-        const store = loadPlayerStore();
-        const p = store[u];
-        p.xp = (p.xp || 0) + points;
-        const prevLevel = p.level || 1;
-        p.level = Math.floor(p.xp / 100) + 1;
-        if(p.level > prevLevel) {
-            p.coins = (p.coins || 0) + (p.level * 5);
-            p.badges.push({ id: `lvl${p.level}`, title: `Reached Level ${p.level}`, date: new Date().toISOString() });
-            showToast(`🎉 Level Up! Now Level ${p.level} · +${p.level * 5} coins`);
-            smallConfetti();
-        }
-        p.lastActive = new Date().toISOString();
-        store[u] = p;
-        savePlayerStore(store);
-        updatePlayerHUD();
-    }
-
-    function updatePlayerHUD() {
-        const u = getUserKey();
-        const store = loadPlayerStore();
-        const p = store[u] || { xp: 0, level: 1 };
-        document.getElementById('playerAvatar').textContent = u === 'Guest' ? 'G' : (u ? u.charAt(0).toUpperCase() : 'M');
-        document.getElementById('playerLevel').textContent = `LV ${p.level || 1}`;
-        document.getElementById('playerXP').textContent = `${p.xp || 0} XP`;
-        document.getElementById('xpFill').style.width = Math.min(100, (p.xp || 0) % 100) + '%';
-    }
-
-    // ── TOAST ──
-    window.showToast = function(msg, ms = 2600) {
-        const t = document.createElement('div');
-        t.className = 'toast';
-        t.textContent = msg;
-        document.getElementById('toastZone').appendChild(t);
-        setTimeout(() => t.classList.add('toast-fade'), ms - 300);
-        setTimeout(() => t.remove(), ms);
-    };
-
-    // ── CONFETTI (visceral delight) ──
-    function smallConfetti() {
-        const root = document.createElement('div');
-        root.className = 'confetti-root';
-        document.body.appendChild(root);
-        const colors = ['#3b82f6','#818cf8','#f59e0b','#10b981','#f43f5e','#a78bfa'];
-        for(let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.className = 'confetti-piece';
-            const size = Math.random() * 10 + 6;
-            p.style.cssText = `left:${30 + Math.random()*40}%; top:-10%; width:${size}px; height:${size}px; background:${colors[Math.floor(Math.random()*colors.length)]}; transition: top 1.8s cubic-bezier(.18,.9,.3,1), transform 1.8s linear;`;
-            root.appendChild(p);
-            setTimeout(() => { p.style.top = (60 + Math.random() * 35) + '%'; p.style.transform = `rotate(${Math.random() * 720}deg)`; }, 30 + i * 20);
-        }
-        setTimeout(() => root.remove(), 2200);
-    }
-
-    // ── SUBSCRIBE ──
-    function subscribe(plan = 'lifetime') {
-        isPaid = true;
-        if(currentUser && currentUser !== 'Guest') {
-            const uArr = JSON.parse(localStorage.getItem('mp_users') || '[]');
-            const found = uArr.find(x => x.u === currentUser);
-            if(found) found.paid = true;
-            localStorage.setItem('mp_users', JSON.stringify(uArr));
-        }
-        updateHomeUI();
-        smallConfetti();
-        showToast(`🎉 Subscribed (${plan}) — Full access unlocked!`);
-    }
-
-    // ── REFERRAL ──
-    function ensureReferral() {
-        const store = loadPlayerStore(); const user = getUserKey(); const p = store[user];
-        if(!p.referrals.code) { p.referrals.code = `${(user||'GUEST').toUpperCase()}-${Math.random().toString(36).slice(2,8).toUpperCase()}`; savePlayerStore(store); }
-        return p.referrals.code;
-    }
-    function openReferralPanel() {
-        const code = ensureReferral();
-        openModal('Referral Program', 'Share your code — earn 30% per student who subscribes');
-        document.getElementById('modalContent').innerHTML = `
-            <div style="margin-top:4px;">
-                <div style="font-size:13px; color:var(--text-2); margin-bottom:14px;">Your unique referral code:</div>
-                <div class="ref-code-box">${code}</div>
-                <div style="display:flex; gap:10px; margin-top:14px;">
-                    <button class="btn-ghost" id="copyRef" style="flex:1;">Copy Code</button>
-                    <button class="btn-primary" id="simRef" style="flex:2; padding:12px;">Simulate Referral Purchase</button>
-                </div>
-                <div style="font-size:12px; color:var(--text-3); margin-top:14px; text-align:center;">You earn ₱90 (30%) for every ₱299 student subscription via your code.</div>
-            </div>`;
-        document.getElementById('copyRef').onclick = () => { navigator.clipboard?.writeText(code); showToast('📋 Code copied!'); };
-        document.getElementById('simRef').onclick = () => {
-            const parts = code.split('-'); const referrer = parts[0];
-            const store = loadPlayerStore();
-            const ref = store[referrer] || { referrals: { code, earnings: 0, referred: [] } };
-            ref.referrals.earnings = (ref.referrals.earnings || 0) + 90;
-            ref.referrals.referred = ref.referrals.referred || [];
-            ref.referrals.referred.push({ who: 'SimStudent', date: new Date().toISOString(), amount: 299 });
-            store[referrer] = ref; savePlayerStore(store);
-            showToast('✅ Referral simulated — ₱90 credited!');
-            updatePlayerHUD();
-        };
-    }
-
-    function openModal(title, sub = '') {
-        document.getElementById('modalTitle').textContent = title;
-        document.getElementById('modalSubtitle').textContent = sub;
-        document.getElementById('modalContent').innerHTML = '';
-        document.getElementById('modalRoot').classList.add('active');
-        document.getElementById('modalRoot').setAttribute('aria-hidden', 'false');
-    }
-    function closeModal() { document.getElementById('modalRoot').classList.remove('active'); document.getElementById('modalRoot').setAttribute('aria-hidden', 'true'); }
-
-    // ── SUBSCRIPTION MODAL ──
-    function openSubscriptionModal() {
-        openModal('Get Premium Access', 'Unlock everything you need to pass the boards.');
-        document.getElementById('modalContent').innerHTML = `
-            <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
-                <button class="btn-gold" style="width:100%; padding:14px;" onclick="subscribe('lifetime'); closeModal();">Buy Lifetime — ₱299 one-time</button>
-                <button class="btn-ghost" style="width:100%; padding:12px;" onclick="subscribe('monthly'); closeModal();">Monthly — ₱59/mo</button>
-                <button class="btn-text" style="width:100%;" onclick="openReferralPanel();">Professor Referral Program →</button>
-            </div>`;
-    }
-
-    // ── BADGES MODAL ──
-    function openBadgesModal() {
-        openModal('My Badges', 'Earned through consistent practice');
-        const store = loadPlayerStore(); const p = store[getUserKey()];
-        const badges = p.badges || [];
-        document.getElementById('modalContent').innerHTML = badges.length
-            ? badges.map(b => `<div class="badge-pill"><div class="badge-icon">🏅</div><div><div class="badge-name">${b.title}</div><div class="badge-date">${new Date(b.date).toLocaleDateString()}</div></div></div>`).join('')
-            : `<div style="text-align:center; color:var(--text-2); padding:24px;">No badges yet.<br>Start taking exams to earn them!</div>`;
-    }
-
-    // ── EVENT BINDINGS ──
-    document.getElementById('subscribeBtn')?.addEventListener('click', openSubscriptionModal);
-    document.getElementById('closeModal')?.addEventListener('click', closeModal);
-    document.getElementById('refBtn')?.addEventListener('click', openReferralPanel);
-    document.getElementById('achBtn')?.addEventListener('click', openBadgesModal);
-
-    window.openReferralPanel = openReferralPanel;
-    window.closeModal = closeModal;
-
-    // BEHAVIORAL: micro-interaction on every button press
-    document.addEventListener('click', e => {
-        const btn = e.target.closest('button');
-        if(btn && !btn.classList.contains('choice-btn')) {
-            btn.style.transform = 'scale(0.96)';
-            setTimeout(() => btn.style.transform = '', 150);
-        }
-    });
-
-    // ── INIT ──
-    setTimeout(() => {
-        updatePlayerHUD();
-        setScreen('authScreen');
-    }, 50);
-
-    let _prevUser = getUserKey();
-    setInterval(() => { const u = getUserKey(); if(u !== _prevUser) { _prevUser = u; updatePlayerHUD(); } }, 800);
-
-    window.__premium = { awardXP, loadPlayerStore, updatePlayerHUD, subscribe, openReferralPanel, showToast };
+/* ── INIT ── */
+setTimeout(()=>{selectPlan('lifetime');setScreen('splashScreen');updateHUD();},40);
+window.__app={awardXP,loadPS,updateHUD,doSub,openRef,toast};
 </script>
 
 
