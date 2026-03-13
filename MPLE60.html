@@ -1,940 +1,1892 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_2.html -->
+<!-- saved from url=(0061)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_3.html -->
 <html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Master Plumber — Board Reviewer</title>
-<script type="module" src="./Master Plumber — Board Reviewer 2_files/ionicons.esm.js.download"></script>
-<link href="./Master Plumber — Board Reviewer 2_files/css2" rel="stylesheet">
+<script type="module" src="./Master Plumber — Board Reviewer 4_files/ionicons.esm.js.download"></script>
+<link href="./Master Plumber — Board Reviewer 4_files/css2" rel="stylesheet">
 <style>
-/* ════════════════════════════════════════
-   DESIGN TOKENS — Emotional Design System
-   ════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════════
+   MASTER PLUMBER REVIEWER — EMOTIONAL DESIGN SYSTEM
+   Norman: Visceral · Behavioral · Reflective
+   ════════════════════════════════════════════════════════════════ */
 :root{
-  --bg:#05080f;
-  --surface:#0c1322;
-  --surface-2:#111d30;
-  --border:rgba(100,180,255,0.07);
-  --border-hi:rgba(100,180,255,0.22);
-  --accent:#3b82f6;
-  --accent-2:#818cf8;
-  --accent-glow:rgba(59,130,246,0.14);
+  /* Core palette */
+  --bg:#04070e;
+  --bg-2:#07101e;
+  --surface:#0a1628;
+  --surface-2:#0f1e35;
+  --surface-3:#162640;
+  --border:rgba(96,165,250,0.08);
+  --border-hi:rgba(96,165,250,0.22);
+  --border-glow:rgba(96,165,250,0.4);
+
+  /* Accent system */
+  --blue:#3b82f6;
+  --blue-hi:#60a5fa;
+  --blue-glow:rgba(59,130,246,0.18);
+  --indigo:#6366f1;
+  --purple:#8b5cf6;
+  --teal:#14b8a6;
+  --green:#10b981;
+  --amber:#f59e0b;
+  --red:#f43f5e;
+
+  /* Text */
+  --t1:#e8f0fe;
+  --t2:#8badd4;
+  --t3:#3d5c7a;
+
+  /* Semantic */
   --success:#10b981;
   --danger:#f43f5e;
   --warn:#f59e0b;
-  --warn-glow:rgba(245,158,11,0.12);
-  --text:#e8edf5;
-  --text-2:#7d9bbf;
-  --text-3:#3d5472;
-  --gold:#f59e0b;
-  --radius:16px;
-  --shadow:0 8px 32px rgba(0,0,0,0.4);
-  --shadow-lg:0 24px 64px rgba(0,0,0,0.55);
+  --gold:#fbbf24;
+  --gold-glow:rgba(251,191,36,0.14);
+
+  /* Spacing & radius */
+  --r:14px; --r-lg:20px; --r-xl:28px;
+  --sh:0 8px 32px rgba(0,0,0,0.45);
+  --sh-lg:0 24px 72px rgba(0,0,0,0.6);
+  --sh-glow:0 0 40px rgba(59,130,246,0.15);
 }
+
 [data-theme="light"]{
-  --bg:#eef2f8; --surface:#fff; --surface-2:#f5f8fc;
-  --border:rgba(59,130,246,0.1); --border-hi:rgba(59,130,246,0.28);
-  --accent-glow:rgba(59,130,246,0.08);
-  --text:#0f1929; --text-2:#4a637f; --text-3:#9ab0c8;
+  --bg:#f0f4fb; --bg-2:#e8eef8; --surface:#fff; --surface-2:#f5f8fd; --surface-3:#edf2fb;
+  --border:rgba(59,130,246,0.1); --border-hi:rgba(59,130,246,0.28); --border-glow:rgba(59,130,246,0.5);
+  --blue-glow:rgba(59,130,246,0.09);
+  --t1:#0a1628; --t2:#3a5a8c; --t3:#8badd4;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{height:100%;overflow-x:hidden;}
+body{
+  min-height:100%;font-family:'DM Sans',sans-serif;
+  background:var(--bg);color:var(--t1);
+  overscroll-behavior:none;
+}
+/* VISCERAL — ambient depth */
 body::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(ellipse 900px 550px at 15% -5%,rgba(59,130,246,0.07),transparent),
-    radial-gradient(ellipse 700px 400px at 85% 105%,rgba(245,158,11,0.04),transparent);
+    radial-gradient(ellipse 1000px 600px at 10% -5%,rgba(59,130,246,0.06),transparent),
+    radial-gradient(ellipse 800px 500px at 90% 105%,rgba(139,92,246,0.05),transparent),
+    radial-gradient(ellipse 500px 400px at 50% 50%,rgba(20,184,166,0.03),transparent);
 }
-.app-wrap{position:relative;z-index:1;width:100%;max-width:760px;margin:0 auto;padding:20px 16px 48px;}
+
+/* ── LAYOUT ── */
+.shell{position:relative;z-index:1;width:100%;max-width:480px;margin:0 auto;padding:0 16px 80px;}
+@media(min-width:860px){.shell{max-width:860px;}}
 
 /* ── SCREENS ── */
-.screen{display:none;}
-.screen.active{display:block;animation:fadeUp .32s cubic-bezier(.22,1,.36,1) both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.scr{display:none;}
+.scr.on{display:block;animation:riseIn .28s cubic-bezier(.22,1,.36,1) both;}
+.scr.slide-left{animation:slideLeft .28s cubic-bezier(.22,1,.36,1) both;}
+.scr.slide-right{animation:slideRight .28s cubic-bezier(.22,1,.36,1) both;}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(32px);}to{opacity:1;transform:translateX(0);}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-32px);}to{opacity:1;transform:translateX(0);}}
 
-/* ════ HUD ════ */
-#hud{
-  display:none;align-items:center;gap:12px;
-  padding:12px 18px;background:var(--surface);
-  border:1px solid var(--border);border-radius:var(--radius);
-  margin-bottom:16px;box-shadow:var(--shadow);
+/* ════ BOTTOM NAV ════ */
+#bnav{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;
+  background:var(--surface);border-top:1px solid var(--border);
+  padding:0 8px env(safe-area-inset-bottom,8px);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 }
-#hud.visible{display:flex;}
-.hud-av{
-  width:46px;height:46px;border-radius:13px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:#fff;
-  box-shadow:0 6px 20px rgba(59,130,246,0.3);transition:transform .2s;
+#bnav.visible{display:flex;}
+.bn-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:10px 6px;border:none;background:transparent;
+  color:var(--t3);font-size:10px;font-weight:600;font-family:'DM Sans',sans-serif;
+  cursor:pointer;transition:color .2s;position:relative;
 }
-.hud-av:hover{transform:scale(1.07);}
-.hud-inf{flex:1;min-width:0;}
-.hud-nm{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.hud-mt{display:flex;align-items:center;gap:8px;margin-top:5px;}
-.lv-chip{font-family:'Space Mono',monospace;font-size:9px;background:var(--accent-glow);border:1px solid var(--border-hi);color:var(--accent);padding:2px 8px;border-radius:99px;white-space:nowrap;}
-.xp-rail{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:99px;overflow:hidden;}
-.xp-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .8s cubic-bezier(.22,1,.36,1);box-shadow:0 0 8px var(--accent);}
-.xp-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-3);white-space:nowrap;}
-.hud-act{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.bn-item.active{color:var(--blue);}
+.bn-item ion-icon{font-size:20px;transition:transform .2s;}
+.bn-item.active ion-icon{transform:translateY(-2px);}
+.bn-dot{width:4px;height:4px;border-radius:99px;background:var(--blue);position:absolute;top:8px;right:50%;transform:translateX(10px);display:none;}
+.bn-item.active .bn-dot{display:block;}
 
-/* quiz top bar */
-#qpw{display:none;height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:16px;}
-#qpf{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .5s cubic-bezier(.22,1,.36,1);width:0%;}
+/* ════ TOP BAR ════ */
+.topbar{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 0 12px;
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(to bottom,var(--bg) 80%,transparent);
+}
+.topbar-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;flex:1;}
+.topbar-icon{width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;}
+.topbar-back{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--t2);cursor:pointer;border:none;}
+.topbar-back:hover{color:var(--t1);}
+
+/* ════ CARDS ════ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh);}
+.card-glow{border-color:var(--border-hi);box-shadow:var(--sh),var(--sh-glow);}
 
 /* ════ BUTTONS ════ */
-button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;outline:none;transition:all .18s cubic-bezier(.22,1,.36,1);}
-button:active{transform:scale(0.96)!important;}
-.btn-primary{display:block;width:100%;padding:14px;border-radius:13px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;letter-spacing:.3px;box-shadow:0 8px 24px rgba(59,130,246,0.32);}
-.btn-primary:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,0.42);}
-.btn-ghost{padding:9px 16px;border-radius:11px;background:transparent;border:1px solid var(--border);color:var(--text-2);font-size:13px;font-weight:600;}
-.btn-ghost:hover{border-color:var(--border-hi);color:var(--text);background:var(--accent-glow);}
-.btn-gold{padding:10px 18px;border-radius:12px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:13px;font-weight:800;box-shadow:0 8px 22px rgba(245,158,11,0.3);white-space:nowrap;}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,158,11,0.45);}
-.btn-outline{display:block;width:100%;padding:13px;border-radius:13px;background:transparent;border:1.5px solid var(--border-hi);color:var(--text);font-size:15px;font-weight:600;}
-.btn-outline:hover{background:var(--accent-glow);}
-.btn-text{background:transparent;color:var(--accent);font-size:13px;font-weight:600;padding:6px 0;}
-.btn-text:hover{color:#93c5fd;}
-.btn-back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-size:13px;font-weight:600;}
-.btn-back:hover{color:var(--text);border-color:var(--border-hi);}
-.btn-icon{width:34px;height:34px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--text-2);}
+button,a{font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;}
+button:active{transform:scale(0.95)!important;}
 
-/* ════ CARD ════ */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;border:none;outline:none;font-weight:700;transition:all .18s cubic-bezier(.22,1,.36,1);}
+.btn-block{width:100%;}
+.btn-lg{padding:15px 20px;border-radius:var(--r);font-size:15px;}
+.btn-md{padding:11px 18px;border-radius:12px;font-size:14px;}
+.btn-sm{padding:8px 14px;border-radius:10px;font-size:12px;}
 
-/* ── FIELD ── */
-.field{margin-bottom:14px;text-align:left;}
-.field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3);margin-bottom:6px;}
-.field input{width:100%;background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:13px 16px;border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;transition:border-color .2s,box-shadow .2s;}
-.field input::placeholder{color:var(--text-3);}
-.field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,0.32);}
+.btn-primary:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 12px 36px rgba(59,130,246,0.45);}
+.btn-gold{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;box-shadow:0 8px 24px rgba(245,158,11,0.3);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(245,158,11,0.45);}
+.btn-success{background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(16,185,129,0.3);}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--t2);}
+.btn-ghost:hover{border-color:var(--border-hi);color:var(--t1);background:var(--blue-glow);}
+.btn-outline{background:transparent;border:1.5px solid var(--border-hi);color:var(--t1);}
+.btn-outline:hover{background:var(--blue-glow);}
+.btn-text{background:transparent;border:none;color:var(--blue);font-size:13px;padding:6px 0;}
+.btn-danger-ghost{background:transparent;border:1px solid rgba(244,63,94,.25);color:var(--danger);font-size:12px;padding:10px;border-radius:11px;}
+.btn-success-ghost{background:transparent;border:1px solid rgba(16,185,129,.25);color:var(--success);font-size:12px;padding:10px;border-radius:11px;}
 
-.divider{display:flex;align-items:center;gap:14px;color:var(--text-3);font-size:12px;margin:18px 0;}
+/* ════ FORM ════ */
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:7px;}
+.field input,.field select{
+  width:100%;background:var(--surface-2);border:1px solid var(--border);
+  color:var(--t1);padding:13px 16px;border-radius:12px;
+  font-size:15px;font-family:'DM Sans',sans-serif;
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input::placeholder{color:var(--t3);}
+.field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-glow);}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238badd4' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;}
+.divider{display:flex;align-items:center;gap:14px;color:var(--t3);font-size:12px;margin:18px 0;}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
-.back-row{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-.scr-title{font-family:'DM Serif Display',serif;font-size:20px;}
 
-/* ════════════════════════════════════════
-   SCREEN: SPLASH
-   ════════════════════════════════════════ */
-#splashScreen{
-  min-height:85vh;display:none;
-  flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:40px 20px;
-}
-#splashScreen.active{display:flex;}
-.sp-logo{
-  width:84px;height:84px;border-radius:26px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;
-  box-shadow:0 20px 60px rgba(59,130,246,0.4);
-  animation:spFloat 3.5s ease-in-out infinite;margin-bottom:28px;
-}
-@keyframes spFloat{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-10px) rotate(3deg);}}
-.sp-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--text-3);text-transform:uppercase;margin-bottom:12px;}
-.sp-title{
-  font-family:'DM Serif Display',serif;font-size:44px;line-height:1.1;
-  background:linear-gradient(135deg,var(--text) 30%,var(--accent));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:16px;
-}
-.sp-sub{font-size:16px;color:var(--text-2);line-height:1.6;max-width:400px;margin:0 auto 36px;}
-.sp-stats{
-  display:flex;gap:0;margin-bottom:40px;
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;
-}
-.sp-stat{flex:1;padding:14px 12px;text-align:center;border-right:1px solid var(--border);}
-.sp-stat:last-child{border-right:none;}
-.sp-stat-n{font-family:'Space Mono',monospace;font-size:18px;font-weight:700;}
-.sp-stat-l{font-size:11px;color:var(--text-3);margin-top:2px;}
-.sp-actions{display:flex;flex-direction:column;gap:12px;width:100%;max-width:360px;}
+/* ════ BADGES / CHIPS ════ */
+.chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700;}
+.chip-blue{background:var(--blue-glow);border:1px solid var(--border-hi);color:var(--blue-hi);}
+.chip-green{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--green);}
+.chip-amber{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--amber);}
+.chip-red{background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.25);color:var(--red);}
+.chip-purple{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);color:var(--purple);}
 
-/* ════════════════════════════════════════
-   SCREEN: SIGN IN
-   ════════════════════════════════════════ */
-#signInScreen,.auth-wrap{max-width:420px;margin:0 auto;}
-.auth-card{padding:32px 28px;text-align:center;}
-.auth-icon{
-  width:52px;height:52px;border-radius:15px;
-  background:var(--accent-glow);border:1px solid var(--border-hi);
-  display:flex;align-items:center;justify-content:center;font-size:22px;
-  margin:0 auto 16px;
-}
-.auth-title{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:6px;}
-.auth-sub{font-size:13px;color:var(--text-2);margin-bottom:24px;}
-.auth-foot{margin-top:16px;font-size:13px;color:var(--text-2);display:flex;align-items:center;justify-content:center;gap:6px;}
+/* ════ SECTION HEAD ════ */
+.sec{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:14px;}
+.sec-sm{font-size:14px;font-weight:700;color:var(--t2);margin-bottom:10px;}
 
-/* ════════════════════════════════════════
-   SCREEN: HOME
-   ════════════════════════════════════════ */
-.home-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.home-greet{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.2;}
-.home-greet small{display:block;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--text-3);font-weight:400;margin-bottom:2px;}
-.home-ctrls{display:flex;gap:8px;}
-
-/* pro card */
-.pro-card{
-  background:linear-gradient(130deg,#141e33,#0d1626);
-  border:1px solid rgba(245,158,11,0.18);border-radius:var(--radius);
-  padding:20px;margin-bottom:20px;position:relative;overflow:hidden;
-}
-.pro-card::after{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent 70%);pointer-events:none;}
-.pc-ey{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.pc-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:4px;}
-.pc-body{font-size:13px;color:var(--text-2);margin-bottom:16px;}
-.pc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.pc-price{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;}
-.pc-price span{font-size:12px;color:var(--text-2);font-weight:400;}
-
-.pro-active{
-  display:flex;align-items:center;gap:14px;
-  background:linear-gradient(130deg,rgba(16,185,129,0.08),rgba(6,182,212,0.06));
-  border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius);
-  padding:16px 18px;margin-bottom:20px;
-}
-.pa-icon{width:40px;height:40px;border-radius:11px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.pa-title{font-weight:700;font-size:14px;color:var(--success);}
-.pa-sub{font-size:12px;color:var(--text-3);margin-top:2px;}
-
-.sec-head{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:14px;}
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px;}
-.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 14px;cursor:pointer;display:flex;flex-direction:column;gap:10px;transition:all .22s cubic-bezier(.22,1,.36,1);}
-.cat-card:hover{border-color:var(--border-hi);transform:translateY(-4px);box-shadow:0 14px 36px rgba(59,130,246,0.1);}
-.cat-ico{width:42px;height:42px;border-radius:12px;background:var(--accent-glow);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-size:20px;}
-.cat-nm{font-weight:700;font-size:13px;line-height:1.3;}
-.cat-sb{font-size:11px;color:var(--text-3);margin-top:2px;}
-
-.ch-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none;}
-.ch-strip::-webkit-scrollbar{display:none;}
-.ch-chip{min-width:185px;padding:14px;border-radius:14px;border:1px solid var(--border);background:var(--surface);flex-shrink:0;}
-.ch-chip.hot{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;}
-.ch-chip.hot *{color:#fff!important;}
-.ch-lbl{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;}
-.ch-title{font-weight:800;font-size:14px;margin-bottom:3px;}
-.ch-sub{font-size:12px;color:var(--text-2);}
-
-/* ════════════════════════════════════════
-   SCREEN: PAYMENT
-   ════════════════════════════════════════ */
-.pay-head{text-align:center;margin-bottom:24px;}
-.pay-ico{width:64px;height:64px;border-radius:20px;background:var(--warn-glow);border:1.5px solid rgba(245,158,11,0.28);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;}
-.pay-title{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:6px;}
-.pay-sub{font-size:14px;color:var(--text-2);}
-.plans-row{display:flex;gap:12px;margin-bottom:20px;}
-.plan-card{flex:1;padding:18px 14px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface-2);cursor:pointer;transition:all .2s;position:relative;}
-.plan-card.selected{border-color:var(--accent);background:var(--accent-glow);box-shadow:0 0 0 3px var(--accent-glow);}
-.plan-card.gold-plan{border-color:rgba(245,158,11,0.3);background:linear-gradient(140deg,rgba(245,158,11,0.06),rgba(239,68,68,0.04));}
-.plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:9px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:1px;white-space:nowrap;}
-.plan-nm{font-weight:800;font-size:14px;margin-bottom:3px;}
-.plan-desc{font-size:11px;color:var(--text-3);margin-bottom:8px;}
-.plan-price{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;margin:8px 0;}
-.plan-price sub{font-size:11px;vertical-align:baseline;color:var(--text-2);}
-.plan-feats{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
-.plan-feat{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-2);}
-.plan-feat ion-icon{color:var(--success);font-size:14px;flex-shrink:0;}
-.key-sec{margin-top:16px;padding:16px;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;}
-.key-lbl{font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:10px;}
-.key-row{display:flex;gap:10px;}
-.key-row input{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:11px 14px;border-radius:10px;font-size:14px;font-family:'Space Mono',monospace;}
-.key-row input:focus{outline:none;border-color:var(--accent);}
-.btn-act{padding:11px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;flex-shrink:0;}
-.pay-trust{font-size:11px;color:var(--text-3);text-align:center;margin-top:14px;}
-
-/* ════ EXAMS ════ */
-.exam-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;margin-bottom:8px;transition:border-color .18s;}
-.exam-row:hover{border-color:var(--border-hi);}
-.exam-row.locked{opacity:.45;filter:grayscale(.3);}
-.exam-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);}
-.exam-last{font-size:11px;color:var(--text-3);margin-top:3px;}
-.btn-start{padding:8px 16px;border-radius:10px;background:var(--accent-glow);border:1px solid var(--border-hi);color:var(--accent);font-size:12px;font-weight:700;}
-.btn-start:hover{background:var(--accent);color:#fff;}
-
-/* ════ QUIZ ════ */
-.q-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.q-lbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--text-3);}
-.score-chip{background:var(--surface-2);border:1px solid var(--border-hi);padding:6px 14px;border-radius:99px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;}
-.prog-rail{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:24px;}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;transition:width .5s cubic-bezier(.22,1,.36,1);}
-.q-text{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.55;margin-bottom:24px;min-height:80px;}
-.choices{display:flex;flex-direction:column;gap:10px;}
-.choice{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:13px;text-align:left;font-size:14px;color:var(--text);font-weight:500;transition:all .18s cubic-bezier(.22,1,.36,1);}
-.ch-lt{width:28px;height:28px;border-radius:8px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;transition:all .18s;}
-.choice:hover:not(:disabled){border-color:var(--border-hi);background:var(--accent-glow);transform:translateX(4px);}
-.choice:hover:not(:disabled) .ch-lt{background:var(--accent);border-color:var(--accent);color:#fff;}
-.choice.correct{border-color:var(--success);background:rgba(16,185,129,0.08);}
-.choice.correct .ch-lt{background:var(--success);border-color:var(--success);color:#fff;}
-.choice.wrong{border-color:var(--danger);background:rgba(244,63,94,0.08);}
-.choice.wrong .ch-lt{background:var(--danger);border-color:var(--danger);color:#fff;}
-.q-nav{display:flex;gap:10px;margin-top:20px;}
-.q-sub{display:flex;gap:10px;margin-top:10px;}
-.btn-quit{flex:1;padding:10px;border-radius:11px;background:transparent;border:1px solid rgba(244,63,94,.22);color:var(--danger);font-size:12px;}
-.btn-quit:hover{background:rgba(244,63,94,.08);}
-.btn-fin{flex:1;padding:10px;border-radius:11px;background:transparent;border:1px solid rgba(16,185,129,.22);color:var(--success);font-size:12px;}
-.btn-fin:hover{background:rgba(16,185,129,.08);}
-
-/* ════ RESULTS ════ */
-.res-hero{text-align:center;padding:32px 20px 24px;}
-.ring-wrap{width:128px;height:128px;position:relative;margin:0 auto 20px;}
-.ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg);}
-.ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.ring-num{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;}
-.ring-lbl{font-size:10px;color:var(--text-3);}
-.res-hl{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:8px;}
-.res-bd{font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.5;}
-.xp-pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid var(--border-hi);padding:8px 18px;border-radius:99px;font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:24px;}
-.rev-item{padding:14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);margin-bottom:10px;}
-.rev-q{font-weight:600;font-size:14px;margin-bottom:10px;}
-.rev-c{padding:7px 11px;border-radius:8px;font-size:12px;margin:4px 0;color:var(--text-2);}
-.rev-c.correct{background:rgba(16,185,129,.1);color:var(--success);}
-.rev-c.wrong{background:rgba(244,63,94,.1);color:var(--danger);}
-.res-acts{display:flex;gap:10px;margin-top:20px;}
-
-/* ════ STATS ════ */
-.stat-rec{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;}
-.stat-cat{font-weight:700;font-size:13px;}
-.stat-meta{font-size:11px;color:var(--text-3);margin-top:2px;}
-.stat-sc{font-family:'Space Mono',monospace;font-weight:700;color:var(--accent);text-align:right;}
-.stat-pct{font-size:11px;color:var(--text-3);margin-top:1px;}
+/* ════ PROGRESS ════ */
+.rail{height:6px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;}
+.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--indigo));border-radius:99px;transition:width .8s cubic-bezier(.22,1,.36,1);box-shadow:0 0 8px var(--blue);}
+.fill-gold{background:linear-gradient(90deg,var(--amber),var(--red));}
+.fill-green{background:linear-gradient(90deg,var(--green),var(--teal));}
 
 /* ════ MODAL ════ */
-.mo{position:fixed;inset:0;z-index:9999;background:rgba(5,8,15,.78);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .22s;}
-.mo.open{opacity:1;pointer-events:auto;}
-.mo-box{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--border-hi);border-radius:20px;padding:24px;box-shadow:var(--shadow-lg);transform:scale(.94);transition:transform .25s cubic-bezier(.22,1,.36,1);}
-.mo.open .mo-box{transform:scale(1);}
-.mo-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
-.mo-title{font-family:'DM Serif Display',serif;font-size:22px;}
-.mo-sub{font-size:13px;color:var(--text-2);margin-top:4px;}
+.overlay{position:fixed;inset:0;z-index:9900;background:rgba(4,7,14,.82);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .22s;}
+@media(min-width:520px){.overlay{align-items:center;}}
+.overlay.on{opacity:1;pointer-events:auto;}
+.sheet{
+  width:100%;max-width:480px;background:var(--surface);
+  border:1px solid var(--border-hi);border-radius:24px 24px 0 0;
+  padding:24px;box-shadow:var(--sh-lg);
+  transform:translateY(20px);transition:transform .25s cubic-bezier(.22,1,.36,1);
+}
+@media(min-width:520px){.sheet{border-radius:24px;transform:scale(.95);}}
+.overlay.on .sheet{transform:translateY(0);}
+@media(min-width:520px){.overlay.on .sheet{transform:scale(1);}}
+.sheet-handle{width:36px;height:4px;background:var(--border-hi);border-radius:99px;margin:0 auto 20px;}
+.sheet-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;}
+.sheet-sub{font-size:13px;color:var(--t2);margin-bottom:20px;}
 
 /* ════ TOASTS ════ */
-#toasts{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;flex-direction:column;align-items:center;gap:8px;}
-.toast{background:var(--surface);border:1px solid var(--border-hi);color:var(--text);padding:11px 20px;border-radius:99px;font-size:13px;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.45);animation:tIn .3s cubic-bezier(.22,1,.36,1) both;white-space:nowrap;}
-@keyframes tIn{from{opacity:0;transform:translateY(10px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
-.toast.out{opacity:0;transition:opacity .3s;}
+#toasts{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;}
+.toast{background:var(--surface-3);border:1px solid var(--border-hi);color:var(--t1);padding:11px 20px;border-radius:99px;font-size:13px;font-weight:600;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:tUp .3s cubic-bezier(.22,1,.36,1) both;}
+@keyframes tUp{from{opacity:0;transform:translateY(10px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+.toast.out{opacity:0;transition:opacity .28s;}
 
-/* ── referral / badges ── */
-.ref-box{background:var(--surface-2);border:1px solid var(--border-hi);padding:13px 18px;border-radius:12px;font-family:'Space Mono',monospace;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:2px;text-align:center;margin:12px 0;}
-.badge-row{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1px solid var(--border);padding:10px 14px;border-radius:12px;margin-bottom:8px;}
-.badge-ico{width:34px;height:34px;border-radius:9px;background:var(--warn-glow);display:flex;align-items:center;justify-content:center;font-size:16px;}
-.badge-nm{font-weight:700;font-size:13px;}
-.badge-dt{font-size:11px;color:var(--text-3);}
-
-/* ── RESPONSIVE ── */
-@media(max-width:620px){
-  .cat-grid{grid-template-columns:repeat(2,1fr);}
-  .plans-row{flex-direction:column;}
-  .sp-title{font-size:32px;}
-  .hud-act{flex-wrap:wrap;}
+/* ════════════════════════════
+   SCREEN: SPLASH
+   VISCERAL — first impression
+   ════════════════════════════ */
+#sSplash{
+  min-height:100vh;display:none;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:40px 24px;
+  background:radial-gradient(ellipse 600px 600px at 50% 30%,rgba(59,130,246,0.1),transparent);
 }
-@media(max-width:380px){
-  .sp-stats{flex-wrap:wrap;}
-  .sp-stat{flex:none;width:50%;}
+#sSplash.on{display:flex;}
+.sp-orb{
+  width:96px;height:96px;border-radius:28px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:flex;align-items:center;justify-content:center;font-size:42px;color:#fff;
+  box-shadow:0 24px 72px rgba(59,130,246,0.45),0 0 0 1px rgba(96,165,250,0.3);
+  animation:orbFloat 4s ease-in-out infinite;margin-bottom:32px;
+}
+@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-12px) rotate(4deg);}}
+.sp-kicker{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-bottom:14px;}
+.sp-h1{font-family:'Syne',sans-serif;font-size:46px;line-height:1.0;font-weight:800;background:linear-gradient(135deg,var(--t1) 40%,var(--blue-hi));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;}
+.sp-p{font-size:16px;color:var(--t2);line-height:1.65;max-width:360px;margin:0 auto 36px;}
+.sp-proof{display:flex;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:40px;width:100%;max-width:360px;}
+.sp-stat{flex:1;padding:16px 10px;text-align:center;border-right:1px solid var(--border);}
+.sp-stat:last-child{border-right:none;}
+.sp-stat-n{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;color:var(--t1);}
+.sp-stat-l{font-size:10px;color:var(--t3);margin-top:3px;}
+.sp-cta{width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px;}
+.prc-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold-glow);border:1px solid rgba(251,191,36,.2);
+  padding:4px 12px;border-radius:99px;font-size:11px;color:var(--gold);font-weight:700;
+  margin-bottom:8px;
+}
+
+/* ════════════════════════
+   SCREEN: SIGN IN / UP
+   ════════════════════════ */
+.auth-wrap{max-width:400px;margin:60px auto 0;}
+.auth-logo{
+  width:54px;height:54px;border-radius:16px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  box-shadow:0 12px 40px rgba(59,130,246,0.35);margin:0 auto 20px;
+}
+.auth-h{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:6px;}
+.auth-sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:28px;}
+.auth-switch{text-align:center;font-size:13px;color:var(--t2);margin-top:18px;display:flex;align-items:center;justify-content:center;gap:6px;}
+
+/* ════════════════════════
+   HUD  (post-login bar)
+   ════════════════════════ */
+#hud{
+  display:none;align-items:center;gap:12px;
+  padding:14px 16px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  margin:16px 0;box-shadow:var(--sh);
+  position:sticky;top:16px;z-index:500;
+}
+#hud.on{display:flex;}
+.hav{
+  width:44px;height:44px;border-radius:13px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:#fff;
+  box-shadow:0 6px 20px rgba(59,130,246,0.3);
+}
+.hinfo{flex:1;min-width:0;}
+.hnm{font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hmeta{display:flex;align-items:center;gap:8px;margin-top:4px;}
+.hlv{font-family:'Space Mono',monospace;font-size:9px;background:var(--blue-glow);border:1px solid var(--border-hi);color:var(--blue-hi);padding:2px 7px;border-radius:99px;}
+.hxpr{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;}
+.hxpf{height:100%;background:linear-gradient(90deg,var(--blue),var(--indigo));transition:width .8s;border-radius:99px;}
+.hxpn{font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);}
+.hact{display:flex;gap:6px;}
+
+/* ════════════════════════════
+   SCREEN: HOME
+   ════════════════════════════ */
+.home-hero{
+  background:linear-gradient(140deg,var(--surface-2),var(--surface-3));
+  border:1px solid var(--border-hi);border-radius:var(--r-xl);
+  padding:24px;margin-bottom:20px;position:relative;overflow:hidden;
+}
+.home-hero::before{content:'🔧';position:absolute;right:-10px;top:-10px;font-size:80px;opacity:0.06;transform:rotate(20deg);}
+.home-tier{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.home-greet{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:4px;}
+.home-sub{font-size:13px;color:var(--t2);}
+.home-streak{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);}
+.streak-ico{font-size:20px;}
+.streak-val{font-family:'Space Mono',monospace;font-size:16px;font-weight:700;}
+.streak-lbl{font-size:11px;color:var(--t3);}
+
+/* Category grid */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;}
+.cat-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:18px 16px;cursor:pointer;transition:all .22s cubic-bezier(.22,1,.36,1);
+  position:relative;overflow:hidden;
+}
+.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-glow),transparent);opacity:0;transition:opacity .22s;}
+.cat-card:hover{border-color:var(--border-hi);transform:translateY(-3px);box-shadow:0 12px 32px rgba(59,130,246,.1);}
+.cat-card:hover::after{opacity:1;}
+.cat-ico{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--blue-glow);border:1px solid var(--border-hi);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  margin-bottom:12px;
+}
+.cat-nm{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.3;margin-bottom:4px;}
+.cat-meta{font-size:11px;color:var(--t3);}
+.cat-progress{margin-top:10px;}
+.cat-pct{font-family:'Space Mono',monospace;font-size:10px;color:var(--t2);margin-bottom:5px;}
+
+/* Mock exam banner */
+.mock-banner{
+  background:linear-gradient(130deg,#0f1e35,#162640);
+  border:1px solid rgba(251,191,36,0.2);border-radius:var(--r-xl);
+  padding:20px;margin-bottom:22px;
+  display:flex;align-items:center;gap:16px;
+}
+.mock-ico{
+  width:52px;height:52px;border-radius:14px;flex-shrink:0;
+  background:var(--gold-glow);border:1px solid rgba(251,191,36,.2);
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+}
+.mock-title{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:3px;}
+.mock-sub{font-size:12px;color:var(--t2);}
+.mock-action{margin-left:auto;flex-shrink:0;}
+
+/* ════════════════════════
+   SCREEN: QUIZ CATEGORIES
+   ════════════════════════ */
+.level-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px;}
+.lvl-btn{
+  aspect-ratio:1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  background:var(--surface-2);border:1px solid var(--border);
+  font-family:'Space Mono',monospace;font-size:13px;font-weight:700;
+  cursor:pointer;transition:all .2s;position:relative;
+}
+.lvl-btn.unlocked:hover{border-color:var(--border-hi);background:var(--blue-glow);}
+.lvl-btn.completed{background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(20,184,166,.08));border-color:rgba(16,185,129,.25);}
+.lvl-btn.locked{opacity:.4;cursor:not-allowed;}
+.lvl-btn.perfect::after{content:'⭐';position:absolute;top:-6px;right:-4px;font-size:12px;}
+.lvl-score{font-size:9px;color:var(--t3);}
+
+/* ════════════════════════
+   SCREEN: QUIZ
+   BEHAVIORAL — flow state
+   ════════════════════════ */
+.quiz-hd{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0 10px;
+}
+.quiz-timer{
+  display:flex;align-items:center;gap:6px;
+  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;
+  background:var(--surface);border:1px solid var(--border);
+  padding:6px 14px;border-radius:99px;
+}
+.quiz-timer.warn{color:var(--red);border-color:rgba(244,63,94,.3);animation:timerPulse 1s ease-in-out infinite;}
+@keyframes timerPulse{0%,100%{opacity:1;}50%{opacity:.5;}}
+.quiz-score-chip{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:99px;}
+
+.q-num{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--t3);margin-bottom:16px;text-transform:uppercase;}
+.q-text{font-family:'Syne',sans-serif;font-size:19px;font-weight:600;line-height:1.55;margin-bottom:24px;min-height:80px;}
+.q-img{width:100%;border-radius:14px;margin-bottom:20px;border:1px solid var(--border);}
+
+.choices{display:flex;flex-direction:column;gap:10px;}
+.choice{
+  display:flex;align-items:center;gap:12px;
+  width:100%;padding:15px 16px;
+  background:var(--surface-2);border:1.5px solid var(--border);
+  border-radius:14px;text-align:left;
+  font-size:14px;color:var(--t1);font-weight:500;
+  cursor:pointer;transition:all .18s cubic-bezier(.22,1,.36,1);
+}
+.chltr{
+  width:30px;height:30px;border-radius:9px;flex-shrink:0;
+  background:var(--surface-3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
+  transition:all .18s;
+}
+.choice:hover:not(:disabled){border-color:var(--border-hi);background:var(--blue-glow);transform:translateX(4px);}
+.choice:hover:not(:disabled) .chltr{background:var(--blue);border-color:var(--blue);color:#fff;}
+.choice.correct{border-color:var(--green)!important;background:rgba(16,185,129,.08)!important;animation:correctPulse .4s ease;}
+.choice.correct .chltr{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important;}
+.choice.wrong{border-color:var(--red)!important;background:rgba(244,63,94,.08)!important;animation:wrongShake .4s ease;}
+.choice.wrong .chltr{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important;}
+.choice:disabled{cursor:default;}
+
+@keyframes correctPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
+@keyframes wrongShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* Explanation panel */
+.explain{
+  margin-top:16px;padding:14px 16px;
+  background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(20,184,166,.04));
+  border:1px solid rgba(16,185,129,.2);border-radius:13px;
+  font-size:13px;color:var(--t2);line-height:1.6;
+  display:none;animation:riseIn .25s ease;
+}
+.explain.on{display:block;}
+.explain-head{font-weight:700;color:var(--green);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+
+.quiz-nav{display:flex;gap:10px;margin-top:20px;}
+.quiz-sub{display:flex;gap:10px;margin-top:10px;}
+
+/* ════════════════════════════
+   SCREEN: RESULTS
+   REFLECTIVE — identity/growth
+   ════════════════════════════ */
+.res-hero{text-align:center;padding:32px 20px 28px;}
+.score-ring-wrap{width:136px;height:136px;position:relative;margin:0 auto 24px;}
+.score-ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.score-ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ring-num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;}
+.ring-lbl{font-size:10px;color:var(--t3);margin-top:2px;}
+.res-hl{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;margin-bottom:8px;}
+.res-bd{font-size:14px;color:var(--t2);line-height:1.6;max-width:340px;margin:0 auto 20px;}
+.xp-pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue-glow);border:1px solid var(--border-hi);padding:9px 20px;border-radius:99px;font-family:'Space Mono',monospace;font-size:12px;color:var(--blue-hi);margin-bottom:24px;}
+.stats-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;}
+.trio-stat{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;}
+.trio-val{font-family:'Space Mono',monospace;font-size:16px;font-weight:700;}
+.trio-lbl{font-size:10px;color:var(--t3);margin-top:2px;}
+
+.rev-item{padding:14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);margin-bottom:10px;}
+.rev-q{font-weight:600;font-size:14px;margin-bottom:10px;}
+.rev-c{padding:7px 11px;border-radius:8px;font-size:12px;margin:4px 0;color:var(--t2);}
+.rev-c.correct{background:rgba(16,185,129,.1);color:var(--green);}
+.rev-c.wrong{background:rgba(244,63,94,.1);color:var(--red);}
+.res-acts{display:flex;gap:10px;margin-top:20px;}
+
+/* ════════════════════════
+   SCREEN: EARNINGS DASH
+   REFLECTIVE — rewards/status
+   ════════════════════════ */
+.earn-hero{
+  background:linear-gradient(140deg,#0f1a2e,#1a1040);
+  border:1px solid rgba(251,191,36,.18);border-radius:var(--r-xl);
+  padding:24px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden;
+}
+.earn-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(251,191,36,.08),transparent 70%);pointer-events:none;}
+.earn-kicker{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.earn-balance{font-family:'Space Mono',monospace;font-size:42px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;}
+.earn-sub{font-size:12px;color:var(--t3);margin-bottom:20px;}
+.earn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.earn-cell{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;}
+.earn-cell-val{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;color:var(--t1);}
+.earn-cell-lbl{font-size:11px;color:var(--t3);margin-top:3px;}
+
+.tier-badge{
+  display:flex;align-items:center;gap:12px;
+  background:var(--surface-2);border:1px solid var(--border-hi);
+  border-radius:14px;padding:14px 16px;margin-bottom:14px;
+}
+.tier-ico{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.tier-rc{background:var(--gold-glow);border:1px solid rgba(251,191,36,.2);}
+.tier-prof{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);}
+.tier-stu{background:rgba(20,184,166,.08);border:1px solid rgba(20,184,166,.2);}
+.tier-title{font-weight:700;font-size:14px;}
+.tier-sub{font-size:11px;color:var(--t3);margin-top:2px;}
+
+.ref-code-box{
+  background:var(--surface-3);border:1.5px dashed var(--border-hi);
+  border-radius:14px;padding:18px;text-align:center;margin-bottom:16px;
+  cursor:pointer;transition:border-color .2s;
+}
+.ref-code-box:hover{border-color:var(--blue);}
+.ref-code-val{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;color:var(--blue-hi);letter-spacing:2px;}
+.ref-code-hint{font-size:11px;color:var(--t3);margin-top:4px;}
+.share-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;}
+.share-btn{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:14px 10px;border-radius:13px;background:var(--surface-2);
+  border:1px solid var(--border);cursor:pointer;transition:all .2s;
+  font-size:12px;font-weight:600;color:var(--t2);
+}
+.share-btn:hover{border-color:var(--border-hi);color:var(--t1);}
+.share-btn ion-icon{font-size:22px;}
+
+/* Leaderboard */
+.lb-row{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;background:var(--surface-2);
+  border:1px solid var(--border);border-radius:13px;margin-bottom:8px;
+  transition:border-color .18s;
+}
+.lb-row:hover{border-color:var(--border-hi);}
+.lb-rank{
+  width:30px;height:30px;border-radius:9px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:12px;font-weight:700;
+}
+.lb-1{background:var(--gold-glow);color:var(--gold);}
+.lb-2{background:rgba(203,213,225,.08);color:#94a3b8;}
+.lb-3{background:rgba(180,83,9,.08);color:#d97706;}
+.lb-n{background:var(--surface-3);color:var(--t3);}
+.lb-info{flex:1;}
+.lb-nm{font-weight:700;font-size:13px;}
+.lb-sub{font-size:11px;color:var(--t3);}
+.lb-val{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--blue-hi);}
+
+/* Withdrawal */
+.withdraw-form{margin-top:4px;}
+.withdraw-min{font-size:12px;color:var(--t3);text-align:center;margin-top:12px;}
+.hist-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;}
+.hist-date{font-size:11px;color:var(--t3);}
+.hist-amt{font-family:'Space Mono',monospace;font-size:14px;font-weight:700;}
+
+/* ════════════════════════
+   SCREEN: SUBSCRIPTION
+   ════════════════════════ */
+.sub-hero{
+  text-align:center;background:linear-gradient(140deg,var(--surface-2),var(--surface-3));
+  border:1px solid var(--border-hi);border-radius:var(--r-xl);
+  padding:28px 20px;margin-bottom:20px;
+}
+.sub-ico{width:64px;height:64px;border-radius:20px;background:var(--gold-glow);border:1.5px solid rgba(251,191,36,.25);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 16px;}
+.sub-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;margin-bottom:6px;}
+.sub-p{font-size:14px;color:var(--t2);margin-bottom:20px;}
+.price-show{margin:16px 0 20px;}
+.price-was{font-size:14px;color:var(--t3);text-decoration:line-through;margin-bottom:4px;}
+.price-now{font-family:'Space Mono',monospace;font-size:40px;font-weight:700;color:var(--gold);}
+.price-now span{font-size:16px;color:var(--t3);}
+.price-save{display:inline-block;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-top:6px;}
+
+.ref-discount-strip{
+  display:flex;align-items:center;gap:10px;
+  background:var(--surface-2);border:1px dashed var(--border-hi);
+  border-radius:12px;padding:12px 14px;margin-bottom:16px;
+}
+.rds-ico{font-size:20px;}
+.rds-txt{flex:1;font-size:13px;color:var(--t2);}
+.rds-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;background:transparent;border:none;color:var(--blue);cursor:pointer;}
+
+.ref-input-row{display:flex;gap:8px;margin-bottom:16px;}
+.ref-input-row input{flex:1;background:var(--surface-2);border:1px solid var(--border);color:var(--t1);padding:11px 14px;border-radius:11px;font-family:'Space Mono',monospace;font-size:14px;}
+.ref-input-row input:focus{outline:none;border-color:var(--blue);}
+.btn-apply{padding:11px 18px;border-radius:11px;background:var(--blue);color:#fff;font-weight:700;font-size:13px;}
+
+.perks-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.perk-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--t2);}
+.perk-ico{width:30px;height:30px;border-radius:8px;background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+
+/* ════════════════════════
+   SCREEN: ADMIN
+   ════════════════════════ */
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.admin-stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 16px;}
+.admin-stat-val{font-family:'Space Mono',monospace;font-size:24px;font-weight:700;color:var(--t1);margin-bottom:3px;}
+.admin-stat-lbl{font-size:11px;color:var(--t3);}
+.admin-stat-delta{font-size:11px;color:var(--green);margin-top:4px;}
+
+.admin-tab-row{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+.admin-tab-row::-webkit-scrollbar{display:none;}
+.admin-tab{padding:8px 16px;border-radius:99px;font-size:12px;font-weight:700;border:1px solid var(--border);color:var(--t3);background:transparent;white-space:nowrap;}
+.admin-tab.on{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+.admin-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;}
+.admin-row-info{flex:1;}
+.admin-row-nm{font-weight:700;font-size:13px;}
+.admin-row-sub{font-size:11px;color:var(--t3);margin-top:2px;}
+.admin-row-end{text-align:right;}
+.admin-row-val{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;}
+.admin-row-status{font-size:11px;margin-top:2px;}
+
+/* Approve button */
+.btn-approve{padding:7px 14px;border-radius:9px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:var(--green);font-size:12px;font-weight:700;cursor:pointer;}
+.btn-reject{padding:7px 14px;border-radius:9px;background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.2);color:var(--red);font-size:12px;font-weight:700;cursor:pointer;}
+
+/* ════════════════════════
+   SCREEN: ANALYTICS
+   ════════════════════════ */
+.chart-bar-row{display:flex;align-items:flex-end;gap:8px;height:100px;margin-bottom:8px;}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bar-fill{width:100%;border-radius:6px 6px 0 0;background:linear-gradient(to top,var(--blue),var(--indigo));transition:height .8s cubic-bezier(.22,1,.36,1);}
+.bar-lbl{font-size:9px;color:var(--t3);}
+
+/* ════════════════════════
+   MOCK EXAM SPECIFIC
+   ════════════════════════ */
+.mock-header{
+  background:linear-gradient(140deg,rgba(244,63,94,.08),rgba(239,68,68,.04));
+  border:1px solid rgba(244,63,94,.2);border-radius:14px;
+  padding:14px 16px;margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.mock-badge{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1.5px;background:rgba(244,63,94,.12);color:var(--red);padding:4px 10px;border-radius:99px;text-transform:uppercase;margin-bottom:4px;display:inline-block;}
+.mock-info{font-size:13px;color:var(--t2);}
+
+/* ════════════════════════
+   PROFILE SCREEN
+   ════════════════════════ */
+.profile-av{
+  width:80px;height:80px;border-radius:22px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:#fff;
+  box-shadow:0 16px 48px rgba(59,130,246,0.4);margin:0 auto 14px;
+}
+.profile-nm{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:4px;}
+.profile-email{font-size:13px;color:var(--t2);text-align:center;margin-bottom:16px;}
+.menu-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;margin-bottom:8px;cursor:pointer;transition:border-color .18s;}
+.menu-row:hover{border-color:var(--border-hi);}
+.menu-ico{width:36px;height:36px;border-radius:10px;background:var(--blue-glow);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.menu-txt{flex:1;font-weight:600;font-size:14px;}
+.menu-arr{color:var(--t3);}
+
+/* RESPONSIVE */
+@media(min-width:860px){
+  .cat-grid{grid-template-columns:repeat(4,1fr);}
+  .admin-grid{grid-template-columns:repeat(4,1fr);}
 }
 </style>
 </head>
 <body data-theme="dark">
-<div class="app-wrap">
+<div class="shell">
 
 <!-- ════ HUD ════ -->
-<div id="hud">
-  <div class="hud-av" id="hudAv">MP</div>
-  <div class="hud-inf">
-    <div class="hud-nm" id="hudNm">Guest</div>
-    <div class="hud-mt">
-      <div class="lv-chip" id="hudLv">LV 1</div>
-      <div class="xp-rail"><div class="xp-bar" id="hudXP"></div></div>
-      <div class="xp-num" id="hudXPN">0 XP</div>
+<div id="hud" class="on">
+  <div class="hav" id="hudAv">G</div>
+  <div class="hinfo">
+    <div class="hnm" id="hudNm">Guest</div>
+    <div class="hmeta">
+      <div class="hlv" id="hudLv">LV 1</div>
+      <div class="hxpr"><div class="hxpf" id="hudXP" style="width: 0%;"></div></div>
+      <div class="hxpn" id="hudXPN">0 XP</div>
     </div>
   </div>
-  <div class="hud-act">
-    <button class="btn-ghost" id="btnRef">Refer</button>
-    <button class="btn-ghost" id="btnBadges">🏅</button>
-    <button class="btn-gold" id="btnSub">Pro · ₱299</button>
+  <div class="hact">
+    <div class="topbar-icon" onclick="showNotifications()" title="Notifications"><ion-icon name="notifications-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M427.68 351.43C402 320 383.87 304 383.87 217.35 383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43 73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57zM320 384v16a64 64 0 01-128 0v-16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+    <div class="topbar-icon" onclick="toggleTheme()" id="themeBtn"><ion-icon name="moon-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
   </div>
 </div>
-<div id="qpw"><div id="qpf"></div></div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 1: SPLASH
-     ════════════════════════════════════════ -->
-<div id="splashScreen" class="screen">
-  <div class="sp-logo"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
-  <div class="sp-eyebrow">The Ultimate Board Reviewer</div>
-  <h1 class="sp-title">Master Plumber<br>Reviewer</h1>
-  <p class="sp-sub">Adaptive practice, 60+ real board exams, and premium analytics — everything you need to pass with confidence.</p>
-  <div class="sp-stats">
-    <div class="sp-stat"><div class="sp-stat-n">4,200+</div><div class="sp-stat-l">Students</div></div>
+<!-- ════ QUIZ PROGRESS BAR ════ -->
+<div id="qpw" style="display:none;"><div class="rail" style="margin-bottom:16px;"><div class="fill" id="qpf" style="width:0%;"></div></div></div>
+
+<!-- ═══════════════════════════════════════
+     SCREEN: SPLASH
+     ═══════════════════════════════════════ -->
+<div id="sSplash" class="scr">
+  <div class="sp-orb"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
+  <div class="sp-kicker">PRC Licensed Reviewer</div>
+  <h1 class="sp-h1">Master<br>Plumber<br>Reviewer</h1>
+  <p class="sp-p">The most complete board exam reviewer for Philippine Master Plumber Licensure. Adaptive, data-driven, community-powered.</p>
+  <div class="sp-proof">
+    <div class="sp-stat"><div class="sp-stat-n">4,200+</div><div class="sp-stat-l">Reviewees</div></div>
     <div class="sp-stat"><div class="sp-stat-n">94%</div><div class="sp-stat-l">Pass Rate</div></div>
-    <div class="sp-stat"><div class="sp-stat-n">60+</div><div class="sp-stat-l">Real Exams</div></div>
+    <div class="sp-stat"><div class="sp-stat-n">60+</div><div class="sp-stat-l">Exams</div></div>
+    <div class="sp-stat"><div class="sp-stat-n">3</div><div class="sp-stat-l">Tiers</div></div>
   </div>
-  <div class="sp-actions">
-    <button class="btn-primary" onclick="setScreen(&#39;signInScreen&#39;)">Sign In to Your Account</button>
-    <button class="btn-outline" onclick="setScreen(&#39;signUpScreen&#39;)">Create a Free Account</button>
-    <button class="btn-text" onclick="enterAsGuest()">Continue as Guest →</button>
+  <div class="sp-cta">
+    <div class="prc-tag">⭐ ₱305 discount with referral code</div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="goTo(&#39;sSignIn&#39;)">Sign In to Account</button>
+    <button class="btn btn-outline btn-lg btn-block" onclick="goTo(&#39;sSignUp&#39;)">Create Free Account</button>
+    <button class="btn btn-text" onclick="enterGuest()" style="">Continue as Guest →</button>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 2: SIGN IN
-     ════════════════════════════════════════ -->
-<div id="signInScreen" class="screen">
+<!-- ═══════════════════════════════════════
+     SCREEN: SIGN IN
+     ═══════════════════════════════════════ -->
+<div id="sSignIn" class="scr">
   <div class="auth-wrap">
-    <div class="card auth-card">
-      <div class="auth-icon"><ion-icon name="log-in-outline" style="color:var(--accent);font-size:22px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M288 336l80-80-80-80M80 256h272" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-      <div class="auth-title">Welcome back</div>
-      <div class="auth-sub">Sign in to continue your review journey.</div>
-      <div class="field"><label>Username</label><input type="text" id="siUser" placeholder="Your username" autocomplete="username"></div>
-      <div class="field"><label>Password</label><input type="password" id="siPass" placeholder="Your password" autocomplete="current-password"></div>
-      <button class="btn-primary" onclick="handleSignIn()" style="margin-top:4px;">Sign In</button>
-      <div class="divider">or</div>
-      <button class="btn-outline" onclick="enterAsGuest()">Continue as Guest</button>
-      <div class="auth-foot">
-        Don't have an account?
-        <button class="btn-text" onclick="setScreen(&#39;signUpScreen&#39;)">Create one →</button>
-      </div>
-      <div style="margin-top:10px;text-align:center;">
-        <button class="btn-text" onclick="setScreen(&#39;splashScreen&#39;)" style="color:var(--text-3);font-size:12px;">← Back to home</button>
-      </div>
-    </div>
+    <div class="auth-logo"><ion-icon name="log-in-outline" style="font-size:24px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M288 336l80-80-80-80M80 256h272" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+    <div class="auth-h">Welcome back</div>
+    <div class="auth-sub">Continue your review journey.</div>
+    <div class="field"><label>Email / Username</label><input type="text" id="siU" placeholder="Enter email or username"></div>
+    <div class="field"><label>Password</label><input type="password" id="siP" placeholder="Enter password"></div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="doSignIn()" style="margin-top:4px;">Sign In</button>
+    <div class="divider">or</div>
+    <button class="btn btn-ghost btn-lg btn-block" onclick="enterGuest()">Continue as Guest</button>
+    <div class="auth-switch">No account? <button class="btn-text" onclick="goTo(&#39;sSignUp&#39;)">Create one →</button></div>
+    <div style="text-align:center;margin-top:10px;"><button class="btn-text" onclick="goTo(&#39;sSplash&#39;)" style="color:var(--t3);font-size:12px;">← Back</button></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 3: SIGN UP
-     ════════════════════════════════════════ -->
-<div id="signUpScreen" class="screen">
+<!-- ═══════════════════════════════════════
+     SCREEN: SIGN UP
+     ═══════════════════════════════════════ -->
+<div id="sSignUp" class="scr">
   <div class="auth-wrap">
-    <div class="card auth-card">
-      <div class="auth-icon"><ion-icon name="person-add-outline" style="color:var(--accent);font-size:22px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M376 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M288 304c-87 0-175.3 48-191.64 138.6-2 10.92 4.21 21.4 15.65 21.4H464c11.44 0 17.62-10.48 15.65-21.4C463.3 352 375 304 288 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M88 176v112M144 232H32" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
-      <div class="auth-title">Create your account</div>
-      <div class="auth-sub">Join 4,200+ students already studying with us.</div>
-      <div class="field"><label>Username</label><input type="text" id="suUser" placeholder="Choose a username" autocomplete="username"></div>
-      <div class="field"><label>Password</label><input type="password" id="suPass" placeholder="Create a password" autocomplete="new-password"></div>
-      <div class="field"><label>Confirm Password</label><input type="password" id="suConf" placeholder="Repeat your password" autocomplete="new-password"></div>
-      <button class="btn-primary" onclick="handleSignUp()" style="margin-top:4px;">Create Account</button>
-      <div class="auth-foot">
-        Already have an account?
-        <button class="btn-text" onclick="setScreen(&#39;signInScreen&#39;)">Sign in →</button>
-      </div>
-      <div style="margin-top:10px;text-align:center;">
-        <button class="btn-text" onclick="setScreen(&#39;splashScreen&#39;)" style="color:var(--text-3);font-size:12px;">← Back to home</button>
-      </div>
+    <div class="auth-logo"><ion-icon name="person-add-outline" style="font-size:24px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M376 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M288 304c-87 0-175.3 48-191.64 138.6-2 10.92 4.21 21.4 15.65 21.4H464c11.44 0 17.62-10.48 15.65-21.4C463.3 352 375 304 288 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M88 176v112M144 232H32" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+    <div class="auth-h">Create account</div>
+    <div class="auth-sub">Join 4,200+ students studying for the boards.</div>
+    <div class="field"><label>Full Name</label><input type="text" id="suNm" placeholder="Your full name"></div>
+    <div class="field"><label>Email</label><input type="email" id="suEm" placeholder="your@email.com"></div>
+    <div class="field"><label>Phone / GCash Number</label><input type="tel" id="suPh" placeholder="09XXXXXXXXX"></div>
+    <div class="field"><label>Account Type</label>
+      <select id="suType">
+        <option value="student">Student</option>
+        <option value="professor">Professor / Instructor</option>
+        <option value="review_center">Review Center</option>
+      </select>
     </div>
+    <div class="field"><label>Password</label><input type="password" id="suPw" placeholder="Create password"></div>
+    <div class="field"><label>Confirm Password</label><input type="password" id="suCf" placeholder="Repeat password"></div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="doSignUp()" style="margin-top:4px;">Create Account &amp; Start Reviewing</button>
+    <div class="auth-switch">Have an account? <button class="btn-text" onclick="goTo(&#39;sSignIn&#39;)">Sign in →</button></div>
+    <div style="text-align:center;margin-top:10px;"><button class="btn-text" onclick="goTo(&#39;sSplash&#39;)" style="color:var(--t3);font-size:12px;">← Back</button></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 4: HOME DASHBOARD
-     ════════════════════════════════════════ -->
-<div id="home" class="screen">
-  <div class="home-bar">
-    <div class="home-greet">
-      <small id="greetLbl">Good morning,</small>
-      <span id="greetNm">Friend</span>
-    </div>
-    <div class="home-ctrls">
-      <button class="btn-ghost" onclick="setScreen(&#39;stats&#39;)">Stats</button>
-      <button class="btn-ghost" onclick="toggleTheme()"><ion-icon id="themeIcon" name="moon-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></button>
-      <button class="btn-ghost" onclick="doLogout()" style="color:var(--text-3);">Sign Out</button>
+<!-- ═══════════════════════════════════════
+     SCREEN: HOME
+     ═══════════════════════════════════════ -->
+<div id="sHome" class="scr">
+  <!-- Home hero -->
+  <div class="home-hero" style="margin-top:8px;">
+    <div class="home-tier" id="homeTier">STUDENT REVIEWER</div>
+    <div class="home-greet" id="homeGreet">Good morning, Guest!</div>
+    <div class="home-sub" id="homeSub">Free Member · Level 1 per category</div>
+    <div class="home-streak">
+      <div class="streak-ico">🔥</div>
+      <div><div class="streak-val" id="streakVal">0</div><div class="streak-lbl">Day Streak</div></div>
+      <div style="margin-left:auto;"></div>
+      <div style="text-align:right;"><div class="streak-val" id="xpVal">0</div><div class="streak-lbl">Total XP</div></div>
     </div>
   </div>
 
-  <div id="proArea"></div>
+  <!-- Mock exam banner -->
+  <div class="mock-banner">
+    <div class="mock-ico">📋</div>
+    <div>
+      <div class="mock-title">Mock Board Exam</div>
+      <div class="mock-sub">100 questions · 2-hour timer · All topics</div>
+    </div>
+    <div class="mock-action">
+      <button class="btn btn-gold btn-sm" onclick="startMockExam()">Start →</button>
+    </div>
+  </div>
 
-  <div class="sec-head">Exam Categories</div>
+  <div class="sec">Exam Categories</div>
   <div class="cat-grid">
-    <div class="cat-card" onclick="openExams(&#39;Plumbing Code&#39;)"><div class="cat-ico"><ion-icon name="book-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Plumbing Code</div><div class="cat-sb">Regulations &amp; theory</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Plumbing Arithmetic&#39;)"><div class="cat-ico"><ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon></div><div><div class="cat-nm">Arithmetic</div><div class="cat-sb">Speed rounds</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Sanitation Plumbing Design and Installation&#39;)"><div class="cat-ico"><ion-icon name="construct-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Sanitation &amp; Design</div><div class="cat-sb">Design challenges</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Practical Problems and Experiences&#39;)"><div class="cat-ico"><ion-icon name="hammer-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M277.42 247a24.68 24.68 0 00-4.08-5.47L255 223.44a21.63 21.63 0 00-6.56-4.57 20.93 20.93 0 00-23.28 4.27c-6.36 6.26-18 17.68-39 38.43C146 301.3 71.43 367.89 37.71 396.29a16 16 0 00-1.09 23.54l39 39.43a16.13 16.13 0 0023.67-.89c29.24-34.37 96.3-109 136-148.23 20.39-20.06 31.82-31.58 38.29-37.94a21.76 21.76 0 003.84-25.2zM478.43 201l-34.31-34a5.44 5.44 0 00-4-1.59 5.59 5.59 0 00-4 1.59h0a11.41 11.41 0 01-9.55 3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86 1.09-20.36-5.07-29a242.88 242.88 0 00-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79 123.79 0 00-47-9.24c-26.35 0-46.61 11.76-54 18.51-5.88 5.32-12 13.77-12 13.77a91.29 91.29 0 0110.81-3.2 79.53 79.53 0 0123.28-1.49C241.19 76.8 259.94 84.1 270 92c16.21 13 23.18 30.39 24.27 52.83.8 16.69-15.23 37.76-30.44 54.94a7.85 7.85 0 00.4 10.83l21.24 21.23a8 8 0 0011.14.1c13.93-13.51 31.09-28.47 40.82-34.46s17.58-7.68 21.35-8.09a35.71 35.71 0 0121.3 4.62 13.65 13.65 0 013.08 2.38c6.46 6.56 6.07 17.28-.5 23.74l-2 1.89a5.5 5.5 0 000 7.84l34.31 34a5.5 5.5 0 004 1.58 5.65 5.65 0 004-1.58L478.43 209a5.82 5.82 0 000-8z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Practical Problems</div><div class="cat-sb">Real case scenarios</div></div></div>
-    <div class="cat-card" onclick="setScreen(&#39;subCats&#39;)"><div class="cat-ico"><ion-icon name="folder-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M440 432H72a40 40 0 01-40-40V120a40 40 0 0140-40h75.89a40 40 0 0122.19 6.72l27.84 18.56a40 40 0 0022.19 6.72H440a40 40 0 0140 40v240a40 40 0 01-40 40zM32 192h448" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Tools &amp; Diagrams</div><div class="cat-sb">Mini quizzes</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Random&#39;)"><div class="cat-ico"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Random Mix</div><div class="cat-sb">All topics</div></div></div>
+    <div class="cat-card" onclick="openCat(&#39;Plumbing Code&#39;)">
+      <div class="cat-ico"><ion-icon name="book-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+      <div class="cat-nm">Plumbing Code</div>
+      <div class="cat-meta">15 levels · 750+ questions</div>
+      <div class="cat-progress">
+        <div class="cat-pct" id="pct-PC">Level 1 / 15</div>
+        <div class="rail"><div class="fill" id="fp-PC" style="width:0%;"></div></div>
+      </div>
+    </div>
+    <div class="cat-card" onclick="openCat(&#39;Plumbing Arithmetic&#39;)">
+      <div class="cat-ico"><ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon></div>
+      <div class="cat-nm">Plumbing Arithmetic</div>
+      <div class="cat-meta">15 levels · 750+ questions</div>
+      <div class="cat-progress">
+        <div class="cat-pct" id="pct-PA">Level 1 / 15</div>
+        <div class="rail"><div class="fill" id="fp-PA" style="width:0%;"></div></div>
+      </div>
+    </div>
+    <div class="cat-card" onclick="openCat(&#39;Sanitation &amp; Design&#39;)">
+      <div class="cat-ico"><ion-icon name="construct-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+      <div class="cat-nm">Sanitation &amp; Design</div>
+      <div class="cat-meta">15 levels · 750+ questions</div>
+      <div class="cat-progress">
+        <div class="cat-pct" id="pct-SD">Level 1 / 15</div>
+        <div class="rail"><div class="fill" id="fp-SD" style="width:0%;"></div></div>
+      </div>
+    </div>
+    <div class="cat-card" onclick="openCat(&#39;Practical Problems&#39;)">
+      <div class="cat-ico"><ion-icon name="hammer-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M277.42 247a24.68 24.68 0 00-4.08-5.47L255 223.44a21.63 21.63 0 00-6.56-4.57 20.93 20.93 0 00-23.28 4.27c-6.36 6.26-18 17.68-39 38.43C146 301.3 71.43 367.89 37.71 396.29a16 16 0 00-1.09 23.54l39 39.43a16.13 16.13 0 0023.67-.89c29.24-34.37 96.3-109 136-148.23 20.39-20.06 31.82-31.58 38.29-37.94a21.76 21.76 0 003.84-25.2zM478.43 201l-34.31-34a5.44 5.44 0 00-4-1.59 5.59 5.59 0 00-4 1.59h0a11.41 11.41 0 01-9.55 3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86 1.09-20.36-5.07-29a242.88 242.88 0 00-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79 123.79 0 00-47-9.24c-26.35 0-46.61 11.76-54 18.51-5.88 5.32-12 13.77-12 13.77a91.29 91.29 0 0110.81-3.2 79.53 79.53 0 0123.28-1.49C241.19 76.8 259.94 84.1 270 92c16.21 13 23.18 30.39 24.27 52.83.8 16.69-15.23 37.76-30.44 54.94a7.85 7.85 0 00.4 10.83l21.24 21.23a8 8 0 0011.14.1c13.93-13.51 31.09-28.47 40.82-34.46s17.58-7.68 21.35-8.09a35.71 35.71 0 0121.3 4.62 13.65 13.65 0 013.08 2.38c6.46 6.56 6.07 17.28-.5 23.74l-2 1.89a5.5 5.5 0 000 7.84l34.31 34a5.5 5.5 0 004 1.58 5.65 5.65 0 004-1.58L478.43 209a5.82 5.82 0 000-8z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
+      <div class="cat-nm">Practical Problems</div>
+      <div class="cat-meta">15 levels · 750+ questions</div>
+      <div class="cat-progress">
+        <div class="cat-pct" id="pct-PP">Level 1 / 15</div>
+        <div class="rail"><div class="fill" id="fp-PP" style="width:0%;"></div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="sec-head" style="font-size:18px;">Weekly Challenges</div>
-  <div class="ch-strip">
-    <div class="ch-chip hot"><div class="ch-lbl">🔥 This Week</div><div class="ch-title">Sanitation Sprint</div><div class="ch-sub" style="color:rgba(255,255,255,.75);">Win badges &amp; bonus XP</div></div>
-    <div class="ch-chip"><div class="ch-lbl">Daily</div><div class="ch-title">10-Question Sprint</div><div class="ch-sub">Build exam stamina</div></div>
-    <div class="ch-chip"><div class="ch-lbl">Goal</div><div class="ch-title">Perfect Score</div><div class="ch-sub">Unlock elite badge</div></div>
-    <div class="ch-chip"><div class="ch-lbl">Streak</div><div class="ch-title">7-Day Study</div><div class="ch-sub">Consistency badge</div></div>
-  </div>
+  <!-- Weak topics -->
+  <div class="sec" style="font-size:16px;">⚠️ Weak Topics Detected</div>
+  <div id="weakTopics" class="card" style="margin-bottom:20px;"><div style="font-size:13px;color:var(--t2);text-align:center;padding:10px;">Take more exams to detect weak topics.</div></div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 5: SUBCATEGORIES
-     ════════════════════════════════════════ -->
-<div id="subCats" class="screen">
-  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button><span class="scr-title">Tools, Symbols &amp; Diagrams</span></div>
-  <div class="cat-grid">
-    <div class="cat-card" onclick="openExams(&#39;Tools&#39;)"><div class="cat-ico"><ion-icon name="build-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M393.87 190a32.1 32.1 0 01-45.25 0l-26.57-26.57a32.09 32.09 0 010-45.26L382.19 58a1 1 0 00-.3-1.64c-38.82-16.64-89.15-8.16-121.11 23.57-30.58 30.35-32.32 76-21.12 115.84a31.93 31.93 0 01-9.06 32.08L64 380a48.17 48.17 0 1068 68l153.86-167a31.93 31.93 0 0131.6-9.13c39.54 10.59 84.54 8.6 114.72-21.19 32.49-32 39.5-88.56 23.75-120.93a1 1 0 00-1.6-.26z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="96" cy="416" r="16"></circle></svg></div></template></ion-icon></div><div><div class="cat-nm">Tools</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Symbols&#39;)"><div class="cat-ico"><ion-icon name="git-branch-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><circle cx="160" cy="96" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><circle cx="160" cy="416" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M160 368V144" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="352" cy="160" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle><path d="M352 208c0 128-192 48-192 160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Symbols</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Diagrams&#39;)"><div class="cat-ico"><ion-icon name="map-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M313.27 124.64L198.73 51.36a32 32 0 00-29.28.35L56.51 127.49A16 16 0 0048 141.63v295.8a16 16 0 0023.49 14.14l97.82-63.79a32 32 0 0129.5-.24l111.86 73a32 32 0 0029.27-.11l115.43-75.94a16 16 0 008.63-14.2V74.57a16 16 0 00-23.49-14.14l-98 63.86a32 32 0 01-29.24.35zM328 128v336M184 48v336" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Diagrams</div></div></div>
-    <div class="cat-card" onclick="openExams(&#39;Random&#39;)"><div class="cat-ico"><ion-icon name="shuffle-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M400 304l48 48-48 48M400 112l48 48-48 48M64 352h85.19a80 80 0 0066.56-35.62L256 256" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M64 160h85.19a80 80 0 0166.56 35.62l80.5 120.76A80 80 0 00362.81 352H416M416 160h-53.19a80 80 0 00-66.56 35.62L288 208" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div><div><div class="cat-nm">Random</div></div></div>
+<!-- ═══════════════════════════════════════
+     SCREEN: CATEGORY / LEVELS
+     ═══════════════════════════════════════ -->
+<div id="sCatLevels" class="scr">
+  <div class="topbar">
+    <button class="topbar-back btn" onclick="goBack()"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
+    <div class="topbar-title" id="catTitle">Choose Category</div>
   </div>
+  <div class="card" style="margin-bottom:16px;">
+    <div class="sec-sm">OVERALL PROGRESS</div>
+    <div class="rail" style="margin-bottom:6px;"><div class="fill fill-green" id="catOverallFill" style="width:0%;"></div></div>
+    <div style="font-size:12px;color:var(--t3);" id="catOverallTxt">0 / 15 levels complete</div>
+  </div>
+  <div class="sec" style="font-size:16px;">Select Level</div>
+  <div class="level-grid" id="levelGrid"></div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 6: PAYMENT
-     ════════════════════════════════════════ -->
-<div id="paymentScreen" class="screen">
-  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button></div>
+<!-- ═══════════════════════════════════════
+     SCREEN: QUIZ
+     ═══════════════════════════════════════ -->
+<div id="sQuiz" class="scr">
+  <div class="quiz-hd">
+    <button class="topbar-back btn" onclick="confirmQuit()" style="font-size:12px;"><ion-icon name="close-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M368 368L144 144M368 144L144 368" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Quit</button>
+    <div class="quiz-score-chip" id="qScoreChip">0 / 0</div>
+    <div class="quiz-timer" id="qTimer" style="display:none;"><ion-icon name="time-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M256 128v144h96" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> <span id="qTimerVal">00:00</span></div>
+  </div>
   <div class="card">
-    <div class="pay-head">
-      <div class="pay-ico">🏆</div>
-      <div class="pay-title">Unlock Your Full Potential</div>
-      <div class="pay-sub">Everything you need to pass the board — pay once, study forever.</div>
-    </div>
-    <div class="plans-row">
-      <div class="plan-card gold-plan" id="planLifetime" onclick="selectPlan(&#39;lifetime&#39;)">
-        <div class="plan-badge">BEST VALUE</div>
-        <div class="plan-nm">Lifetime</div><div class="plan-desc">One-time · Forever</div>
-        <div class="plan-price">₱299 <sub>one-time</sub></div>
-        <div class="plan-feats">
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All 60+ exams</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> PDF downloads</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics &amp; stats</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Offline access</div>
-        </div>
-      </div>
-      <div class="plan-card" id="planMonthly" onclick="selectPlan(&#39;monthly&#39;)">
-        <div class="plan-nm">Monthly</div><div class="plan-desc">Auto-renewing</div>
-        <div class="plan-price">₱59 <sub>/mo</sub></div>
-        <div class="plan-feats">
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> All exams</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Analytics</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Cancel anytime</div>
-        </div>
-      </div>
-      <div class="plan-card" id="planProfessor" onclick="selectPlan(&#39;professor&#39;)">
-        <div class="plan-nm">Professor</div><div class="plan-desc">Referral earnings</div>
-        <div class="plan-price" style="font-size:17px;">30% <sub>per referral</sub></div>
-        <div class="plan-feats">
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Your own code</div>
-          <div class="plan-feat"><ion-icon name="checkmark-circle" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm108.25 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z"></path></svg></div></template></ion-icon> Track earnings</div>
-        </div>
-      </div>
-    </div>
-    <button class="btn-primary" id="buyBtn" onclick="doPurchase()">Unlock Lifetime for ₱299</button>
-    <div class="key-sec">
-      <div class="key-lbl">Have a license key or referral code?</div>
-      <div class="key-row"><input type="text" id="licenseKey" placeholder="MP-XXXX-XXXX"><button class="btn-act" onclick="verifyKey()">Activate</button></div>
-    </div>
-    <div class="pay-trust">🔒 Secure payment · 30-day guarantee · Instant access</div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════
-     SCREEN 7: EXAM LIST
-     ════════════════════════════════════════ -->
-<div id="exams" class="screen">
-  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button><span class="scr-title" id="catTitle"></span></div>
-  <div id="examGrid" style="max-height:520px;overflow-y:auto;padding-right:4px;"></div>
-</div>
-
-<!-- ════════════════════════════════════════
-     SCREEN 8: QUIZ
-     ════════════════════════════════════════ -->
-<div id="quiz" class="screen">
-  <div class="card">
-    <div class="q-topbar"><div class="q-lbl" id="qNum">QUESTION 1 OF 50</div><div class="score-chip" id="scoreBox">0 / 0</div></div>
-    <div class="prog-rail"><div class="prog-fill" id="progressBar"></div></div>
-    <div class="q-text" id="qTxt"></div>
+    <div class="q-num" id="qNum">QUESTION 1 / 50</div>
+    <div class="prog-rail" style="margin-bottom:20px;"><div class="fill" id="qProgFill" style="width:0%;"></div></div>
+    <div class="q-text" id="qText">Loading question…</div>
+    <div id="qImgWrap" style="display:none;"><img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_3.html" alt="Question image"></div>
     <div class="choices" id="choices"></div>
-    <div class="q-nav">
-      <button class="btn-ghost" onclick="prevQ()" style="flex:1;padding:13px;">← Back</button>
-      <button class="btn-primary" onclick="handleNextLogic()" style="flex:2;">Next →</button>
+    <div class="explain" id="explain">
+      <div class="explain-head"><ion-icon name="bulb-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M304 384v-24c0-29 31.54-56.43 52-76 28.84-27.57 44-64.61 44-108 0-80-63.73-144-144-144a143.6 143.6 0 00-144 144c0 41.84 15.81 81.39 44 108 20.35 19.21 52 46.7 52 76v24M224 480h64M208 432h96M256 384V256" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M294 240s-21.51 16-38 16-38-16-38-16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Explanation</div>
+      <div id="explainTxt">This answer is correct because…</div>
     </div>
-    <div class="q-sub">
-      <button class="btn-quit" onclick="quitQuiz()">Quit Exam</button>
-      <button class="btn-fin" onclick="finishExamEarly()">Finish Early</button>
+    <div class="quiz-nav" style="margin-top:20px;">
+      <button class="btn btn-ghost btn-md" onclick="prevQ()" style="flex:1;">← Back</button>
+      <button class="btn btn-primary btn-md" onclick="nextQ()" style="flex:2;" id="qNextBtn">Next →</button>
+    </div>
+    <div class="quiz-sub">
+      <button class="btn-danger-ghost btn" onclick="confirmQuit()" style="flex:1;">Quit Exam</button>
+      <button class="btn-success-ghost btn" onclick="finishEarly()" style="flex:1;">Finish Early</button>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 9: RESULTS
-     ════════════════════════════════════════ -->
-<div id="results" class="screen">
+<!-- ═══════════════════════════════════════
+     SCREEN: RESULTS
+     REFLECTIVE — pride/identity/growth
+     ═══════════════════════════════════════ -->
+<div id="sResults" class="scr">
   <div class="card">
     <div class="res-hero">
-      <div class="ring-wrap">
-        <svg viewBox="0 0 128 128" fill="none">
-          <circle cx="64" cy="64" r="56" stroke="rgba(255,255,255,0.05)" stroke-width="9"></circle>
-          <circle cx="64" cy="64" r="56" id="scoreArc" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9" style="transition:stroke-dashoffset 1.3s cubic-bezier(.22,1,.36,1);"></circle>
+      <div class="score-ring-wrap">
+        <svg viewBox="0 0 136 136" fill="none">
+          <circle cx="68" cy="68" r="58" stroke="rgba(255,255,255,0.05)" stroke-width="10"></circle>
+          <circle cx="68" cy="68" r="58" id="resArc" stroke="var(--blue)" stroke-width="10" stroke-linecap="round" stroke-dasharray="364.4" stroke-dashoffset="364.4" style="transition:stroke-dashoffset 1.4s cubic-bezier(.22,1,.36,1);"></circle>
         </svg>
-        <div class="ring-inner"><div class="ring-num" id="scoreNum">0/0</div><div class="ring-lbl">SCORE</div></div>
+        <div class="score-ring-inner">
+          <div class="ring-num" id="resNum">0/0</div>
+          <div class="ring-lbl">SCORE</div>
+        </div>
       </div>
-      <div class="res-hl" id="resHl">Good effort!</div>
-      <div class="res-bd" id="resBd">Keep reviewing — you're getting closer.</div>
-      <div class="xp-pill" id="xpPill">⚡ +0 XP earned</div>
+      <div class="res-hl" id="resHl">Well done!</div>
+      <div class="res-bd" id="resBd">Keep reviewing.</div>
+      <div class="xp-pill" id="resXP">⚡ +0 XP earned</div>
     </div>
-    <div style="max-height:360px;overflow-y:auto;padding-right:4px;" id="revScroll"></div>
+    <div class="stats-trio">
+      <div class="trio-stat"><div class="trio-val" id="trioPct">0%</div><div class="trio-lbl">Accuracy</div></div>
+      <div class="trio-stat"><div class="trio-val" id="trioTime">—</div><div class="trio-lbl">Time</div></div>
+      <div class="trio-stat"><div class="trio-val" id="trioXP">+0</div><div class="trio-lbl">XP Earned</div></div>
+    </div>
+    <div style="max-height:400px;overflow-y:auto;padding-right:4px;" id="resReview"></div>
     <div class="res-acts">
-      <button class="btn-ghost" onclick="setScreen(&#39;exams&#39;)" style="flex:1;padding:13px;">Try Again</button>
-      <button class="btn-primary" onclick="setScreen(&#39;home&#39;)" style="flex:2;">Back Home</button>
+      <button class="btn btn-ghost btn-md" onclick="retryQuiz()" style="flex:1;">Try Again</button>
+      <button class="btn btn-primary btn-md" onclick="goTo(&#39;sHome&#39;)" style="flex:2;">Back Home</button>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     SCREEN 10: STATS
-     ════════════════════════════════════════ -->
-<div id="stats" class="screen">
-  <div class="back-row"><button class="btn-back" onclick="setScreen(&#39;home&#39;)"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Home</button><span class="scr-title">My Exam Records</span></div>
-  <div id="statsContent"></div>
-</div>
-
-</div><!-- .app-wrap -->
-
-<!-- ════ MODAL ════ -->
-<div id="mo" class="mo" aria-hidden="true">
-  <div class="mo-box">
-    <div class="mo-head">
-      <div><div class="mo-title" id="moTitle">—</div><div class="mo-sub" id="moSub"></div></div>
-      <button class="btn-icon" id="btnCloseMo">✕</button>
+<!-- ═══════════════════════════════════════
+     SCREEN: SUBSCRIPTION
+     ═══════════════════════════════════════ -->
+<div id="sSub" class="scr">
+  <div class="topbar">
+    <button class="topbar-back btn" onclick="goBack()"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
+    <div class="topbar-title">Upgrade to Pro</div>
+  </div>
+  <div class="sub-hero">
+    <div class="sub-ico">🏆</div>
+    <div class="sub-title">Unlock Full Access</div>
+    <div class="sub-p">Pass the boards with every exam, mock test &amp; unlimited practice — pay once, study forever.</div>
+    <div class="price-show" id="priceShow">
+      <div class="price-was">₱400 standard price</div>
+      <div class="price-now">₱400 <span>one-time</span></div>
     </div>
-    <div id="moBody"></div>
+    <div id="savePill" style="display:none;"><div class="price-save" id="saveAmt">You save ₱0!</div></div>
+  </div>
+
+  <!-- Referral code entry -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="ref-discount-strip">
+      <div class="rds-ico">🏷️</div>
+      <div class="rds-txt">Have a referral code? Unlock ₱305 discount.</div>
+      <button class="rds-btn" onclick="toggleRefInput()">Apply</button>
+    </div>
+    <div id="refInputWrap" style="display:none;">
+      <div class="ref-input-row">
+        <input id="refCodeInput" placeholder="PLMBR-XXXXX">
+        <button class="btn-apply btn" onclick="applyRefCode()">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perks -->
+  <div class="sec-sm" style="margin-bottom:12px;">WHAT YOU UNLOCK</div>
+  <div class="perks-list card" style="margin-bottom:20px;">
+    <div class="perk-row"><div class="perk-ico">📚</div>All 15 levels × 4 categories (60 exams)</div>
+    <div class="perk-row"><div class="perk-ico">📋</div>Full Mock Board Exam mode (100 questions)</div>
+    <div class="perk-row"><div class="perk-ico">⏱️</div>Timed exam modes with board-accurate timing</div>
+    <div class="perk-row"><div class="perk-ico">📊</div>Score analytics &amp; weak topic detection</div>
+    <div class="perk-row"><div class="perk-ico">🚫</div>No ads. Ever.</div>
+    <div class="perk-row"><div class="perk-ico">♾️</div>Unlimited practice. Lifetime access.</div>
+  </div>
+
+  <button class="btn btn-gold btn-lg btn-block" id="buyBtn" onclick="doPurchase()">Unlock Full Access · ₱400</button>
+  <div class="pay-trust" style="font-size:11px;color:var(--t3);text-align:center;margin-top:12px;">🔒 Secure payment · 30-day guarantee · Instant access</div>
+
+  <!-- License key -->
+  <div class="card" style="margin-top:16px;">
+    <div class="sec-sm">Have a license key?</div>
+    <div class="ref-input-row">
+      <input id="licKey" placeholder="MP-MASTER-XXXX">
+      <button class="btn-apply btn" onclick="activateKey()">Activate</button>
+    </div>
   </div>
 </div>
 
-<!-- ════ TOASTS ════ -->
+<!-- ═══════════════════════════════════════
+     SCREEN: EARNINGS DASHBOARD
+     REFLECTIVE — identity as promoter
+     ═══════════════════════════════════════ -->
+<div id="sEarn" class="scr on">
+  <div class="topbar"><div class="topbar-title">💰 Earnings Dashboard</div></div>
+
+  <!-- Balance hero -->
+  <div class="earn-hero">
+    <div class="earn-kicker">Total Withdrawable Balance</div>
+    <div class="earn-balance" id="earnBal">₱0</div>
+    <div class="earn-sub">Pending commissions included</div>
+    <button class="btn btn-gold btn-md" onclick="openWithdrawSheet()" style="margin:0 auto;">Withdraw to GCash →</button>
+  </div>
+
+  <!-- Stats grid -->
+  <div class="earn-grid">
+    <div class="earn-cell"><div class="earn-cell-val" id="earnTotal">0</div><div class="earn-cell-lbl">Total Referrals</div></div>
+    <div class="earn-cell"><div class="earn-cell-val" id="earnTotalAmt">₱0</div><div class="earn-cell-lbl">All-time Earnings</div></div>
+    <div class="earn-cell"><div class="earn-cell-val" id="earnPending">₱0</div><div class="earn-cell-lbl">Pending</div></div>
+    <div class="earn-cell"><div class="earn-cell-val" id="earnPaid">₱0</div><div class="earn-cell-lbl">Paid Out</div></div>
+  </div>
+
+  <!-- Tier badge -->
+  <div class="sec-sm">YOUR REFERRAL TIER</div>
+  <div class="tier-badge" id="tierBadge">
+    <div class="tier-ico tier-stu">🎓</div>
+    <div>
+      <div class="tier-title" id="tierTitle">Student Ambassador</div>
+      <div class="tier-sub" id="tierSub">Earn 15% per referred subscription · ₱14/referral</div>
+    </div>
+    <div class="chip chip-blue" id="tierChip">15%</div>
+  </div>
+
+  <!-- Referral code -->
+  <div class="sec-sm">YOUR REFERRAL CODE</div>
+  <div class="ref-code-box" onclick="copyRefCode()">
+    <div class="ref-code-val" id="refCodeDisplay">PLMBR-GUEST</div>
+    <div class="ref-code-hint">Tap to copy · Share with fellow reviewees</div>
+  </div>
+
+  <!-- Share buttons -->
+  <div class="share-row">
+    <div class="share-btn" onclick="shareCode(&#39;copy&#39;)"><ion-icon name="copy-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="128" y="128" width="336" height="336" rx="57" ry="57" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Copy</div>
+    <div class="share-btn" onclick="shareCode(&#39;messenger&#39;)"><ion-icon name="chatbubble-ellipses-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M87.48 380c1.2-4.38-1.43-10.47-3.94-14.86a42.63 42.63 0 00-2.54-3.8 199.81 199.81 0 01-33-110C47.64 139.09 140.72 48 255.82 48 356.2 48 440 117.54 459.57 209.85a199 199 0 014.43 41.64c0 112.41-89.49 204.93-204.59 204.93-18.31 0-43-4.6-56.47-8.37s-26.92-8.77-30.39-10.11a31.14 31.14 0 00-11.13-2.07 30.7 30.7 0 00-12.08 2.43L81.5 462.78a15.92 15.92 0 01-4.66 1.22 9.61 9.61 0 01-9.58-9.74 15.85 15.85 0 01.6-3.29z" stroke-linecap="round" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="160" cy="256" r="32"></circle><circle cx="256" cy="256" r="32"></circle><circle cx="352" cy="256" r="32"></circle></svg></div></template></ion-icon> Messenger</div>
+    <div class="share-btn" onclick="shareCode(&#39;sms&#39;)"><ion-icon name="phone-portrait-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="128" y="16" width="256" height="480" rx="48" ry="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M176 16h24a8 8 0 018 8h0a16 16 0 0016 16h64a16 16 0 0016-16h0a8 8 0 018-8h24" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> SMS</div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="sec">🏆 Top Promoters This Month</div>
+  <div id="leaderboard"><div class="lb-row"><div class="lb-rank lb-1">1</div><div class="lb-info"><div class="lb-nm">Professor Cruz</div><div class="lb-sub">132 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-2">2</div><div class="lb-info"><div class="lb-nm">Engr. Santos</div><div class="lb-sub">97 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-3">3</div><div class="lb-info"><div class="lb-nm">Review Center A</div><div class="lb-sub">85 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-n">4</div><div class="lb-info"><div class="lb-nm">Prof. Dela Cruz</div><div class="lb-sub">72 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-n">5</div><div class="lb-info"><div class="lb-nm">Arch. Reyes</div><div class="lb-sub">61 referrals</div></div></div></div>
+
+  <!-- Transaction history -->
+  <div class="sec" style="font-size:16px;">Recent Commissions</div>
+  <div id="earnHistory"><div class="card" style="text-align:center;color:var(--t2);padding:20px;font-size:13px;">No referrals yet. Share your code to start earning!</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SCREEN: PROFILE
+     ═══════════════════════════════════════ -->
+<div id="sProfile" class="scr">
+  <div class="topbar"><div class="topbar-title">My Profile</div></div>
+  <div style="text-align:center;margin:20px 0;">
+    <div class="profile-av" id="profAv">MP</div>
+    <div class="profile-nm" id="profNm">Student</div>
+    <div class="profile-email" id="profEmail">—</div>
+    <div style="display:flex;justify-content:center;gap:8px;margin-bottom:20px;">
+      <div class="chip chip-blue" id="profType">Student</div>
+      <div class="chip chip-amber" id="profTierChip">Free</div>
+    </div>
+  </div>
+  <div class="menu-row" onclick="goTo(&#39;sEarn&#39;)"><div class="menu-ico">💰</div><div class="menu-txt">Earnings Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="goTo(&#39;sSub&#39;)"><div class="menu-ico">⭐</div><div class="menu-txt">Subscription &amp; Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="goTo(&#39;sStats&#39;)"><div class="menu-ico">📊</div><div class="menu-txt">My Analytics</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="openEditProfile()"><div class="menu-ico">✏️</div><div class="menu-txt">Edit Profile</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="toggleTheme()"><div class="menu-ico">🌙</div><div class="menu-txt">Toggle Theme</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" id="adminMenuRow" style="display:none;" onclick="goTo(&#39;sAdmin&#39;)"><div class="menu-ico">🛡️</div><div class="menu-txt">Admin Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="doLogout()" style="margin-top:8px;"><div class="menu-ico">🚪</div><div class="menu-txt" style="color:var(--red);">Sign Out</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SCREEN: MY ANALYTICS
+     ═══════════════════════════════════════ -->
+<div id="sStats" class="scr">
+  <div class="topbar">
+    <button class="topbar-back btn" onclick="goBack()"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
+    <div class="topbar-title">My Analytics</div>
+  </div>
+  <div class="admin-grid" style="margin-bottom:20px;">
+    <div class="admin-stat"><div class="admin-stat-val" id="statExams">0</div><div class="admin-stat-lbl">Exams Taken</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="statAvg">0%</div><div class="admin-stat-lbl">Avg Score</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="statBest">0%</div><div class="admin-stat-lbl">Best Score</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="statStreak">0</div><div class="admin-stat-lbl">Day Streak</div></div>
+  </div>
+  <div class="sec" style="font-size:16px;">Exam History</div>
+  <div id="statsHistory"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SCREEN: ADMIN DASHBOARD
+     ═══════════════════════════════════════ -->
+<div id="sAdmin" class="scr">
+  <div class="topbar">
+    <button class="topbar-back btn" onclick="goBack()"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
+    <div class="topbar-title">🛡️ Admin Dashboard</div>
+  </div>
+  <div class="admin-grid">
+    <div class="admin-stat"><div class="admin-stat-val" id="adTotalUsers">0</div><div class="admin-stat-lbl">Total Users</div><div class="admin-stat-delta" id="adUsersD">+0 today</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="adSubs">0</div><div class="admin-stat-lbl">Subscribers</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="adRevenue">₱0</div><div class="admin-stat-lbl">Total Revenue</div></div>
+    <div class="admin-stat"><div class="admin-stat-val" id="adCommissions">₱0</div><div class="admin-stat-lbl">Commissions Paid</div></div>
+  </div>
+  <div class="admin-tab-row">
+    <button class="admin-tab on" onclick="adminTab(&#39;users&#39;,this)">Users</button>
+    <button class="admin-tab" onclick="adminTab(&#39;subs&#39;,this)">Subscriptions</button>
+    <button class="admin-tab" onclick="adminTab(&#39;referrals&#39;,this)">Referrals</button>
+    <button class="admin-tab" onclick="adminTab(&#39;withdrawals&#39;,this)">Withdrawals</button>
+    <button class="admin-tab" onclick="adminTab(&#39;fraud&#39;,this)">Fraud Alerts</button>
+  </div>
+  <div id="adminContent"></div>
+</div>
+
+</div><!-- .shell -->
+
+<!-- ════ BOTTOM NAV ════ -->
+<nav id="bnav" class="visible">
+  <button class="bn-item" id="bn-home" onclick="bnNav(&#39;sHome&#39;,&#39;bn-home&#39;)" style=""><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
+  <button class="bn-item" id="bn-quiz" onclick="bnNav(&#39;sCatLevels&#39;,&#39;bn-quiz&#39;)" style=""><ion-icon name="document-text-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Quiz</span><div class="bn-dot"></div></button>
+  <button class="bn-item active" id="bn-earn" onclick="bnNav(&#39;sEarn&#39;,&#39;bn-earn&#39;)" style=""><ion-icon name="wallet-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="48" y="144" width="416" height="288" rx="48" ry="48" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path></svg></div></template></ion-icon><span>Earnings</span><div class="bn-dot"></div></button>
+  <button class="bn-item" id="bn-profile" onclick="bnNav(&#39;sProfile&#39;,&#39;bn-profile&#39;)"><ion-icon name="person-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Profile</span><div class="bn-dot"></div></button>
+</nav>
+
+<!-- ════ OVERLAY / SHEETS ════ -->
+<div id="wdOverlay" class="overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Withdraw to GCash</div>
+    <div class="sheet-sub">Minimum withdrawal: ₱500</div>
+    <div class="withdraw-form">
+      <div class="field"><label>GCash Number</label><input type="tel" id="wdPhone" placeholder="09XXXXXXXXX"></div>
+      <div class="field"><label>Full Name (GCash)</label><input type="text" id="wdName" placeholder="As registered in GCash"></div>
+      <div class="field"><label>Amount</label><input type="number" id="wdAmt" placeholder="500" min="500"></div>
+      <button class="btn btn-primary btn-lg btn-block" onclick="submitWithdrawal()">Submit Withdrawal Request</button>
+      <div class="withdraw-min">⚠️ GCash payout processed within 1-3 business days</div>
+    </div>
+    <button class="btn btn-ghost btn-md btn-block" style="margin-top:12px;" onclick="closeSheet(&#39;wdOverlay&#39;)">Cancel</button>
+  </div>
+</div>
+
+<div id="refOverlay" class="overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title" id="refSheetTitle">Referral Program</div>
+    <div class="sheet-sub" id="refSheetSub">Share and earn commission</div>
+    <div id="refSheetBody"></div>
+    <button class="btn btn-ghost btn-md btn-block" style="margin-top:12px;" onclick="closeSheet(&#39;refOverlay&#39;)">Close</button>
+  </div>
+</div>
+
+<div id="editOverlay" class="overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Edit Profile</div>
+    <div class="sheet-sub">Update your details</div>
+    <div class="field"><label>Full Name</label><input type="text" id="epNm" placeholder="Full name"></div>
+    <div class="field"><label>GCash Number</label><input type="tel" id="epGcash" placeholder="09XXXXXXXXX"></div>
+    <div class="field"><label>Account Type</label>
+      <select id="epType">
+        <option value="student">Student</option>
+        <option value="professor">Professor / Instructor</option>
+        <option value="review_center">Review Center</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="saveProfile()">Save Changes</button>
+    <button class="btn btn-ghost btn-md btn-block" style="margin-top:10px;" onclick="closeSheet(&#39;editOverlay&#39;)">Cancel</button>
+  </div>
+</div>
+
 <div id="toasts"></div>
 
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT ENGINE
+     ═══════════════════════════════════════ -->
 <script type="module">
-import { arithmeticDB } from './arithmetic.js';
-import { codeDB }       from './code.js';
-import { designDB }     from './design.js';
-import { practicalDB }  from './practical.js';
-import { toolsDB }      from './tools.js';
-import { symbolsDB }    from './symbols.js';
-import { diagramsDB }   from './diagrams.js';
-import { randomDB }     from './random.js';
+/* ─────────────────────────────────────────
+   EXTERNAL QUIZ DATA (module imports)
+   ───────────────────────────────────────── */
+let DB = {};
+async function loadDB(){
+  try{
+    const [
+      {arithmeticDB},{codeDB},{designDB},{practicalDB}
+    ] = await Promise.all([
+      import('./arithmetic.js'),import('./code.js'),
+      import('./design.js'),import('./practical.js')
+    ]);
+    DB = {
+      'Plumbing Code': codeDB,
+      'Plumbing Arithmetic': arithmeticDB,
+      'Sanitation & Design': designDB,
+      'Practical Problems': practicalDB
+    };
+  }catch(e){
+    /* Demo questions if modules not available */
+    const demo = lvl => Array.from({length:50},(_,i)=>({
+      q:`Sample Question ${i+1} for Level ${lvl}: What is the standard pipe diameter for a residential drainage system?`,
+      choices:['50mm (2 inch)','75mm (3 inch)','100mm (4 inch)','150mm (6 inch)'],
+      a:1,
+      explain:'75mm is the standard minimum pipe diameter for residential drain lines per the National Plumbing Code of the Philippines.'
+    }));
+    const catDB = {};
+    for(let l=1;l<=15;l++) catDB[l]=demo(l);
+    DB = {
+      'Plumbing Code': {...catDB},
+      'Plumbing Arithmetic': {...catDB},
+      'Sanitation & Design': {...catDB},
+      'Practical Problems': {...catDB}
+    };
+  }
+}
 
-const DB = {
-  'Plumbing Arithmetic': arithmeticDB,
-  'Plumbing Code': codeDB,
-  'Sanitation Plumbing Design and Installation': designDB,
-  'Practical Problems and Experiences': practicalDB,
-  Tools: toolsDB, Symbols: symbolsDB, Diagrams: diagramsDB, Random: randomDB,
+/* ─────────────────────────────────────────
+   STATE
+   ───────────────────────────────────────── */
+let U=null, isPaid=false, isAdmin=false;
+let currentCat=null, currentLvl=null, currentQs=[], curIdx=0, answers=[], score=0;
+let timerInt=null, timerSecs=0, isMock=false;
+let screenHistory=[];
+
+const MASTER_KEY='MP-MASTER-2024';
+const TIERS={review_center:{pct:30,lbl:'Review Center Partner',ico:'🏫'},professor:{pct:25,lbl:'Professor / Instructor',ico:'👨‍🏫'},student:{pct:15,lbl:'Student Ambassador',ico:'🎓'}};
+
+/* ─────────────────────────────────────────
+   STORAGE HELPERS
+   ───────────────────────────────────────── */
+const LS={
+  get:(k,def)=>{try{const v=localStorage.getItem(k);return v!=null?JSON.parse(v):def;}catch{return def;}},
+  set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch{}},
 };
+const getUsers=()=>LS.get('mp_users_v3',[]);
+const saveUsers=a=>LS.set('mp_users_v3',a);
+const getStats=()=>LS.get('mp_stats_v3',{});
+const saveStats=o=>LS.set('mp_stats_v3',o);
+const getPS=()=>LS.get('mp_player_v3',{});
+const savePS=o=>LS.set('mp_player_v3',o);
+const getTxns=()=>LS.get('mp_txns_v3',[]);
+const saveTxns=a=>LS.set('mp_txns_v3',a);
+const getWDs=()=>LS.get('mp_wds_v3',[]);
+const saveWDs=a=>LS.set('mp_wds_v3',a);
+const getRefs=()=>LS.get('mp_refs_v3',[]);
+const saveRefs=a=>LS.set('mp_refs_v3',a);
 
-/* ── STATE ── */
-let user=null, paid=false;
-let cat, examIdx, idx=0, qs=[], ans=[], score=0, selPlan='lifetime';
-const MK='MP-MASTER-2024', SK='mp_stats_v2', PK='mp_player_v2', UK='mp_users';
+const ukey=()=>U?.email||'guest';
 
-/* ── STORAGE ── */
-const getU=()=>JSON.parse(localStorage.getItem(UK)||'[]');
-const saveU=a=>localStorage.setItem(UK,JSON.stringify(a));
-const getStats=()=>JSON.parse(localStorage.getItem(SK)||'{}');
-const saveStats=o=>localStorage.setItem(SK,JSON.stringify(o));
-const ukey=()=>user||'Guest';
-
-function loadPS(){
-  const s=JSON.parse(localStorage.getItem(PK)||'{}'),u=ukey();
-  if(!s[u])s[u]={xp:0,level:1,coins:0,badges:[],referrals:{code:null,earnings:0,referred:[]},lastActive:null};
-  localStorage.setItem(PK,JSON.stringify(s));return s;
+function ensurePlayer(key){
+  const ps=getPS();
+  if(!ps[key]) ps[key]={xp:0,level:1,streak:0,lastDate:null,badges:[],commission_balance:0,total_referrals:0,total_earned:0,pending:0,paid_out:0};
+  return ps;
 }
-function savePS(s){localStorage.setItem(PK,JSON.stringify(s));}
+function getPlayer(){const ps=ensurePlayer(ukey());return ps[ukey()];}
+function savePlayer(p){const ps=ensurePlayer(ukey());ps[ukey()]=p;savePS(ps);}
 
-function saveRes(){
-  if(!cat||!examIdx||!qs.length)return;
-  const k=ukey(),all=getStats(),arr=all[k]||[];
-  const rec={cat,exam:examIdx,score,total:qs.length,date:new Date().toISOString()};
-  const f=arr.filter(r=>!(r.cat===rec.cat&&r.exam===rec.exam));
-  f.push(rec);all[k]=f;saveStats(all);
-}
-function getLast(u,c,e){
-  const arr=(getStats()[u]||[]).filter(r=>r.cat===c&&r.exam===e);
-  return arr.length?arr[arr.length-1]:null;
+function genRefCode(){
+  return 'PLMBR-'+Math.random().toString(36).slice(2,7).toUpperCase();
 }
 
-/* ── SCREEN MANAGER ── */
-const AUTH=['splashScreen','signInScreen','signUpScreen'];
-window.setScreen=id=>{
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id)?.classList.add('active');
-  const isAuth=AUTH.includes(id);
-  document.getElementById('hud').classList.toggle('visible',!isAuth);
-  document.getElementById('qpw').style.display=(id==='quiz')?'block':'none';
-  if(id==='stats')renderStats();
+/* ─────────────────────────────────────────
+   SCREEN MANAGER
+   ───────────────────────────────────────── */
+const AUTH_SCREENS=['sSplash','sSignIn','sSignUp'];
+window.goTo=(id,dir='')=>{
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on','slide-left','slide-right'));
+  const el=document.getElementById(id);
+  if(!el)return;
+  if(!screenHistory.length||screenHistory[screenHistory.length-1]!==id) screenHistory.push(id);
+  el.classList.add('on');
+  if(dir) el.classList.add(dir);
+  // HUD + BNAV visibility
+  const isAuth=AUTH_SCREENS.includes(id);
+  document.getElementById('hud').classList.toggle('on',!isAuth);
+  document.getElementById('bnav').classList.toggle('visible',!isAuth&&id!=='sQuiz');
+  document.getElementById('qpw').style.display=(id==='sQuiz')?'block':'none';
+  // Screen-specific init
+  if(id==='sHome') renderHome();
+  if(id==='sEarn') renderEarnings();
+  if(id==='sProfile') renderProfile();
+  if(id==='sAdmin') renderAdmin('users');
+  if(id==='sStats') renderUserStats();
   window.scrollTo({top:0,behavior:'smooth'});
 };
+window.goBack=()=>{
+  screenHistory.pop();
+  const prev=screenHistory[screenHistory.length-1]||'sHome';
+  screenHistory.pop();
+  goTo(prev,'slide-right');
+};
 
-/* ── GREETING ── */
-function greet(){const h=new Date().getHours();return h<12?'Good morning,':h<17?'Good afternoon,':'Good evening,';}
+function bnActivate(id){
+  document.querySelectorAll('.bn-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id)?.classList.add('active');
+}
+window.bnNav=(scr,bnId)=>{
+  if(scr==='sCatLevels'&&!currentCat){currentCat='Plumbing Code';document.getElementById('catTitle').textContent='Choose Category';}
+  bnActivate(bnId);goTo(scr);
+};
 
-/* ── AUTH ── */
-window.enterAsGuest=()=>{user='Guest';paid=false;afterLogin();};
-window.handleSignIn=()=>{
-  const u=document.getElementById('siUser').value.trim();
-  const p=document.getElementById('siPass').value.trim();
-  if(!u||!p){toast('⚠️ Please fill in all fields');return;}
-  const users=getU(),found=users.find(x=>x.u===u);
+/* ─────────────────────────────────────────
+   GREETING
+   ───────────────────────────────────────── */
+function timeHi(){const h=new Date().getHours();return h<12?'Good morning':'Good afternoon';}
+
+/* ─────────────────────────────────────────
+   AUTH
+   ───────────────────────────────────────── */
+window.enterGuest=()=>{U={name:'Guest',email:'guest@local',type:'student',gcash:'',refCode:'PLMBR-GUEST',referredBy:null,paid:false,admin:false};isPaid=false;isAdmin=false;afterLogin();};
+window.doSignIn=()=>{
+  const em=document.getElementById('siU').value.trim();
+  const pw=document.getElementById('siP').value.trim();
+  if(!em||!pw){toast('⚠️ Fill in all fields');return;}
+  const users=getUsers(), found=users.find(u=>u.email===em||u.name===em);
   if(!found){toast('❌ Account not found');return;}
-  if(found.p!==p){toast('❌ Incorrect password');return;}
-  user=found.u;paid=!!found.paid;afterLogin();
-  toast(`👋 Welcome back, ${user}!`);
+  if(found.pw!==pw){toast('❌ Incorrect password');return;}
+  U=found;isPaid=!!found.paid;isAdmin=!!found.admin;afterLogin();
+  toast(`👋 Welcome back, ${U.name}!`);
 };
-window.handleSignUp=()=>{
-  const u=document.getElementById('suUser').value.trim();
-  const p=document.getElementById('suPass').value.trim();
-  const c=document.getElementById('suConf').value.trim();
-  if(!u||!p){toast('⚠️ Please fill in all fields');return;}
-  if(p!==c){toast('❌ Passwords do not match');return;}
-  if(u.length<3){toast('⚠️ Username must be 3+ characters');return;}
-  const users=getU();
-  if(users.find(x=>x.u===u)){toast('❌ Username already taken');return;}
-  users.push({u,p,paid:false});saveU(users);
-  user=u;paid=false;afterLogin();
-  smallConfetti();toast(`🎉 Account created! Welcome, ${user}!`);
+window.doSignUp=()=>{
+  const nm=document.getElementById('suNm').value.trim();
+  const em=document.getElementById('suEm').value.trim();
+  const ph=document.getElementById('suPh').value.trim();
+  const tp=document.getElementById('suType').value;
+  const pw=document.getElementById('suPw').value.trim();
+  const cf=document.getElementById('suCf').value.trim();
+  if(!nm||!em||!pw){toast('⚠️ Please fill required fields');return;}
+  if(pw!==cf){toast('❌ Passwords do not match');return;}
+  if(pw.length<6){toast('⚠️ Password must be 6+ characters');return;}
+  const users=getUsers();
+  if(users.find(u=>u.email===em)){toast('❌ Email already registered');return;}
+  // Phone uniqueness check (security)
+  if(ph&&users.find(u=>u.phone===ph)){toast('❌ Phone already linked to an account');return;}
+  const refCode=genRefCode();
+  const newU={name:nm,email:em,phone:ph,gcash:ph,type:tp,pw,refCode,referredBy:null,paid:false,admin:false,createdAt:new Date().toISOString()};
+  // First account becomes admin
+  if(!users.length) newU.admin=true;
+  users.push(newU);saveUsers(users);
+  U=newU;isPaid=false;isAdmin=newU.admin;
+  afterLogin();confetti();
+  toast(`🎉 Welcome, ${nm}! Account created.`);
 };
-window.doLogout=()=>{user=null;paid=false;setScreen('splashScreen');};
+window.doLogout=()=>{U=null;isPaid=false;isAdmin=false;screenHistory=[];currentCat=null;clearTimer();goTo('sSplash');};
 
-function afterLogin(){updateHUD();updateHome();setScreen('home');}
+function afterLogin(){updateHUD();renderHome();goTo('sHome');}
 
-/* ── HOME ── */
-function updateHome(){
-  const nm=user==='Guest'?'Guest':user;
-  document.getElementById('greetLbl').textContent=greet();
-  document.getElementById('greetNm').textContent=nm;
-  const area=document.getElementById('proArea');
-  if(paid){
-    area.innerHTML=`<div class="pro-active"><div class="pa-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div><div><div class="pa-title">Full Access Active</div><div class="pa-sub">All 60+ exams &amp; analytics unlocked — lifetime access</div></div></div>`;
-  }else{
-    area.innerHTML=`<div class="pro-card"><div class="pc-ey">🔓 Limited Offer</div><div class="pc-title">Unlock Lifetime Pro</div><div class="pc-body">Access all 60+ exams, analytics &amp; PDF downloads — pay once, review forever.</div><div class="pc-row"><div class="pc-price">₱299 <span>one-time</span></div><button class="btn-gold" onclick="setScreen('paymentScreen')">Upgrade Now →</button></div></div>`;
-  }
-}
-
-/* ── HUD ── */
+/* ─────────────────────────────────────────
+   HUD
+   ───────────────────────────────────────── */
 function updateHUD(){
-  const u=ukey(),s=loadPS()[u]||{xp:0,level:1};
-  document.getElementById('hudAv').textContent=u==='Guest'?'G':u.charAt(0).toUpperCase();
-  document.getElementById('hudNm').textContent=u==='Guest'?'Guest':u;
-  document.getElementById('hudLv').textContent=`LV ${s.level||1}`;
-  document.getElementById('hudXPN').textContent=`${s.xp||0} XP`;
-  document.getElementById('hudXP').style.width=Math.min(100,(s.xp||0)%100)+'%';
+  if(!U)return;
+  const p=getPlayer();
+  const init=U.name.charAt(0).toUpperCase();
+  document.getElementById('hudAv').textContent=init;
+  document.getElementById('hudNm').textContent=U.name;
+  document.getElementById('hudLv').textContent=`LV ${p.level||1}`;
+  document.getElementById('hudXPN').textContent=`${p.xp||0} XP`;
+  document.getElementById('hudXP').style.width=Math.min(100,(p.xp||0)%100)+'%';
+  // Streak & XP on home
+  document.getElementById('streakVal').textContent=p.streak||0;
+  document.getElementById('xpVal').textContent=p.xp||0;
 }
 
-/* ── PLAN ── */
-window.selectPlan=plan=>{
-  selPlan=plan;
-  document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
-  const ids={lifetime:'planLifetime',monthly:'planMonthly',professor:'planProfessor'};
-  document.getElementById(ids[plan])?.classList.add('selected');
-  const lbls={lifetime:'Unlock Lifetime for ₱299',monthly:'Start Monthly — ₱59/mo',professor:'Open Referral Program'};
-  document.getElementById('buyBtn').textContent=lbls[plan];
-};
-window.doPurchase=()=>{if(selPlan==='professor'){openRef();return;}doSub(selPlan);setScreen('home');};
+/* ─────────────────────────────────────────
+   HOME RENDER
+   ───────────────────────────────────────── */
+function renderHome(){
+  if(!U)return;
+  const p=getPlayer();
+  // Tier label
+  const tierMap={student:'STUDENT REVIEWER',professor:'PROFESSOR REVIEWER',review_center:'REVIEW CENTER PARTNER'};
+  document.getElementById('homeTier').textContent=tierMap[U.type]||'REVIEWER';
+  document.getElementById('homeGreet').textContent=`${timeHi()}, ${U.name.split(' ')[0]}!`;
+  document.getElementById('homeSub').textContent=isPaid?'Pro Member · Full Access Active':'Free Member · Level 1 per category';
+  updateHUD();
+  // Category progress
+  const cats={'Plumbing Code':'PC','Plumbing Arithmetic':'PA','Sanitation & Design':'SD','Practical Problems':'PP'};
+  const allStats=getStats()[ukey()]||[];
+  Object.entries(cats).forEach(([catNm,key])=>{
+    const catRecs=allStats.filter(r=>r.cat===catNm);
+    const maxLvl=catRecs.length?Math.max(...catRecs.map(r=>r.level)):0;
+    const pct=Math.round(maxLvl/15*100);
+    const el=document.getElementById(`fp-${key}`);
+    const pt=document.getElementById(`pct-${key}`);
+    if(el)el.style.width=pct+'%';
+    if(pt)pt.textContent=`Level ${maxLvl||1} / 15`;
+  });
+  // Weak topics
+  renderWeakTopics(allStats);
+}
 
-/* ── LICENSE ── */
-window.verifyKey=()=>{
-  const v=document.getElementById('licenseKey').value.trim();
-  if(v===MK){
-    paid=true;
-    if(user&&user!=='Guest'){const us=getU(),f=us.find(x=>x.u===user);if(f){f.paid=true;saveU(us);}}
-    updateHome();setScreen('home');smallConfetti();toast('✅ PRO Activated — full access unlocked!');
-  }else toast('❌ Invalid license key');
-};
+function renderWeakTopics(recs){
+  const el=document.getElementById('weakTopics');
+  if(!recs.length){el.innerHTML='<div style="font-size:13px;color:var(--t2);text-align:center;padding:10px;">Take more exams to detect weak topics.</div>';return;}
+  const avgByCat={};
+  recs.forEach(r=>{if(!avgByCat[r.cat])avgByCat[r.cat]=[];avgByCat[r.cat].push(r.score/r.total*100);});
+  const weak=Object.entries(avgByCat).filter(([,v])=>v.reduce((a,b)=>a+b,0)/v.length<70).map(([k,v])=>({cat:k,avg:Math.round(v.reduce((a,b)=>a+b,0)/v.length)}));
+  if(!weak.length){el.innerHTML='<div style="font-size:13px;color:var(--green);text-align:center;padding:10px;">✅ No weak topics — you\'re doing great!</div>';return;}
+  el.innerHTML=weak.map(w=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;">${w.cat}</span><span style="font-family:Space Mono,monospace;font-size:12px;color:var(--red);">${w.avg}% avg</span></div>`).join('');
+}
 
-/* ── THEME ── */
-window.toggleTheme=()=>{
-  const l=document.body.getAttribute('data-theme')==='light';
-  document.body.setAttribute('data-theme',l?'dark':'light');
-  document.getElementById('themeIcon').setAttribute('name',l?'moon-outline':'sunny-outline');
-};
-
-/* ── EXAMS ── */
-window.openExams=c=>{
-  cat=c;document.getElementById('catTitle').textContent=c;
-  const g=document.getElementById('examGrid');g.innerHTML='';
-  const u=ukey();
-  for(let i=1;i<=50;i++){
-    const lk=(!paid&&i>1),last=getLast(u,c,i);
-    const pct=last?Math.round(last.score/last.total*100):null;
-    const row=document.createElement('div');
-    row.className=`exam-row${lk?' locked':''}`;
-    row.innerHTML=`<div><div class="exam-num">EXAM #${i} ${lk?'🔒':''}</div><div class="exam-last">${last?`Last: ${last.score}/${last.total} (${pct}%) · ${new Date(last.date).toLocaleDateString()}`:'Not attempted yet'}</div></div><button class="btn-start" onclick="${lk?`toast('🔒 Upgrade to Pro to unlock all exams')`:`startQuiz(${i})`}">${lk?'Locked':'Start →'}</button>`;
-    g.appendChild(row);
+/* ─────────────────────────────────────────
+   CATEGORY / LEVELS
+   ───────────────────────────────────────── */
+window.openCat=(cat)=>{
+  currentCat=cat;
+  document.getElementById('catTitle').textContent=cat;
+  const allStats=getStats()[ukey()]||[];
+  const catRecs=allStats.filter(r=>r.cat===cat);
+  const completed=catRecs.filter(r=>r.score/r.total>=0.75).map(r=>r.level);
+  const maxFree=isPaid?15:1;
+  // Overall progress
+  const pct=Math.round(completed.length/15*100);
+  document.getElementById('catOverallFill').style.width=pct+'%';
+  document.getElementById('catOverallTxt').textContent=`${completed.length} / 15 levels complete`;
+  const grid=document.getElementById('levelGrid');grid.innerHTML='';
+  for(let i=1;i<=15;i++){
+    const isCompleted=completed.includes(i);
+    const isLocked=!isPaid&&i>maxFree;
+    const rec=catRecs.find(r=>r.level===i);
+    const isPerfect=rec&&rec.score===rec.total;
+    const btn=document.createElement('button');
+    btn.className=`lvl-btn${isCompleted?' completed':''}${isLocked?' locked':''}${isPerfect?' perfect':''}`;
+    btn.innerHTML=`${i}<div class="lvl-score">${rec?Math.round(rec.score/rec.total*100)+'%':isLocked?'🔒':''}</div>`;
+    if(!isLocked) btn.onclick=()=>startQuiz(cat,i,false);
+    else btn.onclick=()=>{toast('🔒 Upgrade to Pro to unlock all 15 levels');goTo('sSub');};
+    grid.appendChild(btn);
   }
-  setScreen('exams');
+  goTo('sCatLevels');
 };
 
-window.startQuiz=i=>{
-  if(!DB[cat]||!DB[cat][i]){toast('⚠️ Exam content not loaded yet');return;}
-  qs=[...DB[cat][i]];idx=0;ans=new Array(qs.length).fill(null);score=0;examIdx=i;
-  document.getElementById('scoreBox').textContent=`0 / ${qs.length}`;
-  setScreen('quiz');loadQ();
+/* ─────────────────────────────────────────
+   QUIZ ENGINE
+   ───────────────────────────────────────── */
+window.startQuiz=(cat,lvl,mock=false)=>{
+  if(!DB[cat]||!DB[cat][lvl]){toast('⚠️ Questions not available');return;}
+  currentCat=cat;currentLvl=lvl;isMock=mock;
+  // Randomize
+  const pool=[...DB[cat][lvl]];
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  currentQs=pool;curIdx=0;answers=new Array(pool.length).fill(null);score=0;
+  document.getElementById('qScoreChip').textContent=`0 / ${currentQs.length}`;
+  // Timer for mock
+  const timerEl=document.getElementById('qTimer');
+  if(mock){timerEl.style.display='flex';timerSecs=7200;startTimer();}else timerEl.style.display='none';
+  goTo('sQuiz');renderQ();
 };
 
-window.loadQ=()=>{
-  const q=qs[idx],pct=idx/qs.length*100;
-  document.getElementById('progressBar').style.width=pct+'%';
+window.startMockExam=()=>{
+  if(!isPaid){toast('🔒 Mock Board Exam requires Pro subscription');goTo('sSub');return;}
+  // Pull 100 random questions from all categories
+  const cats=Object.keys(DB);const pool=[];
+  cats.forEach(cat=>{const lvls=Object.keys(DB[cat]);lvls.forEach(l=>{pool.push(...DB[cat][l].map(q=>({...q,cat})));});});
+  // Shuffle
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  currentCat='Mock Board Exam';currentLvl='mock';isMock=true;
+  currentQs=pool.slice(0,100);curIdx=0;answers=new Array(100).fill(null);score=0;
+  document.getElementById('qScoreChip').textContent=`0 / 100`;
+  document.getElementById('qTimer').style.display='flex';timerSecs=7200;startTimer();
+  goTo('sQuiz');renderQ();
+};
+
+function startTimer(){
+  clearTimer();
+  timerInt=setInterval(()=>{
+    timerSecs--;
+    if(timerSecs<=0){clearTimer();showResults();return;}
+    const m=Math.floor(timerSecs/60),s=timerSecs%60;
+    document.getElementById('qTimerVal').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    document.getElementById('qTimer').classList.toggle('warn',timerSecs<300);
+  },1000);
+}
+function clearTimer(){if(timerInt){clearInterval(timerInt);timerInt=null;}}
+
+function renderQ(){
+  const q=currentQs[curIdx];
+  const pct=(curIdx/currentQs.length)*100;
+  document.getElementById('qNum').textContent=`QUESTION ${curIdx+1} / ${currentQs.length}`;
+  document.getElementById('qProgFill').style.width=pct+'%';
   document.getElementById('qpf').style.width=pct+'%';
-  document.getElementById('qNum').textContent=`QUESTION ${idx+1} OF ${qs.length}`;
-  const el=document.getElementById('qTxt');
-  el.innerHTML=`<div>${q.q}</div>`;
-  if(q.img){const img=document.createElement('img');img.src=q.img;img.style.cssText='max-width:100%;margin-top:16px;border-radius:12px;';el.appendChild(img);}
-  const L=['A','B','C','D','E','F'];
+  document.getElementById('qText').textContent=q.q;
+  // Image
+  const iw=document.getElementById('qImgWrap');
+  if(q.img){document.getElementById('qImg').src=q.img;iw.style.display='block';}else iw.style.display='none';
+  // Explanation (hide until answered)
+  const exp=document.getElementById('explain');exp.classList.remove('on');
+  // Choices
   const box=document.getElementById('choices');box.innerHTML='';
+  const L=['A','B','C','D','E','F'];
   q.choices.forEach((c,i)=>{
-    const b=document.createElement('button');b.className='choice';
-    b.innerHTML=`<span class="ch-lt">${L[i]||i+1}</span><span>${c}</span>`;
-    if(ans[idx]!==null){
+    const b=document.createElement('button');
+    b.className='choice';
+    b.innerHTML=`<span class="chltr">${L[i]||i+1}</span><span>${c}</span>`;
+    if(answers[curIdx]!==null){
       if(i===q.a)b.classList.add('correct');
-      else if(i===ans[idx])b.classList.add('wrong');
+      else if(i===answers[curIdx])b.classList.add('wrong');
       b.disabled=true;
+      // Show explanation
+      if(q.explain){document.getElementById('explainTxt').textContent=q.explain;exp.classList.add('on');}
     }else{
-      b.onclick=()=>{ans[idx]=i;score=ans.filter((a,x)=>a===qs[x].a).length;document.getElementById('scoreBox').textContent=`${score} / ${qs.length}`;loadQ();};
+      b.onclick=()=>selectChoice(i);
     }
     box.appendChild(b);
   });
-};
-
-window.handleNextLogic=()=>{if(idx<qs.length-1){idx++;loadQ();}else showResults();};
-window.prevQ=()=>{if(idx>0){idx--;loadQ();}else setScreen('exams');};
-window.quitQuiz=()=>{if(confirm('Exit this exam?')){saveRes();setScreen('home');}};
-window.finishExamEarly=()=>showResults();
-
-/* ── RESULTS ── */
-function showResults(){
-  score=ans.filter((a,x)=>a===qs[x].a).length;
-  const total=qs.length,pct=Math.round(score/total*100);
-  document.getElementById('scoreNum').textContent=`${score}/${total}`;
-  setTimeout(()=>{
-    const c=351.9,off=c-(pct/100)*c,arc=document.getElementById('scoreArc');
-    arc.style.strokeDashoffset=off;
-    arc.style.stroke=pct>=75?'var(--success)':pct>=50?'var(--accent)':'var(--danger)';
-  },80);
-  const msgs={
-    hi:{h:'Outstanding! 🏆',b:`${pct}% — Board-exam ready. Keep this momentum and you'll pass with confidence.`},
-    md:{h:'Good progress! 💪',b:`${pct}% — You're on track. A bit more focused practice will push you above the passing mark.`},
-    lo:{h:'Keep pushing! 🔥',b:`${pct}% — Every attempt is a lesson. Review the answers below and try again — you're improving!`},
-  };
-  const m=pct>=75?msgs.hi:pct>=50?msgs.md:msgs.lo;
-  document.getElementById('resHl').textContent=m.h;
-  document.getElementById('resBd').textContent=m.b;
-  const xp=Math.max(5,score*8);
-  document.getElementById('xpPill').textContent=`⚡ +${xp} XP earned`;
-  awardXP(xp);
-  const scroll=document.getElementById('revScroll');scroll.innerHTML='';
-  qs.forEach((q,i)=>{
-    const ua=ans[i];
-    const div=document.createElement('div');div.className='rev-item';
-    const ch=q.choices.map((c,ci)=>{
-      const cl=ci===q.a?'correct':ci===ua?'wrong':'';
-      return `<div class="rev-c ${cl}">${cl==='correct'?'✓ ':cl==='wrong'?'✗ ':''}${c}</div>`;
-    }).join('');
-    div.innerHTML=`<div class="rev-q">${i+1}. ${q.q}</div>${ch}`;
-    scroll.appendChild(div);
-  });
-  saveRes();
-  if(pct===100)smallConfetti();
-  setScreen('results');
+  document.getElementById('qNextBtn').textContent=curIdx===currentQs.length-1?'Finish ✓':'Next →';
 }
 
-/* ── STATS ── */
-function renderStats(){
-  const cont=document.getElementById('statsContent');
-  const arr=(getStats()[ukey()]||[]).slice().sort((a,b)=>new Date(b.date)-new Date(a.date));
-  if(!arr.length){cont.innerHTML=`<div class="card" style="text-align:center;color:var(--text-2);padding:36px;">No exam records yet.<br>Start taking exams to track your progress!</div>`;return;}
-  cont.innerHTML=arr.map(r=>{
-    const pct=Math.round(r.score/r.total*100);
-    return `<div class="stat-rec"><div><div class="stat-cat">${r.cat}</div><div class="stat-meta">Exam #${r.exam} · ${new Date(r.date).toLocaleString()}</div></div><div><div class="stat-sc">${r.score}/${r.total}</div><div class="stat-pct">${pct}%</div></div></div>`;
+function selectChoice(i){
+  if(answers[curIdx]!==null)return;
+  answers[curIdx]=i;
+  const q=currentQs[curIdx];
+  if(i===q.a){score++;toast('✅ Correct!');}else toast('❌ Wrong answer');
+  document.getElementById('qScoreChip').textContent=`${score} / ${currentQs.length}`;
+  // Show explanation
+  if(q.explain){document.getElementById('explainTxt').textContent=q.explain;document.getElementById('explain').classList.add('on');}
+  renderQ();
+}
+
+window.nextQ=()=>{
+  if(curIdx<currentQs.length-1){curIdx++;renderQ();}
+  else showResults();
+};
+window.prevQ=()=>{if(curIdx>0){curIdx--;renderQ();}};
+window.finishEarly=()=>showResults();
+window.confirmQuit=()=>{
+  if(confirm('Exit this exam? Progress will be saved.')){saveQuizResult();clearTimer();goTo('sHome');}
+};
+window.retryQuiz=()=>startQuiz(currentCat,currentLvl,isMock);
+
+/* ─────────────────────────────────────────
+   RESULTS
+   ───────────────────────────────────────── */
+function showResults(){
+  clearTimer();
+  score=answers.filter((a,x)=>a===currentQs[x].a).length;
+  const total=currentQs.length,pct=Math.round(score/total*100);
+  // Score ring animation
+  document.getElementById('resNum').textContent=`${score}/${total}`;
+  setTimeout(()=>{
+    const c=364.4,off=c-(pct/100)*c,arc=document.getElementById('resArc');
+    arc.style.strokeDashoffset=off;
+    arc.style.stroke=pct>=75?'var(--green)':pct>=50?'var(--blue)':'var(--red)';
+  },80);
+  // Reflective messages — identity-affirming
+  const msgs={
+    hi:{h:'Outstanding! 🏆',b:`${pct}% — You're board-exam ready. Keep this energy and you'll pass with flying colors.`},
+    mid:{h:'Good progress! 💪',b:`${pct}% — You're on the right track. A bit more focused practice and you'll be above the passing mark.`},
+    lo:{h:'Keep pushing! 🔥',b:`${pct}% — Every attempt makes you stronger. Review the explanations below and try again.`}
+  };
+  const m=pct>=75?msgs.hi:pct>=50?msgs.mid:msgs.lo;
+  document.getElementById('resHl').textContent=m.h;
+  document.getElementById('resBd').textContent=m.b;
+  // XP & stats
+  const xp=Math.max(5,score*10);
+  document.getElementById('resXP').textContent=`⚡ +${xp} XP earned`;
+  document.getElementById('trioPct').textContent=pct+'%';
+  document.getElementById('trioXP').textContent='+'+xp;
+  // Timer
+  const elapsed=isMock?7200-timerSecs:null;
+  if(elapsed){const m2=Math.floor(elapsed/60),s2=elapsed%60;document.getElementById('trioTime').textContent=`${m2}:${String(s2).padStart(2,'0')}`;}
+  else document.getElementById('trioTime').textContent='—';
+  awardXP(xp);
+  saveQuizResult();
+  if(pct===100)confetti();
+  // Review
+  const rev=document.getElementById('resReview');rev.innerHTML='';
+  currentQs.forEach((q,i)=>{
+    const ua=answers[i];
+    const div=document.createElement('div');div.className='rev-item';
+    const chs=q.choices.map((c,ci)=>{
+      const cl=ci===q.a?'correct':ci===ua?'wrong':'';
+      return `<div class="rev-c ${cl}">${cl==='correct'?'✓ ':cl==='wrong'?'✗ ':'  '}${c}</div>`;
+    }).join('');
+    div.innerHTML=`<div class="rev-q">${i+1}. ${q.q}</div>${chs}${q.explain?`<div style="font-size:11px;color:var(--t3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">💡 ${q.explain}</div>`:''}`;
+    rev.appendChild(div);
+  });
+  goTo('sResults');
+}
+
+function saveQuizResult(){
+  if(!currentCat||!currentQs.length)return;
+  const k=ukey(),all=getStats(),arr=all[k]||[];
+  const rec={cat:currentCat,level:currentLvl,score,total:currentQs.length,pct:Math.round(score/currentQs.length*100),date:new Date().toISOString(),isMock};
+  // Replace existing same cat+level
+  const filtered=arr.filter(r=>!(r.cat===rec.cat&&r.level===rec.level));
+  filtered.push(rec);all[k]=filtered;saveStats(all);
+}
+
+/* ─────────────────────────────────────────
+   XP & LEVELS
+   ───────────────────────────────────────── */
+function awardXP(pts){
+  const p=getPlayer();p.xp=(p.xp||0)+pts;
+  const prev=p.level||1;p.level=Math.floor(p.xp/100)+1;
+  if(p.level>prev){toast(`🎉 Level Up! Now Level ${p.level}!`);confetti();}
+  // Update streak
+  const today=new Date().toDateString();
+  if(p.lastDate!==today){
+    const yest=new Date(Date.now()-86400000).toDateString();
+    p.streak=p.lastDate===yest?(p.streak||0)+1:1;
+    p.lastDate=today;
+  }
+  savePlayer(p);updateHUD();
+}
+
+/* ─────────────────────────────────────────
+   SUBSCRIPTION
+   ───────────────────────────────────────── */
+let discountApplied=false,refUsed=null;
+
+window.toggleRefInput=()=>{
+  const w=document.getElementById('refInputWrap');
+  w.style.display=w.style.display==='none'?'block':'none';
+};
+
+window.applyRefCode=()=>{
+  const code=document.getElementById('refCodeInput').value.trim().toUpperCase();
+  if(!code){toast('⚠️ Enter a referral code');return;}
+  const users=getUsers(),referrer=users.find(u=>u.refCode===code);
+  if(!referrer){toast('❌ Invalid referral code');return;}
+  if(U&&referrer.email===U.email){toast('❌ Cannot use your own referral code');return;}
+  // Apply discount
+  discountApplied=true;refUsed=code;
+  document.getElementById('priceShow').innerHTML=`<div class="price-was">₱400 standard price</div><div class="price-now">₱95 <span>one-time (with referral)</span></div>`;
+  document.getElementById('savePill').style.display='block';
+  document.getElementById('saveAmt').textContent='You save ₱305!';
+  document.getElementById('buyBtn').textContent='Unlock Full Access · ₱95';
+  toast('✅ Referral code applied — ₱305 discount!');
+};
+
+window.doPurchase=()=>{
+  if(!U||U.email==='guest@local'){toast('Please sign in to purchase');goTo('sSignIn');return;}
+  const price=discountApplied?95:400;
+  isPaid=true;
+  const users=getUsers(),found=users.find(u=>u.email===U.email);
+  if(found){found.paid=true;saveUsers(users);}
+  U.paid=true;
+  // Record transaction
+  const txn={id:'TXN-'+Date.now(),user:U.email,amount:price,refCode:refUsed,date:new Date().toISOString(),status:'completed'};
+  const txns=getTxns();txns.push(txn);saveTxns(txns);
+  // Pay commission to referrer
+  if(refUsed){
+    const users2=getUsers(),referrer=users2.find(u=>u.refCode===refUsed);
+    if(referrer){
+      const tier=TIERS[referrer.type]||TIERS.student;
+      const comm=Math.round(price*tier.pct/100);
+      const ps=ensurePlayer(referrer.email),rp=ps[referrer.email];
+      rp.commission_balance=(rp.commission_balance||0)+comm;
+      rp.total_referrals=(rp.total_referrals||0)+1;
+      rp.total_earned=(rp.total_earned||0)+comm;
+      rp.pending=(rp.pending||0)+comm;
+      savePS(ps);
+      // Referral record
+      const refs=getRefs();
+      refs.push({id:'REF-'+Date.now(),referrer:referrer.email,referred:U.email,code:refUsed,commission:comm,status:'pending',date:new Date().toISOString()});
+      saveRefs(refs);
+      toast(`💰 Commission of ₱${comm} added to referrer!`);
+    }
+  }
+  confetti();toast('🎉 Pro subscription activated! Full access unlocked.');
+  goTo('sHome');renderHome();
+};
+
+window.activateKey=()=>{
+  const k=document.getElementById('licKey').value.trim();
+  if(k===MASTER_KEY){
+    isPaid=true;U.paid=true;
+    const users=getUsers(),f=users.find(u=>u.email===U.email);
+    if(f){f.paid=true;saveUsers(users);}
+    confetti();toast('✅ Master key activated — full access!');goTo('sHome');renderHome();
+  }else toast('❌ Invalid license key');
+};
+
+/* ─────────────────────────────────────────
+   EARNINGS DASHBOARD
+   ───────────────────────────────────────── */
+function renderEarnings(){
+  if(!U)return;
+  const p=getPlayer();
+  const tier=TIERS[U.type]||TIERS.student;
+  document.getElementById('earnBal').textContent=`₱${p.commission_balance||0}`;
+  document.getElementById('earnTotal').textContent=p.total_referrals||0;
+  document.getElementById('earnTotalAmt').textContent=`₱${p.total_earned||0}`;
+  document.getElementById('earnPending').textContent=`₱${p.pending||0}`;
+  document.getElementById('earnPaid').textContent=`₱${p.paid_out||0}`;
+  document.getElementById('tierTitle').textContent=tier.lbl;
+  const commPerRef=Math.round(95*tier.pct/100);
+  document.getElementById('tierSub').textContent=`Earn ${tier.pct}% per referred subscription · ₱${commPerRef}/referral`;
+  document.getElementById('tierChip').textContent=tier.pct+'%';
+  // Tier icon
+  const icoEl=document.querySelector('.tier-ico');
+  if(icoEl){icoEl.className=`tier-ico tier-${U.type==='review_center'?'rc':U.type==='professor'?'prof':'stu'}`;icoEl.textContent=tier.ico;}
+  // Referral code
+  const code=U.refCode||'PLMBR-XXXXX';
+  document.getElementById('refCodeDisplay').textContent=code;
+  // Leaderboard
+  renderLeaderboard();
+  // History
+  renderEarnHistory();
+}
+
+function renderLeaderboard(){
+  const el=document.getElementById('leaderboard');
+  const ps=getPS(),refs=getRefs();
+  // Build leaderboard from referrals
+  const scores={};
+  refs.forEach(r=>{
+    if(!scores[r.referrer]) scores[r.referrer]={count:0,earned:0};
+    scores[r.referrer].count++;scores[r.referrer].earned+=r.commission;
+  });
+  // Seed demo data if empty
+  if(!Object.keys(scores).length){
+    el.innerHTML=['Professor Cruz — 132 referrals','Engr. Santos — 97 referrals','Review Center A — 85 referrals','Prof. Dela Cruz — 72 referrals','Arch. Reyes — 61 referrals'].map((txt,i)=>{
+      const rank=i+1;const cls=rank<=3?`lb-${rank}`:'lb-n';
+      return `<div class="lb-row"><div class="lb-rank ${cls}">${rank}</div><div class="lb-info"><div class="lb-nm">${txt.split(' — ')[0]}</div><div class="lb-sub">${txt.split(' — ')[1]}</div></div></div>`;
+    }).join('');
+    return;
+  }
+  const sorted=Object.entries(scores).sort((a,b)=>b[1].count-a[1].count).slice(0,10);
+  el.innerHTML=sorted.map(([email,data],i)=>{
+    const rank=i+1,cls=rank<=3?`lb-${rank}`:'lb-n';
+    const u=getUsers().find(u=>u.email===email);
+    const nm=u?u.name:email.split('@')[0];
+    return `<div class="lb-row"><div class="lb-rank ${cls}">${rank}</div><div class="lb-info"><div class="lb-nm">${nm}</div><div class="lb-sub">${data.count} referrals</div></div><div class="lb-val">₱${data.earned}</div></div>`;
   }).join('');
 }
 
-/* ── XP ── */
-function awardXP(pts){
-  const u=ukey(),s=loadPS(),p=s[u];
-  p.xp=(p.xp||0)+pts;const prev=p.level||1;p.level=Math.floor(p.xp/100)+1;
-  if(p.level>prev){p.coins=(p.coins||0)+(p.level*5);p.badges.push({id:`lvl${p.level}`,title:`Reached Level ${p.level}`,date:new Date().toISOString()});toast(`🎉 Level Up! Now Level ${p.level} · +${p.level*5} coins`);smallConfetti();}
-  p.lastActive=new Date().toISOString();s[u]=p;savePS(s);updateHUD();
+function renderEarnHistory(){
+  const el=document.getElementById('earnHistory');
+  const refs=getRefs().filter(r=>r.referrer===ukey()).sort((a,b)=>new Date(b.date)-new Date(a.date));
+  if(!refs.length){el.innerHTML='<div class="card" style="text-align:center;color:var(--t2);padding:20px;font-size:13px;">No referrals yet. Share your code to start earning!</div>';return;}
+  el.innerHTML=refs.map(r=>`<div class="hist-row"><div><div style="font-weight:600;font-size:13px;">New Referral</div><div class="hist-date">${new Date(r.date).toLocaleString()}</div></div><div><div class="hist-amt" style="color:var(--green);">+₱${r.commission}</div><div><span class="chip chip-${r.status==='paid'?'green':r.status==='approved'?'blue':'amber'}">${r.status}</span></div></div></div>`).join('');
 }
 
-/* ── SUBSCRIBE ── */
-function doSub(plan){
-  paid=true;
-  if(user&&user!=='Guest'){const us=getU(),f=us.find(x=>x.u===user);if(f){f.paid=true;saveU(us);}}
-  updateHome();smallConfetti();toast(`🎉 Subscribed (${plan}) — Full access unlocked!`);
-}
-window.doSub=doSub;
+window.copyRefCode=()=>{
+  const code=U?.refCode||'PLMBR-XXXXX';
+  navigator.clipboard?.writeText(code);
+  toast('📋 Referral code copied!');
+};
 
-/* ── REFERRAL ── */
-function openRef(){
-  const s=loadPS(),u=ukey(),p=s[u];
-  if(!p.referrals.code){p.referrals.code=`${(u||'GUEST').toUpperCase()}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;savePS(s);}
-  const code=p.referrals.code;
-  openMo('Referral Program','Share your code — earn 30% per student subscription');
-  document.getElementById('moBody').innerHTML=`<div><div class="ref-box">${code}</div><div style="display:flex;gap:10px;margin-top:12px;"><button class="btn-ghost" id="cpRef" style="flex:1;">Copy Code</button><button class="btn-primary" id="simRef" style="flex:2;padding:12px;">Simulate Referral</button></div><div style="font-size:12px;color:var(--text-3);text-align:center;margin-top:12px;">You earn ₱90 (30%) for every ₱299 student subscription via your code.</div></div>`;
-  document.getElementById('cpRef').onclick=()=>{navigator.clipboard?.writeText(code);toast('📋 Code copied!');};
-  document.getElementById('simRef').onclick=()=>{
-    const parts=code.split('-'),ref=parts[0],s2=loadPS();
-    const r=s2[ref]||{referrals:{code,earnings:0,referred:[]}};
-    r.referrals.earnings=(r.referrals.earnings||0)+90;
-    r.referrals.referred=r.referrals.referred||[];
-    r.referrals.referred.push({who:'SimStudent',date:new Date().toISOString(),amount:299});
-    s2[ref]=r;savePS(s2);toast('✅ Referral simulated — ₱90 credited!');updateHUD();
-  };
-}
-window.openRef=openRef;
+window.shareCode=(via)=>{
+  const code=U?.refCode||'PLMBR-XXXXX';
+  const msg=`Use my referral code ${code} and get ₱305 off the Master Plumber Board Reviewer! `;
+  if(via==='copy'){navigator.clipboard?.writeText(msg);toast('📋 Share message copied!');}
+  else if(via==='sms'){window.open(`sms:?body=${encodeURIComponent(msg)}`);}
+  else{toast('📤 Opening share…');navigator.share?.({title:'Master Plumber Reviewer',text:msg}).catch(()=>{});}
+};
 
-function openBadges(){
-  const s=loadPS(),p=s[ukey()],b=p.badges||[];
-  openMo('My Badges','Earned through consistent practice');
-  document.getElementById('moBody').innerHTML=b.length?b.map(x=>`<div class="badge-row"><div class="badge-ico">🏅</div><div><div class="badge-nm">${x.title}</div><div class="badge-dt">${new Date(x.date).toLocaleDateString()}</div></div></div>`).join(''):`<div style="text-align:center;color:var(--text-2);padding:28px;">No badges yet.<br>Take exams and level up to earn them!</div>`;
+/* ─────────────────────────────────────────
+   WITHDRAWAL
+   ───────────────────────────────────────── */
+window.openWithdrawSheet=()=>{
+  const p=getPlayer();
+  if((p.commission_balance||0)<500){toast(`⚠️ Minimum withdrawal is ₱500. Your balance: ₱${p.commission_balance||0}`);return;}
+  document.getElementById('wdPhone').value=U.gcash||'';
+  document.getElementById('wdName').value=U.name||'';
+  openSheet('wdOverlay');
+};
+
+window.submitWithdrawal=()=>{
+  const phone=document.getElementById('wdPhone').value.trim();
+  const name=document.getElementById('wdName').value.trim();
+  const amt=parseFloat(document.getElementById('wdAmt').value);
+  if(!phone||!name){toast('⚠️ Fill in all fields');return;}
+  if(amt<500){toast('⚠️ Minimum withdrawal is ₱500');return;}
+  const p=getPlayer();
+  if(amt>(p.commission_balance||0)){toast(`⚠️ Insufficient balance: ₱${p.commission_balance||0}`);return;}
+  // Deduct and record
+  p.commission_balance-=amt;savePlayer(p);
+  const wds=getWDs();
+  wds.push({id:'WD-'+Date.now(),user:U.email,gcash:phone,name,amount:amt,status:'pending',createdAt:new Date().toISOString()});
+  saveWDs(wds);
+  closeSheet('wdOverlay');
+  toast('✅ Withdrawal request submitted — processed in 1-3 business days');
+  renderEarnings();
+};
+
+/* ─────────────────────────────────────────
+   PROFILE
+   ───────────────────────────────────────── */
+function renderProfile(){
+  if(!U)return;
+  document.getElementById('profAv').textContent=U.name.charAt(0).toUpperCase();
+  document.getElementById('profNm').textContent=U.name;
+  document.getElementById('profEmail').textContent=U.email;
+  const typeMap={student:'Student',professor:'Professor',review_center:'Review Center'};
+  document.getElementById('profType').textContent=typeMap[U.type]||U.type;
+  document.getElementById('profTierChip').textContent=isPaid?'Pro Member':'Free';
+  document.getElementById('adminMenuRow').style.display=isAdmin?'flex':'none';
 }
 
-function openSubMo(){
-  openMo('Premium Access','Unlock everything you need to pass the boards');
-  document.getElementById('moBody').innerHTML=`<div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;"><button class="btn-gold" style="width:100%;padding:14px;" onclick="doSub('lifetime');closeMo();updateHome();">Buy Lifetime — ₱299 one-time</button><button class="btn-outline" style="width:100%;padding:12px;" onclick="doSub('monthly');closeMo();updateHome();">Monthly — ₱59/mo</button><button class="btn-text" style="width:100%;" onclick="closeMo();openRef();">Professor Referral Program →</button></div>`;
+window.openEditProfile=()=>{
+  document.getElementById('epNm').value=U.name||'';
+  document.getElementById('epGcash').value=U.gcash||'';
+  document.getElementById('epType').value=U.type||'student';
+  openSheet('editOverlay');
+};
+
+window.saveProfile=()=>{
+  const nm=document.getElementById('epNm').value.trim();
+  const gc=document.getElementById('epGcash').value.trim();
+  const tp=document.getElementById('epType').value;
+  if(!nm){toast('⚠️ Name required');return;}
+  U.name=nm;U.gcash=gc;U.type=tp;
+  const users=getUsers(),f=users.find(u=>u.email===U.email);
+  if(f){f.name=nm;f.gcash=gc;f.type=tp;saveUsers(users);}
+  closeSheet('editOverlay');renderProfile();updateHUD();
+  toast('✅ Profile updated');
+};
+
+/* ─────────────────────────────────────────
+   USER STATS
+   ───────────────────────────────────────── */
+function renderUserStats(){
+  if(!U)return;
+  const recs=(getStats()[ukey()]||[]).sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const p=getPlayer();
+  document.getElementById('statExams').textContent=recs.length;
+  const avgs=recs.map(r=>r.pct);
+  document.getElementById('statAvg').textContent=recs.length?Math.round(avgs.reduce((a,b)=>a+b,0)/avgs.length)+'%':'0%';
+  document.getElementById('statBest').textContent=recs.length?Math.max(...avgs)+'%':'0%';
+  document.getElementById('statStreak').textContent=p.streak||0;
+  const hist=document.getElementById('statsHistory');
+  if(!recs.length){hist.innerHTML='<div class="card" style="text-align:center;color:var(--t2);padding:20px;">No exam records yet.</div>';return;}
+  hist.innerHTML=recs.map(r=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${r.cat}</div><div class="admin-row-sub">Level ${r.level} · ${new Date(r.date).toLocaleString()}</div></div><div class="admin-row-end"><div class="admin-row-val">${r.score}/${r.total}</div><div class="admin-row-status"><span class="chip ${r.pct>=75?'chip-green':r.pct>=50?'chip-blue':'chip-red'}">${r.pct}%</span></div></div></div>`).join('');
 }
 
-/* ── MODAL ── */
-function openMo(title,sub=''){
-  document.getElementById('moTitle').textContent=title;
-  document.getElementById('moSub').textContent=sub;
-  document.getElementById('moBody').innerHTML='';
-  const m=document.getElementById('mo');m.classList.add('open');m.setAttribute('aria-hidden','false');
-}
-window.closeMo=()=>{const m=document.getElementById('mo');m.classList.remove('open');m.setAttribute('aria-hidden','true');};
-window.updateHome=updateHome;
+/* ─────────────────────────────────────────
+   ADMIN DASHBOARD
+   ───────────────────────────────────────── */
+window.adminTab=(tab,btn)=>{
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');renderAdmin(tab);
+};
 
-/* ── TOAST ── */
-window.toast=function(msg,ms=2600){
+function renderAdmin(tab='users'){
+  const users=getUsers(),txns=getTxns(),refs=getRefs(),wds=getWDs();
+  // Stats
+  document.getElementById('adTotalUsers').textContent=users.length;
+  document.getElementById('adUsersD').textContent=`+${users.filter(u=>new Date(u.createdAt||0).toDateString()===new Date().toDateString()).length} today`;
+  document.getElementById('adSubs').textContent=users.filter(u=>u.paid).length;
+  const rev=txns.reduce((a,t)=>a+(t.amount||0),0);
+  document.getElementById('adRevenue').textContent='₱'+rev;
+  const totalComm=refs.reduce((a,r)=>a+(r.commission||0),0);
+  document.getElementById('adCommissions').textContent='₱'+totalComm;
+  const cont=document.getElementById('adminContent');
+  if(tab==='users'){
+    if(!users.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No users yet.</div>';return;}
+    cont.innerHTML=users.map(u=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${u.name}</div><div class="admin-row-sub">${u.email} · ${u.type}</div></div><div class="admin-row-end"><div><span class="chip ${u.paid?'chip-green':'chip-amber'}">${u.paid?'Pro':'Free'}</span></div><div class="admin-row-sub" style="margin-top:4px;">${u.refCode||'—'}</div></div></div>`).join('');
+  }else if(tab==='subs'){
+    const paid=users.filter(u=>u.paid);
+    if(!paid.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No subscribers yet.</div>';return;}
+    cont.innerHTML=paid.map(u=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${u.name}</div><div class="admin-row-sub">${u.email}</div></div><div class="admin-row-end"><span class="chip chip-green">Pro</span></div></div>`).join('');
+  }else if(tab==='referrals'){
+    if(!refs.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No referrals yet.</div>';return;}
+    cont.innerHTML=refs.map(r=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${r.code}</div><div class="admin-row-sub">${r.referrer} → ${r.referred}</div></div><div class="admin-row-end"><div class="admin-row-val">₱${r.commission}</div><div><span class="chip chip-${r.status==='paid'?'green':r.status==='approved'?'blue':'amber'}">${r.status}</span></div></div></div>`).join('');
+  }else if(tab==='withdrawals'){
+    if(!wds.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No withdrawal requests.</div>';return;}
+    cont.innerHTML=wds.map(w=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${w.name}</div><div class="admin-row-sub">${w.gcash} · ${new Date(w.createdAt).toLocaleDateString()}</div></div><div class="admin-row-end"><div class="admin-row-val">₱${w.amount}</div>${w.status==='pending'?`<div style="display:flex;gap:6px;margin-top:6px;"><button class="btn-approve" onclick="approveWD('${w.id}')">Approve</button><button class="btn-reject" onclick="rejectWD('${w.id}')">Reject</button></div>`:`<div><span class="chip chip-${w.status==='paid'||w.status==='approved'?'green':'red'}">${w.status}</span></div>`}</div></div>`).join('');
+  }else if(tab==='fraud'){
+    // Detect duplicate phones
+    const phones={};users.forEach(u=>{if(u.phone){if(!phones[u.phone])phones[u.phone]=[];phones[u.phone].push(u.name);}});
+    const dupes=Object.entries(phones).filter(([,v])=>v.length>1);
+    if(!dupes.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--green);">✅ No fraud alerts detected.</div>';return;}
+    cont.innerHTML=dupes.map(([ph,nms])=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm" style="color:var(--red);">⚠️ Duplicate Phone: ${ph}</div><div class="admin-row-sub">${nms.join(', ')}</div></div></div>`).join('');
+  }
+}
+
+window.approveWD=(id)=>{
+  const wds=getWDs(),w=wds.find(x=>x.id===id);
+  if(w){w.status='paid';w.processedAt=new Date().toISOString();saveWDs(wds);}
+  // Mark refs as paid
+  const refs=getRefs(),userRefs=refs.filter(r=>r.referrer===w?.user&&r.status==='pending');
+  userRefs.forEach(r=>{r.status='paid';});saveRefs(refs);
+  // Update player
+  const ps=ensurePlayer(w?.user||'');
+  if(w?.user&&ps[w.user]){const rp=ps[w.user];rp.paid_out=(rp.paid_out||0)+(w.amount||0);rp.pending=Math.max(0,(rp.pending||0)-(w.amount||0));savePS(ps);}
+  toast('✅ Withdrawal approved and marked as paid');renderAdmin('withdrawals');
+};
+window.rejectWD=(id)=>{
+  const wds=getWDs(),w=wds.find(x=>x.id===id);
+  if(w){
+    w.status='rejected';saveWDs(wds);
+    // Refund balance
+    const ps=ensurePlayer(w.user||'');
+    if(ps[w.user]){ps[w.user].commission_balance=(ps[w.user].commission_balance||0)+(w.amount||0);savePS(ps);}
+  }
+  toast('❌ Withdrawal rejected — balance refunded');renderAdmin('withdrawals');
+};
+
+/* ─────────────────────────────────────────
+   THEME
+   ───────────────────────────────────────── */
+window.toggleTheme=()=>{
+  const isL=document.body.getAttribute('data-theme')==='light';
+  document.body.setAttribute('data-theme',isL?'dark':'light');
+  document.getElementById('themeBtn').innerHTML=`<ion-icon name="${isL?'moon-outline':'sunny-outline'}"></ion-icon>`;
+};
+
+/* ─────────────────────────────────────────
+   NOTIFICATIONS
+   ───────────────────────────────────────── */
+window.showNotifications=()=>toast('🔔 No new notifications');
+
+/* ─────────────────────────────────────────
+   SHEETS
+   ───────────────────────────────────────── */
+window.openSheet=(id)=>{document.getElementById(id).classList.add('on');};
+window.closeSheet=(id)=>{document.getElementById(id).classList.remove('on');};
+document.querySelectorAll('.overlay').forEach(ov=>ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('on');}));
+
+/* ─────────────────────────────────────────
+   TOAST
+   ───────────────────────────────────────── */
+window.toast=(msg,ms=2800)=>{
   const t=document.createElement('div');t.className='toast';t.textContent=msg;
   document.getElementById('toasts').appendChild(t);
   setTimeout(()=>t.classList.add('out'),ms-300);
   setTimeout(()=>t.remove(),ms);
 };
 
-/* ── CONFETTI ── */
-function smallConfetti(){
-  const root=document.createElement('div');root.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:9998;';
+/* ─────────────────────────────────────────
+   CONFETTI
+   ───────────────────────────────────────── */
+function confetti(){
+  const root=document.createElement('div');root.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:99998;';
   document.body.appendChild(root);
-  const c=['#3b82f6','#818cf8','#f59e0b','#10b981','#f43f5e','#a78bfa','#34d399'];
-  for(let i=0;i<32;i++){
-    const p=document.createElement('div'),sz=Math.random()*10+6;
-    p.style.cssText=`position:absolute;left:${30+Math.random()*40}%;top:-10%;width:${sz}px;height:${sz}px;background:${c[Math.floor(Math.random()*c.length)]};border-radius:4px;opacity:.9;transition:top 1.8s cubic-bezier(.18,.9,.3,1),transform 1.8s linear;`;
+  const colors=['#3b82f6','#8b5cf6','#f59e0b','#10b981','#f43f5e','#14b8a6','#a78bfa'];
+  for(let i=0;i<40;i++){
+    const p=document.createElement('div'),sz=Math.random()*12+6;
+    p.style.cssText=`position:absolute;left:${20+Math.random()*60}%;top:-5%;width:${sz}px;height:${sz}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>0.5?'50%':'4px'};opacity:.95;transition:top 2s cubic-bezier(.18,.9,.3,1),transform 2s linear;`;
     root.appendChild(p);
-    setTimeout(()=>{p.style.top=(55+Math.random()*40)+'%';p.style.transform=`rotate(${Math.random()*720}deg)`;},30+i*18);
+    setTimeout(()=>{p.style.top=(60+Math.random()*35)+'%';p.style.transform=`rotate(${Math.random()*720}deg) scale(${0.5+Math.random()*0.5})`;},30+i*20);
   }
-  setTimeout(()=>root.remove(),2400);
+  setTimeout(()=>root.remove(),2800);
 }
 
-/* ── MICRO-INTERACTIONS ── */
+/* ─────────────────────────────────────────
+   BUTTON HAPTIC FEEL (Behavioral)
+   ───────────────────────────────────────── */
 document.addEventListener('click',e=>{
-  const b=e.target.closest('button');
-  if(b&&!b.classList.contains('choice')){b.style.transform='scale(0.96)';setTimeout(()=>b.style.transform='',150);}
+  const b=e.target.closest('button,.cat-card,.lvl-btn,.share-btn,.menu-row');
+  if(b&&!b.classList.contains('choice')){b.style.transform='scale(0.96)';setTimeout(()=>b.style.transform='',160);}
 });
 
-/* ── BINDINGS ── */
-document.getElementById('btnSub').addEventListener('click',openSubMo);
-document.getElementById('btnRef').addEventListener('click',openRef);
-document.getElementById('btnBadges').addEventListener('click',openBadges);
-document.getElementById('btnCloseMo').addEventListener('click',()=>window.closeMo());
-
-/* ── INIT ── */
-setTimeout(()=>{selectPlan('lifetime');setScreen('splashScreen');updateHUD();},40);
-window.__app={awardXP,loadPS,updateHUD,doSub,openRef,toast};
+/* ─────────────────────────────────────────
+   INIT
+   ───────────────────────────────────────── */
+(async()=>{
+  await loadDB();
+  // Seed demo admin if no users
+  const users=getUsers();
+  if(!users.length){
+    users.push({name:'Admin',email:'admin@mp.ph',phone:'09000000000',gcash:'09000000000',type:'review_center',pw:'admin123',refCode:'PLMBR-ADMIN',referredBy:null,paid:true,admin:true,createdAt:new Date().toISOString()});
+    saveUsers(users);
+  }
+  goTo('sSplash');
+})();
 </script>
 
 
