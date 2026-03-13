@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>MASTER PLUMBER REVIEWER — PREMIUM</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* ---------- THEME & LAYOUT ---------- */
         :root{
             --bg: #071026;
             --card: linear-gradient(180deg,#071126 0%, #061427 100%);
@@ -18,7 +17,6 @@
             --success: #10b981;
             --danger: #ef4444;
             --glass: rgba(255,255,255,0.04);
-            --glass-2: rgba(255,255,255,0.02);
             --gold: #FFD166;
             --btn-ghost: rgba(255,255,255,0.03);
             --neon: rgba(79,70,229,0.18);
@@ -26,15 +24,12 @@
         [data-theme="light"]{
             --bg:#f8fafc; --card:#fff; --accent:#0ea5e9; --accent-2:#2563eb; --muted:#64748b; --text:#0f172a; --glass: rgba(2,6,23,0.02); --btn-ghost:#f1f5f9;
         }
-
         *{box-sizing:border-box; font-family:'Poppins',sans-serif; color:var(--text); transition: all .18s ease;}
         html,body{height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.06), transparent), linear-gradient(180deg,#031127 0%, #071126 60%); display:flex; align-items:flex-start; justify-content:center; padding:28px;}
         .app-card{ width:100%; max-width:720px; background:var(--card); border-radius:18px; padding:18px; box-shadow: 0 12px 60px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); position:relative; overflow:hidden; }
 
-        /* Decorative neon grid */
         .app-card::before{ content:""; position:absolute; inset:-30px; background-image: linear-gradient(90deg, rgba(79,70,229,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(6,182,212,0.02) 1px, transparent 1px); background-size:46px 46px; pointer-events:none; mix-blend-mode:overlay; opacity:0.7; transform:rotate(2deg); }
 
-        /* ---------- Header / HUD (new) ---------- */
         .hud{ display:flex; gap:14px; align-items:center; justify-content:space-between; margin-bottom:14px; }
         .left-hud{ display:flex; gap:12px; align-items:center; }
         .avatar{ width:62px; height:62px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:900; font-family:'Press Start 2P',monospace; font-size:14px; color:white; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 10px 30px rgba(79,70,229,0.12); border:2px solid rgba(255,255,255,0.04); }
@@ -49,36 +44,27 @@
         .btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:10px; cursor:pointer; color:var(--text); }
         .btn-pro{ background:linear-gradient(90deg,#ffd166,#ff7a45); color:#111; padding:10px 16px; border-radius:12px; cursor:pointer; font-weight:800; box-shadow:0 10px 30px rgba(255,150,60,0.12); }
 
-        /* ---------- Main content polish ---------- */
         h1.app-title{ margin:6px 0 14px; font-size:20px; letter-spacing:0.6px; }
         .hero-banner{ display:flex; gap:12px; align-items:center; background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.03); }
-        .hero-banner .kpi{ display:flex; gap:8px; align-items:center; }
-        .kpi b{ font-size:18px; color:var(--gold); }
 
-        /* category cards */
         .category-list{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:14px; }
         .category-item{ padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03); cursor:pointer; display:flex; flex-direction:column; gap:8px; align-items:flex-start; transition: transform .18s ease, box-shadow .18s ease; }
         .category-item:hover{ transform:translateY(-6px); box-shadow: 0 10px 30px rgba(79,70,229,0.08); }
         .category-icon{ width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; background:var(--glass); }
 
-        /* exam grid */
         .exam-item{ display:flex; align-items:center; justify-content:space-between; gap:10px; background:rgba(0,0,0,0.05); padding:10px 12px; border-radius:12px; margin-bottom:8px; }
         .exam-item.locked{ opacity:0.45; filter:grayscale(.2); }
 
-        /* quiz area improvements */
         #qTxt img{ border-radius:12px; max-width:100%; margin-top:12px; box-shadow:0 12px 40px rgba(2,6,23,0.6); }
         #choices button{ margin:8px 0; padding:12px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03); color:var(--text); font-weight:700; cursor:pointer; text-align:left; }
 
-        /* modal */
         .modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,23,0.6); z-index:9999; opacity:0; pointer-events:none; transition:opacity .18s ease; }
         .modal.active{ opacity:1; pointer-events:auto; }
         .modal-card{ width:100%; max-width:720px; background:linear-gradient(180deg,#061026,#08142a); border-radius:16px; padding:18px; border:1px solid rgba(255,255,255,0.04); box-shadow:0 30px 80px rgba(2,6,23,0.8); color:var(--text); }
 
-        /* animations */
         @keyframes pop { 0%{ transform: scale(.92); opacity:0.0 } 70%{ transform: scale(1.03); opacity:1 } 100%{ transform: scale(1) } }
         .pulse{ animation: pop .36s ease; }
 
-        /* responsive */
         @media (max-width:880px){ .category-list{ grid-template-columns: repeat(2,1fr); } .app-card{ padding:14px; } }
         @media (max-width:560px){ .category-list{ grid-template-columns: repeat(1,1fr);} .hud{ flex-direction:column; align-items:flex-start; gap:10px; } }
     </style>
@@ -86,7 +72,6 @@
 <body data-theme="dark">
 <div class="app-card" id="appBody">
 
-    <!-- HUD: added (non-destructive) -->
     <div class="hud" role="banner" aria-label="Player HUD">
         <div class="left-hud">
             <div class="avatar" id="playerAvatar">MP</div>
@@ -106,8 +91,6 @@
         </div>
     </div>
 
-    <!-- main UI: keep all existing screens and ids untouched so functions work -->
-    <!-- AUTH SCREEN (unchanged structure, enhanced visually) -->
     <div id="authScreen" class="screen" style="display: block; text-align: center;">
         <div style="font-size: 46px; color: var(--accent); margin-bottom: 5px;"><ion-icon name="water"></ion-icon></div>
         <div style="font-size: 11px; color: var(--muted); font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">The Ultimate Reviewer — Premium</div>
@@ -131,7 +114,6 @@
         <button onclick="enterAsGuest()" style="background:transparent; border:none; color:var(--accent-2); font-weight:700;">Continue as Guest</button>
     </div>
 
-    <!-- PAYMENT SCREEN (keeps ids) -->
     <div id="paymentScreen" class="screen" style="text-align: center;">
         <h3>Unlock All Exams & Premium Features</h3>
         <input type="text" id="licenseKey" placeholder="Enter License Key or referral code">
@@ -144,7 +126,6 @@
         <button onclick="setScreen('home')" style="margin-top:10px;">Maybe Later</button>
     </div>
 
-    <!-- HOME (kept ids and buttons intact) -->
     <div id="home" class="screen">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
             <div>
@@ -190,7 +171,6 @@
         <div style="height:24px;"></div>
     </div>
 
-    <!-- SUBCATEGORIES, EXAMS, QUIZ, RESULTS, STATS (kept and visually enhanced) -->
     <div id="subCategories" class="screen">
         <h3 style="text-align:center;">Tools, Symbols & Diagrams</h3>
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px;">
@@ -239,7 +219,6 @@
 
 </div>
 
-<!-- Modal: Subscriptions, referrals, badges (new, separate from existing screens) -->
 <div id="modalRoot" class="modal" aria-hidden="true">
     <div class="modal-card" role="dialog" aria-modal="true">
         <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
@@ -277,7 +256,6 @@
     </div>
 </div>
 
-<!-- lightweight toasts container -->
 <div id="toasts" style="position:fixed; right:20px; top:20px; z-index:99999; display:flex; flex-direction:column; gap:8px;"></div>
 
 <script type="module">
@@ -301,48 +279,18 @@
         "Random": randomDB
     };
 
-    // state
     let currentUser = null, isPaid = false, currentCat, curIdx = 0, currentQs = [], answers = [], score = 0;
-    let currentExamIdx = null; // track which exam number is active
+    let currentExamIdx = null;
     const MASTER_KEY = "MP-MASTER-2024";
 
-    // Stats storage helpers
     const STATS_KEY = 'mp_stats';
-    function getAllStats() {
-        return JSON.parse(localStorage.getItem(STATS_KEY) || '{}');
-    }
-    function saveAllStats(obj) {
-        localStorage.setItem(STATS_KEY, JSON.stringify(obj));
-    }
-    function getUserKey() {
-        return currentUser || 'Guest';
-    }
-    function getLatestExamRecord(user, cat, exam) {
-        const all = getAllStats();
-        const arr = (all[user] || []).filter(r => r.cat === cat && r.exam === exam);
-        return arr.length ? arr[arr.length - 1] : null;
-    }
-    function saveExamResult() {
-        // ensure we have an active exam to save
-        if(!currentCat || !currentExamIdx || !currentQs || currentQs.length === 0) return;
-        const user = getUserKey();
-        const rec = { cat: currentCat, exam: currentExamIdx, score: score, total: currentQs.length, date: new Date().toISOString() };
-        const all = getAllStats();
-        const arr = all[user] || [];
-        // remove previous record for same cat+exam to keep latest (but preserve others)
-        const filtered = arr.filter(r => !(r.cat === rec.cat && r.exam === rec.exam));
-        filtered.push(rec);
-        all[user] = filtered;
-        saveAllStats(all);
-    }
+    function getAllStats(){ return JSON.parse(localStorage.getItem(STATS_KEY) || '{}'); }
+    function saveAllStats(obj){ localStorage.setItem(STATS_KEY, JSON.stringify(obj)); }
+    function getUserKey(){ return currentUser || 'Guest'; }
+    function getLatestExamRecord(user, cat, exam){ const all = getAllStats(); const arr = (all[user] || []).filter(r => r.cat === cat && r.exam === exam); return arr.length ? arr[arr.length - 1] : null; }
+    function saveExamResult(){ if(!currentCat || !currentExamIdx || !currentQs || currentQs.length === 0) return; const user = getUserKey(); const rec = { cat: currentCat, exam: currentExamIdx, score: score, total: currentQs.length, date: new Date().toISOString() }; const all = getAllStats(); const arr = all[user] || []; const filtered = arr.filter(r => !(r.cat === rec.cat && r.exam === rec.exam)); filtered.push(rec); all[user] = filtered; saveAllStats(all); }
 
-    window.toggleTheme = () => {
-        const b = document.body;
-        const isL = b.getAttribute('data-theme') === 'light';
-        b.setAttribute('data-theme', isL ? 'dark' : 'light');
-        document.getElementById('themeIcon').setAttribute('name', isL ? 'sunny-outline' : 'moon-outline');
-    };
-
+    window.toggleTheme = () => { const b = document.body; const isL = b.getAttribute('data-theme') === 'light'; b.setAttribute('data-theme', isL ? 'dark' : 'light'); document.getElementById('themeIcon').setAttribute('name', isL ? 'sunny-outline' : 'moon-outline'); };
     window.enterAsGuest = () => { currentUser = "Guest"; isPaid = false; updateHomeUI(); setScreen('home'); };
 
     window.handleAuth = () => {
@@ -378,7 +326,6 @@
             status.innerText = "FREE MEMBER"; status.style.color = "var(--muted)";
             card.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center;"><div><div style="font-weight:800;">Unlock Lifetime Pro</div><div style="font-size:12px;color:var(--muted);">Access all 60+ exams and offline mode</div></div><div><button class="btn-pro" onclick="setScreen('paymentScreen')">UPGRADE ₱299</button></div></div>`;
         }
-        // HUD small update
         updatePlayerHUD();
     }
 
@@ -401,12 +348,8 @@
         document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
         const el = document.getElementById(id);
         if(el) el.style.display = 'block';
-        if(id === 'home') {
-            document.querySelectorAll('.nav-item')?.[0]?.classList?.add('active');
-        }
         document.getElementById('pBarCont').style.display = (id === 'quiz') ? 'block' : 'none';
         if(id === 'stats') renderStats();
-        // subtle pulse animation to reinforce microinteraction
         el?.classList?.add('pulse');
         setTimeout(()=> el?.classList?.remove('pulse'), 420);
     };
@@ -442,17 +385,12 @@
         setScreen('quiz'); loadQ();
     };
 
-    // --- UPDATED LOGIC TO SHOW IMAGES ---
     window.loadQ = () => {
         const q = currentQs[curIdx];
         document.getElementById('progressBar').style.width = (curIdx / currentQs.length * 100) + "%";
         document.getElementById('qNum').innerText = `QUESTION ${curIdx+1} OF ${currentQs.length}`;
-        
-        // Render text
         const qTxtContainer = document.getElementById('qTxt');
         qTxtContainer.innerHTML = `<div>${q.q}</div>`;
-
-        // Check for and render image
         if(q.img) {
             const img = document.createElement('img');
             img.src = q.img;
@@ -461,7 +399,6 @@
             img.style.borderRadius = "12px";
             qTxtContainer.appendChild(img);
         }
-
         const box = document.getElementById('choices'); box.innerHTML = "";
         q.choices.forEach((c, i) => {
             const b = document.createElement('button');
@@ -478,20 +415,11 @@
     };
 
     window.handleNextLogic = () => { if(curIdx < currentQs.length-1) { curIdx++; loadQ(); } else showResults(); };
-    window.prevQ = () => {
-        if (curIdx > 0) {
-            curIdx--;
-            loadQ();
-        } else {
-            // If user is at first question, go back to exam list
-            setScreen('exams');
-        }
-    };
+    window.prevQ = () => { if (curIdx > 0) { curIdx--; loadQ(); } else { setScreen('exams'); } };
     window.quitQuiz = () => { if(confirm("Exit?")) { saveExamResult(); setScreen('home'); } };
     window.finishExamEarly = () => showResults();
 
     function showResults() {
-        // compute final score (in case)
         score = answers.filter((a, idx) => a === currentQs[idx].a).length;
         document.getElementById('resScore').innerText = `SCORE: ${score} / ${currentQs.length}`;
         const scroll = document.getElementById('revScroll'); scroll.innerHTML = "";
@@ -502,12 +430,10 @@
             });
             scroll.innerHTML += `<div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.03);"><b>${i+1}. ${q.q}</b>${ch}</div>`;
         });
-        // Save the exam result to stats
         saveExamResult();
         setScreen('results');
     }
 
-    // Stats rendering
     function renderStats() {
         let statsCont = document.getElementById('statsContent');
         if(!statsCont) return;
@@ -532,13 +458,6 @@
         statsCont.innerHTML = html;
     }
 
-    /* ---------------------------
-       NEW: Emotional design & gamification layer
-       - Does NOT change existing functions above.
-       - Adds subscription/referral, badges, XP, toasts, confetti, animations.
-       --------------------------- */
-
-    // Player persistence
     const PLAYER_KEY = 'mp_player_v2';
     function loadPlayerStore(){
         const store = JSON.parse(localStorage.getItem(PLAYER_KEY) || '{}');
@@ -551,7 +470,6 @@
     }
     function savePlayerStore(store){ localStorage.setItem(PLAYER_KEY, JSON.stringify(store)); }
 
-    // award XP + level-up
     function awardXP(points){
         const u = getUserKey();
         const store = loadPlayerStore();
@@ -571,7 +489,6 @@
         updatePlayerHUD();
     }
 
-    // update HUD display
     function updatePlayerHUD(){
         const u = getUserKey();
         const store = loadPlayerStore();
@@ -583,7 +500,6 @@
         document.getElementById('xpFill').style.width = xpPct + '%';
     }
 
-    // toasts
     function showToast(msg, ms=2400){
         const t = document.createElement('div');
         t.className = 'toast';
@@ -598,7 +514,6 @@
         setTimeout(()=> t.remove(), ms);
     }
 
-    // Confetti (lightweight)
     function smallConfetti(){
         const croot = document.createElement('div');
         croot.style.position='fixed'; croot.style.left=0; croot.style.top=0; croot.style.width='100%'; croot.style.height='100%'; croot.style.pointerEvents='none'; croot.style.zIndex=9998;
@@ -616,7 +531,6 @@
         setTimeout(()=> croot.remove(), 1800);
     }
 
-    // Hook into showResults & quitQuiz without editing them (wrap)
     const _orig_showResults = window.showResults;
     if(_orig_showResults) {
         window.showResults = function(){
@@ -636,10 +550,6 @@
         };
     }
 
-    /* ---------------------------
-       SUBSCRIPTION & REFERRAL (simulated, stored locally)
-       - subscribe(), generateReferralCode(), claimReferral()
-       --------------------------- */
     function openSubscriptionModal(){
         const modal = document.getElementById('modalRoot');
         modal.classList.add('active'); modal.setAttribute('aria-hidden','false');
@@ -648,7 +558,6 @@
     function closeSubscriptionModal(){ document.getElementById('modalRoot').classList.remove('active'); document.getElementById('modalRoot').setAttribute('aria-hidden','true'); }
 
     function subscribe(plan='lifetime'){
-        // Simulate payment & unlock
         isPaid = true;
         if(currentUser && currentUser !== 'Guest') {
             const uArr = JSON.parse(localStorage.getItem('mp_users') || '[]');
@@ -661,7 +570,6 @@
         smallConfetti();
     }
 
-    // Referral (professors)
     function ensureReferral(){
         const store = loadPlayerStore();
         const user = getUserKey();
@@ -691,12 +599,10 @@
         `;
         document.getElementById('copyRef').onclick = ()=> { navigator.clipboard?.writeText(code).then(()=> showToast('Referral copied')); };
         document.getElementById('simulateReferral').onclick = ()=> {
-            // simulate student subscribing via code
             const codeParts = code.split('-'); const referrer = codeParts[0];
-            // credit referrer in store
             const store = loadPlayerStore();
             const ref = store[referrer] || { referrals:{code:code, earnings:0, referred:[]}};
-            ref.referrals.earnings = (ref.referrals.earnings || 0) + 90; // 30% of 299 ~= 90
+            ref.referrals.earnings = (ref.referrals.earnings || 0) + 90;
             ref.referrals.referred = ref.referrals.referred || []; ref.referrals.referred.push({who:'SimStudent', date:new Date().toISOString(), amount:299});
             store[referrer] = ref;
             savePlayerStore(store);
@@ -705,14 +611,12 @@
         };
     }
 
-    // Buttons wiring for modal
     document.getElementById('subscribeBtn')?.addEventListener('click',openSubscriptionModal);
     document.getElementById('closeModal')?.addEventListener('click', closeSubscriptionModal);
     document.getElementById('modalBuyLifetime')?.addEventListener('click', ()=> subscribe('lifetime'));
     document.getElementById('modalBuyMonthly')?.addEventListener('click', ()=> subscribe('monthly'));
     document.getElementById('modalProfessor')?.addEventListener('click', openReferralPanel);
 
-    // HUD referral & badges buttons
     document.getElementById('refBtn')?.addEventListener('click', ()=> {
         openReferralPanel();
     });
@@ -723,26 +627,21 @@
         document.getElementById('modalContent').innerHTML = html;
     });
 
-    // quick subscription buttons in payment screen
     document.getElementById('oneTimeBtn')?.addEventListener('click', ()=> subscribe('lifetime'));
     document.getElementById('subscribeMonthlyBtn')?.addEventListener('click', ()=> subscribe('monthly'));
 
-    // small UX: animate buttons when clicked
     document.addEventListener('click', (e)=>{
         const btn = (e.target instanceof HTMLElement) ? e.target.closest('button') : null;
         if(btn) { btn.style.transform = 'translateY(-2px)'; setTimeout(()=> btn.style.transform = '', 140); }
     });
 
-    // initialize HUD & state
     setTimeout(()=> updatePlayerHUD(), 200);
-    // poll for user change (observes local storage user updates)
     let _prevUser = getUserKey();
     setInterval(()=> {
         const u = getUserKey();
         if(u !== _prevUser){ _prevUser = u; updatePlayerHUD(); }
     }, 800);
 
-    // expose helpers for debugging (non-blocking)
     window.__premium = { awardXP, loadPlayerStore, updatePlayerHUD, subscribe, openReferralPanel };
 
 </script>
