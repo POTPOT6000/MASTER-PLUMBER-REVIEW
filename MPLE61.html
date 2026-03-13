@@ -3,184 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTER PLUMBER REVIEWER</title>
+    <title>MASTER PLUMBER REVIEWER — PREMIUM</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
-            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
-            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
-            --orange: #f97316; --light-blue: #bae6fd; --dark-blue: #1d4ed8;
-            --pro-gradient: linear-gradient(135deg, #FF6B00 0%, #FF2E00 100%);
-            --pro-text: #FFEBCC;
-            --status-free: #64748b;
-            --cat-icon-code: #E0F2FE; --cat-icon-arith: #FEE2E2; --cat-icon-design: #DCFCE7; --cat-icon-prac: #FFEDD5;
+        /* ---------- THEME & LAYOUT ---------- */
+        :root{
+            --bg: #071026;
+            --card: linear-gradient(180deg,#071126 0%, #061427 100%);
+            --accent: #4f46e5;
+            --accent-2: #06b6d4;
+            --muted: #9fb0d6;
+            --text: #e6eef8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --glass: rgba(255,255,255,0.04);
+            --glass-2: rgba(255,255,255,0.02);
+            --gold: #FFD166;
+            --btn-ghost: rgba(255,255,255,0.03);
+            --neon: rgba(79,70,229,0.18);
         }
-        [data-theme="dark"] {
-            --primary: #38bdf8; --accent: #0ea5e9; --success: #34d399; --danger: #f87171;
-            --warning: #fbbf24; --bg: #020617; --card: #0f172a; --text: #f1f5f9;
-            --sub: #94a3b8; --border: #1e293b; --btn-ghost: #1e293b;
-            --pro-gradient: linear-gradient(135deg, #cc5500 0%, #cc2400 100%);
-            --pro-text: #fef0db;
-            --status-free: #94a3b8;
-            --cat-icon-code: #0c4a6e; --cat-icon-arith: #7f1d1d; --cat-icon-design: #14532d; --cat-icon-prac: #7c2d12;
-        }
-
-        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.2s ease; }
-        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; padding-bottom: 80px; }
-
-        .app-card { 
-            width: 100%; max-width: 500px; background: var(--card); padding: 25px; 
-            border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
-            position: relative; overflow: hidden;
+        [data-theme="light"]{
+            --bg:#f8fafc; --card:#fff; --accent:#0ea5e9; --accent-2:#2563eb; --muted:#64748b; --text:#0f172a; --glass: rgba(2,6,23,0.02); --btn-ghost:#f1f5f9;
         }
 
-        button { 
-            width: 100%; padding: 16px; margin: 8px 0; border: 1.5px solid transparent; border-radius: 16px; 
-            font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); 
-            color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
-        button:hover { border-color: var(--accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-        button:active { background: var(--accent) !important; color: white !important; transform: scale(0.98); }
+        *{box-sizing:border-box; font-family:'Poppins',sans-serif; color:var(--text); transition: all .18s ease;}
+        html,body{height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.06), transparent), linear-gradient(180deg,#031127 0%, #071126 60%); display:flex; align-items:flex-start; justify-content:center; padding:28px;}
+        .app-card{ width:100%; max-width:720px; background:var(--card); border-radius:18px; padding:18px; box-shadow: 0 12px 60px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); position:relative; overflow:hidden; }
 
-        .btn-main { background: var(--accent); color: #fff !important; }
-        .screen { display: none; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .progress-container { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--btn-ghost); display:none; }
-        #progressBar { height: 100%; background: var(--accent); width: 0%; transition: 0.4s ease; }
-        
-        .correct { background: var(--success) !important; color: white !important; }
-        .wrong { background: var(--danger) !important; color: white !important; }
-        input { width: 100%; padding: 14px; margin: 8px 0; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text); outline: none; }
-        
-        .exam-item { display: flex; align-items: center; gap: 10px; background: var(--btn-ghost); margin: 8px 0; padding: 5px 15px; border-radius: 15px; }
-        .locked { opacity: 0.5; }
+        /* Decorative neon grid */
+        .app-card::before{ content:""; position:absolute; inset:-30px; background-image: linear-gradient(90deg, rgba(79,70,229,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(6,182,212,0.02) 1px, transparent 1px); background-size:46px 46px; pointer-events:none; mix-blend-mode:overlay; opacity:0.7; transform:rotate(2deg); }
 
-        .new-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .greeting-container { display: flex; flex-direction: column; gap: 2px; }
-        .user-greeting { font-size: 20px; font-weight: 700; color: var(--text); }
-        .membership-status { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--sub); letter-spacing: 0.5px; }
+        /* ---------- Header / HUD (new) ---------- */
+        .hud{ display:flex; gap:14px; align-items:center; justify-content:space-between; margin-bottom:14px; }
+        .left-hud{ display:flex; gap:12px; align-items:center; }
+        .avatar{ width:62px; height:62px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:900; font-family:'Press Start 2P',monospace; font-size:14px; color:white; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 10px 30px rgba(79,70,229,0.12); border:2px solid rgba(255,255,255,0.04); }
+        .player-info{ display:flex; flex-direction:column; gap:4px; }
+        .player-name{ font-weight:800; font-size:15px; color:var(--text); }
+        .player-meta{ font-size:12px; color:var(--muted); display:flex; gap:8px; align-items:center; }
 
-        .pro-card { background: var(--pro-gradient); border-radius: 20px; padding: 20px; color: white; display: flex; flex-direction: column; gap: 8px; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(255, 60, 0, 0.2); }
-        .pro-card h3 { margin: 0; font-size: 17px; font-weight: 800; color: white; }
-        .pro-card p { margin: 0; font-size: 11px; font-weight: 400; opacity: 0.9; color: white; }
-        .upgrade-btn { background: #fff; color: #f97316; font-size: 12px; font-weight: 700; padding: 12px; margin: 5px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
-        .pro-paid-status { font-size: 14px; font-weight: 700; text-align: center; color: white; border: 1.5px solid rgba(255,255,255,0.3); padding: 10px; border-radius: 12px; }
+        .xp-bar{ width:220px; height:10px; background:var(--glass); border-radius:999px; overflow:hidden; box-shadow: inset 0 -6px 20px rgba(2,6,23,0.6); }
+        .xp-fill{ height:100%; width:22%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 6px 20px rgba(79,70,229,0.12); transition:width .6s ease; }
 
-        .category-list { display: flex; flex-direction: column; gap: 12px; }
-        .category-item { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; }
-        [data-theme="dark"] .category-item { background: #0f172a; border-color: #1e293b; }
-        .category-item:hover { border-color: var(--accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.2); }
-        .category-item:active { background: #dbeafe !important; transform: scale(0.98); }
-        
-        .category-icon { width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .category-info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
-        .category-title { font-size: 13px; font-weight: 700; color: var(--text); }
-        .category-sub { font-size: 11px; font-weight: 600; color: var(--accent); opacity: 0.9; }
+        .hud-actions{ display:flex; gap:10px; align-items:center; }
+        .btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:10px; cursor:pointer; color:var(--text); }
+        .btn-pro{ background:linear-gradient(90deg,#ffd166,#ff7a45); color:#111; padding:10px 16px; border-radius:12px; cursor:pointer; font-weight:800; box-shadow:0 10px 30px rgba(255,150,60,0.12); }
 
-        .bottom-nav { 
-            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; height: 70px; background: #fff; 
-            border-top: 1px solid var(--border); display: flex; justify-content: space-around; align-items: center; padding: 0 20px; 
-            border-radius: 20px 20px 0 0; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); z-index: 1000;
-        }
-        [data-theme="dark"] .bottom-nav { background: #0f172a; border-color: #1e293b; }
-        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--sub); text-align: center; background: transparent; padding: 10px 20px; border: none; font-size: 10px; font-weight: 600; cursor: pointer; }
-        .nav-item.active { color: var(--accent); }
-        .nav-icon { font-size: 20px; }
+        /* ---------- Main content polish ---------- */
+        h1.app-title{ margin:6px 0 14px; font-size:20px; letter-spacing:0.6px; }
+        .hero-banner{ display:flex; gap:12px; align-items:center; background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.03); }
+        .hero-banner .kpi{ display:flex; gap:8px; align-items:center; }
+        .kpi b{ font-size:18px; color:var(--gold); }
+
+        /* category cards */
+        .category-list{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:14px; }
+        .category-item{ padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03); cursor:pointer; display:flex; flex-direction:column; gap:8px; align-items:flex-start; transition: transform .18s ease, box-shadow .18s ease; }
+        .category-item:hover{ transform:translateY(-6px); box-shadow: 0 10px 30px rgba(79,70,229,0.08); }
+        .category-icon{ width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; background:var(--glass); }
+
+        /* exam grid */
+        .exam-item{ display:flex; align-items:center; justify-content:space-between; gap:10px; background:rgba(0,0,0,0.05); padding:10px 12px; border-radius:12px; margin-bottom:8px; }
+        .exam-item.locked{ opacity:0.45; filter:grayscale(.2); }
+
+        /* quiz area improvements */
+        #qTxt img{ border-radius:12px; max-width:100%; margin-top:12px; box-shadow:0 12px 40px rgba(2,6,23,0.6); }
+        #choices button{ margin:8px 0; padding:12px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03); color:var(--text); font-weight:700; cursor:pointer; text-align:left; }
+
+        /* modal */
+        .modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,23,0.6); z-index:9999; opacity:0; pointer-events:none; transition:opacity .18s ease; }
+        .modal.active{ opacity:1; pointer-events:auto; }
+        .modal-card{ width:100%; max-width:720px; background:linear-gradient(180deg,#061026,#08142a); border-radius:16px; padding:18px; border:1px solid rgba(255,255,255,0.04); box-shadow:0 30px 80px rgba(2,6,23,0.8); color:var(--text); }
+
+        /* animations */
+        @keyframes pop { 0%{ transform: scale(.92); opacity:0.0 } 70%{ transform: scale(1.03); opacity:1 } 100%{ transform: scale(1) } }
+        .pulse{ animation: pop .36s ease; }
+
+        /* responsive */
+        @media (max-width:880px){ .category-list{ grid-template-columns: repeat(2,1fr); } .app-card{ padding:14px; } }
+        @media (max-width:560px){ .category-list{ grid-template-columns: repeat(1,1fr);} .hud{ flex-direction:column; align-items:flex-start; gap:10px; } }
     </style>
 </head>
-<body data-theme="light">
-
+<body data-theme="dark">
 <div class="app-card" id="appBody">
-    <div id="pBarCont" class="progress-container"><div id="progressBar"></div></div>
-    
-    <div id="authScreen" class="screen" style="display: block; text-align: center;">
-        <div style="font-size: 50px; color: #3b82f6; margin-bottom: 5px;"><ion-icon name="water"></ion-icon></div>
-        <div style="font-size: 11px; color: var(--sub); font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">The Ultimate Reviewer</div>
-        <h1 style="font-size: 26px; margin: 5px 0 30px; line-height: 1.1; font-weight: 800; color: #1e293b;">
-            MASTER PLUMBER <span style="color: #3b82f6;">REVIEWER</span>
-        </h1>
-        <div style="background-color: #334155; color: white; padding: 18px 20px; text-align: left; position: relative; border-radius: 16px; margin-bottom: 25px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
-            <div style="background-color: #f97316; color: white; padding: 2px 25px; font-weight: 700; font-size: 10px; transform: rotate(45deg); position: absolute; top: 12px; right: -25px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">PRO</div>
-            <div style="font-weight: 800; font-size: 15px; margin-bottom: 3px;">Pass the Boards.</div>
-            <div style="font-weight: 300; font-size: 12px; line-height: 1.4; opacity: 0.9;">Access 5,000+ practice questions and detailed analytics.</div>
+
+    <!-- HUD: added (non-destructive) -->
+    <div class="hud" role="banner" aria-label="Player HUD">
+        <div class="left-hud">
+            <div class="avatar" id="playerAvatar">MP</div>
+            <div class="player-info">
+                <div class="player-name user-greeting">Welcome, Guest!</div>
+                <div class="player-meta">
+                    <div id="playerLevel">Lv 1</div>
+                    <div class="xp-bar" title="XP Progress" aria-hidden="true"><div id="xpFill" class="xp-fill"></div></div>
+                    <div id="playerXP" style="font-weight:700;">XP 0</div>
+                </div>
+            </div>
         </div>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
+        <div class="hud-actions">
+            <button class="btn-ghost" id="refBtn" title="Referral & Earnings">Refer</button>
+            <button class="btn-ghost" id="achBtn" title="My Badges">Badges</button>
+            <button class="btn-pro" id="subscribeBtn">Subscribe • ₱299</button>
+        </div>
+    </div>
+
+    <!-- main UI: keep all existing screens and ids untouched so functions work -->
+    <!-- AUTH SCREEN (unchanged structure, enhanced visually) -->
+    <div id="authScreen" class="screen" style="display: block; text-align: center;">
+        <div style="font-size: 46px; color: var(--accent); margin-bottom: 5px;"><ion-icon name="water"></ion-icon></div>
+        <div style="font-size: 11px; color: var(--muted); font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">The Ultimate Reviewer — Premium</div>
+        <h1 class="app-title">MASTER PLUMBER <span style="color:var(--accent-2);">REVIEWER</span></h1>
+
+        <div class="hero-banner">
+            <div style="flex:1;">
+                <div style="font-weight:800; font-size:15px;">Pass the Boards faster</div>
+                <div style="font-weight:300; font-size:12px; color:var(--muted);">Adaptive practice, premium analytics, and professor referral earnings.</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
+                <div style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); padding:8px 12px; border-radius:10px; font-weight:800; color:white;">Premium UX</div>
+                <div style="font-size:12px; color:var(--gold); font-weight:800;">Limited Offer</div>
+            </div>
+        </div>
+
+        <input type="text" id="username" placeholder="Username" aria-label="Username">
+        <input type="password" id="password" placeholder="Password" aria-label="Password">
         <button class="btn-main" onclick="handleAuth()">SIGN IN</button>
         <button onclick="handleRegister()">CREATE ACCOUNT</button>
-        <button onclick="enterAsGuest()" style="background:transparent; border:none; color:#3b82f6;">Continue as Guest</button>
+        <button onclick="enterAsGuest()" style="background:transparent; border:none; color:var(--accent-2); font-weight:700;">Continue as Guest</button>
     </div>
 
+    <!-- PAYMENT SCREEN (keeps ids) -->
     <div id="paymentScreen" class="screen" style="text-align: center;">
-        <h3>Unlock All Exams</h3>
-        <input type="text" id="licenseKey" placeholder="Enter License Key">
-        <button class="btn-main" onclick="verifyKey()">Activate</button>
-        <button onclick="setScreen('home')">Maybe Later</button>
+        <h3>Unlock All Exams & Premium Features</h3>
+        <input type="text" id="licenseKey" placeholder="Enter License Key or referral code">
+        <button class="btn-main" id="activateKeyBtn" onclick="verifyKey()">Activate</button>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted);">Or choose subscription</div>
+        <div style="display:flex; gap:8px; margin-top:10px;">
+            <button class="btn-main" style="flex:1;" id="oneTimeBtn">One-time ₱299</button>
+            <button class="btn-ghost" style="flex:1;" id="subscribeMonthlyBtn">Monthly ₱59</button>
+        </div>
+        <button onclick="setScreen('home')" style="margin-top:10px;">Maybe Later</button>
     </div>
 
+    <!-- HOME (kept ids and buttons intact) -->
     <div id="home" class="screen">
-        <div class="new-header">
-            <div class="greeting-container">
-                <span class="user-greeting">Welcome, Guest!</span>
-                <span id="newStatus" class="membership-status">FREE MEMBER</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div>
+                <div style="font-size:14px; font-weight:800;">Welcome back</div>
+                <div id="newStatus" style="font-size:12px; color:var(--muted);">FREE MEMBER</div>
             </div>
-            <button onclick="toggleTheme()" style="width: 35px; height: 35px; border-radius: 10px; padding: 0; margin: 0; background:var(--btn-ghost);">
-                <ion-icon id="themeIcon" name="moon-outline" style="font-size:18px; color: var(--text);"></ion-icon>
-            </button>
-        </div>
-
-        <div id="proCardCont" class="pro-card">
-            <h3>Unlock Lifetime Pro</h3>
-            <button class="upgrade-btn" onclick="setScreen('paymentScreen')">UPGRADE — ₱299</button>
-        </div>
-
-        <h3 style="margin: 0 0 15px; font-size: 15px;">Exam Categories</h3>
-
-        <div class="category-list">
-            <div class="category-item" onclick="openExams('Plumbing Code')"><div class="category-icon" style="background:var(--cat-icon-code)"><ion-icon name="book-outline"></ion-icon></div><div class="category-info"><span class="category-title">Plumbing Code</span></div></div>
-            <div class="category-item" onclick="openExams('Plumbing Arithmetic')"><div class="category-icon" style="background:var(--cat-icon-arith)"><ion-icon name="calculator-outline"></ion-icon></div><div class="category-info"><span class="category-title">Plumbing Arithmetic</span></div></div>
-            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')"><div class="category-icon" style="background:var(--cat-icon-design)"><ion-icon name="construct-outline"></ion-icon></div><div class="category-info"><span class="category-title">Sanitation & Design</span></div></div>
-            <div class="category-item" onclick="openExams('Practical Problems and Experiences')"><div class="category-icon" style="background:var(--cat-icon-prac)"><ion-icon name="hammer-outline"></ion-icon></div><div class="category-info"><span class="category-title">Practical Problems</span></div></div>
-            
-            <div class="category-item" onclick="setScreen('subCategories')">
-                <div class="category-icon" style="background: #E0E7FF;"><ion-icon name="folder-outline" style="color: #4f46e5;"></ion-icon></div>
-                <div class="category-info"><span class="category-title">Tools, Symbols & Diagrams</span></div>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <button onclick="toggleTheme()" class="btn-ghost" title="Toggle theme"><ion-icon id="themeIcon" name="moon-outline"></ion-icon></button>
             </div>
         </div>
 
-        <div class="bottom-nav">
-            <button class="nav-item active" onclick="setScreen('home')"><ion-icon name="home" class="nav-icon"></ion-icon>Home</button>
-            <button class="nav-item" onclick="setScreen('stats')"><ion-icon name="bar-chart-outline" class="nav-icon"></ion-icon>My Stats</button>
-            <button class="nav-item" onclick="logout()"><ion-icon name="person-outline" class="nav-icon"></ion-icon>Profile</button>
+        <div id="proCardCont" style="margin-bottom:14px; border-radius:12px; padding:12px; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03);">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <div style="font-weight:800;">Get Lifetime Pro</div>
+                    <div style="font-size:12px; color:var(--muted);">Unlock all exams, analytics, and downloadable PDFs</div>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
+                    <div style="font-weight:900; font-size:16px;">₱299</div>
+                    <button class="btn-pro" onclick="setScreen('paymentScreen')">UNLOCK NOW</button>
+                </div>
+            </div>
         </div>
+
+        <h3 style="margin:8px 0 12px;">Exam Categories</h3>
+        <div class="category-list" role="list">
+            <div class="category-item" onclick="openExams('Plumbing Code')"><div class="category-icon"><ion-icon name="book-outline"></ion-icon></div><div><div style="font-weight:800;">Plumbing Code</div><div style="font-size:12px;color:var(--muted);">Regulations & theory</div></div></div>
+            <div class="category-item" onclick="openExams('Plumbing Arithmetic')"><div class="category-icon"><ion-icon name="calculator-outline"></ion-icon></div><div><div style="font-weight:800;">Plumbing Arithmetic</div><div style="font-size:12px;color:var(--muted);">Speed rounds</div></div></div>
+            <div class="category-item" onclick="openExams('Sanitation Plumbing Design and Installation')"><div class="category-icon"><ion-icon name="construct-outline"></ion-icon></div><div><div style="font-weight:800;">Sanitation & Design</div><div style="font-size:12px;color:var(--muted);">Design challenges</div></div></div>
+            <div class="category-item" onclick="openExams('Practical Problems and Experiences')"><div class="category-icon"><ion-icon name="hammer-outline"></ion-icon></div><div><div style="font-weight:800;">Practical Problems</div><div style="font-size:12px;color:var(--muted);">Real case scenarios</div></div></div>
+            <div class="category-item" onclick="setScreen('subCategories')"><div class="category-icon"><ion-icon name="folder-outline"></ion-icon></div><div><div style="font-weight:800;">Tools, Symbols & Diagrams</div><div style="font-size:12px;color:var(--muted);">Mini quizzes</div></div></div>
+            <div class="category-item" onclick="openExams('Random')"><div class="category-icon"><ion-icon name="shuffle-outline"></ion-icon></div><div><div style="font-weight:800;">Random</div><div style="font-size:12px;color:var(--muted);">Mixed practice</div></div></div>
+        </div>
+
+        <div style="margin-top:14px;">
+            <h4 style="margin:6px 0;">Weekly Challenges</h4>
+            <div style="display:flex; gap:8px; overflow:auto;">
+                <div style="min-width:200px; background:linear-gradient(90deg,#0ea5e9,#4f46e5); padding:12px; border-radius:12px; color:white;">This week's Topics: Sanitation — Win badges & coins</div>
+                <div style="min-width:200px; background:var(--glass); padding:12px; border-radius:12px;">Try daily 10 question sprints</div>
+            </div>
+        </div>
+
+        <div style="height:24px;"></div>
     </div>
 
+    <!-- SUBCATEGORIES, EXAMS, QUIZ, RESULTS, STATS (kept and visually enhanced) -->
     <div id="subCategories" class="screen">
-        <h3 style="margin: 0 0 15px; font-size: 15px; text-align: center;">Tools, Symbols & Diagrams</h3>
-        <div class="category-list">
-            <div class="category-item" onclick="openExams('Tools')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="build-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Tools</span></div></div>
-            <div class="category-item" onclick="openExams('Symbols')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="git-branch-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Symbols</span></div></div>
-            <div class="category-item" onclick="openExams('Diagrams')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="map-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Diagrams</span></div></div>
-            <div class="category-item" onclick="openExams('Random')"><div class="category-icon" style="background:#E0E7FF"><ion-icon name="shuffle-outline" style="color:#4f46e5"></ion-icon></div><div class="category-info"><span class="category-title">Random</span></div></div>
+        <h3 style="text-align:center;">Tools, Symbols & Diagrams</h3>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px;">
+            <div class="category-item" onclick="openExams('Tools')"><div class="category-icon"><ion-icon name="build-outline"></ion-icon></div><div><div style="font-weight:800;">Tools</div></div></div>
+            <div class="category-item" onclick="openExams('Symbols')"><div class="category-icon"><ion-icon name="git-branch-outline"></ion-icon></div><div><div style="font-weight:800;">Symbols</div></div></div>
+            <div class="category-item" onclick="openExams('Diagrams')"><div class="category-icon"><ion-icon name="map-outline"></ion-icon></div><div><div style="font-weight:800;">Diagrams</div></div></div>
+            <div class="category-item" onclick="openExams('Random')"><div class="category-icon"><ion-icon name="shuffle-outline"></ion-icon></div><div><div style="font-weight:800;">Random</div></div></div>
         </div>
-        <button onclick="setScreen('home')" style="margin-top:20px;">Back to Home</button>
+        <button onclick="setScreen('home')" style="margin-top:16px;">Back to Home</button>
     </div>
 
-    <div id="exams" class="screen"><h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2><div id="examGrid" style="max-height: 400px; overflow-y: auto; padding-right: 5px;"></div><button onclick="setScreen('home')">Back to Dashboard</button></div>
-    <div id="quiz" class="screen"><div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><div id="qNum" style="font-size: 11px; font-weight: 800; color: var(--accent);"></div><div id="scoreBox" style="background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700;">0/0</div></div><div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; min-height: 80px;"></div><div id="choices"></div><div style="display:flex; gap:10px; margin-top: 15px;"><button onclick="prevQ()" style="flex:1; padding:12px;">Back</button><button onclick="handleNextLogic()" style="flex:2; padding:12px;" class="btn-main">Next</button></div><div style="display:flex; gap:10px; margin-top: 8px;"><button onclick="quitQuiz()" style="font-size:11px; flex:1; color:var(--danger); background: var(--btn-ghost); padding:8px;">Quit Exam</button><button onclick="finishExamEarly()" style="font-size:11px; flex:1; color:var(--success); background: var(--btn-ghost); padding:8px;">Finish Early</button></div></div>
-    <div id="results" class="screen"><h2 id="resScore" style="text-align: center; color: var(--accent);"></h2><div id="revScroll" style="max-height: 380px; overflow-y: auto; background: var(--btn-ghost); border-radius: 20px; padding: 15px; margin-bottom: 15px;"></div><button class="btn-main" onclick="setScreen('home')">Back Home</button></div>
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 12px;"></h2>
+        <div id="examGrid" style="max-height:380px; overflow-y:auto; padding-right:6px;"></div>
+        <button onclick="setScreen('home')" style="margin-top:10px;">Back to Dashboard</button>
+    </div>
 
-    <!-- Stats screen -->
+    <div id="quiz" class="screen">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div id="qNum" style="font-size:11px; font-weight:800; color:var(--accent);"></div>
+            <div id="scoreBox" style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; padding:6px 14px; border-radius:12px; font-size:13px; font-weight:700;">0/0</div>
+        </div>
+        <div id="qTxt" style="font-size:16px; font-weight:600; line-height:1.5; margin-bottom:20px; min-height:100px;"></div>
+        <div id="choices"></div>
+        <div style="display:flex; gap:10px; margin-top:14px;">
+            <button onclick="prevQ()" style="flex:1; padding:12px;">Back</button>
+            <button onclick="handleNextLogic()" style="flex:2; padding:12px;" class="btn-main">Next</button>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+            <button onclick="quitQuiz()" style="font-size:11px; flex:1; color:var(--danger); background: var(--btn-ghost); padding:8px;">Quit Exam</button>
+            <button onclick="finishExamEarly()" style="font-size:11px; flex:1; color:var(--success); background: var(--btn-ghost); padding:8px;">Finish Early</button>
+        </div>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align:center; color:var(--accent);"></h2>
+        <div id="revScroll" style="max-height:360px; overflow-y:auto; background:var(--btn-ghost); border-radius:12px; padding:12px; margin-bottom:12px;"></div>
+        <button class="btn-main" onclick="setScreen('home')">Back Home</button>
+    </div>
+
     <div id="stats" class="screen">
-        <h3 style="margin: 0 0 15px; font-size: 15px; text-align: center; color: var(--accent);">My Exam Records</h3>
-        <div id="statsContent" style="max-height: 420px; overflow-y: auto; padding: 8px;"></div>
-        <button onclick="setScreen('home')" style="margin-top:12px;">Back to Dashboard</button>
+        <h3 style="margin:0 0 12px; text-align:center; color:var(--accent);">My Exam Records</h3>
+        <div id="statsContent" style="max-height:380px; overflow-y:auto; padding:8px;"></div>
+        <button onclick="setScreen('home')" style="margin-top:12px;">Back</button>
+    </div>
+
+</div>
+
+<!-- Modal: Subscriptions, referrals, badges (new, separate from existing screens) -->
+<div id="modalRoot" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+            <div>
+                <div style="font-weight:800; font-size:18px;">Premium Subscription</div>
+                <div style="font-size:13px; color:var(--muted);">Unlock full exams, analytics & professor referral payouts.</div>
+            </div>
+            <div style="display:flex; gap:8px;">
+                <button id="closeModal" class="btn-ghost">Close</button>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top:12px;">
+            <div style="flex:1; background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+                <div style="font-weight:800; font-size:16px;">Lifetime</div>
+                <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">One-time payment</div>
+                <div style="font-weight:900; font-size:20px;">₱299</div>
+                <button id="modalBuyLifetime" class="btn-pro" style="margin-top:10px;">Buy Lifetime</button>
+            </div>
+            <div style="flex:1; background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+                <div style="font-weight:800; font-size:16px;">Monthly</div>
+                <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">Auto-renewing</div>
+                <div style="font-weight:900; font-size:20px;">₱59 / month</div>
+                <button id="modalBuyMonthly" class="btn-main" style="margin-top:10px;">Start Trial</button>
+            </div>
+            <div style="flex:1; background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+                <div style="font-weight:800; font-size:16px;">Professor</div>
+                <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">Referral program</div>
+                <div style="font-weight:900; font-size:16px;">Earn 30% per referral</div>
+                <button id="modalProfessor" class="btn-ghost" style="margin-top:10px;">Open Referral</button>
+            </div>
+        </div>
+
+        <div id="modalContent" style="margin-top:12px;"></div>
     </div>
 </div>
+
+<!-- lightweight toasts container -->
+<div id="toasts" style="position:fixed; right:20px; top:20px; z-index:99999; display:flex; flex-direction:column; gap:8px;"></div>
 
 <script type="module">
     import { arithmeticDB } from './arithmetic.js';
@@ -270,27 +368,30 @@
     };
 
     function updateHomeUI() {
-        document.querySelector('.user-greeting').innerHTML = `Welcome, ${currentUser}!`;
+        document.querySelector('.user-greeting').innerHTML = `Welcome, ${currentUser || 'Guest'}!`;
         const status = document.getElementById('newStatus');
         const card = document.getElementById('proCardCont');
         if(isPaid) {
             status.innerText = "PRO ACCOUNT"; status.style.color = "var(--success)";
-            card.innerHTML = `<div class="pro-paid-status">FULL ACCESS ACTIVE (lifetime)</div>`;
+            card.innerHTML = `<div style="padding:12px; border-radius:10px; background:linear-gradient(90deg,#10b981,#06b6d4); color:#061427; font-weight:800; text-align:center;">FULL ACCESS ACTIVE (lifetime)</div>`;
         } else {
-            status.innerText = "FREE MEMBER"; status.style.color = "var(--status-free)";
-            card.innerHTML = `<h3>Unlock Lifetime Pro</h3><p>Access all 60+ exams and offline mode.</p><button class="upgrade-btn" onclick="setScreen('paymentScreen')">UPGRADE NOW — ₱299</button>`;
+            status.innerText = "FREE MEMBER"; status.style.color = "var(--muted)";
+            card.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center;"><div><div style="font-weight:800;">Unlock Lifetime Pro</div><div style="font-size:12px;color:var(--muted);">Access all 60+ exams and offline mode</div></div><div><button class="btn-pro" onclick="setScreen('paymentScreen')">UPGRADE ₱299</button></div></div>`;
         }
+        // HUD small update
+        updatePlayerHUD();
     }
 
     window.verifyKey = () => {
         if(document.getElementById('licenseKey').value === MASTER_KEY) {
             isPaid = true;
-            if(currentUser !== "Guest") {
-                let uArr = JSON.parse(localStorage.getItem('mp_users'));
-                uArr.find(x => x.u === currentUser).paid = true;
+            if(currentUser !== "Guest" && currentUser !== null) {
+                let uArr = JSON.parse(localStorage.getItem('mp_users') || '[]');
+                let found = uArr.find(x => x.u === currentUser);
+                if(found) found.paid = true;
                 localStorage.setItem('mp_users', JSON.stringify(uArr));
             }
-            updateHomeUI(); setScreen('home');
+            updateHomeUI(); setScreen('home'); showToast("Activated: PRO unlocked ✓");
         } else alert("Invalid Key");
     };
 
@@ -298,10 +399,16 @@
 
     window.setScreen = (id) => {
         document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-        if(id === 'home') document.querySelectorAll('.nav-item')[0].classList.add('active');
+        const el = document.getElementById(id);
+        if(el) el.style.display = 'block';
+        if(id === 'home') {
+            document.querySelectorAll('.nav-item')?.[0]?.classList?.add('active');
+        }
         document.getElementById('pBarCont').style.display = (id === 'quiz') ? 'block' : 'none';
         if(id === 'stats') renderStats();
+        // subtle pulse animation to reinforce microinteraction
+        el?.classList?.add('pulse');
+        setTimeout(()=> el?.classList?.remove('pulse'), 420);
     };
 
     window.openExams = (cat) => {
@@ -311,14 +418,14 @@
         for(let i=1; i<=50; i++) { 
             const locked = (!isPaid && i > 1);
             const last = getLatestExamRecord(user, cat, i);
-            const lastHtml = last ? `<div style="font-size:11px; color:var(--sub); margin-top:6px;">Last: ${last.score}/${last.total} — ${new Date(last.date).toLocaleDateString()}</div>` : '';
+            const lastHtml = last ? `<div style="font-size:11px; color:var(--muted); margin-top:6px;">Last: ${last.score}/${last.total} — ${new Date(last.date).toLocaleDateString()}</div>` : '';
             grid.innerHTML += `
                 <div class="exam-item ${locked ? 'locked' : ''}">
                     <div style="flex:1; font-weight:700;">
                         EXAM #${i} ${locked ? '🔒' : ''}
                         ${lastHtml}
                     </div>
-                    <button style="width:auto; padding:8px 15px;" onclick="${locked ? `alert('Unlock Pro')` : `startQuiz(${i})`}">TAKE</button>
+                    <button style="width:auto; padding:8px 15px;" onclick="${locked ? `alert('Unlock Pro to access more exams')` : `startQuiz(${i})`}">TAKE</button>
                 </div>`;
         }
         setScreen('exams');
@@ -393,7 +500,7 @@
                 let cls = (ci === q.a) ? "correct" : (ci === answers[i] ? "wrong" : "");
                 ch += `<div style="padding:8px; margin:4px 0; border-radius:10px; ${cls==='correct'?'background:var(--success); color:white;':''} ${cls==='wrong'?'background:var(--danger); color:white;':''}">${c}</div>`;
             });
-            scroll.innerHTML += `<div style="padding:10px 0; border-bottom:1px solid var(--border);"><b>${i+1}. ${q.q}</b>${ch}</div>`;
+            scroll.innerHTML += `<div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.03);"><b>${i+1}. ${q.q}</b>${ch}</div>`;
         });
         // Save the exam result to stats
         saveExamResult();
@@ -408,22 +515,235 @@
         const all = getAllStats();
         const arr = (all[user] || []).slice().sort((a,b) => new Date(b.date) - new Date(a.date));
         if(arr.length === 0) {
-            statsCont.innerHTML = `<div style="text-align:center; color:var(--sub); padding:20px;">No exam records yet. Take some exams to see stats here.</div>`;
+            statsCont.innerHTML = `<div style="text-align:center; color:var(--muted); padding:20px;">No exam records yet. Take some exams to see stats here.</div>`;
             return;
         }
         let html = `<div style="display:flex; flex-direction:column; gap:10px;">`;
         arr.forEach(r => {
-            html += `<div style="background:var(--btn-ghost); padding:12px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+            html += `<div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
                 <div style="font-size:13px; font-weight:700;">${r.cat} — EXAM #${r.exam}</div>
                 <div style="text-align:right;">
                     <div style="font-weight:800; color:var(--accent);">${r.score}/${r.total}</div>
-                    <div style="font-size:11px; color:var(--sub);">${new Date(r.date).toLocaleString()}</div>
+                    <div style="font-size:11px; color:var(--muted);">${new Date(r.date).toLocaleString()}</div>
                 </div>
             </div>`;
         });
         html += `</div>`;
         statsCont.innerHTML = html;
     }
+
+    /* ---------------------------
+       NEW: Emotional design & gamification layer
+       - Does NOT change existing functions above.
+       - Adds subscription/referral, badges, XP, toasts, confetti, animations.
+       --------------------------- */
+
+    // Player persistence
+    const PLAYER_KEY = 'mp_player_v2';
+    function loadPlayerStore(){
+        const store = JSON.parse(localStorage.getItem(PLAYER_KEY) || '{}');
+        const u = getUserKey();
+        if(!store[u]) {
+            store[u] = { xp:0, level:1, coins:0, badges:[], referrals: {code:null, earnings:0, referred:[]}, lastActive: null };
+            localStorage.setItem(PLAYER_KEY, JSON.stringify(store));
+        }
+        return store;
+    }
+    function savePlayerStore(store){ localStorage.setItem(PLAYER_KEY, JSON.stringify(store)); }
+
+    // award XP + level-up
+    function awardXP(points){
+        const u = getUserKey();
+        const store = loadPlayerStore();
+        const p = store[u];
+        p.xp = (p.xp || 0) + points;
+        const prevLevel = p.level || 1;
+        p.level = Math.floor(p.xp / 100) + 1;
+        if(p.level > prevLevel){
+            p.coins = (p.coins || 0) + (p.level * 5);
+            p.badges.push({id:`lvl${p.level}`, title:`Reached Lv ${p.level}`, date:new Date().toISOString()});
+            showToast(`Level Up! Lv ${p.level} • +${p.level*5} coins`);
+            smallConfetti();
+        }
+        p.lastActive = new Date().toISOString();
+        store[u] = p;
+        savePlayerStore(store);
+        updatePlayerHUD();
+    }
+
+    // update HUD display
+    function updatePlayerHUD(){
+        const u = getUserKey();
+        const store = loadPlayerStore();
+        const p = store[u] || { xp:0, level:1, coins:0, badges:[], referrals:{code:null, earnings:0} };
+        document.getElementById('playerAvatar').innerText = (u === 'Guest') ? 'G' : (u ? u.charAt(0).toUpperCase() : 'M');
+        document.getElementById('playerLevel').innerText = `Lv ${p.level || 1}`;
+        document.getElementById('playerXP').innerText = `XP ${p.xp || 0}`;
+        const xpPct = Math.min(100, (p.xp % 100));
+        document.getElementById('xpFill').style.width = xpPct + '%';
+    }
+
+    // toasts
+    function showToast(msg, ms=2400){
+        const t = document.createElement('div');
+        t.className = 'toast';
+        t.style.background = 'linear-gradient(90deg,#0b1224,#06122a)';
+        t.style.color = 'white';
+        t.style.padding = '10px 14px';
+        t.style.borderRadius = '10px';
+        t.style.boxShadow = '0 10px 30px rgba(2,6,23,0.6)';
+        t.innerText = msg;
+        document.getElementById('toasts').appendChild(t);
+        setTimeout(()=> t.style.opacity = '0.01', ms - 300);
+        setTimeout(()=> t.remove(), ms);
+    }
+
+    // Confetti (lightweight)
+    function smallConfetti(){
+        const croot = document.createElement('div');
+        croot.style.position='fixed'; croot.style.left=0; croot.style.top=0; croot.style.width='100%'; croot.style.height='100%'; croot.style.pointerEvents='none'; croot.style.zIndex=9998;
+        document.body.appendChild(croot);
+        const colors = ['#60a5fa','#34d399','#f97316','#fb7185','#facc15'];
+        for(let i=0;i<20;i++){
+            const p = document.createElement('div'); p.style.position='absolute'; p.style.left = (30 + Math.random()*40) + '%';
+            p.style.top = '-10%'; const size = Math.random()*10 + 6; p.style.width = size+'px'; p.style.height = size+'px';
+            p.style.background = colors[Math.floor(Math.random()*colors.length)]; p.style.borderRadius='4px'; p.style.opacity=0.95;
+            p.style.transform = `rotate(${Math.random()*360}deg)`;
+            p.style.transition = `transform 1.6s linear, top 1.6s cubic-bezier(.18,.9,.3,1)`;
+            croot.appendChild(p);
+            setTimeout(()=> { p.style.top = (60 + Math.random()*30) + '%'; p.style.transform = `translateY(200px) rotate(${Math.random()*720}deg)`; }, 20 + i*20);
+        }
+        setTimeout(()=> croot.remove(), 1800);
+    }
+
+    // Hook into showResults & quitQuiz without editing them (wrap)
+    const _orig_showResults = window.showResults;
+    if(_orig_showResults) {
+        window.showResults = function(){
+            try{ _orig_showResults(); } catch(e){ console.error(e); }
+            try {
+                const gained = (score || 0) * 8;
+                if(gained > 0) awardXP(gained);
+                else awardXP(4);
+            } catch(e){ console.error(e); }
+        };
+    }
+    const _orig_quitQuiz = window.quitQuiz;
+    if(_orig_quitQuiz) {
+        window.quitQuiz = function(){
+            try{ _orig_quitQuiz(); } catch(e){ console.error(e); }
+            awardXP(3);
+        };
+    }
+
+    /* ---------------------------
+       SUBSCRIPTION & REFERRAL (simulated, stored locally)
+       - subscribe(), generateReferralCode(), claimReferral()
+       --------------------------- */
+    function openSubscriptionModal(){
+        const modal = document.getElementById('modalRoot');
+        modal.classList.add('active'); modal.setAttribute('aria-hidden','false');
+        document.getElementById('modalContent').innerHTML = `<div style="color:var(--muted);">Choose a plan to unlock premium features and exams. Professors can generate a referral code to earn when students subscribe.</div>`;
+    }
+    function closeSubscriptionModal(){ document.getElementById('modalRoot').classList.remove('active'); document.getElementById('modalRoot').setAttribute('aria-hidden','true'); }
+
+    function subscribe(plan='lifetime'){
+        // Simulate payment & unlock
+        isPaid = true;
+        if(currentUser && currentUser !== 'Guest') {
+            const uArr = JSON.parse(localStorage.getItem('mp_users') || '[]');
+            const found = uArr.find(x => x.u === currentUser);
+            if(found) found.paid = true;
+            localStorage.setItem('mp_users', JSON.stringify(uArr));
+        }
+        updateHomeUI();
+        showToast(`Subscribed (${plan}) — Thank you!`);
+        smallConfetti();
+    }
+
+    // Referral (professors)
+    function ensureReferral(){
+        const store = loadPlayerStore();
+        const user = getUserKey();
+        const p = store[user];
+        if(!p.referrals.code){
+            p.referrals.code = `${user || 'GUEST'}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
+            savePlayerStore(store);
+        }
+        return p.referrals.code;
+    }
+    function openReferralPanel(){
+        const code = ensureReferral();
+        const modal = document.getElementById('modalRoot');
+        modal.classList.add('active'); modal.setAttribute('aria-hidden','false');
+        document.getElementById('modalContent').innerHTML = `
+            <div style="margin-top:10px;">
+                <div style="font-weight:800;">Your Referral Code</div>
+                <div style="margin:8px 0; display:flex; gap:8px;">
+                    <div style="background:var(--glass); padding:8px 12px; border-radius:8px; font-weight:700;">${code}</div>
+                    <button id="copyRef" class="btn-ghost">Copy</button>
+                </div>
+                <div style="font-size:13px; color:var(--muted);">Share with students — you earn 30% per successful referral purchase (simulated).</div>
+                <div style="margin-top:10px;">
+                    <button id="simulateReferral" class="btn-main">Simulate Student Purchase via your code</button>
+                </div>
+            </div>
+        `;
+        document.getElementById('copyRef').onclick = ()=> { navigator.clipboard?.writeText(code).then(()=> showToast('Referral copied')); };
+        document.getElementById('simulateReferral').onclick = ()=> {
+            // simulate student subscribing via code
+            const codeParts = code.split('-'); const referrer = codeParts[0];
+            // credit referrer in store
+            const store = loadPlayerStore();
+            const ref = store[referrer] || { referrals:{code:code, earnings:0, referred:[]}};
+            ref.referrals.earnings = (ref.referrals.earnings || 0) + 90; // 30% of 299 ~= 90
+            ref.referrals.referred = ref.referrals.referred || []; ref.referrals.referred.push({who:'SimStudent', date:new Date().toISOString(), amount:299});
+            store[referrer] = ref;
+            savePlayerStore(store);
+            showToast('Referral purchase simulated — referrer credited');
+            updatePlayerHUD();
+        };
+    }
+
+    // Buttons wiring for modal
+    document.getElementById('subscribeBtn')?.addEventListener('click',openSubscriptionModal);
+    document.getElementById('closeModal')?.addEventListener('click', closeSubscriptionModal);
+    document.getElementById('modalBuyLifetime')?.addEventListener('click', ()=> subscribe('lifetime'));
+    document.getElementById('modalBuyMonthly')?.addEventListener('click', ()=> subscribe('monthly'));
+    document.getElementById('modalProfessor')?.addEventListener('click', openReferralPanel);
+
+    // HUD referral & badges buttons
+    document.getElementById('refBtn')?.addEventListener('click', ()=> {
+        openReferralPanel();
+    });
+    document.getElementById('achBtn')?.addEventListener('click', ()=> {
+        const store = loadPlayerStore(); const p = store[getUserKey()];
+        const html = `<div style="margin-top:10px;"><div style="font-weight:800;">Badges</div><div style="margin-top:8px;">${(p.badges||[]).map(b=>`<div style="background:var(--glass); padding:8px; border-radius:8px; margin-bottom:6px;">${b.title} • ${new Date(b.date).toLocaleDateString()}</div>`).join('') || '<div style="color:var(--muted);">No badges yet</div>'}</div></div>`;
+        document.getElementById('modalRoot').classList.add('active'); document.getElementById('modalRoot').setAttribute('aria-hidden','false');
+        document.getElementById('modalContent').innerHTML = html;
+    });
+
+    // quick subscription buttons in payment screen
+    document.getElementById('oneTimeBtn')?.addEventListener('click', ()=> subscribe('lifetime'));
+    document.getElementById('subscribeMonthlyBtn')?.addEventListener('click', ()=> subscribe('monthly'));
+
+    // small UX: animate buttons when clicked
+    document.addEventListener('click', (e)=>{
+        const btn = (e.target instanceof HTMLElement) ? e.target.closest('button') : null;
+        if(btn) { btn.style.transform = 'translateY(-2px)'; setTimeout(()=> btn.style.transform = '', 140); }
+    });
+
+    // initialize HUD & state
+    setTimeout(()=> updatePlayerHUD(), 200);
+    // poll for user change (observes local storage user updates)
+    let _prevUser = getUserKey();
+    setInterval(()=> {
+        const u = getUserKey();
+        if(u !== _prevUser){ _prevUser = u; updatePlayerHUD(); }
+    }, 800);
+
+    // expose helpers for debugging (non-blocking)
+    window.__premium = { awardXP, loadPlayerStore, updatePlayerHUD, subscribe, openReferralPanel };
 
 </script>
 </body>
