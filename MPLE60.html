@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_3.html -->
+<!-- saved from url=(0061)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_4.html -->
 <html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Master Plumber — Board Reviewer</title>
-<script type="module" src="./Master Plumber — Board Reviewer 4_files/ionicons.esm.js.download"></script>
-<link href="./Master Plumber — Board Reviewer 4_files/css2" rel="stylesheet">
+<script type="module" src="./Master Plumber — Board Reviewer 5_files/ionicons.esm.js.download"></script>
+<link href="./Master Plumber — Board Reviewer 5_files/css2" rel="stylesheet">
 <style>
 /* ════════════════════════════════════════════════════════════════
    MASTER PLUMBER REVIEWER — EMOTIONAL DESIGN SYSTEM
@@ -614,6 +614,85 @@ button:active{transform:scale(0.95)!important;}
 .menu-txt{flex:1;font-weight:600;font-size:14px;}
 .menu-arr{color:var(--t3);}
 
+/* ════════════════════════════════
+   ROLE IDENTITY SYSTEM
+   Norman: Reflective — who am I?
+   ════════════════════════════════ */
+
+/* Role selection cards on sign-up */
+.role-picker{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;}
+.role-card{
+  padding:14px 10px;border-radius:14px;cursor:pointer;text-align:center;
+  border:2px solid var(--border);background:var(--surface-2);
+  transition:all .22s cubic-bezier(.22,1,.36,1);
+}
+.role-card:hover{border-color:var(--border-hi);transform:translateY(-2px);}
+.role-card.selected{border-color:var(--blue);background:var(--blue-glow);box-shadow:0 0 0 3px var(--blue-glow);}
+.role-card.selected.rc{border-color:var(--amber);background:var(--gold-glow);box-shadow:0 0 0 3px var(--gold-glow);}
+.role-card.selected.prof{border-color:var(--indigo);background:rgba(99,102,241,.1);box-shadow:0 0 0 3px rgba(99,102,241,.12);}
+.role-ico-big{font-size:28px;margin-bottom:6px;}
+.role-nm{font-size:11px;font-weight:700;line-height:1.3;}
+.role-comm{font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);margin-top:3px;}
+.role-note{font-size:11px;color:var(--t3);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:14px;line-height:1.5;}
+
+/* Role verification badge on profile */
+.role-verify-card{
+  border-radius:var(--r-lg);padding:18px;margin-bottom:16px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.role-verify-card.pending{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.22);}
+.role-verify-card.verified{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);}
+.role-verify-card.student-card{background:var(--blue-glow);border:1px solid var(--border-hi);}
+.role-verify-card.rejected{background:rgba(244,63,94,.06);border:1px solid rgba(244,63,94,.2);}
+.rvc-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.rvc-ico.pending{background:rgba(245,158,11,.12);}
+.rvc-ico.verified{background:rgba(16,185,129,.12);}
+.rvc-ico.student{background:var(--blue-glow);}
+.rvc-ico.rejected{background:rgba(244,63,94,.1);}
+.rvc-title{font-weight:700;font-size:14px;margin-bottom:3px;}
+.rvc-sub{font-size:12px;color:var(--t2);line-height:1.5;}
+.rvc-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px;margin-top:6px;}
+.rvc-badge.pending{background:rgba(245,158,11,.12);color:var(--amber);}
+.rvc-badge.verified{background:rgba(16,185,129,.12);color:var(--green);}
+.rvc-badge.student{background:var(--blue-glow);color:var(--blue-hi);}
+.rvc-badge.rejected{background:rgba(244,63,94,.1);color:var(--red);}
+
+/* Role tag on HUD */
+.role-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:99px;white-space:nowrap;}
+.role-tag.student{background:var(--blue-glow);color:var(--blue-hi);}
+.role-tag.professor{background:rgba(99,102,241,.12);color:var(--indigo);}
+.role-tag.review_center{background:var(--gold-glow);color:var(--amber);}
+.role-tag.admin{background:rgba(244,63,94,.1);color:var(--red);}
+.role-tag.pending{background:rgba(245,158,11,.1);color:var(--amber);}
+
+/* Role request panel in profile */
+.req-role-card{
+  background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--r-lg);
+  padding:18px;margin-bottom:14px;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:14px;
+}
+.req-role-card:hover{border-color:var(--blue);transform:translateY(-2px);}
+.req-ico{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+
+/* Admin role approval rows */
+.role-req-row{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:var(--surface-2);border:1px solid var(--border);
+  border-radius:13px;margin-bottom:10px;
+}
+.role-req-info{flex:1;}
+.role-req-nm{font-weight:700;font-size:14px;}
+.role-req-sub{font-size:11px;color:var(--t3);margin-top:3px;}
+.role-req-actions{display:flex;gap:8px;}
+
+/* Hardcoded admin login hint */
+.admin-hint{
+  background:rgba(244,63,94,.06);border:1px solid rgba(244,63,94,.18);
+  border-radius:12px;padding:12px 14px;margin-top:14px;
+  font-size:12px;color:var(--t2);text-align:center;line-height:1.6;
+}
+.admin-hint strong{color:var(--red);font-family:'Space Mono',monospace;}
+
 /* RESPONSIVE */
 @media(min-width:860px){
   .cat-grid{grid-template-columns:repeat(4,1fr);}
@@ -625,13 +704,13 @@ button:active{transform:scale(0.95)!important;}
 <div class="shell">
 
 <!-- ════ HUD ════ -->
-<div id="hud" class="on">
-  <div class="hav" id="hudAv">G</div>
+<div id="hud">
+  <div class="hav" id="hudAv">MP</div>
   <div class="hinfo">
-    <div class="hnm" id="hudNm">Guest</div>
+    <div class="hnm" id="hudNm">Student</div>
     <div class="hmeta">
       <div class="hlv" id="hudLv">LV 1</div>
-      <div class="hxpr"><div class="hxpf" id="hudXP" style="width: 0%;"></div></div>
+      <div class="hxpr"><div class="hxpf" id="hudXP"></div></div>
       <div class="hxpn" id="hudXPN">0 XP</div>
     </div>
   </div>
@@ -659,24 +738,24 @@ button:active{transform:scale(0.95)!important;}
     <div class="sp-stat"><div class="sp-stat-n">3</div><div class="sp-stat-l">Tiers</div></div>
   </div>
   <div class="sp-cta">
-    <div class="prc-tag">⭐ ₱305 discount with referral code</div>
-    <button class="btn btn-primary btn-lg btn-block" onclick="goTo(&#39;sSignIn&#39;)">Sign In to Account</button>
+    <div class="prc-tag">🏷️ Use a referral code — pay only ₱95, save ₱305</div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="goTo(&#39;sSignIn&#39;)" style="">Sign In to Account</button>
     <button class="btn btn-outline btn-lg btn-block" onclick="goTo(&#39;sSignUp&#39;)">Create Free Account</button>
-    <button class="btn btn-text" onclick="enterGuest()" style="">Continue as Guest →</button>
+    <button class="btn btn-text" onclick="enterGuest()">Continue as Guest →</button>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════
      SCREEN: SIGN IN
      ═══════════════════════════════════════ -->
-<div id="sSignIn" class="scr">
+<div id="sSignIn" class="scr on">
   <div class="auth-wrap">
     <div class="auth-logo"><ion-icon name="log-in-outline" style="font-size:24px;" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M288 336l80-80-80-80M80 256h272" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon></div>
     <div class="auth-h">Welcome back</div>
     <div class="auth-sub">Continue your review journey.</div>
     <div class="field"><label>Email / Username</label><input type="text" id="siU" placeholder="Enter email or username"></div>
     <div class="field"><label>Password</label><input type="password" id="siP" placeholder="Enter password"></div>
-    <button class="btn btn-primary btn-lg btn-block" onclick="doSignIn()" style="margin-top:4px;">Sign In</button>
+    <button class="btn btn-primary btn-lg btn-block" onclick="doSignIn()" style="margin-top: 4px;">Sign In</button>
     <div class="divider">or</div>
     <button class="btn btn-ghost btn-lg btn-block" onclick="enterGuest()">Continue as Guest</button>
     <div class="auth-switch">No account? <button class="btn-text" onclick="goTo(&#39;sSignUp&#39;)">Create one →</button></div>
@@ -695,18 +774,35 @@ button:active{transform:scale(0.95)!important;}
     <div class="field"><label>Full Name</label><input type="text" id="suNm" placeholder="Your full name"></div>
     <div class="field"><label>Email</label><input type="email" id="suEm" placeholder="your@email.com"></div>
     <div class="field"><label>Phone / GCash Number</label><input type="tel" id="suPh" placeholder="09XXXXXXXXX"></div>
-    <div class="field"><label>Account Type</label>
-      <select id="suType">
-        <option value="student">Student</option>
-        <option value="professor">Professor / Instructor</option>
-        <option value="review_center">Review Center</option>
-      </select>
+
+    <!-- ROLE PICKER — Reflective: who are you in the plumbing community? -->
+    <div style="margin-bottom:6px;"><label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:10px;">I am a…</label>
+    <div class="role-picker">
+      <div class="role-card selected" id="rc-student" onclick="pickRole(&#39;student&#39;)">
+        <div class="role-ico-big">🎓</div>
+        <div class="role-nm">Student</div>
+        <div class="role-comm">15% comm</div>
+      </div>
+      <div class="role-card prof" id="rc-professor" onclick="pickRole(&#39;professor&#39;)">
+        <div class="role-ico-big">👨‍🏫</div>
+        <div class="role-nm">Professor</div>
+        <div class="role-comm">25% comm</div>
+      </div>
+      <div class="role-card rc" id="rc-review_center" onclick="pickRole(&#39;review_center&#39;)">
+        <div class="role-ico-big">🏫</div>
+        <div class="role-nm">Review Center</div>
+        <div class="role-comm">30% comm</div>
+      </div>
     </div>
-    <div class="field"><label>Password</label><input type="password" id="suPw" placeholder="Create password"></div>
+    <div class="role-note" id="roleNote">✅ <strong>Student</strong> — Your account is active immediately. Earn 15% commission per referral (₱14.25/referral).</div>
+    </div>
+
+    <div class="field"><label>Password</label><input type="password" id="suPw" placeholder="Create password (min. 6 characters)"></div>
     <div class="field"><label>Confirm Password</label><input type="password" id="suCf" placeholder="Repeat password"></div>
     <button class="btn btn-primary btn-lg btn-block" onclick="doSignUp()" style="margin-top:4px;">Create Account &amp; Start Reviewing</button>
     <div class="auth-switch">Have an account? <button class="btn-text" onclick="goTo(&#39;sSignIn&#39;)">Sign in →</button></div>
     <div style="text-align:center;margin-top:10px;"><button class="btn-text" onclick="goTo(&#39;sSplash&#39;)" style="color:var(--t3);font-size:12px;">← Back</button></div>
+    <div class="admin-hint">🛡️ Admin login: <strong><a href="file:///C:/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1f1a1317103e130e500e16">[email&nbsp;protected]</a></strong> / <strong>Admin@2024!</strong></div>
   </div>
 </div>
 
@@ -717,8 +813,8 @@ button:active{transform:scale(0.95)!important;}
   <!-- Home hero -->
   <div class="home-hero" style="margin-top:8px;">
     <div class="home-tier" id="homeTier">STUDENT REVIEWER</div>
-    <div class="home-greet" id="homeGreet">Good morning, Guest!</div>
-    <div class="home-sub" id="homeSub">Free Member · Level 1 per category</div>
+    <div class="home-greet" id="homeGreet">Good morning, Student!</div>
+    <div class="home-sub" id="homeSub">Free Member · 1 free exam per category</div>
     <div class="home-streak">
       <div class="streak-ico">🔥</div>
       <div><div class="streak-val" id="streakVal">0</div><div class="streak-lbl">Day Streak</div></div>
@@ -781,7 +877,9 @@ button:active{transform:scale(0.95)!important;}
 
   <!-- Weak topics -->
   <div class="sec" style="font-size:16px;">⚠️ Weak Topics Detected</div>
-  <div id="weakTopics" class="card" style="margin-bottom:20px;"><div style="font-size:13px;color:var(--t2);text-align:center;padding:10px;">Take more exams to detect weak topics.</div></div>
+  <div id="weakTopics" class="card" style="margin-bottom:20px;">
+    <div style="font-size:13px;color:var(--t2);text-align:center;padding:10px;">Take more exams to detect weak topics.</div>
+  </div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -790,7 +888,7 @@ button:active{transform:scale(0.95)!important;}
 <div id="sCatLevels" class="scr">
   <div class="topbar">
     <button class="topbar-back btn" onclick="goBack()"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
-    <div class="topbar-title" id="catTitle">Choose Category</div>
+    <div class="topbar-title" id="catTitle">Category</div>
   </div>
   <div class="card" style="margin-bottom:16px;">
     <div class="sec-sm">OVERALL PROGRESS</div>
@@ -814,7 +912,7 @@ button:active{transform:scale(0.95)!important;}
     <div class="q-num" id="qNum">QUESTION 1 / 50</div>
     <div class="prog-rail" style="margin-bottom:20px;"><div class="fill" id="qProgFill" style="width:0%;"></div></div>
     <div class="q-text" id="qText">Loading question…</div>
-    <div id="qImgWrap" style="display:none;"><img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_3.html" alt="Question image"></div>
+    <div id="qImgWrap" style="display:none;"><img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_4.html" alt="Question image"></div>
     <div class="choices" id="choices"></div>
     <div class="explain" id="explain">
       <div class="explain-head"><ion-icon name="bulb-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M304 384v-24c0-29 31.54-56.43 52-76 28.84-27.57 44-64.61 44-108 0-80-63.73-144-144-144a143.6 143.6 0 00-144 144c0 41.84 15.81 81.39 44 108 20.35 19.21 52 46.7 52 76v24M224 480h64M208 432h96M256 384V256" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M294 240s-21.51 16-38 16-38-16-38-16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Explanation</div>
@@ -878,17 +976,17 @@ button:active{transform:scale(0.95)!important;}
     <div class="sub-title">Unlock Full Access</div>
     <div class="sub-p">Pass the boards with every exam, mock test &amp; unlimited practice — pay once, study forever.</div>
     <div class="price-show" id="priceShow">
-      <div class="price-was">₱400 standard price</div>
+      <div class="price-was">₱400 without referral code</div>
       <div class="price-now">₱400 <span>one-time</span></div>
     </div>
-    <div id="savePill" style="display:none;"><div class="price-save" id="saveAmt">You save ₱0!</div></div>
+    <div id="savePill" style="display:none;"><div class="price-save" id="saveAmt">You save ₱305!</div></div>
   </div>
 
   <!-- Referral code entry -->
   <div class="card" style="margin-bottom:16px;">
     <div class="ref-discount-strip">
-      <div class="rds-ico">🏷️</div>
-      <div class="rds-txt">Have a referral code? Unlock ₱305 discount.</div>
+        <div class="rds-ico">🏷️</div>
+      <div class="rds-txt">Have a referral code? Pay <strong>₱95</strong> instead of ₱400 — save ₱305.</div>
       <button class="rds-btn" onclick="toggleRefInput()">Apply</button>
     </div>
     <div id="refInputWrap" style="display:none;">
@@ -927,7 +1025,7 @@ button:active{transform:scale(0.95)!important;}
      SCREEN: EARNINGS DASHBOARD
      REFLECTIVE — identity as promoter
      ═══════════════════════════════════════ -->
-<div id="sEarn" class="scr on">
+<div id="sEarn" class="scr">
   <div class="topbar"><div class="topbar-title">💰 Earnings Dashboard</div></div>
 
   <!-- Balance hero -->
@@ -952,7 +1050,7 @@ button:active{transform:scale(0.95)!important;}
     <div class="tier-ico tier-stu">🎓</div>
     <div>
       <div class="tier-title" id="tierTitle">Student Ambassador</div>
-      <div class="tier-sub" id="tierSub">Earn 15% per referred subscription · ₱14/referral</div>
+      <div class="tier-sub" id="tierSub">Earn 15% per referred subscription · ₱42/referral</div>
     </div>
     <div class="chip chip-blue" id="tierChip">15%</div>
   </div>
@@ -960,7 +1058,7 @@ button:active{transform:scale(0.95)!important;}
   <!-- Referral code -->
   <div class="sec-sm">YOUR REFERRAL CODE</div>
   <div class="ref-code-box" onclick="copyRefCode()">
-    <div class="ref-code-val" id="refCodeDisplay">PLMBR-GUEST</div>
+    <div class="ref-code-val" id="refCodeDisplay">PLMBR-XXXXX</div>
     <div class="ref-code-hint">Tap to copy · Share with fellow reviewees</div>
   </div>
 
@@ -973,11 +1071,11 @@ button:active{transform:scale(0.95)!important;}
 
   <!-- Leaderboard -->
   <div class="sec">🏆 Top Promoters This Month</div>
-  <div id="leaderboard"><div class="lb-row"><div class="lb-rank lb-1">1</div><div class="lb-info"><div class="lb-nm">Professor Cruz</div><div class="lb-sub">132 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-2">2</div><div class="lb-info"><div class="lb-nm">Engr. Santos</div><div class="lb-sub">97 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-3">3</div><div class="lb-info"><div class="lb-nm">Review Center A</div><div class="lb-sub">85 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-n">4</div><div class="lb-info"><div class="lb-nm">Prof. Dela Cruz</div><div class="lb-sub">72 referrals</div></div></div><div class="lb-row"><div class="lb-rank lb-n">5</div><div class="lb-info"><div class="lb-nm">Arch. Reyes</div><div class="lb-sub">61 referrals</div></div></div></div>
+  <div id="leaderboard"></div>
 
   <!-- Transaction history -->
   <div class="sec" style="font-size:16px;">Recent Commissions</div>
-  <div id="earnHistory"><div class="card" style="text-align:center;color:var(--t2);padding:20px;font-size:13px;">No referrals yet. Share your code to start earning!</div></div>
+  <div id="earnHistory"></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -997,6 +1095,7 @@ button:active{transform:scale(0.95)!important;}
   <div class="menu-row" onclick="goTo(&#39;sEarn&#39;)"><div class="menu-ico">💰</div><div class="menu-txt">Earnings Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" onclick="goTo(&#39;sSub&#39;)"><div class="menu-ico">⭐</div><div class="menu-txt">Subscription &amp; Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" onclick="goTo(&#39;sStats&#39;)"><div class="menu-ico">📊</div><div class="menu-txt">My Analytics</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" onclick="openRoleUpgradeSheet()" id="roleUpgradeRow"><div class="menu-ico">🏅</div><div class="menu-txt">Request Role Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" onclick="openEditProfile()"><div class="menu-ico">✏️</div><div class="menu-txt">Edit Profile</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" onclick="toggleTheme()"><div class="menu-ico">🌙</div><div class="menu-txt">Toggle Theme</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" id="adminMenuRow" style="display:none;" onclick="goTo(&#39;sAdmin&#39;)"><div class="menu-ico">🛡️</div><div class="menu-txt">Admin Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
@@ -1038,6 +1137,7 @@ button:active{transform:scale(0.95)!important;}
   <div class="admin-tab-row">
     <button class="admin-tab on" onclick="adminTab(&#39;users&#39;,this)">Users</button>
     <button class="admin-tab" onclick="adminTab(&#39;subs&#39;,this)">Subscriptions</button>
+    <button class="admin-tab" onclick="adminTab(&#39;role_requests&#39;,this)">Role Requests</button>
     <button class="admin-tab" onclick="adminTab(&#39;referrals&#39;,this)">Referrals</button>
     <button class="admin-tab" onclick="adminTab(&#39;withdrawals&#39;,this)">Withdrawals</button>
     <button class="admin-tab" onclick="adminTab(&#39;fraud&#39;,this)">Fraud Alerts</button>
@@ -1048,10 +1148,10 @@ button:active{transform:scale(0.95)!important;}
 </div><!-- .shell -->
 
 <!-- ════ BOTTOM NAV ════ -->
-<nav id="bnav" class="visible">
-  <button class="bn-item" id="bn-home" onclick="bnNav(&#39;sHome&#39;,&#39;bn-home&#39;)" style=""><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
-  <button class="bn-item" id="bn-quiz" onclick="bnNav(&#39;sCatLevels&#39;,&#39;bn-quiz&#39;)" style=""><ion-icon name="document-text-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Quiz</span><div class="bn-dot"></div></button>
-  <button class="bn-item active" id="bn-earn" onclick="bnNav(&#39;sEarn&#39;,&#39;bn-earn&#39;)" style=""><ion-icon name="wallet-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="48" y="144" width="416" height="288" rx="48" ry="48" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path></svg></div></template></ion-icon><span>Earnings</span><div class="bn-dot"></div></button>
+<nav id="bnav">
+  <button class="bn-item active" id="bn-home" onclick="bnNav(&#39;sHome&#39;,&#39;bn-home&#39;)"><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
+  <button class="bn-item" id="bn-quiz" onclick="bnNav(&#39;sCatLevels&#39;,&#39;bn-quiz&#39;)"><ion-icon name="document-text-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Quiz</span><div class="bn-dot"></div></button>
+  <button class="bn-item" id="bn-earn" onclick="bnNav(&#39;sEarn&#39;,&#39;bn-earn&#39;)"><ion-icon name="wallet-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="48" y="144" width="416" height="288" rx="48" ry="48" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path></svg></div></template></ion-icon><span>Earnings</span><div class="bn-dot"></div></button>
   <button class="bn-item" id="bn-profile" onclick="bnNav(&#39;sProfile&#39;,&#39;bn-profile&#39;)"><ion-icon name="person-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Profile</span><div class="bn-dot"></div></button>
 </nav>
 
@@ -1101,12 +1201,22 @@ button:active{transform:scale(0.95)!important;}
   </div>
 </div>
 
-<div id="toasts"></div>
+<div id="roleUpgradeOverlay" class="overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Request Role Upgrade</div>
+    <div class="sheet-sub">Higher roles earn higher commissions. Admin must verify your credentials.</div>
+    <div id="roleUpgradeBody"></div>
+    <button class="btn btn-ghost btn-md btn-block" style="margin-top:12px;" onclick="closeSheet(&#39;roleUpgradeOverlay&#39;)">Cancel</button>
+  </div>
+</div>
+
+
 
 <!-- ═══════════════════════════════════════
      JAVASCRIPT ENGINE
      ═══════════════════════════════════════ -->
-<script type="module">
+<script data-cfasync="false" src="file:///C:/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module">
 /* ─────────────────────────────────────────
    EXTERNAL QUIZ DATA (module imports)
    ───────────────────────────────────────── */
@@ -1151,9 +1261,25 @@ let U=null, isPaid=false, isAdmin=false;
 let currentCat=null, currentLvl=null, currentQs=[], curIdx=0, answers=[], score=0;
 let timerInt=null, timerSecs=0, isMock=false;
 let screenHistory=[];
+let selectedRole='student'; // tracks role picker selection on sign-up
 
 const MASTER_KEY='MP-MASTER-2024';
-const TIERS={review_center:{pct:30,lbl:'Review Center Partner',ico:'🏫'},professor:{pct:25,lbl:'Professor / Instructor',ico:'👨‍🏫'},student:{pct:15,lbl:'Student Ambassador',ico:'🎓'}};
+/* ══════════════════════════════════════════════════
+   HARDCODED ADMIN CREDENTIALS
+   — Always works even if localStorage is cleared
+   — Cannot be changed by users
+   ══════════════════════════════════════════════════ */
+const ADMIN_EMAIL='admin@mp.ph';
+const ADMIN_PW='Admin@2024!';
+
+const TIERS={
+  review_center:{pct:30,lbl:'Review Center Partner',ico:'🏫',color:'var(--amber)',chipClass:'chip-amber'},
+  professor:    {pct:25,lbl:'Professor / Instructor',ico:'👨‍🏫',color:'var(--indigo)',chipClass:'chip-purple'},
+  student:      {pct:15,lbl:'Student Ambassador',ico:'🎓',color:'var(--blue-hi)',chipClass:'chip-blue'},
+  admin:        {pct:0, lbl:'System Administrator', ico:'🛡️',color:'var(--red)',chipClass:'chip-red'},
+};
+/* Roles that require admin approval to unlock higher commission */
+const ROLES_NEED_APPROVAL=['professor','review_center'];
 
 /* ─────────────────────────────────────────
    STORAGE HELPERS
@@ -1175,7 +1301,8 @@ const saveWDs=a=>LS.set('mp_wds_v3',a);
 const getRefs=()=>LS.get('mp_refs_v3',[]);
 const saveRefs=a=>LS.set('mp_refs_v3',a);
 
-const ukey=()=>U?.email||'guest';
+const getRoleReqs=()=>LS.get('mp_rolereqs_v3',[]);
+const saveRoleReqs=a=>LS.set('mp_rolereqs_v3',a);
 
 function ensurePlayer(key){
   const ps=getPS();
@@ -1235,45 +1362,185 @@ window.bnNav=(scr,bnId)=>{
 function timeHi(){const h=new Date().getHours();return h<12?'Good morning':'Good afternoon';}
 
 /* ─────────────────────────────────────────
-   AUTH
+   ROLE PICKER (sign-up UI)
    ───────────────────────────────────────── */
-window.enterGuest=()=>{U={name:'Guest',email:'guest@local',type:'student',gcash:'',refCode:'PLMBR-GUEST',referredBy:null,paid:false,admin:false};isPaid=false;isAdmin=false;afterLogin();};
+window.pickRole=(role)=>{
+  selectedRole=role;
+  document.querySelectorAll('.role-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById(`rc-${role}`)?.classList.add('selected');
+  const notes={
+    student:'✅ <strong>Student</strong> — Active immediately. Earn <strong>15% commission</strong> (₱14.25/referral). No approval needed.',
+    professor:'⏳ <strong>Professor / Instructor</strong> — Earn <strong>25% commission</strong> (₱23.75/referral). <em>Requires admin verification of your school ID or teaching credentials.</em> You can use the app while pending.',
+    review_center:'⏳ <strong>Review Center</strong> — Earn <strong>30% commission</strong> (₱28.50/referral). <em>Requires admin verification of your business permit or registration.</em> You can use the app while pending.',
+  };
+  document.getElementById('roleNote').innerHTML=notes[role]||'';
+};
+
+/* ─────────────────────────────────────────
+   AUTH — how the app identifies roles
+   ─────────────────────────────────────────
+   IDENTIFICATION LOGIC:
+   1. ADMIN   → email matches ADMIN_EMAIL constant (hardcoded, cannot be faked)
+              → OR user record has admin:true (set only by admin promote action)
+   2. VERIFIED ROLE → user.type = professor/review_center AND user.roleVerified = true
+   3. PENDING ROLE  → user.type = professor/review_center AND user.roleVerified = false/undefined
+                    → Commission LOCKED at student rate (15%) until verified
+   4. STUDENT       → user.type = 'student' (immediate, no approval needed)
+   ───────────────────────────────────────── */
+window.enterGuest=()=>{
+  U={name:'Guest',email:'guest@local',type:'student',roleVerified:true,gcash:'',refCode:'PLMBR-GUEST',referredBy:null,paid:false,admin:false};
+  isPaid=false;isAdmin=false;afterLogin();
+};
+
 window.doSignIn=()=>{
   const em=document.getElementById('siU').value.trim();
   const pw=document.getElementById('siP').value.trim();
   if(!em||!pw){toast('⚠️ Fill in all fields');return;}
-  const users=getUsers(), found=users.find(u=>u.email===em||u.name===em);
+  // ── ADMIN CHECK (hardcoded, always works) ──
+  if(em===ADMIN_EMAIL&&pw===ADMIN_PW){
+    U={name:'System Admin',email:ADMIN_EMAIL,type:'admin',roleVerified:true,gcash:'',refCode:'PLMBR-ADMIN',referredBy:null,paid:true,admin:true};
+    isPaid=true;isAdmin=true;afterLogin();
+    toast('🛡️ Admin access granted');return;
+  }
+  // ── REGULAR USER ──
+  const users=getUsers(),found=users.find(u=>u.email===em||u.name===em);
   if(!found){toast('❌ Account not found');return;}
   if(found.pw!==pw){toast('❌ Incorrect password');return;}
-  U=found;isPaid=!!found.paid;isAdmin=!!found.admin;afterLogin();
+  U=found;isPaid=!!found.paid;isAdmin=!!found.admin;
+  // Show pending notice if role not yet verified
+  if(ROLES_NEED_APPROVAL.includes(U.type)&&!U.roleVerified){
+    toast(`⏳ Role pending verification — earning at Student rate for now`);
+  }
+  afterLogin();
   toast(`👋 Welcome back, ${U.name}!`);
 };
+
 window.doSignUp=()=>{
   const nm=document.getElementById('suNm').value.trim();
   const em=document.getElementById('suEm').value.trim();
   const ph=document.getElementById('suPh').value.trim();
-  const tp=document.getElementById('suType').value;
   const pw=document.getElementById('suPw').value.trim();
   const cf=document.getElementById('suCf').value.trim();
-  if(!nm||!em||!pw){toast('⚠️ Please fill required fields');return;}
+  if(!nm||!em||!pw){toast('⚠️ Please fill in name, email and password');return;}
   if(pw!==cf){toast('❌ Passwords do not match');return;}
-  if(pw.length<6){toast('⚠️ Password must be 6+ characters');return;}
+  if(pw.length<6){toast('⚠️ Password must be at least 6 characters');return;}
+  // Block use of admin email
+  if(em.toLowerCase()===ADMIN_EMAIL){toast('❌ That email is reserved');return;}
   const users=getUsers();
   if(users.find(u=>u.email===em)){toast('❌ Email already registered');return;}
-  // Phone uniqueness check (security)
-  if(ph&&users.find(u=>u.phone===ph)){toast('❌ Phone already linked to an account');return;}
+  if(ph&&users.find(u=>u.phone===ph&&u.phone)){toast('❌ Phone number already linked to an account');return;}
   const refCode=genRefCode();
-  const newU={name:nm,email:em,phone:ph,gcash:ph,type:tp,pw,refCode,referredBy:null,paid:false,admin:false,createdAt:new Date().toISOString()};
-  // First account becomes admin
-  if(!users.length) newU.admin=true;
+  // Role verification logic:
+  // — student → verified immediately (roleVerified: true)
+  // — professor/review_center → pending until admin approves (roleVerified: false)
+  const needsApproval=ROLES_NEED_APPROVAL.includes(selectedRole);
+  const newU={
+    name:nm, email:em, phone:ph, gcash:ph,
+    type:selectedRole,
+    roleVerified:!needsApproval,          // students verified immediately
+    roleStatus:needsApproval?'pending':'verified',
+    pw, refCode,
+    referredBy:null, paid:false, admin:false,
+    createdAt:new Date().toISOString()
+  };
   users.push(newU);saveUsers(users);
-  U=newU;isPaid=false;isAdmin=newU.admin;
+  U=newU;isPaid=false;isAdmin=false;
   afterLogin();confetti();
-  toast(`🎉 Welcome, ${nm}! Account created.`);
+  if(needsApproval){
+    toast(`🎉 Account created! Your ${selectedRole.replace('_',' ')} role is pending admin verification.`);
+    // Auto-create role request
+    submitRoleRequest(selectedRole,'Submitted during registration — please verify my credentials.');
+  }else{
+    toast(`🎉 Welcome, ${nm}! Account created.`);
+  }
 };
-window.doLogout=()=>{U=null;isPaid=false;isAdmin=false;screenHistory=[];currentCat=null;clearTimer();goTo('sSplash');};
 
+window.doLogout=()=>{U=null;isPaid=false;isAdmin=false;screenHistory=[];currentCat=null;clearTimer();goTo('sSplash');};
 function afterLogin(){updateHUD();renderHome();goTo('sHome');}
+
+/* ─────────────────────────────────────────
+   EFFECTIVE TIER (what commission rate applies)
+   — If role is pending verification, earn at student rate
+   — Only verified roles earn full tier rate
+   ───────────────────────────────────────── */
+function effectiveTier(user){
+  if(!user) return TIERS.student;
+  if(user.admin) return TIERS.admin;
+  // Pending professor/RC → earn at student rate until verified
+  if(ROLES_NEED_APPROVAL.includes(user.type)&&!user.roleVerified) return {...TIERS.student,pendingUpgrade:true,pendingType:user.type};
+  return TIERS[user.type]||TIERS.student;
+}
+
+/* ─────────────────────────────────────────
+   ROLE UPGRADE REQUEST SYSTEM
+   ───────────────────────────────────────── */
+function submitRoleRequest(targetRole, notes=''){
+  if(!U||U.email==='guest@local')return;
+  const reqs=getRoleReqs();
+  // Only one pending request at a time
+  const existing=reqs.find(r=>r.email===U.email&&r.status==='pending');
+  if(existing){toast('⏳ You already have a pending role request');return;}
+  reqs.push({
+    id:'RR-'+Date.now(),
+    email:U.email,name:U.name,phone:U.phone||'—',
+    currentRole:U.type,targetRole,notes,
+    status:'pending',createdAt:new Date().toISOString()
+  });
+  saveRoleReqs(reqs);
+}
+
+window.openRoleUpgradeSheet=()=>{
+  if(!U||U.email==='guest@local'){toast('Please sign in first');return;}
+  const reqs=getRoleReqs();
+  const pending=reqs.find(r=>r.email===U.email&&r.status==='pending');
+  const body=document.getElementById('roleUpgradeBody');
+  if(U.type==='review_center'&&U.roleVerified){
+    body.innerHTML=`<div class="role-verify-card verified"><div class="rvc-ico verified">🏫</div><div><div class="rvc-title">Review Center Partner</div><div class="rvc-sub">Your role is verified. You earn 30% commission.</div><div class="rvc-badge verified">✅ Verified</div></div></div>`;
+    openSheet('roleUpgradeOverlay');return;
+  }
+  if(pending){
+    body.innerHTML=`<div class="role-verify-card pending"><div class="rvc-ico pending">⏳</div><div><div class="rvc-title">Pending: ${pending.targetRole.replace('_',' ')}</div><div class="rvc-sub">Your request is under admin review. You will be notified once approved. Until then, commissions are paid at student rate (15%).</div><div class="rvc-badge pending">⏳ Under Review</div></div></div>`;
+    openSheet('roleUpgradeOverlay');return;
+  }
+  body.innerHTML=`
+    <div style="margin-bottom:14px;font-size:13px;color:var(--t2);">Upgrade your role to earn higher commissions. Admin will verify your credentials before activating the higher rate.</div>
+    <div class="req-role-card" onclick="requestUpgrade('professor')">
+      <div class="req-ico" style="background:rgba(99,102,241,.1);">👨‍🏫</div>
+      <div style="flex:1;">
+        <div style="font-weight:700;font-size:14px;margin-bottom:3px;">Professor / Instructor</div>
+        <div style="font-size:12px;color:var(--t2);">25% commission — Requires school ID or appointment letter</div>
+      </div>
+      <span class="chip chip-purple">25%</span>
+    </div>
+    <div class="req-role-card" onclick="requestUpgrade('review_center')">
+      <div class="req-ico" style="background:var(--gold-glow);">🏫</div>
+      <div style="flex:1;">
+        <div style="font-weight:700;font-size:14px;margin-bottom:3px;">Review Center Partner</div>
+        <div style="font-size:12px;color:var(--t2);">30% commission — Requires business permit / DTI registration</div>
+      </div>
+      <span class="chip chip-amber">30%</span>
+    </div>
+    <div class="field" style="margin-top:4px;"><label>Notes / Credentials</label><input type="text" id="roleReqNotes" placeholder="e.g. Instructor at PLM, employee ID #12345"/></div>
+    <button class="btn btn-primary btn-md btn-block" id="submitRoleBtn" style="display:none;" onclick="submitRoleUpgrade()">Submit Request</button>`;
+  openSheet('roleUpgradeOverlay');
+};
+
+let pendingRoleTarget=null;
+window.requestUpgrade=(role)=>{
+  pendingRoleTarget=role;
+  document.querySelectorAll('.req-role-card').forEach(c=>c.style.border='2px solid var(--border)');
+  event.currentTarget.style.border='2px solid var(--blue)';
+  document.getElementById('submitRoleBtn').style.display='flex';
+};
+
+window.submitRoleUpgrade=()=>{
+  if(!pendingRoleTarget){toast('⚠️ Select a role first');return;}
+  const notes=document.getElementById('roleReqNotes').value.trim();
+  submitRoleRequest(pendingRoleTarget, notes||'No notes provided');
+  closeSheet('roleUpgradeOverlay');
+  toast('📨 Role upgrade request submitted — admin will review shortly');
+  pendingRoleTarget=null;
+};
 
 /* ─────────────────────────────────────────
    HUD
@@ -1282,14 +1549,29 @@ function updateHUD(){
   if(!U)return;
   const p=getPlayer();
   const init=U.name.charAt(0).toUpperCase();
+  const tier=effectiveTier(U);
   document.getElementById('hudAv').textContent=init;
   document.getElementById('hudNm').textContent=U.name;
   document.getElementById('hudLv').textContent=`LV ${p.level||1}`;
   document.getElementById('hudXPN').textContent=`${p.xp||0} XP`;
   document.getElementById('hudXP').style.width=Math.min(100,(p.xp||0)%100)+'%';
-  // Streak & XP on home
   document.getElementById('streakVal').textContent=p.streak||0;
   document.getElementById('xpVal').textContent=p.xp||0;
+  // Role tag in HUD meta row
+  const existingTag=document.getElementById('hudRoleTag');
+  if(existingTag)existingTag.remove();
+  const roleMeta=document.querySelector('.hmeta');
+  if(roleMeta){
+    const tag=document.createElement('div');
+    tag.id='hudRoleTag';
+    let roleLabel, roleClass;
+    if(U.admin){roleLabel='ADMIN';roleClass='admin';}
+    else if(tier.pendingUpgrade){roleLabel='PENDING';roleClass='pending';}
+    else{roleLabel=U.type.replace('_',' ').toUpperCase().split(' ')[0];roleClass=U.type;}
+    tag.className=`role-tag ${roleClass}`;
+    tag.textContent=roleLabel;
+    roleMeta.insertBefore(tag,roleMeta.firstChild);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -1550,13 +1832,15 @@ window.applyRefCode=()=>{
   const users=getUsers(),referrer=users.find(u=>u.refCode===code);
   if(!referrer){toast('❌ Invalid referral code');return;}
   if(U&&referrer.email===U.email){toast('❌ Cannot use your own referral code');return;}
-  // Apply discount
+  // Apply discount — Shopee/Lazada-style: strike old, show new, badge the savings
   discountApplied=true;refUsed=code;
-  document.getElementById('priceShow').innerHTML=`<div class="price-was">₱400 standard price</div><div class="price-now">₱95 <span>one-time (with referral)</span></div>`;
+  document.getElementById('priceShow').innerHTML=`
+    <div class="price-was">₱400 without referral code</div>
+    <div class="price-now">₱95 <span>one-time</span></div>`;
   document.getElementById('savePill').style.display='block';
-  document.getElementById('saveAmt').textContent='You save ₱305!';
-  document.getElementById('buyBtn').textContent='Unlock Full Access · ₱95';
-  toast('✅ Referral code applied — ₱305 discount!');
+  document.getElementById('saveAmt').textContent='🎉 You save ₱305!';
+  document.getElementById('buyBtn').textContent='Pay ₱95 — Save ₱305 Now';
+  toast('✅ Code applied — ~~₱400~~ now only ₱95!');
 };
 
 window.doPurchase=()=>{
@@ -1573,7 +1857,7 @@ window.doPurchase=()=>{
   if(refUsed){
     const users2=getUsers(),referrer=users2.find(u=>u.refCode===refUsed);
     if(referrer){
-      const tier=TIERS[referrer.type]||TIERS.student;
+      const tier=effectiveTier(referrer); // uses pending-aware logic
       const comm=Math.round(price*tier.pct/100);
       const ps=ensurePlayer(referrer.email),rp=ps[referrer.email];
       rp.commission_balance=(rp.commission_balance||0)+comm;
@@ -1608,26 +1892,40 @@ window.activateKey=()=>{
 function renderEarnings(){
   if(!U)return;
   const p=getPlayer();
-  const tier=TIERS[U.type]||TIERS.student;
+  const tier=effectiveTier(U);
   document.getElementById('earnBal').textContent=`₱${p.commission_balance||0}`;
   document.getElementById('earnTotal').textContent=p.total_referrals||0;
   document.getElementById('earnTotalAmt').textContent=`₱${p.total_earned||0}`;
   document.getElementById('earnPending').textContent=`₱${p.pending||0}`;
   document.getElementById('earnPaid').textContent=`₱${p.paid_out||0}`;
-  document.getElementById('tierTitle').textContent=tier.lbl;
+  // Tier display — show pending warning if applicable
   const commPerRef=Math.round(95*tier.pct/100);
-  document.getElementById('tierSub').textContent=`Earn ${tier.pct}% per referred subscription · ₱${commPerRef}/referral`;
+  document.getElementById('tierTitle').textContent=tier.pendingUpgrade
+    ?`${tier.lbl} (⏳ Pending: ${tier.pendingType.replace('_',' ')})`
+    :tier.lbl;
+  document.getElementById('tierSub').textContent=tier.pendingUpgrade
+    ?`Currently earning 15% (student rate). Once admin verifies your ${tier.pendingType.replace('_',' ')} role, you'll earn ${TIERS[tier.pendingType].pct}%.`
+    :`Earn ${tier.pct}% per referred subscription · ₱${commPerRef}/referral`;
   document.getElementById('tierChip').textContent=tier.pct+'%';
-  // Tier icon
   const icoEl=document.querySelector('.tier-ico');
-  if(icoEl){icoEl.className=`tier-ico tier-${U.type==='review_center'?'rc':U.type==='professor'?'prof':'stu'}`;icoEl.textContent=tier.ico;}
+  if(icoEl){
+    icoEl.className=`tier-ico tier-${U.type==='review_center'?'rc':U.type==='professor'?'prof':'stu'}`;
+    icoEl.textContent=tier.ico;
+  }
+  // Pending lock notice
+  const existingWarn=document.getElementById('tierPendingWarn');
+  if(existingWarn)existingWarn.remove();
+  if(tier.pendingUpgrade){
+    const warn=document.createElement('div');
+    warn.id='tierPendingWarn';
+    warn.className='role-verify-card pending';
+    warn.style.marginBottom='16px';
+    warn.innerHTML=`<div class="rvc-ico pending">⏳</div><div><div class="rvc-title">Commission Rate Locked</div><div class="rvc-sub">Your <strong>${tier.pendingType.replace('_',' ')}</strong> role is pending admin verification. You're earning at <strong>15%</strong> until approved. <button class="btn-text" onclick="openRoleUpgradeSheet()" style="font-size:12px;">Check status →</button></div></div>`;
+    document.getElementById('tierBadge').insertAdjacentElement('beforebegin',warn);
+  }
   // Referral code
-  const code=U.refCode||'PLMBR-XXXXX';
-  document.getElementById('refCodeDisplay').textContent=code;
-  // Leaderboard
-  renderLeaderboard();
-  // History
-  renderEarnHistory();
+  document.getElementById('refCodeDisplay').textContent=U.refCode||'PLMBR-XXXXX';
+  renderLeaderboard();renderEarnHistory();
 }
 
 function renderLeaderboard(){
@@ -1714,10 +2012,38 @@ function renderProfile(){
   document.getElementById('profAv').textContent=U.name.charAt(0).toUpperCase();
   document.getElementById('profNm').textContent=U.name;
   document.getElementById('profEmail').textContent=U.email;
-  const typeMap={student:'Student',professor:'Professor',review_center:'Review Center'};
-  document.getElementById('profType').textContent=typeMap[U.type]||U.type;
+  const typeLabels={student:'Student',professor:'Professor',review_center:'Review Center',admin:'Admin'};
+  const tier=effectiveTier(U);
+  document.getElementById('profType').textContent=typeLabels[U.type]||U.type;
   document.getElementById('profTierChip').textContent=isPaid?'Pro Member':'Free';
   document.getElementById('adminMenuRow').style.display=isAdmin?'flex':'none';
+  // Hide upgrade row for admin or already verified RC
+  const upgradeRow=document.getElementById('roleUpgradeRow');
+  if(U.admin||(U.type==='review_center'&&U.roleVerified)){upgradeRow.style.display='none';}
+  else{upgradeRow.style.display='flex';}
+  // Role verification status card — insert before menu rows
+  const existingCard=document.getElementById('roleVerifyCard');
+  if(existingCard)existingCard.remove();
+  const profileDiv=document.getElementById('sProfile');
+  const firstMenuRow=profileDiv.querySelector('.menu-row');
+  const card=document.createElement('div');
+  card.id='roleVerifyCard';
+  if(U.admin){
+    card.className='role-verify-card verified';
+    card.innerHTML=`<div class="rvc-ico verified">🛡️</div><div><div class="rvc-title">System Administrator</div><div class="rvc-sub">Full access to all admin controls. Manage users, approve roles, process withdrawals.</div><div class="rvc-badge verified">🛡️ Admin</div></div>`;
+  }else if(U.type==='student'){
+    card.className='role-verify-card student-card';
+    card.innerHTML=`<div class="rvc-ico student">🎓</div><div><div class="rvc-title">Student Ambassador</div><div class="rvc-sub">Active immediately. Earn 15% commission per referral. Apply for a role upgrade to earn more.</div><div class="rvc-badge student">✅ Active</div></div>`;
+  }else if(ROLES_NEED_APPROVAL.includes(U.type)&&!U.roleVerified){
+    const reqs=getRoleReqs(),pending=reqs.find(r=>r.email===U.email&&r.status==='pending');
+    card.className='role-verify-card pending';
+    card.innerHTML=`<div class="rvc-ico pending">⏳</div><div><div class="rvc-title">${typeLabels[U.type]} — Pending Verification</div><div class="rvc-sub">Admin is reviewing your credentials. You're earning at <strong>Student rate (15%)</strong> until verified. Once approved, you'll earn at <strong>${TIERS[U.type].pct}%</strong>.</div><div class="rvc-badge pending">⏳ Pending since ${pending?new Date(pending.createdAt).toLocaleDateString():'registration'}</div></div>`;
+  }else if(U.roleVerified){
+    card.className='role-verify-card verified';
+    const t=TIERS[U.type];
+    card.innerHTML=`<div class="rvc-ico verified">${t.ico}</div><div><div class="rvc-title">${t.lbl}</div><div class="rvc-sub">Role verified by admin. You earn <strong>${t.pct}% commission</strong> per referral (₱${Math.round(95*t.pct/100)}/referral).</div><div class="rvc-badge verified">✅ Verified</div></div>`;
+  }
+  profileDiv.insertBefore(card,firstMenuRow);
 }
 
 window.openEditProfile=()=>{
@@ -1788,7 +2114,41 @@ function renderAdmin(tab='users'){
   }else if(tab==='withdrawals'){
     if(!wds.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No withdrawal requests.</div>';return;}
     cont.innerHTML=wds.map(w=>`<div class="admin-row"><div class="admin-row-info"><div class="admin-row-nm">${w.name}</div><div class="admin-row-sub">${w.gcash} · ${new Date(w.createdAt).toLocaleDateString()}</div></div><div class="admin-row-end"><div class="admin-row-val">₱${w.amount}</div>${w.status==='pending'?`<div style="display:flex;gap:6px;margin-top:6px;"><button class="btn-approve" onclick="approveWD('${w.id}')">Approve</button><button class="btn-reject" onclick="rejectWD('${w.id}')">Reject</button></div>`:`<div><span class="chip chip-${w.status==='paid'||w.status==='approved'?'green':'red'}">${w.status}</span></div>`}</div></div>`).join('');
-  }else if(tab==='fraud'){
+  }else if(tab==='role_requests'){
+    const reqs=getRoleReqs();
+    const pending=reqs.filter(r=>r.status==='pending');
+    const resolved=reqs.filter(r=>r.status!=='pending');
+    if(!reqs.length){cont.innerHTML='<div class="card" style="padding:20px;text-align:center;color:var(--t2);">No role upgrade requests yet.</div>';return;}
+    let html='';
+    if(pending.length){
+      html+=`<div class="sec-sm" style="margin-bottom:10px;">⏳ PENDING (${pending.length})</div>`;
+      html+=pending.map(r=>`
+        <div class="role-req-row">
+          <div style="font-size:22px;">${r.targetRole==='review_center'?'🏫':'👨‍🏫'}</div>
+          <div class="role-req-info">
+            <div class="role-req-nm">${r.name}</div>
+            <div class="role-req-sub">${r.email} · ${r.phone}</div>
+            <div class="role-req-sub" style="margin-top:4px;color:var(--amber);">Requesting: <strong>${r.targetRole.replace('_',' ')}</strong> (${TIERS[r.targetRole]?.pct}% commission)</div>
+            ${r.notes?`<div class="role-req-sub" style="margin-top:3px;font-style:italic;">"${r.notes}"</div>`:''}
+          </div>
+          <div class="role-req-actions">
+            <button class="btn-approve" onclick="approveRole('${r.id}')">Approve</button>
+            <button class="btn-reject" onclick="rejectRole('${r.id}')">Reject</button>
+          </div>
+        </div>`).join('');
+    }
+    if(resolved.length){
+      html+=`<div class="sec-sm" style="margin:16px 0 10px;">RESOLVED</div>`;
+      html+=resolved.map(r=>`
+        <div class="admin-row">
+          <div class="admin-row-info">
+            <div class="admin-row-nm">${r.name}</div>
+            <div class="admin-row-sub">${r.targetRole.replace('_',' ')} · ${new Date(r.createdAt).toLocaleDateString()}</div>
+          </div>
+          <span class="chip chip-${r.status==='approved'?'green':'red'}">${r.status}</span>
+        </div>`).join('');
+    }
+    cont.innerHTML=html;
     // Detect duplicate phones
     const phones={};users.forEach(u=>{if(u.phone){if(!phones[u.phone])phones[u.phone]=[];phones[u.phone].push(u.name);}});
     const dupes=Object.entries(phones).filter(([,v])=>v.length>1);
@@ -1820,8 +2180,30 @@ window.rejectWD=(id)=>{
 };
 
 /* ─────────────────────────────────────────
-   THEME
+   ROLE APPROVAL / REJECTION
    ───────────────────────────────────────── */
+window.approveRole=(id)=>{
+  const reqs=getRoleReqs(),req=reqs.find(r=>r.id===id);
+  if(!req)return;
+  req.status='approved';req.processedAt=new Date().toISOString();saveRoleReqs(reqs);
+  // Update the user record: set roleVerified=true and type=targetRole
+  const users=getUsers(),u=users.find(u=>u.email===req.email);
+  if(u){u.type=req.targetRole;u.roleVerified=true;u.roleStatus='verified';saveUsers(users);}
+  // Update session if this is the current user
+  if(U&&U.email===req.email){U.type=req.targetRole;U.roleVerified=true;U.roleStatus='verified';}
+  toast(`✅ Role approved — ${req.name} is now a ${req.targetRole.replace('_',' ')}`);
+  renderAdmin('role_requests');
+};
+window.rejectRole=(id)=>{
+  const reqs=getRoleReqs(),req=reqs.find(r=>r.id===id);
+  if(!req)return;
+  req.status='rejected';req.processedAt=new Date().toISOString();saveRoleReqs(reqs);
+  // Keep user at student type but mark roleVerified false
+  const users=getUsers(),u=users.find(u=>u.email===req.email);
+  if(u){u.roleStatus='rejected';saveUsers(users);}
+  toast(`❌ Role request rejected — ${req.name} stays at student rate`);
+  renderAdmin('role_requests');
+};
 window.toggleTheme=()=>{
   const isL=document.body.getAttribute('data-theme')==='light';
   document.body.setAttribute('data-theme',isL?'dark':'light');
@@ -1879,12 +2261,12 @@ document.addEventListener('click',e=>{
    ───────────────────────────────────────── */
 (async()=>{
   await loadDB();
-  // Seed demo admin if no users
+  // Always sync hardcoded admin record (so credentials can never be locked out)
   const users=getUsers();
-  if(!users.length){
-    users.push({name:'Admin',email:'admin@mp.ph',phone:'09000000000',gcash:'09000000000',type:'review_center',pw:'admin123',refCode:'PLMBR-ADMIN',referredBy:null,paid:true,admin:true,createdAt:new Date().toISOString()});
-    saveUsers(users);
-  }
+  const adminIdx=users.findIndex(u=>u.email===ADMIN_EMAIL);
+  const adminRecord={name:'System Admin',email:ADMIN_EMAIL,phone:'09000000000',gcash:'09000000000',type:'review_center',roleVerified:true,roleStatus:'verified',pw:ADMIN_PW,refCode:'PLMBR-ADMIN',referredBy:null,paid:true,admin:true,createdAt:new Date(0).toISOString()};
+  if(adminIdx===-1){users.unshift(adminRecord);}else{users[adminIdx]={...users[adminIdx],...adminRecord};}
+  saveUsers(users);
   goTo('sSplash');
 })();
 </script>
