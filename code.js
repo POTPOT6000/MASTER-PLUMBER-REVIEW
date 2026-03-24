@@ -1860,6 +1860,34 @@ export const codeDB = {
         { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
     ],
     15: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    16: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    17: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    18: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    19: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    20: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    21: [
+        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+    ],
+    22: [
         { q: "The paper currency issued by the Central Bank.", choices: ["T-bills", "Bank note", "Check", "Coupon"], a: 1 },
         { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
     ]
