@@ -1856,8 +1856,556 @@ export const codeDB = {
   }
     ],
     14: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        {
+    "q": "What is the standard minimum uniform slope required for horizontal drainage pipes to ensure practical alignment and flow?",
+    "choices": ["A. 1% or 10 mm/m", "B. 2% or 20 mm/m", "C. 3% or 30 mm/m", "D. 0.5% or 5 mm/m"],
+    "a": 1
+  },
+  {
+    "q": "Under what condition can a horizontal drainage pipe have a slope of 1% (10 mm/m) instead of the standard 2%?",
+    "choices": ["A. If the pipe is 51 mm or larger", "B. If the pipe is 76 mm or larger", "C. If the pipe is 102 mm or larger and approved", "D. Only for vertical-to-horizontal connections"],
+    "a": 2
+  },
+  {
+    "q": "Changes in direction of drainage piping must be made using approved fittings with angles of long sweeps. Which of the following is NOT a specifically listed approved angle?",
+    "choices": ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree sharp elbow"],
+    "a": 3
+  },
+  {
+    "q": "What is the support interval for vertical lead pipe according to Section 315.1.4?",
+    "choices": ["A. Every storey", "B. Not exceeding 1.20 meters at centers", "C. Every 3 meters", "D. Every other storey height"],
+    "a": 1
+  },
+  {
+    "q": "Horizontal drainage lines connecting to a vertical stack shall enter through specific fittings. Which fitting is permitted for this connection?",
+    "choices": ["A. 45-degree wye branches", "B. 60-degree wye branches", "C. Sanitary tee", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "When installing vertical double sanitary tees, what is the required size of the barrel relative to the largest side inlet?",
+    "choices": ["A. One pipe size smaller", "B. The same pipe size", "C. At least two (2) pipe sizes larger", "D. Three pipe sizes larger"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal drainage lines connecting to other horizontal drainage lines must enter through which type of fitting?",
+    "choices": ["A. Sanitary tee", "B. 45-degree wye branches", "C. Double hub fitting", "D. Tapped tee"],
+    "a": 1
+  },
+  {
+    "q": "A 60-degree branch or offset may be used in drainage lines only when installed in what position?",
+    "choices": ["A. Horizontal position", "B. True vertical position", "C. At a 45-degree angle", "D. Underground"],
+    "a": 1
+  },
+  {
+    "q": "It is unlawful to deposit which of the following into any plumbing fixture or device connected to the drainage system?",
+    "choices": ["A. Ashes or cinders", "B. Rags", "C. Flammable or explosive liquids", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "Where should rainwater drains from roofs, inner courts, or light wells discharge?",
+    "choices": ["A. To the soil and waste pipe system", "B. Outside the building or to the gutter", "C. Into the septic tank", "D. To the building subdrain"],
+    "a": 1
+  },
+  {
+    "q": "What must be done to the burred ends of all pipes and tubings before installation?",
+    "choices": ["A. Sealed with wax", "B. Reamed to the full bore", "C. Painted with tar", "D. Welded to the fitting"],
+    "a": 1
+  },
+  {
+    "q": "Which of the following is a prohibited fitting for use as a drainage fitting in a vertical position?",
+    "choices": ["A. Double hub sanitary tapped tee", "B. Double hub fitting for lead-caulked joint", "C. 45-degree wye", "D. Combination wye and 1/8 bend"],
+    "a": 1
+  },
+  {
+    "q": "What is the rule regarding drilling and tapping drainage or vent piping?",
+    "choices": ["A. Permitted for small connections", "B. Permitted if approved by the Authority", "C. No piping shall be drilled and tapped", "D. Only cast iron pipe can be drilled"],
+    "a": 2
+  },
+  {
+    "q": "No waste connection shall be made to which specific part of a plumbing fixture?",
+    "choices": ["A. Vent stack", "B. Closet bend or stub of a water closet", "C. Vertical soil stack", "D. Building drain"],
+    "a": 1
+  },
+  {
+    "q": "What is the minimum support interval for vertical plastic pipe?",
+    "choices": ["A. Every story", "B. Every 2 meters", "C. Every one (1) meter interval", "D. Every 3 meters"],
+    "a": 2
+  },
+  {
+    "q": "The enlargement of a 76-mm closet bend or stub to what diameter is NOT considered an obstruction?",
+    "choices": ["A. 89-mm diameter", "B. 102-mm diameter", "C. 114-mm diameter", "D. 127-mm diameter"],
+    "a": 1
+  },
+  {
+    "q": "When mixing dissimilar metals, where should the points of connection be confined?",
+    "choices": ["A. Underground", "B. Inside concrete walls", "C. Exposed or accessible locations", "D. Within the building sewer"],
+    "a": 2
+  },
+  {
+    "q": "Under what condition may the building drain of a front building be extended to a rear building?",
+    "choices": ["A. If no private sewer is available for the rear building", "B. If the existing size is adequate for both", "C. If gravity flow is possible", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "All openings into a sanitary drainage system, except those for fixtures or vent terminals, must be permanently closed using what?",
+    "choices": ["A. Electrical tape", "B. Approved plugs or caps", "C. Cement mortar", "D. Plastic wrap"],
+    "a": 1
+  },
+  {
+    "q": "Pipes passing under or through walls must be protected from breakage by what means?",
+    "choices": ["A. Polyethylene sheath", "B. Bitumen coating", "C. Embedded metal pipe sleeves", "D. Concrete encasement"],
+    "a": 2
+  },
+  {
+    "q": "How must the void between pipes and sleeves through concrete floors in the ground be sealed?",
+    "choices": ["A. With cement", "B. With bitumen", "C. With wax", "D. With lead"],
+    "a": 1
+  },
+  {
+    "q": "No pipe shall be directly embedded in concrete and masonry walls without what protection?",
+    "choices": ["A. Tar coating", "B. Metal sleeve", "C. Plastic wrap", "D. Rubber gasket"],
+    "a": 1
+  },
+  {
+    "q": "What is the minimum clearance angle required for a pipe trench deeper than the footing of an adjacent building?",
+    "choices": ["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 90 degrees"],
+    "a": 1
+  },
+  {
+    "q": "What is the minimum burial depth for drainage piping below the finish ground surface?",
+    "choices": ["A. 0.1 meter", "B. 0.3 meter", "C. 0.6 meter", "D. 1.0 meter"],
+    "a": 1
+  },
+  {
+    "q": "Drainage piping constructed of materials not approved for use under a building must be installed at least how far from any building or structure?",
+    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
+    "a": 1
+  },
+  {
+    "q": "Vertical cast iron soil pipe (Bell & Spigot and Hubless) shall be supported at what interval?",
+    "choices": ["A. Every 3 meters", "B. Every storey or closer", "C. Every 1.5 meters", "D. Every other storey"],
+    "a": 1
+  },
+  {
+    "q": "Vertical Screwed Pipe (IPS) shall be supported at what minimum interval?",
+    "choices": ["A. Every storey", "B. Not less than every other storey height", "C. Every 3.6 meters", "D. Every 1.2 meters"],
+    "a": 1
+  },
+  {
+    "q": "Vertical Copper Tubing shall be supported at each storey or at maximum intervals of how many meters?",
+    "choices": ["A. 1.5 meters", "B. 2.4 meters", "C. 3 meters", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "Where joints occur, suspended horizontal cast iron soil pipe shall be supported at what maximum interval?",
+    "choices": ["A. 1.0 meter", "B. 1.5 meters", "C. 2.0 meters", "D. 3.6 meters"],
+    "a": 1
+  },
+  {
+    "q": "If a cast iron soil pipe exceeds 1.5 meters in length, what is the maximum support interval for horizontal installation?",
+    "choices": ["A. 2.0 meters", "B. 2.5 meters", "C. 3 meters", "D. 4.5 meters"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal supports for cast iron soil pipe must be placed within how many meters of the hub or joint?",
+    "choices": ["A. 0.30 meters", "B. 0.45 meters", "C. 0.60 meters", "D. 1.20 meters"],
+    "a": 1
+  },
+  {
+    "q": "Horizontal Screwed Pipe (IPS) of 19 mm diameter and smaller shall be supported at what interval?",
+    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal Screwed Pipe (IPS) of 25 mm and larger in diameter shall be supported at what interval?",
+    "choices": ["A. 3.0 meters", "B. 3.6 meters", "C. 4.5 meters", "D. 6.0 meters"],
+    "a": 1
+  },
+  {
+    "q": "Horizontal Copper Tubing of 38 mm diameter and smaller shall be supported at what interval?",
+    "choices": ["A. 1.2 meters", "B. 1.5 meters", "C. 1.8 meters", "D. 3.0 meters"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal Copper Tubing of 51 mm and larger in diameter shall be supported at what interval?",
+    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "How must horizontal lead pipe be supported for its entire length?",
+    "choices": ["A. Spaced metal hangers", "B. Stiff metal or wooden backing", "C. Plastic clamps", "D. Concrete cradle"],
+    "a": 1
+  },
+  {
+    "q": "Horizontal plastic tubings up to 38 mm diameter require what type of support for their entire length?",
+    "choices": ["A. Spaced metal hangers", "B. Stiff metal or wood backing", "C. Concrete blocks", "D. Bitumen seal"],
+    "a": 1
+  },
+  {
+    "q": "What is the maximum allowed length for a tunnel used in plumbing excavations?",
+    "choices": ["A. 1.2 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 5.0 meters"],
+    "a": 1
+  },
+  {
+    "q": "A tunnel must have a clear height of at least how many meters above the pipe?",
+    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
+    "a": 1
+  },
+  {
+    "q": "When a pipe is driven through the ground, the drive pipe shall be at least how much larger than the pipe to be laid?",
+    "choices": ["A. One pipe size larger", "B. Two pipe sizes larger", "C. 50 mm larger", "D. The same size"],
+    "a": 0
+  },
+  {
+    "q": "Excavations within the walls of a building must be open trench work and kept open until when?",
+    "choices": ["A. The building is occupied", "B. The piping is inspected and tested", "C. The concrete is poured", "D. The fixtures are installed"],
+    "a": 1
+  },
+  {
+    "q": "Trenches shall be back-filled in thin layers of how many meters above the top of the pipe?",
+    "choices": ["A. 0.1 meter", "B. 0.3 meter", "C. 0.5 meter", "D. 0.6 meter"],
+    "a": 1
+  },
+  {
+    "q": "Which material is strictly prohibited in the clean earth used for back-filling trenches?",
+    "choices": ["A. Stones and boulders", "B. Cinders", "C. Corrosive materials", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "What is the required slope for a 152 mm diameter horizontal drainage pipe if approved by the Authority?",
+    "choices": ["A. 2%", "B. 1%", "C. 0.5%", "D. Both A and B are correct"],
+    "a": 3
+  },
+  {
+    "q": "Horizontal drainage lines connecting to horizontal lines shall enter through 45-degree wye branches or which other fitting?",
+    "choices": ["A. Sanitary tee", "B. Combination wye and 1/8 bend", "C. Double sanitary tee", "D. Side inlet quarter bend"],
+    "a": 1
+  },
+  {
+    "q": "In Section 303.2, which nominal pipe size is NOT recognized for the double sanitary tee barrel rule?",
+    "choices": ["A. 51 mm", "B. 70 mm", "C. 89 mm", "D. 152 mm"],
+    "a": 1
+  },
+  {
+    "q": "It is unlawful to conceal cracks or holes in materials by using which method?",
+    "choices": ["A. Welding", "B. Brazing or soldering", "C. Paint, wax, or tar", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "Which of the following jointing methods for hubless cast iron soil pipes is specifically listed as acceptable?",
+    "choices": ["A. Threaded joints", "B. Stainless steel bands with neoprene gaskets", "C. Lead-caulked joints", "D. Solvent cement"],
+    "a": 1
+  },
+  {
+    "q": "Section 311.2 states that no cast iron soil pipe shall be:",
+    "choices": ["A. Cut", "B. Painted", "C. Threaded", "D. Supported by hangers"],
+    "a": 2
+  },
+  {
+    "q": "According to Section 311.4, no vent pipe shall be used as a:",
+    "choices": ["A. Waste pipe", "B. Soil pipe", "C. Either A or B", "D. Support member"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal hubless or compression gasket joints must be supported at every other joint, unless the developed length exceeds what distance?",
+    "choices": ["A. 0.6 meters", "B. 1.2 meters", "C. 1.5 meters", "D. 3.0 meters"],
+    "a": 1
+  },
+  {
+    "q": "Piping passing through or under corrosive materials must be protected by encasing it with what?",
+    "choices": ["A. Metal sleeve", "B. Polyethylene sheath", "C. Bitumen coating", "D. Lead sheet"],
+    "a": 1
+  },
+  {
+    "q": "What must be provided for hot water pipings to prevent damage?",
+    "choices": ["A. Extra insulation", "B. Expansion provisions", "C. High-pressure valves", "D. Copper sleeves"],
+    "a": 1
+  },
+  {
+    "q": "The tunnel length is limited to what fraction of the depth of the trench?",
+    "choices": ["A. One-third (1/3)", "B. One-half (1/2)", "C. Two-thirds (2/3)", "D. Three-fourths (3/4)"],
+    "a": 1
+  },
+  {
+    "q": "Which section prohibits the use of single drainage and venting systems with unvented branch lines?",
+    "choices": ["A. 301", "B. 305", "C. 311.4", "D. 316"],
+    "a": 2
+  },
+  {
+    "q": "All valves, pipes, and fittings must be installed in correct relationship to what?",
+    "choices": ["A. The building foundation", "B. The direction of flow", "C. The nearest vent stack", "D. The finish floor line"],
+    "a": 1
+  },
+  {
+    "q": "Industrial wastes that are detrimental to the sewer system must be treated as directed by whom?",
+    "choices": ["A. The building owner", "B. The Administrative Authority", "C. The Master Plumber", "D. The Department of Energy"],
+    "a": 1
+  },
+  {
+    "q": "No building shall be erected over an existing drainage system unless the system is constructed of:",
+    "choices": ["A. Plastic materials", "B. Approved materials for use under a building", "C. Lead pipes", "D. Vitrified clay"],
+    "a": 1
+  },
+  {
+    "q": "Suspended horizontal drainage lines must be suitably braced to prevent what type of movement?",
+    "choices": ["A. Vertical movement", "B. Horizontal movement", "C. Expansion", "D. Contraction"],
+    "a": 1
+  },
+  {
+    "q": "For horizontal piping in the ground, what must the pipe be laid on for its entire length?",
+    "choices": ["A. A bed of rocks", "B. A firm bed", "C. Loose soil", "D. Wooden planks"],
+    "a": 1
+  },
+  {
+    "q": "Vertical piping must be secured at intervals to keep pipes in alignment and carry what?",
+    "choices": ["A. Air pressure", "B. Weight and contents", "C. Only the pipe weight", "D. External vibrations"],
+    "a": 1
+  },
+  {
+    "q": "Section 314.5 states that pipe surfaces subject to undue corrosion or erosion must be protected with which method?",
+    "choices": ["A. Inside lining", "B. Outside coating", "C. Bottom bedding and top shielding", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "Who must approve deviations from the Code for repairs and alterations in existing buildings?",
+    "choices": ["A. The NAMPAP President", "B. The Administrative Authority", "C. The Project Architect", "D. The Homeowner"],
+    "a": 1
+  },
+  {
+    "q": "Existing building sewers may be used for new work only if they are examined and found to conform to requirements for:",
+    "choices": ["A. Used materials", "B. New work", "C. Temporary connections", "D. Private systems"],
+    "a": 1
+  },
+  {
+    "q": "Section 308.1 prohibits the location of an excreta plumbing system in any lot other than what?",
+    "choices": ["A. The adjoining lot", "B. The lot where the building served is located", "C. Public property", "D. A designated utility easement"],
+    "a": 1
+  },
+  {
+    "q": "A 'running thread, band or saddle' is prohibited for use as what?",
+    "choices": ["A. A vent connection", "B. A drainage fitting", "C. A water supply joint", "D. A support anchor"],
+    "a": 1
+  },
+  {
+    "q": "The disposal of sewage or human excrement is unlawful except through which approved system?",
+    "choices": ["A. Excreta and Storm Drainage Systems", "B. Open canals", "C. Direct ground discharge", "D. Non-watertight cesspools"],
+    "a": 0
+  },
+  {
+    "q": "Which section specifically mentions that structural members shall not be seriously weakened by cutting or notching?",
+    "choices": ["A. 301", "B. 310", "C. 314.3", "D. 315"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal IPS piping of 25 mm diameter should be supported every how many meters?",
+    "choices": ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"],
+    "a": 2
+  },
+  {
+    "q": "What is the recognized nominal diameter for a pipe size of 102 mm in Chapter 3?",
+    "choices": ["A. 3 inches", "B. 4 inches", "C. 5 inches", "D. 6 inches"],
+    "a": 1
+  },
+  {
+    "q": "Where a 2% slope is impracticable for a 102 mm pipe, what is the alternative slope mentioned in Section 302?",
+    "choices": ["A. 0.5% slope", "B. 1% slope", "C. 1.5% slope", "D. 3% slope"],
+    "a": 1
+  },
+  {
+    "q": "What is the maximum horizontal support interval for plastic pipe tubings larger than 38 mm diameter?",
+    "choices": ["A. 1.0 meter", "B. 1.8 meters", "C. At approved spacing", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "Section 309 states that piping and fixtures must not interfere with the normal use of what?",
+    "choices": ["A. Electrical panels", "B. Windows and doors", "C. Air conditioning ducts", "D. Roofing shingles"],
+    "a": 1
+  },
+  {
+    "q": "What type of branch is used when vertical drainage lines connect to horizontal drainage lines?",
+    "choices": ["A. 45-degree branches", "B. 60-degree branches", "C. Sanitary tee", "D. Tapped tee"],
+    "a": 0
+  },
+  {
+    "q": "According to Section 314.1, all pipes passing under cinders shall be protected from what?",
+    "choices": ["A. Thermal shock", "B. External corrosion", "C. High pressure", "D. Structural settlement"],
+    "a": 1
+  },
+  {
+    "q": "Horizontal copper tubing of 38 mm size is supported every 1.8 meters. What is the support interval for 51 mm size?",
+    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "Which of the following is NOT a constraint mentioned in Section 302 that allows a 1% slope?",
+    "choices": ["A. Excessive depth", "B. Geological features", "C. Budgetary constraints", "D. Existing adverse arrangements"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal drainage lines connecting to a vertical stack may use a 'combination wye and 1/8 bend'. What is another name for a 1/8 bend?",
+    "choices": ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree bend"],
+    "a": 1
+  },
+  {
+    "q": "Section 315.2.2 requires horizontal CI pipe supports to be adequate to maintain alignment and prevent what?",
+    "choices": ["A. Vibration", "B. Sagging", "C. Corrosion", "D. Sweating"],
+    "a": 1
+  },
+  {
+    "q": "What is the required thickness for a backfill layer according to Section 316.3?",
+    "choices": ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"],
+    "a": 1
+  },
+  {
+    "q": "If a horizontal cast iron pipe is 2 meters long, it should be supported at what maximum interval?",
+    "choices": ["A. 1.5 meters", "B. 3 meters", "C. 4.5 meters", "D. It must be supported at every joint"],
+    "a": 1
+  },
+  {
+    "q": "Vertical lead pipe must have what type of backup for its support?",
+    "choices": ["A. Plastic sleeve", "B. Rigid vertical back-up", "C. Concrete encasement", "D. Copper wire tie"],
+    "a": 1
+  },
+  {
+    "q": "In Section 312, the exception for rear buildings applies if the buildings are on what type of lot?",
+    "choices": ["A. Corner lot", "B. Interior lot", "C. Through lot", "D. Commercial lot"],
+    "a": 1
+  },
+  {
+    "q": "Which fitting is permitted to be a double hub if it is a sanitary tapped tee used on vertical lines?",
+    "choices": ["A. A fixture connection", "B. A building sewer connection", "C. A vent terminal", "D. A roof drain"],
+    "a": 0
+  },
+  {
+    "q": "What must be removed from the inside of a pipe after reaming?",
+    "choices": ["A. Oil and grease", "B. All chips", "C. The reaming tool", "D. The metal sleeve"],
+    "a": 1
+  },
+  {
+    "q": "Materials for hangers and anchors must have sufficient strength to maintain their proportional share of what?",
+    "choices": ["A. The building weight", "B. The weight of the pipe and its content", "C. The water pressure", "D. The soil load"],
+    "a": 1
+  },
+  {
+    "q": "Which section requires all plumbing fixtures to be connected to the drainage system?",
+    "choices": ["A. 301", "B. 304", "C. 310", "D. 315"],
+    "a": 1
+  },
+  {
+    "q": "If a public sewer is not available, where must excreta drainage piping be connected?",
+    "choices": ["A. To a public gutter", "B. To an approved Private Sewage Disposal System", "C. To the storm drain", "D. To a nearby river"],
+    "a": 1
+  },
+  {
+    "q": "Section 306.1 prohibits depositing which item that could cause damage to the public sewer?",
+    "choices": ["A. Oils and greases", "B. Poisonous liquids", "C. Solids", "D. All of the above"],
+    "a": 3
+  },
+  {
+    "q": "What is the rule for horizontal drainage lines connecting to other horizontal drainage lines?",
+    "choices": ["A. Use sanitary tees", "B. Use 45-degree wye branches", "C. Use tapped tees", "D. Use 60-degree branches"],
+    "a": 1
+  },
+  {
+    "q": "According to Section 313.2, building over an existing drainage system is permitted only if the materials are:",
+    "choices": ["A. Approved for use within a building", "B. Made of PVC", "C. Made of vitrified clay", "D. Encased in 2 inches of concrete"],
+    "a": 0
+  },
+  {
+    "q": "A 'side inlet quarter bend' is prohibited for use as what type of fitting?",
+    "choices": ["A. Vent fitting", "B. Drainage fitting", "C. Water supply fitting", "D. Gas fitting"],
+    "a": 1
+  },
+  {
+    "q": "Which section states that all designs and workmanships must conform with accepted engineering practices?",
+    "choices": ["A. 301", "B. 305", "C. 310.1", "D. 316"],
+    "a": 2
+  },
+  {
+    "q": "Horizontal IPS piping of 19 mm diameter is supported every 3.0 meters. What is the support for 38 mm size?",
+    "choices": ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"],
+    "a": 2
+  },
+  {
+    "q": "What is the maximum allowed length for a tunnel when plumbing pipes are being laid?",
+    "choices": ["A. 1.5 meters", "B. 2.4 meters", "C. 3.6 meters", "D. 5.0 meters"],
+    "a": 1
+  },
+  {
+    "q": "What is the clear height requirement for a tunnel above the pipe?",
+    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
+    "a": 1
+  },
+  {
+    "q": "No subdivision or sale of property shall decrease or impair which requirements of the Code?",
+    "choices": ["A. Area and clearance", "B. Access requirements", "C. Both A and B", "D. None of the above"],
+    "a": 2
+  },
+  {
+    "q": "Section 311.5 prohibits any fitting that obstructs flow in an amount greater than what?",
+    "choices": ["A. 10% of flow", "B. Normal frictional resistance to flow", "C. The capacity of a 76-mm pipe", "D. 5 gallons per minute"],
+    "a": 1
+  },
+  {
+    "q": "Piping shall not be located to interfere with the normal operation of which facilities?",
+    "choices": ["A. Windows and doors", "B. Elevators", "C. Lighting fixtures", "D. Fire alarms"],
+    "a": 0
+  },
+  {
+    "q": "What is the minimum support interval for vertical lead pipe?",
+    "choices": ["A. Each story", "B. 1.20 meters", "C. 3.0 meters", "D. 3.6 meters"],
+    "a": 1
+  },
+  {
+    "q": "Vertical iron pipe (IPS) is supported every other storey. What is the interval for vertical copper?",
+    "choices": ["A. Every storey", "B. Every 2 meters", "C. Every 3 meters", "D. Both A and C are correct"],
+    "a": 3
+  },
+  {
+    "q": "Horizontal cast iron pipe exceeding 1.5 meters can be supported every 3 meters. What is the rule for shorter pipes?",
+    "choices": ["A. Supported every 1.5 meters", "B. Supported every joint", "C. Supported at one end", "D. No support required"],
+    "a": 0
+  },
+  {
+    "q": "What is the support interval for horizontal copper tubing of 51 mm diameter?",
+    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
+    "a": 2
+  },
+  {
+    "q": "What is the support interval for horizontal copper tubing of 32 mm diameter?",
+    "choices": ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"],
+    "a": 1
+  },
+  {
+    "q": "According to Section 314.4, drainage piping must be at least how far below the finish ground surface?",
+    "choices": ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"],
+    "a": 1
+  },
+  {
+    "q": "What is the maximum length for a tunnel in a plumbing trench?",
+    "choices": ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"],
+    "a": 2
+  },
+  {
+    "q": "Which section covers the disposal of industrial wastes?",
+    "choices": ["A. 301", "B. 303", "C. 307", "D. 311"],
+    "a": 2
+  },
+  {
+    "q": "What is the standard slope for horizontal drainage pipes?",
+    "choices": ["A. 10 mm/m", "B. 20 mm/m", "C. 30 mm/m", "D. 40 mm/m"],
+    "a": 1
+  },
+  {
+    "q": "A vertical 60-degree branch is used only for which type of drainage connection?",
+    "choices": ["A. Horizontal-to-horizontal", "B. Vertical-to-horizontal", "C. Vertical position only", "D. Vent connections"],
+    "a": 2
+  },
+  {
+    "q": "What is the required slope for a 102 mm pipe if the standard 2% is impracticable?",
+    "choices": ["A. 0.5%", "B. 1%", "C. 1.5%", "D. 2.5%"],
+    "a": 1
+  }
     ],
     15: [
         { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
