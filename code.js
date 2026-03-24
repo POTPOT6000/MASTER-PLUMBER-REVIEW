@@ -2408,8 +2408,306 @@ export const codeDB = {
   }
     ],
     15: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+        {
+    "q": "The required manufacturing characteristic for plumbing fixtures ensuring they are dense, durable, and non-absorbent[cite: 3].",
+    "choices": ["A. Impervious surfaces", "B. Acid resistant", "C. Porous finish", "D. Smooth stoneware"],
+    "a": 0
+  },
+  {
+    "q": "The specific bowl type mandatory for water closets installed for public use[cite: 6].",
+    "choices": ["A. Round front", "B. Siphon jet", "C. Elongated bowl", "D. Washdown type"],
+    "a": 2
+  },
+  {
+    "q": "The required seat design for water closets in public facilities[cite: 6].",
+    "choices": ["A. Closed-front", "B. Open-front", "C. Padded", "D. Anti-bacterial"],
+    "a": 1
+  },
+  {
+    "q": "The minimum U.S. B&S Gauge number for galvanized sheet steel used in restaurant kitchen sinks[cite: 10].",
+    "choices": ["A. Gauge No. 12", "B. Gauge No. 14", "C. Gauge No. 16", "D. Gauge No. 20"],
+    "a": 2
+  },
+  {
+    "q": "The minimum thickness in millimeters for approved-type bonderized sheet steel sinks[cite: 10].",
+    "choices": ["A. 1.2 mm", "B. 2.0 mm", "C. 0.8 mm", "D. 1.6 mm"],
+    "a": 3
+  },
+  {
+    "q": "The mandatory surface property for all porcelain enamel on plumbing fixtures[cite: 5].",
+    "choices": ["A. Scratch resistant", "B. Acid resistant", "C. Heat tempered", "D. Impact proof"],
+    "a": 1
+  },
+  {
+    "q": "The specific side of the fixture trap where an overflow pipe must be connected[cite: 14].",
+    "choices": ["A. Discharge side", "B. Outlet side", "C. House or inlet side", "D. Vent side"],
+    "a": 2
+  },
+  {
+    "q": "One of the two primary fixtures specifically exempt from requiring a strainer[cite: 24].",
+    "choices": ["A. Water closets", "B. Kitchen sinks", "C. Slop sinks", "D. Bathtubs"],
+    "a": 0
+  },
+  {
+    "q": "The required waterway area for a strainer serving a shower drain[cite: 25].",
+    "choices": ["A. Double the tailpiece area", "B. Equivalent to the area of the tailpiece", "C. 50% of the trap area", "D. Minimum 38 mm diameter"],
+    "a": 1
+  },
+  {
+    "q": "The minimum dimension required for an access panel provided for concealed slip joint connections[cite: 27].",
+    "choices": ["A. 0.45 meter", "B. 0.2 meter", "C. 0.3 meter", "D. 0.6 meter"],
+    "a": 2
+  },
+  {
+    "q": "The minimum U.S. B&S Gauge for exposed seamless drawn brass fixture tailpieces[cite: 28].",
+    "choices": ["A. Gauge No. 16", "B. Gauge No. 20", "C. Gauge No. 22", "D. Gauge No. 18"],
+    "a": 1
+  },
+  {
+    "q": "The minimum thickness in millimeters for accessible seamless drawn brass continuous waste[cite: 28].",
+    "choices": ["A. 1.0 mm", "B. 1.6 mm", "C. 0.5 mm", "D. 0.8 mm"],
+    "a": 3
+  },
+  {
+    "q": "The minimum outside diameter (O.D.) for tailpieces serving sinks, dishwashers, and laundry tubs[cite: 29, 30].",
+    "choices": ["A. 32 mm", "B. 38 mm", "C. 44 mm", "D. 51 mm"],
+    "a": 1
+  },
+  {
+    "q": "The minimum outside diameter (O.D.) for tailpieces serving lavatories and drinking fountains[cite: 31].",
+    "choices": ["A. 38 mm", "B. 25 mm", "C. 32 mm", "D. 40 mm"],
+    "a": 2
+  },
+  {
+    "q": "The material strictly prohibited for use in urinal tailpieces or traps[cite: 31].",
+    "choices": ["A. PVC or ABS", "B. Cast iron", "C. Brass or copper", "D. Stainless steel"],
+    "a": 2
+  },
+  {
+    "q": "The type of branch fitting required in all continuous wastes receiving discharge from food waste disposal units[cite: 33].",
+    "choices": ["A. Sanitary tee", "B. Tapped tee", "C. Wye or directional-type", "D. Double hub"],
+    "a": 2
+  },
+  {
+    "q": "The specific connection point prohibited for a dishwasher drain[cite: 34].",
+    "choices": ["A. Floor drain", "B. Standpipe", "C. Sink tailpiece on the discharge side of a food waste disposal unit", "D. Indirect waste receptor"],
+    "a": 2
+  },
+  {
+    "q": "A prohibited characteristic for water closets involving their seal or internal space[cite: 38].",
+    "choices": ["A. Visible seal", "B. Invisible seal or unventilated space", "C. Deep trap seal", "D. Siphon action"],
+    "a": 1
+  },
+  {
+    "q": "The specific type of urinal that is strictly prohibited by the Code[cite: 39].",
+    "choices": ["A. Trough urinals", "B. Pedestal urinals", "C. Stall urinals", "D. Wall-hung urinals"],
+    "a": 0
+  },
+  {
+    "q": "The prohibited location for the installation of drinking fountains[cite: 40].",
+    "choices": ["A. Hallways", "B. Inside public toilet rooms", "C. School gyms", "D. Office lobbies"],
+    "a": 1
+  },
+  {
+    "q": "One of the prohibited materials for fixed domestic washtrays or sinks in buildings designed for human habitation[cite: 41].",
+    "choices": ["A. Porcelain", "B. Stainless steel", "C. Concrete or cement", "D. Vitreous china"],
+    "a": 2
+  },
+  {
+    "q": "The prohibited type of bathtub lining mentioned in Section 405.2[cite: 42].",
+    "choices": ["A. Acrylic-lined", "B. Fiberglass-lined", "C. Sheet metal lined wooden bathtubs", "D. Ceramic-tiled"],
+    "a": 2
+  },
+  {
+    "q": "The official whose approval is required before installing a dry or chemical closet (toilet) in a habitation[cite: 43].",
+    "choices": ["A. Building Inspector", "B. Master Plumber", "C. Health Officer or Administrative Authority", "D. Civil Engineer"],
+    "a": 2
+  },
+  {
+    "q": "Construction features like ornamental lily ponds connected to potable water must be protected from this[cite: 49].",
+    "choices": ["A. Thermal expansion", "B. Back-siphonage", "C. Excessive pressure", "D. Sedimentation"],
+    "a": 1
+  },
+  {
+    "q": "The mandatory discharge location for a 'Sacrarium' cupsink at a church altar[cite: 51].",
+    "choices": ["A. Sanitary drainage system", "B. Septic tank", "C. Direct to the ground", "D. Storm drain"],
+    "a": 2
+  },
+  {
+    "q": "The required alignment for all pipes running from fixtures where practical[cite: 57].",
+    "choices": ["A. Perpendicular to the floor", "B. At a 45-degree angle", "C. Parallel and close to the nearest wall", "D. Hidden within the ceiling"],
+    "a": 2
+  },
+  {
+    "q": "The necessary condition for a joint where a fixture comes in contact with the wall or floor[cite: 59].",
+    "choices": ["A. Air-tight", "B. Watertight", "C. Flexible", "D. Visible"],
+    "a": 1
+  },
+  {
+    "q": "The required materials for screws or expansion bolts used to secure floor-mounted fixtures[cite: 61].",
+    "choices": ["A. Galvanized steel", "B. Aluminum", "C. Copper, brass or corrosion-resistant material", "D. Plastic-coated iron"],
+    "a": 2
+  },
+  {
+    "q": "The mechanical support required for wall-hung fixtures to prevent bending or pullout strain[cite: 65].",
+    "choices": ["A. Plastic anchors", "B. Metal supporting members or chairs", "C. Wooden blocking", "D. Concrete epoxy"],
+    "a": 1
+  },
+  {
+    "q": "The minimum distance from the center of a water closet to any side wall or obstruction[cite: 68].",
+    "choices": ["A. 0.3 meter", "B. 0.375 meter", "C. 0.45 meter", "D. 0.5 meter"],
+    "a": 1
+  },
+  {
+    "q": "The minimum center-to-center distance between two adjacent water closets[cite: 68].",
+    "choices": ["A. 0.6 meter", "B. 0.7 meter", "C. 0.75 meter", "D. 0.9 meter"],
+    "a": 2
+  },
+  {
+    "q": "The minimum distance from the center of a urinal to any side wall or partition[cite: 68].",
+    "choices": ["A. 0.25 meter", "B. 0.3 meter", "C. 0.375 meter", "D. 0.4 meter"],
+    "a": 1
+  },
+  {
+    "q": "The minimum center-to-center distance between two adjacent urinals[cite: 68].",
+    "choices": ["A. 0.5 meter", "B. 0.6 meter", "C. 0.75 meter", "D. 0.8 meter"],
+    "a": 1
+  },
+  {
+    "q": "The required setting condition for all fixtures with reference to adjacent walls[cite: 67].",
+    "choices": ["A. Flush", "B. Recessed", "C. Level and in proper alignment", "D. Tilted for drainage"],
+    "a": 2
+  },
+  {
+    "q": "The function that supply lines or fittings for every plumbing fixture must prevent[cite: 69].",
+    "choices": ["A. Backflow", "B. Cavitation", "C. Water hammer", "D. Turbulence"],
+    "a": 0
+  },
+  {
+    "q": "The required material property for water closet seats[cite: 7].",
+    "choices": ["A. Porous", "B. Non-absorbent", "C. Flexible", "D. Metallic"],
+    "a": 1
+  },
+  {
+    "q": "Special-use fixtures may be made of this material specifically suited for chemical resistance[cite: 9].",
+    "choices": ["A. Plywood", "B. Soapstone or chemical stoneware", "C. Uncoated iron", "D. Compressed fiber"],
+    "a": 1
+  },
+  {
+    "q": "The condition of water inside an overflow way when a fixture is empty[cite: 13].",
+    "choices": ["A. Must remain half-full", "B. Cannot remain inside the overflow way", "C. Acts as a secondary seal", "D. Discharges to the vent"],
+    "a": 1
+  },
+  {
+    "q": "The required thickness of a sheet metal plumbing fixture must be sufficient to accomplish this[cite: 11].",
+    "choices": ["A. Soundproofing", "B. Thermal insulation", "C. Intended purposes (adequately designed/braced)", "D. Aesthetic appeal"],
+    "a": 2
+  },
+  {
+    "q": "Overflows from water closet flush tanks are prohibited from connecting to this[cite: 15].",
+    "choices": ["A. The bowl", "B. Any other part of the drainage system", "C. The water tank", "D. The supply line"],
+    "a": 1
+  },
+  {
+    "q": "A strainer is NOT required for which of the following urinals[cite: 24].",
+    "choices": ["A. Siphon action washdown or blowout", "B. Stall type", "C. Pedestal type", "D. Trough type"],
+    "a": 0
+  },
+  {
+    "q": "The sum of all the areas of the perforations of a shower strainer must equal this[cite: 26].",
+    "choices": ["A. Half the trap area", "B. The outlet area", "C. 25 mm diameter", "D. Double the vent size"],
+    "a": 1
+  },
+  {
+    "q": "Continuous waste and fixture tailpieces shall be constructed from materials specified in which Table[cite: 28].",
+    "choices": ["A. Table 7-1", "B. Table 14-4", "C. Table 4-2", "D. Table 10-1"],
+    "a": 1
+  },
+  {
+    "q": "Brass or copper cannot be used for the trap of which fixture[cite: 31].",
+    "choices": ["A. Bathtub", "B. Kitchen sink", "C. Urinal", "D. Lavatory"],
+    "a": 2
+  },
+  {
+    "q": "A dishwasher drain connection to a sink tailpiece is prohibited if it is on this side of a food waste disposal unit[cite: 34].",
+    "choices": ["A. Intake side", "B. Supply side", "C. Discharge side", "D. Vent side"],
+    "a": 2
+  },
+  {
+    "q": "The prohibited feature of a water closet regarding the washing of its walls[cite: 38].",
+    "choices": ["A. Manual flush", "B. Walls not thoroughly washed out at each discharge", "C. Dual flush system", "D. Rimless design"],
+    "a": 1
+  },
+  {
+    "q": "Drinking fountains are prohibited inside which specific room[cite: 40].",
+    "choices": ["A. Cafeteria", "B. Public toilet rooms", "C. Laboratory", "D. Bedroom"],
+    "a": 1
+  },
+  {
+    "q": "Which material for a domestic washtray is prohibited in human habitations[cite: 41].",
+    "choices": ["A. Stainless steel", "B. Tile", "C. Plastic", "D. Copper"],
+    "a": 1
+  },
+  {
+    "q": "Baptistries and lily ponds must be protected from back-siphonage when connected to this[cite: 49].",
+    "choices": ["A. Storm drainage", "B. Graywater system", "C. Potable water supply lines", "D. Irrigation lines"],
+    "a": 2
+  },
+  {
+    "q": "The discharge of a Baptistries font outlet must go here[cite: 51].",
+    "choices": ["A. Sanitary sewer", "B. Vent stack", "C. Direct to the ground", "D. Grease interceptor"],
+    "a": 2
+  },
+  {
+    "q": "Plumbing fixtures must be installed to provide this for repair and cleaning[cite: 56].",
+    "choices": ["A. Concealment", "B. Easy access", "C. Aesthetic slope", "D. Permanent sealing"],
+    "a": 1
+  },
+  {
+    "q": "The minimum clearance between the center of a bidet and an adjacent side wall[cite: 68].",
+    "choices": ["A. 0.3 meter", "B. 0.375 meter", "C. 0.5 meter", "D. 0.6 meter"],
+    "a": 1
+  },
+  {
+    "q": "The minimum center-to-center clearance between a water closet and a bidet[cite: 68].",
+    "choices": ["A. 0.6 meter", "B. 0.7 meter", "C. 0.75 meter", "D. 1.0 meter"],
+    "a": 2
+  },
+  {
+    "q": "The center-to-center distance required between two urinals[cite: 68].",
+    "choices": ["A. 0.3 meter", "B. 0.45 meter", "C. 0.6 meter", "D. 0.75 meter"],
+    "a": 2
+  },
+  {
+    "q": "Fixtures must be set in proper alignment with reference to these[cite: 67].",
+    "choices": ["A. Ceiling height", "B. Adjacent walls", "C. Floor drains", "D. Lighting fixtures"],
+    "a": 1
+  },
+  {
+    "q": "The minimum outside diameter for a urinal tailpiece[cite: 29, 30].",
+    "choices": ["A. 32 mm", "B. 38 mm", "C. 51 mm", "D. 76 mm"],
+    "a": 1
+  },
+  {
+    "q": "What type of screws/bolts must secure water closet and urinal flush tanks[cite: 66].",
+    "choices": ["A. Black iron", "B. Approved non-corrosive", "C. Wood screws", "D. Plastic toggles"],
+    "a": 1
+  },
+  {
+    "q": "Where a fixture meets the floor, the joint must be[cite: 59].",
+    "choices": ["A. Bolted only", "B. Made watertight", "C. Left open for ventilation", "D. Recessed"],
+    "a": 1
+  },
+  {
+    "q": "Specialty fixtures requiring water supply and waste connections must be submitted for approval to[cite: 53].",
+    "choices": ["A. The Owner", "B. The Contractor", "C. The Administrative Authority", "D. The Architect"],
+    "a": 2
+  },
+  {
+    "q": "What kind of materials should plumbing fixtures be made of to avoid fouling[cite: 3].",
+    "choices": ["A. Absorbent", "B. Non-absorbent", "C. Corrosive", "D. Textured"],
+    "a": 1
+  }
     ],
     16: [
         { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
