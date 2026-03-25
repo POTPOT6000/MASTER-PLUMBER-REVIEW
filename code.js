@@ -1,892 +1,723 @@
 export const codeDB = {
-    1: [
-        { q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces and shall be located in ventilated enclosures.", choices: ["A. Principle No. 1", "B. Principle No. 5", "C. Principle No. 7", "D. Principle No. 9"], a: 2 },
-    { q: "What type of cleanout plug shall be installed in places prone to passing personnel or vehicles?", choices: ["A. Raised head cleanout plug", "B. Countersunk cleanout plug", "C. Hubless blind plug", "D. None of these"], a: 1 },
-    { q: "A type of septic tank that is prohibited.", choices: ["A. Steel", "B. Wooden", "C. Plastic", "D. Concrete"], a: 1 },
-    { q: "Polyethylene pipe is black and is used for cold water and sprinkler system. How is polyethylene pipe represented?", choices: ["A. PPE", "B. PPR", "C. PVC", "D. PE"], a: 3 },
-    { q: "Who was the President of the Republic of the Philippines who signed the 'Plumbing Law of the Philippines'?", choices: ["A. Pres. Ramon Magsaysay", "B. Pres. Elpidio Quirino", "C. Pres. Ferdinand Marcos", "D. Pres. Manuel Roxas"], a: 0 },
-    { q: "What type of concealed connection of fixtures shall be provided with access panel or utility at least 0.3 meter in its dimension for easy inspection and repair?", choices: ["A. Flanged", "B. Hubless", "C. Slip joint", "D. Ball and socket"], a: 2 },
-    { q: "A ______ is a drainage pipe that passes through at least one story as a drain pipe, including any horizontal offsets.", choices: ["A. Sanitary sewer", "B. Soil or waste stack", "C. Spigot", "D. Soil pipe"], a: 1 },
-    { q: "A non-watertight lined excavation in the ground which receives the discharge of a sanitary drainage system permitting the liquid to seep through the bottom and sides.", choices: ["A. privy", "B. cesspool", "C. disposal field", "D. seepage pit"], a: 1 },
-    { q: "Slaughter houses and packing establishments shall be connected to and shall drain or discharge through a ______ of an approved design.", choices: ["A. drainage system", "B. screening device", "C. grease interceptor", "D. grease trap"], a: 1 },
-    { q: "Joints in copper pans or liners shall be ______.", choices: ["A. 6.8 kg asphalt felt", "B. flared or soldered", "C. soldered or brazed", "D. burned"], a: 3 },
-    { q: "Septic tank should be at least ______ meters away from any source of water supply wells.", choices: ["A. 10", "B. 15", "C. 20", "D. 30"], a: 1 },
-    { q: "Solder and fluxes with lead content which exceeds ______ are prohibited in the piping systems used to conveyed potable water.", choices: ["A. 0.002", "B. 0.005", "C. 0.008", "D. 0.001"], a: 0 },
-    { q: "Horizontal drainage lines shall be run in practical alignment and at a uniform slope of not less than ______.", choices: ["A. 1%", "B. 2%", "C. 3%", "D. 4%"], a: 1 },
-    { q: "The minimum size of a water service pipe from the street main to the building shall be ______.", choices: ["A. 1/2\"", "B. 3/4\"", "C. 1\"", "D. 1 1/4\""], a: 1 },
-    { q: "A vertical pipe which conveys only wastewater or liquid waste free of fecal matter.", choices: ["A. Soil stack", "B. Waste stack", "C. Vent stack", "D. Riser"], a: 1 },
-    { q: "What is the minimum age requirement for an applicant for the Master Plumber Board Exam?", choices: ["A. 18", "B. 20", "C. 21", "D. 25"], a: 2 },
-    { q: "Every building having a plumbing fixture installed and intended for human habitation shall have a connection to a ______.", choices: ["A. Septic tank", "B. Public sewer", "C. Cesspool", "D. Sump"], a: 1 },
-    { q: "The maximum length of a trap arm for a 2-inch pipe is ______.", choices: ["A. 1.5 m", "B. 0.6 m", "C. 1.0 m", "D. 1.8 m"], a: 0 },
-    { q: "What is the minimum diameter of a vent pipe?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 1\""], a: 0 },
-    { q: "A fitting or device that provides a liquid seal to prevent the emission of sewer gases.", choices: ["A. Vent", "B. Trap", "C. Cleanout", "D. Valve"], a: 1 },
-    { q: "What is the standard length of a cast iron soil pipe?", choices: ["A. 1.5 m", "B. 3.0 m", "C. 5.0 ft", "D. Both A and C"], a: 3 },
-    { q: "The overflow pipe from a water supply tank shall be provided with a ______.", choices: ["A. Check valve", "B. Screen", "C. Gate valve", "D. Trap"], a: 1 },
-    { q: "A device installed in a drainage system to prevent reverse flow.", choices: ["A. Check valve", "B. Backwater valve", "C. Globe valve", "D. Angle valve"], a: 1 },
-    { q: "The minimum air gap for a lavatory is ______.", choices: ["A. 1 inch", "B. 2 inches", "C. 1.5 inches", "D. 3 inches"], a: 0 },
-    { q: "What type of pipe is prohibited for use in a building's vent system?", choices: ["A. PVC", "B. GI", "C. Lead", "D. CISP"], a: 2 },
-    { q: "What is the minimum clearance in front of a water closet?", choices: ["A. 30 cm", "B. 60 cm", "C. 45 cm", "D. 75 cm"], a: 1 },
-    { q: "What is the minimum distance between the wall and the center of the water closet?", choices: ["A. 30 cm", "B. 37.5 cm", "C. 45 cm", "D. 50 cm"], a: 1 },
-    { q: "The minimum size of a shower drain is ______.", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
-    { q: "A water system that provides water for fire protection and domestic use.", choices: ["A. Combined system", "B. Separate system", "C. Direct system", "D. Dual system"], a: 0 },
-    { q: "The minimum slope for a 4-inch horizontal drainage pipe.", choices: ["A. 1%", "B. 2%", "C. 3%", "D. 4%"], a: 1 },
-    { q: "What is the standard height of a laundry tub from the floor?", choices: ["A. 70 cm", "B. 80 cm", "C. 85 cm", "D. 90 cm"], a: 2 },
-    { q: "A vent that serves a single fixture trap.", choices: ["A. Common vent", "B. Individual vent", "C. Circuit vent", "D. Loop vent"], a: 1 },
-    { q: "The part of the plumbing system that extends outside the building wall.", choices: ["A. Building drain", "B. Building sewer", "C. Private sewer", "D. Main"], a: 1 },
-    { q: "What is the minimum depth of a trap seal?", choices: ["A. 25 mm", "B. 51 mm", "C. 102 mm", "D. 75 mm"], a: 1 },
-    { q: "What is the maximum depth of a trap seal?", choices: ["A. 51 mm", "B. 102 mm", "C. 150 mm", "D. 200 mm"], a: 1 },
-    { q: "A valve used to control the flow of water in one direction only.", choices: ["A. Gate valve", "B. Globe valve", "C. Check valve", "D. Ball valve"], a: 2 },
-    { q: "What is the standard diameter of a flush valve for a urinal?", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 1 1/4\""], a: 0 },
-    { q: "What is the standard diameter of a flush valve for a water closet?", choices: ["A. 3/4\"", "B. 1\"", "C. 1 1/4\"", "D. 1 1/2\""], a: 1 },
-    { q: "The minimum distance from the trap to the vent for a 1 1/2 inch pipe.", choices: ["A. 0.6 m", "B. 1.1 m", "C. 1.5 m", "D. 1.8 m"], a: 1 },
-    { q: "What is the standard height of a wall-hung urinal?", choices: ["A. 50 cm", "B. 60 cm", "C. 70 cm", "D. 45 cm"], a: 1 },
-    { q: "The device used to increase water pressure in a building.", choices: ["A. Booster pump", "B. Sump pump", "C. Ejector pump", "D. Jet pump"], a: 0 },
-    { q: "What is the minimum diameter of a cleanout for a 2-inch pipe?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
-    { q: "The vertical distance from the floor to the flood level rim of a lavatory.", choices: ["A. 75 cm", "B. 80 cm", "C. 85 cm", "D. 90 cm"], a: 1 },
-    { q: "What is the purpose of a P-trap?", choices: ["A. To prevent odors", "B. To catch debris", "C. To stop backflow", "D. To vent air"], a: 0 },
-    { q: "A pipe that carries rainwater from the roof to the ground.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Leader", "D. Vent"], a: 2 },
-    { q: "What is the minimum diameter of a roof leader for a small residential house?", choices: ["A. 2\"", "B. 3\"", "C. 4\"", "D. 1 1/2\""], a: 1 },
-    { q: "The process of joining two copper pipes using heat and filler metal.", choices: ["A. Welding", "B. Soldering", "C. Brazing", "D. Threading"], a: 1 },
-    { q: "What is the standard color for a vent pipe?", choices: ["A. Yellow", "B. Green", "C. Gray", "D. White"], a: 2 },
-    { q: "The minimum size of a vent for a septic tank.", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
-    { q: "What is the standard height of a water meter from the ground?", choices: ["A. 30 cm", "B. 45 cm", "C. 60 cm", "D. 15 cm"], a: 0 },
-    { q: "A tank used to store water for fire protection.", choices: ["A. Cistern", "B. Reservoir", "C. Fire tank", "D. Standpipe"], a: 0 },
-    { q: "What is the minimum diameter of a water main for a subdivision?", choices: ["A. 4\"", "B. 6\"", "C. 8\"", "D. 10\""], a: 1 },
-    { q: "The device used to prevent water from entering a building from a flooded sewer.", choices: ["A. Check valve", "B. Backwater valve", "C. Gate valve", "D. Ball valve"], a: 1 },
-    { q: "What is the standard diameter of a kitchen sink waste pipe?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 1 1/4\""], a: 0 },
-    { q: "The minimum distance between two cleanouts on a straight horizontal line.", choices: ["A. 15 m", "B. 30 m", "C. 45 m", "D. 10 m"], a: 1 },
-    { q: "What is the standard height of a bidet from the floor?", choices: ["A. 35 cm", "B. 40 cm", "C. 45 cm", "D. 50 cm"], a: 1 },
-    { q: "The device used to mix hot and cold water in a shower.", choices: ["A. Mixing valve", "B. Diverter", "C. Faucet", "D. Aerator"], a: 0 },
-    { q: "What is the minimum diameter of a soil stack for a 5-story building?", choices: ["A. 3\"", "B. 4\"", "C. 5\"", "D. 6\""], a: 1 },
-    { q: "The process of testing a plumbing system with air pressure.", choices: ["A. Water test", "B. Air test", "C. Smoke test", "D. Peppermint test"], a: 1 },
-    { q: "What is the minimum size of a vent for a kitchen sink?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 1\""], a: 1 },
-    { q: "The part of the trap that holds the water seal.", choices: ["A. Dip", "B. Crown weir", "C. Trap arm", "D. Inlet"], a: 0 },
-    { q: "What is the standard height of a toilet seat from the floor?", choices: ["A. 40 cm", "B. 45 cm", "C. 50 cm", "D. 35 cm"], a: 0 },
-    { q: "A pipe that carries water to a single fixture.", choices: ["A. Branch", "B. Riser", "C. Main", "D. Fixture supply"], a: 3 },
-    { q: "What is the minimum diameter of a bathtub waste pipe?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 1 1/4\"", "D. 3\""], a: 0 },
-    { q: "The process of removing air from a water pipe.", choices: ["A. Bleeding", "B. Venting", "C. Purging", "D. Flushing"], a: 0 },
-    { q: "What is the standard height of a drinking fountain for children?", choices: ["A. 60 cm", "B. 75 cm", "C. 90 cm", "D. 50 cm"], a: 1 },
-    { q: "A valve used to control the volume of water flow.", choices: ["A. Gate valve", "B. Globe valve", "C. Ball valve", "D. Butterfly valve"], a: 1 },
-    { q: "What is the minimum size of a vent for a shower?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 1 1/4\"", "D. 3\""], a: 0 },
-    { q: "The part of the plumbing system that collects rainwater from the ground.", choices: ["A. Storm drain", "B. Sewer", "C. Catch basin", "D. French drain"], a: 0 },
-    { q: "What is the standard length of a galvanized iron pipe?", choices: ["A. 6.0 m", "B. 3.0 m", "C. 5.0 m", "D. 4.0 m"], a: 0 },
-    { q: "The device used to protect a water heater from excessive temperature.", choices: ["A. Pressure relief valve", "B. Temperature relief valve", "C. T&P valve", "D. Check valve"], a: 2 },
-    { q: "What is the minimum diameter of a vent for a water closet?", choices: ["A. 2\"", "B. 1 1/2\"", "C. 3\"", "D. 4\""], a: 0 },
-    { q: "The process of joining two plastic pipes using a chemical solvent.", choices: ["A. Welding", "B. Brazing", "C. Solvent welding", "D. Gluing"], a: 2 },
-    { q: "What is the standard height of a garden bibb from the ground?", choices: ["A. 30 cm", "B. 45 cm", "C. 60 cm", "D. 15 cm"], a: 1 },
-    { q: "A tank used to store rainwater for domestic use.", choices: ["A. Cistern", "B. Septic tank", "C. Sump", "D. Reservoir"], a: 0 },
-    { q: "What is the minimum size of a house sewer for a large building?", choices: ["A. 4\"", "B. 6\"", "C. 8\"", "D. 10\""], a: 1 },
-    { q: "The part of the trap that prevents water from being siphoned out.", choices: ["A. Vent", "B. Dip", "C. Crown weir", "D. Trap arm"], a: 0 },
-    { q: "What is the standard height of a sink faucet from the floor?", choices: ["A. 90 cm", "B. 100 cm", "C. 110 cm", "D. 120 cm"], a: 1 },
-    { q: "A pipe that carries steam from a boiler.", choices: ["A. Steam line", "B. Condensate line", "C. Riser", "D. Main"], a: 0 },
-    { q: "What is the minimum diameter of a vent for a bathtub?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 1 },
-    { q: "The process of testing a plumbing system with water pressure.", choices: ["A. Water test", "B. Air test", "C. Smoke test", "D. Peppermint test"], a: 0 },
-    { q: "What is the standard height of a mop sink from the floor?", choices: ["A. 15 cm", "B. 30 cm", "C. 45 cm", "D. 0 cm"], a: 0 },
-    { q: "A valve used to divert water from a tub to a shower head.", choices: ["A. Diverter", "B. Mixing valve", "C. Gate valve", "D. Globe valve"], a: 0 },
-    { q: "What is the minimum size of a vent for a bidet?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 0 },
-    { q: "The part of the plumbing system that carries waste to a septic tank.", choices: ["A. Building sewer", "B. Building drain", "C. Main", "D. Branch"], a: 0 },
-    { q: "What is the standard height of a urinal flush valve handle?", choices: ["A. 100 cm", "B. 110 cm", "C. 120 cm", "D. 90 cm"], a: 1 },
-    { q: "A pipe that carries hot water from a heater to fixtures.", choices: ["A. Hot water line", "B. Cold water line", "C. Riser", "D. Main"], a: 0 },
-    { q: "What is the minimum diameter of a vent for a floor drain?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
-    { q: "The process of removing scale from a water pipe.", choices: ["A. Descaling", "B. Flushing", "C. Purging", "D. Cleaning"], a: 0 },
-    { q: "What is the standard height of a kitchen countertop?", choices: ["A. 80 cm", "B. 85 cm", "C. 90 cm", "D. 95 cm"], a: 2 },
-    { q: "A valve used to control the flow of gas.", choices: ["A. Gas cock", "B. Gate valve", "C. Ball valve", "D. Globe valve"], a: 0 },
-    { q: "What is the minimum size of a vent for a laundry tub?", choices: ["A. 1 1/4\"", "B. 1 1/2\"", "C. 2\"", "D. 3\""], a: 1 },
-    { q: "The part of the plumbing system that carries waste to a public sewer.", choices: ["A. House sewer", "B. House drain", "C. Main", "D. Lateral"], a: 0 },
-    { q: "What is the standard height of a shower head for tall people?", choices: ["A. 200 cm", "B. 210 cm", "C. 220 cm", "D. 190 cm"], a: 1 },
-    { q: "A pipe that carries compressed air.", choices: ["A. Air line", "B. Vent", "C. Stack", "D. Riser"], a: 0 },
-    { q: "What is the minimum diameter of a vent for a slop sink?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 3\"", "D. 4\""], a: 1 },
-    { q: "The process of insulating a water pipe to prevent freezing.", choices: ["A. Lagging", "B. Wrapping", "C. Coating", "D. Covering"], a: 0 },
-    { q: "What is the standard height of a bathroom vanity?", choices: ["A. 75 cm", "B. 80 cm", "C. 85 cm", "D. 90 cm"], a: 1 },
-    { q: "A valve used to control the flow of oil.", choices: ["A. Gate valve", "B. Globe valve", "C. Needle valve", "D. Ball valve"], a: 2 },
-    { q: "What is the minimum size of a vent for a urinal?", choices: ["A. 1 1/2\"", "B. 2\"", "C. 1 1/4\"", "D. 3\""], a: 0 }
-        
-    ],
-    2: [
-        { q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces and shall be located in ventilated enclosures.", choices: ["A. Principle No. 1", "B. Principle No. 5", "C. Principle No. 7", "D. Principle No. 9"], a: 0 },
-    { q: "What type of cleanout plug shall be installed in places prone to passing personnel or vehicles?", choices: ["A. Raised head cleanout plug", "B. Countersunk cleanout plug", "C. Hubless blind plug", "D. None of these"], a: 1 },
-    { q: "A type of septic tank that is prohibited.", choices: ["A. Steel", "B. Wooden", "C. Plastic", "D. Concrete"], a: 1 },
-    { q: "Polyetylene pipe is black and is used for cold water and sprinkler system. Diameter sizes range from 1/2 to 2\". How is polyethylene pipe represented?", choices: ["A. PPE", "B. PPR", "C. PVC", "D. PE"], a: 3 },
-    { q: "Who was the President of the Republic of the Philippines who signed the 'Plumbing Law of the Philippines'?", choices: ["A. Pres. Ramon Magsaysay", "B. Pres. Elpidio Quirino", "C. Pres. Ferdinand Marcos", "D. Pres. Diosdado Macapagal"], a: 0 },
-    { q: "If it is impractical to install horizontal drainage piping at the minimum slope, what is the least required slope allowed?", choices: ["A. 0.5%", "B. 1.0%", "C. 1.5%", "D. 2.0%"], a: 1 },
-    { q: "What do you call the sum of the quotients of the individual sewers and their velocity when flowing full?", choices: ["A. Inlet time", "B. Elapsed time", "C. Time of concentration", "D. Running time"], a: 2 },
-    { q: "What tube is plastic, colored black, oval shaped, and used as water service connection from the main to the meter?", choices: ["A. Polybutylene pipe", "B. Polyethylene pipe", "C. ABS pipe", "D. PVC pipe"], a: 1 },
-    { q: "What is the fixture that is directly connected to drainage system?", choices: ["A. Water closet", "B. Drinking fountain", "C. Soda fountain", "D. Lavatory"], a: 0 },
-    { q: "Who is the present designated chairman of unification and integration of MASTER PLUMBING profession?", choices: ["A. Engr. Camilet", "B. Engr. Mangila", "C. Engr. Simbulan", "D. Arch. Abellano"], a: 1 },
-    { q: "A connection to the public sewer, or private sewage disposal system, is required for:", choices: ["A. Buildings with plumbing fixture", "B. Buildings with or without plumbing fixtures", "C. Buildings with emergency drain system", "D. Buildings with storm drain system"], a: 0 },
-    { q: "How many equivalent water supply fixtures units has flush tank type of water closet that is for private use?", choices: ["A. 2", "B. 3", "C. 4", "D. 5"], a: 1 },
-    { q: "What type of concealed connection of fixtures shall be provided with access panel at least 0.3m for easy inspection?", choices: ["A. Ball and socket", "B. Hubless", "C. Slip joint", "D. Flanged"], a: 2 },
-    { q: "Fee for one unit of plumbing in plumbing permit application.", choices: ["A. P 5.00", "B. P 15.00", "C. P 12.00", "D. P 10.00"], a: 0 },
-    { q: "Number of years of experience required to become an appointed member of the board of Master Plumber.", choices: ["A. 2", "B. 3", "C. 5", "D. 10"], a: 3 },
-    { q: "Minimum supply pipe for lavatory using PPR PN16 is:", choices: ["A. 25mmф", "B. 20 mm", "C. 19 mm", "D. 15 mm"], a: 3 },
-    { q: "First school to offer Plumbing Engineering course.", choices: ["A. University of the Philippines", "B. University of Santo Tomas", "C. Feati University", "D. Adamson University"], a: 2 },
-    { q: "Upon issuance of plumbing permit, plumbing installation should commence within how many days?", choices: ["A. 30", "B. 60", "C. 120", "D. 365"], a: 3 },
-    { q: "What is the maximum vertical support of plastic pipes?", choices: ["A. 1.0 m", "B. 1.2 m", "C. 1.5 m", "D. 2.0 m"], a: 0 },
-    { q: "B & S as pipe ends stands for:", choices: ["A. Brown and Sharpe", "B. Ball and Seal", "C. Bell and Spigot", "D. Branch and Socket"], a: 2 },
-    { q: "Faucets and diverters shall be connected so that the cold water supply is located at:", choices: ["A. Left side", "B. Right side", "C. Either side", "D. Both sides"], a: 1 },
-    { q: "Which of the following shall not be installed inside the public toilet rooms?", choices: ["A. Bidet", "B. Waterless urinal", "C. Lavatory", "D. Drinking fountain"], a: 3 },
-    { q: "What is the color code for drain pipes manufactured with toxic components?", choices: ["A. Orange, gray and white", "B. Gray, orange and brown", "C. Gray, blue and green", "D. Brown, green and yellow"], a: 1 },
-    { q: "For a vertical drainage line, what is the allowed degree of the branch to be used?", choices: ["A. 60", "B. 45", "C. 30", "D. 10"], a: 1 },
-    { q: "What is the minimum diameter of pump discharge from a sump having a water closet connected thereto?", choices: ["A. 54.8mm", "B. 56.8mm", "C. 52.8mm", "D. 50.8mm"], a: 3 },
-    { q: "Except for repairs, which joints are prohibited on new building sewers?", choices: ["A. Bell and spigot", "B. Cement mortar joints", "C. PVC coupling", "D. Teflon tape"], a: 1 },
-    { q: "What sewage includes waste from metal and chemical plants, oil refineries, and breweries?", choices: ["A. Residential", "B. Institutional", "C. Industrial", "D. Commercial"], a: 2 },
-    { q: "Minimum trap and trap arm size for lavatory as per plumbing code.", choices: ["A. 63mm", "B. 51mm", "C. 38mmφ", "D. 32mm"], a: 3 },
-    { q: "The drain sizing approach, when assigning DFU values, begins with:", choices: ["A. The building drain", "B. The building drainage", "C. The most upstream fixtures", "D. The building sewer"], a: 2 },
-    { q: "Before offsetting horizontally to join the vent, vent shall rise vertically at least 152 mm above the:", choices: ["A. Fixture drain", "B. Tailpiece", "C. Trap weir", "D. Flood level rim"], a: 3 },
-    { q: "Modern plumbing requires coordination between Master Plumbers, Architects, and Engineers to be:", choices: ["A. Sufficient", "B. Resilient", "C. Efficient and economical", "D. Advanced"], a: 2 },
-    { q: "All water supply, drainage, venting system and all fixtures and their traps.", choices: ["A. Plumbing system", "B. Piping system", "C. Sewer system", "D. Sanitary system"], a: 0 },
-    { q: "Injuring falsely the reputation of another Registered Master Plumber is a violation of:", choices: ["A. Code of Ethics No. 2", "B. Code of Ethics No. 3", "C. Code of Ethics No. 5", "D. Code of Ethics No. 7"], a: 3 },
-    { q: "What is the Plumbing Law of the Philippines?", choices: ["A. RA 1364", "B. RA 9514", "C. RA 1096", "D. RA 1378"], a: 3 },
-    { q: "Minimum height of trap water seal.", choices: ["A. 25 mm", "B. 51 mm", "C. 76 mm", "D. 102 mm"], a: 1 },
-    { q: "Requirement for at least one water closet and one kitchen sink in a dwelling unit.", choices: ["A. Principle No. 5", "B. Principle No. 6", "C. Principle No. 7", "D. Principle No. 8"], a: 1 },
-    { q: "Any change/addition/modification in construction or occupancy.", choices: ["A. Alteration", "B. Repair", "C. Renovation", "D. Change"], a: 0 },
-    { q: "Depositing ashes, cinders, or flammable liquids into plumbing fixtures is prohibited by:", choices: ["A. Section 1202.1", "B. Section 1202.2", "C. Section 1202.3", "D. Section 1202.4"], a: 0 },
-    { q: "A vertical vent that is a continuation of the drain to which it connects.", choices: ["A. Branch vent", "B. Relief vent", "C. Vent stack through roof", "D. Continuous vent"], a: 3 },
-    { q: "Plumbing fixtures shall be supplied with water in sufficient volume and pressure.", choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 3", "D. Principle No. 4"], a: 2 },
-    { q: "Who is allowed to acquire a plumbing permit?", choices: ["A. Architect", "B. Master Plumber", "C. Owner", "D. Contractor"], a: 2 },
-    { q: "Required type of water closet used for public spaces.", choices: ["A. Elongated type", "B. Round type", "C. Wall hung", "D. Squat type"], a: 0 },
-    { q: "Minimum age of a Master Plumber to qualify as a member of the board.", choices: ["A. 21", "B. 25", "C. 30", "D. 35"], a: 2 },
-    { q: "Plumbing plans for all types of occupancy must be signed and sealed by a Master Plumber.", choices: ["A. Up to 20 units", "B. Up to 20 plumbing units", "C. Up to 3-storeys", "D. Without limitations"], a: 3 },
-    { q: "Premises must be provided with pure and wholesome water, free from backflow hazards.", choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 3", "D. Principle No. 4"], a: 1 },
-    { q: "Cast Iron fittings up to 51 mm used for potable water shall be:", choices: ["A. Threaded", "B. Hubless", "C. Galvanized", "D. Bitumastic coated"], a: 2 },
-    { q: "Adjustable tubing connection with compression nut, friction ring, and washer.", choices: ["A. Male adaptor", "B. Coupling", "C. Slip joint", "D. Plug"], a: 2 },
-    { q: "Two or more similar adjacent fixtures discharging into a common horizontal branch.", choices: ["A. Set of fixtures", "B. Battery of fixtures", "C. Group of fixtures", "D. Unit of fixtures"], a: 1 },
-    { q: "All materials used in plumbing shall be properly marked at the factory by the:", choices: ["A. Administrative Authority", "B. Supplier", "C. Manufacturer", "D. Master Plumber"], a: 2 },
-    { q: "Temporary workingmen facilities require one water closet and one urinal for each:", choices: ["A. 10 workmen", "B. 20 workmen", "C. 30 workmen", "D. 40 workmen"], a: 2 },
-    { q: "Test to determine absorption rate of soil for septic drain fields.", choices: ["A. Percolation test", "B. Drain field test", "C. Leaching test", "D. Absorption test"], a: 0 },
-    { q: "How many items are enumerated in the Master Plumber's Code of Ethics?", choices: ["A. 5", "B. 6", "C. 7", "D. 8"], a: 2 },
-    { q: "Soil or waste system where all piping are of threaded pipe and recessed drainage fittings.", choices: ["A. Drainage system", "B. Plumbing system", "C. Piping system", "D. Durham system"], a: 3 },
-    { q: "Minimum trench bottom area in sqm for each system of disposal field.", choices: ["A. 10", "B. 12", "C. 14", "D. 16"], a: 2 },
-    { q: "A 2\" x 4\" wood wall stud is actually:", choices: ["A. 1 1/2\" x 4\"", "B. 1 1/2\" x 3 1/2\"", "C. 2\" x 4\"", "D. 2\" x 3 1/2\""], a: 1 },
-    { q: "Which fixture may NOT be indirectly connected to a drainage system?", choices: ["A. Drinking fountain", "B. Commercial dishwasher", "C. Water softener backwash", "D. Sterilizer"], a: 1 },
-    { q: "Vents that serve a single fixture are called:", choices: ["A. Only four", "B. Only three", "C. Only two", "D. Individual vents"], a: 3 },
-    { q: "Minimum requirement for the slope of horizontal drainage pipes between manholes.", choices: ["A. 4%", "B. 3%", "C. 2%", "D. 1%"], a: 2 },
-    { q: "Section stating no manual flushometer shall flush more than one urinal.", choices: ["A. Sec 401", "B. Sec 408", "C. Sec 305", "D. Sec 314"], a: 1 },
-    { q: "Rainwater drains from roofs shall discharge to the gutter or:", choices: ["A. Drainage system", "B. STP", "C. Outside the building", "D. Inside the building"], a: 2 },
-    { q: "Cleanouts may be omitted on short horizontal drainage pipe at a slope of:", choices: ["A. 135 deg", "B. 72 deg", "C. 45 deg", "D. 60 deg"], a: 1 },
-    { q: "Valve installed on the cold water supply pipe to each water heater.", choices: ["A. Check globe valve", "B. Fullway gate valve", "C. Butterfly valve", "D. Angle valve"], a: 1 },
-    { q: "If applying air test to the entire system, all openings are closed except the:", choices: ["A. Lowest", "B. Highest", "C. Successive lowest", "D. Successive highest"], a: 1 },
-    { q: "Indirect waste pipes longer than 4.1 meters must be:", choices: ["A. Vented", "B. Trapped and vented", "C. Water sealed", "D. Not vented"], a: 0 },
-    { q: "Trenches shall be back-filled in thin layers of ____ above the top of pipes.", choices: ["A. 600 mm", "B. 300 mm", "C. 900 mm", "D. 1200 mm"], a: 1 },
-    { q: "All wet-vented fixtures shall be:", choices: ["A. On every 5th floor", "B. On the same floor level", "C. In every fixture", "D. Dry vented"], a: 1 },
-    { q: "Galvanized steel pipe used above ground shall be kept at least:", choices: ["A. 75 mm", "B. 102 mm", "C. 125 mm", "D. 152 mm"], a: 3 },
-    { q: "Drains shall have a total net inlet area not less than ___ times the outlet pipe area.", choices: ["A. One half", "B. One", "C. Two", "D. Three"], a: 2 },
-    { q: "Gutter has a ____ bottom.", choices: ["A. Circular", "B. Semi-circular", "C. Great circle", "D. Big circle"], a: 1 },
-    { q: "In fixture supply pipings, ____ are exposed for faculty in maintenance.", choices: ["A. Expansion joints", "B. Slip joints", "C. Unions", "D. Cleanouts"], a: 1 },
-    { q: "Cast-iron pipe stacks shall be supported at:", choices: ["A. Base and each floor", "B. Every other storey", "C. Interval of 10 ft", "D. Interval of 5 ft"], a: 0 },
-    { q: "Maximum trap loading for 2\" shall be:", choices: ["A. 2 FU", "B. 3 FU", "C. 4 FU", "D. 6 FU"], a: 2 },
-    { q: "Waste of holy water at church altar (sacrarium) must be disposed:", choices: ["A. Into indirect waste", "B. Directly into the ground", "C. Into toxic waste", "D. Into acid waste"], a: 1 },
-    { q: "Interceptors for sand shall have a water seal of not less than:", choices: ["A. 51 mm", "B. 76 mm", "C. 102 mm", "D. 152 mm"], a: 3 },
-    { q: "The minimum size of gas piping supply to a mobile home is:", choices: ["A. 3/4\"", "B. 1/2\"", "C. 1\"", "D. 2\""], a: 0 },
-    { q: "All necessary requirements including plans should be submitted in ___ sets.", choices: ["A. 2", "B. 3", "C. 5", "D. 6"], a: 2 },
-    { q: "Plumbing permit nullifies if work is suspended/abandoned for ___ days.", choices: ["A. 120", "B. 150", "C. 180", "D. 365"], a: 2 },
-    { q: "A device installed in a drainage system to prevent reverse flow.", choices: ["A. Backwater valve", "B. Backvent valve", "C. Back siphonage valve", "D. Backflow valve"], a: 0 },
-    { q: "Minimum finished interior area of shower compartments.", choices: ["A. 0.8 sqm", "B. 0.6 sqm", "C. 1.2 sqm", "D. 1.4 sqm"], a: 1 },
-    { q: "Which code was the RNPCP derived from?", choices: ["A. ASPE", "B. NPC", "C. IPC", "D. UPC"], a: 3 },
-    { q: "Valves up to 51 mm in size shall be:", choices: ["A. Cast iron", "B. Brass", "C. Galvanized", "D. Plastic"], a: 1 },
-    { q: "Maximum trap loading having 6 FU shall be:", choices: ["A. 51 mm", "B. 63 mm", "C. 76 mm", "D. 106 mm"], a: 2 },
-    { q: "The bottom of trenches deeper than footing of adjacent building must be at least ___ therefrom.", choices: ["A. 60 deg", "B. 30 deg", "C. 45 deg", "D. 90 deg"], a: 2 },
-    { q: "Tee with three connections each measuring 2\" is a:", choices: ["A. 2\" trap", "B. 2\" x 2\" tee", "C. 2\" x 2\" x 2\" tee", "D. 2\" tee"], a: 3 },
-    { q: "A saw used to productively cut threaded rod is a:", choices: ["A. Demolition saw", "B. Portable band saw", "C. Jig saw", "D. Reciprocating saw"], a: 1 },
-    { q: "Minimum horizontal offset permitted in a 3\" soil stack serving as a wet vent.", choices: ["A. 1.80 m", "B. 1.20 m", "C. 2.50 m", "D. 3.50 m"], a: 1 },
-    { q: "No seepage pit shall be installed where percolation rate is less than 2.54 cm in:", choices: ["A. 30 minutes", "B. 60 minutes", "C. 15 minutes", "D. 45 minutes"], a: 0 },
-    { q: "Access panel dimension for concealed connections for inspection and repair.", choices: ["A. 0.3 m", "B. 0.5 m", "C. 1.0 m", "D. 3.0 m"], a: 0 },
-    { q: "A drainage pipe that passes through at least one story as a drain pipe.", choices: ["A. Sanitary sewer", "B. Soil or waste stack", "C. Spigot", "D. Soil pipe"], a: 1 },
-    { q: "Non-watertight lined excavation permitting liquid to seep through bottom and sides.", choices: ["A. Privy", "B. Cesspool", "C. Disposal field", "D. Seepage pit"], a: 1 },
-    { q: "Slaughter houses shall drain into a grease interceptor through a:", choices: ["A. Drainage system", "B. Screening device", "C. Either A or B", "D. None"], a: 1 },
-    { q: "Joints in copper pans or liners shall be:", choices: ["A. 6.8 kg asphalt felt", "B. Flared or soldered", "C. Soldered or brazed", "D. Burned"], a: 3 },
-    { q: "Septic tank should be at least ___ meters away from water supply wells.", choices: ["A. 10", "B. 15", "C. 20", "D. 30"], a: 1 },
-    { q: "Solder and fluxes with lead content exceeding ___ are prohibited for potable water.", choices: ["A. 0.001", "B. 0.002", "C. 0.005", "D. 0.008"], a: 1 },
-    { q: "What do CS and PS mean?", choices: ["A. Commercial Specification and Product Specification", "B. Commercial Standards and Product Standards", "C. Commercial Systems and Product Systems", "D. Commercial Sizes and Product Size"], a: 1 },
-    { q: "What is AVB in backflow prevention devices?", choices: ["A. Atmospheric Volume Breaker", "B. Atmospheric Vacuum Breaker", "C. Atmospheric Velocity Breaker", "D. Atmospheric Valve Breaker"], a: 1 },
-    { q: "Part of plumbing system from 4-5 feet from foundation to junction with another sewer.", choices: ["A. House sewer", "B. Storm sewer", "C. Sanitary sewer", "D. House drain"], a: 0 },
-    { q: "The measure of inertia forces to viscous forces describing flow type.", choices: ["A. Reynolds number", "B. Froude number", "C. Moody number", "D. Weber number"], a: 0 },
-    { q: "It consists of 180 degree bends with inside and outside threads.", choices: ["A. Return bend", "B. Offset", "C. Double offset bend", "D. U shaped"], a: 0 },
-    { q: "Type of joint used for cast iron soil pipe with bell and spigot ends.", choices: ["A. Caulked joint", "B. Threaded joint", "C. Soldered joint", "D. Solvent joint"], a: 0 }
-    ],
-    3: [
-        {
-    q: "All premises intended for human habitation, occupancy or use shall be provided with a supply of pure and wholesome water, neither connected with unsafe water supplies nor subject to hazards of backflow or back-siphonage.",
-    choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 4", "D. Principle No. 22"],
-    a: 0
-  },
-  {
-    q: "The individual water supply shall be adequate to provide and maintain at all times a supply of water sufficient in volume and pressure to enable the fixtures to function satisfactorily.",
-    choices: ["A. Principle No. 1", "B. Principle No. 2", "C. Principle No. 3", "D. Principle No. 8"],
-    a: 1
-  },
-  {
-    q: "Devices for heating and storing water shall be so designed and installed as to prevent dangers from explosion through overheating.",
-    choices: ["A. Principle No. 2", "B. Principle No. 3", "C. Principle No. 6", "D. Principle No. 13"],
-    a: 1
-  },
-  {
-    q: "Every building having plumbing fixtures and installed on a lot abutting a street, alley, or easement in which there is a public sewer shall be connected to the public sewer system.",
-    choices: ["A. Principle No. 4", "B. Principle No. 5", "C. Principle No. 16", "D. Principle No. 21"],
-    a: 0
-  },
-  {
-    q: "Each family dwelling unit on premises abutting on a sewer or with a private sewage-disposal system shall have at least one water closet and one kitchen-type sink.",
-    choices: ["A. Principle No. 4", "B. Principle No. 5", "C. Principle No. 6", "D. Principle No. 19"],
-    a: 1
-  },
-  {
-    q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces and shall be located in ventilated enclosures.",
-    choices: ["A. Principle No. 5", "B. Principle No. 6", "C. Principle No. 15", "D. Principle No. 19"],
-    a: 1
-  },
-  {
-    q: "The drainage system shall be designed, constructed and maintained to guard against fouling, deposit of solids and clogging, and with adequate cleanouts so arranged that the pipes may be readily cleaned.",
-    choices: ["A. Principle No. 7", "B. Principle No. 8", "C. Principle No. 10", "D. Principle No. 13"],
-    a: 0
-  },
-  {
-    q: "The piping of the plumbing system shall be of durable material, free from defective workmanship and so designed and constructed as to give satisfactory service for its reasonable expected life.",
-    choices: ["A. Principle No. 7", "B. Principle No. 8", "C. Principle No. 20", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.",
-    choices: ["A. Principle No. 9", "B. Principle No. 10", "C. Principle No. 11", "D. Principle No. 17"],
-    a: 0
-  },
-  {
-    q: "The drainage system shall be designed to provide an adequate circulation of air in all pipes with no danger of siphonage, aspiration, or forcing of trap seals under conditions of ordinary use.",
-    choices: ["A. Principle No. 9", "B. Principle No. 10", "C. Principle No. 11", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "Each vent terminal shall extend to the outer air and be so installed as to preclude the possibility of clogging and the return of foul air to the building.",
-    choices: ["A. Principle No. 10", "B. Principle No. 11", "C. Principle No. 12", "D. Principle No. 15"],
-    a: 1
-  },
-  {
-    q: "The plumbing system shall be subjected to such tests as will effectively disclose all defects and leaks in the work.",
-    choices: ["A. Principle No. 8", "B. Principle No. 12", "C. Principle No. 18", "D. Principle No. 20"],
-    a: 1
-  },
-  {
-    q: "No substance which will clog or damage the pipes, produce explosive mixtures, or clog the pipes shall be allowed to enter the building drainage system.",
-    choices: ["A. Principle No. 7", "B. Principle No. 13", "C. Principle No. 21", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "Proper protection shall be provided to prevent contamination of food, water, sterile goods and similar materials by backflow of sewage. When necessary, the fixture, device or appliance shall be connected indirectly with the building drainage system.",
-    choices: ["A. Principle No. 1", "B. Principle No. 14", "C. Principle No. 17", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "No water closet or urinal shall be located in a room or compartment which is not properly lighted and ventilated.",
-    choices: ["A. Principle No. 6", "B. Principle No. 15", "C. Principle No. 18", "D. Principle No. 19"],
-    a: 1
-  },
-  {
-    q: "If water closets or other plumbing fixtures are installed in buildings where there is no sewer within a reasonable distance, suitable provision shall be made for disposing of the building sewage by some accepted method of septic treatment.",
-    choices: ["A. Principle No. 4", "B. Principle No. 16", "C. Principle No. 17", "D. Principle No. 21"],
-    a: 1
-  },
-  {
-    q: "Where a plumbing drainage system may be subject to backflow of sewage, suitable provision shall be made to prevent its overflow in the building.",
-    choices: ["A. Principle No. 14", "B. Principle No. 17", "C. Principle No. 21", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "All plumbing systems shall be maintained in a sanitary condition by Registered Master Plumbers.",
-    choices: ["A. Principle No. 18", "B. Principle No. 19", "C. Principle No. 20", "D. Principle No. 22"],
-    a: 0
-  },
-  {
-    q: "All plumbing fixtures shall be installed with regard to spacing as to be accessible for their intended use.",
-    choices: ["A. Principle No. 15", "B. Principle No. 19", "C. Principle No. 20", "D. Principle No. 22"],
-    a: 1
-  },
-  {
-    q: "Plumbing shall be installed by Registered Master Plumbers with due regard to the preservation of the strength of structural members and prevention of damage to walls and other surfaces through fixture usage.",
-    choices: ["A. Principle No. 8", "B. Principle No. 18", "C. Principle No. 19", "D. Principle No. 20"],
-    a: 3
-  },
-  {
-    q: "Sewage or other waste from a plumbing system which may be deleterious to surface or subsurface waters shall not be discharged into the ground or into any waterway unless it has first been rendered innocuous through subjection to some acceptable form of treatment.",
-    choices: ["A. Principle No. 4", "B. Principle No. 13", "C. Principle No. 16", "D. Principle No. 21"],
-    a: 3
-  },
-  {
-    q: "All plumbing fixtures shall be designed and installed to prevent the backflow of polluted water into the water supply system.",
-    choices: ["A. Principle No. 1", "B. Principle No. 14", "C. Principle No. 17", "D. Principle No. 22"],
-    a: 3
-  }
-    ],
-    4: [
-        { q: "All premises intended for human habitation... shall be provided with a supply of pure and wholesome water.", choices: ["A. Principle 1", "B. Principle 2", "C. Principle 3", "D. Principle 4"], a: 0 },
-    { q: "The individual water supply shall be adequate to provide... sufficient volume and pressure.", choices: ["A. Principle 1", "B. Principle 2", "C. Principle 5", "D. Principle 10"], a: 1 },
-    { q: "Devices for heating and storing water shall be designed... to prevent dangers from explosion through overheating.", choices: ["A. Principle 2", "B. Principle 3", "C. Principle 8", "D. Principle 13"], a: 1 },
-    { q: "Every building having plumbing fixtures... on a lot abutting a street with a public sewer shall be connected to the public sewer system.", choices: ["A. Principle 4", "B. Principle 5", "C. Principle 16", "D. Principle 17"], a: 0 },
-    { q: "Each family dwelling unit... shall have at least one water closet and one kitchen-type sink.", choices: ["A. Principle 4", "B. Principle 5", "C. Principle 15", "D. Principle 19"], a: 1 },
-    { q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces.", choices: ["A. Principle 5", "B. Principle 6", "C. Principle 10", "D. Principle 20"], a: 1 },
-    { q: "The drainage system shall be designed... to guard against fouling, deposit of solids and clogging.", choices: ["A. Principle 7", "B. Principle 8", "C. Principle 9", "D. Principle 13"], a: 0 },
-    { q: "The piping... shall be of durable material, free from defective workmanship.", choices: ["A. Principle 6", "B. Principle 7", "C. Principle 8", "D. Principle 12"], a: 2 },
-    { q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.", choices: ["A. Principle 9", "B. Principle 10", "C. Principle 11", "D. Principle 22"], a: 0 },
-    { q: "The drainage system shall be designed to provide an adequate circulation of air in all pipes.", choices: ["A. Principle 9", "B. Principle 10", "C. Principle 11", "D. Principle 22"], a: 1 },
-    { q: "Each vent terminal shall extend to the outer air... to preclude the possibility of clogging.", choices: ["A. Principle 10", "B. Principle 11", "C. Principle 12", "D. Principle 15"], a: 1 },
-    { q: "The plumbing system shall be subjected to such tests as will effectively disclose all defects and leaks.", choices: ["A. Principle 8", "B. Principle 12", "C. Principle 18", "D. Principle 20"], a: 1 },
-    { q: "No substance which will clog or damage the pipes... shall be allowed to enter the building drainage system.", choices: ["A. Principle 7", "B. Principle 13", "C. Principle 14", "D. Principle 21"], a: 1 },
-    { q: "Proper protection shall be provided to prevent contamination of food, water, sterile goods... by backflow of sewage.", choices: ["A. Principle 1", "B. Principle 14", "C. Principle 17", "D. Principle 22"], a: 1 },
-    { q: "No water closet or urinal shall be located in a room or compartment which is not properly lighted and ventilated.", choices: ["A. Principle 6", "B. Principle 15", "C. Principle 18", "D. Principle 19"], a: 1 },
-    { q: "If there is no sewer within a reasonable distance, suitable provision shall be made for... accepted method of septic treatment.", choices: ["A. Principle 4", "B. Principle 16", "C. Principle 17", "D. Principle 21"], a: 1 },
-    { q: "Where a plumbing drainage system may be subject to backflow... provision shall be made to prevent its overflow in the building.", choices: ["A. Principle 14", "B. Principle 17", "C. Principle 21", "D. Principle 22"], a: 1 },
-    { q: "All plumbing systems shall be maintained in a sanitary condition by Registered Master Plumbers.", choices: ["A. Principle 18", "B. Principle 19", "C. Principle 20", "D. Principle 22"], a: 0 },
-    { q: "All plumbing fixtures shall be installed with regard to spacing as to be accessible for their intended use.", choices: ["A. Principle 15", "B. Principle 19", "C. Principle 20", "D. Principle 21"], a: 1 },
-    { q: "Plumbing shall be installed... with due regard to the preservation of the strength of structural members.", choices: ["A. Principle 8", "B. Principle 18", "C. Principle 20", "D. Principle 22"], a: 2 },
-    { q: "Sewage... shall not be discharged into the ground or any waterway unless it has first been rendered innocuous.", choices: ["A. Principle 13", "B. Principle 16", "C. Principle 21", "D. Principle 22"], a: 2 },
-    { q: "All plumbing fixtures shall be designed and installed to prevent the backflow of polluted water into the water supply system.", choices: ["A. Principle 1", "B. Principle 14", "C. Principle 17", "D. Principle 22"], a: 3 },
-    { q: "The Filipino plumbers assigned to maintain systems in 'pueblos' during the 18th/19th centuries were called by the elite group to act as consultants. This elite group was known as:", choices: ["A. Thomasites", "B. Ilustrados", "C. Friar Engineers", "D. Insulares"], a: 1 },
-    { q: "In 1902, who was the first Chief of the Division of Plumbing Construction and Inspection in Manila?", choices: ["A. John F. Hass", "B. Gregorio Feliciano", "C. Francisco Geronimo", "D. Tomas Geronimo"], a: 0 },
-    { q: "NAMPAP was organized and registered with the SEC in what year?", choices: ["A. 1902", "B. 1935", "C. 1954", "D. 1999"], a: 1 },
-    { q: "Who was the President of the Philippines who signed RA 1378 into law?", choices: ["A. Ferdinand Marcos", "B. Ramon Magsaysay", "C. Diosdado Macapagal", "D. Manuel Quezon"], a: 1 },
-    { q: "What is the complete name of RA 1378?", choices: ["A. The National Building Code", "B. The Plumbing Law of the Philippines", "C. The Sanitary Code", "D. The Water Act"], a: 1 },
-    { q: "In 1996, NAMPAP President Jaime M. Cabase spearheaded the updating of the Revised National Plumbing Code under whose administration?", choices: ["A. Corazon Aquino", "B. Fidel V. Ramos", "C. Joseph Estrada", "D. Gloria Arroyo"], a: 1 },
-    { q: "The first 'Walled City' established by Spaniards that incorporated European plumbing standards was:", choices: ["A. Vigan", "B. Cebu", "C. Intramuros", "D. Zamboanga"], a: 2 },
-    { q: "Which government body approved the 'Revised National Plumbing Code of 1999'?", choices: ["A. PRC", "B. DPWH", "C. DOH", "D. DENR"], a: 0 },
-    { q: "On what specific date did President Joseph Estrada approve the 1999 Code?", choices: ["A. June 18, 1955", "B. December 21, 1999", "C. January 28, 1959", "D. November 28, 1967"], a: 1 },
-    { q: "The plumbing profession took a leap in the 20th century due to the arrival of American soldiers, doctors, and teachers known as:", choices: ["A. Friars", "B. Thomasites", "C. Conquistadors", "D. Missionaries"], a: 1 },
-    { q: "Who was the NAMPAP President when the Code of Ethics was first adopted?", choices: ["A. John F. Hass", "B. Gregorio Feliciano", "C. Jaime Cabase", "D. Francisco Geronimo"], a: 1 },
-    { q: "The Board of Examiners for Master Plumbers was created under which act?", choices: ["A. RA 1378", "B. RA 544", "C. RA 9266", "D. RA 1080"], a: 0 },
-    { q: "The first NAMPAP President was:", choices: ["A. Francisco Geronimo", "B. Mariano de Jesus", "C. John F. Hass", "D. Jaime Cabase"], a: 0 },
-    { q: "Which city served as the model community for plumbing trade recognition in 1902?", choices: ["A. Quezon City", "B. Manila", "C. Baguio", "D. Davao"], a: 1 },
-    { q: "Before RA 1378, what was the basis for plumbing practices in Manila?", choices: ["A. Spanish Law", "B. City Ordinance 4122", "C. The US Plumbing Code", "D. The Building Code"], a: 1 },
-    { q: "The 22 Basic Principles are otherwise known as:", choices: ["A. Code of Ethics", "B. Plumbing Law", "C. International Plumbing Foundation", "D. Basic Principles of Plumbing"], a: 3 },
-    { q: "The 'Friar Engineers' who built government buildings in the 17th century came from which country?", choices: ["A. USA", "B. Spain", "C. Portugal", "D. Mexico"], a: 1 },
-    { q: "NAMPAP stands for:", choices: ["A. National Association of Master Plumbers of the Philippines", "B. National Master Plumbers Association of the Philippines", "C. Nationwide Allied Master Plumbers Association of the Philippines", "D. Northern Allied Master Plumbers Association of the Philippines"], a: 0 },
-    { q: "The officer charged with the administration and enforcement of the Plumbing Code is the:", choices: ["A. Building Official", "B. Administrative Authority", "C. City Engineer", "D. Registered Master Plumber"], a: 1 },
-    { q: "A plumbing permit is not required for the clearance of stoppages or stopping of leaks, provided that the work does not involve:", choices: ["A. Replacing valves", "B. Replacing fixtures", "C. Rearranging pipes", "D. Using a plunger"], a: 2 },
-    { q: "Application for a permit shall be made on forms furnished by the:", choices: ["A. PRC", "B. NAMPAP", "C. Administrative Authority", "D. DOH"], a: 2 },
-    { q: "How many sets of plans and specifications are required for a permit application?", choices: ["A. 2", "B. 4", "C. 6", "D. 8"], a: 2 },
-    { q: "Who must sign and seal the plumbing plans and specifications?", choices: ["A. Civil Engineer", "B. Architect", "C. Registered and Licensed Master Plumber", "D. Contractor"], a: 2 },
-    { q: "What is the validity period (in years) of a plumbing permit from the date of issuance?", choices: ["A. 6 months", "B. 1 year", "C. 2 years", "D. 5 years"], a: 1 },
-    { q: "A permit expires if work is suspended or abandoned for a period of how many days?", choices: ["A. 30 days", "B. 60 days", "C. 90 days", "D. 120 days"], a: 3 },
-    { q: "When a permit is expired, the fee to renew it (if work has not started) is what percentage of the original permit fee?", choices: ["A. 25%", "B. 50%", "C. 75%", "D. 100%"], a: 1 },
-    { q: "Who is responsible for notifying the Administrative Authority that work is ready for inspection?", choices: ["A. The Owner", "B. The Master Plumber", "C. The Helper", "D. The Architect"], a: 1 },
-    { q: "The Administrative Authority must be notified at least how many hours before an inspection is desired?", choices: ["A. 24 hours", "B. 48 hours", "C. 72 hours", "D. 1 week"], a: 0 },
-    { q: "If an inspection is requested and the work is not ready, what kind of fee may be charged?", choices: ["A. Renewal fee", "B. Re-inspection fee", "C. Violation fee", "D. Surcharge"], a: 1 },
-    { q: "A 'Notice of Correction' is issued when work is found to be:", choices: ["A. Completed early", "B. Defective or in violation of the code", "C. Using plastic pipes", "D. Over budget"], a: 1 },
-    { q: "All plumbing systems must be tested and approved before they are:", choices: ["A. Painted", "B. Concealed or covered", "C. Sold", "D. Photographed"], a: 1 },
-    { q: "If a plumbing system is found to be dangerous or unsanitary, it is classified as:", choices: ["A. A minor repair", "B. A public nuisance", "C. An aesthetic issue", "D. A structural defect"], a: 1 },
-    { q: "The Administrative Authority may require the 'Uncovering' of work if it was:", choices: ["A. Covered before inspection", "B. Painted the wrong color", "C. Installed by a helper", "D. Too expensive"], a: 0 },
-    { q: "What is the minimum scale for plumbing plans as per Section 102.2?", choices: ["A. 1:50", "B. 1:100", "C. No specific scale required", "D. 1:200"], a: 1 },
-    { q: "The 'Administrative Authority' refers to the Building Official or the ______?", choices: ["A. Mayor", "B. Health Officer", "C. Fire Marshall", "D. Police Chief"], a: 1 },
-    { q: "Changes or modifications to approved plans require:", choices: ["A. Verbal consent", "B. Written approval of the Administrative Authority", "C. No approval if small", "D. A new contract"], a: 1 },
-    { q: "Which of the following does NOT require a plumbing permit?", choices: ["A. Installing a new water heater", "B. Adding a kitchen island sink", "C. Repairing a leak in a faucet", "D. Moving a floor drain"], a: 2 },
-    { q: "Plumbing work must be performed under the 'direct supervision' of a:", choices: ["A. Foreman", "B. Registered and Licensed Master Plumber", "C. Building Owner", "D. Civil Engineer"], a: 1 },
-    { q: "What happens to the permit if the work is not started within 1 year?", choices: ["A. It is automatically extended", "B. It becomes null and void", "C. It remains valid forever", "D. It requires a 10% fee"], a: 1 },
-    { q: "The 'Plumbing Code' covers the installation of which of the following?", choices: ["A. Storm drainage", "B. Fuel gas piping", "C. Water supply", "D. All of the above"], a: 3 },
-    { q: "Testing of the drainage system usually involves which substance?", choices: ["A. Air or Water", "B. Oil", "C. Smoke only", "D. Gas"], a: 0 },
-    { q: "The Administrative Authority has the right to enter a building at 'reasonable times' to:", choices: ["A. Collect taxes", "B. Inspect plumbing", "C. Deliver mail", "D. Evict tenants"], a: 1 },
-    { q: "A 'Certificate of Final Inspection' is issued after:", choices: ["A. The permit is paid", "B. The work is completed and passes all tests", "C. The house is sold", "D. The water is turned on"], a: 1 },
-    { q: "What is the penalty for violating the Plumbing Code?", choices: ["A. There is no penalty", "B. Fine and/or imprisonment", "C. Community service", "D. Loss of citizenship"], a: 1 },
-    { q: "Who provides the testing equipment for an inspection?", choices: ["A. The Administrative Authority", "B. The Master Plumber or Permit Holder", "C. The Water District", "D. The City Council"], a: 1 },
-    { q: "If a person continues to work after a 'Stop Work Order' is issued, they are subject to:", choices: ["A. A promotion", "B. Additional fines/penalties", "C. A handshake", "D. Verbal warning only"], a: 1 },
-    { q: "'Connection to the water supply' is prohibited until:", choices: ["A. The owner pays the bill", "B. The Administrative Authority issues an approval", "C. The pipes are painted", "D. The furniture is moved in"], a: 1 },
-    { q: "When using the 'Water Test' for a drainage system, the water must be kept in the system for at least how many minutes?", choices: ["A. 5 minutes", "B. 15 minutes", "C. 30 minutes", "D. 1 hour"], a: 1 },
-    { q: "Which Section of Chapter 1 discusses 'Violations and Penalties'?", choices: ["A. 101", "B. 104", "C. 107", "D. 108"], a: 3 },
-    { q: "What is the requirement for 'Existing Construction' regarding plumbing?", choices: ["A. It must be demolished", "B. It can remain if not a nuisance", "C. It must be upgraded every year", "D. It requires a new permit daily"], a: 1 },
-    { q: "In Section 102.1, a permit is required for any 'addition, alteration, or ______'?", choices: ["A. Cleaning", "B. Repair", "C. Painting", "D. Landscaping"], a: 1 },
-    { q: "The 'Permit Fee' is typically based on the number of:", choices: ["A. Windows", "B. Fixtures", "C. Occupants", "D. Square meters"], a: 1 },
-    { q: "What is 'Illegal Plumbing'?", choices: ["A. Plumbing done without a permit", "B. Plumbing using PVC", "C. Plumbing in a tall building", "D. Plumbing that is too cheap"], a: 0 },
-    { q: "The Administrative Authority may 'Revoke' a permit if it was issued:", choices: ["A. To a friend", "B. Based on incorrect information or in error", "C. Too quickly", "D. On a Friday"], a: 1 },
-    { q: "Which principle mentions that 'Air circulation' is necessary?", choices: ["A. Principle 5", "B. Principle 10", "C. Principle 15", "D. Principle 20"], a: 1 },
-    { q: "Principle 22 focuses on preventing the backflow of ______?", choices: ["A. Rainwater", "B. Polluted water", "C. Hot water", "D. Pure water"], a: 1 },
-    { q: "What must be done to sewage that is 'deleterious' to the environment?", choices: ["A. Dilute it", "B. Render it innocuous through treatment", "C. Bury it deep", "D. Send it to a landfill"], a: 1 },
-    { q: "Who is the 'Authorized Agent' of the Administrative Authority?", choices: ["A. The Homeowner", "B. A Plumbing Inspector", "C. The Contractor", "D. The Mayor"], a: 1 },
-    { q: "Can a Master Plumber be the 'Administrative Authority'?", choices: ["A. Yes, if appointed by the government", "B. No, never", "C. Only in private companies", "D. Only for their own house"], a: 0 },
-    { q: "'Adequate cleanouts' are required by which principle?", choices: ["A. Principle 1", "B. Principle 4", "C. Principle 7", "D. Principle 11"], a: 2 },
-    { q: "If a building is moved from one location to another, what is required?", choices: ["A. A new plumbing permit", "B. No permit is needed", "C. Only a verbal notice", "D. A photo of the old site"], a: 0 },
-    { q: "Section 102.2 requires a 'Plan and Specification' for all projects except:", choices: ["A. High-rise buildings", "B. Hospitals", "C. Minor repairs and small additions", "D. Schools"], a: 2 },
-    { q: "'Dangerous Plumbing' is defined as a system that is a ______?", choices: ["A. High cost", "B. Health hazard", "C. Ugly design", "D. Noisy system"], a: 1 },
-    { q: "A 'Re-inspection' is required if:", choices: ["A. The work passes the first time", "B. The previous work was rejected", "C. The owner wants to see the work", "D. The inspector is bored"], a: 1 },
-    { q: "What happens if a permit is revoked?", choices: ["A. All work must stop", "B. Work can continue if done quickly", "C. The permit fee is doubled", "D. The owner gets a refund"], a: 0 },
-    { q: "What is the purpose of the 'Testing' phase?", choices: ["A. To waste water", "B. To check for leaks and defects", "C. To increase the project duration", "D. To train new plumbers"], a: 1 },
-    { q: "The 'Plumbing System' includes:", choices: ["A. Water supply pipes", "B. Fixtures and traps", "C. Soil, waste and vent pipes", "D. All of the above"], a: 3 },
-    { q: "Can the Administrative Authority waive the requirement for a plan?", choices: ["A. Yes, for simple work", "B. No, never", "C. Only if the owner is an engineer", "D. Only for government buildings"], a: 0 },
-    { q: "What is the 'Sewer Connection' requirement for buildings on lots not abutting a public sewer?", choices: ["A. No plumbing allowed", "B. Private sewage disposal system (Septic Tank)", "C. Discharge to the street", "D. Storage in barrels"], a: 1 },
-    { q: "Section 107.1 deals with what kind of maintenance?", choices: ["A. Financial", "B. Sanitary", "C. Aesthetic", "D. Structural"], a: 1 },
-    { q: "When an inspector finds a violation, what document do they leave at the site?", choices: ["A. A bill", "B. A Notice of Correction", "C. A thank you note", "D. A business card"], a: 1 },
-    { q: "Why is Principle 20 (Structural Integrity) important?", choices: ["A. To save money", "B. To prevent damage to walls and floors during installation", "C. To make the pipes look better", "D. To speed up the work"], a: 1 },
-    { q: "'Cross-connection' is forbidden because it leads to:", choices: ["A. Lower pressure", "B. Contamination of the water supply", "C. Expensive pipes", "D. Noisy fixtures"], a: 1 },
-    { q: "In the Master Plumber's Code of Ethics, a plumber should 'report any ______'?", choices: ["A. Late workers", "B. Violations of the code", "C. Expensive parts", "D. New tools"], a: 1 },
-    { q: "According to the Code of Ethics, a plumber's price should be:", choices: ["A. The highest possible", "B. Just and reasonable", "C. Free", "D. Fixed by the government"], a: 1 },
-    { q: "A Master Plumber should not 'injure the ______ of another fellow plumber.'", choices: ["A. Tools", "B. Reputation", "C. Vehicle", "D. House"], a: 1 },
-    { q: "Which principle requires 'Smooth non-absorbent material'?", choices: ["A. Principle 1", "B. Principle 6", "C. Principle 12", "D. Principle 18"], a: 1 },
-    { q: "The ultimate goal of the National Plumbing Code is to protect:", choices: ["A. The Master Plumbers", "B. The Government", "C. Public Health and Safety", "D. The environment only"], a: 2 }
-    ],
-    5: [
-        { q: "A document issued by the Administrative Authority for the installation, alteration, repair, or replacement of any plumbing system is a:", choices: ["A. Certificate of Occupancy", "B. Plumbing Permit", "C. Business License", "D. Building Inspection Report"], a: 1 },
-    { q: "The person, his agents or assigns, in possession of the property where plumbing work is to be done refers to the:", choices: ["A. Registered Master Plumber", "B. Administrative Authority", "C. Owner", "D. Contractor"], a: 2 },
-    { q: "The pipe or pipes which provide the supply of water from the water main or other source of supply to the building-served is the:", choices: ["A. Building Drain", "B. Water Service Pipe", "C. Vent Stack", "D. Soil Pipe"], a: 1 },
-    { q: "A plumbing system which has been found to be a nuisance or is hazardous to life, health, or property is classified as:", choices: ["A. Experimental Plumbing", "B. Dangerous Plumbing", "C. Non-conforming Plumbing", "D. Standard Plumbing"], a: 1 },
-    { q: "All plumbing systems, both existing and new, and all parts thereof shall be maintained in a sanitary and safe operating condition. This rule covers:", choices: ["A. New construction only", "B. Existing construction only", "C. All plumbing systems", "D. Government buildings only"], a: 2 },
-    { q: "The Administrative Authority may require the ______ of any work which has been covered before inspection.", choices: ["A. Painting", "B. Removal or Uncovering", "C. Double-sealing", "D. Photographing"], a: 1 },
-    { q: "No person shall make any connection to any water supply line, commercial or industrial, without first obtaining ______ from the Administrative Authority.", choices: ["A. A verbal agreement", "B. A written permit/approval", "C. A set of blue prints", "D. A business license"], a: 1 },
-    { q: "Principle No. 8 emphasizes that piping must be of ______ material.", choices: ["A. Imported", "B. Durable", "C. Lightweight", "D. Recyclable"], a: 1 },
-    { q: "Principle No. 13 states that no substance that will ______ shall be allowed to enter the drainage system.", choices: ["A. Be transparent", "B. Produce explosive mixtures", "C. Be cold", "D. Be recycled"], a: 1 },
-    { q: "Principle No. 17 specifically addresses the prevention of ______ in a building when the drainage system is subject to backflow.", choices: ["A. Bad smells", "B. Overflow", "C. High pressure", "D. Noisy pipes"], a: 1 },
-    { q: "Who was the NAMPAP leader that pushed for the inclusion of the 'As-Built Plan' as a requirement for the 1999 Code?", choices: ["A. John F. Hass", "B. Jaime M. Cabase", "C. Francisco Geronimo", "D. Tomas Geronimo"], a: 1 },
-    { q: "Any person who shall violate any of the provisions of this Code shall be guilty of a ______.", choices: ["A. Felony", "B. Misdemeanor", "C. Civil Tort", "D. Administrative Error"], a: 1 },
-    { q: "If work is not commenced within ______ days from the date of issuance, the permit shall expire.", choices: ["A. 120 days", "B. 180 days", "C. 365 days", "D. 30 days"], a: 2 },
-    { q: "A permit may be ______ by the Administrative Authority if it was issued on the basis of incorrect or fraudulent information.", choices: ["A. Doubled", "B. Revoked", "C. Extended", "D. Copied"], a: 1 },
-    { q: "When a plumbing system is being tested with water, the pipes shall be filled until the water overflows from the ______.", choices: ["A. Lowest point", "B. Highest point", "C. Middle section", "D. Kitchen sink"], a: 1 },
-    { q: "Principle No. 2 states that the water supply must be sufficient in ______ to enable fixtures to function.", choices: ["A. Temperature and Color", "B. Volume and Pressure", "C. Speed and Velocity", "D. Weight and Density"], a: 1 },
-    { q: "Principle No. 14 requires that fixtures be connected ______ to the drainage system when necessary to prevent contamination of sterile goods.", choices: ["A. Directly", "B. Indirectly", "C. Through the roof", "D. To the water main"], a: 1 },
-    { q: "Section 102.2 states that plans must be submitted in how many sets?", choices: ["A. 3", "B. 5", "C. 6", "D. 10"], a: 2 },
-    { q: "Principle No. 21 prohibits the discharge of deleterious waste into the ground unless it is first ______.", choices: ["A. Filtered through sand", "B. Rendered innocuous by treatment", "C. Heated to 100 degrees", "D. Stored for 30 days"], a: 1 },
-    { q: "The 'Code of Ethics' states that a Master Plumber should consider their profession an opportunity to ______.", choices: ["A. Become wealthy", "B. Serve the public", "C. Outperform rivals", "D. Ignore regulations"], a: 1 },
-    { q: "The Administrative Authority shall have the power to stop the ______ of any plumbing work being done in violation of this Code.", choices: ["A. Payment", "B. Construction/Execution", "C. Planning", "D. Delivery"], a: 1 },
-    { q: "Which Principle refers to 'Structural Integrity' during installation?", choices: ["A. Principle No. 20", "B. Principle No. 10", "C. Principle No. 5", "D. Principle No. 1"], a: 0 },
-    { q: "Under Section 101.1, the Code is officially known as the:", choices: ["A. Master Plumber Law", "B. Revised National Plumbing Code of the Philippines", "C. Manila Plumbing Ordinance", "D. NAMPAP Handbook"], a: 1 },
-    { q: "A fee paid for an additional inspection when the work was not ready at the first requested time is a:", choices: ["A. Permit Fee", "B. Re-inspection Fee", "C. Processing Fee", "D. Surcharge"], a: 1 },
-    { q: "In the 1950s, which group worked to have the Plumbing Law (RA 1378) passed?", choices: ["A. The Board of Architects", "B. NAMPAP", "C. The Department of Health", "D. The Bureau of Public Works"], a: 1 },
-    { q: "No ______ shall be used to cover any plumbing work until it has been inspected and approved.", choices: ["A. Paint or Wallboard", "B. Plastic wrap", "C. Water", "D. Tape"], a: 0 },
-    { q: "Principle No. 11: Vent terminals shall be installed to preclude the possibility of ______ and the return of foul air.", choices: ["A. Corrosion", "B. Clogging", "C. Evaporation", "D. Condensation"], a: 1 },
-    { q: "Principle No. 15: No water closet shall be located in a room that is not properly ______.", choices: ["A. Painted white", "B. Lighted and Ventilated", "C. Carpeted", "D. Soundproofed"], a: 1 },
-    { q: "Principle No. 18: Plumbing systems shall be maintained in a sanitary condition by ______.", choices: ["A. The owner only", "B. Any handy person", "C. Registered Master Plumbers", "D. The local government"], a: 2 },
-    { q: "Section 102.2: The plans must show the ______ of the proposed plumbing system.", choices: ["A. Cost", "B. Layout and General Dimensions", "C. Brand names of all tools", "D. Names of all laborers"], a: 1 },
-    { q: "A connection between a potable water supply and a non-potable source is a:", choices: ["A. Dual supply", "B. Cross-connection", "C. Hybrid link", "D. Bypass"], a: 1 },
-    { q: "Principle No. 9: Each fixture directly connected to the drainage system shall be equipped with a ______.", choices: ["A. Shut-off valve", "B. Water-sealed trap", "C. Pressure gauge", "D. Check valve"], a: 1 },
-    { q: "The 'Thomasites' teachers arrived in the Philippines in the early 20th century from which country?", choices: ["A. Spain", "B. USA", "C. UK", "D. Japan"], a: 1 },
-    { q: "Principle No. 3: Water heating devices must be installed to prevent dangers from ______.", choices: ["A. Freezing", "B. Explosion through overheating", "C. Rust", "D. Low pressure"], a: 1 },
-    { q: "Principle No. 10: The drainage system shall be designed to provide an adequate circulation of ______ in all pipes.", choices: ["A. Water", "B. Air", "C. Waste", "D. Chemicals"], a: 1 },
-    { q: "The Administrative Authority may ______ the approval of a plan if it is found to be in violation of the Code.", choices: ["A. Speed up", "B. Withhold", "C. Ignore", "D. Sell"], a: 1 },
-    { q: "Principle No. 6: Plumbing fixtures shall be made of ______ material.", choices: ["A. Porous", "B. Smooth non-absorbent", "C. Flexible", "D. Transparent"], a: 1 },
-    { q: "A set of rules for the professional conduct of Registered Master Plumbers is the:", choices: ["A. General Provisions", "B. Code of Ethics", "C. Technical Specifications", "D. Permit Requirements"], a: 1 },
-    { q: "Section 103.1.1: Every permit shall be valid for ______ year(s).", choices: ["A. One (1)", "B. Two (2)", "C. Three (3)", "D. Five (5)"], a: 0 },
-    { q: "Principle No. 19: Fixtures must be installed with regard to ______ to be accessible for use.", choices: ["A. Height", "B. Spacing", "C. Color", "D. Price"], a: 1 },
-    { q: "The first Chief of the Division of Plumbing Construction in 1902 was:", choices: ["A. Ramon Magsaysay", "B. John F. Hass", "C. Jaime Cabase", "D. Fortunato Amosco"], a: 1 },
-    { q: "Principle No. 1: Premises must be provided with a supply of ______ water.", choices: ["A. Salt", "B. Pure and Wholesome", "C. Recycled", "D. Distilled"], a: 1 },
-    { q: "If a permit is expired due to suspension of work for 120 days, a renewal fee of ______ the original fee is required.", choices: ["A. 1/4", "B. 1/2", "C. Double", "D. Triple"], a: 1 },
-    { q: "Principle No. 4: A building must connect to a public sewer if the lot ______ a street with a sewer.", choices: ["A. Is near", "B. Abuts", "C. Is within 1km of", "D. Faces"], a: 1 },
-    { q: "Principle No. 7: The drainage system must guard against fouling, deposit of solids, and ______.", choices: ["A. Freezing", "B. Clogging", "C. Sweating", "D. Noise"], a: 1 },
-    { q: "Section 106.3: It is the duty of the ______ to cause the plumbing work to remain exposed until inspected.", choices: ["A. Inspector", "B. Permit Holder", "C. Neighbor", "D. Mayor"], a: 1 },
-    { q: "Principle No. 12: The plumbing system shall be subjected to ______ to disclose defects.", choices: ["A. Interviews", "B. Tests", "C. X-rays", "D. Estimates"], a: 1 },
-    { q: "Principle No. 22: Fixtures must prevent ______ of polluted water into the water supply.", choices: ["A. Evaporation", "B. Backflow", "C. Cooling", "D. Heating"], a: 1 },
-    { q: "NAMPAP was first organized in what year?", choices: ["A. 1935", "B. 1955", "C. 1902", "D. 1999"], a: 0 },
-    { q: "The ultimate goal of the 1999 National Plumbing Code is the protection of ______.", choices: ["A. Plumbing fees", "B. Master Plumbers", "C. Public Health and Safety", "D. Pipe manufacturers"], a: 2 }
-    ],
-6: [
-        { q: "A pipe which conveys potable water from the building supply pipe to the plumbing fixtures and other water outlets is the definition of:", choices: ["A. Water Service Pipe", "B. Water Distribution Pipe", "C. Main Pipe", "D. Supply Branch"], a: 1 },
-    { q: "The technical term for any person, firm, or corporation who has been issued a plumbing permit refers to the:", choices: ["A. Master Plumber", "B. Contractor", "C. Permittee", "D. Authorized Representative"], a: 2 },
-    { q: "The pipe which conveys the discharge of water closets, urinals, or fixtures having similar functions, with or without the discharge from other fixtures is the:", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Drain Pipe"], a: 1 },
-    { q: "A pipe which conveys only wastewater or liquid waste, free of fecal matter is the:", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "The lowest portion of the inside of a pipe is the:", choices: ["A. Crown", "B. Invert", "C. Rim", "D. Base"], a: 1 },
-    { q: "Section 102.1: A permit is required for any plumbing work except for the ______ of stoppages.", choices: ["A. Permanent repair", "B. Temporary clearance", "C. Complete replacement", "D. Rerouting"], a: 1 },
-    { q: "Section 103.2.2: When the Administrative Authority finds that the plans conform to the requirements, they shall ______ the plans.", choices: ["A. Discard", "B. Approve", "C. Photocopy", "D. Archive"], a: 1 },
-    { q: "Principle No. 11: Each vent terminal shall extend to the ______.", choices: ["A. Basement", "B. Outer air", "C. Water tank", "D. Public sewer"], a: 1 },
-    { q: "Principle No. 16: If no public sewer is available, a ______ shall be provided.", choices: ["A. Direct street discharge", "B. Private sewage disposal system", "C. Storage barrel", "D. Deep well"], a: 1 },
-    { q: "Section 102.2: Plans and specifications shall be drawn to a scale of not less than ______.", choices: ["A. 1:50", "B. 1:100", "C. 1:200", "D. 1:500"], a: 1 },
-    { q: "A Registered Master Plumber should not ______ the work of another plumber to gain an advantage.", choices: ["A. Study", "B. Criticize or interfere with", "C. Recommend", "D. Document"], a: 1 },
-    { q: "Principle No. 5: Each family dwelling unit on a lot abutting a public sewer shall have at least ______.", choices: ["A. Two kitchens", "B. One water closet and one kitchen sink", "C. Three floor drains", "D. One bathtub"], a: 1 },
-    { q: "Section 108.1: Any person who violates the provisions of this Code shall be punished by a fine not exceeding ______.", choices: ["A. 1,000 Pesos", "B. 2,000 Pesos", "C. 5,000 Pesos", "D. 10,000 Pesos"], a: 1 },
-    { q: "Section 108.1: Violation of the Code can also lead to imprisonment for a period not exceeding ______.", choices: ["A. 6 months", "B. 1 year", "C. 2 years", "D. 5 years"], a: 1 },
-    { q: "Principle No. 10: The drainage system shall be designed to prevent ______ of trap seals.", choices: ["A. Cleaning", "B. Siphonage and aspiration", "C. Painting", "D. Inspection"], a: 1 },
-    { q: "Section 104.1: The Administrative Authority may ______ a permit if work is done in violation of the Code.", choices: ["A. Renew", "B. Suspend or Revoke", "C. Photocopy", "D. Laminate"], a: 1 },
-    { q: "Which group drafted the first National Plumbing Code in the 1950s?", choices: ["A. The Bureau of Health", "B. NAMPAP", "C. The Board of Civil Engineers", "D. The City Council of Manila"], a: 1 },
-    { q: "Principle No. 13: The drainage system must prevent the entry of ______ into the system.", choices: ["A. Rainwater", "B. Explosive mixtures", "C. Cold water", "D. Filtered air"], a: 1 },
-    { q: "The Board of Master Plumbers is under the administrative supervision of the ______.", choices: ["A. DOH", "B. PRC", "C. DPWH", "D. DENR"], a: 1 },
-    { q: "Principle No. 19: Fixtures shall be installed with regard to spacing as to be ______ for their intended use.", choices: ["A. Hidden", "B. Accessible", "C. Isolated", "D. Expensive"], a: 1 },
-    { q: "Section 106.3: Who is responsible for providing the necessary equipment for testing?", choices: ["A. The Inspector", "B. The City Government", "C. The Registered Master Plumber or Permittee", "D. The Utility Company"], a: 2 },
-    { q: "Principle No. 3: Water heating devices must be designed to prevent dangers from explosion due to ______.", choices: ["A. Low pressure", "B. Overheating", "C. Cold water", "D. Air pockets"], a: 1 },
-    { q: "Section 107.1: All plumbing systems shall be maintained in a ______ condition.", choices: ["A. New", "B. Sanitary", "C. Dry", "D. Hidden"], a: 1 },
-    { q: "A Registered Master Plumber should not ______ the reputation of a fellow plumber.", choices: ["A. Support", "B. Falsely or maliciously injure", "C. Collaborate with", "D. Learn from"], a: 1 },
-    { q: "Principle No. 10: Siphonage, aspiration, or forcing of trap seals must be prevented under conditions of ______ use.", choices: ["A. Heavy", "B. Ordinary", "C. Industrial", "D. Emergency"], a: 1 },
-    { q: "The lowest portion of the inside of a horizontal pipe is often referred to as the ______.", choices: ["A. Crown", "B. Invert", "C. Rim", "D. Bottom"], a: 1 },
-    { q: "Which document defines the professional conduct and responsibilities of a Master Plumber?", choices: ["A. The Building Code", "B. The Code of Ethics", "C. The Labor Code", "D. The Civil Code"], a: 1 },
-    { q: "Principle No. 12: The purpose of testing a plumbing system is to effectively disclose ______.", choices: ["A. The cost of materials", "B. All defects and leaks", "C. The age of the building", "D. The name of the owner"], a: 1 },
-    { q: "Section 102.2: The plans must show the ______ of the plumbing system in relation to the building.", choices: ["A. Price", "B. Layout and general dimensions", "C. Furniture placement", "D. Wall color"], a: 1 },
-    { q: "What year was the Revised National Plumbing Code of the Philippines approved by President Estrada?", choices: ["A. 1955", "B. 1999", "C. 2005", "D. 2010"], a: 1 },
-    { q: "Principle No. 18: Maintenance of plumbing systems in a sanitary condition is the responsibility of ______.", choices: ["A. Any tenant", "B. Registered Master Plumbers", "C. The local mayor", "D. Unlicensed helpers"], a: 1 },
-    { q: "Section 101.2.1: This code applies to the ______ of any plumbing system.", choices: ["A. Design only", "B. Installation, alteration, repair, and maintenance", "C. Marketing only", "D. Demolition only"], a: 1 },
-    { q: "A 'Cross-connection' is a connection between a ______ and a non-potable source.", choices: ["A. Gas line", "B. Potable water supply", "C. Electrical line", "D. Vent pipe"], a: 1 },
-    { q: "Principle No. 7: The drainage system shall be designed to guard against ______.", choices: ["A. High velocity", "B. Fouling and deposit of solids", "C. Low temperature", "D. Clear water"], a: 1 },
-    { q: "Who was the NAMPAP President who helped update the code in 1999?", choices: ["A. John F. Hass", "B. Jaime M. Cabase", "C. Francisco Geronimo", "D. Mariano de Jesus"], a: 1 },
-    { q: "Section 106.1: All plumbing systems shall be ______ by the Administrative Authority.", choices: ["A. Ignored", "B. Inspected", "C. Painted", "D. Photographed"], a: 1 },
-    { q: "Principle No. 14: This principle mandates protection of what specific types of goods from contamination?", choices: ["A. Electronic goods", "B. Food and sterile goods", "C. Construction materials", "D. Clothing"], a: 1 },
-    { q: "Principle No. 20: Plumbing shall be installed with due regard to the preservation of ______.", choices: ["A. Structural members' strength", "B. Paint colors", "C. Garden landscaping", "D. Tile patterns"], a: 0 },
-    { q: "The 'Thomasites' helped introduce ______ standards to the Philippines.", choices: ["A. Spanish", "B. American plumbing", "C. Japanese", "D. German"], a: 1 },
-    { q: "A 'Notice of Correction' must be ______ before further work can proceed.", choices: ["A. Ignored", "B. Complied with and re-inspected", "C. Thrown away", "D. Framed"], a: 1 },
-    { q: "Principle No. 1: Pure and wholesome water must be provided for ______.", choices: ["A. Irrigation only", "B. Human habitation", "C. Car washing", "D. Construction"], a: 1 },
-    { q: "Section 102.2: A plumbing permit application requires ______ sets of plans.", choices: ["A. Three", "B. Six", "C. Ten", "D. Two"], a: 1 },
-    { q: "What happens if a permit expires?", choices: ["A. It is still valid", "B. It must be renewed and a fee paid", "C. The building must be demolished", "D. The plumber is arrested"], a: 1 },
-    { q: "Principle No. 21: Sewage shall not be discharged into the ground unless ______.", choices: ["A. It is diluted", "B. It is rendered innocuous by treatment", "C. It is buried deep", "D. It is stored for a year"], a: 1 },
-    { q: "Section 103.1.2: A permit becomes null and void if work is suspended for ______ days.", choices: ["A. 30", "B. 120", "C. 60", "D. 90"], a: 1 },
-    { q: "Principle No. 9: Water-sealed traps are used to prevent ______ from entering the building.", choices: ["A. Fresh air", "B. Sewer gas", "C. Rainwater", "D. Insects"], a: 1 },
-    { q: "The Master Plumber's Code of Ethics promotes ______ with fellow plumbers.", choices: ["A. Competition", "B. Cooperation and loyalty", "C. Secrecy", "D. Hostility"], a: 1 },
-    { q: "Principle No. 22: Polluted water must not ______ into the water supply system.", choices: ["A. Evaporate", "B. Backflow", "C. Filter", "D. Freeze"], a: 1 },
-    { q: "Section 104.1: An Administrative Authority can enter a building at ______ times for inspection.", choices: ["A. Any", "B. Reasonable", "C. Only at night", "D. Only on weekends"], a: 1 },
-    { q: "The first Walled City 'Intramuros' used what kind of standards?", choices: ["A. American", "B. European plumbing", "C. Asian", "D. No standards"], a: 1 }
-    ],
-    7: [
-        { q: "The person or entity to whom a plumbing permit is issued is the:", choices: ["A. Administrative Authority", "B. Registered Master Plumber", "C. Permittee", "D. Building Official"], a: 2 },
-    { q: "Which section specifies that plumbing plans must be signed and sealed by a Registered and Licensed Master Plumber?", choices: ["A. Section 101", "B. Section 102.2", "C. Section 105", "D. Section 108"], a: 1 },
-    { q: "A person violating Code provisions shall be guilty of a misdemeanor and fined not more than:", choices: ["A. 500 pesos", "B. 1,000 pesos", "C. 5,000 pesos", "D. 2,000 pesos"], a: 1 },
-    { q: "When a permit is issued, approved plans shall be marked as:", choices: ["A. CERTIFIED", "B. APPROVED", "C. LICENSED", "D. FINAL"], a: 1 },
-    { q: "Plumbing systems found to be a nuisance or hazardous to life, health, or property define:", choices: ["A. Illegal Plumbing", "B. Dangerous Plumbing", "C. Experimental Plumbing", "D. Standard Plumbing"], a: 1 },
-    { q: "If a permit expires due to work suspension, the renewal fee is ______ the original permit fee amount.", choices: ["A. 1/4", "B. 1/2", "C. Double", "D. Triple"], a: 1 },
-    { q: "The Administrative Authority must be notified at least ______ hours before any work is to be inspected.", choices: ["A. 12", "B. 24", "C. 48", "D. 72"], a: 1 },
-    { q: "A horizontal pipe is any pipe or fitting which makes an angle in a horizontal plane of less than ______ degrees.", choices: ["A. 22.5", "B. 45", "C. 60", "D. 90"], a: 1 },
-    { q: "A vertical pipe is any pipe or fitting which makes an angle of ______ degrees or less with the vertical.", choices: ["A. 30", "B. 45", "C. 60", "D. 15"], a: 1 },
-    { q: "Which section states that existing plumbing systems can remain if they are not a nuisance or hazardous?", choices: ["A. Section 101.1", "B. Section 101.2.2", "C. Section 107", "D. Section 108"], a: 1 },
-    { q: "A pipe that carries liquid waste but NO fecal matter is the:", choices: ["A. Soil pipe", "B. Vent pipe", "C. Waste pipe", "D. Storm drain"], a: 2 },
-    { q: "Who is responsible for scheduling all inspections and providing access to the site?", choices: ["A. The Inspector", "B. The Master Plumber or Permittee", "C. The Architect", "D. The Neighbor"], a: 1 },
-    { q: "The 'Water Test' for drainage systems requires that no section be tested with less than a ______ meter head of water.", choices: ["A. 3 meter", "B. 5 meter", "C. 10 meter", "D. 1 meter"], a: 0 },
-    { q: "An air test is performed by attaching an air compressor to the system and reaching a pressure of ______ kPa.", choices: ["A. 17.2 kPa", "B. 34.5 kPa", "C. 68.9 kPa", "D. 103.4 kPa"], a: 1 },
-    { q: "During an air test, the pressure must be maintained for at least ______ minutes without leaking.", choices: ["A. 5", "B. 10", "C. 15", "D. 30"], a: 2 },
-    { q: "Which part of the building is protected from sewer gas by a trap seal?", choices: ["A. The roof", "B. The interior/living space", "C. The basement only", "D. The garden"], a: 1 },
-    { q: "Section 102.2: A plumbing permit is NOT required for which of the following?", choices: ["A. Installing a new sink", "B. Stopping a leak in a water pipe", "C. Moving a floor drain", "D. Adding a new bathroom"], a: 1 },
-    { q: "Who provides the necessary test plugs and gauges for a plumbing inspection?", choices: ["A. The Administrative Authority", "B. The Registered Master Plumber or Permittee", "C. The Plumbing Inspector", "D. The Hardware Store"], a: 1 },
-    { q: "What is the penalty for continuing to work after a 'Stop Work Order' has been issued?", choices: ["A. Verbal warning", "B. Additional fines and penalties", "C. Loss of the house", "D. No penalty"], a: 1 },
-    { q: "A 'Certificate of Approval' is issued only after ______.", choices: ["A. The permit is paid", "B. All tests and inspections are passed", "C. The plans are signed", "D. The house is painted"], a: 1 },
-    { q: "Who was the Filipino Master Plumber known for organizing the first NAMPAP meeting?", choices: ["A. Francisco Geronimo", "B. Mariano de Jesus", "C. John F. Hass", "D. Tomas Geronimo"], a: 0 },
-    { q: "The National Plumbing Code of 1999 was based on which previous version?", choices: ["A. 1959 Code", "B. 1970 Code", "C. 1935 Code", "D. 1980 Code"], a: 0 },
-    { q: "Section 103.1.2: A permit is null and void if work is abandoned for more than ______ days.", choices: ["A. 30", "B. 60", "C. 90", "D. 120"], a: 3 },
-    { q: "The Administrative Authority may require a 'Re-inspection' if work is found to be ______.", choices: ["A. Too expensive", "B. Defective or incomplete", "C. Completed early", "D. Using green pipes"], a: 1 },
-    { q: "A Master Plumber must not 'use any ______' to get an advantage over a competitor.", choices: ["A. New tools", "B. Unfair or illegal means", "C. Better materials", "D. Faster labor"], a: 1 },
-    { q: "A plumbing system that is 'unsafe' is considered a ______.", choices: ["A. Public Nuisance", "B. Minor issue", "C. Tax deduction", "D. Modern design"], a: 0 },
-    { q: "Section 104.1: If an inspector is denied entry, they may seek a ______.", choices: ["A. New job", "B. Search warrant or legal remedy", "C. Refund", "D. Handshake"], a: 1 },
-    { q: "Which term describes a water supply that is safe for drinking?", choices: ["A. Non-potable", "B. Potable", "C. Gray water", "D. Brackish"], a: 1 },
-    { q: "The 'Crown' of a trap refers to the ______.", choices: ["A. Bottom", "B. Highest point of the trap", "C. The side", "D. The drain plug"], a: 1 },
-    { q: "NAMPAP President Jaime Cabase promoted which modern practice in the 1999 Code?", choices: ["A. Plastic pipes only", "B. As-Built Plans", "C. No inspections", "D. Wood pipes"], a: 1 },
-    { q: "A pipe conveying discharge of water closets or urinals is a ______.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Vent pipe", "D. Supply pipe"], a: 1 },
-    { q: "What is the minimum head for a water test in a drainage system?", choices: ["A. 5 feet", "B. 10 feet", "C. 20 feet", "D. 30 feet"], a: 1 },
-    { q: "What is the metric equivalent of a 10-foot head of water?", choices: ["A. 1.5 meters", "B. 3.0 meters", "C. 4.5 meters", "D. 6.0 meters"], a: 1 },
-    { q: "Principle No. 10: The goal of air circulation is to prevent the loss of ______.", choices: ["A. Water pressure", "B. Trap seals", "C. Heat", "D. Pipe color"], a: 1 },
-    { q: "Section 103.1.2: A permit expires after ______ year from date of issuance.", choices: ["A. 1", "B. 2", "C. 3", "D. 5"], a: 0 },
-    { q: "A Master Plumber should consider their profession an opportunity to ______.", choices: ["A. Serve the public", "B. Charge high fees", "C. Ignore laws", "D. Beat competitors"], a: 0 },
-    { q: "What should a plumber do if they see an unsafe plumbing condition?", choices: ["A. Ignore it", "B. Report it to the Administrative Authority", "C. Take a photo and leave", "D. Charge more"], a: 1 },
-    { q: "Which section allows the Building Official to authorize un-inspected work to be uncovered?", choices: ["A. Section 106.1", "B. Section 106.2", "C. Section 106.3", "D. Section 106.4"], a: 2 },
-    { q: "The Board of Master Plumbers consists of a Chairman and ______ members.", choices: ["A. 1", "B. 2", "C. 3", "D. 4"], a: 1 },
-    { q: "What happens if you work without a plumbing permit?", choices: ["A. Reward", "B. Violation/Penalty", "C. Automatic approval", "D. Tax break"], a: 1 },
-    { q: "A vent pipe's main purpose is to ______.", choices: ["A. Carry waste", "B. Provide air circulation and protect trap seals", "C. Carry potable water", "D. Cool the building"], a: 1 },
-    { q: "The first city in the Philippines to have a regulated plumbing trade (1902) was:", choices: ["A. Cebu", "B. Manila", "C. Davao", "D. Vigan"], a: 1 },
-    { q: "Any plumbing system which is found to be a nuisance is classified as ______.", choices: ["A. Dangerous Plumbing", "B. Illegal Plumbing", "C. Standard Plumbing", "D. High-end Plumbing"], a: 0 },
-    { q: "Siphonage is prevented by proper ______.", choices: ["A. Painting", "B. Venting", "C. Cleaning", "D. Lighting"], a: 1 },
-    { q: "The depth of water that must be maintained in a trap to prevent sewer gas entry is the:", choices: ["A. Trap depth", "B. Trap seal", "C. Water column", "D. Barrier height"], a: 1 },
-    { q: "Any person making a false statement in a permit application shall have their permit:", choices: ["A. Upgraded", "B. Revoked", "C. Expedited", "D. Copied"], a: 1 },
-    { q: "In the history of plumbing, the 'Ilustrados' were known as the:", choices: ["A. Laborers", "B. Elite group/class", "C. Government officials", "D. Spanish priests"], a: 1 },
-    { q: "All plumbing fixtures shall be installed with regard to spacing as to be ______ for use.", choices: ["A. Decorative", "B. Accessible", "C. Hidden", "D. Expensive"], a: 1 },
-    { q: "A pipe that carries groundwater or rainwater to a point of disposal is a:", choices: ["A. Soil pipe", "B. Storm drain", "C. Waste pipe", "D. Vent pipe"], a: 1 },
-    { q: "The Code of Ethics emphasizes that a plumber should 'encourage the ______' of the trade.", choices: ["A. Monopolization", "B. Improvement and Progress", "C. Secrecy", "D. Elimination"], a: 1 }
-    ],
-    8: [
-        { q: "The administrative officer or any other person or agency individual to whom the Building Official may delegate the power to enforce the provisions of this Code.", choices: ["A. Master Plumber", "B. Administrative Authority", "C. Building Inspector", "D. Contractor"], a: 1 },
-    { q: "A physical separation, which may be a low inlet into the indirect waste receptor from the fixture outlet and which is at least twice the effective diameter of the drain served.", choices: ["A. Air Gap (Water System)", "B. Air Gap (Drainage System)", "C. Backflow", "D. Relief Vent"], a: 1 },
-    { q: "The unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying potable water to the flood-level rim of any tank, vat or fixture.", choices: ["A. Air Gap (Water System)", "B. Air Gap (Drainage System)", "C. Critical Level", "D. Flood Level"], a: 0 },
-    { q: "A water supply pipe, which extends vertically to one full story or more to convey water into pipe branches or to a group of fixtures.", choices: ["A. Stack", "B. Riser", "C. Vertical Pipe", "D. Main"], a: 1 },
-    { q: "The flow of water or other liquids, mixtures or substances into the distributing pipes of a potable supply of water from any source other than its intended source.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "The flowing back of used, contaminated or polluted water from a plumbing fixture or vessel into a water supply pipe due to a negative pressure in such pipe.", choices: ["A. Backflow", "B. Back-siphonage", "C. Back-pressure", "D. Gravity flow"], a: 1 },
-    { q: "Any group of two or more similar adjacent fixtures which discharge into a common horizontal waste or soil branch.", choices: ["A. Battery of Fixtures", "B. Group of Fixtures", "C. Fixture Unit", "D. Branch"], a: 0 },
-    { q: "A device or means to prevent backflow into the potable water system.", choices: ["A. Check Valve", "B. Backflow Preventer", "C. Gate Valve", "D. Air Gap"], a: 1 },
-    { q: "A pipe which is not a riser, main or stack.", choices: ["A. Branch", "B. Lateral", "C. Vent", "D. Offset"], a: 0 },
-    { q: "Any part of the piping system other than a main, riser or stack.", choices: ["A. Branch", "B. Branch Vent", "C. Horizontal Branch", "D. Branch Interval"], a: 1 },
-    { q: "A length of soil or waste stack corresponding in general to a story height, but in no case less than 2.43 meters within which the horizontal branches from one floor or story of a building are connected to the stack.", choices: ["A. Branch", "B. Branch Interval", "C. Stack", "D. Story Height"], a: 1 },
-    { q: "Any structure used or intended for supporting or sheltering any occupancy.", choices: ["A. Premises", "B. Building", "C. Dwelling", "D. Establishment"], a: 1 },
-    { q: "That part of the lowest piping of a plumbing system which receives the discharge from soil, waste and other drainage pipes inside of a building and conveys it to the house sewer.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Drain", "D. House Pipe"], a: 1 },
-    { q: "That part of the horizontal piping of a drainage system which extends from the end of the building drain and conveys it to a public sewer or private sewage disposal system.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Sewer", "D. Lateral Sewer"], a: 0 },
-    { q: "A vertical distance of 2.43 meters.", choices: ["A. Branch Interval", "B. Story Height", "C. Riser Height", "D. Ceiling Height"], a: 1 },
-    { q: "The pipe carrying water from the water meter or other source of water supply to a building or other point of use or distribution on the lot.", choices: ["A. Water Service Pipe", "B. Building Supply Pipe", "C. Water Main", "D. Distribution Pipe"], a: 1 },
-    { q: "A plug or cover which can be removed from a fitting for the purpose of cleaning or examining the interior of the pipe.", choices: ["A. Gate Valve", "B. Cleanout", "C. Stop Cock", "D. Blind Flange"], a: 1 },
-    { q: "A vent that affords a passage of air to or from a drainage system.", choices: ["A. Individual Vent", "B. Common Vent", "C. Relief Vent", "D. Vent Stack"], a: 1 },
-    { q: "A drain connecting the compartments of a set of fixtures to a trap or connecting other permitted fixtures to a common trap.", choices: ["A. Continuous Waste", "B. Continuous Vent", "C. Common Waste", "D. Unit Waste"], a: 0 },
-    { q: "A physical connection or arrangement between two otherwise separate piping systems, one of which contains potable water and the other which contains water of unknown or questionable safety.", choices: ["A. Backflow", "B. Cross-connection", "C. Direct Connection", "D. Inter-connection"], a: 1 },
-    { q: "An marking or reference point on a vacuum breaker or backflow preventer which determines the minimum elevation above the flood level rim of the fixture.", choices: ["A. Critical Level", "B. Flood Level", "C. Water Level", "D. Datum Line"], a: 0 },
-    { q: "A liquid-tight receptacle that receives the discharge of a septic tank and designed to permit such effluent to seep through its bottom and sides into the ground.", choices: ["A. Seepage Pit", "B. Cesspool", "C. Septic Tank", "D. Catch Basin"], a: 1 },
-    { q: "A pipe or system of pipes, which provides a path for waste water to flow from a building to a point of disposal.", choices: ["A. Drainage System", "B. Sewer System", "C. Plumbing System", "D. Vent System"], a: 0 },
-    { q: "The liquid and water-borne wastes derived from the ordinary living processes, free from industrial wastes and of such character as to permit satisfactory disposal without special treatment into the public sewer.", choices: ["A. Industrial Waste", "B. Domestic Sewage", "C. Storm Water", "D. Gray Water"], a: 1 },
-    { q: "A vertical pipe which conveys only wastewater or liquid waste free of fecal matter.", choices: ["A. Soil Stack", "B. Waste Stack", "C. Vent Stack", "D. Riser"], a: 1 },
-    { q: "A vertical pipe which conveys the discharge of water closets, urinals or similar fixtures.", choices: ["A. Waste Stack", "B. Soil Stack", "C. Stack", "D. Vent"], a: 1 },
-    { q: "A common term for any vertical line of soil, waste or vent piping.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Vertical Pipe"], a: 1 },
-    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Relief Vent", "D. Common Vent"], a: 1 },
-    { q: "A vertical vent pipe installed primarily for the purpose of providing circulation of air to and from any part of the drainage system.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Main Vent", "D. Individual Vent"], a: 1 },
-    { q: "The top edge of a receptacle from which water overflows.", choices: ["A. Rim", "B. Flood Level Rim", "C. Invert", "D. Crown"], a: 1 },
-    { q: "The level in a fixture at which water begins to overflow the top or rim of the fixture.", choices: ["A. Flood Level", "B. Critical Level", "C. Water Level", "D. Overflow Line"], a: 0 },
-    { q: "Any pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["A. Vertical Pipe", "B. Horizontal Pipe", "C. Sloping Pipe", "D. Lateral"], a: 1 },
-    { q: "Any pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["A. Horizontal Pipe", "B. Vertical Pipe", "C. Riser", "D. Stack"], a: 1 },
-    { q: "A device designed and installed so as to separate and retain deleterious, hazardous or undesirable matter from normal wastes while permitting normal sewage or liquid wastes to discharge into the disposal terminal by gravity.", choices: ["A. Trap", "B. Interceptor (Clarifier)", "C. Catch Basin", "D. Septic Tank"], a: 1 },
-    { q: "The lowest portion of the inside of a horizontal pipe.", choices: ["A. Crown", "B. Invert", "C. Rim", "D. Base"], a: 1 },
-    { q: "Water-borne waste from the processes of industry, manufacturing, trade or business.", choices: ["A. Domestic Sewage", "B. Industrial Waste", "C. Storm Water", "D. Hazardous Waste"], a: 1 },
-    { q: "A pipe connecting several fixtures which are then connected to the stack.", choices: ["A. Main", "B. Fixture Branch", "C. Lateral", "D. Branch"], a: 1 },
-    { q: "A water supply pipe that connects the fixture with the fixture branch.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Riser", "D. Main"], a: 1 },
-    { q: "A quantity in terms of which the load-producing effects on the plumbing system of different kinds of plumbing fixtures are expressed on some arbitrarily chosen scale.", choices: ["A. Flow Rate", "B. Fixture Unit", "C. Load Factor", "D. Unit Value"], a: 1 },
-    { q: "A room or space having a volume less than 1.4 cubic meters for each 250 Watts of the aggregate input rating of all fuel-burning appliances installed in that space.", choices: ["A. Confined Space", "B. Unconfined Space", "C. Mechanical Room", "D. Utility Closet"], a: 0 },
-    { q: "The person, his agents or assigns in possession of the property.", choices: ["A. Permittee", "B. Owner", "C. Contractor", "D. Occupant"], a: 1 },
-    { q: "Any part of the piping system which is so designed and installed that it can be separated from the rest of the system by means of a valve.", choices: ["A. Branch", "B. Section", "C. Unit", "D. Group"], a: 1 },
-    { q: "Water which is satisfactory for drinking, culinary and domestic purposes and which meets the quality standards of the Philippine National Standards for Drinking Water.", choices: ["A. Non-potable Water", "B. Potable Water", "C. Pure Water", "D. Wholesome Water"], a: 1 },
-    { q: "A pipe or conduit for carrying sewage and wastewater.", choices: ["A. Drain", "B. Sewer", "C. Canal", "D. Culvert"], a: 1 },
-    { q: "A sewer which is controlled by public authority.", choices: ["A. Private Sewer", "B. Public Sewer", "C. Main Sewer", "D. Lateral Sewer"], a: 1 },
-    { q: "A water-tight receptacle which receives the discharge of a plumbing system or part thereof and is designed and constructed so as to retain solids, digest organic matter through a period of detention.", choices: ["A. Cesspool", "B. Septic Tank", "C. Seepage Pit", "D. Catch Basin"], a: 1 },
-    { q: "The water-borne wastes of a community.", choices: ["A. Domestic Waste", "B. Sewage", "C. Sludge", "D. Effluent"], a: 1 },
-    { q: "A fitting or device of such shape and flood-level rim as to provide, when properly vented, a liquid seal which will prevent the back passage of air without materially affecting the flow of sewage or wastewater through it.", choices: ["A. Valve", "B. Trap", "C. Interceptor", "D. Cleanout"], a: 1 },
-    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap Depth", "B. Trap Seal", "C. Water Seal", "D. Seal Height"], a: 1 },
-    { q: "A pipe installed to vent a fixture trap and which connects with the vent system above the fixture served or terminates in the open air.", choices: ["A. Common Vent", "B. Individual Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vent which provides a circulation of air between drainage and vent systems.", choices: ["A. Individual Vent", "B. Relief Vent", "C. Common Vent", "D. Circuit Vent"], a: 1 },
-    { q: "A pipe connecting the water-distributing system with the water meter.", choices: ["A. Building Supply", "B. Water Service Pipe", "C. Main Pipe", "D. Lateral Pipe"], a: 1 },
-    { q: "A pipe or system of pipes, which provides a path for water to flow from the source to the point of use.", choices: ["A. Drainage System", "B. Water Supply System", "C. Plumbing System", "D. Riser System"], a: 1 },
-    { q: "That part of the drainage system that does not drain by gravity into the building sewer.", choices: ["A. Sump", "B. Building Subdrain", "C. Main Drain", "D. Lateral Drain"], a: 1 },
-    { q: "A tank or pit, which receives sewage or liquid waste, located below the normal grade of the gravity system and must be emptied by mechanical means.", choices: ["A. Septic Tank", "B. Sump", "C. Catch Basin", "D. Cesspool"], a: 1 },
-    { q: "A device or system that is used to treat water for a specific purpose.", choices: ["A. Filter", "B. Water Conditioner/Treater", "C. Softener", "D. Purifier"], a: 1 },
-    { q: "A pipe or system of pipes, which conveys wastewater and water-borne waste from the building to a point of disposal.", choices: ["A. Sewerage System", "B. Plumbing System", "C. Drainage System", "D. Vent System"], a: 0 },
-    { q: "The lowest part of the interior of a horizontal pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Bottom"], a: 1 },
-    { q: "The part of a plumbing system that is not a riser, main, or stack.", choices: ["A. Branch", "B. Lateral", "C. Vent", "D. Offset"], a: 0 },
-    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Relief Vent", "D. Loop Vent"], a: 1 },
-    { q: "A vertical line of soil, waste, or vent piping.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A common term for any vertical line of soil, waste, or vent piping.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A vertical distance of 2.43 meters used as a standard for stack connections.", choices: ["A. Story Height", "B. Branch Interval", "C. Riser Height", "D. Ceiling Height"], a: 1 },
-    { q: "A physical separation between a water system and a drainage system.", choices: ["A. Backflow", "B. Air Gap", "C. Check Valve", "D. Trap"], a: 1 },
-    { q: "The level at which water overflows the rim of a fixture.", choices: ["A. Critical Level", "B. Flood Level", "C. Water Level", "D. Top Level"], a: 1 },
-    { q: "A fitting designed to prevent the passage of air or gas while allowing liquid flow.", choices: ["A. Valve", "B. Trap", "C. Cleanout", "D. Filter"], a: 1 },
-    { q: "A pipe connecting several fixtures to a stack.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Main", "D. Lateral"], a: 0 },
-    { q: "A water supply pipe extending vertically one full story or more.", choices: ["A. Stack", "B. Riser", "C. Main", "D. Pipe Branch"], a: 1 },
-    { q: "A pipe between the building drain and the public sewer.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral Sewer", "D. House Sewer"], a: 0 },
-    { q: "A system of pipes for conveying waste and air.", choices: ["A. Plumbing System", "B. Sewer System", "C. Drainage System", "D. Water System"], a: 0 },
-    { q: "A pipe carrying water to a fixture branch.", choices: ["A. Main", "B. Lateral", "C. Riser", "D. Supply"], a: 0 },
-    { q: "The extension of a stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Relief Vent", "D. Common Vent"], a: 1 },
-    { q: "A device preventing backflow.", choices: ["A. Check Valve", "B. Backflow Preventer", "C. Gate Valve", "D. Globe Valve"], a: 1 },
-    { q: "The level where water begins to overflow.", choices: ["A. Flood Level Rim", "B. Flood Level", "C. Overflow Line", "D. Rim"], a: 1 },
-    { q: "A pipe conveying discharge of water closets or urinals.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "A pipe conveying discharge from fixtures NOT containing fecal matter.", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "A fitting providing a liquid seal.", choices: ["A. Trap", "B. Valve", "C. Union", "D. Coupling"], a: 0 },
-    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap Seal", "B. Seal Depth", "C. Water Seal", "D. Dip Seal"], a: 0 },
-    { q: "A vertical line of vent piping.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Relief Vent", "D. Loop Vent"], a: 1 },
-    { q: "A pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["A. Vertical Pipe", "B. Horizontal Pipe", "C. Sloping Pipe", "D. Lateral"], a: 1 },
-    { q: "A pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["A. Horizontal Pipe", "B. Vertical Pipe", "C. Riser", "D. Stack"], a: 1 },
-    { q: "The lowest portion of the inside of a horizontal pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Bottom"], a: 1 },
-    { q: "A pipe connecting several fixtures which are then connected to the stack.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Lateral", "D. Main"], a: 0 },
-    { q: "The flow of liquid into potable pipes from non-potable sources.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "A marking on a vacuum breaker determining minimum elevation.", choices: ["A. Critical Level", "B. Flood Level", "C. Datum Line", "D. Water Mark"], a: 0 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Row"], a: 1 },
-    { q: "The lowest part of the piping inside a building.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Drain", "D. Lateral"], a: 1 },
-    { q: "The extension of a building drain outside the building.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral", "D. House Pipe"], a: 0 },
-    { q: "A plug used for cleaning or examining a pipe.", choices: ["A. Cleanout", "B. Gate Valve", "C. Stop Cock", "D. Union"], a: 0 },
-    { q: "A vent that is also a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Common Vent"], a: 0 },
-    { q: "A vent for a fixture trap connecting above the fixture.", choices: ["A. Common Vent", "B. Individual Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "The pipe from the water meter to the building.", choices: ["A. Water Service Pipe", "B. Building Supply", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A pipe conveying water to a fixture branch.", choices: ["A. Main", "B. Lateral", "C. Riser", "D. Branch"], a: 0 },
-    { q: "A pipe between the building drain and the public sewer.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral Sewer", "D. House Sewer"], a: 0 },
-    { q: "A pipe conveying water to a fixture.", choices: ["A. Fixture branch", "B. Fixture supply", "C. Fixture unit", "D. Lateral"], a: 1 },
-    { q: "A pipe between the fixture supply and the distribution pipe.", choices: ["A. Fixture branch", "B. Fixture supply", "C. Riser", "D. Main"], a: 0 },
-    { q: "The flow into potable pipes from non-potable sources.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "A device preventing backflow.", choices: ["A. Check valve", "B. Backflow preventer", "C. Gate valve", "D. Stop cock"], a: 1 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Column"], a: 1 },
-    { q: "A continuation of a drain to the vent.", choices: ["A. Continuous Vent", "B. Common Vent", "C. Individual Vent", "D. Stack Vent"], a: 0 },
-    { q: "A vent that is also a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Unit Vent"], a: 0 },
-    { q: "The extension of a stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Individual Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vertical line of vent piping.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Common Vent", "D. Main Vent"], a: 1 },
-    { q: "A pipe for water closet discharge.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "The lowest part of the inside of a pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Floor"], a: 1 }
-    ],
-    9: [
-        { q: "The principal artery of the system to which branches may be connected.", choices: ["A. Main", "B. Stack", "C. Riser", "D. Header"], a: 0 },
-    { q: "Any system of piping, with its fittings, which is installed within the premises in or under the building of the water supply source.", choices: ["A. Main Sewer", "B. Main Water Pipe", "C. Main", "D. Building Subdrain"], a: 2 },
-    { q: "A water supply pipe that extends vertically one full story or more to convey water to branches.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Vertical Pipe"], a: 0 },
-    { q: "A vertical line of soil, waste or vent piping extending through one or more stories.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Column"], a: 1 },
-    { q: "An unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying water to the flood-level rim of a receptacle.", choices: ["A. Air Gap (Drainage)", "B. Air Gap (Water System)", "C. Critical Level", "D. Flood Level"], a: 1 },
-    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Unit Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vertical vent pipe installed primarily for providing circulation of air to and from any part of the soil or waste system.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Individual Vent", "D. Local Vent"], a: 0 },
-    { q: "A branch vent that performs its functions for two or more traps and extends from in front of the last fixture connection of a horizontal branch to the vent stack.", choices: ["A. Circuit Vent", "B. Loop Vent", "C. Relief Vent", "D. Common Vent"], a: 0 },
-    { q: "Any vent which provides a circulation of air between drainage and vent systems or to act as an auxiliary vent.", choices: ["A. Individual Vent", "B. Relief Vent", "C. Common Vent", "D. Local Vent"], a: 1 },
-    { q: "A vent that does not carry liquid or water-borne wastes.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vent which also serves as a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Common Vent"], a: 0 },
-    { q: "The highest part of the internal portion of the trap.", choices: ["A. Invert", "B. Crown", "C. Dip", "D. Rim"], a: 1 },
-    { q: "The lowest portion of the inside of a horizontal pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Floor"], a: 1 },
-    { q: "A pipe connecting several fixtures to a horizontal branch.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A pipe connecting the water-distributing system with the water meter.", choices: ["A. Water Service Pipe", "B. Building Supply", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A marking on a backflow preventer which determines the minimum elevation above the flood level rim.", choices: ["A. Critical Level", "B. Flood Level", "C. Datum Line", "D. Water Mark"], a: 0 },
-    { q: "A pipe or system of pipes which provides a path for wastewater to flow from a building to a point of disposal.", choices: ["A. Sewerage System", "B. Drainage System", "C. Plumbing System", "D. Vent System"], a: 1 },
-    { q: "A sewer which is controlled by public authority.", choices: ["A. Public Sewer", "B. Private Sewer", "C. Main Sewer", "D. Lateral Sewer"], a: 0 },
-    { q: "A sewer which is NOT controlled by public authority.", choices: ["A. Public Sewer", "B. Private Sewer", "C. Main Sewer", "D. Lateral Sewer"], a: 1 },
-    { q: "The water-borne wastes of a community.", choices: ["A. Domestic Waste", "B. Sewage", "C. Sludge", "D. Effluent"], a: 1 },
-    { q: "A fitting designed to provide a liquid seal.", choices: ["A. Valve", "B. Trap", "C. Cleanout", "D. Union"], a: 1 },
-    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap Depth", "B. Trap Seal", "C. Water Seal", "D. Seal Height"], a: 1 },
-    { q: "A vent installed primarily to vent a single fixture trap.", choices: ["A. Common Vent", "B. Individual Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vent that connects with the vent system above the fixture served.", choices: ["A. Individual Vent", "B. Common Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "Any part of the piping system which is so designed that it can be separated from the rest of the system by a valve.", choices: ["A. Branch", "B. Section", "C. Unit", "D. Group"], a: 1 },
-    { q: "A vertical distance of 2.43 meters used for stack connections.", choices: ["A. Story Height", "B. Branch Interval", "C. Riser Height", "D. Ceiling Height"], a: 1 },
-    { q: "The principal artery of the plumbing system.", choices: ["A. Main", "B. Stack", "C. Riser", "D. Header"], a: 0 },
-    { q: "A water supply pipe connecting the fixture with the fixture branch.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Riser", "D. Main"], a: 1 },
-    { q: "A pipe conveying discharge of water closets or urinals.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "A pipe conveying wastewater free of fecal matter.", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "A device designed to separate and retain hazardous matter while permitting normal waste to discharge.", choices: ["A. Trap", "B. Interceptor (Clarifier)", "C. Catch Basin", "D. Septic Tank"], a: 1 },
-    { q: "A water-tight receptacle which retains solids and digests organic matter.", choices: ["A. Cesspool", "B. Septic Tank", "C. Seepage Pit", "D. Catch Basin"], a: 1 },
-    { q: "Water-borne waste from the processes of industry or business.", choices: ["A. Domestic Sewage", "B. Industrial Waste", "C. Storm Water", "D. Hazardous Waste"], a: 1 },
-    { q: "The person in possession of the property.", choices: ["A. Permittee", "B. Owner", "C. Contractor", "D. Occupant"], a: 1 },
-    { q: "A system for carrying sewage and wastewater.", choices: ["A. Sewerage System", "B. Plumbing System", "C. Drainage System", "D. Vent System"], a: 0 },
-    { q: "A continuation of a drain to the vent.", choices: ["A. Continuous Vent", "B. Common Vent", "C. Individual Vent", "D. Stack Vent"], a: 0 },
-    { q: "A common term for any vertical line of soil, waste or vent piping.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Vertical Pipe"], a: 1 },
-    { q: "The lowest portion of the inside of a pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Rim"], a: 1 },
-    { q: "The top edge of a receptacle from which water overflows.", choices: ["A. Rim", "B. Flood Level Rim", "C. Invert", "D. Crown"], a: 1 },
-    { q: "A system providing a path for water from the source to point of use.", choices: ["A. Drainage System", "B. Water Supply System", "C. Plumbing System", "D. Riser System"], a: 1 },
-    { q: "The level in a fixture at which water begins to overflow.", choices: ["A. Flood Level", "B. Critical Level", "C. Water Level", "D. Overflow Line"], a: 0 },
-    { q: "A pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["A. Vertical Pipe", "B. Horizontal Pipe", "C. Sloping Pipe", "D. Lateral"], a: 1 },
-    { q: "A pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["A. Horizontal Pipe", "B. Vertical Pipe", "C. Riser", "D. Stack"], a: 1 },
-    { q: "A pipe connecting several fixtures to a stack.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Main", "D. Lateral"], a: 0 },
-    { q: "A plug used for cleaning or examining a pipe.", choices: ["A. Cleanout", "B. Gate Valve", "C. Stop Cock", "D. Union"], a: 0 },
-    { q: "A vent that is also a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Common Vent"], a: 0 },
-    { q: "The flow into potable pipes from non-potable sources.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "A device preventing backflow.", choices: ["A. Check Valve", "B. Backflow Preventer", "C. Gate Valve", "D. Stop Cock"], a: 1 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Row"], a: 1 },
-    { q: "The lowest part of the piping inside a building.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Drain", "D. Lateral"], a: 1 },
-    { q: "The extension of a building drain outside the building.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral", "D. House Pipe"], a: 0 },
-    { q: "Any part of a system other than a main or stack.", choices: ["A. Branch", "B. Lateral", "C. Feed", "D. Bypass"], a: 0 },
-    { q: "A vertical line of vent piping.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Common Vent", "D. Main Vent"], a: 1 },
-    { q: "The extension of a stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Individual Vent", "D. Relief Vent"], a: 1 },
-    { q: "A marking on a vacuum breaker determining minimum elevation.", choices: ["A. Critical Level", "B. Flood Level", "C. Datum Line", "D. Water Mark"], a: 0 },
-    { q: "A pipe carrying water from the meter to the building.", choices: ["A. Water Service Pipe", "B. Building Supply", "C. Main", "D. Lateral"], a: 1 },
-    { q: "A pipe carrying potable water to the building.", choices: ["A. Water Distributing Pipe", "B. Water Service Pipe", "C. Main Pipe", "D. Riser"], a: 1 },
-    { q: "A drain connecting fixture compartments to a common trap.", choices: ["A. Continuous Waste", "B. Common Waste", "C. Unit Waste", "D. Multi-Waste"], a: 0 },
-    { q: "A physical connection between two separate piping systems.", choices: ["A. Backflow", "B. Cross-connection", "C. Inter-connection", "D. Direct-link"], a: 1 },
-    { q: "A vertical pipe which conveys only wastewater free of fecal matter.", choices: ["A. Soil Stack", "B. Waste Stack", "C. Vent Stack", "D. Riser"], a: 1 },
-    { q: "A vertical pipe which conveys discharge from water closets.", choices: ["A. Waste Stack", "B. Soil Stack", "C. Stack", "D. Vent"], a: 1 },
-    { q: "The lowest portion of the inside of a horizontal pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Base"], a: 1 },
-    { q: "Water satisfactory for drinking and domestic purposes.", choices: ["A. Potable Water", "B. Pure Water", "C. Wholesome Water", "D. Filtered Water"], a: 0 },
-    { q: "A sewer controlled by public authority.", choices: ["A. Public Sewer", "B. Private Sewer", "C. Main Sewer", "D. City Sewer"], a: 0 },
-    { q: "A water-tight receptacle which retains solids.", choices: ["A. Septic Tank", "B. Cesspool", "C. Sump", "D. Pit"], a: 0 },
-    { q: "A fitting designed to provide a liquid seal.", choices: ["A. Valve", "B. Trap", "C. Interceptor", "D. Cleanout"], a: 1 },
-    { q: "The vertical distance between the dip and crown weir.", choices: ["A. Trap Seal", "B. Water Column", "C. Barrier height", "D. Seal Depth"], a: 0 },
-    { q: "A vent primarily for a single fixture trap.", choices: ["A. Common Vent", "B. Individual Vent", "C. Stack Vent", "D. Relief Vent"], a: 1 },
-    { q: "A pipe for water closet discharge.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "A vertical line of soil or waste piping.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Column"], a: 1 },
-    { q: "A vertical distance of 2.43 meters.", choices: ["A. Story Height", "B. Branch Interval", "C. Riser Height", "D. Ceiling Height"], a: 1 },
-    { q: "The principal artery of the system.", choices: ["A. Main", "B. Stack", "C. Riser", "D. Header"], a: 0 },
-    { q: "A water supply pipe connecting the fixture with the fixture branch.", choices: ["A. Fixture branch", "B. Fixture supply", "C. Riser", "D. Main"], a: 1 },
-    { q: "A pipe between the fixture supply and distribution pipe.", choices: ["A. Fixture branch", "B. Fixture supply", "C. Riser", "D. Main"], a: 0 },
-    { q: "The flow into potable pipes from non-potable sources.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "A device preventing backflow.", choices: ["A. Check valve", "B. Backflow preventer", "C. Gate valve", "D. Stop cock"], a: 1 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Column"], a: 1 },
-    { q: "A continuation of a drain to the vent.", choices: ["A. Continuous Vent", "B. Common Vent", "C. Individual Vent", "D. Stack Vent"], a: 0 },
-    { q: "A vent that is also a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Unit Vent"], a: 0 },
-    { q: "The extension of a stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Individual Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vertical line of vent piping.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Common Vent", "D. Main Vent"], a: 1 },
-    { q: "A pipe for water closet discharge.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Sewer Pipe"], a: 1 },
-    { q: "The lowest part of the inside of a pipe.", choices: ["A. Crown", "B. Invert", "C. Dip", "D. Floor"], a: 1 },
-    { q: "The extension of a stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Individual Vent", "D. Relief Vent"], a: 1 },
-    { q: "A vertical line of vent piping.", choices: ["A. Stack Vent", "B. Vent Stack", "C. Common Vent", "D. Main Vent"], a: 1 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Block"], a: 1 },
-    { q: "Any part of a system other than a main or stack.", choices: ["A. Branch", "B. Lateral", "C. Feed", "D. Bypass"], a: 0 },
-    { q: "The term for a pipe that carries potable water to the building.", choices: ["A. Water distributing pipe", "B. Water service pipe", "C. Main pipe", "D. Riser"], a: 1 },
-    { q: "The level in a fixture at which water begins to overflow.", choices: ["A. Flood Level", "B. Critical Level", "C. Water Level", "D. Overflow Line"], a: 0 },
-    { q: "A pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["A. Vertical Pipe", "B. Horizontal Pipe", "C. Sloping Pipe", "D. Lateral"], a: 1 },
-    { q: "A pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["A. Horizontal Pipe", "B. Vertical Pipe", "C. Riser", "D. Stack"], a: 1 },
-    { q: "A pipe connecting several fixtures to a stack.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Main", "D. Lateral"], a: 0 },
-    { q: "A plug used for cleaning or examining a pipe.", choices: ["A. Cleanout", "B. Gate Valve", "C. Stop Cock", "D. Union"], a: 0 },
-    { q: "A vent that is also a drain.", choices: ["A. Wet Vent", "B. Dry Vent", "C. Relief Vent", "D. Common Vent"], a: 0 },
-    { q: "The flow into potable pipes from non-potable sources.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Overflow"], a: 1 },
-    { q: "A device preventing backflow.", choices: ["A. Check Valve", "B. Backflow Preventer", "C. Gate Valve", "D. Stop Cock"], a: 1 },
-    { q: "A group of fixtures in a row.", choices: ["A. Set", "B. Battery", "C. Unit", "D. Row"], a: 1 },
-    { q: "The lowest part of the piping inside a building.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Drain", "D. Lateral"], a: 1 },
-    { q: "The extension of a building drain outside the building.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral", "D. House Pipe"], a: 0 },
-    { q: "Any part of a system other than a main or stack.", choices: ["A. Branch", "B. Lateral", "C. Feed", "D. Bypass"], a: 0 }
-    ],
-    10: [
-        { q: "A valve used to control the flow of water, which has a circular disc or gate that moves up and down at right angles to the direction of the flow.", choices: ["A. Globe Valve", "B. Gate Valve", "C. Check Valve", "D. Angle Valve"], a: 1 },
-    { q: "A valve in which the flow of water is controlled by a movable spindle that lowers a plug onto a seat.", choices: ["A. Gate Valve", "B. Globe Valve", "C. Butterfly Valve", "D. Ball Valve"], a: 1 },
-    { q: "A device that automatically closes to prevent the flow of water in a reverse direction.", choices: ["A. Gate Valve", "B. Check Valve", "C. Relief Valve", "D. Stop Cock"], a: 1 },
-    { q: "A valve that opens automatically when the pressure exceeds a preset limit to prevent the rupture of a tank or pipe.", choices: ["A. Check Valve", "B. Relief Valve", "C. Float Valve", "D. Foot Valve"], a: 1 },
-    { q: "The pipe from the water main to the water meter.", choices: ["A. Building Supply", "B. Service Pipe", "C. Riser", "D. Distribution Pipe"], a: 1 },
-    { q: "The water supply pipe within a building which conveys water to the fixtures.", choices: ["A. Water Service Pipe", "B. Water Distributing Pipe", "C. Main", "D. Header"], a: 1 },
-    { q: "A fitting used to change the direction of a pipe at a 90-degree angle.", choices: ["A. Wye", "B. Elbow", "C. Tee", "D. Coupling"], a: 1 },
-    { q: "A fitting with three openings, used to connect a branch pipe to a main pipe at a right angle.", choices: ["A. Elbow", "B. Tee", "C. Wye", "D. Reducer"], a: 1 },
-    { q: "A fitting with three openings, used to connect a branch pipe at a 45-degree angle.", choices: ["A. Tee", "B. Wye", "C. Elbow", "D. Bushing"], a: 1 },
-    { q: "A fitting used to connect two pipes of the same size in a straight line.", choices: ["A. Union", "B. Coupling", "C. Nipple", "D. Cap"], a: 1 },
-    { q: "A fitting that allows for the easy disconnection of two pipes without cutting.", choices: ["A. Coupling", "B. Union", "C. Bushing", "D. Plug"], a: 1 },
-    { q: "A short piece of pipe threaded on both ends.", choices: ["A. Coupling", "B. Nipple", "C. Union", "D. Tee"], a: 1 },
-    { q: "A fitting used to close the end of a pipe with external threads.", choices: ["A. Plug", "B. Cap", "C. Bushing", "D. Stop"], a: 1 },
-    { q: "A fitting used to close the end of a pipe with internal threads.", choices: ["A. Cap", "B. Plug", "C. Bushing", "D. Nipple"], a: 1 },
-    { q: "A fitting used to connect a larger pipe to a smaller pipe.", choices: ["A. Coupling", "B. Reducer", "C. Tee", "D. Union"], a: 1 },
-    { q: "A fitting used to reduce the size of an opening in another fitting.", choices: ["A. Bushing", "B. Reducer", "C. Coupling", "D. Nipple"], a: 0 },
-    { q: "A pipe used to convey rainwater from the roof to the ground or a drain.", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Leader (Downspout)", "D. Vent Pipe"], a: 2 },
-    { q: "A receptacle used to collect rainwater from a roof.", choices: ["A. Sump", "B. Roof Drain / Gutter", "C. Catch Basin", "D. Septic Tank"], a: 1 },
-    { q: "A pit or receptacle at the lowest point of a drainage system.", choices: ["A. Catch Basin", "B. Sump", "C. Septic Tank", "D. Cesspool"], a: 1 },
-    { q: "A pump used to lift sewage or liquid waste from a sump to a higher level.", choices: ["A. Sump Pump", "B. Ejector", "C. Centrifugal Pump", "D. Booster Pump"], a: 1 },
-    { q: "The pipe that carries sewage from the building to the public sewer.", choices: ["A. Building Drain", "B. Building Sewer", "C. Main Sewer", "D. Lateral Sewer"], a: 1 },
-    { q: "A sewer that receives discharge from many building sewers.", choices: ["A. Building Sewer", "B. Main Sewer", "C. Lateral Sewer", "D. Private Sewer"], a: 1 },
-    { q: "A sewer that has no other common sewer discharge into it.", choices: ["A. Main Sewer", "B. Lateral Sewer", "C. Public Sewer", "D. Building Sewer"], a: 1 },
-    { q: "A system used to treat sewage from a single building.", choices: ["A. Public Sewer", "B. Private Sewage Disposal System", "C. Main Sewer", "D. Lateral Sewer"], a: 1 },
-    { q: "A water-tight tank used for the primary treatment of sewage.", choices: ["A. Cesspool", "B. Septic Tank", "C. Sump", "D. Catch Basin"], a: 1 },
-    { q: "The liquid that flows out of a septic tank.", choices: ["A. Sludge", "B. Effluent", "C. Scum", "D. Sewage"], a: 1 },
-    { q: "The solid matter that settles to the bottom of a septic tank.", choices: ["A. Effluent", "B. Sludge", "C. Scum", "D. Waste"], a: 1 },
-    { q: "The layer of fats and oils that floats on top of the liquid in a septic tank.", choices: ["A. Effluent", "B. Scum", "C. Sludge", "D. Waste"], a: 1 },
-    { q: "A system of pipes used to distribute effluent from a septic tank into the soil.", choices: ["A. Seepage Pit", "B. Disposal Field / Leach Field", "C. Cesspool", "D. Catch Basin"], a: 1 },
-    { q: "A deep pit used for the disposal of effluent from a septic tank.", choices: ["A. Cesspool", "B. Seepage Pit", "C. Sump", "D. Septic Tank"], a: 1 },
-    { q: "An unlined pit used for the disposal of raw sewage.", choices: ["A. Septic Tank", "B. Cesspool", "C. Seepage Pit", "D. Sump"], a: 1 },
-    { q: "A device used to measure the amount of water used in a building.", choices: ["A. Pressure Gauge", "B. Water Meter", "C. Flow Meter", "D. Thermometer"], a: 1 },
-    { q: "A valve used to turn the water supply on or off at the meter.", choices: ["A. Gate Valve", "B. Stop Cock", "C. Check Valve", "D. Relief Valve"], a: 1 },
-    { q: "A pipe used to carry water from the water meter to the various fixtures.", choices: ["A. Water Service Pipe", "B. Water Distributing Pipe", "C. Main", "D. Riser"], a: 1 },
-    { q: "A vertical pipe used to carry water to the upper floors of a building.", choices: ["A. Main", "B. Riser", "C. Stack", "D. Branch"], a: 1 },
-    { q: "A horizontal pipe used to carry water from a riser to the fixtures.", choices: ["A. Main", "B. Branch", "C. Riser", "D. Stack"], a: 1 },
-    { q: "A valve used to turn the water supply on or off at a fixture.", choices: ["A. Gate Valve", "B. Stop Valve / Angle Valve", "C. Check Valve", "D. Relief Valve"], a: 1 },
-    { q: "A device used to prevent the backflow of water into the potable water supply.", choices: ["A. Check Valve", "B. Vacuum Breaker / Backflow Preventer", "C. Relief Valve", "D. Stop Valve"], a: 1 },
-    { q: "A device used to release air from a water system.", choices: ["A. Air Relief Valve", "B. Pressure Relief Valve", "C. Check Valve", "D. Gate Valve"], a: 0 },
-    { q: "A device used to prevent water hammer in a water system.", choices: ["A. Air Chamber", "B. Relief Valve", "C. Check Valve", "D. Gate Valve"], a: 0 },
-    { q: "A device used to heat water for domestic use.", choices: ["A. Boiler", "B. Water Heater", "C. Furnace", "D. Radiator"], a: 1 },
-    { q: "A tank used to store hot water.", choices: ["A. Expansion Tank", "B. Hot Water Storage Tank", "C. Septic Tank", "D. Sump Tank"], a: 1 },
-    { q: "A pipe used to carry hot water from the heater to the fixtures.", choices: ["A. Cold Water Line", "B. Hot Water Line", "C. Vent Line", "D. Drain Line"], a: 1 },
-    { q: "A pipe used to return hot water to the heater to maintain a constant supply.", choices: ["A. Supply Line", "B. Return Line / Recirculation Pipe", "C. Vent Line", "D. Drain Line"], a: 1 },
-    { q: "A fixture used for washing the hands and face.", choices: ["A. Kitchen Sink", "B. Lavatory", "C. Bathtub", "D. Shower"], a: 1 },
-    { q: "A fixture used for washing dishes and food.", choices: ["A. Lavatory", "B. Kitchen Sink", "C. Bathtub", "D. Slop Sink"], a: 1 },
-    { q: "A fixture used for bathing.", choices: ["A. Lavatory", "B. Bathtub", "C. Shower", "D. Bidet"], a: 1 },
-    { q: "A fixture used for washing the body under a spray of water.", choices: ["A. Bathtub", "B. Shower", "C. Lavatory", "D. Bidet"], a: 1 },
-    { q: "A fixture used for the disposal of human waste.", choices: ["A. Lavatory", "B. Water Closet", "C. Urinal", "D. Slop Sink"], a: 1 },
-    { q: "A fixture used for the disposal of liquid waste only, usually by men.", choices: ["A. Water Closet", "B. Urinal", "C. Lavatory", "D. Bidet"], a: 1 },
-    { q: "A fixture used for washing the external genitalia.", choices: ["A. Urinal", "B. Bidet", "C. Lavatory", "D. Shower"], a: 1 },
-    { q: "A fixture used for washing floors and disposing of waste from mopping.", choices: ["A. Lavatory", "B. Slop Sink / Service Sink", "C. Kitchen Sink", "D. Bathtub"], a: 1 },
-    { q: "A fixture used for washing clothes.", choices: ["A. Kitchen Sink", "B. Laundry Tray / Wash Tub", "C. Lavatory", "D. Slop Sink"], a: 1 },
-    { q: "A fixture used for drinking water.", choices: ["A. Lavatory", "B. Drinking Fountain", "C. Kitchen Sink", "D. Shower"], a: 1 },
-    { q: "A device used to trap sewer gas and prevent it from entering the building.", choices: ["A. Valve", "B. Trap", "C. Cleanout", "D. Vent"], a: 1 },
-    { q: "A pipe used to provide air circulation in a drainage system.", choices: ["A. Soil Pipe", "B. Vent Pipe", "C. Waste Pipe", "D. Drain Pipe"], a: 1 },
-    { q: "The main vent pipe that extends through the roof.", choices: ["A. Branch Vent", "B. Vent Stack", "C. Relief Vent", "D. Loop Vent"], a: 1 },
-    { q: "A vent pipe that connects a single fixture to the vent stack.", choices: ["A. Main Vent", "B. Individual Vent", "C. Common Vent", "D. Circuit Vent"], a: 1 },
-    { q: "A vent pipe that serves two fixtures located on opposite sides of a wall.", choices: ["A. Individual Vent", "B. Common Vent / Dual Vent", "C. Relief Vent", "D. Circuit Vent"], a: 1 },
-    { q: "A vent pipe that serves a group of fixtures.", choices: ["A. Individual Vent", "B. Circuit Vent / Loop Vent", "C. Relief Vent", "D. Main Vent"], a: 1 },
-    { q: "A vent pipe used to provide additional air circulation in a long drainage line.", choices: ["A. Main Vent", "B. Relief Vent", "C. Common Vent", "D. Individual Vent"], a: 1 },
-    { q: "A vent pipe that extends from the drainage pipe to the open air.", choices: ["A. Stack Vent", "B. Local Vent", "C. Relief Vent", "D. Circuit Vent"], a: 1 },
-    { q: "The extension of a soil or waste stack above the highest fixture.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Main Vent", "D. Relief Vent"], a: 1 },
-    { q: "A pipe that carries only liquid waste from fixtures other than water closets.", choices: ["A. Soil Pipe", "B. Waste Pipe", "C. Vent Pipe", "D. Drain Pipe"], a: 1 },
-    { q: "A pipe that carries waste from water closets.", choices: ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Drain Pipe"], a: 1 },
-    { q: "The main horizontal pipe of a drainage system within a building.", choices: ["A. Building Sewer", "B. Building Drain", "C. Main Sewer", "D. Lateral Drain"], a: 1 },
-    { q: "The horizontal pipe that carries waste from a fixture to the building drain.", choices: ["A. Stack", "B. Fixture Branch / Horizontal Branch", "C. Riser", "D. Main"], a: 1 },
-    { q: "A vertical pipe that carries waste from the upper floors to the building drain.", choices: ["A. Main", "B. Stack (Soil or Waste)", "C. Riser", "D. Branch"], a: 1 },
-    { q: "A fitting with a removable plug used for cleaning a drainage pipe.", choices: ["A. Trap", "B. Cleanout", "C. Valve", "D. Union"], a: 1 },
-    { q: "A device used to separate grease and oil from wastewater.", choices: ["A. Trap", "B. Grease Interceptor / Grease Trap", "C. Septic Tank", "D. Catch Basin"], a: 1 },
-    { q: "A device used to separate sand and grit from wastewater.", choices: ["A. Septic Tank", "B. Sand Interceptor / Catch Basin", "C. Grease Trap", "D. Sump"], a: 1 },
-    { q: "The process of removing impurities from water.", choices: ["A. Distribution", "B. Water Treatment / Purification", "C. Collection", "D. Storage"], a: 1 },
-    { q: "The process of adding chlorine to water to kill bacteria.", choices: ["A. Filtration", "B. Chlorination", "C. Sedimentation", "D. Aeration"], a: 1 },
-    { q: "The process of removing suspended solids from water by allowing them to settle.", choices: ["A. Filtration", "B. Sedimentation", "C. Aeration", "D. Distillation"], a: 1 },
-    { q: "The process of removing impurities from water by passing it through a porous material.", choices: ["A. Sedimentation", "B. Filtration", "C. Aeration", "D. Chlorination"], a: 1 },
-    { q: "The process of adding air to water to remove odors and tastes.", choices: ["A. Filtration", "B. Aeration", "C. Sedimentation", "D. Chlorination"], a: 1 },
-    { q: "The process of removing minerals from water to prevent scaling.", choices: ["A. Purification", "B. Water Softening", "C. Distillation", "D. Filtration"], a: 1 },
-    { q: "A pipe made of galvanized steel.", choices: ["A. Copper Pipe", "B. Galvanized Iron (GI) Pipe", "C. PVC Pipe", "D. Cast Iron Pipe"], a: 1 },
-    { q: "A pipe made of copper.", choices: ["A. GI Pipe", "B. Copper Tube", "C. PVC Pipe", "D. Lead Pipe"], a: 1 },
-    { q: "A pipe made of polyvinyl chloride.", choices: ["A. GI Pipe", "B. PVC Pipe", "C. Copper Pipe", "D. Cast Iron Pipe"], a: 1 },
-    { q: "A pipe made of cast iron.", choices: ["A. GI Pipe", "B. Cast Iron Soil Pipe (CISP)", "C. PVC Pipe", "D. Copper Pipe"], a: 1 },
-    { q: "A fitting used to connect a PVC pipe to a threaded metal pipe.", choices: ["A. Coupling", "B. Adapter", "C. Union", "D. Bushing"], a: 1 },
-    { q: "A joint made by melting a filler metal into the space between two metal pipes.", choices: ["A. Threaded Joint", "B. Soldered Joint / Sweated Joint", "C. Solvent Weld Joint", "D. Flanged Joint"], a: 1 },
-    { q: "A joint made by applying a chemical to melt the surfaces of two plastic pipes together.", choices: ["A. Threaded Joint", "B. Solvent Weld Joint", "C. Soldered Joint", "D. Flanged Joint"], a: 1 },
-    { q: "A joint made by screwing two threaded pipes together.", choices: ["A. Solvent Weld Joint", "B. Threaded Joint", "C. Soldered Joint", "D. Flanged Joint"], a: 1 },
-    { q: "A joint made by bolting two flat surfaces together with a gasket in between.", choices: ["A. Threaded Joint", "B. Flanged Joint", "C. Solvent Weld Joint", "D. Soldered Joint"], a: 1 },
-    { q: "A measurement of the amount of water a fixture uses.", choices: ["A. Pressure", "B. Fixture Unit (FU)", "C. Velocity", "D. Head"], a: 1 },
-    { q: "A measurement of the force of water in a pipe.", choices: ["A. Volume", "B. Water Pressure", "C. Velocity", "D. Flow Rate"], a: 1 },
-    { q: "A measurement of the speed of water in a pipe.", choices: ["A. Pressure", "B. Velocity", "C. Volume", "D. Head"], a: 1 },
-    { q: "A measurement of the amount of water flowing through a pipe in a given time.", choices: ["A. Pressure", "B. Flow Rate / GPM", "C. Velocity", "D. Head"], a: 1 },
-    { q: "The pressure of water in a pipe when no water is flowing.", choices: ["A. Residual Pressure", "B. Static Pressure", "C. Working Pressure", "D. Flow Pressure"], a: 1 },
-    { q: "The pressure of water in a pipe when water is flowing.", choices: ["A. Static Pressure", "B. Residual Pressure / Flow Pressure", "C. Maximum Pressure", "D. Design Pressure"], a: 1 },
-    { q: "The loss of pressure in a pipe due to the roughness of the pipe walls.", choices: ["A. Static Loss", "B. Friction Loss", "C. Velocity Loss", "D. Head Loss"], a: 1 },
-    { q: "The vertical distance from a water source to a fixture.", choices: ["A. Pressure", "B. Static Head", "C. Velocity", "D. Volume"], a: 1 },
-    { q: "A system of pipes used to carry wastewater from a building to a septic tank or sewer.", choices: ["A. Building Supply", "B. Building Drainage System", "C. Vent System", "D. Fire System"], a: 1 },
-    { q: "A system of pipes used to carry rainwater from a building to a disposal point.", choices: ["A. Sanitary Sewer", "B. Storm Drainage System", "C. Vent System", "D. Water System"], a: 1 },
-    { q: "The process of boiling water and condensing the steam to remove impurities.", choices: ["A. Filtration", "B. Distillation", "C. Chlorination", "D. Softening"], a: 1 },
-    { q: "The pipe that carries water from a pump to a storage tank.", choices: ["A. Suction Pipe", "B. Discharge Pipe", "C. Service Pipe", "D. Main"], a: 1 },
-    { q: "The pipe that carries water from a source to a pump.", choices: ["A. Discharge Pipe", "B. Suction Pipe", "C. Service Pipe", "D. Riser"], a: 1 },
-    { q: "A valve used to prevent water from flowing back into a well from a pump.", choices: ["A. Check Valve", "B. Foot Valve", "C. Gate Valve", "D. Relief Valve"], a: 1 }
-    ],
-    11: [
-        { q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.", choices: ["A. Principle No. 8", "B. Principle No. 10", "C. Principle No. 12", "D. Principle No. 14"], a: 1 },
+  1: [
+    { q: "Plumbing fixtures shall be made of smooth non-absorbent material, free from concealed fouling surfaces and shall be located in ventilated enclosures.", choices: ["Principle No. 1", "Principle No. 5", "Principle No. 7", "Principle No. 9"], a: 2 },
+    { q: "What type of cleanout plug shall be installed in places prone to passing personnel or vehicles?", choices: ["Raised head cleanout plug", "Countersunk cleanout plug", "Hubless blind plug", "None of these"], a: 1 },
+    { q: "A type of septic tank that is prohibited.", choices: ["Steel", "Wooden", "Plastic", "Concrete"], a: 1 },
+    { q: "Polyethylene pipe is black and is used for cold water and sprinkler system. How is polyethylene pipe represented?", choices: ["PPE", "PPR", "PVC", "PE"], a: 3 },
+    { q: "Who was the President of the Republic of the Philippines who signed the 'Plumbing Law of the Philippines'?", choices: ["Pres. Ramon Magsaysay", "Pres. Elpidio Quirino", "Pres. Ferdinand Marcos", "Pres. Manuel Roxas"], a: 0 },
+    { q: "What type of concealed connection of fixtures shall be provided with access panel or utility at least 0.3 meter in its dimension for easy inspection and repair?", choices: ["Flanged", "Hubless", "Slip joint", "Ball and socket"], a: 2 },
+    { q: "A ______ is a drainage pipe that passes through at least one story as a drain pipe, including any horizontal offsets.", choices: ["Sanitary sewer", "Soil or waste stack", "Spigot", "Soil pipe"], a: 1 },
+    { q: "A non-watertight lined excavation in the ground which receives the discharge of a sanitary drainage system permitting the liquid to seep through the bottom and sides.", choices: ["privy", "cesspool", "disposal field", "seepage pit"], a: 1 },
+    { q: "Slaughter houses and packing establishments shall be connected to and shall drain or discharge through a ______ of an approved design.", choices: ["drainage system", "screening device", "grease interceptor", "grease trap"], a: 1 },
+    { q: "Joints in copper pans or liners shall be ______.", choices: ["6.8 kg asphalt felt", "flared or soldered", "soldered or brazed", "burned"], a: 3 },
+    { q: "Septic tank should be at least ______ meters away from any source of water supply wells.", choices: ["10", "15", "20", "30"], a: 1 },
+    { q: "Solder and fluxes with lead content which exceeds ______ are prohibited in the piping systems used to conveyed potable water.", choices: ["0.002", "0.005", "0.008", "0.001"], a: 0 },
+    { q: "Horizontal drainage lines shall be run in practical alignment and at a uniform slope of not less than ______.", choices: ["1%", "2%", "3%", "4%"], a: 1 },
+    { q: "The minimum size of a water service pipe from the street main to the building shall be ______.", choices: ['1/2"', '3/4"', '1"', '1 1/4"'], a: 1 },
+    { q: "A vertical pipe which conveys only wastewater or liquid waste free of fecal matter.", choices: ["Soil stack", "Waste stack", "Vent stack", "Riser"], a: 1 },
+    { q: "What is the minimum age requirement for an applicant for the Master Plumber Board Exam?", choices: ["18", "20", "21", "25"], a: 2 },
+    { q: "Every building having a plumbing fixture installed and intended for human habitation shall have a connection to a ______.", choices: ["Septic tank", "Public sewer", "Cesspool", "Sump"], a: 1 },
+    { q: "The maximum length of a trap arm for a 2-inch pipe is ______.", choices: ["1.5 m", "0.6 m", "1.0 m", "1.8 m"], a: 0 },
+    { q: "What is the minimum diameter of a vent pipe?", choices: ['1 1/4"', '1 1/2"', '2"', '1"'], a: 0 },
+    { q: "A fitting or device that provides a liquid seal to prevent the emission of sewer gases.", choices: ["Vent", "Trap", "Cleanout", "Valve"], a: 1 },
+    { q: "What is the standard length of a cast iron soil pipe?", choices: ["1.5 m", "3.0 m", "5.0 ft", "Both A and C"], a: 3 },
+    { q: "The overflow pipe from a water supply tank shall be provided with a ______.", choices: ["Check valve", "Screen", "Gate valve", "Trap"], a: 1 },
+    { q: "A device installed in a drainage system to prevent reverse flow.", choices: ["Check valve", "Backwater valve", "Globe valve", "Angle valve"], a: 1 },
+    { q: "The minimum air gap for a lavatory is ______.", choices: ["1 inch", "2 inches", "1.5 inches", "3 inches"], a: 0 },
+    { q: "What type of pipe is prohibited for use in a building's vent system?", choices: ["PVC", "GI", "Lead", "CISP"], a: 2 },
+    { q: "What is the minimum clearance in front of a water closet?", choices: ["30 cm", "60 cm", "45 cm", "75 cm"], a: 1 },
+    { q: "What is the minimum distance between the wall and the center of the water closet?", choices: ["30 cm", "37.5 cm", "45 cm", "50 cm"], a: 1 },
+    { q: "The minimum size of a shower drain is ______.", choices: ['1 1/2"', '2"', '3"', '4"'], a: 1 },
+    { q: "A water system that provides water for fire protection and domestic use.", choices: ["Combined system", "Separate system", "Direct system", "Dual system"], a: 0 },
+    { q: "The minimum slope for a 4-inch horizontal drainage pipe.", choices: ["1%", "2%", "3%", "4%"], a: 1 },
+    { q: "What is the standard height of a laundry tub from the floor?", choices: ["70 cm", "80 cm", "85 cm", "90 cm"], a: 2 },
+    { q: "A vent that serves a single fixture trap.", choices: ["Common vent", "Individual vent", "Circuit vent", "Loop vent"], a: 1 },
+    { q: "The part of the plumbing system that extends outside the building wall.", choices: ["Building drain", "Building sewer", "Private sewer", "Main"], a: 1 },
+    { q: "What is the minimum depth of a trap seal?", choices: ["25 mm", "51 mm", "102 mm", "75 mm"], a: 1 },
+    { q: "What is the maximum depth of a trap seal?", choices: ["51 mm", "102 mm", "150 mm", "200 mm"], a: 1 },
+    { q: "A valve used to control the flow of water in one direction only.", choices: ["Gate valve", "Globe valve", "Check valve", "Ball valve"], a: 2 },
+    { q: "What is the standard diameter of a flush valve for a urinal?", choices: ['3/4"', '1/2"', '1"', '1 1/4"'], a: 0 },
+    { q: "What is the standard diameter of a flush valve for a water closet?", choices: ['3/4"', '1"', '1 1/4"', '1 1/2"'], a: 1 },
+    { q: "The minimum distance from the trap to the vent for a 1 1/2 inch pipe.", choices: ["0.6 m", "1.1 m", "1.5 m", "1.8 m"], a: 1 },
+    { q: "What is the standard height of a wall-hung urinal?", choices: ["50 cm", "60 cm", "70 cm", "45 cm"], a: 1 },
+    { q: "The device used to increase water pressure in a building.", choices: ["Booster pump", "Sump pump", "Ejector pump", "Jet pump"], a: 0 },
+    { q: "What is the minimum diameter of a cleanout for a 2-inch pipe?", choices: ['1 1/2"', '2"', '3"', '4"'], a: 1 },
+    { q: "The vertical distance from the floor to the flood level rim of a lavatory.", choices: ["75 cm", "80 cm", "85 cm", "90 cm"], a: 1 },
+    { q: "What is the purpose of a P-trap?", choices: ["To prevent odors", "To catch debris", "To stop backflow", "To vent air"], a: 0 },
+    { q: "A pipe that carries rainwater from the roof to the ground.", choices: ["Soil pipe", "Waste pipe", "Leader", "Vent"], a: 2 },
+    { q: "What is the minimum diameter of a roof leader for a small residential house?", choices: ['2"', '3"', '4"', '1 1/2"'], a: 1 },
+    { q: "The process of joining two copper pipes using heat and filler metal.", choices: ["Welding", "Soldering", "Brazing", "Threading"], a: 1 },
+    { q: "What is the standard color for a vent pipe?", choices: ["Yellow", "Green", "Gray", "White"], a: 2 },
+    { q: "The minimum size of a vent for a septic tank.", choices: ['1 1/2"', '2"', '3"', '4"'], a: 1 },
+    { q: "What is the standard height of a water meter from the ground?", choices: ["30 cm", "45 cm", "60 cm", "15 cm"], a: 0 },
+    { q: "A tank used to store water for fire protection.", choices: ["Cistern", "Reservoir", "Fire tank", "Standpipe"], a: 0 },
+    { q: "What is the minimum diameter of a water main for a subdivision?", choices: ['4"', '6"', '8"', '10"'], a: 1 },
+    { q: "The device used to prevent water from entering a building from a flooded sewer.", choices: ["Check valve", "Backwater valve", "Gate valve", "Ball valve"], a: 1 },
+    { q: "What is the standard diameter of a kitchen sink waste pipe?", choices: ['1 1/2"', '2"', '3"', '1 1/4"'], a: 0 },
+    { q: "The minimum distance between two cleanouts on a straight horizontal line.", choices: ["15 m", "30 m", "45 m", "10 m"], a: 1 },
+    { q: "What is the standard height of a bidet from the floor?", choices: ["35 cm", "40 cm", "45 cm", "50 cm"], a: 1 },
+    { q: "The device used to mix hot and cold water in a shower.", choices: ["Mixing valve", "Diverter", "Faucet", "Aerator"], a: 0 },
+    { q: "What is the minimum diameter of a soil stack for a 5-story building?", choices: ['3"', '4"', '5"', '6"'], a: 1 },
+    { q: "The process of testing a plumbing system with air pressure.", choices: ["Water test", "Air test", "Smoke test", "Peppermint test"], a: 1 },
+    { q: "What is the minimum size of a vent for a kitchen sink?", choices: ['1 1/4"', '1 1/2"', '2"', '1"'], a: 1 },
+    { q: "The part of the trap that holds the water seal.", choices: ["Dip", "Crown weir", "Trap arm", "Inlet"], a: 0 },
+    { q: "What is the standard height of a toilet seat from the floor?", choices: ["40 cm", "45 cm", "50 cm", "35 cm"], a: 0 },
+    { q: "A pipe that carries water to a single fixture.", choices: ["Branch", "Riser", "Main", "Fixture supply"], a: 3 },
+    { q: "What is the minimum diameter of a bathtub waste pipe?", choices: ['1 1/2"', '2"', '1 1/4"', '3"'], a: 0 },
+    { q: "The process of removing air from a water pipe.", choices: ["Bleeding", "Venting", "Purging", "Flushing"], a: 0 },
+    { q: "What is the standard height of a drinking fountain for children?", choices: ["60 cm", "75 cm", "90 cm", "50 cm"], a: 1 },
+    { q: "A valve used to control the volume of water flow.", choices: ["Gate valve", "Globe valve", "Ball valve", "Butterfly valve"], a: 1 },
+    { q: "What is the minimum size of a vent for a shower?", choices: ['1 1/2"', '2"', '1 1/4"', '3"'], a: 0 },
+    { q: "The part of the plumbing system that collects rainwater from the ground.", choices: ["Storm drain", "Sewer", "Catch basin", "French drain"], a: 0 },
+    { q: "What is the standard length of a galvanized iron pipe?", choices: ["6.0 m", "3.0 m", "5.0 m", "4.0 m"], a: 0 },
+    { q: "The device used to protect a water heater from excessive temperature.", choices: ["Pressure relief valve", "Temperature relief valve", "T&P valve", "Check valve"], a: 2 },
+    { q: "What is the minimum diameter of a vent for a water closet?", choices: ['2"', '1 1/2"', '3"', '4"'], a: 0 },
+    { q: "The process of joining two plastic pipes using a chemical solvent.", choices: ["Welding", "Brazing", "Solvent welding", "Gluing"], a: 2 },
+    { q: "What is the standard height of a garden bibb from the ground?", choices: ["30 cm", "45 cm", "60 cm", "15 cm"], a: 1 },
+    { q: "A tank used to store rainwater for domestic use.", choices: ["Cistern", "Septic tank", "Sump", "Reservoir"], a: 0 },
+    { q: "What is the minimum size of a house sewer for a large building?", choices: ['4"', '6"', '8"', '10"'], a: 1 },
+    { q: "The part of the trap that prevents water from being siphoned out.", choices: ["Vent", "Dip", "Crown weir", "Trap arm"], a: 0 },
+    { q: "What is the standard height of a sink faucet from the floor?", choices: ["90 cm", "100 cm", "110 cm", "120 cm"], a: 1 },
+    { q: "A pipe that carries steam from a boiler.", choices: ["Steam line", "Condensate line", "Riser", "Main"], a: 0 },
+    { q: "What is the minimum diameter of a vent for a bathtub?", choices: ['1 1/4"', '1 1/2"', '2"', '3"'], a: 1 },
+    { q: "The process of testing a plumbing system with water pressure.", choices: ["Water test", "Air test", "Smoke test", "Peppermint test"], a: 0 },
+    { q: "What is the standard height of a mop sink from the floor?", choices: ["15 cm", "30 cm", "45 cm", "0 cm"], a: 0 },
+    { q: "A valve used to divert water from a tub to a shower head.", choices: ["Diverter", "Mixing valve", "Gate valve", "Globe valve"], a: 0 },
+    { q: "What is the minimum size of a vent for a bidet?", choices: ['1 1/4"', '1 1/2"', '2"', '3"'], a: 0 },
+    { q: "The part of the plumbing system that carries waste to a septic tank.", choices: ["Building sewer", "Building drain", "Main", "Branch"], a: 0 },
+    { q: "What is the standard height of a urinal flush valve handle?", choices: ["100 cm", "110 cm", "120 cm", "90 cm"], a: 1 },
+    { q: "A pipe that carries hot water from a heater to fixtures.", choices: ["Hot water line", "Cold water line", "Riser", "Main"], a: 0 },
+    { q: "What is the minimum diameter of a vent for a floor drain?", choices: ['1 1/2"', '2"', '3"', '4"'], a: 1 },
+    { q: "The process of removing scale from a water pipe.", choices: ["Descaling", "Flushing", "Purging", "Cleaning"], a: 0 },
+    { q: "What is the standard height of a kitchen countertop?", choices: ["80 cm", "85 cm", "90 cm", "95 cm"], a: 2 },
+    { q: "A valve used to control the flow of gas.", choices: ["Gas cock", "Gate valve", "Ball valve", "Globe valve"], a: 0 },
+    { q: "What is the minimum size of a vent for a laundry tub?", choices: ['1 1/4"', '1 1/2"', '2"', '3"'], a: 1 },
+    { q: "The part of the plumbing system that carries waste to a public sewer.", choices: ["House sewer", "House drain", "Main", "Lateral"], a: 0 },
+    { q: "What is the standard height of a shower head for tall people?", choices: ["200 cm", "210 cm", "220 cm", "190 cm"], a: 1 },
+    { q: "A pipe that carries compressed air.", choices: ["Air line", "Vent", "Stack", "Riser"], a: 0 },
+    { q: "What is the minimum diameter of a vent for a slop sink?", choices: ['1 1/2"', '2"', '3"', '4"'], a: 1 },
+    { q: "The process of insulating a water pipe to prevent freezing.", choices: ["Lagging", "Wrapping", "Coating", "Covering"], a: 0 },
+    { q: "What is the standard height of a bathroom vanity?", choices: ["75 cm", "80 cm", "85 cm", "90 cm"], a: 1 },
+    { q: "A valve used to control the flow of oil.", choices: ["Gate valve", "Globe valve", "Needle valve", "Ball valve"], a: 2 },
+    { q: "What is the minimum size of a vent for a urinal?", choices: ['1 1/2"', '2"', '1 1/4"', '3"'], a: 0 }
+  ],
+  2: [
+    { q: 'Polyetylene pipe is black and is used for cold water and sprinkler system. Diameter sizes range from 1/2 to 2". How is polyethylene pipe represented?', choices: ["PPE", "PPR", "PVC", "PE"], a: 3 },
+    { q: "If it is impractical to install horizontal drainage piping at the minimum slope, what is the least required slope allowed?", choices: ["0.5%", "1.0%", "1.5%", "2.0%"], a: 1 },
+    { q: "What do you call the sum of the quotients of the individual sewers and their velocity when flowing full?", choices: ["Inlet time", "Elapsed time", "Time of concentration", "Running time"], a: 2 },
+    { q: "What tube is plastic, colored black, oval shaped, and used as water service connection from the main to the meter?", choices: ["Polybutylene pipe", "Polyethylene pipe", "ABS pipe", "PVC pipe"], a: 1 },
+    { q: "What is the fixture that is directly connected to drainage system?", choices: ["Water closet", "Drinking fountain", "Soda fountain", "Lavatory"], a: 0 },
+    { q: "Who is the present designated chairman of unification and integration of MASTER PLUMBING profession?", choices: ["Engr. Camilet", "Engr. Mangila", "Engr. Simbulan", "Arch. Abellano"], a: 1 },
+    { q: "A connection to the public sewer, or private sewage disposal system, is required for:", choices: ["Buildings with plumbing fixture", "Buildings with or without plumbing fixtures", "Buildings with emergency drain system", "Buildings with storm drain system"], a: 0 },
+    { q: "How many equivalent water supply fixtures units has flush tank type of water closet that is for private use?", choices: ["2", "3", "4", "5"], a: 1 },
+    { q: "Fee for one unit of plumbing in plumbing permit application.", choices: ["P 5.00", "P 15.00", "P 12.00", "P 10.00"], a: 0 },
+    { q: "Number of years of experience required to become an appointed member of the board of Master Plumber.", choices: ["2", "3", "5", "10"], a: 3 },
+    { q: "Minimum supply pipe for lavatory using PPR PN16 is:", choices: ["25mmф", "20 mm", "19 mm", "15 mm"], a: 3 },
+    { q: "First school to offer Plumbing Engineering course.", choices: ["University of the Philippines", "University of Santo Tomas", "Feati University", "Adamson University"], a: 2 },
+    { q: "Upon issuance of plumbing permit, plumbing installation should commence within how many days?", choices: ["30", "60", "120", "365"], a: 3 },
+    { q: "What is the maximum vertical support of plastic pipes?", choices: ["1.0 m", "1.2 m", "1.5 m", "2.0 m"], a: 0 },
+    { q: "B & S as pipe ends stands for:", choices: ["Brown and Sharpe", "Ball and Seal", "Bell and Spigot", "Branch and Socket"], a: 2 },
+    { q: "Faucets and diverters shall be connected so that the cold water supply is located at:", choices: ["Left side", "Right side", "Either side", "Both sides"], a: 1 },
+    { q: "Which of the following shall not be installed inside the public toilet rooms?", choices: ["Bidet", "Waterless urinal", "Lavatory", "Drinking fountain"], a: 3 },
+    { q: "What is the color code for drain pipes manufactured with toxic components?", choices: ["Orange, gray and white", "Gray, orange and brown", "Gray, blue and green", "Brown, green and yellow"], a: 1 },
+    { q: "For a vertical drainage line, what is the allowed degree of the branch to be used?", choices: ["60", "45", "30", "10"], a: 1 },
+    { q: "What is the minimum diameter of pump discharge from a sump having a water closet connected thereto?", choices: ["54.8mm", "56.8mm", "52.8mm", "50.8mm"], a: 3 },
+    { q: "Except for repairs, which joints are prohibited on new building sewers?", choices: ["Bell and spigot", "Cement mortar joints", "PVC coupling", "Teflon tape"], a: 1 },
+    { q: "What sewage includes waste from metal and chemical plants, oil refineries, and breweries?", choices: ["Residential", "Institutional", "Industrial", "Commercial"], a: 2 },
+    { q: "Minimum trap and trap arm size for lavatory as per plumbing code.", choices: ["63mm", "51mm", "38mmφ", "32mm"], a: 3 },
+    { q: "The drain sizing approach, when assigning DFU values, begins with:", choices: ["The building drain", "The building drainage", "The most upstream fixtures", "The building sewer"], a: 2 },
+    { q: "Before offsetting horizontally to join the vent, vent shall rise vertically at least 152 mm above the:", choices: ["Fixture drain", "Tailpiece", "Trap weir", "Flood level rim"], a: 3 },
+    { q: "Modern plumbing requires coordination between Master Plumbers, Architects, and Engineers to be:", choices: ["Sufficient", "Resilient", "Efficient and economical", "Advanced"], a: 2 },
+    { q: "All water supply, drainage, venting system and all fixtures and their traps.", choices: ["Plumbing system", "Piping system", "Sewer system", "Sanitary system"], a: 0 },
+    { q: "Injuring falsely the reputation of another Registered Master Plumber is a violation of:", choices: ["Code of Ethics No. 2", "Code of Ethics No. 3", "Code of Ethics No. 5", "Code of Ethics No. 7"], a: 3 },
+    { q: "What is the Plumbing Law of the Philippines?", choices: ["RA 1364", "RA 9514", "RA 1096", "RA 1378"], a: 3 },
+    { q: "Minimum height of trap water seal.", choices: ["25 mm", "51 mm", "76 mm", "102 mm"], a: 1 },
+    { q: "Requirement for at least one water closet and one kitchen sink in a dwelling unit.", choices: ["Principle No. 5", "Principle No. 6", "Principle No. 7", "Principle No. 8"], a: 1 },
+    { q: "Any change/addition/modification in construction or occupancy.", choices: ["Alteration", "Repair", "Renovation", "Change"], a: 0 },
+    { q: "Depositing ashes, cinders, or flammable liquids into plumbing fixtures is prohibited by:", choices: ["Section 1202.1", "Section 1202.2", "Section 1202.3", "Section 1202.4"], a: 0 },
+    { q: "A vertical vent that is a continuation of the drain to which it connects.", choices: ["Branch vent", "Relief vent", "Vent stack through roof", "Continuous vent"], a: 3 },
+    { q: "Plumbing fixtures shall be supplied with water in sufficient volume and pressure.", choices: ["Principle No. 1", "Principle No. 2", "Principle No. 3", "Principle No. 4"], a: 2 },
+    { q: "Who is allowed to acquire a plumbing permit?", choices: ["Architect", "Master Plumber", "Owner", "Contractor"], a: 2 },
+    { q: "Required type of water closet used for public spaces.", choices: ["Elongated type", "Round type", "Wall hung", "Squat type"], a: 0 },
+    { q: "Minimum age of a Master Plumber to qualify as a member of the board.", choices: ["21", "25", "30", "35"], a: 2 },
+    { q: "Plumbing plans for all types of occupancy must be signed and sealed by a Master Plumber.", choices: ["Up to 20 units", "Up to 20 plumbing units", "Up to 3-storeys", "Without limitations"], a: 3 },
+    { q: "Premises must be provided with pure and wholesome water, free from backflow hazards.", choices: ["Principle No. 1", "Principle No. 2", "Principle No. 3", "Principle No. 4"], a: 1 },
+    { q: "Cast Iron fittings up to 51 mm used for potable water shall be:", choices: ["Threaded", "Hubless", "Galvanized", "Bitumastic coated"], a: 2 },
+    { q: "Adjustable tubing connection with compression nut, friction ring, and washer.", choices: ["Male adaptor", "Coupling", "Slip joint", "Plug"], a: 2 },
+    { q: "Two or more similar adjacent fixtures discharging into a common horizontal branch.", choices: ["Set of fixtures", "Battery of fixtures", "Group of fixtures", "Unit of fixtures"], a: 1 },
+    { q: "All materials used in plumbing shall be properly marked at the factory by the:", choices: ["Administrative Authority", "Supplier", "Manufacturer", "Master Plumber"], a: 2 },
+    { q: "Temporary workingmen facilities require one water closet and one urinal for each:", choices: ["10 workmen", "20 workmen", "30 workmen", "40 workmen"], a: 2 },
+    { q: "Test to determine absorption rate of soil for septic drain fields.", choices: ["Percolation test", "Drain field test", "Leaching test", "Absorption test"], a: 0 },
+    { q: "How many items are enumerated in the Master Plumber's Code of Ethics?", choices: ["5", "6", "7", "8"], a: 2 },
+    { q: "Soil or waste system where all piping are of threaded pipe and recessed drainage fittings.", choices: ["Drainage system", "Plumbing system", "Piping system", "Durham system"], a: 3 },
+    { q: "Minimum trench bottom area in sqm for each system of disposal field.", choices: ["10", "12", "14", "16"], a: 2 },
+    { q: 'A 2" x 4" wood wall stud is actually:', choices: ['1 1/2" x 4"', '1 1/2" x 3 1/2"', '2" x 4"', '2" x 3 1/2"'], a: 1 },
+    { q: "Which fixture may NOT be indirectly connected to a drainage system?", choices: ["Drinking fountain", "Commercial dishwasher", "Water softener backwash", "Sterilizer"], a: 1 },
+    { q: "Vents that serve a single fixture are called:", choices: ["Only four", "Only three", "Only two", "Individual vents"], a: 3 },
+    { q: "Minimum requirement for the slope of horizontal drainage pipes between manholes.", choices: ["4%", "3%", "2%", "1%"], a: 2 },
+    { q: "Section stating no manual flushometer shall flush more than one urinal.", choices: ["Sec 401", "Sec 408", "Sec 305", "Sec 314"], a: 1 },
+    { q: "Rainwater drains from roofs shall discharge to the gutter or:", choices: ["Drainage system", "STP", "Outside the building", "Inside the building"], a: 2 },
+    { q: "Cleanouts may be omitted on short horizontal drainage pipe at a slope of:", choices: ["135 deg", "72 deg", "45 deg", "60 deg"], a: 1 },
+    { q: "Valve installed on the cold water supply pipe to each water heater.", choices: ["Check globe valve", "Fullway gate valve", "Butterfly valve", "Angle valve"], a: 1 },
+    { q: "If applying air test to the entire system, all openings are closed except the:", choices: ["Lowest", "Highest", "Successive lowest", "Successive highest"], a: 1 },
+    { q: "Indirect waste pipes longer than 4.1 meters must be:", choices: ["Vented", "Trapped and vented", "Water sealed", "Not vented"], a: 0 },
+    { q: "Trenches shall be back-filled in thin layers of ____ above the top of pipes.", choices: ["600 mm", "300 mm", "900 mm", "1200 mm"], a: 1 },
+    { q: "All wet-vented fixtures shall be:", choices: ["On every 5th floor", "On the same floor level", "In every fixture", "Dry vented"], a: 1 },
+    { q: "Galvanized steel pipe used above ground shall be kept at least:", choices: ["75 mm", "102 mm", "125 mm", "152 mm"], a: 3 },
+    { q: "Drains shall have a total net inlet area not less than ___ times the outlet pipe area.", choices: ["One half", "One", "Two", "Three"], a: 2 },
+    { q: "Gutter has a ____ bottom.", choices: ["Circular", "Semi-circular", "Great circle", "Big circle"], a: 1 },
+    { q: "In fixture supply pipings, ____ are exposed for faculty in maintenance.", choices: ["Expansion joints", "Slip joints", "Unions", "Cleanouts"], a: 1 },
+    { q: "Cast-iron pipe stacks shall be supported at:", choices: ["Base and each floor", "Every other storey", "Interval of 10 ft", "Interval of 5 ft"], a: 0 },
+    { q: 'Maximum trap loading for 2" shall be:', choices: ["2 FU", "3 FU", "4 FU", "6 FU"], a: 2 },
+    { q: "Waste of holy water at church altar (sacrarium) must be disposed:", choices: ["Into indirect waste", "Directly into the ground", "Into toxic waste", "Into acid waste"], a: 1 },
+    { q: "Interceptors for sand shall have a water seal of not less than:", choices: ["51 mm", "76 mm", "102 mm", "152 mm"], a: 3 },
+    { q: "The minimum size of gas piping supply to a mobile home is:", choices: ['3/4"', '1/2"', '1"', '2"'], a: 0 },
+    { q: "All necessary requirements including plans should be submitted in ___ sets.", choices: ["2", "3", "5", "6"], a: 2 },
+    { q: "Plumbing permit nullifies if work is suspended/abandoned for ___ days.", choices: ["120", "150", "180", "365"], a: 2 },
+    { q: "Minimum finished interior area of shower compartments.", choices: ["0.8 sqm", "0.6 sqm", "1.2 sqm", "1.4 sqm"], a: 1 },
+    { q: "Which code was the RNPCP derived from?", choices: ["ASPE", "NPC", "IPC", "UPC"], a: 3 },
+    { q: "Valves up to 51 mm in size shall be:", choices: ["Cast iron", "Brass", "Galvanized", "Plastic"], a: 1 },
+    { q: "Maximum trap loading having 6 FU shall be:", choices: ["51 mm", "63 mm", "76 mm", "106 mm"], a: 2 },
+    { q: "The bottom of trenches deeper than footing of adjacent building must be at least ___ therefrom.", choices: ["60 deg", "30 deg", "45 deg", "90 deg"], a: 2 },
+    { q: 'Tee with three connections each measuring 2" is a:', choices: ['2" trap', '2" x 2" tee', '2" x 2" x 2" tee', '2" tee'], a: 3 },
+    { q: "A saw used to productively cut threaded rod is a:", choices: ["Demolition saw", "Portable band saw", "Jig saw", "Reciprocating saw"], a: 1 },
+    { q: 'Minimum horizontal offset permitted in a 3" soil stack serving as a wet vent.', choices: ["1.80 m", "1.20 m", "2.50 m", "3.50 m"], a: 1 },
+    { q: "No seepage pit shall be installed where percolation rate is less than 2.54 cm in:", choices: ["30 minutes", "60 minutes", "15 minutes", "45 minutes"], a: 0 },
+    { q: "Access panel dimension for concealed connections for inspection and repair.", choices: ["0.3 m", "0.5 m", "1.0 m", "3.0 m"], a: 0 },
+    { q: "A drainage pipe that passes through at least one story as a drain pipe.", choices: ["Sanitary sewer", "Soil or waste stack", "Spigot", "Soil pipe"], a: 1 },
+    { q: "Non-watertight lined excavation permitting liquid to seep through bottom and sides.", choices: ["Privy", "Cesspool", "Disposal field", "Seepage pit"], a: 1 },
+    { q: "Slaughter houses shall drain into a grease interceptor through a:", choices: ["Drainage system", "Screening device", "Either A or B", "None"], a: 1 },
+    { q: "Joints in copper pans or liners shall be:", choices: ["6.8 kg asphalt felt", "Flared or soldered", "Soldered or brazed", "Burned"], a: 3 },
+    { q: "Septic tank should be at least ___ meters away from water supply wells.", choices: ["10", "15", "20", "30"], a: 1 },
+    { q: "Solder and fluxes with lead content exceeding ___ are prohibited for potable water.", choices: ["0.001", "0.002", "0.005", "0.008"], a: 1 },
+    { q: "What do CS and PS mean?", choices: ["Commercial Specification and Product Specification", "Commercial Standards and Product Standards", "Commercial Systems and Product Systems", "Commercial Sizes and Product Size"], a: 1 },
+    { q: "What is AVB in backflow prevention devices?", choices: ["Atmospheric Volume Breaker", "Atmospheric Vacuum Breaker", "Atmospheric Velocity Breaker", "Atmospheric Valve Breaker"], a: 1 },
+    { q: "Part of plumbing system from 4-5 feet from foundation to junction with another sewer.", choices: ["House sewer", "Storm sewer", "Sanitary sewer", "House drain"], a: 0 },
+    { q: "The measure of inertia forces to viscous forces describing flow type.", choices: ["Reynolds number", "Froude number", "Moody number", "Weber number"], a: 0 },
+    { q: "It consists of 180 degree bends with inside and outside threads.", choices: ["Return bend", "Offset", "Double offset bend", "U shaped"], a: 0 },
+    { q: "Type of joint used for cast iron soil pipe with bell and spigot ends.", choices: ["Caulked joint", "Threaded joint", "Soldered joint", "Solvent joint"], a: 0 }
+  ],
+  3: [
+    { q: "All premises intended for human habitation, occupancy or use shall be provided with a supply of pure and wholesome water, neither connected with unsafe water supplies nor subject to hazards of backflow or back-siphonage.", choices: ["Principle No. 1", "Principle No. 2", "Principle No. 4", "Principle No. 22"], a: 0 },
+    { q: "The individual water supply shall be adequate to provide and maintain at all times a supply of water sufficient in volume and pressure to enable the fixtures to function satisfactorily.", choices: ["Principle No. 1", "Principle No. 2", "Principle No. 3", "Principle No. 8"], a: 1 },
+    { q: "Devices for heating and storing water shall be so designed and installed as to prevent dangers from explosion through overheating.", choices: ["Principle No. 2", "Principle No. 3", "Principle No. 6", "Principle No. 13"], a: 1 },
+    { q: "Every building having plumbing fixtures and installed on a lot abutting a street, alley, or easement in which there is a public sewer shall be connected to the public sewer system.", choices: ["Principle No. 4", "Principle No. 5", "Principle No. 16", "Principle No. 21"], a: 0 },
+    { q: "Each family dwelling unit on premises abutting on a sewer or with a private sewage-disposal system shall have at least one water closet and one kitchen-type sink.", choices: ["Principle No. 4", "Principle No. 5", "Principle No. 6", "Principle No. 19"], a: 1 },
+    { q: "The drainage system shall be designed, constructed and maintained to guard against fouling, deposit of solids and clogging, and with adequate cleanouts so arranged that the pipes may be readily cleaned.", choices: ["Principle No. 7", "Principle No. 8", "Principle No. 10", "Principle No. 13"], a: 0 },
+    { q: "The piping of the plumbing system shall be of durable material, free from defective workmanship and so designed and constructed as to give satisfactory service for its reasonable expected life.", choices: ["Principle No. 7", "Principle No. 8", "Principle No. 20", "Principle No. 22"], a: 1 },
+    { q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.", choices: ["Principle No. 9", "Principle No. 10", "Principle No. 11", "Principle No. 17"], a: 0 },
+    { q: "The drainage system shall be designed to provide an adequate circulation of air in all pipes with no danger of siphonage, aspiration, or forcing of trap seals under conditions of ordinary use.", choices: ["Principle No. 9", "Principle No. 10", "Principle No. 11", "Principle No. 22"], a: 1 },
+    { q: "Each vent terminal shall extend to the outer air and be so installed as to preclude the possibility of clogging and the return of foul air to the building.", choices: ["Principle No. 10", "Principle No. 11", "Principle No. 12", "Principle No. 15"], a: 1 },
+    { q: "The plumbing system shall be subjected to such tests as will effectively disclose all defects and leaks in the work.", choices: ["Principle No. 8", "Principle No. 12", "Principle No. 18", "Principle No. 20"], a: 1 },
+    { q: "No substance which will clog or damage the pipes, produce explosive mixtures, or clog the pipes shall be allowed to enter the building drainage system.", choices: ["Principle No. 7", "Principle No. 13", "Principle No. 21", "Principle No. 22"], a: 1 },
+    { q: "Proper protection shall be provided to prevent contamination of food, water, sterile goods and similar materials by backflow of sewage. When necessary, the fixture, device or appliance shall be connected indirectly with the building drainage system.", choices: ["Principle No. 1", "Principle No. 14", "Principle No. 17", "Principle No. 22"], a: 1 },
+    { q: "No water closet or urinal shall be located in a room or compartment which is not properly lighted and ventilated.", choices: ["Principle No. 6", "Principle No. 15", "Principle No. 18", "Principle No. 19"], a: 1 },
+    { q: "If water closets or other plumbing fixtures are installed in buildings where there is no sewer within a reasonable distance, suitable provision shall be made for disposing of the building sewage by some accepted method of septic treatment.", choices: ["Principle No. 4", "Principle No. 16", "Principle No. 17", "Principle No. 21"], a: 1 },
+    { q: "Where a plumbing drainage system may be subject to backflow of sewage, suitable provision shall be made to prevent its overflow in the building.", choices: ["Principle No. 14", "Principle No. 17", "Principle No. 21", "Principle No. 22"], a: 1 },
+    { q: "All plumbing systems shall be maintained in a sanitary condition by Registered Master Plumbers.", choices: ["Principle No. 18", "Principle No. 19", "Principle No. 20", "Principle No. 22"], a: 0 },
+    { q: "All plumbing fixtures shall be installed with regard to spacing as to be accessible for their intended use.", choices: ["Principle No. 15", "Principle No. 19", "Principle No. 20", "Principle No. 22"], a: 1 },
+    { q: "Plumbing shall be installed by Registered Master Plumbers with due regard to the preservation of the strength of structural members and prevention of damage to walls and other surfaces through fixture usage.", choices: ["Principle No. 8", "Principle No. 18", "Principle No. 19", "Principle No. 20"], a: 3 },
+    { q: "Sewage or other waste from a plumbing system which may be deleterious to surface or subsurface waters shall not be discharged into the ground or into any waterway unless it has first been rendered innocuous through subjection to some acceptable form of treatment.", choices: ["Principle No. 4", "Principle No. 13", "Principle No. 16", "Principle No. 21"], a: 3 },
+    { q: "All plumbing fixtures shall be designed and installed to prevent the backflow of polluted water into the water supply system.", choices: ["Principle No. 1", "Principle No. 14", "Principle No. 17", "Principle No. 22"], a: 3 }
+  ],
+  4: [
+    { q: "All premises intended for human habitation... shall be provided with a supply of pure and wholesome water.", choices: ["Principle 1", "Principle 2", "Principle 3", "Principle 4"], a: 0 },
+    { q: "The individual water supply shall be adequate to provide... sufficient volume and pressure.", choices: ["Principle 1", "Principle 2", "Principle 5", "Principle 10"], a: 1 },
+    { q: "Devices for heating and storing water shall be designed... to prevent dangers from explosion through overheating.", choices: ["Principle 2", "Principle 3", "Principle 8", "Principle 13"], a: 1 },
+    { q: "Every building having plumbing fixtures... on a lot abutting a street with a public sewer shall be connected to the public sewer system.", choices: ["Principle 4", "Principle 5", "Principle 16", "Principle 17"], a: 0 },
+    { q: "Each family dwelling unit... shall have at least one water closet and one kitchen-type sink.", choices: ["Principle 4", "Principle 5", "Principle 15", "Principle 19"], a: 1 },
+    { q: "The drainage system shall be designed... to guard against fouling, deposit of solids and clogging.", choices: ["Principle 7", "Principle 8", "Principle 9", "Principle 13"], a: 0 },
+    { q: "The piping... shall be of durable material, free from defective workmanship.", choices: ["Principle 6", "Principle 7", "Principle 8", "Principle 12"], a: 2 },
+    { q: "Each vent terminal shall extend to the outer air... to preclude the possibility of clogging.", choices: ["Principle 10", "Principle 11", "Principle 12", "Principle 15"], a: 1 },
+    { q: "No substance which will clog or damage the pipes... shall be allowed to enter the building drainage system.", choices: ["Principle 7", "Principle 13", "Principle 14", "Principle 21"], a: 1 },
+    { q: "If there is no sewer within a reasonable distance, suitable provision shall be made for... accepted method of septic treatment.", choices: ["Principle 4", "Principle 16", "Principle 17", "Principle 21"], a: 1 },
+    { q: "Where a plumbing drainage system may be subject to backflow... provision shall be made to prevent its overflow in the building.", choices: ["Principle 14", "Principle 17", "Principle 21", "Principle 22"], a: 1 },
+    { q: "Plumbing shall be installed... with due regard to the preservation of the strength of structural members.", choices: ["Principle 8", "Principle 18", "Principle 20", "Principle 22"], a: 2 },
+    { q: "Sewage... shall not be discharged into the ground or any waterway unless it has first been rendered innocuous.", choices: ["Principle 13", "Principle 16", "Principle 21", "Principle 22"], a: 2 },
+    { q: "The Filipino plumbers assigned to maintain systems in 'pueblos' during the 18th/19th centuries were called by the elite group to act as consultants. This elite group was known as:", choices: ["Thomasites", "Ilustrados", "Friar Engineers", "Insulares"], a: 1 },
+    { q: "In 1902, who was the first Chief of the Division of Plumbing Construction and Inspection in Manila?", choices: ["John F. Hass", "Gregorio Feliciano", "Francisco Geronimo", "Tomas Geronimo"], a: 0 },
+    { q: "NAMPAP was organized and registered with the SEC in what year?", choices: ["1902", "1935", "1954", "1999"], a: 1 },
+    { q: "Who was the President of the Philippines who signed RA 1378 into law?", choices: ["Ferdinand Marcos", "Ramon Magsaysay", "Diosdado Macapagal", "Manuel Quezon"], a: 1 },
+    { q: "What is the complete name of RA 1378?", choices: ["The National Building Code", "The Plumbing Law of the Philippines", "The Sanitary Code", "The Water Act"], a: 1 },
+    { q: "In 1996, NAMPAP President Jaime M. Cabase spearheaded the updating of the Revised National Plumbing Code under whose administration?", choices: ["Corazon Aquino", "Fidel V. Ramos", "Joseph Estrada", "Gloria Arroyo"], a: 1 },
+    { q: "The first 'Walled City' established by Spaniards that incorporated European plumbing standards was:", choices: ["Vigan", "Cebu", "Intramuros", "Zamboanga"], a: 2 },
+    { q: "Which government body approved the 'Revised National Plumbing Code of 1999'?", choices: ["PRC", "DPWH", "DOH", "DENR"], a: 0 },
+    { q: "On what specific date did President Joseph Estrada approve the 1999 Code?", choices: ["June 18, 1955", "December 21, 1999", "January 28, 1959", "November 28, 1967"], a: 1 },
+    { q: "The plumbing profession took a leap in the 20th century due to the arrival of American soldiers, doctors, and teachers known as:", choices: ["Friars", "Thomasites", "Conquistadors", "Missionaries"], a: 1 },
+    { q: "Who was the NAMPAP President when the Code of Ethics was first adopted?", choices: ["John F. Hass", "Gregorio Feliciano", "Jaime Cabase", "Francisco Geronimo"], a: 1 },
+    { q: "The Board of Examiners for Master Plumbers was created under which act?", choices: ["RA 1378", "RA 544", "RA 9266", "RA 1080"], a: 0 },
+    { q: "The first NAMPAP President was:", choices: ["Francisco Geronimo", "Mariano de Jesus", "John F. Hass", "Jaime Cabase"], a: 0 },
+    { q: "Which city served as the model community for plumbing trade recognition in 1902?", choices: ["Quezon City", "Manila", "Baguio", "Davao"], a: 1 },
+    { q: "Before RA 1378, what was the basis for plumbing practices in Manila?", choices: ["Spanish Law", "City Ordinance 4122", "The US Plumbing Code", "The Building Code"], a: 1 },
+    { q: "The 22 Basic Principles are otherwise known as:", choices: ["Code of Ethics", "Plumbing Law", "International Plumbing Foundation", "Basic Principles of Plumbing"], a: 3 },
+    { q: "The 'Friar Engineers' who built government buildings in the 17th century came from which country?", choices: ["USA", "Spain", "Portugal", "Mexico"], a: 1 },
+    { q: "NAMPAP stands for:", choices: ["National Association of Master Plumbers of the Philippines", "National Master Plumbers Association of the Philippines", "Nationwide Allied Master Plumbers Association of the Philippines", "Northern Allied Master Plumbers Association of the Philippines"], a: 0 },
+    { q: "The officer charged with the administration and enforcement of the Plumbing Code is the:", choices: ["Building Official", "Administrative Authority", "City Engineer", "Registered Master Plumber"], a: 1 },
+    { q: "A plumbing permit is not required for the clearance of stoppages or stopping of leaks, provided that the work does not involve:", choices: ["Replacing valves", "Replacing fixtures", "Rearranging pipes", "Using a plunger"], a: 2 },
+    { q: "Application for a permit shall be made on forms furnished by the:", choices: ["PRC", "NAMPAP", "Administrative Authority", "DOH"], a: 2 },
+    { q: "How many sets of plans and specifications are required for a permit application?", choices: ["2", "4", "6", "8"], a: 2 },
+    { q: "Who must sign and seal the plumbing plans and specifications?", choices: ["Civil Engineer", "Architect", "Registered and Licensed Master Plumber", "Contractor"], a: 2 },
+    { q: "What is the validity period (in years) of a plumbing permit from the date of issuance?", choices: ["6 months", "1 year", "2 years", "5 years"], a: 1 },
+    { q: "A permit expires if work is suspended or abandoned for a period of how many days?", choices: ["30 days", "60 days", "90 days", "120 days"], a: 3 },
+    { q: "When a permit is expired, the fee to renew it (if work has not started) is what percentage of the original permit fee?", choices: ["25%", "50%", "75%", "100%"], a: 1 },
+    { q: "Who is responsible for notifying the Administrative Authority that work is ready for inspection?", choices: ["The Owner", "The Master Plumber", "The Helper", "The Architect"], a: 1 },
+    { q: "The Administrative Authority must be notified at least how many hours before an inspection is desired?", choices: ["24 hours", "48 hours", "72 hours", "1 week"], a: 0 },
+    { q: "If an inspection is requested and the work is not ready, what kind of fee may be charged?", choices: ["Renewal fee", "Re-inspection fee", "Violation fee", "Surcharge"], a: 1 },
+    { q: "A 'Notice of Correction' is issued when work is found to be:", choices: ["Completed early", "Defective or in violation of the code", "Using plastic pipes", "Over budget"], a: 1 },
+    { q: "All plumbing systems must be tested and approved before they are:", choices: ["Painted", "Concealed or covered", "Sold", "Photographed"], a: 1 },
+    { q: "If a plumbing system is found to be dangerous or unsanitary, it is classified as:", choices: ["A minor repair", "A public nuisance", "An aesthetic issue", "A structural defect"], a: 1 },
+    { q: "The Administrative Authority may require the 'Uncovering' of work if it was:", choices: ["Covered before inspection", "Painted the wrong color", "Installed by a helper", "Too expensive"], a: 0 },
+    { q: "What is the minimum scale for plumbing plans as per Section 102.2?", choices: ["1:50", "1:100", "No specific scale required", "1:200"], a: 1 },
+    { q: "The 'Administrative Authority' refers to the Building Official or the ______?", choices: ["Mayor", "Health Officer", "Fire Marshall", "Police Chief"], a: 1 },
+    { q: "Changes or modifications to approved plans require:", choices: ["Verbal consent", "Written approval of the Administrative Authority", "No approval if small", "A new contract"], a: 1 },
+    { q: "Which of the following does NOT require a plumbing permit?", choices: ["Installing a new water heater", "Adding a kitchen island sink", "Repairing a leak in a faucet", "Moving a floor drain"], a: 2 },
+    { q: "Plumbing work must be performed under the 'direct supervision' of a:", choices: ["Foreman", "Registered and Licensed Master Plumber", "Building Owner", "Civil Engineer"], a: 1 },
+    { q: "What happens to the permit if the work is not started within 1 year?", choices: ["It is automatically extended", "It becomes null and void", "It remains valid forever", "It requires a 10% fee"], a: 1 },
+    { q: "The 'Plumbing Code' covers the installation of which of the following?", choices: ["Storm drainage", "Fuel gas piping", "Water supply", "All of the above"], a: 3 },
+    { q: "Testing of the drainage system usually involves which substance?", choices: ["Air or Water", "Oil", "Smoke only", "Gas"], a: 0 },
+    { q: "The Administrative Authority has the right to enter a building at 'reasonable times' to:", choices: ["Collect taxes", "Inspect plumbing", "Deliver mail", "Evict tenants"], a: 1 },
+    { q: "A 'Certificate of Final Inspection' is issued after:", choices: ["The permit is paid", "The work is completed and passes all tests", "The house is sold", "The water is turned on"], a: 1 },
+    { q: "What is the penalty for violating the Plumbing Code?", choices: ["There is no penalty", "Fine and/or imprisonment", "Community service", "Loss of citizenship"], a: 1 },
+    { q: "Who provides the testing equipment for an inspection?", choices: ["The Administrative Authority", "The Master Plumber or Permit Holder", "The Water District", "The City Council"], a: 1 },
+    { q: "If a person continues to work after a 'Stop Work Order' is issued, they are subject to:", choices: ["A promotion", "Additional fines/penalties", "A handshake", "Verbal warning only"], a: 1 },
+    { q: "'Connection to the water supply' is prohibited until:", choices: ["The owner pays the bill", "The Administrative Authority issues an approval", "The pipes are painted", "The furniture is moved in"], a: 1 },
+    { q: "When using the 'Water Test' for a drainage system, the water must be kept in the system for at least how many minutes?", choices: ["5 minutes", "15 minutes", "30 minutes", "1 hour"], a: 1 },
+    { q: "Which Section of Chapter 1 discusses 'Violations and Penalties'?", choices: ["101", "104", "107", "108"], a: 3 },
+    { q: "What is the requirement for 'Existing Construction' regarding plumbing?", choices: ["It must be demolished", "It can remain if not a nuisance", "It must be upgraded every year", "It requires a new permit daily"], a: 1 },
+    { q: "In Section 102.1, a permit is required for any 'addition, alteration, or ______'?", choices: ["Cleaning", "Repair", "Painting", "Landscaping"], a: 1 },
+    { q: "The 'Permit Fee' is typically based on the number of:", choices: ["Windows", "Fixtures", "Occupants", "Square meters"], a: 1 },
+    { q: "What is 'Illegal Plumbing'?", choices: ["Plumbing done without a permit", "Plumbing using PVC", "Plumbing in a tall building", "Plumbing that is too cheap"], a: 0 },
+    { q: "The Administrative Authority may 'Revoke' a permit if it was issued:", choices: ["To a friend", "Based on incorrect information or in error", "Too quickly", "On a Friday"], a: 1 },
+    { q: "Which principle mentions that 'Air circulation' is necessary?", choices: ["Principle 5", "Principle 10", "Principle 15", "Principle 20"], a: 1 },
+    { q: "Principle 22 focuses on preventing the backflow of ______?", choices: ["Rainwater", "Polluted water", "Hot water", "Pure water"], a: 1 },
+    { q: "What must be done to sewage that is 'deleterious' to the environment?", choices: ["Dilute it", "Render it innocuous through treatment", "Bury it deep", "Send it to a landfill"], a: 1 },
+    { q: "Who is the 'Authorized Agent' of the Administrative Authority?", choices: ["The Homeowner", "A Plumbing Inspector", "The Contractor", "The Mayor"], a: 1 },
+    { q: "Can a Master Plumber be the 'Administrative Authority'?", choices: ["Yes, if appointed by the government", "No, never", "Only in private companies", "Only for their own house"], a: 0 },
+    { q: "'Adequate cleanouts' are required by which principle?", choices: ["Principle 1", "Principle 4", "Principle 7", "Principle 11"], a: 2 },
+    { q: "If a building is moved from one location to another, what is required?", choices: ["A new plumbing permit", "No permit is needed", "Only a verbal notice", "A photo of the old site"], a: 0 },
+    { q: "Section 102.2 requires a 'Plan and Specification' for all projects except:", choices: ["High-rise buildings", "Hospitals", "Minor repairs and small additions", "Schools"], a: 2 },
+    { q: "'Dangerous Plumbing' is defined as a system that is a ______?", choices: ["High cost", "Health hazard", "Ugly design", "Noisy system"], a: 1 },
+    { q: "A 'Re-inspection' is required if:", choices: ["The work passes the first time", "The previous work was rejected", "The owner wants to see the work", "The inspector is bored"], a: 1 },
+    { q: "What happens if a permit is revoked?", choices: ["All work must stop", "Work can continue if done quickly", "The permit fee is doubled", "The owner gets a refund"], a: 0 },
+    { q: "What is the purpose of the 'Testing' phase?", choices: ["To waste water", "To check for leaks and defects", "To increase the project duration", "To train new plumbers"], a: 1 },
+    { q: "The 'Plumbing System' includes:", choices: ["Water supply pipes", "Fixtures and traps", "Soil, waste and vent pipes", "All of the above"], a: 3 },
+    { q: "Can the Administrative Authority waive the requirement for a plan?", choices: ["Yes, for simple work", "No, never", "Only if the owner is an engineer", "Only for government buildings"], a: 0 },
+    { q: "What is the 'Sewer Connection' requirement for buildings on lots not abutting a public sewer?", choices: ["No plumbing allowed", "Private sewage disposal system (Septic Tank)", "Discharge to the street", "Storage in barrels"], a: 1 },
+    { q: "Section 107.1 deals with what kind of maintenance?", choices: ["Financial", "Sanitary", "Aesthetic", "Structural"], a: 1 },
+    { q: "When an inspector finds a violation, what document do they leave at the site?", choices: ["A bill", "A Notice of Correction", "A thank you note", "A business card"], a: 1 },
+    { q: "Why is Principle 20 (Structural Integrity) important?", choices: ["To save money", "To prevent damage to walls and floors during installation", "To make the pipes look better", "To speed up the work"], a: 1 },
+    { q: "'Cross-connection' is forbidden because it leads to:", choices: ["Lower pressure", "Contamination of the water supply", "Expensive pipes", "Noisy fixtures"], a: 1 },
+    { q: "In the Master Plumber's Code of Ethics, a plumber should 'report any ______'?", choices: ["Late workers", "Violations of the code", "Expensive parts", "New tools"], a: 1 },
+    { q: "According to the Code of Ethics, a plumber's price should be:", choices: ["The highest possible", "Just and reasonable", "Free", "Fixed by the government"], a: 1 },
+    { q: "A Master Plumber should not 'injure the ______ of another fellow plumber.'", choices: ["Tools", "Reputation", "Vehicle", "House"], a: 1 },
+    { q: "Which principle requires 'Smooth non-absorbent material'?", choices: ["Principle 1", "Principle 6", "Principle 12", "Principle 18"], a: 1 },
+    { q: "The ultimate goal of the National Plumbing Code is to protect:", choices: ["The Master Plumbers", "The Government", "Public Health and Safety", "The environment only"], a: 2 }
+  ],
+  5: [
+    { q: "A document issued by the Administrative Authority for the installation, alteration, repair, or replacement of any plumbing system is a:", choices: ["Certificate of Occupancy", "Plumbing Permit", "Business License", "Building Inspection Report"], a: 1 },
+    { q: "The person, his agents or assigns, in possession of the property where plumbing work is to be done refers to the:", choices: ["Registered Master Plumber", "Administrative Authority", "Owner", "Contractor"], a: 2 },
+    { q: "The pipe or pipes which provide the supply of water from the water main or other source of supply to the building-served is the:", choices: ["Building Drain", "Water Service Pipe", "Vent Stack", "Soil Pipe"], a: 1 },
+    { q: "A plumbing system which has been found to be a nuisance or is hazardous to life, health, or property is classified as:", choices: ["Experimental Plumbing", "Dangerous Plumbing", "Non-conforming Plumbing", "Standard Plumbing"], a: 1 },
+    { q: "All plumbing systems, both existing and new, and all parts thereof shall be maintained in a sanitary and safe operating condition. This rule covers:", choices: ["New construction only", "Existing construction only", "All plumbing systems", "Government buildings only"], a: 2 },
+    { q: "The Administrative Authority may require the ______ of any work which has been covered before inspection.", choices: ["Painting", "Removal or Uncovering", "Double-sealing", "Photographing"], a: 1 },
+    { q: "No person shall make any connection to any water supply line, commercial or industrial, without first obtaining ______ from the Administrative Authority.", choices: ["A verbal agreement", "A written permit/approval", "A set of blue prints", "A business license"], a: 1 },
+    { q: "Principle No. 8 emphasizes that piping must be of ______ material.", choices: ["Imported", "Durable", "Lightweight", "Recyclable"], a: 1 },
+    { q: "Principle No. 13 states that no substance that will ______ shall be allowed to enter the drainage system.", choices: ["Be transparent", "Produce explosive mixtures", "Be cold", "Be recycled"], a: 1 },
+    { q: "Principle No. 17 specifically addresses the prevention of ______ in a building when the drainage system is subject to backflow.", choices: ["Bad smells", "Overflow", "High pressure", "Noisy pipes"], a: 1 },
+    { q: "Who was the NAMPAP leader that pushed for the inclusion of the 'As-Built Plan' as a requirement for the 1999 Code?", choices: ["John F. Hass", "Jaime M. Cabase", "Francisco Geronimo", "Tomas Geronimo"], a: 1 },
+    { q: "Any person who shall violate any of the provisions of this Code shall be guilty of a ______.", choices: ["Felony", "Misdemeanor", "Civil Tort", "Administrative Error"], a: 1 },
+    { q: "If work is not commenced within ______ days from the date of issuance, the permit shall expire.", choices: ["120 days", "180 days", "365 days", "30 days"], a: 2 },
+    { q: "A permit may be ______ by the Administrative Authority if it was issued on the basis of incorrect or fraudulent information.", choices: ["Doubled", "Revoked", "Extended", "Copied"], a: 1 },
+    { q: "When a plumbing system is being tested with water, the pipes shall be filled until the water overflows from the ______.", choices: ["Lowest point", "Highest point", "Middle section", "Kitchen sink"], a: 1 },
+    { q: "Principle No. 2 states that the water supply must be sufficient in ______ to enable fixtures to function.", choices: ["Temperature and Color", "Volume and Pressure", "Speed and Velocity", "Weight and Density"], a: 1 },
+    { q: "Principle No. 14 requires that fixtures be connected ______ to the drainage system when necessary to prevent contamination of sterile goods.", choices: ["Directly", "Indirectly", "Through the roof", "To the water main"], a: 1 },
+    { q: "Section 102.2 states that plans must be submitted in how many sets?", choices: ["3", "5", "6", "10"], a: 2 },
+    { q: "Principle No. 21 prohibits the discharge of deleterious waste into the ground unless it is first ______.", choices: ["Filtered through sand", "Rendered innocuous by treatment", "Heated to 100 degrees", "Stored for 30 days"], a: 1 },
+    { q: "The 'Code of Ethics' states that a Master Plumber should consider their profession an opportunity to ______.", choices: ["Become wealthy", "Serve the public", "Outperform rivals", "Ignore regulations"], a: 1 },
+    { q: "The Administrative Authority shall have the power to stop the ______ of any plumbing work being done in violation of this Code.", choices: ["Payment", "Construction/Execution", "Planning", "Delivery"], a: 1 },
+    { q: "Which Principle refers to 'Structural Integrity' during installation?", choices: ["Principle No. 20", "Principle No. 10", "Principle No. 5", "Principle No. 1"], a: 0 },
+    { q: "Under Section 101.1, the Code is officially known as the:", choices: ["Master Plumber Law", "Revised National Plumbing Code of the Philippines", "Manila Plumbing Ordinance", "NAMPAP Handbook"], a: 1 },
+    { q: "A fee paid for an additional inspection when the work was not ready at the first requested time is a:", choices: ["Permit Fee", "Re-inspection Fee", "Processing Fee", "Surcharge"], a: 1 },
+    { q: "In the 1950s, which group worked to have the Plumbing Law (RA 1378) passed?", choices: ["The Board of Architects", "NAMPAP", "The Department of Health", "The Bureau of Public Works"], a: 1 },
+    { q: "No ______ shall be used to cover any plumbing work until it has been inspected and approved.", choices: ["Paint or Wallboard", "Plastic wrap", "Water", "Tape"], a: 0 },
+    { q: "Principle No. 11: Vent terminals shall be installed to preclude the possibility of ______ and the return of foul air.", choices: ["Corrosion", "Clogging", "Evaporation", "Condensation"], a: 1 },
+    { q: "Principle No. 15: No water closet shall be located in a room that is not properly ______.", choices: ["Painted white", "Lighted and Ventilated", "Carpeted", "Soundproofed"], a: 1 },
+    { q: "Principle No. 18: Plumbing systems shall be maintained in a sanitary condition by ______.", choices: ["The owner only", "Any handy person", "Registered Master Plumbers", "The local government"], a: 2 },
+    { q: "Section 102.2: The plans must show the ______ of the proposed plumbing system.", choices: ["Cost", "Layout and General Dimensions", "Brand names of all tools", "Names of all laborers"], a: 1 },
+    { q: "A connection between a potable water supply and a non-potable source is a:", choices: ["Dual supply", "Cross-connection", "Hybrid link", "Bypass"], a: 1 },
+    { q: "Principle No. 9: Each fixture directly connected to the drainage system shall be equipped with a ______.", choices: ["Shut-off valve", "Water-sealed trap", "Pressure gauge", "Check valve"], a: 1 },
+    { q: "The 'Thomasites' teachers arrived in the Philippines in the early 20th century from which country?", choices: ["Spain", "USA", "UK", "Japan"], a: 1 },
+    { q: "Principle No. 3: Water heating devices must be installed to prevent dangers from ______.", choices: ["Freezing", "Explosion through overheating", "Rust", "Low pressure"], a: 1 },
+    { q: "Principle No. 10: The drainage system shall be designed to provide an adequate circulation of ______ in all pipes.", choices: ["Water", "Air", "Waste", "Chemicals"], a: 1 },
+    { q: "The Administrative Authority may ______ the approval of a plan if it is found to be in violation of the Code.", choices: ["Speed up", "Withhold", "Ignore", "Sell"], a: 1 },
+    { q: "Principle No. 6: Plumbing fixtures shall be made of ______ material.", choices: ["Porous", "Smooth non-absorbent", "Flexible", "Transparent"], a: 1 },
+    { q: "A set of rules for the professional conduct of Registered Master Plumbers is the:", choices: ["General Provisions", "Code of Ethics", "Technical Specifications", "Permit Requirements"], a: 1 },
+    { q: "Section 103.1.1: Every permit shall be valid for ______ year(s).", choices: ["One (1)", "Two (2)", "Three (3)", "Five (5)"], a: 0 },
+    { q: "Principle No. 19: Fixtures must be installed with regard to ______ to be accessible for use.", choices: ["Height", "Spacing", "Color", "Price"], a: 1 },
+    { q: "The first Chief of the Division of Plumbing Construction in 1902 was:", choices: ["Ramon Magsaysay", "John F. Hass", "Jaime Cabase", "Fortunato Amosco"], a: 1 },
+    { q: "Principle No. 1: Premises must be provided with a supply of ______ water.", choices: ["Salt", "Pure and Wholesome", "Recycled", "Distilled"], a: 1 },
+    { q: "If a permit is expired due to suspension of work for 120 days, a renewal fee of ______ the original fee is required.", choices: ["1/4", "1/2", "Double", "Triple"], a: 1 },
+    { q: "Principle No. 4: A building must connect to a public sewer if the lot ______ a street with a sewer.", choices: ["Is near", "Abuts", "Is within 1km of", "Faces"], a: 1 },
+    { q: "Principle No. 7: The drainage system must guard against fouling, deposit of solids, and ______.", choices: ["Freezing", "Clogging", "Sweating", "Noise"], a: 1 },
+    { q: "Section 106.3: It is the duty of the ______ to cause the plumbing work to remain exposed until inspected.", choices: ["Inspector", "Permit Holder", "Neighbor", "Mayor"], a: 1 },
+    { q: "Principle No. 12: The plumbing system shall be subjected to ______ to disclose defects.", choices: ["Interviews", "Tests", "X-rays", "Estimates"], a: 1 },
+    { q: "Principle No. 22: Fixtures must prevent ______ of polluted water into the water supply.", choices: ["Evaporation", "Backflow", "Cooling", "Heating"], a: 1 },
+    { q: "NAMPAP was first organized in what year?", choices: ["1935", "1955", "1902", "1999"], a: 0 },
+    { q: "The ultimate goal of the 1999 National Plumbing Code is the protection of ______.", choices: ["Plumbing fees", "Master Plumbers", "Public Health and Safety", "Pipe manufacturers"], a: 2 }
+  ],
+  6: [
+    { q: "A pipe which conveys potable water from the building supply pipe to the plumbing fixtures and other water outlets is the definition of:", choices: ["Water Service Pipe", "Water Distribution Pipe", "Main Pipe", "Supply Branch"], a: 1 },
+    { q: "The technical term for any person, firm, or corporation who has been issued a plumbing permit refers to the:", choices: ["Master Plumber", "Contractor", "Permittee", "Authorized Representative"], a: 2 },
+    { q: "The pipe which conveys the discharge of water closets, urinals, or fixtures having similar functions, with or without the discharge from other fixtures is the:", choices: ["Waste Pipe", "Soil Pipe", "Vent Pipe", "Drain Pipe"], a: 1 },
+    { q: "A pipe which conveys only wastewater or liquid waste, free of fecal matter is the:", choices: ["Soil Pipe", "Waste Pipe", "Vent Pipe", "Sewer Pipe"], a: 1 },
+    { q: "The lowest portion of the inside of a pipe is the:", choices: ["Crown", "Invert", "Rim", "Base"], a: 1 },
+    { q: "Section 102.1: A permit is required for any plumbing work except for the ______ of stoppages.", choices: ["Permanent repair", "Temporary clearance", "Complete replacement", "Rerouting"], a: 1 },
+    { q: "Section 103.2.2: When the Administrative Authority finds that the plans conform to the requirements, they shall ______ the plans.", choices: ["Discard", "Approve", "Photocopy", "Archive"], a: 1 },
+    { q: "Principle No. 11: Each vent terminal shall extend to the ______.", choices: ["Basement", "Outer air", "Water tank", "Public sewer"], a: 1 },
+    { q: "Principle No. 16: If no public sewer is available, a ______ shall be provided.", choices: ["Direct street discharge", "Private sewage disposal system", "Storage barrel", "Deep well"], a: 1 },
+    { q: "Section 102.2: Plans and specifications shall be drawn to a scale of not less than ______.", choices: ["1:50", "1:100", "1:200", "1:500"], a: 1 },
+    { q: "A Registered Master Plumber should not ______ the work of another plumber to gain an advantage.", choices: ["Study", "Criticize or interfere with", "Recommend", "Document"], a: 1 },
+    { q: "Principle No. 5: Each family dwelling unit on a lot abutting a public sewer shall have at least ______.", choices: ["Two kitchens", "One water closet and one kitchen sink", "Three floor drains", "One bathtub"], a: 1 },
+    { q: "Section 108.1: Any person who violates the provisions of this Code shall be punished by a fine not exceeding ______.", choices: ["1,000 Pesos", "2,000 Pesos", "5,000 Pesos", "10,000 Pesos"], a: 1 },
+    { q: "Section 108.1: Violation of the Code can also lead to imprisonment for a period not exceeding ______.", choices: ["6 months", "1 year", "2 years", "5 years"], a: 1 },
+    { q: "Principle No. 10: The drainage system shall be designed to prevent ______ of trap seals.", choices: ["Cleaning", "Siphonage and aspiration", "Painting", "Inspection"], a: 1 },
+    { q: "Section 104.1: The Administrative Authority may ______ a permit if work is done in violation of the Code.", choices: ["Renew", "Suspend or Revoke", "Photocopy", "Laminate"], a: 1 },
+    { q: "Which group drafted the first National Plumbing Code in the 1950s?", choices: ["The Bureau of Health", "NAMPAP", "The Board of Civil Engineers", "The City Council of Manila"], a: 1 },
+    { q: "Principle No. 13: The drainage system must prevent the entry of ______ into the system.", choices: ["Rainwater", "Explosive mixtures", "Cold water", "Filtered air"], a: 1 },
+    { q: "The Board of Master Plumbers is under the administrative supervision of the ______.", choices: ["DOH", "PRC", "DPWH", "DENR"], a: 1 },
+    { q: "Principle No. 19: Fixtures shall be installed with regard to spacing as to be ______ for their intended use.", choices: ["Hidden", "Accessible", "Isolated", "Expensive"], a: 1 },
+    { q: "Section 106.3: Who is responsible for providing the necessary equipment for testing?", choices: ["The Inspector", "The City Government", "The Registered Master Plumber or Permittee", "The Utility Company"], a: 2 },
+    { q: "Principle No. 3: Water heating devices must be designed to prevent dangers from explosion due to ______.", choices: ["Low pressure", "Overheating", "Cold water", "Air pockets"], a: 1 },
+    { q: "Section 107.1: All plumbing systems shall be maintained in a ______ condition.", choices: ["New", "Sanitary", "Dry", "Hidden"], a: 1 },
+    { q: "A Registered Master Plumber should not ______ the reputation of a fellow plumber.", choices: ["Support", "Falsely or maliciously injure", "Collaborate with", "Learn from"], a: 1 },
+    { q: "Principle No. 10: Siphonage, aspiration, or forcing of trap seals must be prevented under conditions of ______ use.", choices: ["Heavy", "Ordinary", "Industrial", "Emergency"], a: 1 },
+    { q: "The lowest portion of the inside of a horizontal pipe is often referred to as the ______.", choices: ["Crown", "Invert", "Rim", "Bottom"], a: 1 },
+    { q: "Which document defines the professional conduct and responsibilities of a Master Plumber?", choices: ["The Building Code", "The Code of Ethics", "The Labor Code", "The Civil Code"], a: 1 },
+    { q: "Principle No. 12: The purpose of testing a plumbing system is to effectively disclose ______.", choices: ["The cost of materials", "All defects and leaks", "The age of the building", "The name of the owner"], a: 1 },
+    { q: "Section 102.2: The plans must show the ______ of the plumbing system in relation to the building.", choices: ["Price", "Layout and general dimensions", "Furniture placement", "Wall color"], a: 1 },
+    { q: "What year was the Revised National Plumbing Code of the Philippines approved by President Estrada?", choices: ["1955", "1999", "2005", "2010"], a: 1 },
+    { q: "Principle No. 18: Maintenance of plumbing systems in a sanitary condition is the responsibility of ______.", choices: ["Any tenant", "Registered Master Plumbers", "The local mayor", "Unlicensed helpers"], a: 1 },
+    { q: "Section 101.2.1: This code applies to the ______ of any plumbing system.", choices: ["Design only", "Installation, alteration, repair, and maintenance", "Marketing only", "Demolition only"], a: 1 },
+    { q: "A 'Cross-connection' is a connection between a ______ and a non-potable source.", choices: ["Gas line", "Potable water supply", "Electrical line", "Vent pipe"], a: 1 },
+    { q: "Principle No. 7: The drainage system shall be designed to guard against ______.", choices: ["High velocity", "Fouling and deposit of solids", "Low temperature", "Clear water"], a: 1 },
+    { q: "Who was the NAMPAP President who helped update the code in 1999?", choices: ["John F. Hass", "Jaime M. Cabase", "Francisco Geronimo", "Mariano de Jesus"], a: 1 },
+    { q: "Section 106.1: All plumbing systems shall be ______ by the Administrative Authority.", choices: ["Ignored", "Inspected", "Painted", "Photographed"], a: 1 },
+    { q: "Principle No. 14: This principle mandates protection of what specific types of goods from contamination?", choices: ["Electronic goods", "Food and sterile goods", "Construction materials", "Clothing"], a: 1 },
+    { q: "Principle No. 20: Plumbing shall be installed with due regard to the preservation of ______.", choices: ["Structural members' strength", "Paint colors", "Garden landscaping", "Tile patterns"], a: 0 },
+    { q: "The 'Thomasites' helped introduce ______ standards to the Philippines.", choices: ["Spanish", "American plumbing", "Japanese", "German"], a: 1 },
+    { q: "A 'Notice of Correction' must be ______ before further work can proceed.", choices: ["Ignored", "Complied with and re-inspected", "Thrown away", "Framed"], a: 1 },
+    { q: "Principle No. 1: Pure and wholesome water must be provided for ______.", choices: ["Irrigation only", "Human habitation", "Car washing", "Construction"], a: 1 },
+    { q: "Section 102.2: A plumbing permit application requires ______ sets of plans.", choices: ["Three", "Six", "Ten", "Two"], a: 1 },
+    { q: "What happens if a permit expires?", choices: ["It is still valid", "It must be renewed and a fee paid", "The building must be demolished", "The plumber is arrested"], a: 1 },
+    { q: "Principle No. 21: Sewage shall not be discharged into the ground unless ______.", choices: ["It is diluted", "It is rendered innocuous by treatment", "It is buried deep", "It is stored for a year"], a: 1 },
+    { q: "Section 103.1.2: A permit becomes null and void if work is suspended for ______ days.", choices: ["30", "120", "60", "90"], a: 1 },
+    { q: "Principle No. 9: Water-sealed traps are used to prevent ______ from entering the building.", choices: ["Fresh air", "Sewer gas", "Rainwater", "Insects"], a: 1 },
+    { q: "The Master Plumber's Code of Ethics promotes ______ with fellow plumbers.", choices: ["Competition", "Cooperation and loyalty", "Secrecy", "Hostility"], a: 1 },
+    { q: "Principle No. 22: Polluted water must not ______ into the water supply system.", choices: ["Evaporate", "Backflow", "Filter", "Freeze"], a: 1 },
+    { q: "Section 104.1: An Administrative Authority can enter a building at ______ times for inspection.", choices: ["Any", "Reasonable", "Only at night", "Only on weekends"], a: 1 },
+    { q: "The first Walled City 'Intramuros' used what kind of standards?", choices: ["American", "European plumbing", "Asian", "No standards"], a: 1 }
+  ],
+  7: [
+    { q: "The person or entity to whom a plumbing permit is issued is the:", choices: ["Administrative Authority", "Registered Master Plumber", "Permittee", "Building Official"], a: 2 },
+    { q: "Which section specifies that plumbing plans must be signed and sealed by a Registered and Licensed Master Plumber?", choices: ["Section 101", "Section 102.2", "Section 105", "Section 108"], a: 1 },
+    { q: "A person violating Code provisions shall be guilty of a misdemeanor and fined not more than:", choices: ["500 pesos", "1,000 pesos", "5,000 pesos", "2,000 pesos"], a: 1 },
+    { q: "When a permit is issued, approved plans shall be marked as:", choices: ["CERTIFIED", "APPROVED", "LICENSED", "FINAL"], a: 1 },
+    { q: "Plumbing systems found to be a nuisance or hazardous to life, health, or property define:", choices: ["Illegal Plumbing", "Dangerous Plumbing", "Experimental Plumbing", "Standard Plumbing"], a: 1 },
+    { q: "If a permit expires due to work suspension, the renewal fee is ______ the original permit fee amount.", choices: ["1/4", "1/2", "Double", "Triple"], a: 1 },
+    { q: "The Administrative Authority must be notified at least ______ hours before any work is to be inspected.", choices: ["12", "24", "48", "72"], a: 1 },
+    { q: "A horizontal pipe is any pipe or fitting which makes an angle in a horizontal plane of less than ______ degrees.", choices: ["22.5", "45", "60", "90"], a: 1 },
+    { q: "A vertical pipe is any pipe or fitting which makes an angle of ______ degrees or less with the vertical.", choices: ["30", "45", "60", "15"], a: 1 },
+    { q: "Which section states that existing plumbing systems can remain if they are not a nuisance or hazardous?", choices: ["Section 101.1", "Section 101.2.2", "Section 107", "Section 108"], a: 1 },
+    { q: "A pipe that carries liquid waste but NO fecal matter is the:", choices: ["Soil pipe", "Vent pipe", "Waste pipe", "Storm drain"], a: 2 },
+    { q: "Who is responsible for scheduling all inspections and providing access to the site?", choices: ["The Inspector", "The Master Plumber or Permittee", "The Architect", "The Neighbor"], a: 1 },
+    { q: "The 'Water Test' for drainage systems requires that no section be tested with less than a ______ meter head of water.", choices: ["3 meter", "5 meter", "10 meter", "1 meter"], a: 0 },
+    { q: "An air test is performed by attaching an air compressor to the system and reaching a pressure of ______ kPa.", choices: ["17.2 kPa", "34.5 kPa", "68.9 kPa", "103.4 kPa"], a: 1 },
+    { q: "During an air test, the pressure must be maintained for at least ______ minutes without leaking.", choices: ["5", "10", "15", "30"], a: 2 },
+    { q: "Which part of the building is protected from sewer gas by a trap seal?", choices: ["The roof", "The interior/living space", "The basement only", "The garden"], a: 1 },
+    { q: "Section 102.2: A plumbing permit is NOT required for which of the following?", choices: ["Installing a new sink", "Stopping a leak in a water pipe", "Moving a floor drain", "Adding a new bathroom"], a: 1 },
+    { q: "Who provides the necessary test plugs and gauges for a plumbing inspection?", choices: ["The Administrative Authority", "The Registered Master Plumber or Permittee", "The Plumbing Inspector", "The Hardware Store"], a: 1 },
+    { q: "What is the penalty for continuing to work after a 'Stop Work Order' has been issued?", choices: ["Verbal warning", "Additional fines and penalties", "Loss of the house", "No penalty"], a: 1 },
+    { q: "A 'Certificate of Approval' is issued only after ______.", choices: ["The permit is paid", "All tests and inspections are passed", "The plans are signed", "The house is painted"], a: 1 },
+    { q: "Who was the Filipino Master Plumber known for organizing the first NAMPAP meeting?", choices: ["Francisco Geronimo", "Mariano de Jesus", "John F. Hass", "Tomas Geronimo"], a: 0 },
+    { q: "The National Plumbing Code of 1999 was based on which previous version?", choices: ["1959 Code", "1970 Code", "1935 Code", "1980 Code"], a: 0 },
+    { q: "Section 103.1.2: A permit is null and void if work is abandoned for more than ______ days.", choices: ["30", "60", "90", "120"], a: 3 },
+    { q: "The Administrative Authority may require a 'Re-inspection' if work is found to be ______.", choices: ["Too expensive", "Defective or incomplete", "Completed early", "Using green pipes"], a: 1 },
+    { q: "A Master Plumber must not 'use any ______' to get an advantage over a competitor.", choices: ["New tools", "Unfair or illegal means", "Better materials", "Faster labor"], a: 1 },
+    { q: "A plumbing system that is 'unsafe' is considered a ______.", choices: ["Public Nuisance", "Minor issue", "Tax deduction", "Modern design"], a: 0 },
+    { q: "Section 104.1: If an inspector is denied entry, they may seek a ______.", choices: ["New job", "Search warrant or legal remedy", "Refund", "Handshake"], a: 1 },
+    { q: "Which term describes a water supply that is safe for drinking?", choices: ["Non-potable", "Potable", "Gray water", "Brackish"], a: 1 },
+    { q: "The 'Crown' of a trap refers to the ______.", choices: ["Bottom", "Highest point of the trap", "The side", "The drain plug"], a: 1 },
+    { q: "NAMPAP President Jaime Cabase promoted which modern practice in the 1999 Code?", choices: ["Plastic pipes only", "As-Built Plans", "No inspections", "Wood pipes"], a: 1 },
+    { q: "A pipe conveying discharge of water closets or urinals is a ______.", choices: ["Waste pipe", "Soil pipe", "Vent pipe", "Supply pipe"], a: 1 },
+    { q: "What is the minimum head for a water test in a drainage system?", choices: ["5 feet", "10 feet", "20 feet", "30 feet"], a: 1 },
+    { q: "What is the metric equivalent of a 10-foot head of water?", choices: ["1.5 meters", "3.0 meters", "4.5 meters", "6.0 meters"], a: 1 },
+    { q: "Principle No. 10: The goal of air circulation is to prevent the loss of ______.", choices: ["Water pressure", "Trap seals", "Heat", "Pipe color"], a: 1 },
+    { q: "Section 103.1.2: A permit expires after ______ year from date of issuance.", choices: ["1", "2", "3", "5"], a: 0 },
+    { q: "A Master Plumber should consider their profession an opportunity to ______.", choices: ["Serve the public", "Charge high fees", "Ignore laws", "Beat competitors"], a: 0 },
+    { q: "What should a plumber do if they see an unsafe plumbing condition?", choices: ["Ignore it", "Report it to the Administrative Authority", "Take a photo and leave", "Charge more"], a: 1 },
+    { q: "Which section allows the Building Official to authorize un-inspected work to be uncovered?", choices: ["Section 106.1", "Section 106.2", "Section 106.3", "Section 106.4"], a: 2 },
+    { q: "The Board of Master Plumbers consists of a Chairman and ______ members.", choices: ["1", "2", "3", "4"], a: 1 },
+    { q: "What happens if you work without a plumbing permit?", choices: ["Reward", "Violation/Penalty", "Automatic approval", "Tax break"], a: 1 },
+    { q: "A vent pipe's main purpose is to ______.", choices: ["Carry waste", "Provide air circulation and protect trap seals", "Carry potable water", "Cool the building"], a: 1 },
+    { q: "The first city in the Philippines to have a regulated plumbing trade (1902) was:", choices: ["Cebu", "Manila", "Davao", "Vigan"], a: 1 },
+    { q: "Any plumbing system which is found to be a nuisance is classified as ______.", choices: ["Dangerous Plumbing", "Illegal Plumbing", "Standard Plumbing", "High-end Plumbing"], a: 0 },
+    { q: "Siphonage is prevented by proper ______.", choices: ["Painting", "Venting", "Cleaning", "Lighting"], a: 1 },
+    { q: "The depth of water that must be maintained in a trap to prevent sewer gas entry is the:", choices: ["Trap depth", "Trap seal", "Water column", "Barrier height"], a: 1 },
+    { q: "Any person making a false statement in a permit application shall have their permit:", choices: ["Upgraded", "Revoked", "Expedited", "Copied"], a: 1 },
+    { q: "In the history of plumbing, the 'Ilustrados' were known as the:", choices: ["Laborers", "Elite group/class", "Government officials", "Spanish priests"], a: 1 },
+    { q: "All plumbing fixtures shall be installed with regard to spacing as to be ______ for use.", choices: ["Decorative", "Accessible", "Hidden", "Expensive"], a: 1 },
+    { q: "A pipe that carries groundwater or rainwater to a point of disposal is a:", choices: ["Soil pipe", "Storm drain", "Waste pipe", "Vent pipe"], a: 1 },
+    { q: "The Code of Ethics emphasizes that a plumber should 'encourage the ______' of the trade.", choices: ["Monopolization", "Improvement and Progress", "Secrecy", "Elimination"], a: 1 }
+  ],
+  8: [
+    { q: "The administrative officer or any other person or agency individual to whom the Building Official may delegate the power to enforce the provisions of this Code.", choices: ["Master Plumber", "Administrative Authority", "Building Inspector", "Contractor"], a: 1 },
+    { q: "A physical separation, which may be a low inlet into the indirect waste receptor from the fixture outlet and which is at least twice the effective diameter of the drain served.", choices: ["Air Gap (Water System)", "Air Gap (Drainage System)", "Backflow", "Relief Vent"], a: 1 },
+    { q: "The unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying potable water to the flood-level rim of any tank, vat or fixture.", choices: ["Air Gap (Water System)", "Air Gap (Drainage System)", "Critical Level", "Flood Level"], a: 0 },
+    { q: "A water supply pipe, which extends vertically to one full story or more to convey water into pipe branches or to a group of fixtures.", choices: ["Stack", "Riser", "Vertical Pipe", "Main"], a: 1 },
+    { q: "The flow of water or other liquids, mixtures or substances into the distributing pipes of a potable supply of water from any source other than its intended source.", choices: ["Back-siphonage", "Backflow", "Cross-connection", "Overflow"], a: 1 },
+    { q: "The flowing back of used, contaminated or polluted water from a plumbing fixture or vessel into a water supply pipe due to a negative pressure in such pipe.", choices: ["Backflow", "Back-siphonage", "Back-pressure", "Gravity flow"], a: 1 },
+    { q: "Any group of two or more similar adjacent fixtures which discharge into a common horizontal waste or soil branch.", choices: ["Battery of Fixtures", "Group of Fixtures", "Fixture Unit", "Branch"], a: 0 },
+    { q: "A device or means to prevent backflow into the potable water system.", choices: ["Check Valve", "Backflow Preventer", "Gate Valve", "Air Gap"], a: 1 },
+    { q: "A pipe which is not a riser, main or stack.", choices: ["Branch", "Lateral", "Vent", "Offset"], a: 0 },
+    { q: "Any part of the piping system other than a main, riser or stack.", choices: ["Branch", "Branch Vent", "Horizontal Branch", "Branch Interval"], a: 1 },
+    { q: "A length of soil or waste stack corresponding in general to a story height, but in no case less than 2.43 meters within which the horizontal branches from one floor or story of a building are connected to the stack.", choices: ["Branch", "Branch Interval", "Stack", "Story Height"], a: 1 },
+    { q: "Any structure used or intended for supporting or sheltering any occupancy.", choices: ["Premises", "Building", "Dwelling", "Establishment"], a: 1 },
+    { q: "That part of the lowest piping of a plumbing system which receives the discharge from soil, waste and other drainage pipes inside of a building and conveys it to the house sewer.", choices: ["Building Sewer", "Building Drain", "Main Drain", "House Pipe"], a: 1 },
+    { q: "That part of the horizontal piping of a drainage system which extends from the end of the building drain and conveys it to a public sewer or private sewage disposal system.", choices: ["Building Sewer", "Building Drain", "Main Sewer", "Lateral Sewer"], a: 0 },
+    { q: "A vertical distance of 2.43 meters.", choices: ["Branch Interval", "Story Height", "Riser Height", "Ceiling Height"], a: 1 },
+    { q: "The pipe carrying water from the water meter or other source of water supply to a building or other point of use or distribution on the lot.", choices: ["Water Service Pipe", "Building Supply Pipe", "Water Main", "Distribution Pipe"], a: 1 },
+    { q: "A plug or cover which can be removed from a fitting for the purpose of cleaning or examining the interior of the pipe.", choices: ["Gate Valve", "Cleanout", "Stop Cock", "Blind Flange"], a: 1 },
+    { q: "A vent that affords a passage of air to or from a drainage system.", choices: ["Individual Vent", "Common Vent", "Relief Vent", "Vent Stack"], a: 1 },
+    { q: "A drain connecting the compartments of a set of fixtures to a trap or connecting other permitted fixtures to a common trap.", choices: ["Continuous Waste", "Continuous Vent", "Common Waste", "Unit Waste"], a: 0 },
+    { q: "A physical connection or arrangement between two otherwise separate piping systems, one of which contains potable water and the other which contains water of unknown or questionable safety.", choices: ["Backflow", "Cross-connection", "Direct Connection", "Inter-connection"], a: 1 },
+    { q: "An marking or reference point on a vacuum breaker or backflow preventer which determines the minimum elevation above the flood level rim of the fixture.", choices: ["Critical Level", "Flood Level", "Water Level", "Datum Line"], a: 0 },
+    { q: "A liquid-tight receptacle that receives the discharge of a septic tank and designed to permit such effluent to seep through its bottom and sides into the ground.", choices: ["Seepage Pit", "Cesspool", "Septic Tank", "Catch Basin"], a: 1 },
+    { q: "A pipe or system of pipes, which provides a path for waste water to flow from a building to a point of disposal.", choices: ["Drainage System", "Sewer System", "Plumbing System", "Vent System"], a: 0 },
+    { q: "The liquid and water-borne wastes derived from the ordinary living processes, free from industrial wastes and of such character as to permit satisfactory disposal without special treatment into the public sewer.", choices: ["Industrial Waste", "Domestic Sewage", "Storm Water", "Gray Water"], a: 1 },
+    { q: "A vertical pipe which conveys the discharge of water closets, urinals or similar fixtures.", choices: ["Waste Stack", "Soil Stack", "Stack", "Vent"], a: 1 },
+    { q: "A common term for any vertical line of soil, waste or vent piping.", choices: ["Riser", "Stack", "Main", "Vertical Pipe"], a: 1 },
+    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["Vent Stack", "Stack Vent", "Relief Vent", "Common Vent"], a: 1 },
+    { q: "A vertical vent pipe installed primarily for the purpose of providing circulation of air to and from any part of the drainage system.", choices: ["Stack Vent", "Vent Stack", "Main Vent", "Individual Vent"], a: 1 },
+    { q: "The top edge of a receptacle from which water overflows.", choices: ["Rim", "Flood Level Rim", "Invert", "Crown"], a: 1 },
+    { q: "The level in a fixture at which water begins to overflow the top or rim of the fixture.", choices: ["Flood Level", "Critical Level", "Water Level", "Overflow Line"], a: 0 },
+    { q: "Any pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["Vertical Pipe", "Horizontal Pipe", "Sloping Pipe", "Lateral"], a: 1 },
+    { q: "Any pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["Horizontal Pipe", "Vertical Pipe", "Riser", "Stack"], a: 1 },
+    { q: "A device designed and installed so as to separate and retain deleterious, hazardous or undesirable matter from normal wastes while permitting normal sewage or liquid wastes to discharge into the disposal terminal by gravity.", choices: ["Trap", "Interceptor (Clarifier)", "Catch Basin", "Septic Tank"], a: 1 },
+    { q: "The lowest portion of the inside of a horizontal pipe.", choices: ["Crown", "Invert", "Rim", "Base"], a: 1 },
+    { q: "Water-borne waste from the processes of industry, manufacturing, trade or business.", choices: ["Domestic Sewage", "Industrial Waste", "Storm Water", "Hazardous Waste"], a: 1 },
+    { q: "A pipe connecting several fixtures which are then connected to the stack.", choices: ["Main", "Fixture Branch", "Lateral", "Branch"], a: 1 },
+    { q: "A water supply pipe that connects the fixture with the fixture branch.", choices: ["Fixture Branch", "Fixture Supply", "Riser", "Main"], a: 1 },
+    { q: "A quantity in terms of which the load-producing effects on the plumbing system of different kinds of plumbing fixtures are expressed on some arbitrarily chosen scale.", choices: ["Flow Rate", "Fixture Unit", "Load Factor", "Unit Value"], a: 1 },
+    { q: "A room or space having a volume less than 1.4 cubic meters for each 250 Watts of the aggregate input rating of all fuel-burning appliances installed in that space.", choices: ["Confined Space", "Unconfined Space", "Mechanical Room", "Utility Closet"], a: 0 },
+    { q: "The person, his agents or assigns in possession of the property.", choices: ["Permittee", "Owner", "Contractor", "Occupant"], a: 1 },
+    { q: "Any part of the piping system which is so designed and installed that it can be separated from the rest of the system by means of a valve.", choices: ["Branch", "Section", "Unit", "Group"], a: 1 },
+    { q: "Water which is satisfactory for drinking, culinary and domestic purposes and which meets the quality standards of the Philippine National Standards for Drinking Water.", choices: ["Non-potable Water", "Potable Water", "Pure Water", "Wholesome Water"], a: 1 },
+    { q: "A pipe or conduit for carrying sewage and wastewater.", choices: ["Drain", "Sewer", "Canal", "Culvert"], a: 1 },
+    { q: "A sewer which is controlled by public authority.", choices: ["Private Sewer", "Public Sewer", "Main Sewer", "Lateral Sewer"], a: 1 },
+    { q: "A water-tight receptacle which receives the discharge of a plumbing system or part thereof and is designed and constructed so as to retain solids, digest organic matter through a period of detention.", choices: ["Cesspool", "Septic Tank", "Seepage Pit", "Catch Basin"], a: 1 },
+    { q: "The water-borne wastes of a community.", choices: ["Domestic Waste", "Sewage", "Sludge", "Effluent"], a: 1 },
+    { q: "A fitting or device of such shape and flood-level rim as to provide, when properly vented, a liquid seal which will prevent the back passage of air without materially affecting the flow of sewage or wastewater through it.", choices: ["Valve", "Trap", "Interceptor", "Cleanout"], a: 1 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["Trap Depth", "Trap Seal", "Water Seal", "Seal Height"], a: 1 },
+    { q: "A pipe installed to vent a fixture trap and which connects with the vent system above the fixture served or terminates in the open air.", choices: ["Common Vent", "Individual Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "A vent which provides a circulation of air between drainage and vent systems.", choices: ["Individual Vent", "Relief Vent", "Common Vent", "Circuit Vent"], a: 1 },
+    { q: "A pipe connecting the water-distributing system with the water meter.", choices: ["Building Supply", "Water Service Pipe", "Main Pipe", "Lateral Pipe"], a: 1 },
+    { q: "A pipe or system of pipes, which provides a path for water to flow from the source to the point of use.", choices: ["Drainage System", "Water Supply System", "Plumbing System", "Riser System"], a: 1 },
+    { q: "That part of the drainage system that does not drain by gravity into the building sewer.", choices: ["Sump", "Building Subdrain", "Main Drain", "Lateral Drain"], a: 1 },
+    { q: "A tank or pit, which receives sewage or liquid waste, located below the normal grade of the gravity system and must be emptied by mechanical means.", choices: ["Septic Tank", "Sump", "Catch Basin", "Cesspool"], a: 1 },
+    { q: "A device or system that is used to treat water for a specific purpose.", choices: ["Filter", "Water Conditioner/Treater", "Softener", "Purifier"], a: 1 },
+    { q: "A pipe or system of pipes, which conveys wastewater and water-borne waste from the building to a point of disposal.", choices: ["Sewerage System", "Plumbing System", "Drainage System", "Vent System"], a: 0 },
+    { q: "The lowest part of the interior of a horizontal pipe.", choices: ["Crown", "Invert", "Dip", "Bottom"], a: 1 },
+    { q: "The part of a plumbing system that is not a riser, main, or stack.", choices: ["Branch", "Lateral", "Vent", "Offset"], a: 0 },
+    { q: "A vertical line of soil, waste, or vent piping.", choices: ["Riser", "Stack", "Main", "Lateral"], a: 1 },
+    { q: "A common term for any vertical line of soil, waste, or vent piping.", choices: ["Riser", "Stack", "Main", "Lateral"], a: 1 },
+    { q: "A vertical distance of 2.43 meters used as a standard for stack connections.", choices: ["Story Height", "Branch Interval", "Riser Height", "Ceiling Height"], a: 1 },
+    { q: "A physical separation between a water system and a drainage system.", choices: ["Backflow", "Air Gap", "Check Valve", "Trap"], a: 1 },
+    { q: "The level at which water overflows the rim of a fixture.", choices: ["Critical Level", "Flood Level", "Water Level", "Top Level"], a: 1 },
+    { q: "A fitting designed to prevent the passage of air or gas while allowing liquid flow.", choices: ["Valve", "Trap", "Cleanout", "Filter"], a: 1 },
+    { q: "A pipe connecting several fixtures to a stack.", choices: ["Fixture Branch", "Fixture Supply", "Main", "Lateral"], a: 0 },
+    { q: "A water supply pipe extending vertically one full story or more.", choices: ["Stack", "Riser", "Main", "Pipe Branch"], a: 1 },
+    { q: "A pipe between the building drain and the public sewer.", choices: ["Building Sewer", "Main Sewer", "Lateral Sewer", "House Sewer"], a: 0 },
+    { q: "A system of pipes for conveying waste and air.", choices: ["Plumbing System", "Sewer System", "Drainage System", "Water System"], a: 0 },
+    { q: "A pipe carrying water to a fixture branch.", choices: ["Main", "Lateral", "Riser", "Supply"], a: 0 },
+    { q: "The extension of a stack above the highest fixture.", choices: ["Vent Stack", "Stack Vent", "Relief Vent", "Common Vent"], a: 1 },
+    { q: "A device preventing backflow.", choices: ["Check Valve", "Backflow Preventer", "Gate Valve", "Globe Valve"], a: 1 },
+    { q: "The level where water begins to overflow.", choices: ["Flood Level Rim", "Flood Level", "Overflow Line", "Rim"], a: 1 },
+    { q: "A pipe conveying discharge of water closets or urinals.", choices: ["Waste Pipe", "Soil Pipe", "Vent Pipe", "Sewer Pipe"], a: 1 },
+    { q: "A pipe conveying discharge from fixtures NOT containing fecal matter.", choices: ["Soil Pipe", "Waste Pipe", "Vent Pipe", "Sewer Pipe"], a: 1 },
+    { q: "A fitting providing a liquid seal.", choices: ["Trap", "Valve", "Union", "Coupling"], a: 0 },
+    { q: "A vertical line of vent piping.", choices: ["Stack Vent", "Vent Stack", "Relief Vent", "Loop Vent"], a: 1 },
+    { q: "A pipe or fitting which makes an angle of more than 45 degrees with the vertical.", choices: ["Vertical Pipe", "Horizontal Pipe", "Sloping Pipe", "Lateral"], a: 1 },
+    { q: "A pipe or fitting which makes an angle of 45 degrees or less with the vertical.", choices: ["Horizontal Pipe", "Vertical Pipe", "Riser", "Stack"], a: 1 },
+    { q: "The flow of liquid into potable pipes from non-potable sources.", choices: ["Back-siphonage", "Backflow", "Cross-connection", "Overflow"], a: 1 },
+    { q: "A marking on a vacuum breaker determining minimum elevation.", choices: ["Critical Level", "Flood Level", "Datum Line", "Water Mark"], a: 0 },
+    { q: "A group of fixtures in a row.", choices: ["Set", "Battery", "Unit", "Row"], a: 1 },
+    { q: "The lowest part of the piping inside a building.", choices: ["Building Sewer", "Building Drain", "Main Drain", "Lateral"], a: 1 },
+    { q: "The extension of a building drain outside the building.", choices: ["Building Sewer", "Main Sewer", "Lateral", "House Pipe"], a: 0 },
+    { q: "A plug used for cleaning or examining a pipe.", choices: ["Cleanout", "Gate Valve", "Stop Cock", "Union"], a: 0 },
+    { q: "A vent that is also a drain.", choices: ["Wet Vent", "Dry Vent", "Relief Vent", "Common Vent"], a: 0 },
+    { q: "A vent for a fixture trap connecting above the fixture.", choices: ["Common Vent", "Individual Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "The pipe from the water meter to the building.", choices: ["Water Service Pipe", "Building Supply", "Main", "Lateral"], a: 1 },
+    { q: "A pipe conveying water to a fixture branch.", choices: ["Main", "Lateral", "Riser", "Branch"], a: 0 },
+    { q: "A pipe conveying water to a fixture.", choices: ["Fixture branch", "Fixture supply", "Fixture unit", "Lateral"], a: 1 },
+    { q: "A pipe between the fixture supply and the distribution pipe.", choices: ["Fixture branch", "Fixture supply", "Riser", "Main"], a: 0 },
+    { q: "The flow into potable pipes from non-potable sources.", choices: ["Back-siphonage", "Backflow", "Cross-connection", "Overflow"], a: 1 },
+    { q: "A continuation of a drain to the vent.", choices: ["Continuous Vent", "Common Vent", "Individual Vent", "Stack Vent"], a: 0 },
+    { q: "A pipe for water closet discharge.", choices: ["Waste Pipe", "Soil Pipe", "Vent Pipe", "Sewer Pipe"], a: 1 },
+    { q: "The lowest part of the inside of a pipe.", choices: ["Crown", "Invert", "Dip", "Floor"], a: 1 }
+  ],
+  9: [
+    { q: "The principal artery of the system to which branches may be connected.", choices: ["Main", "Stack", "Riser", "Header"], a: 0 },
+    { q: "Any system of piping, with its fittings, which is installed within the premises in or under the building of the water supply source.", choices: ["Main Sewer", "Main Water Pipe", "Main", "Building Subdrain"], a: 2 },
+    { q: "A water supply pipe that extends vertically one full story or more to convey water to branches.", choices: ["Riser", "Stack", "Main", "Vertical Pipe"], a: 0 },
+    { q: "A vertical line of soil, waste or vent piping extending through one or more stories.", choices: ["Riser", "Stack", "Main", "Column"], a: 1 },
+    { q: "An unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying water to the flood-level rim of a receptacle.", choices: ["Air Gap (Drainage)", "Air Gap (Water System)", "Critical Level", "Flood Level"], a: 1 },
+    { q: "A vertical vent pipe installed primarily for providing circulation of air to and from any part of the soil or waste system.", choices: ["Vent Stack", "Stack Vent", "Individual Vent", "Local Vent"], a: 0 },
+    { q: "A branch vent that performs its functions for two or more traps and extends from in front of the last fixture connection of a horizontal branch to the vent stack.", choices: ["Circuit Vent", "Loop Vent", "Relief Vent", "Common Vent"], a: 0 },
+    { q: "Any vent which provides a circulation of air between drainage and vent systems or to act as an auxiliary vent.", choices: ["Individual Vent", "Relief Vent", "Common Vent", "Local Vent"], a: 1 },
+    { q: "A vent that does not carry liquid or water-borne wastes.", choices: ["Wet Vent", "Dry Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "A vent which also serves as a drain.", choices: ["Wet Vent", "Dry Vent", "Relief Vent", "Common Vent"], a: 0 },
+    { q: "The highest part of the internal portion of the trap.", choices: ["Invert", "Crown", "Dip", "Rim"], a: 1 },
+    { q: "A pipe connecting several fixtures to a horizontal branch.", choices: ["Fixture Branch", "Fixture Supply", "Main", "Lateral"], a: 1 },
+    { q: "A marking on a backflow preventer which determines the minimum elevation above the flood level rim.", choices: ["Critical Level", "Flood Level", "Datum Line", "Water Mark"], a: 0 },
+    { q: "A pipe or system of pipes which provides a path for wastewater to flow from a building to a point of disposal.", choices: ["Sewerage System", "Drainage System", "Plumbing System", "Vent System"], a: 1 },
+    { q: "A sewer which is NOT controlled by public authority.", choices: ["Public Sewer", "Private Sewer", "Main Sewer", "Lateral Sewer"], a: 1 },
+    { q: "A fitting designed to provide a liquid seal.", choices: ["Valve", "Trap", "Cleanout", "Union"], a: 1 },
+    { q: "A vent installed primarily to vent a single fixture trap.", choices: ["Common Vent", "Individual Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "A vent that connects with the vent system above the fixture served.", choices: ["Individual Vent", "Common Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "Any part of the piping system which is so designed that it can be separated from the rest of the system by a valve.", choices: ["Branch", "Section", "Unit", "Group"], a: 1 },
+    { q: "A vertical distance of 2.43 meters used for stack connections.", choices: ["Story Height", "Branch Interval", "Riser Height", "Ceiling Height"], a: 1 },
+    { q: "The principal artery of the plumbing system.", choices: ["Main", "Stack", "Riser", "Header"], a: 0 },
+    { q: "A water supply pipe connecting the fixture with the fixture branch.", choices: ["Fixture Branch", "Fixture Supply", "Riser", "Main"], a: 1 },
+    { q: "A pipe conveying wastewater free of fecal matter.", choices: ["Soil Pipe", "Waste Pipe", "Vent Pipe", "Sewer Pipe"], a: 1 },
+    { q: "A device designed to separate and retain hazardous matter while permitting normal waste to discharge.", choices: ["Trap", "Interceptor (Clarifier)", "Catch Basin", "Septic Tank"], a: 1 },
+    { q: "A water-tight receptacle which retains solids and digests organic matter.", choices: ["Cesspool", "Septic Tank", "Seepage Pit", "Catch Basin"], a: 1 },
+    { q: "Water-borne waste from the processes of industry or business.", choices: ["Domestic Sewage", "Industrial Waste", "Storm Water", "Hazardous Waste"], a: 1 },
+    { q: "The person in possession of the property.", choices: ["Permittee", "Owner", "Contractor", "Occupant"], a: 1 },
+    { q: "A system for carrying sewage and wastewater.", choices: ["Sewerage System", "Plumbing System", "Drainage System", "Vent System"], a: 0 },
+    { q: "The lowest portion of the inside of a pipe.", choices: ["Crown", "Invert", "Dip", "Rim"], a: 1 },
+    { q: "A system providing a path for water from the source to point of use.", choices: ["Drainage System", "Water Supply System", "Plumbing System", "Riser System"], a: 1 },
+    { q: "The level in a fixture at which water begins to overflow.", choices: ["Flood Level", "Critical Level", "Water Level", "Overflow Line"], a: 0 },
+    { q: "Any part of a system other than a main or stack.", choices: ["Branch", "Lateral", "Feed", "Bypass"], a: 0 },
+    { q: "A pipe carrying water from the meter to the building.", choices: ["Water Service Pipe", "Building Supply", "Main", "Lateral"], a: 1 },
+    { q: "A pipe carrying potable water to the building.", choices: ["Water Distributing Pipe", "Water Service Pipe", "Main Pipe", "Riser"], a: 1 },
+    { q: "A drain connecting fixture compartments to a common trap.", choices: ["Continuous Waste", "Common Waste", "Unit Waste", "Multi-Waste"], a: 0 },
+    { q: "A physical connection between two separate piping systems.", choices: ["Backflow", "Cross-connection", "Inter-connection", "Direct-link"], a: 1 },
+    { q: "A vertical pipe which conveys only wastewater free of fecal matter.", choices: ["Soil Stack", "Waste Stack", "Vent Stack", "Riser"], a: 1 },
+    { q: "A vertical pipe which conveys discharge from water closets.", choices: ["Waste Stack", "Soil Stack", "Stack", "Vent"], a: 1 },
+    { q: "Water satisfactory for drinking and domestic purposes.", choices: ["Potable Water", "Pure Water", "Wholesome Water", "Filtered Water"], a: 0 },
+    { q: "A sewer controlled by public authority.", choices: ["Public Sewer", "Private Sewer", "Main Sewer", "City Sewer"], a: 0 },
+    { q: "A water-tight receptacle which retains solids.", choices: ["Septic Tank", "Cesspool", "Sump", "Pit"], a: 0 },
+    { q: "The vertical distance between the dip and crown weir.", choices: ["Trap Seal", "Water Column", "Barrier height", "Seal Depth"], a: 0 },
+    { q: "A vent primarily for a single fixture trap.", choices: ["Common Vent", "Individual Vent", "Stack Vent", "Relief Vent"], a: 1 },
+    { q: "A vertical line of soil or waste piping.", choices: ["Riser", "Stack", "Main", "Column"], a: 1 },
+    { q: "The principal artery of the system.", choices: ["Main", "Stack", "Riser", "Header"], a: 0 },
+    { q: "A pipe between the fixture supply and distribution pipe.", choices: ["Fixture branch", "Fixture supply", "Riser", "Main"], a: 0 },
+    { q: "The term for a pipe that carries potable water to the building.", choices: ["Water distributing pipe", "Water service pipe", "Main pipe", "Riser"], a: 1 }
+  ],
+  10: [
+    { q: "A valve used to control the flow of water, which has a circular disc or gate that moves up and down at right angles to the direction of the flow.", choices: ["Globe Valve", "Gate Valve", "Check Valve", "Angle Valve"], a: 1 },
+    { q: "A valve in which the flow of water is controlled by a movable spindle that lowers a plug onto a seat.", choices: ["Gate Valve", "Globe Valve", "Butterfly Valve", "Ball Valve"], a: 1 },
+    { q: "A device that automatically closes to prevent the flow of water in a reverse direction.", choices: ["Gate Valve", "Check Valve", "Relief Valve", "Stop Cock"], a: 1 },
+    { q: "A valve that opens automatically when the pressure exceeds a preset limit to prevent the rupture of a tank or pipe.", choices: ["Check Valve", "Relief Valve", "Float Valve", "Foot Valve"], a: 1 },
+    { q: "The pipe from the water main to the water meter.", choices: ["Building Supply", "Service Pipe", "Riser", "Distribution Pipe"], a: 1 },
+    { q: "The water supply pipe within a building which conveys water to the fixtures.", choices: ["Water Service Pipe", "Water Distributing Pipe", "Main", "Header"], a: 1 },
+    { q: "A fitting used to change the direction of a pipe at a 90-degree angle.", choices: ["Wye", "Elbow", "Tee", "Coupling"], a: 1 },
+    { q: "A fitting with three openings, used to connect a branch pipe to a main pipe at a right angle.", choices: ["Elbow", "Tee", "Wye", "Reducer"], a: 1 },
+    { q: "A fitting with three openings, used to connect a branch pipe at a 45-degree angle.", choices: ["Tee", "Wye", "Elbow", "Bushing"], a: 1 },
+    { q: "A fitting used to connect two pipes of the same size in a straight line.", choices: ["Union", "Coupling", "Nipple", "Cap"], a: 1 },
+    { q: "A fitting that allows for the easy disconnection of two pipes without cutting.", choices: ["Coupling", "Union", "Bushing", "Plug"], a: 1 },
+    { q: "A short piece of pipe threaded on both ends.", choices: ["Coupling", "Nipple", "Union", "Tee"], a: 1 },
+    { q: "A fitting used to close the end of a pipe with external threads.", choices: ["Plug", "Cap", "Bushing", "Stop"], a: 1 },
+    { q: "A fitting used to close the end of a pipe with internal threads.", choices: ["Cap", "Plug", "Bushing", "Nipple"], a: 1 },
+    { q: "A fitting used to connect a larger pipe to a smaller pipe.", choices: ["Coupling", "Reducer", "Tee", "Union"], a: 1 },
+    { q: "A fitting used to reduce the size of an opening in another fitting.", choices: ["Bushing", "Reducer", "Coupling", "Nipple"], a: 0 },
+    { q: "A pipe used to convey rainwater from the roof to the ground or a drain.", choices: ["Soil Pipe", "Waste Pipe", "Leader (Downspout)", "Vent Pipe"], a: 2 },
+    { q: "A receptacle used to collect rainwater from a roof.", choices: ["Sump", "Roof Drain / Gutter", "Catch Basin", "Septic Tank"], a: 1 },
+    { q: "A pit or receptacle at the lowest point of a drainage system.", choices: ["Catch Basin", "Sump", "Septic Tank", "Cesspool"], a: 1 },
+    { q: "A pump used to lift sewage or liquid waste from a sump to a higher level.", choices: ["Sump Pump", "Ejector", "Centrifugal Pump", "Booster Pump"], a: 1 },
+    { q: "The pipe that carries sewage from the building to the public sewer.", choices: ["Building Drain", "Building Sewer", "Main Sewer", "Lateral Sewer"], a: 1 },
+    { q: "A sewer that receives discharge from many building sewers.", choices: ["Building Sewer", "Main Sewer", "Lateral Sewer", "Private Sewer"], a: 1 },
+    { q: "A sewer that has no other common sewer discharge into it.", choices: ["Main Sewer", "Lateral Sewer", "Public Sewer", "Building Sewer"], a: 1 },
+    { q: "A system used to treat sewage from a single building.", choices: ["Public Sewer", "Private Sewage Disposal System", "Main Sewer", "Lateral Sewer"], a: 1 },
+    { q: "A water-tight tank used for the primary treatment of sewage.", choices: ["Cesspool", "Septic Tank", "Sump", "Catch Basin"], a: 1 },
+    { q: "The liquid that flows out of a septic tank.", choices: ["Sludge", "Effluent", "Scum", "Sewage"], a: 1 },
+    { q: "The solid matter that settles to the bottom of a septic tank.", choices: ["Effluent", "Sludge", "Scum", "Waste"], a: 1 },
+    { q: "The layer of fats and oils that floats on top of the liquid in a septic tank.", choices: ["Effluent", "Scum", "Sludge", "Waste"], a: 1 },
+    { q: "A system of pipes used to distribute effluent from a septic tank into the soil.", choices: ["Seepage Pit", "Disposal Field / Leach Field", "Cesspool", "Catch Basin"], a: 1 },
+    { q: "A deep pit used for the disposal of effluent from a septic tank.", choices: ["Cesspool", "Seepage Pit", "Sump", "Septic Tank"], a: 1 },
+    { q: "An unlined pit used for the disposal of raw sewage.", choices: ["Septic Tank", "Cesspool", "Seepage Pit", "Sump"], a: 1 },
+    { q: "A device used to measure the amount of water used in a building.", choices: ["Pressure Gauge", "Water Meter", "Flow Meter", "Thermometer"], a: 1 },
+    { q: "A valve used to turn the water supply on or off at the meter.", choices: ["Gate Valve", "Stop Cock", "Check Valve", "Relief Valve"], a: 1 },
+    { q: "A pipe used to carry water from the water meter to the various fixtures.", choices: ["Water Service Pipe", "Water Distributing Pipe", "Main", "Riser"], a: 1 },
+    { q: "A vertical pipe used to carry water to the upper floors of a building.", choices: ["Main", "Riser", "Stack", "Branch"], a: 1 },
+    { q: "A horizontal pipe used to carry water from a riser to the fixtures.", choices: ["Main", "Branch", "Riser", "Stack"], a: 1 },
+    { q: "A valve used to turn the water supply on or off at a fixture.", choices: ["Gate Valve", "Stop Valve / Angle Valve", "Check Valve", "Relief Valve"], a: 1 },
+    { q: "A device used to prevent the backflow of water into the potable water supply.", choices: ["Check Valve", "Vacuum Breaker / Backflow Preventer", "Relief Valve", "Stop Valve"], a: 1 },
+    { q: "A device used to release air from a water system.", choices: ["Air Relief Valve", "Pressure Relief Valve", "Check Valve", "Gate Valve"], a: 0 },
+    { q: "A device used to prevent water hammer in a water system.", choices: ["Air Chamber", "Relief Valve", "Check Valve", "Gate Valve"], a: 0 },
+    { q: "A device used to heat water for domestic use.", choices: ["Boiler", "Water Heater", "Furnace", "Radiator"], a: 1 },
+    { q: "A tank used to store hot water.", choices: ["Expansion Tank", "Hot Water Storage Tank", "Septic Tank", "Sump Tank"], a: 1 },
+    { q: "A pipe used to carry hot water from the heater to the fixtures.", choices: ["Cold Water Line", "Hot Water Line", "Vent Line", "Drain Line"], a: 1 },
+    { q: "A pipe used to return hot water to the heater to maintain a constant supply.", choices: ["Supply Line", "Return Line / Recirculation Pipe", "Vent Line", "Drain Line"], a: 1 },
+    { q: "A fixture used for washing the hands and face.", choices: ["Kitchen Sink", "Lavatory", "Bathtub", "Shower"], a: 1 },
+    { q: "A fixture used for washing dishes and food.", choices: ["Lavatory", "Kitchen Sink", "Bathtub", "Slop Sink"], a: 1 },
+    { q: "A fixture used for bathing.", choices: ["Lavatory", "Bathtub", "Shower", "Bidet"], a: 1 },
+    { q: "A fixture used for washing the body under a spray of water.", choices: ["Bathtub", "Shower", "Lavatory", "Bidet"], a: 1 },
+    { q: "A fixture used for the disposal of human waste.", choices: ["Lavatory", "Water Closet", "Urinal", "Slop Sink"], a: 1 },
+    { q: "A fixture used for the disposal of liquid waste only, usually by men.", choices: ["Water Closet", "Urinal", "Lavatory", "Bidet"], a: 1 },
+    { q: "A fixture used for washing the external genitalia.", choices: ["Urinal", "Bidet", "Lavatory", "Shower"], a: 1 },
+    { q: "A fixture used for washing floors and disposing of waste from mopping.", choices: ["Lavatory", "Slop Sink / Service Sink", "Kitchen Sink", "Bathtub"], a: 1 },
+    { q: "A fixture used for washing clothes.", choices: ["Kitchen Sink", "Laundry Tray / Wash Tub", "Lavatory", "Slop Sink"], a: 1 },
+    { q: "A fixture used for drinking water.", choices: ["Lavatory", "Drinking Fountain", "Kitchen Sink", "Shower"], a: 1 },
+    { q: "A device used to trap sewer gas and prevent it from entering the building.", choices: ["Valve", "Trap", "Cleanout", "Vent"], a: 1 },
+    { q: "A pipe used to provide air circulation in a drainage system.", choices: ["Soil Pipe", "Vent Pipe", "Waste Pipe", "Drain Pipe"], a: 1 },
+    { q: "The main vent pipe that extends through the roof.", choices: ["Branch Vent", "Vent Stack", "Relief Vent", "Loop Vent"], a: 1 },
+    { q: "A vent pipe that connects a single fixture to the vent stack.", choices: ["Main Vent", "Individual Vent", "Common Vent", "Circuit Vent"], a: 1 },
+    { q: "A vent pipe that serves two fixtures located on opposite sides of a wall.", choices: ["Individual Vent", "Common Vent / Dual Vent", "Relief Vent", "Circuit Vent"], a: 1 },
+    { q: "A vent pipe that serves a group of fixtures.", choices: ["Individual Vent", "Circuit Vent / Loop Vent", "Relief Vent", "Main Vent"], a: 1 },
+    { q: "A vent pipe used to provide additional air circulation in a long drainage line.", choices: ["Main Vent", "Relief Vent", "Common Vent", "Individual Vent"], a: 1 },
+    { q: "A vent pipe that extends from the drainage pipe to the open air.", choices: ["Stack Vent", "Local Vent", "Relief Vent", "Circuit Vent"], a: 1 },
+    { q: "The extension of a soil or waste stack above the highest fixture.", choices: ["Vent Stack", "Stack Vent", "Main Vent", "Relief Vent"], a: 1 },
+    { q: "A pipe that carries only liquid waste from fixtures other than water closets.", choices: ["Soil Pipe", "Waste Pipe", "Vent Pipe", "Drain Pipe"], a: 1 },
+    { q: "A pipe that carries waste from water closets.", choices: ["Waste Pipe", "Soil Pipe", "Vent Pipe", "Drain Pipe"], a: 1 },
+    { q: "The main horizontal pipe of a drainage system within a building.", choices: ["Building Sewer", "Building Drain", "Main Sewer", "Lateral Drain"], a: 1 },
+    { q: "The horizontal pipe that carries waste from a fixture to the building drain.", choices: ["Stack", "Fixture Branch / Horizontal Branch", "Riser", "Main"], a: 1 },
+    { q: "A vertical pipe that carries waste from the upper floors to the building drain.", choices: ["Main", "Stack (Soil or Waste)", "Riser", "Branch"], a: 1 },
+    { q: "A fitting with a removable plug used for cleaning a drainage pipe.", choices: ["Trap", "Cleanout", "Valve", "Union"], a: 1 },
+    { q: "A device used to separate grease and oil from wastewater.", choices: ["Trap", "Grease Interceptor / Grease Trap", "Septic Tank", "Catch Basin"], a: 1 },
+    { q: "A device used to separate sand and grit from wastewater.", choices: ["Septic Tank", "Sand Interceptor / Catch Basin", "Grease Trap", "Sump"], a: 1 },
+    { q: "The process of removing impurities from water.", choices: ["Distribution", "Water Treatment / Purification", "Collection", "Storage"], a: 1 },
+    { q: "The process of adding chlorine to water to kill bacteria.", choices: ["Filtration", "Chlorination", "Sedimentation", "Aeration"], a: 1 },
+    { q: "The process of removing suspended solids from water by allowing them to settle.", choices: ["Filtration", "Sedimentation", "Aeration", "Distillation"], a: 1 },
+    { q: "The process of removing impurities from water by passing it through a porous material.", choices: ["Sedimentation", "Filtration", "Aeration", "Chlorination"], a: 1 },
+    { q: "The process of adding air to water to remove odors and tastes.", choices: ["Filtration", "Aeration", "Sedimentation", "Chlorination"], a: 1 },
+    { q: "The process of removing minerals from water to prevent scaling.", choices: ["Purification", "Water Softening", "Distillation", "Filtration"], a: 1 },
+    { q: "A pipe made of galvanized steel.", choices: ["Copper Pipe", "Galvanized Iron (GI) Pipe", "PVC Pipe", "Cast Iron Pipe"], a: 1 },
+    { q: "A pipe made of copper.", choices: ["GI Pipe", "Copper Tube", "PVC Pipe", "Lead Pipe"], a: 1 },
+    { q: "A pipe made of polyvinyl chloride.", choices: ["GI Pipe", "PVC Pipe", "Copper Pipe", "Cast Iron Pipe"], a: 1 },
+    { q: "A pipe made of cast iron.", choices: ["GI Pipe", "Cast Iron Soil Pipe (CISP)", "PVC Pipe", "Copper Pipe"], a: 1 },
+    { q: "A fitting used to connect a PVC pipe to a threaded metal pipe.", choices: ["Coupling", "Adapter", "Union", "Bushing"], a: 1 },
+    { q: "A joint made by melting a filler metal into the space between two metal pipes.", choices: ["Threaded Joint", "Soldered Joint / Sweated Joint", "Solvent Weld Joint", "Flanged Joint"], a: 1 },
+    { q: "A joint made by applying a chemical to melt the surfaces of two plastic pipes together.", choices: ["Threaded Joint", "Solvent Weld Joint", "Soldered Joint", "Flanged Joint"], a: 1 },
+    { q: "A joint made by screwing two threaded pipes together.", choices: ["Solvent Weld Joint", "Threaded Joint", "Soldered Joint", "Flanged Joint"], a: 1 },
+    { q: "A joint made by bolting two flat surfaces together with a gasket in between.", choices: ["Threaded Joint", "Flanged Joint", "Solvent Weld Joint", "Soldered Joint"], a: 1 },
+    { q: "A measurement of the amount of water a fixture uses.", choices: ["Pressure", "Fixture Unit (FU)", "Velocity", "Head"], a: 1 },
+    { q: "A measurement of the force of water in a pipe.", choices: ["Volume", "Water Pressure", "Velocity", "Flow Rate"], a: 1 },
+    { q: "A measurement of the speed of water in a pipe.", choices: ["Pressure", "Velocity", "Volume", "Head"], a: 1 },
+    { q: "A measurement of the amount of water flowing through a pipe in a given time.", choices: ["Pressure", "Flow Rate / GPM", "Velocity", "Head"], a: 1 },
+    { q: "The pressure of water in a pipe when no water is flowing.", choices: ["Residual Pressure", "Static Pressure", "Working Pressure", "Flow Pressure"], a: 1 },
+    { q: "The pressure of water in a pipe when water is flowing.", choices: ["Static Pressure", "Residual Pressure / Flow Pressure", "Maximum Pressure", "Design Pressure"], a: 1 },
+    { q: "The loss of pressure in a pipe due to the roughness of the pipe walls.", choices: ["Static Loss", "Friction Loss", "Velocity Loss", "Head Loss"], a: 1 },
+    { q: "The vertical distance from a water source to a fixture.", choices: ["Pressure", "Static Head", "Velocity", "Volume"], a: 1 },
+    { q: "A system of pipes used to carry wastewater from a building to a septic tank or sewer.", choices: ["Building Supply", "Building Drainage System", "Vent System", "Fire System"], a: 1 },
+    { q: "A system of pipes used to carry rainwater from a building to a disposal point.", choices: ["Sanitary Sewer", "Storm Drainage System", "Vent System", "Water System"], a: 1 },
+    { q: "The process of boiling water and condensing the steam to remove impurities.", choices: ["Filtration", "Distillation", "Chlorination", "Softening"], a: 1 },
+    { q: "The pipe that carries water from a pump to a storage tank.", choices: ["Suction Pipe", "Discharge Pipe", "Service Pipe", "Main"], a: 1 },
+    { q: "The pipe that carries water from a source to a pump.", choices: ["Discharge Pipe", "Suction Pipe", "Service Pipe", "Riser"], a: 1 },
+    { q: "A valve used to prevent water from flowing back into a well from a pump.", choices: ["Check Valve", "Foot Valve", "Gate Valve", "Relief Valve"], a: 1 }
+  ],
+  11: [
+    { q: "Each fixture directly connected to the drainage system shall be equipped with a water-sealed trap.", choices: ["A. Principle No. 8", "B. Principle No. 10", "C. Principle No. 12", "D. Principle No. 14"], a: 1 },
     { q: "All premises intended for human habitation, occupancy, or use shall be provided with a supply of pure and wholesome water, neither connected with unsafe water supplies nor subject to the hazards of backflow or back-siphonage.", choices: ["A. Principle No. 1", "B. Principle No. 5", "C. Principle No. 10", "D. Principle No. 15"], a: 0 },
     { q: "Plumbing shall be installed with due regard to preservation of the strength of structural members and prevention of damage to walls and other surfaces through fixture usage.", choices: ["A. Principle No. 19", "B. Principle No. 20", "C. Principle No. 21", "D. Principle No. 22"], a: 2 },
     { q: "Plumbing fixtures shall be made of smooth non-absorbent material, shall be free from concealed fouling surfaces and shall be located in ventilated enclosures.", choices: ["A. Principle No. 5", "B. Principle No. 7", "C. Principle No. 9", "D. Principle No. 11"], a: 1 },
@@ -923,21 +754,21 @@ export const codeDB = {
     { q: "Requests for inspection must be filed at least how many working days in advance?", choices: ["A. 1 day", "B. 2 days", "C. 3 days", "D. 5 days"], a: 2 },
     { q: "Who provides the labor and equipment for required tests?", choices: ["A. The Administrative Authority", "B. The person to whom the permit was issued", "C. The Plumbing Inspector", "D. The City Engineer"], a: 1 },
     { q: "What is issued after the final inspection and approval of the system?", choices: ["A. A tax clearance", "B. A Certificate of Final Inspection", "C. A business permit", "D. A plumber's ID"], a: 1 },
-    { q: "If a plumbing system is found to be \"Unsafe,\" the Authority issues a:", choices: ["A. Fine", "B. Notice to Correct", "C. Demolition order", "D. Warning letter"], a: 1 },
+    { q: 'If a plumbing system is found to be "Unsafe," the Authority issues a:', choices: ["A. Fine", "B. Notice to Correct", "C. Demolition order", "D. Warning letter"], a: 1 },
     { q: "Temporary connections for testing are endorsed by the:", choices: ["A. MERALCO", "B. Administrative Authority", "C. Contractor", "D. NAMPAP"], a: 1 },
     { q: "The professional seal of a Master Plumber must be what shape?", choices: ["A. Square", "B. Round", "C. Hexagonal", "D. Oval"], a: 1 },
-    { q: "What appears at the upper center of the round seal?", choices: ["A. The Registration Number", "B. The Name of the Master Plumber", "C. The word \"Philippines\"", "D. The address"], a: 1 },
+    { q: "What appears at the upper center of the round seal?", choices: ["A. The Registration Number", "B. The Name of the Master Plumber", 'C. The word "Philippines"', "D. The address"], a: 1 },
     { q: "Where does the Registration Number appear on the seal?", choices: ["A. Top", "B. Bottom", "C. Center, below the name", "D. Right side"], a: 2 },
     { q: "Section 108 requires facilities for the mobility of:", choices: ["A. Senior Citizens", "B. Disabled Persons", "C. Children", "D. Workers"], a: 1 },
     { q: "Which law provides the standard for facilities for disabled persons?", choices: ["A. RA 1378", "B. National Building Code / BP 344", "C. Fire Code", "D. Labor Code"], a: 1 },
-    { q: "The \"Administrative Authority\" is also known as the:", choices: ["A. PRC Chairman", "B. Building Official", "C. City Treasurer", "D. Police Chief"], a: 1 },
+    { q: 'The "Administrative Authority" is also known as the:', choices: ["A. PRC Chairman", "B. Building Official", "C. City Treasurer", "D. Police Chief"], a: 1 },
     { q: "Re-inspection fees are charged when:", choices: ["A. The inspector is late", "B. The work fails the first inspection", "C. The owner wants a second opinion", "D. The permit is renewed"], a: 1 },
     { q: "Who is responsible for maintenance of plumbing in a sanitary condition?", choices: ["A. The Plumber", "B. The Owner", "C. The City Government", "D. The Tenant"], a: 1 },
     { q: "A Master Plumber who changes their business address must notify:", choices: ["A. The PRC only", "B. The Administrative Authority only", "C. Both PRC and Administrative Authority", "D. No one"], a: 2 },
     { q: "What text is at the lower portion of the round seal?", choices: ["A. Manila", "B. Philippines", "C. Licensed", "D. Master"], a: 1 },
     { q: "How many sets of plans are returned to the applicant after approval?", choices: ["A. 1", "B. 2", "C. 3", "D. 0"], a: 1 },
     { q: "Plumbing systems are inspected to ensure they comply with the:", choices: ["A. Owner's budget", "B. Provisions of the Code", "C. Contractor's schedule", "D. Neighborhood style"], a: 1 },
-    { q: "Which part of the seal contains \"Registered and Licensed Master Plumber\"?", choices: ["A. Top center", "B. Upper portion", "C. Lower portion", "D. Middle"], a: 1 },
+    { q: 'Which part of the seal contains "Registered and Licensed Master Plumber"?', choices: ["A. Top center", "B. Upper portion", "C. Lower portion", "D. Middle"], a: 1 },
     { q: "Failure to secure a permit before work is a violation of:", choices: ["A. Section 100", "B. Section 101", "C. Section 102", "D. Section 103"], a: 1 },
     { q: "Suspension of work for 120 days makes a permit:", choices: ["A. Extended", "B. Suspended", "C. Null and Void", "D. Refundable"], a: 2 },
     { q: "A Master Plumber can sign plans for work they did not prepare?", choices: ["A. True", "B. False", "C. Only for a fee", "D. Only for family"], a: 1 },
@@ -955,7 +786,7 @@ export const codeDB = {
     { q: "When employed, a plumber should provide ________ service.", choices: ["A. Minimal", "B. Faithful and diligent", "C. The fastest", "D. The most expensive"], a: 1 },
     { q: "Rule 1: A Master Plumber shall maintain a ________ standard of conduct.", choices: ["A. High", "B. Flexible", "C. Minimal", "D. Secret"], a: 0 },
     { q: "Accepting a commission from a supplier without the client's knowledge is:", choices: ["A. Good business", "B. Unethical", "C. Required", "D. Common practice"], a: 1 },
-    { q: "The title \"Registered and Licensed Master Plumber\" must appear on all:", choices: ["A. Tools", "B. Plumbing applications and plans", "C. Vehicles", "D. Clothing"], a: 1 },
+    { q: 'The title "Registered and Licensed Master Plumber" must appear on all:', choices: ["A. Tools", "B. Plumbing applications and plans", "C. Vehicles", "D. Clothing"], a: 1 },
     { q: "What must a plumber do if they see an unsafe plumbing condition?", choices: ["A. Ignore it", "B. Report it/Advise the owner", "C. Charge for a fix immediately", "D. Tell the neighbor"], a: 1 },
     { q: "The seal is required on all documents required in the ________.", choices: ["A. Classroom", "B. Practice of their profession", "C. Bank", "D. Home"], a: 1 },
     { q: "A Master Plumber should keep their knowledge ________.", choices: ["A. Secret", "B. Outdated", "C. Up-to-date with current trends", "D. Basic"], a: 2 },
@@ -967,1774 +798,415 @@ export const codeDB = {
     { q: "Principle 21: Protection of ________ is required during installation.", choices: ["A. Structural members", "B. Windows", "C. Paint", "D. Gardens"], a: 0 },
     { q: "NAMPAP was organized in what city?", choices: ["A. Cebu", "B. Manila", "C. Quezon City", "D. Vigan"], a: 1 },
     { q: "The 1959 Code was approved by which executive office?", choices: ["A. PRC", "B. Malacañang", "C. DPWH", "D. DILG"], a: 1 },
-    { q: "A \"Stop Work\" order is issued under which section?", choices: ["A. 101", "B. 104", "C. 107", "D. 108"], a: 1 },
-    { q: "Principle 1 emphasizes \"Pure and ________\" water.", choices: ["A. Cold", "B. Wholesome", "C. Cheap", "D. Clear"], a: 1 },
+    { q: 'A "Stop Work" order is issued under which section?', choices: ["A. 101", "B. 104", "C. 107", "D. 108"], a: 1 },
+    { q: 'Principle 1 emphasizes "Pure and ________" water.', choices: ["A. Cold", "B. Wholesome", "C. Cheap", "D. Clear"], a: 1 },
     { q: "The Code of Ethics consists of how many rules (based on Chapter 1)?", choices: ["A. 3", "B. 5", "C. 7", "D. 10"], a: 2 }
-    ],
-    12: [
-        {
-    "q": "What is the term for any public space, public park, or thoroughfare less than three (3) meters but not less than two (2) meters in width dedicated or deeded for public use?",
-    "choices": ["A. Alley", "B. Court", "C. Yard", "D. Lane"],
-    "a": 0
-  },
-  {
-    "q": "A physical separation, which may be a low inlet into the indirect waste receptor from the fixture, appliance, or device indirectly connected.",
-    "choices": ["A. Air Gap", "B. Airbreak", "C. Vacuum Breaker", "D. Backflow Preventer"],
-    "a": 1
-  },
-  {
-    "q": "The unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying potable water to the flood-level rim of any tank, vat, or fixture.",
-    "choices": ["A. Drainage Air Gap", "B. Water Distribution Air Gap", "C. Effective Opening", "D. Critical Level"],
-    "a": 1
-  },
-  {
-    "q": "A group vent pipe which starts in front of the extreme fixture connection on a horizontal branch and connects to the vent stack.",
-    "choices": ["A. Circuit Vent", "B. Loop Vent", "C. Relief Vent", "D. Yoke Vent"],
-    "a": 0
-  },
-  {
-    "q": "A length of soil or waste stack corresponding in general to a story height, but in no case less than how many meters?",
-    "choices": ["A. 1.50 meters", "B. 2.43 meters", "C. 3.00 meters", "D. 2.10 meters"],
-    "a": 1
-  },
-  {
-    "q": "That part of the lowest horizontal piping of a drainage system which receives the discharge from soil, waste, and other drainage pipes inside the walls of the building and conveys it to the building sewer beginning 0.6 meter outside the building wall.",
-    "choices": ["A. Building Sewer", "B. Building Drain", "C. Building Subdrain", "D. House Sewer"],
-    "a": 1
-  },
-  {
-    "q": "An arbitrary quantity in terms of which the load-producing effects or water requirements on the plumbing system of different kinds of plumbing fixtures are expressed.",
-    "choices": ["A. Fixture Branch", "B. Fixture Unit", "C. Demand Factor", "D. Flow Rate"],
-    "a": 1
-  },
-  {
-    "q": "What is the equivalent rate of flow for one (1) fixture unit?",
-    "choices": ["A. 14.15 liters per minute", "B. 28.3 liters per minute", "C. 7.5 gallons per minute", "&D. 32.5 liters per minute"],
-    "a": 1
-  },
-  {
-    "q": "The level in a fixture at which water begins to overflow over the top or rim of the fixture.",
-    "choices": ["A. Flood Level Rim", "B. Flood Level", "C. Critical Level", "D. Overflow Point"],
-    "a": 1
-  },
-  {
-    "q": "A valve in which the flow of water is cut off by means of a circular disc fitted against machine-smoothed faces, at right angles to the direction of flow.",
-    "choices": ["A. Globe Valve", "B. Gate Valve", "C. Check Valve", "D. Angle Valve"],
-    "a": 1
-  },
-  {
-    "q": "A return bend of small-sized pipe, one end of which is about 30 cm long and the other end is about 7.5 cm long.",
-    "choices": ["A. Gooseneck", "B. Return Bend", "C. Offset", "D. P-trap"],
-    "a": 0
-  },
-  {
-    "q": "What is the minimum capacity required for a grease interceptor to be remotely located and serve one or more fixtures?",
-    "choices": ["A. 1 cubic meter", "B. 2 cubic meters", "C. 3 cubic meters", "D. 5 cubic meters"],
-    "a": 2
-  },
-  {
-    "q": "A device designed to retain grease from one to a maximum of how many fixtures?",
-    "choices": ["A. Two fixtures", "B. Three fixtures", "C. Four fixtures", "D. Six fixtures"],
-    "a": 2
-  },
-  {
-    "q": "Any pipe or fitting installed in a position which forms an angle of not more than how many degrees with the horizontal plane?",
-    "choices": ["A. 15 degrees", "B. 30 degrees", "C. 45 degrees", "D. 60 degrees"],
-    "a": 2
-  },
-  {
-    "q": "A condition contrary to sanitary principles or injurious to health is defined as:",
-    "choices": ["A. Pollution", "B. Contamination", "C. Insanitary", "D. Nuisance"],
-    "a": 2
-  },
-  {
-    "q": "The lowest portion of the interior part of any pipe or conduit that is not vertical.",
-    "choices": ["A. Crown", "B. Invert", "C. Sump", "D. Base"],
-    "a": 1
-  },
-  {
-    "q": "What is the common name for a sitz bath, primarily used for washing the genitals?",
-    "choices": ["A. Lavatory", "B. Bidet", "C. Latrine", "D. Slop Sink"],
-    "a": 1
-  },
-  {
-    "q": "A flange that closes the end of a pipe and has no opening for the passage of liquid or gas.",
-    "choices": ["A. Blank Flange", "B. Blind Flange", "C. Cap", "D. Plug"],
-    "a": 1
-  },
-  {
-    "q": "Any joint obtained by joining of metal parts with alloys which melt at temperatures higher than 449 degrees centigrade.",
-    "choices": ["A. Soldered Joint", "B. Brazed Joint", "C. Welded Joint", "D. Wiped Joint"],
-    "a": 1
-  },
-  {
-    "q": "A vertical shaft for the installation of different pipe stacks.",
-    "choices": ["A. Shaft", "B. Chase", "C. Tunnel", "D. Duct"],
-    "a": 1
-  },
-  {
-    "q": "A room or space having a volume less than 1.4 cu. m with 250 kilogram calorie of the aggregate input rating of all fuel-burning appliances.",
-    "choices": ["A. Unconfined Space", "B. Confined Space", "C. Mechanical Room", "D. Utility Closet"],
-    "a": 1
-  },
-  {
-    "q": "An impairment of the quality of potable water which creates an actual hazard to the public health through poisoning or spread of disease.",
-    "choices": ["A. Pollution", "B. Contamination", "C. Nuisance", "D. Turbidity"],
-    "a": 1
-  },
-  {
-    "q": "A marking on a backflow prevention device which determines the minimum elevation above the flood level rim where the device may be installed.",
-    "choices": ["A. Grade Line", "B. Critical Level", "C. Static Head", "D. Datum Plane"],
-    "a": 1
-  },
-  {
-    "q": "The length of a pipe measured along its centerline and fittings.",
-    "choices": ["A. Actual Length", "B. Developed Length", "C. Linear Length", "D. Total Run"],
-    "a": 1
-  },
-  {
-    "q": "A term used to describe a soil or waste system where all pipings are of threaded pipe or other rigid construction using recessed drainage fittings.",
-    "choices": ["A. Rigid System", "B. Durham System", "C. Standard System", "D. Unitary System"],
-    "a": 1
-  },
-  {
-    "q": "The minimum cross-sectional area at the point of water supply discharge, measured as the diameter of a circle.",
-    "choices": ["A. Effective Opening", "B. Nominal Diameter", "C. Flow Area", "D. Orifice Size"],
-    "a": 0
-  },
-  {
-    "q": "A metallic sleeve, caulked or joined to an opening in a pipe, into which a plug is screwed for cleaning purposes.",
-    "choices": ["A. Ferrule", "B. Bushing", "C. Nipple", "D. Adapter"],
-    "a": 0
-  },
-  {
-    "q": "A water closet consisting of a continuous trough containing water, extending under two or more adjacent seats.",
-    "choices": ["A. Battery Closet", "B. Latrine", "C. Group Urinal", "D. Privy"],
-    "a": 1
-  },
-  {
-    "q": "Hemp or old hemp rope soaked in oil or tar to make it waterproof, used in caulking joints.",
-    "choices": ["A. Lead Wool", "B. Oakum", "C. Asbestos", "D. Putty"],
-    "a": 1
-  },
-  {
-    "q": "A combination of elbows or bends which brings one section of the pipe out of line but into a line parallel with the original section.",
-    "choices": ["A. Return Bend", "B. Offset", "C. Double Bend", "D. Bypass"],
-    "a": 1
-  },
-  {
-    "q": "What does the abbreviation I.P.S. stand for in plumbing?",
-    "choices": ["A. International Pipe Standard", "B. Iron Pipe Size", "C. Internal Pipe Surface", "D. Industrial Piping System"],
-    "a": 1
-  },
-  {
-    "q": "Any pipe which conveys the discharge of water closets, urinals, or fixtures having similar functions with or without the discharge from other fixtures.",
-    "choices": ["A. Waste Pipe", "B. Soil Pipe", "C. Vent Pipe", "D. Drain Pipe"],
-    "a": 1
-  },
-  {
-    "q": "The vertical distance from the 'Grade Line' to the highest point of the coping of a flat roof.",
-    "choices": ["A. Building Elevation", "B. Height of Building", "C. Story Height", "D. Structural Height"],
-    "a": 1
-  },
-  {
-    "q": "A group of two or more similar adjacent fixtures which discharge into a common horizontal soil or waste branch.",
-    "choices": ["A. Fixture Group", "B. Battery of Fixtures", "C. Fixture Unit", "D. Unit Battery"],
-    "a": 1
-  },
-  {
-    "q": "A pipe that does not connect directly with the drainage system but conveys liquid wastes by discharging into a plumbing fixture or receptacle directly connected to the drainage system.",
-    "choices": ["A. Indirect Waste Pipe", "B. Direct Waste Pipe", "C. Local Vent", "D. Individual Vent"],
-    "a": 0
-  },
-  {
-    "q": "A device installed in a drainage system to prevent reverse flow of sewage.",
-    "choices": ["A. Check Valve", "B. Backwater Valve", "C. Relief Valve", "D. Gate Valve"],
-    "a": 1
-  },
-  {
-    "q": "A valve opened and closed by the fall and rise of an attached ball floating on the surface of the liquid.",
-    "choices": ["A. Float Valve", "B. Ball Cock", "C. Globe Valve", "D. Angle Valve"],
-    "a": 1
-  },
-  {
-    "q": "A pipe flange that is not drilled for bolt holes.",
-    "choices": ["A. Blind Flange", "B. Blank Flange", "C. Plain Flange", "D. Smooth Flange"],
-    "a": 1
-  },
-  {
-    "q": "A controlled outlet of a pipeline to discharge liquid or detritus.",
-    "choices": ["A. Cleanout", "B. Blow-off", "C. Relief Port", "D. Scour Valve"],
-    "a": 1
-  },
-  {
-    "q": "Plugging an opening with oakum, lead or other materials that are pounded into the annular space.",
-    "choices": ["A. Grouting", "B. Caulking", "C. Brazing", "D. Sealing"],
-    "a": 1
-  },
-  {
-    "q": "A receptacle in which liquids are retained for a sufficient period of time to allow settleable material to deposit.",
-    "choices": ["A. Interceptor", "B. Catch Basin", "C. Septic Tank", "D. Cesspool"],
-    "a": 1
-  },
-  {
-    "q": "A non-watertight lined excavation in the ground which receives the discharge of a sanitary drainage system designed to permit liquid to seep through the bottom and sides.",
-    "choices": ["A. Septic Tank", "B. Cesspool", "C. Seepage Pit", "D. Privy Vault"],
-    "a": 1
-  },
-  {
-    "q": "A vertical pipe to convey rainwater.",
-    "choices": ["A. Conductor", "B. Leader", "C. Downspout", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "A stop valve placed at the connection of the water service pipe to the water main.",
-    "choices": ["A. Curb Cock", "B. Corporation Cock", "C. Gate Valve", "D. Main Valve"],
-    "a": 1
-  },
-  {
-    "q": "The extended portion of a pipe that is closed at one end to which no connections are made, permitting the stagnation of air or liquid.",
-    "choices": ["A. Blind End", "B. Dead-end", "C. Stub-out", "D. Air Chamber"],
-    "a": 1
-  },
-  {
-    "q": "Liquid and water-borne wastes derived from the ordinary living processes, free from industrial wastes.",
-    "choices": ["A. Industrial Waste", "B. Domestic Sewage", "C. Storm Water", "D. Grey Water"],
-    "a": 1
-  },
-  {
-    "q": "A pipe fitting with adjacent reverse bends and shaped like the letter 'S'.",
-    "choices": ["A. Double Offset", "B. Double-Bend Fitting", "C. Return Bend", "D. Gooseneck"],
-    "a": 1
-  },
-  {
-    "q": "A vent that does not carry liquid or water-borne wastes.",
-    "choices": ["A. Wet Vent", "B. Dry Vent", "C. Air Vent", "D. Local Vent"],
-    "a": 1
-  },
-  {
-    "q": "The water supply pipe between the fixture supply pipe and the water-distributing pipe.",
-    "choices": ["A. Fixture Supply", "B. Fixture Branch", "C. Service Pipe", "D. Riser"],
-    "a": 1
-  },
-  {
-    "q": "A device located at the bottom of the tank for the purpose of flushing water closets and similar fixtures.",
-    "choices": ["A. Flushometer Valve", "B. Flush Valve", "C. Ball Cock", "D. Flapper Valve"],
-    "a": 1
-  },
-  {
-    "q": "A device which discharges a predetermined quantity of water into fixtures for flushing purposes and is actuated by direct water pressure.",
-    "choices": ["A. Flush Valve", "B. Flushometer Valve", "C. Pressure Tank", "D. Ejector"],
-    "a": 1
-  },
-  {
-    "q": "The slope or fall of a line of pipe with reference to a horizontal plane, often expressed in centimeters per meter.",
-    "choices": ["A. Pitch", "B. Grade", "C. Invert", "D. Offset"],
-    "a": 1
-  },
-  {
-    "q": "A drain pipe extending laterally from a soil or waste stack or building drain, receiving discharge from one or more fixture drains.",
-    "choices": ["A. Fixture Branch", "B. Horizontal Branch", "C. Stack Vent", "D. Branch Interval"],
-    "a": 1
-  },
-  {
-    "q": "Cast iron soil pipes with plain ends connected together with bolted stainless steel bands and neoprene gaskets.",
-    "choices": ["A. Threaded Pipes", "B. Hubless Pipes", "C. Bell and Spigot", "D. PVC Pipes"],
-    "a": 1
-  },
-  {
-    "q": "A secondary pipeline in plumbing, or a common sewer to which no other branch sewer is connected in sewerage.",
-    "choices": ["A. Main", "B. Lateral", "C. Submain", "D. Branch"],
-    "a": 1
-  },
-  {
-    "q": "A pipe or shaft to convey foul air from a plumbing fixture or a room to the outer air.",
-    "choices": ["A. Relief Vent", "B. Local Vent", "C. Vent Stack", "D. Air Shaft"],
-    "a": 1
-  },
-  {
-    "q": "The principal artery of the system where branches are connected.",
-    "choices": ["A. Stack", "B. Main", "C. Riser", "D. Trunk"],
-    "a": 1
-  },
-  {
-    "q": "A person technically and legally qualified and licensed to practice the profession of Master Plumbing in accordance with Republic Act 1378.",
-    "choices": ["A. Sanitary Engineer", "B. Master Plumber", "C. Plumbing Contractor", "D. Journeyman Plumber"],
-    "a": 1
-  },
-  {
-    "q": "The purpose for which a building is used or intended to be used.",
-    "choices": ["A. Residential", "B. Occupancy", "C. Classification", "D. Zoning"],
-    "a": 1
-  },
-  {
-    "q": "What material is define as hemp or old hemp rope soaked in oil or tar?",
-    "choices": ["A. Asbestos", "B. Oakum", "C. Flax", "D. Gasket"],
-    "a": 1
-  },
-  {
-    "q": "A vertical distance through the free atmosphere between the lowest opening from any pipe conveying waste to the flood level rim of the receptor.",
-    "choices": ["A. Water Distribution Air Gap", "B. Drainage Air Gap", "C. Effective Opening", "D. Critical Level"],
-    "a": 1
-  },
-  {
-    "q": "An organization primarily established for purposes of testing to approve standards and approved by the Administrative Authority.",
-    "choices": ["A. Listing Agency", "B. Approved Testing Agency", "C. Board of Master Plumbing", "D. NAMPAP"],
-    "a": 1
-  },
-  {
-    "q": "The flow of water or other liquids into the distributing pipes of a potable supply from any source other than its intended source.",
-    "choices": ["A. Cross-connection", "B. Backflow", "C. Siphonage", "D. Back-pressure"],
-    "a": 1
-  },
-  {
-    "q": "The flowing back of used, contaminated or polluted water from a plumbing fixture into a water supply pipe due to negative pressure.",
-    "choices": ["A. Back-pressure", "B. Back-siphonage", "C. Cross-connection", "D. Contamination"],
-    "a": 1
-  },
-  {
-    "q": "A room equipped with a shower stall or bathtub.",
-    "choices": ["A. Comfort Room", "B. Bathroom", "C. Powder Room", "D. Toilet"],
-    "a": 1
-  },
-  {
-    "q": "That portion of a pipe which is sufficiently enlarged to receive the end of another pipe of the same diameter.",
-    "choices": ["A. Spigot", "B. Bell or Hub", "C. Ferrule", "D. Sleeve"],
-    "a": 1
-  },
-  {
-    "q": "A tool for straightening or bending lead pipe.",
-    "choices": ["A. Bending Pin", "B. Lead Dresser", "C. Pipe Bender", "D. Drift Plug"],
-    "a": 0
-  },
-  {
-    "q": "A valved outlet of a boiler that permits discharge of accumulated sediment.",
-    "choices": ["A. Blow-off", "B. Boiler Blow-off", "C. Drain Valve", "D. Scour Valve"],
-    "a": 1
-  },
-  {
-    "q": "A horizontal vent connecting one or more individual vertical back vents with the vent stack.",
-    "choices": ["A. Circuit Vent", "B. Branch Vent", "C. Loop Vent", "D. Individual Vent"],
-    "a": 1
-  },
-  {
-    "q": "That portion of an underground system which cannot drain by gravity into the building sewer.",
-    "choices": ["A. Building Drain", "B. Building Subdrain", "C. Building Sewer", "D. Sump"],
-    "a": 1
-  },
-  {
-    "q": "A fitting screwed or caulked over the end of a pipe for closing the pipe end.",
-    "choices": ["A. Plug", "B. Cap", "C. Bushing", "D. Coupling"],
-    "a": 1
-  },
-  {
-    "q": "A valve that automatically closes to prevent the flow of liquid or gas in a reverse direction.",
-    "choices": ["A. Gate Valve", "B. Check Valve", "C. Globe Valve", "D. Relief Valve"],
-    "a": 1
-  },
-  {
-    "q": "A specially designed system of waste piping embodying the horizontal wet venting of one or more sinks or floor drains.",
-    "choices": ["A. Wet Vent System", "B. Combination Waste and Vent System", "C. Durham System", "D. Loop Vent System"],
-    "a": 1
-  },
-  {
-    "q": "A structure which any part of its structural framework will ignite and burn at a temperature of 756 degrees centigrade or less.",
-    "choices": ["A. Fireproof Construction", "B. Combustible Construction", "C. Non-combustible", "D. Temporary Structure"],
-    "a": 1
-  },
-  {
-    "q": "A vertical vent that is a continuation of the drain to which the vent connects.",
-    "choices": ["A. Stack Vent", "B. Continuous Vent", "C. Individual Vent", "D. Common Vent"],
-    "a": 1
-  },
-  {
-    "q": "An open, unoccupied space, bounded on two (2) or more sides by the walls of the building.",
-    "choices": ["A. Yard", "B. Court", "C. Alley", "D. Porch"],
-    "a": 1
-  },
-  {
-    "q": "Any arrangement between a potable water supply system and any plumbing fixture through which enables non-potable water to enter the potable system.",
-    "choices": ["A. Backflow", "B. Cross-connection", "C. Contamination", "D. Pollution"],
-    "a": 1
-  },
-  {
-    "q": "The length of soil or waste stack corresponding to a story height, but never less than 2.43 meters.",
-    "choices": ["A. Branch Interval", "B. Stack Height", "C. Vertical Run", "D. Branch Section"],
-    "a": 0
-  },
-  {
-    "q": "The term for a pipe along its centerline and fittings is:",
-    "choices": ["A. Horizontal Length", "B. Developed Length", "C. Actual Depth", "D. Effective Length"],
-    "a": 1
-  },
-  {
-    "q": "The nominal diameter as designated commercially.",
-    "choices": ["A. Radius", "B. Diameter", "C. Bore", "D. ID/OD"],
-    "a": 1
-  },
-  {
-    "q": "A pipe which carries ground and surface waters, storm water or wastewater into a building drainage system.",
-    "choices": ["A. Sewer", "B. Drain", "C. Leader", "D. Conductor"],
-    "a": 1
-  },
-  {
-    "q": "Includes all the pipings within public or private premises which convey sewage to a legal point of disposal.",
-    "choices": ["A. Sewer System", "B. Drainage System", "C. Plumbing System", "D. Waste System"],
-    "a": 1
-  },
-  {
-    "q": "The on-going installation of the plumbing system which has been installed prior to the effectivity of this Code.",
-    "choices": ["A. Rough-in", "B. Existing Work", "C. Preliminary Work", "D. Initial Install"],
-    "a": 1
-  },
-  {
-    "q": "A metallic sleeve joined to an opening in a pipe, into which a plug is screwed.",
-    "choices": ["A. Ferrule", "B. Cap", "C. Bushing", "D. Tap"],
-    "a": 0
-  },
-  {
-    "q": "A receptacle other than a trap attached to a plumbing system in which water or wastes may be collected for ultimate discharge.",
-    "choices": ["A. Fixture", "B. Receptor", "C. Basin", "D. Trap"],
-    "a": 0
-  },
-  {
-    "q": "The drainpipe from the trap of a fixture to the junction of that drain with any other drainpipe.",
-    "choices": ["A. Fixture Supply", "B. Fixture Drain", "C. Fixture Branch", "D. Tailpiece"],
-    "a": 1
-  },
-  {
-    "q": "The top edge of a receptacle from where water overflows.",
-    "choices": ["A. Flood Level", "B. Flood Level Rim", "C. Critical Rim", "D. Spill Rim"],
-    "a": 1
-  },
-  {
-    "q": "A device integrated within an air accumulator vessel designed to discharge a predetermined quantity of water into fixtures.",
-    "choices": ["A. Flush Valve", "B. Flushometer Tank", "C. Expansion Tank", "D. Air Tank"],
-    "a": 1
-  },
-  {
-    "q": "A valve in which the flow of fluid is cut off by means of a circular disc that fits over and against the horizontal valve seat.",
-    "choices": ["A. Gate Valve", "B. Globe Valve", "C. Angle Valve", "D. Butterfly Valve"],
-    "a": 1
-  },
-  {
-    "q": "Water that stands in or passes through the ground.",
-    "choices": ["A. Surface Water", "B. Ground Water", "C. Potable Water", "D. Raw Water"],
-    "a": 1
-  },
-  {
-    "q": "A branch vent that performs its functions for two (2) or more traps.",
-    "choices": ["A. Individual Vent", "B. Group Vent", "C. Main Vent", "D. Common Vent"],
-    "a": 1
-  },
-  {
-    "q": "Any person, his heirs, executors, administrators or assigns.",
-    "choices": ["A. Owner", "B. Person", "C. Contractor", "D. Applicant"],
-    "a": 1
-  },
-  {
-    "q": "What is the acronym for the National Master Plumbers Association of the Philippines?",
-    "choices": ["A. NAMPAP", "B. PAMPAP", "C. PSSE", "D. PRC-MP"],
-    "a": 0
-  },
-  {
-    "q": "A large opening in a sewer line constructed with sufficient size for a man to gain access for maintenance.",
-    "choices": ["A. Cleanout", "B. Manhole", "C. Catch Basin", "D. Access Pit"],
-    "a": 1
-  },
-  {
-    "q": "The principal artery of the venting system to which vent branches are connected.",
-    "choices": ["A. Stack Vent", "B. Main Vent", "C. Vent Stack", "D. Relief Vent"],
-    "a": 1
-  },
-  {
-    "q": "A pipe connected from building gutter to the downspout or conductor.",
-    "choices": ["A. Leader", "B. Gutter Pipe", "C. Eaves Drain", "D. Riser"],
-    "a": 0
-  },
-  {
-    "q": "A fixture designed for the washing of the hands or face.",
-    "choices": ["A. Sink", "B. Lavatory", "C. Bidet", "D. Tub"],
-    "a": 1
-  },
-  {
-    "q": "Equipment or materials bearing a label of a listing agency.",
-    "choices": ["A. Certified", "B. Labeled", "C. Listed", "D. Approved"],
-    "a": 1
-  },
-  {
-    "q": "A device designed to separate and retain deleterious or undesirable matters from normal wastes while permitting gravity discharge.",
-    "choices": ["A. Septic Tank", "B. Interceptor", "C. Cesspool", "D. Catch Basin"],
-    "a": 1
-  },
-  {
-    "q": "Which term applies to any defective fixture, trap, pipe or fitting according to Chapter 2?",
-    "choices": ["A. Nuisance", "B. Insanitary", "C. Pollution", "D. Contamination"],
-    "a": 1
-  },
-  {
-    "q": "A permissive term used in the Code.",
-    "choices": ["A. Shall", "B. May", "C. Must", "D. Should"],
-    "a": 1
-  }
-    ],
-    13: [
-        {
-    "q": "What is the specific material name for ABS used in plumbing pipes and fittings?",
-    "choices": ["A. Aluminum-Butadiene-Styrene", "B. Acrylonitrile-Butadiene-Styrene", "C. Acetone-Butylene-Sulfur", "D. Alkyl-Benzene-Styrene"],
-    "a": 1
-  },
-  {
-    "q": "When applied to a fixture or equipment, this term means having access thereto, but which may require the prior removal of an access panel or door.",
-    "choices": ["A. Accessible", "B. Readily Accessible", "C. Exposed", "D. Open"],
-    "a": 0
-  },
-  {
-    "q": "A term used for direct access without the necessity of removing any panel, door, or similar obstruction.",
-    "choices": ["A. Accessible", "B. Readily Accessible", "C. Concealed", "D. Unobstructed"],
-    "a": 1
-  },
-  {
-    "q": "Any change, addition, or modification in construction or occupancy.",
-    "choices": ["A. Repair", "B. Maintenance", "C. Alteration", "D. Renovation"],
-    "a": 2
-  },
-  {
-    "q": "A backflow preventer with an intermediate vent into the atmosphere that is used to prevent backflow due to back-pressure or back-siphonage.",
-    "choices": ["A. Double Check Valve", "B. Reduced Pressure Principle Device", "C. Vacuum Breaker", "D. Backwater Valve"],
-    "a": 1
-  },
-  {
-    "q": "Backflow caused by a pump, elevated tank, boiler, or other means that could create pressure within the system greater than the supply pressure.",
-    "choices": ["A. Back-siphonage", "B. Back-pressure Backflow", "C. Reverse Flow", "D. Cross-flow"],
-    "a": 1
-  },
-  {
-    "q": "A pipe that is part of a vent system and connects directly with an individual waste pipe or fixture trap to prevent siphonage.",
-    "choices": ["A. Relief Vent", "B. Backvent Pipe", "C. Yoke Vent", "D. Wet Vent"],
-    "a": 1
-  },
-  {
-    "q": "A type of pipe connection in which a ball-shaped end is held in a cuplike end by a compressing ring.",
-    "choices": ["A. Slip Joint", "B. Ball Joint", "C. Expansion Joint", "D. Union Joint"],
-    "a": 1
-  },
-  {
-    "q": "A loop of anthracite-free pipe or tubing which rises at least 10.7 meters above the highest point on any source of contamination.",
-    "choices": ["A. Siphon Breaker", "B. Barometric Loop", "C. Relief Loop", "D. Air accumulator"],
-    "a": 1
-  },
-  {
-    "q": "Any part of the piping system other than a main, riser, or stack.",
-    "choices": ["A. Lateral", "B. Branch", "C. Fixture Supply", "D. Offset"],
-    "a": 1
-  },
-  {
-    "q": "A horizontal vent pipe connecting from a single or multi-story stack to a vent stack for the purpose of preventing pressure changes in the stack.",
-    "choices": ["A. Relief Vent", "B. Branch Vent", "C. Common Vent", "D. Loop Vent"],
-    "a": 1
-  },
-  {
-    "q": "The temperature at which a brazed joint is obtained by joining metal parts with alloys is higher than:",
-    "choices": ["A. 320 degrees C", "B. 449 degrees C", "C. 550 degrees C", "D. 840 degrees C"],
-    "a": 1
-  },
-  {
-    "q": "A structure built, erected, and framed of component structural parts designed for the housing, shelter, or enclosure of persons, animals, or property.",
-    "choices": ["A. Building", "B. Establishment", "C. Facility", "D. Occupancy"],
-    "a": 0
-  },
-  {
-    "q": "The building sewer begins at what distance outside the inner face of the building wall?",
-    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
-    "a": 1
-  },
-  {
-    "q": "A tank or vessel which receives sewage or liquid waste, located below the normal grade of the gravity system and must be emptied by mechanical means.",
-    "choices": ["A. Cesspool", "B. Sump", "C. Catch Basin", "D. Seepage Pit"],
-    "a": 1
-  },
-  {
-    "q": "A device designed to clarify or settle sewage and retain deleterious or undesirable matters from normal wastes.",
-    "choices": ["A. Interceptor", "B. Clarifier", "C. Septic Tank", "D. Filter"],
-    "a": 1
-  },
-  {
-    "q": "A vent connecting at the junction of two fixture drains and serving as a vent for both fixtures.",
-    "choices": ["A. Individual Vent", "B. Common Vent", "C. Dual Vent", "D. Both B and C are correct"],
-    "a": 3
-  },
-  {
-    "q": "A waste pipe that is used for more than one fixture and connects to a combined waste and vent system.",
-    "choices": ["A. Continuous Waste", "B. Indirect Waste", "C. Combined Waste", "D. Special Waste"],
-    "a": 0
-  },
-  {
-    "q": "A court bounded on all sides by the exterior walls of a building.",
-    "choices": ["A. Open Court", "B. Inner Court", "C. Closed Court", "D. Yard"],
-    "a": 1
-  },
-  {
-    "q": "A court bounded on three sides by exterior walls of a building and on the fourth side by a street or yard.",
-    "choices": ["A. Inner Court", "B. Outer Court", "C. Through Court", "D. Alley"],
-    "a": 1
-  },
-  {
-    "q": "What is the stagnation of air or liquid in an extended portion of a pipe called?",
-    "choices": ["A. Air Pocket", "B. Dead-end", "C. Stub-out", "D. Blind Vent"],
-    "a": 1
-  },
-  {
-    "q": "The term used for an Administrative Authority, Chief Plumbing Inspector, or Building Official.",
-    "choices": ["A. Department Having Jurisdiction", "B. NAMPAP Official", "C. Board of Master Plumbing", "D. Sanitary Engineer"],
-    "a": 0
-  },
-  {
-    "q": "The commercial designation for the diameter of a pipe or fitting.",
-    "choices": ["A. Actual Diameter", "B. Nominal Diameter", "C. Standard Size", "D. Inside Diameter"],
-    "a": 1
-  },
-  {
-    "q": "A combination of two offsets with or without any intermediate pipe, forming a shape similar to a 'U'.",
-    "choices": ["A. Double Offset", "B. Return Bend", "C. Double Bend", "D. Gooseneck"],
-    "a": 0
-  },
-  {
-    "q": "What is the secondary term for a common vent used for two fixtures?",
-    "choices": ["A. Unit Vent", "B. Dual Vent", "C. Branch Vent", "D. Individual Vent"],
-    "a": 1
-  },
-  {
-    "q": "The water supply pipe from the water-distributing pipe to the individual fixture.",
-    "choices": ["A. Fixture Branch", "B. Fixture Supply", "C. Riser", "D. Service Pipe"],
-    "a": 1
-  },
-  {
-    "q": "A condition in which the liquid in a container or receptacle rises to the flood level rim.",
-    "choices": ["A. Overflowing", "B. Flooded", "C. Saturated", "D. Submerged"],
-    "a": 1
-  },
-  {
-    "q": "A valve used to control water flow that offers little resistance to the flow when fully open and operates by a gate-like disc moving at right angles to the flow.",
-    "choices": ["A. Globe Valve", "B. Gate Valve", "C. Check Valve", "D. Butterfly Valve"],
-    "a": 1
-  },
-  {
-    "q": "A valve in which the flow of water is cut off by a circular disc at right angles to the direction of flow, often causing a tortuous path for the liquid.",
-    "choices": ["A. Gate Valve", "B. Globe Valve", "C. Angle Valve", "D. Ball Valve"],
-    "a": 1
-  },
-  {
-    "q": "A device designed to retain grease from one to a maximum of four (4) fixtures, usually located inside the building.",
-    "choices": ["A. Grease Interceptor", "B. Grease Trap", "C. Sump Pump", "D. Catch Basin"],
-    "a": 1
-  },
-  {
-    "q": "A device for supporting and securing pipe and fixtures to walls, ceilings, or floors.",
-    "choices": ["A. Anchor", "B. Hanger", "C. Clamp", "D. Bracket"],
-    "a": 1
-  },
-  {
-    "q": "In sewerage, this is a common sewer to which no other branch sewer is connected.",
-    "choices": ["A. Main Sewer", "B. Lateral Sewer", "C. Trunk Sewer", "D. Intercepting Sewer"],
-    "a": 1
-  },
-  {
-    "q": "The discharge from any fixture, appliance, or appurtenance in connection with a plumbing system which does not receive fecal matter.",
-    "choices": ["A. Sewage", "B. Liquid Waste", "C. Soil Waste", "D. Storm Waste"],
-    "a": 1
-  },
-  {
-    "q": "A term for equipment or materials that have been tested and found to be suitable for a specific purpose by a listing agency.",
-    "choices": ["A. Approved", "B. Listed", "C. Labeled", "D. Certified"],
-    "a": 1
-  },
-  {
-    "q": "A pipe that is part of a vent system that serves a single fixture and connects to a vent stack.",
-    "choices": ["A. Unit Vent", "B. Individual Vent", "C. Backvent", "D. Stack Vent"],
-    "a": 1
-  },
-  {
-    "q": "The liquid and water-borne wastes from industrial or commercial processes, as distinct from domestic sewage.",
-    "choices": ["A. Industrial Waste", "B. Special Waste", "C. Chemical Waste", "D. Hazardous Waste"],
-    "a": 0
-  },
-  {
-    "q": "A pipe joint made by use of a non-ferrous filler metal with a melting point not exceeding 427 degrees C.",
-    "choices": ["A. Brazed Joint", "B. Soldered Joint", "C. Welded Joint", "D. Solvent Joint"],
-    "a": 1
-  },
-  {
-    "q": "The plumber who is a person who has passed the board exam but works under a Master Plumber.",
-    "choices": ["A. Apprentice", "B. Journeyman Plumber", "C. Helper", "D. Junior Plumber"],
-    "a": 1
-  },
-  {
-    "q": "What is the term for a pipe that does not fit the definition of a soil pipe because it carries no fecal matter?",
-    "choices": ["A. Vent Pipe", "B. Waste Pipe", "C. Drain Pipe", "D. Riser"],
-    "a": 1
-  },
-  {
-    "q": "A sewer system used by mobile homes which is not part of the public sewer system.",
-    "choices": ["A. Private Sewer", "B. Mobile Home Park Sewer", "C. Community Sewer", "D. Lateral"],
-    "a": 1
-  },
-  {
-    "q": "The abbreviation PB stands for what type of plastic pipe?",
-    "choices": ["A. Poly-Butene", "B. Polybutylene", "C. Plastic-Bend", "D. Poly-Borate"],
-    "a": 1
-  },
-  {
-    "q": "The abbreviation PE stands for what type of plastic pipe?",
-    "choices": ["A. Polyethylene", "B. Plastic-Engineered", "C. Poly-Ether", "D. Poly-Ethane"],
-    "a": 0
-  },
-  {
-    "q": "What does PEX stand for in plumbing systems?",
-    "choices": ["A. Poly-Exhaust", "B. Cross-linked Polyethylene", "C. Plastic-Extended", "D. Poly-Ethylene-X"],
-    "a": 1
-  },
-  {
-    "q": "A cylindrical conduit or conductor conforming to the particular dimensions commonly known as 'pipe size'.",
-    "choices": ["A. Tube", "B. Pipe", "C. Conduit", "D. Hose"],
-    "a": 1
-  },
-  {
-    "q": "The art and technique of installing pipes, fixtures, and other apparatuses in buildings for bringing in water supply and removing liquid and water-borne wastes.",
-    "choices": ["A. Sanitary Engineering", "B. Plumbing", "C. Hydraulics", "D. Sewerage"],
-    "a": 1
-  },
-  {
-    "q": "A plumbing device which is usually motorized or has moving parts, such as a dishwasher or water heater.",
-    "choices": ["A. Plumbing Appurtenance", "B. Plumbing Appliance", "C. Plumbing Fixture", "D. Plumbing Tool"],
-    "a": 1
-  },
-  {
-    "q": "A manufactured device or prefabricated assembly or an on-the-job assembly of component parts, such as a water filter or pressure regulator.",
-    "choices": ["A. Plumbing Appliance", "B. Plumbing Appurtenance", "C. Plumbing Fixture", "D. Plumbing Accessory"],
-    "a": 1
-  },
-  {
-    "q": "Potable water is water that is satisfactory for drinking, culinary, and domestic purposes and meets the standards of the:",
-    "choices": ["A. NAMPAP", "B. Philippine National Standards for Drinking Water", "C. MWSS", "D. Department of Health"],
-    "a": 1
-  },
-  {
-    "q": "The pressure existing without any flow motion within the system.",
-    "choices": ["A. Residual Pressure", "B. Static Pressure", "C. Normal Pressure", "D. Flow Pressure"],
-    "a": 1
-  },
-  {
-    "q": "The pressure available at the fixture or at the end of the system during periods of maximum flow.",
-    "choices": ["A. Static Pressure", "B. Residual Pressure", "C. Dynamic Pressure", "D. Working Pressure"],
-    "a": 1
-  },
-  {
-    "q": "That part of the building drain which is the first main branch from the soil or waste stack.",
-    "choices": ["A. Primary Branch", "B. Secondary Branch", "C. Main Lateral", "D. Main Drain"],
-    "a": 0
-  },
-  {
-    "q": "A facility intended for the use of an individual or a family, not for the general public.",
-    "choices": ["A. Public Use", "B. Private Use", "C. Residential Use", "D. Restricted Use"],
-    "a": 1
-  },
-  {
-    "q": "A structure for the disposal of human excreta without the use of water, typically an outhouse.",
-    "choices": ["A. Septic Tank", "B. Privy", "C. Cesspool", "D. Latrine"],
-    "a": 1
-  },
-  {
-    "q": "A pit beneath a privy where human excreta is collected.",
-    "choices": ["A. Seepage Pit", "B. Privy Vault", "C. Sump", "D. Catch Basin"],
-    "a": 1
-  },
-  {
-    "q": "The common sewer directly controlled by public authority.",
-    "choices": ["A. Building Sewer", "B. Public Sewer", "C. Private Sewer", "D. Main Sewer"],
-    "a": 1
-  },
-  {
-    "q": "A vent pipe, the primary function of which is to provide circulation of air to or from any part of the drainage system or to afford protection against trap-seal siphonage.",
-    "choices": ["A. Branch Vent", "B. Relief Vent", "C. Loop Vent", "D. Circuit Vent"],
-    "a": 1
-  },
-  {
-    "q": "A water supply pipe which extends vertically one full story or more to convey water to fixture branches.",
-    "choices": ["A. Stack", "B. Riser", "C. Main", "D. Vertical Branch"],
-    "a": 1
-  },
-  {
-    "q": "The installation of all parts of the plumbing system which can be completed prior to the installation of fixtures.",
-    "choices": ["A. Rough-in", "B. Skeleton Work", "C. First Stage", "D. Piping Phase"],
-    "a": 0
-  },
-  {
-    "q": "Sewage containing human excrement and liquid household waste.",
-    "choices": ["A. Industrial Sewage", "B. Sanitary Sewage", "C. Storm Sewage", "D. Domestic Waste"],
-    "a": 1
-  },
-  {
-    "q": "A sewer which carries sewage and excludes storm, surface, and ground water.",
-    "choices": ["A. Combination Sewer", "B. Sanitary Sewer", "C. Storm Sewer", "D. Public Sewer"],
-    "a": 1
-  },
-  {
-    "q": "Any branch in a building drain other than the primary branch.",
-    "choices": ["A. Lateral Branch", "B. Secondary Branch", "C. Minor Branch", "D. Fixture Branch"],
-    "a": 1
-  },
-  {
-    "q": "A watertight receptacle which receives the discharge of a sanitary plumbing system and is designed to decompose organic matter through bacterial action.",
-    "choices": ["A. Cesspool", "B. Septic Tank", "C. Seepage Pit", "D. Interceptor"],
-    "a": 1
-  },
-  {
-    "q": "A mechanical device used to pump or eject sewage from a lower level to a higher level gravity sewer.",
-    "choices": ["A. Sump Pump", "B. Sewage Ejector", "C. Lift Station", "D. Booster Pump"],
-    "a": 1
-  },
-  {
-    "q": "A hose fitting with two gated outlets used for fire department connections.",
-    "choices": ["A. Wye", "B. Siamese Connection", "C. Double Outlet", "D. Fire Tap"],
-    "a": 1
-  },
-  {
-    "q": "A joint or connection made with an adjustable compression-type fitting.",
-    "choices": ["A. Union", "B. Slip Joint", "C. Expansion Joint", "D. Mechanical Joint"],
-    "a": 1
-  },
-  {
-    "q": "The suction caused by the flow of liquids in pipes which can create a vacuum and pull liquid out of a trap.",
-    "choices": ["A. Back-pressure", "B. Siphonage", "C. Aspiration", "D. Turbulence"],
-    "a": 1
-  },
-  {
-    "q": "Any vertical line of soil, waste, or vent pipe extending through one or more stories.",
-    "choices": ["A. Riser", "B. Stack", "C. Main", "D. Vertical Run"],
-    "a": 1
-  },
-  {
-    "q": "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.",
-    "choices": ["A. Vent Stack", "B. Stack Vent", "C. Main Vent", "D. Relief Vent"],
-    "a": 1
-  },
-  {
-    "q": "A fitting used to join three or more pipes, often in the shape of a 'Y'.",
-    "choices": ["A. Tee", "B. Wye", "C. Cross", "D. Elbow"],
-    "a": 1
-  },
-  {
-    "q": "A fitting used for a vertical-to-horizontal or horizontal-to-horizontal change in direction.",
-    "choices": ["A. Wye", "B. Elbow/Bend", "C. Tee", "D. Coupling"],
-    "a": 1
-  },
-  {
-    "q": "A fitting with a female thread for a pipe connection on the branch.",
-    "choices": ["A. Threaded Wye", "B. Tapped Tee", "C. Female Adapter", "D. Coupling"],
-    "a": 1
-  },
-  {
-    "q": "A device which provides a liquid seal to prevent the passage of air or gas without affecting the flow of sewage.",
-    "choices": ["A. Interceptor", "B. Trap", "C. Seal", "D. Siphon"],
-    "a": 1
-  },
-  {
-    "q": "The portion of a fixture drain between a trap and the vent.",
-    "choices": ["A. Tailpiece", "B. Trap Arm", "C. Fixture Branch", "D. Branch Interval"],
-    "a": 1
-  },
-  {
-    "q": "The vertical distance between the dip and the crown weir of a trap.",
-    "choices": ["A. Trap Depth", "B. Trap Seal", "C. Water Level", "D. Seal Height"],
-    "a": 1
-  },
-  {
-    "q": "A pipe fitting shaped like the letter 'Y' with three branches.",
-    "choices": ["A. Tee", "B. Wye", "C. Cross", "D. Offset"],
-    "a": 1
-  }
-    ],
-    14: [
-        {
-    "q": "What is the standard minimum uniform slope required for horizontal drainage pipes to ensure practical alignment and flow?",
-    "choices": ["A. 1% or 10 mm/m", "B. 2% or 20 mm/m", "C. 3% or 30 mm/m", "D. 0.5% or 5 mm/m"],
-    "a": 1
-  },
-  {
-    "q": "Under what condition can a horizontal drainage pipe have a slope of 1% (10 mm/m) instead of the standard 2%?",
-    "choices": ["A. If the pipe is 51 mm or larger", "B. If the pipe is 76 mm or larger", "C. If the pipe is 102 mm or larger and approved", "D. Only for vertical-to-horizontal connections"],
-    "a": 2
-  },
-  {
-    "q": "Changes in direction of drainage piping must be made using approved fittings with angles of long sweeps. Which of the following is NOT a specifically listed approved angle?",
-    "choices": ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree sharp elbow"],
-    "a": 3
-  },
-  {
-    "q": "What is the support interval for vertical lead pipe according to Section 315.1.4?",
-    "choices": ["A. Every storey", "B. Not exceeding 1.20 meters at centers", "C. Every 3 meters", "D. Every other storey height"],
-    "a": 1
-  },
-  {
-    "q": "Horizontal drainage lines connecting to a vertical stack shall enter through specific fittings. Which fitting is permitted for this connection?",
-    "choices": ["A. 45-degree wye branches", "B. 60-degree wye branches", "C. Sanitary tee", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "When installing vertical double sanitary tees, what is the required size of the barrel relative to the largest side inlet?",
-    "choices": ["A. One pipe size smaller", "B. The same pipe size", "C. At least two (2) pipe sizes larger", "D. Three pipe sizes larger"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal drainage lines connecting to other horizontal drainage lines must enter through which type of fitting?",
-    "choices": ["A. Sanitary tee", "B. 45-degree wye branches", "C. Double hub fitting", "D. Tapped tee"],
-    "a": 1
-  },
-  {
-    "q": "A 60-degree branch or offset may be used in drainage lines only when installed in what position?",
-    "choices": ["A. Horizontal position", "B. True vertical position", "C. At a 45-degree angle", "D. Underground"],
-    "a": 1
-  },
-  {
-    "q": "It is unlawful to deposit which of the following into any plumbing fixture or device connected to the drainage system?",
-    "choices": ["A. Ashes or cinders", "B. Rags", "C. Flammable or explosive liquids", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "Where should rainwater drains from roofs, inner courts, or light wells discharge?",
-    "choices": ["A. To the soil and waste pipe system", "B. Outside the building or to the gutter", "C. Into the septic tank", "D. To the building subdrain"],
-    "a": 1
-  },
-  {
-    "q": "What must be done to the burred ends of all pipes and tubings before installation?",
-    "choices": ["A. Sealed with wax", "B. Reamed to the full bore", "C. Painted with tar", "D. Welded to the fitting"],
-    "a": 1
-  },
-  {
-    "q": "Which of the following is a prohibited fitting for use as a drainage fitting in a vertical position?",
-    "choices": ["A. Double hub sanitary tapped tee", "B. Double hub fitting for lead-caulked joint", "C. 45-degree wye", "D. Combination wye and 1/8 bend"],
-    "a": 1
-  },
-  {
-    "q": "What is the rule regarding drilling and tapping drainage or vent piping?",
-    "choices": ["A. Permitted for small connections", "B. Permitted if approved by the Authority", "C. No piping shall be drilled and tapped", "D. Only cast iron pipe can be drilled"],
-    "a": 2
-  },
-  {
-    "q": "No waste connection shall be made to which specific part of a plumbing fixture?",
-    "choices": ["A. Vent stack", "B. Closet bend or stub of a water closet", "C. Vertical soil stack", "D. Building drain"],
-    "a": 1
-  },
-  {
-    "q": "What is the minimum support interval for vertical plastic pipe?",
-    "choices": ["A. Every story", "B. Every 2 meters", "C. Every one (1) meter interval", "D. Every 3 meters"],
-    "a": 2
-  },
-  {
-    "q": "The enlargement of a 76-mm closet bend or stub to what diameter is NOT considered an obstruction?",
-    "choices": ["A. 89-mm diameter", "B. 102-mm diameter", "C. 114-mm diameter", "D. 127-mm diameter"],
-    "a": 1
-  },
-  {
-    "q": "When mixing dissimilar metals, where should the points of connection be confined?",
-    "choices": ["A. Underground", "B. Inside concrete walls", "C. Exposed or accessible locations", "D. Within the building sewer"],
-    "a": 2
-  },
-  {
-    "q": "Under what condition may the building drain of a front building be extended to a rear building?",
-    "choices": ["A. If no private sewer is available for the rear building", "B. If the existing size is adequate for both", "C. If gravity flow is possible", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "All openings into a sanitary drainage system, except those for fixtures or vent terminals, must be permanently closed using what?",
-    "choices": ["A. Electrical tape", "B. Approved plugs or caps", "C. Cement mortar", "D. Plastic wrap"],
-    "a": 1
-  },
-  {
-    "q": "Pipes passing under or through walls must be protected from breakage by what means?",
-    "choices": ["A. Polyethylene sheath", "B. Bitumen coating", "C. Embedded metal pipe sleeves", "D. Concrete encasement"],
-    "a": 2
-  },
-  {
-    "q": "How must the void between pipes and sleeves through concrete floors in the ground be sealed?",
-    "choices": ["A. With cement", "B. With bitumen", "C. With wax", "D. With lead"],
-    "a": 1
-  },
-  {
-    "q": "No pipe shall be directly embedded in concrete and masonry walls without what protection?",
-    "choices": ["A. Tar coating", "B. Metal sleeve", "C. Plastic wrap", "D. Rubber gasket"],
-    "a": 1
-  },
-  {
-    "q": "What is the minimum clearance angle required for a pipe trench deeper than the footing of an adjacent building?",
-    "choices": ["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 90 degrees"],
-    "a": 1
-  },
-  {
-    "q": "What is the minimum burial depth for drainage piping below the finish ground surface?",
-    "choices": ["A. 0.1 meter", "B. 0.3 meter", "C. 0.6 meter", "D. 1.0 meter"],
-    "a": 1
-  },
-  {
-    "q": "Drainage piping constructed of materials not approved for use under a building must be installed at least how far from any building or structure?",
-    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
-    "a": 1
-  },
-  {
-    "q": "Vertical cast iron soil pipe (Bell & Spigot and Hubless) shall be supported at what interval?",
-    "choices": ["A. Every 3 meters", "B. Every storey or closer", "C. Every 1.5 meters", "D. Every other storey"],
-    "a": 1
-  },
-  {
-    "q": "Vertical Screwed Pipe (IPS) shall be supported at what minimum interval?",
-    "choices": ["A. Every storey", "B. Not less than every other storey height", "C. Every 3.6 meters", "D. Every 1.2 meters"],
-    "a": 1
-  },
-  {
-    "q": "Vertical Copper Tubing shall be supported at each storey or at maximum intervals of how many meters?",
-    "choices": ["A. 1.5 meters", "B. 2.4 meters", "C. 3 meters", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "Where joints occur, suspended horizontal cast iron soil pipe shall be supported at what maximum interval?",
-    "choices": ["A. 1.0 meter", "B. 1.5 meters", "C. 2.0 meters", "D. 3.6 meters"],
-    "a": 1
-  },
-  {
-    "q": "If a cast iron soil pipe exceeds 1.5 meters in length, what is the maximum support interval for horizontal installation?",
-    "choices": ["A. 2.0 meters", "B. 2.5 meters", "C. 3 meters", "D. 4.5 meters"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal supports for cast iron soil pipe must be placed within how many meters of the hub or joint?",
-    "choices": ["A. 0.30 meters", "B. 0.45 meters", "C. 0.60 meters", "D. 1.20 meters"],
-    "a": 1
-  },
-  {
-    "q": "Horizontal Screwed Pipe (IPS) of 19 mm diameter and smaller shall be supported at what interval?",
-    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal Screwed Pipe (IPS) of 25 mm and larger in diameter shall be supported at what interval?",
-    "choices": ["A. 3.0 meters", "B. 3.6 meters", "C. 4.5 meters", "D. 6.0 meters"],
-    "a": 1
-  },
-  {
-    "q": "Horizontal Copper Tubing of 38 mm diameter and smaller shall be supported at what interval?",
-    "choices": ["A. 1.2 meters", "B. 1.5 meters", "C. 1.8 meters", "D. 3.0 meters"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal Copper Tubing of 51 mm and larger in diameter shall be supported at what interval?",
-    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "How must horizontal lead pipe be supported for its entire length?",
-    "choices": ["A. Spaced metal hangers", "B. Stiff metal or wooden backing", "C. Plastic clamps", "D. Concrete cradle"],
-    "a": 1
-  },
-  {
-    "q": "Horizontal plastic tubings up to 38 mm diameter require what type of support for their entire length?",
-    "choices": ["A. Spaced metal hangers", "B. Stiff metal or wood backing", "C. Concrete blocks", "D. Bitumen seal"],
-    "a": 1
-  },
-  {
-    "q": "What is the maximum allowed length for a tunnel used in plumbing excavations?",
-    "choices": ["A. 1.2 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 5.0 meters"],
-    "a": 1
-  },
-  {
-    "q": "A tunnel must have a clear height of at least how many meters above the pipe?",
-    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
-    "a": 1
-  },
-  {
-    "q": "When a pipe is driven through the ground, the drive pipe shall be at least how much larger than the pipe to be laid?",
-    "choices": ["A. One pipe size larger", "B. Two pipe sizes larger", "C. 50 mm larger", "D. The same size"],
-    "a": 0
-  },
-  {
-    "q": "Excavations within the walls of a building must be open trench work and kept open until when?",
-    "choices": ["A. The building is occupied", "B. The piping is inspected and tested", "C. The concrete is poured", "D. The fixtures are installed"],
-    "a": 1
-  },
-  {
-    "q": "Trenches shall be back-filled in thin layers of how many meters above the top of the pipe?",
-    "choices": ["A. 0.1 meter", "B. 0.3 meter", "C. 0.5 meter", "D. 0.6 meter"],
-    "a": 1
-  },
-  {
-    "q": "Which material is strictly prohibited in the clean earth used for back-filling trenches?",
-    "choices": ["A. Stones and boulders", "B. Cinders", "C. Corrosive materials", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "What is the required slope for a 152 mm diameter horizontal drainage pipe if approved by the Authority?",
-    "choices": ["A. 2%", "B. 1%", "C. 0.5%", "D. Both A and B are correct"],
-    "a": 3
-  },
-  {
-    "q": "Horizontal drainage lines connecting to horizontal lines shall enter through 45-degree wye branches or which other fitting?",
-    "choices": ["A. Sanitary tee", "B. Combination wye and 1/8 bend", "C. Double sanitary tee", "D. Side inlet quarter bend"],
-    "a": 1
-  },
-  {
-    "q": "In Section 303.2, which nominal pipe size is NOT recognized for the double sanitary tee barrel rule?",
-    "choices": ["A. 51 mm", "B. 70 mm", "C. 89 mm", "D. 152 mm"],
-    "a": 1
-  },
-  {
-    "q": "It is unlawful to conceal cracks or holes in materials by using which method?",
-    "choices": ["A. Welding", "B. Brazing or soldering", "C. Paint, wax, or tar", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "Which of the following jointing methods for hubless cast iron soil pipes is specifically listed as acceptable?",
-    "choices": ["A. Threaded joints", "B. Stainless steel bands with neoprene gaskets", "C. Lead-caulked joints", "D. Solvent cement"],
-    "a": 1
-  },
-  {
-    "q": "Section 311.2 states that no cast iron soil pipe shall be:",
-    "choices": ["A. Cut", "B. Painted", "C. Threaded", "D. Supported by hangers"],
-    "a": 2
-  },
-  {
-    "q": "According to Section 311.4, no vent pipe shall be used as a:",
-    "choices": ["A. Waste pipe", "B. Soil pipe", "C. Either A or B", "D. Support member"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal hubless or compression gasket joints must be supported at every other joint, unless the developed length exceeds what distance?",
-    "choices": ["A. 0.6 meters", "B. 1.2 meters", "C. 1.5 meters", "D. 3.0 meters"],
-    "a": 1
-  },
-  {
-    "q": "Piping passing through or under corrosive materials must be protected by encasing it with what?",
-    "choices": ["A. Metal sleeve", "B. Polyethylene sheath", "C. Bitumen coating", "D. Lead sheet"],
-    "a": 1
-  },
-  {
-    "q": "What must be provided for hot water pipings to prevent damage?",
-    "choices": ["A. Extra insulation", "B. Expansion provisions", "C. High-pressure valves", "D. Copper sleeves"],
-    "a": 1
-  },
-  {
-    "q": "The tunnel length is limited to what fraction of the depth of the trench?",
-    "choices": ["A. One-third (1/3)", "B. One-half (1/2)", "C. Two-thirds (2/3)", "D. Three-fourths (3/4)"],
-    "a": 1
-  },
-  {
-    "q": "Which section prohibits the use of single drainage and venting systems with unvented branch lines?",
-    "choices": ["A. 301", "B. 305", "C. 311.4", "D. 316"],
-    "a": 2
-  },
-  {
-    "q": "All valves, pipes, and fittings must be installed in correct relationship to what?",
-    "choices": ["A. The building foundation", "B. The direction of flow", "C. The nearest vent stack", "D. The finish floor line"],
-    "a": 1
-  },
-  {
-    "q": "Industrial wastes that are detrimental to the sewer system must be treated as directed by whom?",
-    "choices": ["A. The building owner", "B. The Administrative Authority", "C. The Master Plumber", "D. The Department of Energy"],
-    "a": 1
-  },
-  {
-    "q": "No building shall be erected over an existing drainage system unless the system is constructed of:",
-    "choices": ["A. Plastic materials", "B. Approved materials for use under a building", "C. Lead pipes", "D. Vitrified clay"],
-    "a": 1
-  },
-  {
-    "q": "Suspended horizontal drainage lines must be suitably braced to prevent what type of movement?",
-    "choices": ["A. Vertical movement", "B. Horizontal movement", "C. Expansion", "D. Contraction"],
-    "a": 1
-  },
-  {
-    "q": "For horizontal piping in the ground, what must the pipe be laid on for its entire length?",
-    "choices": ["A. A bed of rocks", "B. A firm bed", "C. Loose soil", "D. Wooden planks"],
-    "a": 1
-  },
-  {
-    "q": "Vertical piping must be secured at intervals to keep pipes in alignment and carry what?",
-    "choices": ["A. Air pressure", "B. Weight and contents", "C. Only the pipe weight", "D. External vibrations"],
-    "a": 1
-  },
-  {
-    "q": "Section 314.5 states that pipe surfaces subject to undue corrosion or erosion must be protected with which method?",
-    "choices": ["A. Inside lining", "B. Outside coating", "C. Bottom bedding and top shielding", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "Who must approve deviations from the Code for repairs and alterations in existing buildings?",
-    "choices": ["A. The NAMPAP President", "B. The Administrative Authority", "C. The Project Architect", "D. The Homeowner"],
-    "a": 1
-  },
-  {
-    "q": "Existing building sewers may be used for new work only if they are examined and found to conform to requirements for:",
-    "choices": ["A. Used materials", "B. New work", "C. Temporary connections", "D. Private systems"],
-    "a": 1
-  },
-  {
-    "q": "Section 308.1 prohibits the location of an excreta plumbing system in any lot other than what?",
-    "choices": ["A. The adjoining lot", "B. The lot where the building served is located", "C. Public property", "D. A designated utility easement"],
-    "a": 1
-  },
-  {
-    "q": "A 'running thread, band or saddle' is prohibited for use as what?",
-    "choices": ["A. A vent connection", "B. A drainage fitting", "C. A water supply joint", "D. A support anchor"],
-    "a": 1
-  },
-  {
-    "q": "The disposal of sewage or human excrement is unlawful except through which approved system?",
-    "choices": ["A. Excreta and Storm Drainage Systems", "B. Open canals", "C. Direct ground discharge", "D. Non-watertight cesspools"],
-    "a": 0
-  },
-  {
-    "q": "Which section specifically mentions that structural members shall not be seriously weakened by cutting or notching?",
-    "choices": ["A. 301", "B. 310", "C. 314.3", "D. 315"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal IPS piping of 25 mm diameter should be supported every how many meters?",
-    "choices": ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"],
-    "a": 2
-  },
-  {
-    "q": "What is the recognized nominal diameter for a pipe size of 102 mm in Chapter 3?",
-    "choices": ["A. 3 inches", "B. 4 inches", "C. 5 inches", "D. 6 inches"],
-    "a": 1
-  },
-  {
-    "q": "Where a 2% slope is impracticable for a 102 mm pipe, what is the alternative slope mentioned in Section 302?",
-    "choices": ["A. 0.5% slope", "B. 1% slope", "C. 1.5% slope", "D. 3% slope"],
-    "a": 1
-  },
-  {
-    "q": "What is the maximum horizontal support interval for plastic pipe tubings larger than 38 mm diameter?",
-    "choices": ["A. 1.0 meter", "B. 1.8 meters", "C. At approved spacing", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "Section 309 states that piping and fixtures must not interfere with the normal use of what?",
-    "choices": ["A. Electrical panels", "B. Windows and doors", "C. Air conditioning ducts", "D. Roofing shingles"],
-    "a": 1
-  },
-  {
-    "q": "What type of branch is used when vertical drainage lines connect to horizontal drainage lines?",
-    "choices": ["A. 45-degree branches", "B. 60-degree branches", "C. Sanitary tee", "D. Tapped tee"],
-    "a": 0
-  },
-  {
-    "q": "According to Section 314.1, all pipes passing under cinders shall be protected from what?",
-    "choices": ["A. Thermal shock", "B. External corrosion", "C. High pressure", "D. Structural settlement"],
-    "a": 1
-  },
-  {
-    "q": "Horizontal copper tubing of 38 mm size is supported every 1.8 meters. What is the support interval for 51 mm size?",
-    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "Which of the following is NOT a constraint mentioned in Section 302 that allows a 1% slope?",
-    "choices": ["A. Excessive depth", "B. Geological features", "C. Budgetary constraints", "D. Existing adverse arrangements"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal drainage lines connecting to a vertical stack may use a 'combination wye and 1/8 bend'. What is another name for a 1/8 bend?",
-    "choices": ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree bend"],
-    "a": 1
-  },
-  {
-    "q": "Section 315.2.2 requires horizontal CI pipe supports to be adequate to maintain alignment and prevent what?",
-    "choices": ["A. Vibration", "B. Sagging", "C. Corrosion", "D. Sweating"],
-    "a": 1
-  },
-  {
-    "q": "What is the required thickness for a backfill layer according to Section 316.3?",
-    "choices": ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"],
-    "a": 1
-  },
-  {
-    "q": "If a horizontal cast iron pipe is 2 meters long, it should be supported at what maximum interval?",
-    "choices": ["A. 1.5 meters", "B. 3 meters", "C. 4.5 meters", "D. It must be supported at every joint"],
-    "a": 1
-  },
-  {
-    "q": "Vertical lead pipe must have what type of backup for its support?",
-    "choices": ["A. Plastic sleeve", "B. Rigid vertical back-up", "C. Concrete encasement", "D. Copper wire tie"],
-    "a": 1
-  },
-  {
-    "q": "In Section 312, the exception for rear buildings applies if the buildings are on what type of lot?",
-    "choices": ["A. Corner lot", "B. Interior lot", "C. Through lot", "D. Commercial lot"],
-    "a": 1
-  },
-  {
-    "q": "Which fitting is permitted to be a double hub if it is a sanitary tapped tee used on vertical lines?",
-    "choices": ["A. A fixture connection", "B. A building sewer connection", "C. A vent terminal", "D. A roof drain"],
-    "a": 0
-  },
-  {
-    "q": "What must be removed from the inside of a pipe after reaming?",
-    "choices": ["A. Oil and grease", "B. All chips", "C. The reaming tool", "D. The metal sleeve"],
-    "a": 1
-  },
-  {
-    "q": "Materials for hangers and anchors must have sufficient strength to maintain their proportional share of what?",
-    "choices": ["A. The building weight", "B. The weight of the pipe and its content", "C. The water pressure", "D. The soil load"],
-    "a": 1
-  },
-  {
-    "q": "Which section requires all plumbing fixtures to be connected to the drainage system?",
-    "choices": ["A. 301", "B. 304", "C. 310", "D. 315"],
-    "a": 1
-  },
-  {
-    "q": "If a public sewer is not available, where must excreta drainage piping be connected?",
-    "choices": ["A. To a public gutter", "B. To an approved Private Sewage Disposal System", "C. To the storm drain", "D. To a nearby river"],
-    "a": 1
-  },
-  {
-    "q": "Section 306.1 prohibits depositing which item that could cause damage to the public sewer?",
-    "choices": ["A. Oils and greases", "B. Poisonous liquids", "C. Solids", "D. All of the above"],
-    "a": 3
-  },
-  {
-    "q": "What is the rule for horizontal drainage lines connecting to other horizontal drainage lines?",
-    "choices": ["A. Use sanitary tees", "B. Use 45-degree wye branches", "C. Use tapped tees", "D. Use 60-degree branches"],
-    "a": 1
-  },
-  {
-    "q": "According to Section 313.2, building over an existing drainage system is permitted only if the materials are:",
-    "choices": ["A. Approved for use within a building", "B. Made of PVC", "C. Made of vitrified clay", "D. Encased in 2 inches of concrete"],
-    "a": 0
-  },
-  {
-    "q": "A 'side inlet quarter bend' is prohibited for use as what type of fitting?",
-    "choices": ["A. Vent fitting", "B. Drainage fitting", "C. Water supply fitting", "D. Gas fitting"],
-    "a": 1
-  },
-  {
-    "q": "Which section states that all designs and workmanships must conform with accepted engineering practices?",
-    "choices": ["A. 301", "B. 305", "C. 310.1", "D. 316"],
-    "a": 2
-  },
-  {
-    "q": "Horizontal IPS piping of 19 mm diameter is supported every 3.0 meters. What is the support for 38 mm size?",
-    "choices": ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"],
-    "a": 2
-  },
-  {
-    "q": "What is the maximum allowed length for a tunnel when plumbing pipes are being laid?",
-    "choices": ["A. 1.5 meters", "B. 2.4 meters", "C. 3.6 meters", "D. 5.0 meters"],
-    "a": 1
-  },
-  {
-    "q": "What is the clear height requirement for a tunnel above the pipe?",
-    "choices": ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"],
-    "a": 1
-  },
-  {
-    "q": "No subdivision or sale of property shall decrease or impair which requirements of the Code?",
-    "choices": ["A. Area and clearance", "B. Access requirements", "C. Both A and B", "D. None of the above"],
-    "a": 2
-  },
-  {
-    "q": "Section 311.5 prohibits any fitting that obstructs flow in an amount greater than what?",
-    "choices": ["A. 10% of flow", "B. Normal frictional resistance to flow", "C. The capacity of a 76-mm pipe", "D. 5 gallons per minute"],
-    "a": 1
-  },
-  {
-    "q": "Piping shall not be located to interfere with the normal operation of which facilities?",
-    "choices": ["A. Windows and doors", "B. Elevators", "C. Lighting fixtures", "D. Fire alarms"],
-    "a": 0
-  },
-  {
-    "q": "What is the minimum support interval for vertical lead pipe?",
-    "choices": ["A. Each story", "B. 1.20 meters", "C. 3.0 meters", "D. 3.6 meters"],
-    "a": 1
-  },
-  {
-    "q": "Vertical iron pipe (IPS) is supported every other storey. What is the interval for vertical copper?",
-    "choices": ["A. Every storey", "B. Every 2 meters", "C. Every 3 meters", "D. Both A and C are correct"],
-    "a": 3
-  },
-  {
-    "q": "Horizontal cast iron pipe exceeding 1.5 meters can be supported every 3 meters. What is the rule for shorter pipes?",
-    "choices": ["A. Supported every 1.5 meters", "B. Supported every joint", "C. Supported at one end", "D. No support required"],
-    "a": 0
-  },
-  {
-    "q": "What is the support interval for horizontal copper tubing of 51 mm diameter?",
-    "choices": ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"],
-    "a": 2
-  },
-  {
-    "q": "What is the support interval for horizontal copper tubing of 32 mm diameter?",
-    "choices": ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"],
-    "a": 1
-  },
-  {
-    "q": "According to Section 314.4, drainage piping must be at least how far below the finish ground surface?",
-    "choices": ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"],
-    "a": 1
-  },
-  {
-    "q": "What is the maximum length for a tunnel in a plumbing trench?",
-    "choices": ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"],
-    "a": 2
-  },
-  {
-    "q": "Which section covers the disposal of industrial wastes?",
-    "choices": ["A. 301", "B. 303", "C. 307", "D. 311"],
-    "a": 2
-  },
-  {
-    "q": "What is the standard slope for horizontal drainage pipes?",
-    "choices": ["A. 10 mm/m", "B. 20 mm/m", "C. 30 mm/m", "D. 40 mm/m"],
-    "a": 1
-  },
-  {
-    "q": "A vertical 60-degree branch is used only for which type of drainage connection?",
-    "choices": ["A. Horizontal-to-horizontal", "B. Vertical-to-horizontal", "C. Vertical position only", "D. Vent connections"],
-    "a": 2
-  },
-  {
-    "q": "What is the required slope for a 102 mm pipe if the standard 2% is impracticable?",
-    "choices": ["A. 0.5%", "B. 1%", "C. 1.5%", "D. 2.5%"],
-    "a": 1
-  }
-    ],
-    15: [
-        {
-    "q": "The required manufacturing characteristic for plumbing fixtures ensuring they are dense, durable, and non-absorbent[cite: 3].",
-    "choices": ["A. Impervious surfaces", "B. Acid resistant", "C. Porous finish", "D. Smooth stoneware"],
-    "a": 0
-  },
-  {
-    "q": "The specific bowl type mandatory for water closets installed for public use[cite: 6].",
-    "choices": ["A. Round front", "B. Siphon jet", "C. Elongated bowl", "D. Washdown type"],
-    "a": 2
-  },
-  {
-    "q": "The required seat design for water closets in public facilities[cite: 6].",
-    "choices": ["A. Closed-front", "B. Open-front", "C. Padded", "D. Anti-bacterial"],
-    "a": 1
-  },
-  {
-    "q": "The minimum U.S. B&S Gauge number for galvanized sheet steel used in restaurant kitchen sinks[cite: 10].",
-    "choices": ["A. Gauge No. 12", "B. Gauge No. 14", "C. Gauge No. 16", "D. Gauge No. 20"],
-    "a": 2
-  },
-  {
-    "q": "The minimum thickness in millimeters for approved-type bonderized sheet steel sinks[cite: 10].",
-    "choices": ["A. 1.2 mm", "B. 2.0 mm", "C. 0.8 mm", "D. 1.6 mm"],
-    "a": 3
-  },
-  {
-    "q": "The mandatory surface property for all porcelain enamel on plumbing fixtures[cite: 5].",
-    "choices": ["A. Scratch resistant", "B. Acid resistant", "C. Heat tempered", "D. Impact proof"],
-    "a": 1
-  },
-  {
-    "q": "The specific side of the fixture trap where an overflow pipe must be connected[cite: 14].",
-    "choices": ["A. Discharge side", "B. Outlet side", "C. House or inlet side", "D. Vent side"],
-    "a": 2
-  },
-  {
-    "q": "One of the two primary fixtures specifically exempt from requiring a strainer[cite: 24].",
-    "choices": ["A. Water closets", "B. Kitchen sinks", "C. Slop sinks", "D. Bathtubs"],
-    "a": 0
-  },
-  {
-    "q": "The required waterway area for a strainer serving a shower drain[cite: 25].",
-    "choices": ["A. Double the tailpiece area", "B. Equivalent to the area of the tailpiece", "C. 50% of the trap area", "D. Minimum 38 mm diameter"],
-    "a": 1
-  },
-  {
-    "q": "The minimum dimension required for an access panel provided for concealed slip joint connections[cite: 27].",
-    "choices": ["A. 0.45 meter", "B. 0.2 meter", "C. 0.3 meter", "D. 0.6 meter"],
-    "a": 2
-  },
-  {
-    "q": "The minimum U.S. B&S Gauge for exposed seamless drawn brass fixture tailpieces[cite: 28].",
-    "choices": ["A. Gauge No. 16", "B. Gauge No. 20", "C. Gauge No. 22", "D. Gauge No. 18"],
-    "a": 1
-  },
-  {
-    "q": "The minimum thickness in millimeters for accessible seamless drawn brass continuous waste[cite: 28].",
-    "choices": ["A. 1.0 mm", "B. 1.6 mm", "C. 0.5 mm", "D. 0.8 mm"],
-    "a": 3
-  },
-  {
-    "q": "The minimum outside diameter (O.D.) for tailpieces serving sinks, dishwashers, and laundry tubs[cite: 29, 30].",
-    "choices": ["A. 32 mm", "B. 38 mm", "C. 44 mm", "D. 51 mm"],
-    "a": 1
-  },
-  {
-    "q": "The minimum outside diameter (O.D.) for tailpieces serving lavatories and drinking fountains[cite: 31].",
-    "choices": ["A. 38 mm", "B. 25 mm", "C. 32 mm", "D. 40 mm"],
-    "a": 2
-  },
-  {
-    "q": "The material strictly prohibited for use in urinal tailpieces or traps[cite: 31].",
-    "choices": ["A. PVC or ABS", "B. Cast iron", "C. Brass or copper", "D. Stainless steel"],
-    "a": 2
-  },
-  {
-    "q": "The type of branch fitting required in all continuous wastes receiving discharge from food waste disposal units[cite: 33].",
-    "choices": ["A. Sanitary tee", "B. Tapped tee", "C. Wye or directional-type", "D. Double hub"],
-    "a": 2
-  },
-  {
-    "q": "The specific connection point prohibited for a dishwasher drain[cite: 34].",
-    "choices": ["A. Floor drain", "B. Standpipe", "C. Sink tailpiece on the discharge side of a food waste disposal unit", "D. Indirect waste receptor"],
-    "a": 2
-  },
-  {
-    "q": "A prohibited characteristic for water closets involving their seal or internal space[cite: 38].",
-    "choices": ["A. Visible seal", "B. Invisible seal or unventilated space", "C. Deep trap seal", "D. Siphon action"],
-    "a": 1
-  },
-  {
-    "q": "The specific type of urinal that is strictly prohibited by the Code[cite: 39].",
-    "choices": ["A. Trough urinals", "B. Pedestal urinals", "C. Stall urinals", "D. Wall-hung urinals"],
-    "a": 0
-  },
-  {
-    "q": "The prohibited location for the installation of drinking fountains[cite: 40].",
-    "choices": ["A. Hallways", "B. Inside public toilet rooms", "C. School gyms", "D. Office lobbies"],
-    "a": 1
-  },
-  {
-    "q": "One of the prohibited materials for fixed domestic washtrays or sinks in buildings designed for human habitation[cite: 41].",
-    "choices": ["A. Porcelain", "B. Stainless steel", "C. Concrete or cement", "D. Vitreous china"],
-    "a": 2
-  },
-  {
-    "q": "The prohibited type of bathtub lining mentioned in Section 405.2[cite: 42].",
-    "choices": ["A. Acrylic-lined", "B. Fiberglass-lined", "C. Sheet metal lined wooden bathtubs", "D. Ceramic-tiled"],
-    "a": 2
-  },
-  {
-    "q": "The official whose approval is required before installing a dry or chemical closet (toilet) in a habitation[cite: 43].",
-    "choices": ["A. Building Inspector", "B. Master Plumber", "C. Health Officer or Administrative Authority", "D. Civil Engineer"],
-    "a": 2
-  },
-  {
-    "q": "Construction features like ornamental lily ponds connected to potable water must be protected from this[cite: 49].",
-    "choices": ["A. Thermal expansion", "B. Back-siphonage", "C. Excessive pressure", "D. Sedimentation"],
-    "a": 1
-  },
-  {
-    "q": "The mandatory discharge location for a 'Sacrarium' cupsink at a church altar[cite: 51].",
-    "choices": ["A. Sanitary drainage system", "B. Septic tank", "C. Direct to the ground", "D. Storm drain"],
-    "a": 2
-  },
-  {
-    "q": "The required alignment for all pipes running from fixtures where practical[cite: 57].",
-    "choices": ["A. Perpendicular to the floor", "B. At a 45-degree angle", "C. Parallel and close to the nearest wall", "D. Hidden within the ceiling"],
-    "a": 2
-  },
-  {
-    "q": "The necessary condition for a joint where a fixture comes in contact with the wall or floor[cite: 59].",
-    "choices": ["A. Air-tight", "B. Watertight", "C. Flexible", "D. Visible"],
-    "a": 1
-  },
-  {
-    "q": "The required materials for screws or expansion bolts used to secure floor-mounted fixtures[cite: 61].",
-    "choices": ["A. Galvanized steel", "B. Aluminum", "C. Copper, brass or corrosion-resistant material", "D. Plastic-coated iron"],
-    "a": 2
-  },
-  {
-    "q": "The mechanical support required for wall-hung fixtures to prevent bending or pullout strain[cite: 65].",
-    "choices": ["A. Plastic anchors", "B. Metal supporting members or chairs", "C. Wooden blocking", "D. Concrete epoxy"],
-    "a": 1
-  },
-  {
-    "q": "The minimum distance from the center of a water closet to any side wall or obstruction[cite: 68].",
-    "choices": ["A. 0.3 meter", "B. 0.375 meter", "C. 0.45 meter", "D. 0.5 meter"],
-    "a": 1
-  },
-  {
-    "q": "The minimum center-to-center distance between two adjacent water closets[cite: 68].",
-    "choices": ["A. 0.6 meter", "B. 0.7 meter", "C. 0.75 meter", "D. 0.9 meter"],
-    "a": 2
-  },
-  {
-    "q": "The minimum distance from the center of a urinal to any side wall or partition[cite: 68].",
-    "choices": ["A. 0.25 meter", "B. 0.3 meter", "C. 0.375 meter", "D. 0.4 meter"],
-    "a": 1
-  },
-  {
-    "q": "The minimum center-to-center distance between two adjacent urinals[cite: 68].",
-    "choices": ["A. 0.5 meter", "B. 0.6 meter", "C. 0.75 meter", "D. 0.8 meter"],
-    "a": 1
-  },
-  {
-    "q": "The required setting condition for all fixtures with reference to adjacent walls[cite: 67].",
-    "choices": ["A. Flush", "B. Recessed", "C. Level and in proper alignment", "D. Tilted for drainage"],
-    "a": 2
-  },
-  {
-    "q": "The function that supply lines or fittings for every plumbing fixture must prevent[cite: 69].",
-    "choices": ["A. Backflow", "B. Cavitation", "C. Water hammer", "D. Turbulence"],
-    "a": 0
-  },
-  {
-    "q": "The required material property for water closet seats[cite: 7].",
-    "choices": ["A. Porous", "B. Non-absorbent", "C. Flexible", "D. Metallic"],
-    "a": 1
-  },
-  {
-    "q": "Special-use fixtures may be made of this material specifically suited for chemical resistance[cite: 9].",
-    "choices": ["A. Plywood", "B. Soapstone or chemical stoneware", "C. Uncoated iron", "D. Compressed fiber"],
-    "a": 1
-  },
-  {
-    "q": "The condition of water inside an overflow way when a fixture is empty[cite: 13].",
-    "choices": ["A. Must remain half-full", "B. Cannot remain inside the overflow way", "C. Acts as a secondary seal", "D. Discharges to the vent"],
-    "a": 1
-  },
-  {
-    "q": "The required thickness of a sheet metal plumbing fixture must be sufficient to accomplish this[cite: 11].",
-    "choices": ["A. Soundproofing", "B. Thermal insulation", "C. Intended purposes (adequately designed/braced)", "D. Aesthetic appeal"],
-    "a": 2
-  },
-  {
-    "q": "Overflows from water closet flush tanks are prohibited from connecting to this[cite: 15].",
-    "choices": ["A. The bowl", "B. Any other part of the drainage system", "C. The water tank", "D. The supply line"],
-    "a": 1
-  },
-  {
-    "q": "A strainer is NOT required for which of the following urinals[cite: 24].",
-    "choices": ["A. Siphon action washdown or blowout", "B. Stall type", "C. Pedestal type", "D. Trough type"],
-    "a": 0
-  },
-  {
-    "q": "The sum of all the areas of the perforations of a shower strainer must equal this[cite: 26].",
-    "choices": ["A. Half the trap area", "B. The outlet area", "C. 25 mm diameter", "D. Double the vent size"],
-    "a": 1
-  },
-  {
-    "q": "Continuous waste and fixture tailpieces shall be constructed from materials specified in which Table[cite: 28].",
-    "choices": ["A. Table 7-1", "B. Table 14-4", "C. Table 4-2", "D. Table 10-1"],
-    "a": 1
-  },
-  {
-    "q": "Brass or copper cannot be used for the trap of which fixture[cite: 31].",
-    "choices": ["A. Bathtub", "B. Kitchen sink", "C. Urinal", "D. Lavatory"],
-    "a": 2
-  },
-  {
-    "q": "A dishwasher drain connection to a sink tailpiece is prohibited if it is on this side of a food waste disposal unit[cite: 34].",
-    "choices": ["A. Intake side", "B. Supply side", "C. Discharge side", "D. Vent side"],
-    "a": 2
-  },
-  {
-    "q": "The prohibited feature of a water closet regarding the washing of its walls[cite: 38].",
-    "choices": ["A. Manual flush", "B. Walls not thoroughly washed out at each discharge", "C. Dual flush system", "D. Rimless design"],
-    "a": 1
-  },
-  {
-    "q": "Drinking fountains are prohibited inside which specific room[cite: 40].",
-    "choices": ["A. Cafeteria", "B. Public toilet rooms", "C. Laboratory", "D. Bedroom"],
-    "a": 1
-  },
-  {
-    "q": "Which material for a domestic washtray is prohibited in human habitations[cite: 41].",
-    "choices": ["A. Stainless steel", "B. Tile", "C. Plastic", "D. Copper"],
-    "a": 1
-  },
-  {
-    "q": "Baptistries and lily ponds must be protected from back-siphonage when connected to this[cite: 49].",
-    "choices": ["A. Storm drainage", "B. Graywater system", "C. Potable water supply lines", "D. Irrigation lines"],
-    "a": 2
-  },
-  {
-    "q": "The discharge of a Baptistries font outlet must go here[cite: 51].",
-    "choices": ["A. Sanitary sewer", "B. Vent stack", "C. Direct to the ground", "D. Grease interceptor"],
-    "a": 2
-  },
-  {
-    "q": "Plumbing fixtures must be installed to provide this for repair and cleaning[cite: 56].",
-    "choices": ["A. Concealment", "B. Easy access", "C. Aesthetic slope", "D. Permanent sealing"],
-    "a": 1
-  },
-  {
-    "q": "The minimum clearance between the center of a bidet and an adjacent side wall[cite: 68].",
-    "choices": ["A. 0.3 meter", "B. 0.375 meter", "C. 0.5 meter", "D. 0.6 meter"],
-    "a": 1
-  },
-  {
-    "q": "The minimum center-to-center clearance between a water closet and a bidet[cite: 68].",
-    "choices": ["A. 0.6 meter", "B. 0.7 meter", "C. 0.75 meter", "D. 1.0 meter"],
-    "a": 2
-  },
-  {
-    "q": "The center-to-center distance required between two urinals[cite: 68].",
-    "choices": ["A. 0.3 meter", "B. 0.45 meter", "C. 0.6 meter", "D. 0.75 meter"],
-    "a": 2
-  },
-  {
-    "q": "Fixtures must be set in proper alignment with reference to these[cite: 67].",
-    "choices": ["A. Ceiling height", "B. Adjacent walls", "C. Floor drains", "D. Lighting fixtures"],
-    "a": 1
-  },
-  {
-    "q": "The minimum outside diameter for a urinal tailpiece[cite: 29, 30].",
-    "choices": ["A. 32 mm", "B. 38 mm", "C. 51 mm", "D. 76 mm"],
-    "a": 1
-  },
-  {
-    "q": "What type of screws/bolts must secure water closet and urinal flush tanks[cite: 66].",
-    "choices": ["A. Black iron", "B. Approved non-corrosive", "C. Wood screws", "D. Plastic toggles"],
-    "a": 1
-  },
-  {
-    "q": "Where a fixture meets the floor, the joint must be[cite: 59].",
-    "choices": ["A. Bolted only", "B. Made watertight", "C. Left open for ventilation", "D. Recessed"],
-    "a": 1
-  },
-  {
-    "q": "Specialty fixtures requiring water supply and waste connections must be submitted for approval to[cite: 53].",
-    "choices": ["A. The Owner", "B. The Contractor", "C. The Administrative Authority", "D. The Architect"],
-    "a": 2
-  },
-  {
-    "q": "What kind of materials should plumbing fixtures be made of to avoid fouling[cite: 3].",
-    "choices": ["A. Absorbent", "B. Non-absorbent", "C. Corrosive", "D. Textured"],
-    "a": 1
-  }
-    ],
-    16: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    17: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    18: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    19: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    20: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    21: [
-        { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
-        { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
-    ],
-    22: [
-        { q: "The paper currency issued by the Central Bank.", choices: ["T-bills", "Bank note", "Check", "Coupon"], a: 1 },
-        { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
-    ]
+  ],
+  12: [
+    { q: "ABS", choices: ["A. Acrylonitrile-Butadiene-Styrene", "B. Alkyne-Benzene-Sulfonate", "C. Aluminum-Barium-Sulfate", "D. Asbestos-Bitumen-Silicate"], a: 0 },
+    { q: "Any public space, public park or thoroughfare less than three (3) meters but not less than two (2) meters in width dedicated or deeded for public use.", choices: ["A. Street", "B. Sidewalk", "C. Alley", "D. Court"], a: 2 },
+    { q: "Any change, addition or modification in construction or occupancy.", choices: ["A. Renovation", "B. Repair", "C. Alter or Alteration", "D. Maintenance"], a: 2 },
+    { q: "When applied to a fixture, connection, appliance or equipment, shall mean having access thereto, but which may require prior removal of an access panel, door or similar obstruction.", choices: ["A. Readily Accessible", "B. Accessible", "C. Open", "D. Concealed"], a: 1 },
+    { q: "Direct access without the necessity of removing any panel, door or similar obstruction.", choices: ["A. Accessible", "B. Exposed", "C. Readily accessible", "D. Clear access"], a: 2 },
+    { q: "A physical separation, which may be a low inlet into the indirect waste receptor from the fixture, appliance or device indirectly connected.", choices: ["A. Air gap", "B. Vent", "C. Airbreak", "D. Trap"], a: 2 },
+    { q: "The unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe, plumbing fixture, appliance or appurtenance conveying waste to the flood level rim of the receptor.", choices: ["A. Air gap, drainage", "B. Air gap, water distribution", "C. Relief vent", "D. Critical level"], a: 0 },
+    { q: "An unobstructed vertical distance through the free atmosphere between the lowest opening from any pipe or faucet conveying potable water to the flood-level rim of any tank, vat or fixture.", choices: ["A. Air gap, drainage", "B. Air gap, water distribution", "C. Water seal", "D. Vacuum breaker"], a: 1 },
+    { q: "Accepted or acceptable under an applicable specifications or standard stated or cited in this Code, or accepted as suitable for any proposed use under procedures and powers of the Administrative Authority.", choices: ["A. Certified", "B. Approved", "C. Listed", "D. Labeled"], a: 1 },
+    { q: "An organization primarily established for purposes of testing to approve standards and approved by the Administrative Authority.", choices: ["A. Listing Agency", "B. Commission", "C. Approved testing agency", "D. Board of Master Plumbers"], a: 2 },
+    { q: "The Administrative Authority including the Building Official, the Commission, the Board and such other department or agency established and authorized to administer and enforce the provisions of Republic Act 1378.", choices: ["A. Department having jurisdiction", "B. Administrative Authority", "C. NAMPAP", "D. PRC"], a: 1 },
+    { q: "The flow of water or other liquids, mixtures or substances into the distributing pipes of a potable supply of water from any source other than from its intended source.", choices: ["A. Back-siphonage", "B. Backflow", "C. Cross-connection", "D. Contamination"], a: 1 },
+    { q: "Condition or any arrangement whereby reverse flow can occur.", choices: ["A. Backflow connection", "B. Backpressure", "C. Airbreak", "D. Bypass"], a: 0 },
+    { q: "Occurs due to an increased reverse pressure above the supply pressure. This may be due to pumps, boilers, gravity or other sources of pressure.", choices: ["A. Back-siphonage", "B. Backpressure backflow", "C. Vacuum", "D. Static pressure"], a: 1 },
+    { q: "Device or means to prevent flow of liquid from returning to the source of supply.", choices: ["A. Check valve", "B. Backflow preventer", "C. Gate valve", "D. Globe valve"], a: 1 },
+    { q: "The flowing back of used, contaminated or polluted water from a plumbing fixture or vessel into a water supply pipe due to a negative pressure in such pipe.", choices: ["A. Backflow", "B. Back-siphonage", "C. Gravity flow", "D. Pressure drop"], a: 1 },
+    { q: "A device installed in a drainage system to prevent reverse flow.", choices: ["A. Backwater valve", "B. Check valve", "C. Relief valve", "D. Airbreak"], a: 0 },
+    { q: "The part of a vent line, which connects directly with an individual trap underneath or behind the fixture and extends to the branch or main vent pipe at any point higher than the fixture or fixture traps it serves.", choices: ["A. Circuit vent", "B. Loop vent", "C. Backvent pipe", "D. Common vent"], a: 2 },
+    { q: "A valve opened and closed by the fall and rise, respectively, of an attached ball floating on the surface of the liquid.", choices: ["A. Gate valve", "B. Ball cock", "C. Globe valve", "D. Flushometer"], a: 1 },
+    { q: "A type of pipe connection in which a ball-shaped end is held in a cuplike shell and allows movements in every direction.", choices: ["A. Slip joint", "B. Union", "C. Ball joint", "D. Flange joint"], a: 2 },
+    { q: "B & S", choices: ["A. Black and Steel", "B. Brown and Sharpe (Specification) or Bell and Spigot (Ends of Pipes)", "C. Brass and Silver", "D. Bronze and Solder"], a: 1 },
+    { q: "A room equipped with a shower stall or bathtub.", choices: ["A. Toilet", "B. Restroom", "C. Bathroom", "D. Lavatory"], a: 2 },
+    { q: "Any of two or more similar adjacent fixtures which discharge into a common horizontal soil or waste branch.", choices: ["A. Fixture group", "B. Battery of fixtures", "C. Multi-fixture system", "D. Unit group"], a: 1 },
+    { q: "That portion of a pipe which, for a short distance, is sufficiently enlarged to receive the end of another pipe of the same diameter for the purpose of making a caulked or push-on joint.", choices: ["A. Spigot", "B. Sleeve", "C. Bell or Hub", "D. Coupling"], a: 2 },
+    { q: "A tool for straightening or bending lead pipe.", choices: ["A. Pipe bender", "B. Bending pin (or iron)", "C. Drift plug", "D. Swage"], a: 1 },
+    { q: "Synonymous with faucet, cock, tap, plug, etc. The word 'faucet' is preferred.", choices: ["A. Bibb", "B. Valve", "C. Spout", "D. Outlet"], a: 0 },
+    { q: "A plumbing fixtures used for washing the middle private part of the body, especially the genitals.", choices: ["A. Lavatory", "B. Bidet", "C. Sitz bath", "D. Urinal"], a: 1 },
+    { q: "A pipe flange that is not drilled for bolt holes.", choices: ["A. Blind flange", "B. Blank flange", "C. Slip-on flange", "D. Weld neck flange"], a: 1 },
+    { q: "A flange that closes the end of a pipe. There is no opening for the passage of liquid or gas.", choices: ["A. Blank flange", "B. Blind flange", "C. Cap", "D. Plug"], a: 1 },
+    { q: "A controlled outlet of a pipeline to discharge liquid or detritus.", choices: ["A. Drain", "B. Blow-off", "C. Cleanout", "D. Relief valve"], a: 1 },
+    { q: "The Licensure Board for Master Plumbers.", choices: ["A. Commission", "B. Board", "C. NAMPAP", "D. Committee"], a: 1 },
+    { q: "A valved outlet of a boiler that permits discharge of accumulated sediment.", choices: ["A. Blow-off", "B. Boiler blow-off", "C. Drain valve", "D. Safety valve"], a: 1 },
+    { q: "Any part of the piping system other than a main, riser or stack.", choices: ["A. Lateral", "B. Branch", "C. Run", "D. Offset"], a: 1 },
+    { q: "A length of soil or waste stack corresponding in general to a story height, but in no case less than 2.43 meters within which the horizontal branches from one floor or story of a building are connected to the stack.", choices: ["A. Branch length", "B. Branch interval", "C. Stack height", "D. Vertical interval"], a: 1 },
+    { q: "A horizontal vent connecting one or more individual vertical back vents with the vent stack or stack vent.", choices: ["A. Circuit vent", "B. Branch vent", "C. Common vent", "D. Dual vent"], a: 1 },
+    { q: "Any joint obtained by joining of metal parts with alloys which melt at temperatures higher than 449 degrees centigrade, but lower than the melting temperature of the parts to be joined.", choices: ["A. Soldered joint", "B. Brazed joint", "C. Welded joint", "D. Sweated joint"], a: 1 },
+    { q: "A structure built, erected and framed of component structural parts designed for the housing, shelter, enclosure or support of persons, animals or property of any kind.", choices: ["A. House", "B. Building", "C. Facility", "D. Shelter"], a: 1 },
+    { q: "That part of the lowest horizontal piping of a drainage system which receives the discharge from soil, waste and other drainage pipes inside the walls of the building and conveys it to the building sewer beginning 0.6 meter outside the building wall.", choices: ["A. Building sewer", "B. Building drain", "C. House sewer", "D. Main drain"], a: 1 },
+    { q: "That part of the horizontal piping of a drainage system which starts from the end of the building drain and which receives the discharge of the building drain and conveys it to a public sewer, private sewer, individual sewage disposal system or other point of disposal.", choices: ["A. Building subdrain", "B. Building sewer", "C. Street sewer", "D. Main sewer"], a: 1 },
+    { q: "That portion of an underground system, which cannot drain by gravity into the building sewer.", choices: ["A. Sump", "B. Building subdrain", "C. Lift station", "D. Basement drain"], a: 1 },
+    { q: "The pipe carrying potable water from the water meter or other source of water supply to a building or other point of use or distribution on the lot.", choices: ["A. Water main", "B. Building supply", "C. Service pipe", "D. Distribution branch"], a: 1 },
+    { q: "Plugging an opening with oakum, lead or other materials that are pounded into the annular space.", choices: ["A. Sealing", "B. Caulking", "C. Jointing", "D. Packing"], a: 1 },
+    { q: "A fitting, screwed or caulked over the end of a pipe for closing the pipe end.", choices: ["A. Plug", "B. Cap", "C. Flange", "D. Stop"], a: 1 },
+    { q: "A receptacle in which liquids are retained for a sufficient period of time to allow settleable material to deposit.", choices: ["A. Septic tank", "B. Catch basin", "C. Interceptor", "D. Clarifier"], a: 1 },
+    { q: "A person who has shown competence to test and maintain backflow assemblies to the satisfaction of the Administrative Authority having jurisdiction.", choices: ["A. Master Plumber", "B. Certified backflow assembly tester", "C. Plumbing Inspector", "D. Sanitary Engineer"], a: 1 },
+    { q: "A non-watertight lined excavation in the ground which receives the discharge of a sanitary drainage system... permitting the liquid to seep through the bottom and sides.", choices: ["A. Septic tank", "B. Cesspool", "C. Seepage pit", "D. Leaching well"], a: 1 },
+    { q: "A vertical shaft for installation of different pipe stacks.", choices: ["A. Vent", "B. Chase", "C. Duct", "D. Tunnel"], a: 1 },
+    { q: "A valve that automatically closes to prevent the flow of liquid or gas in a reverse direction.", choices: ["A. Gate valve", "B. Check valve", "C. Relief valve", "D. Backwater valve"], a: 1 },
+    { q: "A group vent pipe which starts in front of the extreme fixture connection on a horizontal branch and connects to the vent stack.", choices: ["A. Loop vent", "B. Circuit vent", "C. Revent", "D. Individual vent"], a: 1 },
+    { q: "When used alone, shall mean these regulations, subsequent amendments thereto or any emergency rule or regulation which the Administrative Authority having jurisdiction may lawfully adopt.", choices: ["A. Law", "B. Code", "C. Standard", "D. Ordinance"], a: 1 },
+    { q: "A specially designed system of waste piping embodying the horizontal wet venting of one or more sinks or floor drains by means of a common horizontal waste and vent pipe.", choices: ["A. Wet vent system", "B. Combination waste and vent system", "C. Unit vent system", "D. Dual vent system"], a: 1 },
+    { q: "A structure which any part of its structural framework will ignite and burn at a temperature of 756 degrees centigrade or less.", choices: ["A. Fire-resistant construction", "B. Combustible construction", "C. Non-combustible construction", "D. Wood-framed"], a: 1 },
+    { q: "The Professional Regulation Commission (PRC).", choices: ["A. Board", "B. Commission", "C. Authority", "D. Department"], a: 1 },
+    { q: "That part of a plumbing system designed and installed to serve more than one (1) appliance, fixture, building or system.", choices: ["A. Public", "B. Common", "C. Shared", "D. Joint"], a: 1 },
+    { q: "A room or space having a volume less than 1.4 cu. m with 250 kilogram calorie of the aggregate input rating of all fuel-burning appliances installed in that space.", choices: ["A. Utility room", "B. Confined space", "C. Boiler room", "D. Closet"], a: 1 },
+    { q: "An impairment of the quality of the potable water which creates an actual hazard to the public health through poisoning or spread of disease by sewage, industrial fluids or waste.", choices: ["A. Pollution", "B. Contamination", "C. Discoloration", "D. Infection"], a: 1 },
+    { q: "A vertical vent that is a continuation of the drain to which the vent connects.", choices: ["A. Common vent", "B. Continuous vent", "C. Stack vent", "D. Individual vent"], a: 1 },
+    { q: "A drain connecting the compartments of a set of fixtures to a common trap or connecting other permitted fixtures to a common trap.", choices: ["A. Common waste", "B. Continuous waste", "C. Indirect waste", "D. Combined waste"], a: 1 },
+    { q: "A vertical pipe to convey rainwater.", choices: ["A. Leader", "B. Conductor or downspout", "C. Stack", "D. Riser"], a: 1 },
+    { q: "A stop valve placed at the connection of the water service pipe to the water main.", choices: ["A. Gate valve", "B. Corporation cock", "C. Curb cock", "D. Angle valve"], a: 1 },
+    { q: "An open, unoccupied space, bounded on two (2) or more sides by the walls of the building.", choices: ["A. Yard", "B. Court", "C. Alley", "D. Shaft"], a: 1 },
+    { q: "C-L or C/L", choices: ["A. Center Line", "B. Critical Level", "C. Copper Line", "D. Clean Limit"], a: 1 },
+    { q: "Any connection or arrangement, physical or otherwise, between a potable water supply system and any plumbing fixture... through which enables non-potable... water to enter into any part of such potable water system.", choices: ["A. Backflow", "B. Cross-connection", "C. Contamination", "D. Intersection"], a: 1 },
+    { q: "The extended portion of a pipe that is closed at one end to which no connections are made on the extended portion, thus permitting the stagnation of liquid or air therein.", choices: ["A. Blind end", "B. Dead-end", "C. Capped pipe", "D. Stub-out"], a: 1 },
+    { q: "The Administrative Authority and includes any other law enforcement agency concerned by any provision of this Code.", choices: ["A. Commission", "B. Department having jurisdiction", "C. Building Official", "D. NAMPAP"], a: 1 },
+    { q: "The length of a pipe along its centerline and fittings.", choices: ["A. Actual length", "B. Developed length", "C. Nominal length", "D. Linear length"], a: 1 },
+    { q: "The nominal diameter as designated commercially.", choices: ["A. Inside diameter", "B. Diameter", "C. Outside diameter", "D. Pipe size"], a: 1 },
+    { q: "I.D.", choices: ["A. Internal Distance", "B. Inside Diameter", "C. Nominal Diameter", "D. Inner Dimension"], a: 1 },
+    { q: "O.D.", choices: ["A. Outer Dimension", "B. Outside Diameter", "C. Overall Diameter", "D. Opening Diameter"], a: 1 },
+    { q: "The liquid and water-borne wastes derived from the ordinary living processes, free from industrial wastes and of such character that permit satisfactory disposal without special treatment.", choices: ["A. Industrial waste", "B. Domestic sewage", "C. Gray water", "D. Black water"], a: 1 },
+    { q: "A pipe fitting with adjacent reverse bends and shaped like the letter 'S'.", choices: ["A. Offset", "B. Double-bend fitting", "C. Return bend", "D. Trap"], a: 1 },
+    { q: "Two offsets in succession or in series such that the centerlines of the outside ends are in the same straight line.", choices: ["A. Double bend", "B. Double offset", "C. Straight run", "D. Parallel offset"], a: 1 },
+    { q: "The vertical portion of a rainwater conductor.", choices: ["A. Leader", "B. Downspout", "C. Conductor", "D. Gutters"], a: 1 },
+    { q: "A pipe, which carries ground and surface waters, storm water or wastewater into a building drainage system.", choices: ["A. Sewer", "B. Drain", "C. Vent", "D. Conduit"], a: 1 },
+    { q: "Includes all the pipings within public or private premises which convey sewage... but does not include the mains of a public sewer system.", choices: ["A. Sewer system", "B. Drainage system", "C. Plumbing system", "D. Waste system"], a: 1 },
+    { q: "A vent that does not carry liquid or water-borne wastes.", choices: ["A. Relief vent", "B. Dry vent", "C. Individual vent", "D. Back vent"], a: 1 },
+    { q: "A term used to describe soil or waste system where all pipings are of threaded pipe, tubing or other such rigid construction using recessed drainage fittings.", choices: ["A. Rigid system", "B. Durham system", "C. Threaded system", "D. Standard system"], a: 1 },
+    { q: "The minimum cross-sectional area at the point of water supply discharge measured or expressed in terms of: (1) diameter of a circle; (2) equivalent cross-sectional area.", choices: ["A. Air gap", "B. Effective opening", "C. Orifice", "D. Outlet size"], a: 1 },
+    { q: "The on-going installation of the plumbing system or any part thereof which has been installed prior to the effectivity of this Code.", choices: ["A. Old work", "B. Existing work", "C. Prior installation", "D. Completed work"], a: 1 },
+    { q: "One person living alone or a group living together, whether related to each other by birth or not.", choices: ["A. Household", "B. Family", "C. Occupants", "D. Residents"], a: 1 },
+    { q: "A valve located at the end of a water pipe through of which water can be drawn from or held within the pipe.", choices: ["A. Tap", "B. Faucet", "C. Cock", "D. Bibb"], a: 1 },
+    { q: "A metallic sleeve, caulked or joined to an opening in a pipe, into which a plug is screwed that can be removed for cleaning or examining the interior of the pipe.", choices: ["A. Adapter", "B. Ferrule", "C. Bushing", "D. Nipple"], a: 1 },
+    { q: "A receptacle other than a trap attached to a plumbing system in which water or wastes may be collected or retained for ultimate discharge.", choices: ["A. Appliance", "B. Fixture", "C. Appurtenance", "D. Receptor"], a: 1 },
+    { q: "The water supply pipe between the fixture supply pipe and the water-distributing pipe.", choices: ["A. Fixture supply", "B. Fixture branch", "C. Riser", "D. Main branch"], a: 1 },
+    { q: "The drainpipe from the trap of a fixture to the junction of that drain with any other drainpipe.", choices: ["A. Fixture branch", "B. Fixture drain", "C. Soil pipe", "D. Waste pipe"], a: 1 },
+    { q: "A water supply pipe connecting the fixture with the fixture branch.", choices: ["A. Fixture branch", "B. Fixture supply", "C. Supply line", "D. Tailpiece"], a: 1 },
+    { q: "An arbitrary quantity in terms of which the load-producing effects or water requirements on the plumbing system of different kinds of plumbing fixtures are expressed.", choices: ["A. Discharge rate", "B. Fixture unit", "C. Load factor", "D. Demand unit"], a: 1 },
+    { q: "One fixture unit is equivalent to a rate of flow at:", choices: ["A. 7.5 gpm", "B. 28.3 liters per minute", "C. 1.0 gpm", "D. 15.0 liters per minute"], a: 1 },
+    { q: "The level in a fixture at which water begins to overflow over the top or rim of the fixture.", choices: ["A. Overflow level", "B. Flood level", "C. Critical level", "D. Rim level"], a: 1 },
+    { q: "The top edge of a receptacle from where water overflows.", choices: ["A. Flood level", "B. Flood level rim", "C. Fixture edge", "D. Overflow point"], a: 1 },
+    { q: "A fixture is ______ when the liquid therein rises to the flood level rim.", choices: ["A. Clogged", "B. Flooded", "C. Full", "D. Overflowing"], a: 1 },
+    { q: "The area included within surrounding walls of a building (or portion thereof), exclusive of vent shafts and courts.", choices: ["A. Gross area", "B. Floor area", "C. Lot area", "D. Occupancy area"], a: 1 },
+    { q: "A tank located above or integral with water closet, urinal or similar fixtures for flushing or removing excrements in the fixture.", choices: ["A. Storage tank", "B. Flush tank", "C. Cistern", "D. Flushometer"], a: 1 },
+    { q: "A device located at the bottom of the tank for the purpose of flushing waster closet and similar fixtures.", choices: ["A. Float valve", "B. Flush valve", "C. Ball cock", "D. Stop valve"], a: 1 },
+    { q: "Is integrated within an air accumulator vessel which is designed to discharge a predetermined quantity of water into fixtures for flushing purposes.", choices: ["A. Flushometer valve", "B. Flushometer tank", "C. Expansion tank", "D. Pressure tank"], a: 1 },
+    { q: "A device, which discharges a predetermined quantity of water into fixtures for flushing purposes and is actuated by direct water pressure.", choices: ["A. Flush tank", "B. Flushometer valve", "C. Relief valve", "D. Gate valve"], a: 1 },
+    { q: "A valve in which the flow of water is cut off by means of a circular disc fitted against machine-smoothed faces, at right angles to the direction of flow.", choices: ["A. Globe valve", "B. Gate valve", "C. Check valve", "D. Butterfly valve"], a: 1 },
+    { q: "A valve in which the flow of fluid is cut off by means of a circular disc that fits over and against the horizontal valve seat.", choices: ["A. Gate valve", "B. Globe valve", "C. Angle valve", "D. Relief valve"], a: 1 },
+    { q: "A return bend of small-sized pipe... commonly used as a faucet for a pantry sink.", choices: ["A. Offset", "B. Gooseneck", "C. Trap", "D. S-bend"], a: 1 },
+    { q: "The slope or fall of a line of pipe with reference to a horizontal plane.", choices: ["A. Pitch", "B. Grade", "C. Incline", "D. Fall"], a: 1 },
+    { q: "An interceptor of at least 3 cubic meters capacity to serve one or more fixtures and which is remotely located.", choices: ["A. Grease trap", "B. Grease interceptor", "C. Catch basin", "D. Septic tank"], a: 1 },
+    { q: "A device designed to retain grease from one to a maximum of four fixtures.", choices: ["A. Grease interceptor", "B. Grease trap", "C. Separator", "D. Clarifier"], a: 1 },
+    { q: "The water that stands in or passes through the ground.", choices: ["A. Surface water", "B. Ground water", "C. Potable water", "D. Waste water"], a: 1 },
+    { q: "A branch vent that performs its functions for two (2) or more traps.", choices: ["A. Common vent", "B. Group vent", "C. Loop vent", "D. Circuit vent"], a: 1 },
+    { q: "The vertical distance from the 'Grade Line' to the highest point of the coping of a flat roof or to the top line of a mansard roof.", choices: ["A. Building elevation", "B. Height of building", "C. Story height", "D. Roof level"], a: 1 },
+    { q: "A drain pipe extending laterally from a soil or waste stack... which receives the discharge from one or more fixture drains and conducts it to the soil or waste stack.", choices: ["A. Fixture drain", "B. Horizontal branch", "C. Building drain", "D. Lateral pipe"], a: 1 },
+    { q: "Any pipe or fitting installed in a horizontal position or which forms an angle of not more than forty-five (45) degrees with the horizontal plane.", choices: ["A. Sloping pipe", "B. Horizontal pipe", "C. Lateral pipe", "D. Grade pipe"], a: 1 },
+    { q: "That part of the lowest horizontal piping of a plumbing system which... conveys it to the house sewer outside of the building.", choices: ["A. Building drain", "B. House drain", "C. Building sewer", "D. Main drain"], a: 1 },
+    { q: "That part of a plumbing system extending from the house drain at a point 0.60 meters from the outside face of the foundation wall... to the junction with the street sewer.", choices: ["A. Building sewer", "B. House sewer", "C. Service pipe", "D. Private sewer"], a: 1 },
+    { q: "The pipeline from the building to the public or street storm drainage system.", choices: ["A. Rainwater pipe", "B. House storm sewer", "C. Conductor", "D. Gutter"], a: 1 },
+    { q: "Cast iron soil pipes with plain ends connected together with bolted stainless steel bands and neoprene gaskets.", choices: ["A. Hubless pipes", "B. B & S pipes", "C. Threaded pipes", "D. Welded pipes"], a: 0 },
+    { q: "A pipe that does not connect directly with the drainage system but conveys liquid wastes by discharging into a plumbing fixture, interceptor or receptacle directly connected.", choices: ["A. Direct waste pipe", "B. Indirect waste pipe", "C. Vent pipe", "D. Service pipe"], a: 1 },
+    { q: "A pipe installed to vent a fixture trap and which connects with the vent system above the fixture served or terminates in the open air.", choices: ["A. Common vent", "B. Individual vent", "C. Dual vent", "D. Relief vent"], a: 1 },
+    { q: "Any and all liquid or water-borne waste from industrial or commercial processes, except domestic sewage.", choices: ["A. Chemical waste", "B. Industrial waste", "C. Hazardous waste", "D. Commercial sewage"], a: 1 },
+    { q: "I.P.S.", choices: ["A. International Pipe Standard", "B. Iron Pipe Size", "C. Internal Pipe Surface", "D. Index of Pipe Specifications"], a: 1 },
+    { q: "A condition contrary to sanitary principles or injurious to health.", choices: ["A. Pollution", "B. Insanitary", "C. Nuisance", "D. Contamination"], a: 1 },
+    { q: "A device designed and installed to separate and retain deleterious, hazardous or undesirable matters from normal wastes.", choices: ["A. Clarifier", "B. Interceptor (Clarifier)", "C. Separator", "D. Trap"], a: 1 },
+    { q: "The lowest portion of the interior part of any pipe or conduit that is not vertical.", choices: ["A. Crown", "B. Invert", "C. Bottom", "D. Flow line"], a: 1 },
+    { q: "The Administrative Authority under the Department of Health... and other government entities that regulate the practice of Registered & Licensed Master Plumbers.", choices: ["A. Jurisdiction", "B. Commission", "C. Board", "D. Agency"], a: 0 },
+    { q: "Equipment or materials bearing a label of a listing agency.", choices: ["A. Certified", "B. Labeled", "C. Approved", "D. Listed"], a: 1 },
+    { q: "In plumbing, a secondary pipeline. In sewerage, a common sewer to which no other branch sewer is connected.", choices: ["A. Branch", "B. Lateral", "C. Riser", "D. Service pipe"], a: 1 },
+    { q: "A water closet consisting of a continuous trough containing water.", choices: ["A. Urinal", "B. Latrine", "C. Bidet", "D. Privy"], a: 1 },
+    { q: "A fixture designed for the washing of the hands or face. Sometimes called a wash basin.", choices: ["A. Sink", "B. Lavatory", "C. Bathtub", "D. Bidet"], a: 1 },
+    { q: "A cesspool that is not watertight.", choices: ["A. Seepage pit", "B. Leaching cesspool", "C. Septic tank", "D. Drain field"], a: 1 },
+    { q: "A pipe connected from building gutter to the downspout or conductor.", choices: ["A. Downspout", "B. Leader", "C. Drain", "D. Riser"], a: 1 },
+    { q: "The distance of a pipe measured along its centerline.", choices: ["A. Developed length", "B. Length of pipe", "C. Straight length", "D. Nominal length"], a: 0 },
+    { q: "The discharge from any fixture, appliance or appurtenance... which does not receive fecal matter.", choices: ["A. Sewage", "B. Liquid waste", "C. Gray water", "D. Storm water"], a: 1 },
+    { q: "Equipment or materials included in a LIST published by a listing agency.", choices: ["A. Labeled", "B. Listed", "C. Approved", "D. Registered"], a: 1 },
+    { q: "An agency accepted by the Administrative Authority in the business of listing or labeling and which maintains a periodic inspection program.", choices: ["A. Testing Agency", "B. Listing agency", "C. Certification Board", "D. Inspection Office"], a: 1 },
+    { q: "A pipe or shaft to convey foul air from a plumbing fixture or a room to the outer air.", choices: ["A. Exhaust vent", "B. Local vent", "C. Back vent", "D. Relief vent"], a: 1 },
+    { q: "A vertical vent connection on a horizontal soil or waste pipe branch at a point downstream of the last fixture connection.", choices: ["A. Circuit vent", "B. Loop or circuit vent", "C. Individual vent", "D. Continuous vent"], a: 1 },
+    { q: "A single area of land legally recorded... where a building is situated.", choices: ["A. Plot", "B. Lot", "C. Yard", "D. Site"], a: 1 },
+    { q: "Any system of continuous piping, which is the principal artery of the system where branches are connected.", choices: ["A. Riser", "B. Main", "C. Stack", "D. Trunk"], a: 1 },
+    { q: "The principal artery of the venting system to which vent branches are connected.", choices: ["A. Vent stack", "B. Main vent", "C. Stack vent", "D. Relief vent"], a: 1 },
+    { q: "A large opening in a sewer line... constructed with sufficient size for a man to gain access therein.", choices: ["A. Cleanout", "B. Manhole", "C. Catch basin", "D. Shaft"], a: 1 },
+    { q: "A person technically and legally qualified and licensed to practice the profession of Master Plumbing without limitations.", choices: ["A. Plumbing Engineer", "B. Master Plumber", "C. Licensed Contractor", "D. Sanitary Inspector"], a: 1 },
+    { q: "The word '____' is a permissive term.", choices: ["A. Shall", "B. May", "C. Must", "D. Should"], a: 1 },
+    { q: "That part of the horizontal piping of sanitary drainage system which measures 0.6 meter downstream from the last mobile home site.", choices: ["A. Building sewer", "B. Mobile home park sewer", "C. Private sewer", "D. Lateral"], a: 1 },
+    { q: "NAMPAP", choices: ["A. National Association of Master Plumbers", "B. National Master Plumbers Association of the Philippines", "C. Network of Master Plumbers", "D. National Allied Master Plumbers"], a: 1 },
+    { q: "Includes... any public nuisance known in common law or in equity jurisprudence; whenever any work... is dangerous to human life.", choices: ["A. Insanitary", "B. Nuisance", "C. Violation", "D. Hazard"], a: 1 },
+    { q: "Hemp or old hemp rope soaked in oil or tar to make it waterproof.", choices: ["A. Packing", "B. Oakum", "C. Wick", "D. Sealant"], a: 1 },
+    { q: "The purpose for which a building is used or intended to be used.", choices: ["A. Usage", "B. Occupancy", "C. Function", "D. Status"], a: 1 },
+    { q: "In a line of piping is a combination of elbows or bends, which brings one section of the pipe out of line but into a line parallel.", choices: ["A. Double bend", "B. Offset", "C. Lateral", "D. Bypass"], a: 1 },
+    { q: "A natural person, his heirs, executors, administrators or assigns; and also includes a firm, partnership or corporation.", choices: ["A. Owner", "B. Person", "C. Contractor", "D. Entity"], a: 1 },
+    { q: "PB", choices: ["A. Poly-Bronze", "B. Polybutylene", "C. Plastic-Bitumen", "D. Poly-Back"], a: 1 },
+    { q: "PE", choices: ["A. Poly-Ester", "B. Polyethylene", "C. Plastic-Epoxy", "D. Poly-Ethane"], a: 1 },
+    { q: "A cylindrical conduit or conductor conforming to the particular dimensions commonly known as '____ size'.", choices: ["A. Tube", "B. Pipe", "C. Conduit", "D. Hose"], a: 1 },
+    { q: "The Art and technique of installing pipes, fixtures and other apparatuses in buildings for bringing in the supply.", choices: ["A. Engineering", "B. Plumbing", "C. Sanitation", "D. Piping"], a: 1 },
+    { q: "Any one of a special class of device or equipment intended to perform a special plumbing function.", choices: ["A. Fixture", "B. Plumbing appliance", "C. Appurtenance", "D. Receptor"], a: 1 },
+    { q: "A manufactured device... and serves as adjunct to the basic piping system and plumbing fixtures. Demands no additional water supply.", choices: ["A. Fixture", "B. Plumbing appurtenance", "C. Appliance", "D. Fitting"], a: 1 },
+    { q: "A sole proprietorship or corporation composed of Registered and Licensed Master Plumbers together with allied professionals.", choices: ["A. NAMPAP", "B. Plumbing firm", "C. Construction company", "D. Plumbing association"], a: 1 },
+    { q: "Approved-type installed receptacles, devices or appliances supplied with water or receive liquid or liquid-borne wastes.", choices: ["A. Plumbing fixtures", "B. Receptors", "C. Sanitary units", "D. Waste outlets"], a: 0 },
+    { q: "The Administrative Authority or the officer charged with the administration and enforcement of the National Plumbing Code.", choices: ["A. Building Official", "B. Plumbing Official", "C. City Engineer", "D. Master Plumber"], a: 1 },
+    { q: "Includes all potable water supply and distribution pipes, all plumbing fixtures and traps; all sanitary and storm drainage systems.", choices: ["A. Drainage system", "B. Plumbing system", "C. Sewer system", "D. Building system"], a: 1 },
+    { q: "A minimum standard quantity of plumbing fixtures... including: one (1) water meter, one (1) water closet, one (1) lavatory, etc.", choices: ["A. Fixture unit", "B. Plumbing unit", "C. Battery", "D. Standard setup"], a: 1 },
+    { q: "An impairment of the quality of the water... which creates hazard to the public health and adversely affects the aesthetic and potable qualities.", choices: ["A. Contamination", "B. Pollution", "C. Infection", "D. Toxicity"], a: 1 },
+    { q: "Water satisfactory for drinking, culinary and domestic purposes.", choices: ["A. Fresh water", "B. Potable water", "C. Ground water", "D. Safe water"], a: 1 },
+    { q: "The normal force exerted by a homogeneous liquid or gas, per unit of area on the wall of the container.", choices: ["A. Stress", "B. Pressure", "C. Velocity", "D. Head"], a: 1 },
+    { q: "The pressure existing without any flow motion.", choices: ["A. Residual pressure", "B. Static pressure", "C. Supply pressure", "D. Working pressure"], a: 1 },
+    { q: "The pressure available at the fixture or water outlet.", choices: ["A. Static pressure", "B. Residual pressure", "C. Flow pressure", "D. Dynamic pressure"], a: 1 },
+    { q: "The single sloping drain from the base of a stack to its junction with the main building drain.", choices: ["A. Building drain", "B. Primary branch", "C. Horizontal branch", "D. Riser"], a: 1 },
+    { q: "In classification of plumbing fixtures, applies to plumbing fixtures in residences and apartments... intended for the use of a family.", choices: ["A. Public use", "B. Private or Private Use", "C. Restricted use", "D. Residential use"], a: 1 },
+    { q: "A septic tank with the effluent discharging into a subsurface disposal field.", choices: ["A. Public sewer", "B. Private sewage disposal system", "C. Cesspool", "D. Seepage pit"], a: 1 },
+    { q: "A water supply pipe which extends vertically to one full story or more to convey water into pipe branches.", choices: ["A. Stack", "B. Riser", "C. Main", "D. Supply line"], a: 1 },
+    { q: "Roughing-in - the installation of all parts of the plumbing system which can be completed prior to:", choices: ["A. Painting", "B. Installation of fixtures", "C. Foundation work", "D. Inspection"], a: 1 },
+    { q: "Any liquid waste containing animal or vegetable matter in suspension or solution.", choices: ["A. Gray water", "B. Sewage", "C. Sludge", "D. Effluent"], a: 1 },
+    { q: "A pipe which conveys only liquid waste, free of fecal matter.", choices: ["A. Soil pipe", "B. Waste pipe", "C. Drain pipe", "D. Vent pipe"], a: 1 },
+    { q: "A pipe which conveys the discharge of water closets, urinals, or fixtures having similar functions.", choices: ["A. Waste pipe", "B. Soil pipe", "C. Sewer pipe", "D. Main drain"], a: 1 },
+    { q: "The vertical main of a system of soil, waste or vent piping extending through one or more stories.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Column"], a: 1 },
+    { q: "A fitting or device that provides a liquid seal to prevent the emission of sewer gases.", choices: ["A. Vent", "B. Trap", "C. Interceptor", "D. Check valve"], a: 1 },
+    { q: "The vertical vent pipe installed primarily for providing circulation of air to and from any part of the soil or waste system.", choices: ["A. Stack vent", "B. Vent stack", "C. Relief vent", "D. Common vent"], a: 1 },
+    { q: "A building sewer.", choices: ["A. Public sewer", "B. Private sewer", "C. Common sewer", "D. Main sewer"], a: 1 },
+    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A. Vent stack", "B. Stack vent", "C. Relief vent", "D. Main vent"], a: 1 },
+    { q: "A vent the primary function of which is to provide circulation of air between drainage and vent systems.", choices: ["A. Common vent", "B. Relief vent", "C. Individual vent", "D. Circuit vent"], a: 1 },
+    { q: "PRC", choices: ["A. Public Regulation Commission", "B. Professional Regulation Commission", "C. Philippine Registration Council", "D. Professional Registry Center"], a: 1 },
+    { q: "Any outhouse used for the deposition of human excreta.", choices: ["A. Latrine", "B. Privy", "C. Septic tank", "D. Bidet"], a: 1 },
+    { q: "Standard Dimension Ratio.", choices: ["A. SDR", "B. STD", "C. DIM", "D. RAT"], a: 0 },
+    { q: "An unobstructed open edge of a fixture.", choices: ["A. Flood level", "B. Rim", "C. Weir", "D. Lip"], a: 1 },
+    { q: "A pipe conveying storm water from rain leader to the direct point of disposal.", choices: ["A. Gutter", "B. Storm drain", "C. Sanitary sewer", "D. Soil pipe"], a: 1 },
+    { q: "Any joint or seam obtained by the joining of metal parts in a plastic molten state.", choices: ["A. Soldered joint", "B. Welded joint or seam", "C. Brazed joint", "D. Sweated joint"], a: 1 },
+    { q: "A hose connection with two gated outlets permitting two connections... to be taken from a single supply line.", choices: ["A. Tee", "B. Wye", "C. Cross", "D. Elbow"], a: 1 },
+    { q: "An open, unoccupied space, other than a court, unobstructed from the ground to the sky.", choices: ["A. Alley", "B. Yard", "C. Park", "D. Street"], a: 1 },
+    { q: "That portion of a vent pipe through where wastewater also flows through.", choices: ["A. Dry vent", "B. Wet vent", "C. Back vent", "D. Unit vent"], a: 1 },
+    { q: "A common sewer directly controlled by public authority.", choices: ["A. Private sewer", "B. Public sewer", "C. Lateral", "D. Building sewer"], a: 1 }
+  ],
+  13: [
+    { q: "What is the specific material name for ABS used in plumbing pipes and fittings?", choices: ["A. Aluminum-Butadiene-Styrene", "B. Acrylonitrile-Butadiene-Styrene", "C. Acetone-Butylene-Sulfur", "D. Alkyl-Benzene-Styrene"], a: 1 },
+    { q: "When applied to a fixture or equipment, this term means having access thereto, but which may require the prior removal of an access panel or door.", choices: ["A. Accessible", "B. Readily Accessible", "C. Exposed", "D. Open"], a: 0 },
+    { q: "A term used for direct access without the necessity of removing any panel, door, or similar obstruction.", choices: ["A. Accessible", "B. Readily Accessible", "C. Concealed", "D. Unobstructed"], a: 1 },
+    { q: "Any change, addition, or modification in construction or occupancy.", choices: ["A. Repair", "B. Maintenance", "C. Alteration", "D. Renovation"], a: 2 },
+    { q: "A backflow preventer with an intermediate vent into the atmosphere that is used to prevent backflow due to back-pressure or back-siphonage.", choices: ["A. Double Check Valve", "B. Reduced Pressure Principle Device", "C. Vacuum Breaker", "D. Backwater Valve"], a: 1 },
+    { q: "Backflow caused by a pump, elevated tank, boiler, or other means that could create pressure within the system greater than the supply pressure.", choices: ["A. Back-siphonage", "B. Back-pressure Backflow", "C. Reverse Flow", "D. Cross-flow"], a: 1 },
+    { q: "A pipe that is part of a vent system and connects directly with an individual waste pipe or fixture trap to prevent siphonage.", choices: ["A. Relief Vent", "B. Backvent Pipe", "C. Yoke Vent", "D. Wet Vent"], a: 1 },
+    { q: "A type of pipe connection in which a ball-shaped end is held in a cuplike end by a compressing ring.", choices: ["A. Slip Joint", "B. Ball Joint", "C. Expansion Joint", "D. Union Joint"], a: 1 },
+    { q: "A loop of anthracite-free pipe or tubing which rises at least 10.7 meters above the highest point on any source of contamination.", choices: ["A. Siphon Breaker", "B. Barometric Loop", "C. Relief Loop", "D. Air accumulator"], a: 1 },
+    { q: "Any part of the piping system other than a main, riser, or stack.", choices: ["A. Lateral", "B. Branch", "C. Fixture Supply", "D. Offset"], a: 1 },
+    { q: "A horizontal vent pipe connecting from a single or multi-story stack to a vent stack for the purpose of preventing pressure changes in the stack.", choices: ["A. Relief Vent", "B. Branch Vent", "C. Common Vent", "D. Loop Vent"], a: 1 },
+    { q: "The temperature at which a brazed joint is obtained by joining metal parts with alloys is higher than:", choices: ["A. 320 degrees C", "B. 449 degrees C", "C. 550 degrees C", "D. 840 degrees C"], a: 1 },
+    { q: "A structure built, erected, and framed of component structural parts designed for the housing, shelter, or enclosure of persons, animals, or property.", choices: ["A. Building", "B. Establishment", "C. Facility", "D. Occupancy"], a: 0 },
+    { q: "The building sewer begins at what distance outside the inner face of the building wall?", choices: ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"], a: 1 },
+    { q: "A tank or vessel which receives sewage or liquid waste, located below the normal grade of the gravity system and must be emptied by mechanical means.", choices: ["A. Cesspool", "B. Sump", "C. Catch Basin", "D. Seepage Pit"], a: 1 },
+    { q: "A device designed to clarify or settle sewage and retain deleterious or undesirable matters from normal wastes.", choices: ["A. Interceptor", "B. Clarifier", "C. Septic Tank", "D. Filter"], a: 1 },
+    { q: "A vent connecting at the junction of two fixture drains and serving as a vent for both fixtures.", choices: ["A. Individual Vent", "B. Common Vent", "C. Dual Vent", "D. Both B and C are correct"], a: 3 },
+    { q: "A waste pipe that is used for more than one fixture and connects to a combined waste and vent system.", choices: ["A. Continuous Waste", "B. Indirect Waste", "C. Combined Waste", "D. Special Waste"], a: 0 },
+    { q: "A court bounded on all sides by the exterior walls of a building.", choices: ["A. Open Court", "B. Inner Court", "C. Closed Court", "D. Yard"], a: 1 },
+    { q: "A court bounded on three sides by exterior walls of a building and on the fourth side by a street or yard.", choices: ["A. Inner Court", "B. Outer Court", "C. Through Court", "D. Alley"], a: 1 },
+    { q: "What is the stagnation of air or liquid in an extended portion of a pipe called?", choices: ["A. Air Pocket", "B. Dead-end", "C. Stub-out", "D. Blind Vent"], a: 1 },
+    { q: "The term used for an Administrative Authority, Chief Plumbing Inspector, or Building Official.", choices: ["A. Department Having Jurisdiction", "B. NAMPAP Official", "C. Board of Master Plumbing", "D. Sanitary Engineer"], a: 0 },
+    { q: "The commercial designation for the diameter of a pipe or fitting.", choices: ["A. Actual Diameter", "B. Nominal Diameter", "C. Standard Size", "D. Inside Diameter"], a: 1 },
+    { q: "A combination of two offsets with or without any intermediate pipe, forming a shape similar to a 'U'.", choices: ["A. Double Offset", "B. Return Bend", "C. Double Bend", "D. Gooseneck"], a: 0 },
+    { q: "What is the secondary term for a common vent used for two fixtures?", choices: ["A. Unit Vent", "B. Dual Vent", "C. Branch Vent", "D. Individual Vent"], a: 1 },
+    { q: "The water supply pipe from the water-distributing pipe to the individual fixture.", choices: ["A. Fixture Branch", "B. Fixture Supply", "C. Riser", "D. Service Pipe"], a: 1 },
+    { q: "A condition in which the liquid in a container or receptacle rises to the flood level rim.", choices: ["A. Overflowing", "B. Flooded", "C. Saturated", "D. Submerged"], a: 1 },
+    { q: "A valve used to control water flow that offers little resistance to the flow when fully open and operates by a gate-like disc moving at right angles to the flow.", choices: ["A. Globe Valve", "B. Gate Valve", "C. Check Valve", "D. Butterfly Valve"], a: 1 },
+    { q: "A valve in which the flow of water is cut off by a circular disc at right angles to the direction of flow, often causing a tortuous path for the liquid.", choices: ["A. Gate Valve", "B. Globe Valve", "C. Angle Valve", "D. Ball Valve"], a: 1 },
+    { q: "A device designed to retain grease from one to a maximum of four (4) fixtures, usually located inside the building.", choices: ["A. Grease Interceptor", "B. Grease Trap", "C. Sump Pump", "D. Catch Basin"], a: 1 },
+    { q: "A device for supporting and securing pipe and fixtures to walls, ceilings, or floors.", choices: ["A. Anchor", "B. Hanger", "C. Clamp", "D. Bracket"], a: 1 },
+    { q: "In sewerage, this is a common sewer to which no other branch sewer is connected.", choices: ["A. Main Sewer", "B. Lateral Sewer", "C. Trunk Sewer", "D. Intercepting Sewer"], a: 1 },
+    { q: "The discharge from any fixture, appliance, or appurtenance in connection with a plumbing system which does not receive fecal matter.", choices: ["A. Sewage", "B. Liquid Waste", "C. Soil Waste", "D. Storm Waste"], a: 1 },
+    { q: "A term for equipment or materials that have been tested and found to be suitable for a specific purpose by a listing agency.", choices: ["A. Approved", "B. Listed", "C. Labeled", "D. Certified"], a: 1 },
+    { q: "A pipe that is part of a vent system that serves a single fixture and connects to a vent stack.", choices: ["A. Unit Vent", "B. Individual Vent", "C. Backvent", "D. Stack Vent"], a: 1 },
+    { q: "The liquid and water-borne wastes from industrial or commercial processes, as distinct from domestic sewage.", choices: ["A. Industrial Waste", "B. Special Waste", "C. Chemical Waste", "D. Hazardous Waste"], a: 0 },
+    { q: "A pipe joint made by use of a non-ferrous filler metal with a melting point not exceeding 427 degrees C.", choices: ["A. Brazed Joint", "B. Soldered Joint", "C. Welded Joint", "D. Solvent Joint"], a: 1 },
+    { q: "The plumber who is a person who has passed the board exam but works under a Master Plumber.", choices: ["A. Apprentice", "B. Journeyman Plumber", "C. Helper", "D. Junior Plumber"], a: 1 },
+    { q: "What is the term for a pipe that does not fit the definition of a soil pipe because it carries no fecal matter?", choices: ["A. Vent Pipe", "B. Waste Pipe", "C. Drain Pipe", "D. Riser"], a: 1 },
+    { q: "A sewer system used by mobile homes which is not part of the public sewer system.", choices: ["A. Private Sewer", "B. Mobile Home Park Sewer", "C. Community Sewer", "D. Lateral"], a: 1 },
+    { q: "The abbreviation PB stands for what type of plastic pipe?", choices: ["A. Poly-Butene", "B. Polybutylene", "C. Plastic-Bend", "D. Poly-Borate"], a: 1 },
+    { q: "The abbreviation PE stands for what type of plastic pipe?", choices: ["A. Polyethylene", "B. Plastic-Engineered", "C. Poly-Ether", "D. Poly-Ethane"], a: 0 },
+    { q: "What does PEX stand for in plumbing systems?", choices: ["A. Poly-Exhaust", "B. Cross-linked Polyethylene", "C. Plastic-Extended", "D. Poly-Ethylene-X"], a: 1 },
+    { q: "A cylindrical conduit or conductor conforming to the particular dimensions commonly known as 'pipe size'.", choices: ["A. Tube", "B. Pipe", "C. Conduit", "D. Hose"], a: 1 },
+    { q: "The art and technique of installing pipes, fixtures, and other apparatuses in buildings for bringing in water supply and removing liquid and water-borne wastes.", choices: ["A. Sanitary Engineering", "B. Plumbing", "C. Hydraulics", "D. Sewerage"], a: 1 },
+    { q: "A plumbing device which is usually motorized or has moving parts, such as a dishwasher or water heater.", choices: ["A. Plumbing Appurtenance", "B. Plumbing Appliance", "C. Plumbing Fixture", "D. Plumbing Tool"], a: 1 },
+    { q: "A manufactured device or prefabricated assembly or an on-the-job assembly of component parts, such as a water filter or pressure regulator.", choices: ["A. Plumbing Appliance", "B. Plumbing Appurtenance", "C. Plumbing Fixture", "D. Plumbing Accessory"], a: 1 },
+    { q: "Potable water is water that is satisfactory for drinking, culinary, and domestic purposes and meets the standards of the:", choices: ["A. NAMPAP", "B. Philippine National Standards for Drinking Water", "C. MWSS", "D. Department of Health"], a: 1 },
+    { q: "The pressure existing without any flow motion within the system.", choices: ["A. Residual Pressure", "B. Static Pressure", "C. Normal Pressure", "D. Flow Pressure"], a: 1 },
+    { q: "The pressure available at the fixture or at the end of the system during periods of maximum flow.", choices: ["A. Static Pressure", "B. Residual Pressure", "C. Dynamic Pressure", "D. Working Pressure"], a: 1 },
+    { q: "That part of the building drain which is the first main branch from the soil or waste stack.", choices: ["A. Primary Branch", "B. Secondary Branch", "C. Main Lateral", "D. Main Drain"], a: 0 },
+    { q: "A facility intended for the use of an individual or a family, not for the general public.", choices: ["A. Public Use", "B. Private Use", "C. Residential Use", "D. Restricted Use"], a: 1 },
+    { q: "A structure for the disposal of human excreta without the use of water, typically an outhouse.", choices: ["A. Septic Tank", "B. Privy", "C. Cesspool", "D. Latrine"], a: 1 },
+    { q: "A pit beneath a privy where human excreta is collected.", choices: ["A. Seepage Pit", "B. Privy Vault", "C. Sump", "D. Catch Basin"], a: 1 },
+    { q: "The common sewer directly controlled by public authority.", choices: ["A. Building Sewer", "B. Public Sewer", "C. Private Sewer", "D. Main Sewer"], a: 1 },
+    { q: "A vent pipe, the primary function of which is to provide circulation of air to or from any part of the drainage system or to afford protection against trap-seal siphonage.", choices: ["A. Branch Vent", "B. Relief Vent", "C. Loop Vent", "D. Circuit Vent"], a: 1 },
+    { q: "A water supply pipe which extends vertically one full story or more to convey water to fixture branches.", choices: ["A. Stack", "B. Riser", "C. Main", "D. Vertical Branch"], a: 1 },
+    { q: "The installation of all parts of the plumbing system which can be completed prior to the installation of fixtures.", choices: ["A. Rough-in", "B. Skeleton Work", "C. First Stage", "D. Piping Phase"], a: 0 },
+    { q: "Sewage containing human excrement and liquid household waste.", choices: ["A. Industrial Sewage", "B. Sanitary Sewage", "C. Storm Sewage", "D. Domestic Waste"], a: 1 },
+    { q: "A sewer which carries sewage and excludes storm, surface, and ground water.", choices: ["A. Combination Sewer", "B. Sanitary Sewer", "C. Storm Sewer", "D. Public Sewer"], a: 1 },
+    { q: "Any branch in a building drain other than the primary branch.", choices: ["A. Lateral Branch", "B. Secondary Branch", "C. Minor Branch", "D. Fixture Branch"], a: 1 },
+    { q: "A watertight receptacle which receives the discharge of a sanitary plumbing system and is designed to decompose organic matter through bacterial action.", choices: ["A. Cesspool", "B. Septic Tank", "C. Seepage Pit", "D. Interceptor"], a: 1 },
+    { q: "A mechanical device used to pump or eject sewage from a lower level to a higher level gravity sewer.", choices: ["A. Sump Pump", "B. Sewage Ejector", "C. Lift Station", "D. Booster Pump"], a: 1 },
+    { q: "A hose fitting with two gated outlets used for fire department connections.", choices: ["A. Wye", "B. Siamese Connection", "C. Double Outlet", "D. Fire Tap"], a: 1 },
+    { q: "A joint or connection made with an adjustable compression-type fitting.", choices: ["A. Union", "B. Slip Joint", "C. Expansion Joint", "D. Mechanical Joint"], a: 1 },
+    { q: "The suction caused by the flow of liquids in pipes which can create a vacuum and pull liquid out of a trap.", choices: ["A. Back-pressure", "B. Siphonage", "C. Aspiration", "D. Turbulence"], a: 1 },
+    { q: "Any vertical line of soil, waste, or vent pipe extending through one or more stories.", choices: ["A. Riser", "B. Stack", "C. Main", "D. Vertical Run"], a: 1 },
+    { q: "The extension of a soil or waste stack above the highest horizontal drain connected to the stack.", choices: ["A. Vent Stack", "B. Stack Vent", "C. Main Vent", "D. Relief Vent"], a: 1 },
+    { q: "A fitting used to join three or more pipes, often in the shape of a 'Y'.", choices: ["A. Tee", "B. Wye", "C. Cross", "D. Elbow"], a: 1 },
+    { q: "A fitting used for a vertical-to-horizontal or horizontal-to-horizontal change in direction.", choices: ["A. Wye", "B. Elbow/Bend", "C. Tee", "D. Coupling"], a: 1 },
+    { q: "A fitting with a female thread for a pipe connection on the branch.", choices: ["A. Threaded Wye", "B. Tapped Tee", "C. Female Adapter", "D. Coupling"], a: 1 },
+    { q: "A device which provides a liquid seal to prevent the passage of air or gas without affecting the flow of sewage.", choices: ["A. Interceptor", "B. Trap", "C. Seal", "D. Siphon"], a: 1 },
+    { q: "The portion of a fixture drain between a trap and the vent.", choices: ["A. Tailpiece", "B. Trap Arm", "C. Fixture Branch", "D. Branch Interval"], a: 1 },
+    { q: "The vertical distance between the dip and the crown weir of a trap.", choices: ["A. Trap Depth", "B. Trap Seal", "C. Water Level", "D. Seal Height"], a: 1 },
+    { q: "A pipe fitting shaped like the letter 'Y' with three branches.", choices: ["A. Tee", "B. Wye", "C. Cross", "D. Offset"], a: 1 }
+  ],
+  14: [
+    { q: "What is the standard minimum uniform slope required for horizontal drainage pipes to ensure practical alignment and flow?", choices: ["A. 1% or 10 mm/m", "B. 2% or 20 mm/m", "C. 3% or 30 mm/m", "D. 0.5% or 5 mm/m"], a: 1 },
+    { q: "Under what condition can a horizontal drainage pipe have a slope of 1% (10 mm/m) instead of the standard 2%?", choices: ["A. If the pipe is 51 mm or larger", "B. If the pipe is 76 mm or larger", "C. If the pipe is 102 mm or larger and approved", "D. Only for vertical-to-horizontal connections"], a: 2 },
+    { q: "Changes in direction of drainage piping must be made using approved fittings with angles of long sweeps. Which of the following is NOT a specifically listed approved angle?", choices: ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree sharp elbow"], a: 3 },
+    { q: "What is the support interval for vertical lead pipe according to Section 315.1.4?", choices: ["A. Every storey", "B. Not exceeding 1.20 meters at centers", "C. Every 3 meters", "D. Every other storey height"], a: 1 },
+    { q: "Horizontal drainage lines connecting to a vertical stack shall enter through specific fittings. Which fitting is permitted for this connection?", choices: ["A. 45-degree wye branches", "B. 60-degree wye branches", "C. Sanitary tee", "D. All of the above"], a: 3 },
+    { q: "When installing vertical double sanitary tees, what is the required size of the barrel relative to the largest side inlet?", choices: ["A. One pipe size smaller", "B. The same pipe size", "C. At least two (2) pipe sizes larger", "D. Three pipe sizes larger"], a: 2 },
+    { q: "Horizontal drainage lines connecting to other horizontal drainage lines must enter through which type of fitting?", choices: ["A. Sanitary tee", "B. 45-degree wye branches", "C. Double hub fitting", "D. Tapped tee"], a: 1 },
+    { q: "A 60-degree branch or offset may be used in drainage lines only when installed in what position?", choices: ["A. Horizontal position", "B. True vertical position", "C. At a 45-degree angle", "D. Underground"], a: 1 },
+    { q: "It is unlawful to deposit which of the following into any plumbing fixture or device connected to the drainage system?", choices: ["A. Ashes or cinders", "B. Rags", "C. Flammable or explosive liquids", "D. All of the above"], a: 3 },
+    { q: "Where should rainwater drains from roofs, inner courts, or light wells discharge?", choices: ["A. To the soil and waste pipe system", "B. Outside the building or to the gutter", "C. Into the septic tank", "D. To the building subdrain"], a: 1 },
+    { q: "What must be done to the burred ends of all pipes and tubings before installation?", choices: ["A. Sealed with wax", "B. Reamed to the full bore", "C. Painted with tar", "D. Welded to the fitting"], a: 1 },
+    { q: "Which of the following is a prohibited fitting for use as a drainage fitting in a vertical position?", choices: ["A. Double hub sanitary tapped tee", "B. Double hub fitting for lead-caulked joint", "C. 45-degree wye", "D. Combination wye and 1/8 bend"], a: 1 },
+    { q: "What is the rule regarding drilling and tapping drainage or vent piping?", choices: ["A. Permitted for small connections", "B. Permitted if approved by the Authority", "C. No piping shall be drilled and tapped", "D. Only cast iron pipe can be drilled"], a: 2 },
+    { q: "No waste connection shall be made to which specific part of a plumbing fixture?", choices: ["A. Vent stack", "B. Closet bend or stub of a water closet", "C. Vertical soil stack", "D. Building drain"], a: 1 },
+    { q: "What is the minimum support interval for vertical plastic pipe?", choices: ["A. Every story", "B. Every 2 meters", "C. Every one (1) meter interval", "D. Every 3 meters"], a: 2 },
+    { q: "The enlargement of a 76-mm closet bend or stub to what diameter is NOT considered an obstruction?", choices: ["A. 89-mm diameter", "B. 102-mm diameter", "C. 114-mm diameter", "D. 127-mm diameter"], a: 1 },
+    { q: "When mixing dissimilar metals, where should the points of connection be confined?", choices: ["A. Underground", "B. Inside concrete walls", "C. Exposed or accessible locations", "D. Within the building sewer"], a: 2 },
+    { q: "Under what condition may the building drain of a front building be extended to a rear building?", choices: ["A. If no private sewer is available for the rear building", "B. If the existing size is adequate for both", "C. If gravity flow is possible", "D. All of the above"], a: 3 },
+    { q: "All openings into a sanitary drainage system, except those for fixtures or vent terminals, must be permanently closed using what?", choices: ["A. Electrical tape", "B. Approved plugs or caps", "C. Cement mortar", "D. Plastic wrap"], a: 1 },
+    { q: "Pipes passing under or through walls must be protected from breakage by what means?", choices: ["A. Polyethylene sheath", "B. Bitumen coating", "C. Embedded metal pipe sleeves", "D. Concrete encasement"], a: 2 },
+    { q: "How must the void between pipes and sleeves through concrete floors in the ground be sealed?", choices: ["A. With cement", "B. With bitumen", "C. With wax", "D. With lead"], a: 1 },
+    { q: "No pipe shall be directly embedded in concrete and masonry walls without what protection?", choices: ["A. Tar coating", "B. Metal sleeve", "C. Plastic wrap", "D. Rubber gasket"], a: 1 },
+    { q: "What is the minimum clearance angle required for a pipe trench deeper than the footing of an adjacent building?", choices: ["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 90 degrees"], a: 1 },
+    { q: "What is the minimum burial depth for drainage piping below the finish ground surface?", choices: ["A. 0.1 meter", "B. 0.3 meter", "C. 0.6 meter", "D. 1.0 meter"], a: 1 },
+    { q: "Drainage piping constructed of materials not approved for use under a building must be installed at least how far from any building or structure?", choices: ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"], a: 1 },
+    { q: "Vertical cast iron soil pipe (Bell & Spigot and Hubless) shall be supported at what interval?", choices: ["A. Every 3 meters", "B. Every storey or closer", "C. Every 1.5 meters", "D. Every other storey"], a: 1 },
+    { q: "Vertical Screwed Pipe (IPS) shall be supported at what minimum interval?", choices: ["A. Every storey", "B. Not less than every other storey height", "C. Every 3.6 meters", "D. Every 1.2 meters"], a: 1 },
+    { q: "Vertical Copper Tubing shall be supported at each storey or at maximum intervals of how many meters?", choices: ["A. 1.5 meters", "B. 2.4 meters", "C. 3 meters", "D. 3.6 meters"], a: 2 },
+    { q: "Where joints occur, suspended horizontal cast iron soil pipe shall be supported at what maximum interval?", choices: ["A. 1.0 meter", "B. 1.5 meters", "C. 2.0 meters", "D. 3.6 meters"], a: 1 },
+    { q: "If a cast iron soil pipe exceeds 1.5 meters in length, what is the maximum support interval for horizontal installation?", choices: ["A. 2.0 meters", "B. 2.5 meters", "C. 3 meters", "D. 4.5 meters"], a: 2 },
+    { q: "Horizontal supports for cast iron soil pipe must be placed within how many meters of the hub or joint?", choices: ["A. 0.30 meters", "B. 0.45 meters", "C. 0.60 meters", "D. 1.20 meters"], a: 1 },
+    { q: "Horizontal Screwed Pipe (IPS) of 19 mm diameter and smaller shall be supported at what interval?", choices: ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"], a: 2 },
+    { q: "Horizontal Screwed Pipe (IPS) of 25 mm and larger in diameter shall be supported at what interval?", choices: ["A. 3.0 meters", "B. 3.6 meters", "C. 4.5 meters", "D. 6.0 meters"], a: 1 },
+    { q: "Horizontal Copper Tubing of 38 mm diameter and smaller shall be supported at what interval?", choices: ["A. 1.2 meters", "B. 1.5 meters", "C. 1.8 meters", "D. 3.0 meters"], a: 2 },
+    { q: "Horizontal Copper Tubing of 51 mm and larger in diameter shall be supported at what interval?", choices: ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"], a: 2 },
+    { q: "How must horizontal lead pipe be supported for its entire length?", choices: ["A. Spaced metal hangers", "B. Stiff metal or wooden backing", "C. Plastic clamps", "D. Concrete cradle"], a: 1 },
+    { q: "Horizontal plastic tubings up to 38 mm diameter require what type of support for their entire length?", choices: ["A. Spaced metal hangers", "B. Stiff metal or wood backing", "C. Concrete blocks", "D. Bitumen seal"], a: 1 },
+    { q: "What is the maximum allowed length for a tunnel used in plumbing excavations?", choices: ["A. 1.2 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 5.0 meters"], a: 1 },
+    { q: "A tunnel must have a clear height of at least how many meters above the pipe?", choices: ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"], a: 1 },
+    { q: "When a pipe is driven through the ground, the drive pipe shall be at least how much larger than the pipe to be laid?", choices: ["A. One pipe size larger", "B. Two pipe sizes larger", "C. 50 mm larger", "D. The same size"], a: 0 },
+    { q: "Excavations within the walls of a building must be open trench work and kept open until when?", choices: ["A. The building is occupied", "B. The piping is inspected and tested", "C. The concrete is poured", "D. The fixtures are installed"], a: 1 },
+    { q: "Trenches shall be back-filled in thin layers of how many meters above the top of the pipe?", choices: ["A. 0.1 meter", "B. 0.3 meter", "C. 0.5 meter", "D. 0.6 meter"], a: 1 },
+    { q: "Which material is strictly prohibited in the clean earth used for back-filling trenches?", choices: ["A. Stones and boulders", "B. Cinders", "C. Corrosive materials", "D. All of the above"], a: 3 },
+    { q: "What is the required slope for a 152 mm diameter horizontal drainage pipe if approved by the Authority?", choices: ["A. 2%", "B. 1%", "C. 0.5%", "D. Both A and B are correct"], a: 3 },
+    { q: "Horizontal drainage lines connecting to horizontal lines shall enter through 45-degree wye branches or which other fitting?", choices: ["A. Sanitary tee", "B. Combination wye and 1/8 bend", "C. Double sanitary tee", "D. Side inlet quarter bend"], a: 1 },
+    { q: "In Section 303.2, which nominal pipe size is NOT recognized for the double sanitary tee barrel rule?", choices: ["A. 51 mm", "B. 70 mm", "C. 89 mm", "D. 152 mm"], a: 1 },
+    { q: "It is unlawful to conceal cracks or holes in materials by using which method?", choices: ["A. Welding", "B. Brazing or soldering", "C. Paint, wax, or tar", "D. All of the above"], a: 3 },
+    { q: "Which of the following jointing methods for hubless cast iron soil pipes is specifically listed as acceptable?", choices: ["A. Threaded joints", "B. Stainless steel bands with neoprene gaskets", "C. Lead-caulked joints", "D. Solvent cement"], a: 1 },
+    { q: "Section 311.2 states that no cast iron soil pipe shall be:", choices: ["A. Cut", "B. Painted", "C. Threaded", "D. Supported by hangers"], a: 2 },
+    { q: "According to Section 311.4, no vent pipe shall be used as a:", choices: ["A. Waste pipe", "B. Soil pipe", "C. Either A or B", "D. Support member"], a: 2 },
+    { q: "Horizontal hubless or compression gasket joints must be supported at every other joint, unless the developed length exceeds what distance?", choices: ["A. 0.6 meters", "B. 1.2 meters", "C. 1.5 meters", "D. 3.0 meters"], a: 1 },
+    { q: "Piping passing through or under corrosive materials must be protected by encasing it with what?", choices: ["A. Metal sleeve", "B. Polyethylene sheath", "C. Bitumen coating", "D. Lead sheet"], a: 1 },
+    { q: "What must be provided for hot water pipings to prevent damage?", choices: ["A. Extra insulation", "B. Expansion provisions", "C. High-pressure valves", "D. Copper sleeves"], a: 1 },
+    { q: "The tunnel length is limited to what fraction of the depth of the trench?", choices: ["A. One-third (1/3)", "B. One-half (1/2)", "C. Two-thirds (2/3)", "D. Three-fourths (3/4)"], a: 1 },
+    { q: "Which section prohibits the use of single drainage and venting systems with unvented branch lines?", choices: ["A. 301", "B. 305", "C. 311.4", "D. 316"], a: 2 },
+    { q: "All valves, pipes, and fittings must be installed in correct relationship to what?", choices: ["A. The building foundation", "B. The direction of flow", "C. The nearest vent stack", "D. The finish floor line"], a: 1 },
+    { q: "Industrial wastes that are detrimental to the sewer system must be treated as directed by whom?", choices: ["A. The building owner", "B. The Administrative Authority", "C. The Master Plumber", "D. The Department of Energy"], a: 1 },
+    { q: "No building shall be erected over an existing drainage system unless the system is constructed of:", choices: ["A. Plastic materials", "B. Approved materials for use under a building", "C. Lead pipes", "D. Vitrified clay"], a: 1 },
+    { q: "Suspended horizontal drainage lines must be suitably braced to prevent what type of movement?", choices: ["A. Vertical movement", "B. Horizontal movement", "C. Expansion", "D. Contraction"], a: 1 },
+    { q: "For horizontal piping in the ground, what must the pipe be laid on for its entire length?", choices: ["A. A bed of rocks", "B. A firm bed", "C. Loose soil", "D. Wooden planks"], a: 1 },
+    { q: "Vertical piping must be secured at intervals to keep pipes in alignment and carry what?", choices: ["A. Air pressure", "B. Weight and contents", "C. Only the pipe weight", "D. External vibrations"], a: 1 },
+    { q: "Section 314.5 states that pipe surfaces subject to undue corrosion or erosion must be protected with which method?", choices: ["A. Inside lining", "B. Outside coating", "C. Bottom bedding and top shielding", "D. All of the above"], a: 3 },
+    { q: "Who must approve deviations from the Code for repairs and alterations in existing buildings?", choices: ["A. The NAMPAP President", "B. The Administrative Authority", "C. The Project Architect", "D. The Homeowner"], a: 1 },
+    { q: "Existing building sewers may be used for new work only if they are examined and found to conform to requirements for:", choices: ["A. Used materials", "B. New work", "C. Temporary connections", "D. Private systems"], a: 1 },
+    { q: "Section 308.1 prohibits the location of an excreta plumbing system in any lot other than what?", choices: ["A. The adjoining lot", "B. The lot where the building served is located", "C. Public property", "D. A designated utility easement"], a: 1 },
+    { q: "A 'running thread, band or saddle' is prohibited for use as what?", choices: ["A. A vent connection", "B. A drainage fitting", "C. A water supply joint", "D. A support anchor"], a: 1 },
+    { q: "The disposal of sewage or human excrement is unlawful except through which approved system?", choices: ["A. Excreta and Storm Drainage Systems", "B. Open canals", "C. Direct ground discharge", "D. Non-watertight cesspools"], a: 0 },
+    { q: "Which section specifically mentions that structural members shall not be seriously weakened by cutting or notching?", choices: ["A. 301", "B. 310", "C. 314.3", "D. 315"], a: 2 },
+    { q: "Horizontal IPS piping of 25 mm diameter should be supported every how many meters?", choices: ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"], a: 2 },
+    { q: "What is the recognized nominal diameter for a pipe size of 102 mm in Chapter 3?", choices: ["A. 3 inches", "B. 4 inches", "C. 5 inches", "D. 6 inches"], a: 1 },
+    { q: "Where a 2% slope is impracticable for a 102 mm pipe, what is the alternative slope mentioned in Section 302?", choices: ["A. 0.5% slope", "B. 1% slope", "C. 1.5% slope", "D. 3% slope"], a: 1 },
+    { q: "What is the maximum horizontal support interval for plastic pipe tubings larger than 38 mm diameter?", choices: ["A. 1.0 meter", "B. 1.8 meters", "C. At approved spacing", "D. 3.6 meters"], a: 2 },
+    { q: "Section 309 states that piping and fixtures must not interfere with the normal use of what?", choices: ["A. Electrical panels", "B. Windows and doors", "C. Air conditioning ducts", "D. Roofing shingles"], a: 1 },
+    { q: "What type of branch is used when vertical drainage lines connect to horizontal drainage lines?", choices: ["A. 45-degree branches", "B. 60-degree branches", "C. Sanitary tee", "D. Tapped tee"], a: 0 },
+    { q: "According to Section 314.1, all pipes passing under cinders shall be protected from what?", choices: ["A. Thermal shock", "B. External corrosion", "C. High pressure", "D. Structural settlement"], a: 1 },
+    { q: "Horizontal copper tubing of 38 mm size is supported every 1.8 meters. What is the support interval for 51 mm size?", choices: ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"], a: 2 },
+    { q: "Which of the following is NOT a constraint mentioned in Section 302 that allows a 1% slope?", choices: ["A. Excessive depth", "B. Geological features", "C. Budgetary constraints", "D. Existing adverse arrangements"], a: 2 },
+    { q: "Horizontal drainage lines connecting to a vertical stack may use a 'combination wye and 1/8 bend'. What is another name for a 1/8 bend?", choices: ["A. 22.5 degree bend", "B. 45 degree bend", "C. 60 degree bend", "D. 90 degree bend"], a: 1 },
+    { q: "Section 315.2.2 requires horizontal CI pipe supports to be adequate to maintain alignment and prevent what?", choices: ["A. Vibration", "B. Sagging", "C. Corrosion", "D. Sweating"], a: 1 },
+    { q: "What is the required thickness for a backfill layer according to Section 316.3?", choices: ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"], a: 1 },
+    { q: "If a horizontal cast iron pipe is 2 meters long, it should be supported at what maximum interval?", choices: ["A. 1.5 meters", "B. 3 meters", "C. 4.5 meters", "D. It must be supported at every joint"], a: 1 },
+    { q: "Vertical lead pipe must have what type of backup for its support?", choices: ["A. Plastic sleeve", "B. Rigid vertical back-up", "C. Concrete encasement", "D. Copper wire tie"], a: 1 },
+    { q: "In Section 312, the exception for rear buildings applies if the buildings are on what type of lot?", choices: ["A. Corner lot", "B. Interior lot", "C. Through lot", "D. Commercial lot"], a: 1 },
+    { q: "Which fitting is permitted to be a double hub if it is a sanitary tapped tee used on vertical lines?", choices: ["A. A fixture connection", "B. A building sewer connection", "C. A vent terminal", "D. A roof drain"], a: 0 },
+    { q: "What must be removed from the inside of a pipe after reaming?", choices: ["A. Oil and grease", "B. All chips", "C. The reaming tool", "D. The metal sleeve"], a: 1 },
+    { q: "Materials for hangers and anchors must have sufficient strength to maintain their proportional share of what?", choices: ["A. The building weight", "B. The weight of the pipe and its content", "C. The water pressure", "D. The soil load"], a: 1 },
+    { q: "Which section requires all plumbing fixtures to be connected to the drainage system?", choices: ["A. 301", "B. 304", "C. 310", "D. 315"], a: 1 },
+    { q: "If a public sewer is not available, where must excreta drainage piping be connected?", choices: ["A. To a public gutter", "B. To an approved Private Sewage Disposal System", "C. To the storm drain", "D. To a nearby river"], a: 1 },
+    { q: "Section 306.1 prohibits depositing which item that could cause damage to the public sewer?", choices: ["A. Oils and greases", "B. Poisonous liquids", "C. Solids", "D. All of the above"], a: 3 },
+    { q: "What is the rule for horizontal drainage lines connecting to other horizontal drainage lines?", choices: ["A. Use sanitary tees", "B. Use 45-degree wye branches", "C. Use tapped tees", "D. Use 60-degree branches"], a: 1 },
+    { q: "According to Section 313.2, building over an existing drainage system is permitted only if the materials are:", choices: ["A. Approved for use within a building", "B. Made of PVC", "C. Made of vitrified clay", "D. Encased in 2 inches of concrete"], a: 0 },
+    { q: "A 'side inlet quarter bend' is prohibited for use as what type of fitting?", choices: ["A. Vent fitting", "B. Drainage fitting", "C. Water supply fitting", "D. Gas fitting"], a: 1 },
+    { q: "Which section states that all designs and workmanships must conform with accepted engineering practices?", choices: ["A. 301", "B. 305", "C. 310.1", "D. 316"], a: 2 },
+    { q: "Horizontal IPS piping of 19 mm diameter is supported every 3.0 meters. What is the support for 38 mm size?", choices: ["A. 1.8 meters", "B. 3.0 meters", "C. 3.6 meters", "D. 4.5 meters"], a: 2 },
+    { q: "What is the maximum allowed length for a tunnel when plumbing pipes are being laid?", choices: ["A. 1.5 meters", "B. 2.4 meters", "C. 3.6 meters", "D. 5.0 meters"], a: 1 },
+    { q: "What is the clear height requirement for a tunnel above the pipe?", choices: ["A. 0.3 meter", "B. 0.6 meter", "C. 0.9 meter", "D. 1.2 meters"], a: 1 },
+    { q: "No subdivision or sale of property shall decrease or impair which requirements of the Code?", choices: ["A. Area and clearance", "B. Access requirements", "C. Both A and B", "D. None of the above"], a: 2 },
+    { q: "Section 311.5 prohibits any fitting that obstructs flow in an amount greater than what?", choices: ["A. 10% of flow", "B. Normal frictional resistance to flow", "C. The capacity of a 76-mm pipe", "D. 5 gallons per minute"], a: 1 },
+    { q: "Piping shall not be located to interfere with the normal operation of which facilities?", choices: ["A. Windows and doors", "B. Elevators", "C. Lighting fixtures", "D. Fire alarms"], a: 0 },
+    { q: "What is the minimum support interval for vertical lead pipe?", choices: ["A. Each story", "B. 1.20 meters", "C. 3.0 meters", "D. 3.6 meters"], a: 1 },
+    { q: "Vertical iron pipe (IPS) is supported every other storey. What is the interval for vertical copper?", choices: ["A. Every storey", "B. Every 2 meters", "C. Every 3 meters", "D. Both A and C are correct"], a: 3 },
+    { q: "Horizontal cast iron pipe exceeding 1.5 meters can be supported every 3 meters. What is the rule for shorter pipes?", choices: ["A. Supported every 1.5 meters", "B. Supported every joint", "C. Supported at one end", "D. No support required"], a: 0 },
+    { q: "What is the support interval for horizontal copper tubing of 51 mm diameter?", choices: ["A. 1.8 meters", "B. 2.4 meters", "C. 3.0 meters", "D. 3.6 meters"], a: 2 },
+    { q: "What is the support interval for horizontal copper tubing of 32 mm diameter?", choices: ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"], a: 1 },
+    { q: "According to Section 314.4, drainage piping must be at least how far below the finish ground surface?", choices: ["A. 0.15 meters", "B. 0.30 meters", "C. 0.45 meters", "D. 0.60 meters"], a: 1 },
+    { q: "What is the maximum length for a tunnel in a plumbing trench?", choices: ["A. 1.2 meters", "B. 1.8 meters", "C. 2.4 meters", "D. 3.0 meters"], a: 2 },
+    { q: "Which section covers the disposal of industrial wastes?", choices: ["A. 301", "B. 303", "C. 307", "D. 311"], a: 2 },
+    { q: "What is the standard slope for horizontal drainage pipes?", choices: ["A. 10 mm/m", "B. 20 mm/m", "C. 30 mm/m", "D. 40 mm/m"], a: 1 },
+    { q: "A vertical 60-degree branch is used only for which type of drainage connection?", choices: ["A. Horizontal-to-horizontal", "B. Vertical-to-horizontal", "C. Vertical position only", "D. Vent connections"], a: 2 },
+    { q: "What is the required slope for a 102 mm pipe if the standard 2% is impracticable?", choices: ["A. 0.5%", "B. 1%", "C. 1.5%", "D. 2.5%"], a: 1 }
+  ],
+  15: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  16: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  17: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  18: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  19: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  20: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  21: [
+    { q: "This is a point where the concavity of a curve changes.", choices: ["Maximum point", "Minimum point", "Point of inflection", "Darsho's point"], a: 2 },
+    { q: "Factoring is the process of expressing a polynomial as a:", choices: ["Rationalization", "Decomposition", "Product", "Darshon"], a: 2 }
+  ],
+  22: [
+    { q: "The paper currency issued by the Central Bank.", choices: ["T-bills", "Bank note", "Check", "Coupon"], a: 1 },
+    { q: "A repair job can be done by 7 people in 8.5 hours. How long for 4 people?", choices: ["4 hr 30 min", "14 hr 9 min", "4 hr 51 min", "14 hr 53 min"], a: 3 }
+  ]
 };
