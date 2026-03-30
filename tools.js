@@ -1,4 +1,4 @@
-window.DB["Tools"] = {
+export const toolsDB = {
      1: [
         { q: "What is a Cordless Drill primarily used for?", choices: ["Drilling and driving screws", "Measuring pipe", "Cutting metal", "Bending copper"], a: 0, img: "images/Cordless Drill .png" },
         { q: "What is a Drill Hammer used for?", choices: ["Removing nails", "Masonry drilling", "Cleaning pipes", "Threading pipe"], a: 1, img: "images/Drill Hammer.png" },
